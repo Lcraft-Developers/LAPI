@@ -5,81 +5,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e533fc52-2a91-41e0-bbb8-75afa0495691" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../TestServer/.console_history" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TestServer/airplane.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TestServer/banned-ips.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TestServer/banned-players.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TestServer/bukkit.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TestServer/commands.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TestServer/eula.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TestServer/help.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TestServer/logs/latest.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TestServer/ops.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TestServer/paper.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TestServer/permissions.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TestServer/plugins/API Plugin.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TestServer/plugins/api.plugin-1.0.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TestServer/plugins/bStats/config.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TestServer/purpur.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TestServer/server.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TestServer/spigot.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TestServer/usercache.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TestServer/version_history.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TestServer/whitelist.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TestServer/world/datapacks/bukkit/pack.mcmeta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TestServer/world/uid.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TestServer/world_nether/uid.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TestServer/world_the_end/uid.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_8_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_21_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_googlecode_json_simple_json_simple_1_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_lang_commons_lang_2_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_papermc_paper_paper_api_1_17_1_R0_1_SNAPSHOT.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__it_unimi_dsi_fastutil_8_2_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_10.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_kyori_adventure_api_4_9_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_kyori_adventure_key_4_9_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_kyori_adventure_text_serializer_gson_4_9_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_kyori_adventure_text_serializer_legacy_4_9_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_kyori_adventure_text_serializer_plain_4_9_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_kyori_examination_api_1_3_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_kyori_examination_string_1_3_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_md_5_bungeecord_chat_1_16_R0_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_14_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_checkerframework_checker_qual_3_18_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_annotations_22_0_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_9_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_analysis_9_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_commons_9_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_tree_9_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_30.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_28.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/target.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/API Plugin/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/API Plugin/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/API Plugin/src/main/java/de/lcraft/api/plugin/APIPluginMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/API Plugin/src/main/java/de/lcraft/api/plugin/modules/Module.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/API Plugin/src/main/java/de/lcraft/api/plugin/modules/ModuleLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/API Plugin/src/main/java/de/lcraft/api/plugin/modules/ModuleManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/API Plugin/src/main/java/de/lcraft/api/plugin/utils/Config.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/API Plugin/src/main/resources/plugin.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Test API Plugin/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Test API Plugin/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Test API Plugin/src/main/java/lcraft/api/testplugin/Testplugin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Test API Plugin/src/main/resources/module.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/API Plugin/src/main/java/de/lcraft/api/plugin/logger/Logger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/API Plugin/src/main/java/de/lcraft/api/plugin/logger/LoggerPlace.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/API Plugin/src/main/java/de/lcraft/api/plugin/logger/LoggerType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestServer/airplane.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../TestServer/airplane.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestServer/logs/latest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../TestServer/logs/latest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestServer/plugins/api.plugin-1.0.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestServer/server.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../TestServer/server.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestServer/world/data/raids.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../TestServer/world/data/raids.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestServer/world/level.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../TestServer/world/level.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestServer/world/level.dat_old" beforeDir="false" afterPath="$PROJECT_DIR$/../TestServer/world/level.dat_old" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestServer/world/session.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../TestServer/world/session.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestServer/world_nether/DIM-1/data/raids.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../TestServer/world_nether/DIM-1/data/raids.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestServer/world_nether/level.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../TestServer/world_nether/level.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestServer/world_nether/level.dat_old" beforeDir="false" afterPath="$PROJECT_DIR$/../TestServer/world_nether/level.dat_old" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestServer/world_nether/session.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../TestServer/world_nether/session.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestServer/world_the_end/DIM1/data/raids_end.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../TestServer/world_the_end/DIM1/data/raids_end.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestServer/world_the_end/level.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../TestServer/world_the_end/level.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestServer/world_the_end/level.dat_old" beforeDir="false" afterPath="$PROJECT_DIR$/../TestServer/world_the_end/level.dat_old" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestServer/world_the_end/session.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../TestServer/world_the_end/session.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/api_plugin_1_0_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/target.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API Plugin/src/main/java/de/lcraft/api/plugin/modules/Module.java" beforeDir="false" afterPath="$PROJECT_DIR$/API Plugin/src/main/java/de/lcraft/api/plugin/modules/Module.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test API Plugin/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Test API Plugin/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test API Plugin/src/main/java/lcraft/api/testplugin/Testplugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test API Plugin/src/main/java/lcraft/api/testplugin/Testplugin.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Enum" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -100,8 +63,9 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/API Plugin/target/api.plugin-1.0.0.jar" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/API Plugin/target/original-api.plugin-1.0.0.jar" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15654951" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -126,6 +90,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/API Plugin/API Plugin.iml" filepath="$PROJECT_DIR$/API Plugin/API Plugin.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Test API Plugin/Test API Plugin.iml" filepath="$PROJECT_DIR$/Test API Plugin/Test API Plugin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Test API Plugin/apis.test.iml" filepath="$PROJECT_DIR$/Test API Plugin/apis.test.iml" />
     </modules>
   </component>
 </project>

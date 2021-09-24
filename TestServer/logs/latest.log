@@ -1,100 +1,31 @@
-[19:09:09] [main/INFO]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
-[19:09:09] [main/INFO]: Found new data pack file/bukkit, loading it automatically
-[19:09:09] [main/INFO]: Reloading ResourceManager: Default, bukkit
-[19:09:10] [Worker-Main-4/INFO]: Loaded 7 recipes
-[19:09:11] [Server thread/INFO]: Starting minecraft server version 1.17.1
-[19:09:11] [Server thread/INFO]: Loading properties
-[19:09:11] [Server thread/INFO]: This server is running Purpur version git-Purpur-1393 (MC: 1.17.1) (Implementing API version 1.17.1-R0.1-SNAPSHOT) (Git: 3ff85ed on ver/1.17.1)
-[19:09:11] [Server thread/INFO]: Using 4 threads for Netty based IO
-[19:09:11] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[19:09:11] [Server thread/INFO]: Default game type: SURVIVAL
-[19:09:11] [Server thread/INFO]: Generating keypair
-[19:09:11] [Server thread/INFO]: Starting Minecraft server on *:25565
-[19:09:11] [Server thread/INFO]: Using default channel type
-[19:09:11] [Server thread/INFO]: Paper: Using Java 11 compression from Velocity.
-[19:09:11] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
-[19:09:11] [Server thread/INFO]: Preparing level "world"
-[19:09:14] [Server thread/WARN]: Unable to find spawn biome
-[19:09:15] [Server thread/WARN]: Unable to find spawn biome
-[19:09:15] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
-[19:09:15] [Worker-Main-5/INFO]: Preparing spawn area: 0%
-[19:09:15] [Worker-Main-4/INFO]: Preparing spawn area: 0%
-[19:09:16] [Server thread/INFO]: Time elapsed: 617 ms
-[19:09:16] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
-[19:09:16] [Server thread/INFO]: Time elapsed: 259 ms
-[19:09:16] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
-[19:09:16] [Worker-Main-6/INFO]: Preparing spawn area: 0%
-[19:09:16] [Worker-Main-2/INFO]: Preparing spawn area: 0%
-[19:09:16] [Server thread/INFO]: Time elapsed: 536 ms
-[19:09:17] [Server thread/INFO]: Running delayed init tasks
-[19:09:17] [Server thread/INFO]: Done (5.784s)! For help, type "help"
-[19:09:17] [Server thread/INFO]: Timings Reset
-[19:09:24] [Server thread/INFO]: Plugins (0): 
-[19:09:45] [Server thread/INFO]: CONSOLE: Are you sure you wish to reload your server? Doing so may cause bugs and memory leaks. It is recommended to restart instead of using /reload. To confirm, please type /reload confirm
-[19:09:47] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
-[19:09:47] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
-[19:09:47] [Server thread/INFO]: Using 4 threads for Netty based IO
-[19:09:47] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[19:09:47] [Server thread/INFO]: Reloading ResourceManager: Default, bukkit
-[19:09:47] [Server thread/INFO]: Loaded 7 recipes
-[19:09:48] [Server thread/ERROR]: Could not load 'plugins\original-api.plugin-1.0.0.jar' in folder 'plugins': uses the space-character (0x20) in its name
-[19:09:48] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[19:09:48] [Server thread/INFO]: CONSOLE: Reload complete.
-[19:09:48] [Server thread/INFO]: Timings Reset
-[19:09:49] [Server thread/INFO]: Plugins (0): 
-[19:10:43] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
-[19:10:43] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
-[19:10:43] [Server thread/INFO]: Using 4 threads for Netty based IO
-[19:10:43] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[19:10:43] [Server thread/INFO]: Reloading ResourceManager: Default, bukkit
-[19:10:43] [Server thread/INFO]: Loaded 7 recipes
-[19:10:44] [Server thread/ERROR]: Could not load 'plugins\original-api.plugin-1.0.0.jar' in folder 'plugins': uses the space-character (0x20) in its name
-[19:10:44] [Server thread/INFO]: [API_Plugin_API] Loading API_Plugin_API v1.0.0
-[19:10:44] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[19:10:44] [Server thread/INFO]: [API_Plugin_API] Enabling API_Plugin_API v1.0.0
-[19:10:44] [Server thread/INFO]: CONSOLE: Reload complete.
-[19:10:44] [Server thread/INFO]: Timings Reset
-[19:11:00] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
-[19:11:00] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
-[19:11:00] [Server thread/INFO]: Using 4 threads for Netty based IO
-[19:11:00] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[19:11:00] [Server thread/INFO]: [API_Plugin_API] Disabling API_Plugin_API v1.0.0
-[19:11:00] [Server thread/INFO]: Reloading ResourceManager: Default, bukkit
-[19:11:00] [Server thread/INFO]: Loaded 7 recipes
-[19:11:01] [Server thread/ERROR]: Could not load 'plugins\api.plugin-1.0.0.jar' in folder 'plugins': uses the space-character (0x20) in its name
-[19:11:01] [Server thread/INFO]: [API_Plugin_API] Loading API_Plugin_API v1.0.0
-[19:11:01] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[19:11:01] [Server thread/INFO]: [API_Plugin_API] Enabling API_Plugin_API v1.0.0
-[19:11:01] [Server thread/INFO]: CONSOLE: Reload complete.
-[19:11:01] [Server thread/INFO]: Timings Reset
-[19:12:12] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
-[19:12:12] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
-[19:12:12] [Server thread/INFO]: Using 4 threads for Netty based IO
-[19:12:12] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[19:12:12] [Server thread/INFO]: [API_Plugin_API] Disabling API_Plugin_API v1.0.0
-[19:12:12] [Server thread/INFO]: Reloading ResourceManager: Default, bukkit
-[19:12:13] [Server thread/INFO]: Loaded 7 recipes
-[19:12:13] [Server thread/INFO]: [LcraftAPI] Loading LcraftAPI v1.0.0
-[19:12:13] [Server thread/INFO]: [API_Plugin_API] Loading API_Plugin_API v1.0.0
-[19:12:13] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[19:12:13] [Server thread/INFO]: [LcraftAPI] Enabling LcraftAPI v1.0.0
-[19:12:13] [Server thread/INFO]: [API_Plugin_API] Enabling API_Plugin_API v1.0.0
-[19:12:13] [Server thread/INFO]: CONSOLE: Reload complete.
-[19:12:13] [Server thread/INFO]: Timings Reset
-[19:12:15] [Server thread/INFO]: Plugins (2): API_Plugin_API, LcraftAPI
-[19:14:03] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
-[19:14:03] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
-[19:14:03] [Server thread/INFO]: Using 4 threads for Netty based IO
-[19:14:03] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[19:14:03] [Server thread/INFO]: [API_Plugin_API] Disabling API_Plugin_API v1.0.0
-[19:14:03] [Server thread/INFO]: [LcraftAPI] Disabling LcraftAPI v1.0.0
-[19:14:03] [Server thread/INFO]: Reloading ResourceManager: Default, bukkit
-[19:14:03] [Server thread/INFO]: Loaded 7 recipes
-[19:14:04] [Server thread/INFO]: [LcraftAPI] Loading LcraftAPI v1.0.0
-[19:14:04] [Server thread/INFO]: [API_Plugin_API] Loading API_Plugin_API v1.0.0
-[19:14:04] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[19:14:04] [Server thread/INFO]: [LcraftAPI] Enabling LcraftAPI v1.0.0
-[19:14:04] [Server thread/INFO]: [API_Plugin_API] Enabling API_Plugin_API v1.0.0
-[19:14:04] [Server thread/INFO]: CONSOLE: Reload complete.
-[19:14:04] [Server thread/INFO]: Timings Reset
-[19:14:06] [Server thread/INFO]: Plugins (2): API_Plugin_API, LcraftAPI
+[14:24:24] [main/INFO]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[14:24:24] [main/INFO]: Reloading ResourceManager: Default, bukkit
+[14:24:25] [Worker-Main-5/INFO]: Loaded 7 recipes
+[14:24:26] [Server thread/INFO]: Starting minecraft server version 1.17.1
+[14:24:26] [Server thread/INFO]: Loading properties
+[14:24:26] [Server thread/INFO]: This server is running Purpur version git-Purpur-1393 (MC: 1.17.1) (Implementing API version 1.17.1-R0.1-SNAPSHOT) (Git: 3ff85ed on ver/1.17.1)
+[14:24:26] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[14:24:26] [Server thread/INFO]: Using 4 threads for Netty based IO
+[14:24:27] [Server thread/INFO]: Default game type: SURVIVAL
+[14:24:27] [Server thread/INFO]: Generating keypair
+[14:24:27] [Server thread/INFO]: Starting Minecraft server on *:25565
+[14:24:27] [Server thread/INFO]: Using default channel type
+[14:24:27] [Server thread/INFO]: Paper: Using Java 11 compression from Velocity.
+[14:24:27] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
+[14:24:27] [Server thread/INFO]: [API_Plugin_API] Loading API_Plugin_API v1.0.0
+[14:24:27] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[14:24:27] [Server thread/INFO]: Preparing level "world"
+[14:24:28] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[14:24:28] [Server thread/INFO]: Time elapsed: 292 ms
+[14:24:28] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
+[14:24:28] [Server thread/INFO]: Time elapsed: 91 ms
+[14:24:28] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
+[14:24:28] [Server thread/INFO]: Time elapsed: 70 ms
+[14:24:28] [Server thread/INFO]: [API_Plugin_API] Enabling API_Plugin_API v1.0.0
+[14:24:28] [Server thread/INFO]: [API_Plugin_API] Das Modul Test Plugin wird geladen.
+[14:24:28] [Server thread/INFO]: [API_Plugin_API] Das Modul Test Plugin wurde geladen.
+[14:24:28] [Server thread/INFO]: (lcraft.api.testplugin.Testplugin:18) Plugin started
+[14:24:28] [Server thread/INFO]: (lcraft.api.testplugin.Testplugin:18) Plugin started
+[14:24:28] [Server thread/INFO]: Running delayed init tasks
+[14:24:28] [Server thread/INFO]: Done (1.849s)! For help, type "help"
+[14:24:28] [Server thread/INFO]: Timings Reset

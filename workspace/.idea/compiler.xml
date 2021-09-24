@@ -7,11 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="API Plugin" />
-        <module name="Test API Plugin" />
+        <module name="apis.test" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="API Plugin" target="1.8" />
+      <module name="apis.test" target="1.8" />
       <module name="Test API Plugin" target="1.8" />
     </bytecodeTargetLevel>
   </component>
