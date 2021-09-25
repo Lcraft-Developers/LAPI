@@ -1,31 +1,61 @@
-[14:24:24] [main/INFO]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
-[14:24:24] [main/INFO]: Reloading ResourceManager: Default, bukkit
-[14:24:25] [Worker-Main-5/INFO]: Loaded 7 recipes
-[14:24:26] [Server thread/INFO]: Starting minecraft server version 1.17.1
-[14:24:26] [Server thread/INFO]: Loading properties
-[14:24:26] [Server thread/INFO]: This server is running Purpur version git-Purpur-1393 (MC: 1.17.1) (Implementing API version 1.17.1-R0.1-SNAPSHOT) (Git: 3ff85ed on ver/1.17.1)
-[14:24:26] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[14:24:26] [Server thread/INFO]: Using 4 threads for Netty based IO
-[14:24:27] [Server thread/INFO]: Default game type: SURVIVAL
-[14:24:27] [Server thread/INFO]: Generating keypair
-[14:24:27] [Server thread/INFO]: Starting Minecraft server on *:25565
-[14:24:27] [Server thread/INFO]: Using default channel type
-[14:24:27] [Server thread/INFO]: Paper: Using Java 11 compression from Velocity.
-[14:24:27] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
-[14:24:27] [Server thread/INFO]: [API_Plugin_API] Loading API_Plugin_API v1.0.0
-[14:24:27] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[14:24:27] [Server thread/INFO]: Preparing level "world"
-[14:24:28] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
-[14:24:28] [Server thread/INFO]: Time elapsed: 292 ms
-[14:24:28] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
-[14:24:28] [Server thread/INFO]: Time elapsed: 91 ms
-[14:24:28] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
-[14:24:28] [Server thread/INFO]: Time elapsed: 70 ms
-[14:24:28] [Server thread/INFO]: [API_Plugin_API] Enabling API_Plugin_API v1.0.0
-[14:24:28] [Server thread/INFO]: [API_Plugin_API] Das Modul Test Plugin wird geladen.
-[14:24:28] [Server thread/INFO]: [API_Plugin_API] Das Modul Test Plugin wurde geladen.
-[14:24:28] [Server thread/INFO]: (lcraft.api.testplugin.Testplugin:18) Plugin started
-[14:24:28] [Server thread/INFO]: (lcraft.api.testplugin.Testplugin:18) Plugin started
-[14:24:28] [Server thread/INFO]: Running delayed init tasks
-[14:24:28] [Server thread/INFO]: Done (1.849s)! For help, type "help"
-[14:24:28] [Server thread/INFO]: Timings Reset
+[13:47:59] [main/INFO]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[13:47:59] [main/INFO]: Reloading ResourceManager: Default, bukkit
+[13:48:00] [Worker-Main-2/INFO]: Loaded 7 recipes
+[13:48:00] [Server thread/INFO]: Starting minecraft server version 1.17.1
+[13:48:00] [Server thread/INFO]: Loading properties
+[13:48:00] [Server thread/INFO]: This server is running Purpur version git-Purpur-1393 (MC: 1.17.1) (Implementing API version 1.17.1-R0.1-SNAPSHOT) (Git: 3ff85ed on ver/1.17.1)
+[13:48:01] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[13:48:01] [Server thread/INFO]: Using 4 threads for Netty based IO
+[13:48:01] [Server thread/INFO]: Default game type: SURVIVAL
+[13:48:01] [Server thread/INFO]: Generating keypair
+[13:48:01] [Server thread/INFO]: Starting Minecraft server on *:25565
+[13:48:01] [Server thread/INFO]: Using default channel type
+[13:48:01] [Server thread/INFO]: Paper: Using Java 11 compression from Velocity.
+[13:48:01] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
+[13:48:01] [Server thread/INFO]: [API_Plugin_API] Loading API_Plugin_API v1.0.0
+[13:48:01] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[13:48:01] [Server thread/INFO]: Preparing level "world"
+[13:48:01] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[13:48:02] [Server thread/INFO]: Time elapsed: 149 ms
+[13:48:02] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
+[13:48:02] [Server thread/INFO]: Time elapsed: 102 ms
+[13:48:02] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
+[13:48:02] [Server thread/INFO]: Time elapsed: 78 ms
+[13:48:02] [Server thread/INFO]: [API_Plugin_API] Enabling API_Plugin_API v1.0.0
+[13:48:02] [Server thread/INFO]: [API_Plugin_API] Das Modul Test Plugin wird geladen.
+[13:48:02] [Server thread/ERROR]: Error occurred while enabling API_Plugin_API v1.0.0 (Is it up to date?)
+java.lang.NoSuchMethodError: 'de.lcraft.api.plugin.logger.Logger lcraft.api.testplugin.Testplugin.getLogger()'
+	at lcraft.api.testplugin.Testplugin.onLoad(Testplugin.java:14) ~[?:?]
+	at de.lcraft.api.plugin.modules.ModuleLoader.loadModule(ModuleLoader.java:12) ~[API Plugin.jar:?]
+	at de.lcraft.api.plugin.modules.ModuleManager.loadModule(ModuleManager.java:41) ~[API Plugin.jar:?]
+	at de.lcraft.api.plugin.modules.ModuleManager.loadModules(ModuleManager.java:22) ~[API Plugin.jar:?]
+	at de.lcraft.api.plugin.APIPluginMain.onEnable(APIPluginMain.java:18) ~[API Plugin.jar:?]
+	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:264) ~[patched_1.17.1.jar:git-Purpur-1393]
+	at org.bukkit.plugin.java.JavaPluginLoader.enablePlugin(JavaPluginLoader.java:370) ~[patched_1.17.1.jar:git-Purpur-1393]
+	at org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManager.java:500) ~[patched_1.17.1.jar:git-Purpur-1393]
+	at org.bukkit.craftbukkit.v1_17_R1.CraftServer.enablePlugin(CraftServer.java:535) ~[patched_1.17.1.jar:git-Purpur-1393]
+	at org.bukkit.craftbukkit.v1_17_R1.CraftServer.enablePlugins(CraftServer.java:449) ~[patched_1.17.1.jar:git-Purpur-1393]
+	at net.minecraft.server.MinecraftServer.loadWorld(MinecraftServer.java:727) ~[patched_1.17.1.jar:git-Purpur-1393]
+	at net.minecraft.server.dedicated.DedicatedServer.init(DedicatedServer.java:318) ~[patched_1.17.1.jar:git-Purpur-1393]
+	at net.minecraft.server.MinecraftServer.x(MinecraftServer.java:1216) ~[patched_1.17.1.jar:git-Purpur-1393]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:321) ~[patched_1.17.1.jar:git-Purpur-1393]
+	at java.lang.Thread.run(Thread.java:831) [?:?]
+[13:48:02] [Server thread/INFO]: [API_Plugin_API] Disabling API_Plugin_API v1.0.0
+[13:48:02] [Server thread/INFO]: Running delayed init tasks
+[13:48:02] [Server thread/INFO]: Done (1.511s)! For help, type "help"
+[13:48:02] [Server thread/INFO]: Timings Reset
+[13:48:54] [Server thread/INFO]: Plugins (1): API_Plugin_API
+[13:57:53] [Server thread/INFO]: Stopping the server
+[13:57:53] [Server thread/INFO]: Stopping server
+[13:57:53] [Server thread/INFO]: Saving players
+[13:57:53] [Server thread/INFO]: Saving worlds
+[13:57:53] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[13:57:53] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_nether]'/minecraft:the_nether
+[13:57:53] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_the_end]'/minecraft:the_end
+[13:57:53] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[13:57:53] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[13:57:53] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[13:57:53] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
+[13:57:53] [Server thread/INFO]: Flushing Chunk IO
+[13:57:53] [Server thread/INFO]: Closing Thread Pool
+[13:57:53] [Server thread/INFO]: Closing Server

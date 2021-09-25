@@ -5,7 +5,7 @@ import de.lcraft.api.plugin.logger.Logger;
 public abstract class Module {
 
     private String name,
-                   id;
+                          id;
     private Logger logger;
 
     public Module(String name, String id) {
