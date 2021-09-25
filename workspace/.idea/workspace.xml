@@ -4,32 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e533fc52-2a91-41e0-bbb8-75afa0495691" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/API Plugin/src/main/java/de/lcraft/api/plugin/logger/Logger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/API Plugin/src/main/java/de/lcraft/api/plugin/logger/LoggerPlace.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/API Plugin/src/main/java/de/lcraft/api/plugin/logger/LoggerType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestServer/airplane.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../TestServer/airplane.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestServer/logs/latest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../TestServer/logs/latest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestServer/plugins/api.plugin-1.0.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestServer/server.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../TestServer/server.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestServer/world/data/raids.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../TestServer/world/data/raids.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestServer/world/level.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../TestServer/world/level.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestServer/world/level.dat_old" beforeDir="false" afterPath="$PROJECT_DIR$/../TestServer/world/level.dat_old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestServer/world/session.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../TestServer/world/session.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestServer/world_nether/DIM-1/data/raids.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../TestServer/world_nether/DIM-1/data/raids.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestServer/world_nether/level.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../TestServer/world_nether/level.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestServer/world_nether/level.dat_old" beforeDir="false" afterPath="$PROJECT_DIR$/../TestServer/world_nether/level.dat_old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestServer/world_nether/session.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../TestServer/world_nether/session.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestServer/world_the_end/DIM1/data/raids_end.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../TestServer/world_the_end/DIM1/data/raids_end.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestServer/world_the_end/level.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../TestServer/world_the_end/level.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestServer/world_the_end/level.dat_old" beforeDir="false" afterPath="$PROJECT_DIR$/../TestServer/world_the_end/level.dat_old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestServer/world_the_end/session.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../TestServer/world_the_end/session.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/api_plugin_1_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/target.xml" beforeDir="false" />
+    <list default="true" id="e533fc52-2a91-41e0-bbb8-75afa0495691" name="Changes" comment="Changes">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/original_api_plugin_1_0_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API Plugin/src/main/java/de/lcraft/api/plugin/modules/Module.java" beforeDir="false" afterPath="$PROJECT_DIR$/API Plugin/src/main/java/de/lcraft/api/plugin/modules/Module.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test API Plugin/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Test API Plugin/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test API Plugin/src/main/java/lcraft/api/testplugin/Testplugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test API Plugin/src/main/java/lcraft/api/testplugin/Testplugin.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +47,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/API Plugin/target/original-api.plugin-1.0.0.jar" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15654951" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>

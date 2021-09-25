@@ -8,10 +8,12 @@
         <outputRelativeToContentRoot value="true" />
         <module name="API Plugin" />
         <module name="apis.test" />
+        <module name="api.plugin" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="API Plugin" target="1.8" />
+      <module name="api.plugin" target="1.5" />
       <module name="apis.test" target="1.8" />
       <module name="Test API Plugin" target="1.8" />
     </bytecodeTargetLevel>
