@@ -7,3 +7,8 @@ authors:
   - Lcraft Developers
 description: '${project.description}'
 website: lcraft.de
+
+commands:
+  test:
+    description: Its a test
+    aliases: test-ld

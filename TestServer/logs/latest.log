@@ -1,35 +1,37 @@
-[13:47:59] [main/INFO]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
-[13:47:59] [main/INFO]: Reloading ResourceManager: Default, bukkit
-[13:48:00] [Worker-Main-2/INFO]: Loaded 7 recipes
-[13:48:00] [Server thread/INFO]: Starting minecraft server version 1.17.1
-[13:48:00] [Server thread/INFO]: Loading properties
-[13:48:00] [Server thread/INFO]: This server is running Purpur version git-Purpur-1393 (MC: 1.17.1) (Implementing API version 1.17.1-R0.1-SNAPSHOT) (Git: 3ff85ed on ver/1.17.1)
-[13:48:01] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[13:48:01] [Server thread/INFO]: Using 4 threads for Netty based IO
-[13:48:01] [Server thread/INFO]: Default game type: SURVIVAL
-[13:48:01] [Server thread/INFO]: Generating keypair
-[13:48:01] [Server thread/INFO]: Starting Minecraft server on *:25565
-[13:48:01] [Server thread/INFO]: Using default channel type
-[13:48:01] [Server thread/INFO]: Paper: Using Java 11 compression from Velocity.
-[13:48:01] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
-[13:48:01] [Server thread/INFO]: [API_Plugin_API] Loading API_Plugin_API v1.0.0
-[13:48:01] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[13:48:01] [Server thread/INFO]: Preparing level "world"
-[13:48:01] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
-[13:48:02] [Server thread/INFO]: Time elapsed: 149 ms
-[13:48:02] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
-[13:48:02] [Server thread/INFO]: Time elapsed: 102 ms
-[13:48:02] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
-[13:48:02] [Server thread/INFO]: Time elapsed: 78 ms
-[13:48:02] [Server thread/INFO]: [API_Plugin_API] Enabling API_Plugin_API v1.0.0
-[13:48:02] [Server thread/INFO]: [API_Plugin_API] Das Modul Test Plugin wird geladen.
-[13:48:02] [Server thread/ERROR]: Error occurred while enabling API_Plugin_API v1.0.0 (Is it up to date?)
-java.lang.NoSuchMethodError: 'de.lcraft.api.plugin.logger.Logger lcraft.api.testplugin.Testplugin.getLogger()'
-	at lcraft.api.testplugin.Testplugin.onLoad(Testplugin.java:14) ~[?:?]
-	at de.lcraft.api.plugin.modules.ModuleLoader.loadModule(ModuleLoader.java:12) ~[API Plugin.jar:?]
-	at de.lcraft.api.plugin.modules.ModuleManager.loadModule(ModuleManager.java:41) ~[API Plugin.jar:?]
-	at de.lcraft.api.plugin.modules.ModuleManager.loadModules(ModuleManager.java:22) ~[API Plugin.jar:?]
-	at de.lcraft.api.plugin.APIPluginMain.onEnable(APIPluginMain.java:18) ~[API Plugin.jar:?]
+[10:05:41] [main/INFO]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[10:05:41] [main/INFO]: Reloading ResourceManager: Default, bukkit
+[10:05:42] [Worker-Main-2/INFO]: Loaded 7 recipes
+[10:05:43] [Server thread/INFO]: Starting minecraft server version 1.17.1
+[10:05:43] [Server thread/INFO]: Loading properties
+[10:05:43] [Server thread/INFO]: This server is running Purpur version git-Purpur-1393 (MC: 1.17.1) (Implementing API version 1.17.1-R0.1-SNAPSHOT) (Git: 3ff85ed on ver/1.17.1)
+[10:05:43] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[10:05:43] [Server thread/INFO]: Using 4 threads for Netty based IO
+[10:05:43] [Server thread/INFO]: Default game type: SURVIVAL
+[10:05:43] [Server thread/INFO]: Generating keypair
+[10:05:43] [Server thread/INFO]: Starting Minecraft server on *:25565
+[10:05:43] [Server thread/INFO]: Using default channel type
+[10:05:43] [Server thread/INFO]: Paper: Using Java 11 compression from Velocity.
+[10:05:43] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
+[10:05:44] [Server thread/INFO]: [LcraftAPI] Loading LcraftAPI v1.0.0
+[10:05:44] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[10:05:44] [Server thread/INFO]: Preparing level "world"
+[10:05:44] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[10:05:44] [Server thread/INFO]: Time elapsed: 188 ms
+[10:05:44] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
+[10:05:44] [Server thread/INFO]: Time elapsed: 70 ms
+[10:05:44] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
+[10:05:44] [Server thread/INFO]: Time elapsed: 109 ms
+[10:05:44] [Server thread/INFO]: [LcraftAPI] Enabling LcraftAPI v1.0.0
+[10:05:44] [Server thread/INFO]: [LcraftAPI] Das Modul Test Plugin wird geladen.
+[10:05:44] [Server thread/ERROR]: Error occurred while enabling LcraftAPI v1.0.0 (Is it up to date?)
+java.lang.UnsupportedOperationException: null
+	at com.google.common.collect.ImmutableMap.put(ImmutableMap.java:529) ~[patched_1.17.1.jar:git-Purpur-1393]
+	at de.lcraft.api.plugin.APIPluginMain.registerModuleCommand(APIPluginMain.java:36) ~[original-api.plugin-1.0.0.jar:?]
+	at lcraft.api.testplugin.Testplugin.onLoad(Testplugin.java:17) ~[?:?]
+	at de.lcraft.api.plugin.modules.ModuleLoader.loadModule(ModuleLoader.java:12) ~[original-api.plugin-1.0.0.jar:?]
+	at de.lcraft.api.plugin.modules.ModuleManager.loadModule(ModuleManager.java:49) ~[original-api.plugin-1.0.0.jar:?]
+	at de.lcraft.api.plugin.modules.ModuleManager.loadModules(ModuleManager.java:29) ~[original-api.plugin-1.0.0.jar:?]
+	at de.lcraft.api.plugin.APIPluginMain.onEnable(APIPluginMain.java:27) ~[original-api.plugin-1.0.0.jar:?]
 	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:264) ~[patched_1.17.1.jar:git-Purpur-1393]
 	at org.bukkit.plugin.java.JavaPluginLoader.enablePlugin(JavaPluginLoader.java:370) ~[patched_1.17.1.jar:git-Purpur-1393]
 	at org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManager.java:500) ~[patched_1.17.1.jar:git-Purpur-1393]
@@ -40,22 +42,55 @@ java.lang.NoSuchMethodError: 'de.lcraft.api.plugin.logger.Logger lcraft.api.test
 	at net.minecraft.server.MinecraftServer.x(MinecraftServer.java:1216) ~[patched_1.17.1.jar:git-Purpur-1393]
 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:321) ~[patched_1.17.1.jar:git-Purpur-1393]
 	at java.lang.Thread.run(Thread.java:831) [?:?]
-[13:48:02] [Server thread/INFO]: [API_Plugin_API] Disabling API_Plugin_API v1.0.0
-[13:48:02] [Server thread/INFO]: Running delayed init tasks
-[13:48:02] [Server thread/INFO]: Done (1.511s)! For help, type "help"
-[13:48:02] [Server thread/INFO]: Timings Reset
-[13:48:54] [Server thread/INFO]: Plugins (1): API_Plugin_API
-[13:57:53] [Server thread/INFO]: Stopping the server
-[13:57:53] [Server thread/INFO]: Stopping server
-[13:57:53] [Server thread/INFO]: Saving players
-[13:57:53] [Server thread/INFO]: Saving worlds
-[13:57:53] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
-[13:57:53] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_nether]'/minecraft:the_nether
-[13:57:53] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_the_end]'/minecraft:the_end
-[13:57:53] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
-[13:57:53] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[13:57:53] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[13:57:53] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
-[13:57:53] [Server thread/INFO]: Flushing Chunk IO
-[13:57:53] [Server thread/INFO]: Closing Thread Pool
-[13:57:53] [Server thread/INFO]: Closing Server
+[10:05:44] [Server thread/INFO]: [LcraftAPI] Disabling LcraftAPI v1.0.0
+[10:05:44] [Server thread/INFO]: Running delayed init tasks
+[10:05:44] [Server thread/INFO]: Done (1.620s)! For help, type "help"
+[10:05:44] [Server thread/INFO]: Timings Reset
+[10:08:50] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
+[10:08:50] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
+[10:08:50] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[10:08:50] [Server thread/INFO]: Using 4 threads for Netty based IO
+[10:08:51] [Server thread/INFO]: Reloading ResourceManager: Default, bukkit
+[10:08:51] [Server thread/INFO]: Loaded 7 recipes
+[10:08:51] [Server thread/INFO]: [LcraftAPI] Loading LcraftAPI v1.0.0
+[10:08:51] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[10:08:51] [Server thread/INFO]: [LcraftAPI] Enabling LcraftAPI v1.0.0
+[10:08:51] [Server thread/INFO]: [LcraftAPI] Das Modul Test Plugin wird geladen.
+[10:08:51] [Server thread/ERROR]: Error occurred while enabling LcraftAPI v1.0.0 (Is it up to date?)
+java.lang.UnsupportedOperationException: null
+	at com.google.common.collect.ImmutableMap.put(ImmutableMap.java:529) ~[patched_1.17.1.jar:git-Purpur-1393]
+	at de.lcraft.api.plugin.APIPluginMain.registerModuleCommand(APIPluginMain.java:36) ~[original-api.plugin-1.0.0.jar:?]
+	at lcraft.api.testplugin.Testplugin.onLoad(Testplugin.java:17) ~[?:?]
+	at de.lcraft.api.plugin.modules.ModuleLoader.loadModule(ModuleLoader.java:12) ~[original-api.plugin-1.0.0.jar:?]
+	at de.lcraft.api.plugin.modules.ModuleManager.loadModule(ModuleManager.java:49) ~[original-api.plugin-1.0.0.jar:?]
+	at de.lcraft.api.plugin.modules.ModuleManager.loadModules(ModuleManager.java:29) ~[original-api.plugin-1.0.0.jar:?]
+	at de.lcraft.api.plugin.APIPluginMain.onEnable(APIPluginMain.java:27) ~[original-api.plugin-1.0.0.jar:?]
+	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:264) ~[patched_1.17.1.jar:git-Purpur-1393]
+	at org.bukkit.plugin.java.JavaPluginLoader.enablePlugin(JavaPluginLoader.java:370) ~[patched_1.17.1.jar:git-Purpur-1393]
+	at org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManager.java:500) ~[patched_1.17.1.jar:git-Purpur-1393]
+	at org.bukkit.craftbukkit.v1_17_R1.CraftServer.enablePlugin(CraftServer.java:535) ~[patched_1.17.1.jar:git-Purpur-1393]
+	at org.bukkit.craftbukkit.v1_17_R1.CraftServer.enablePlugins(CraftServer.java:449) ~[patched_1.17.1.jar:git-Purpur-1393]
+	at org.bukkit.craftbukkit.v1_17_R1.CraftServer.reload(CraftServer.java:973) ~[patched_1.17.1.jar:git-Purpur-1393]
+	at org.bukkit.Bukkit.reload(Bukkit.java:769) ~[patched_1.17.1.jar:git-Purpur-1393]
+	at org.bukkit.command.defaults.ReloadCommand.execute(ReloadCommand.java:54) ~[patched_1.17.1.jar:git-Purpur-1393]
+	at org.bukkit.command.SimpleCommandMap.dispatch(SimpleCommandMap.java:172) ~[patched_1.17.1.jar:git-Purpur-1393]
+	at org.bukkit.craftbukkit.v1_17_R1.CraftServer.dispatchCommand(CraftServer.java:838) ~[patched_1.17.1.jar:git-Purpur-1393]
+	at org.bukkit.craftbukkit.v1_17_R1.CraftServer.dispatchServerCommand(CraftServer.java:801) ~[patched_1.17.1.jar:git-Purpur-1393]
+	at net.minecraft.server.dedicated.DedicatedServer.handleCommandQueue(DedicatedServer.java:532) ~[patched_1.17.1.jar:git-Purpur-1393]
+	at net.minecraft.server.dedicated.DedicatedServer.b(DedicatedServer.java:494) ~[patched_1.17.1.jar:git-Purpur-1393]
+	at net.minecraft.server.MinecraftServer.a(MinecraftServer.java:1490) ~[patched_1.17.1.jar:git-Purpur-1393]
+	at net.minecraft.server.MinecraftServer.x(MinecraftServer.java:1283) ~[patched_1.17.1.jar:git-Purpur-1393]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:321) ~[patched_1.17.1.jar:git-Purpur-1393]
+	at java.lang.Thread.run(Thread.java:831) [?:?]
+[10:08:51] [Server thread/INFO]: [LcraftAPI] Disabling LcraftAPI v1.0.0
+[10:08:51] [Server thread/INFO]: CONSOLE: Reload complete.
+[10:08:51] [Server thread/INFO]: Timings Reset
+[10:09:03] [Server thread/INFO]: Plugins (1): LcraftAPI
+[10:09:09] [Server thread/INFO]: Unknown command. Type "/help" for help.
+[10:09:21] [Server thread/INFO]: Unknown command. Type "/help" for help.
+[10:09:31] [User Authenticator #1/INFO]: UUID of player Cooler_LK is c72ab8a9-a030-4796-84b3-523ca07792c4
+[10:09:31] [Server thread/INFO]: Cooler_LK joined the game
+[10:09:31] [Server thread/INFO]: Cooler_LK[/127.0.0.1:54579] logged in with entity id 126 at ([world]-148.5, 70.0, -216.5)
+[10:09:35] [Server thread/INFO]: Cooler_LK issued server command: /pl
+[10:10:23] [Server thread/INFO]: Cooler_LK lost connection: Disconnected
+[10:10:23] [Server thread/INFO]: Cooler_LK left the game

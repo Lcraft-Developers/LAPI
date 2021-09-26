@@ -1,5 +1,6 @@
 package de.lcraft.api.plugin.modules;
 
+import de.lcraft.api.plugin.APIPluginMain;
 import org.yaml.snakeyaml.Yaml;
 import java.io.File;
 import java.io.IOException;
@@ -13,6 +14,11 @@ import java.util.zip.ZipFile;
 public class ModuleManager {
 
     public static volatile ArrayList<Module> modules = new ArrayList<>();
+    private APIPluginMain mainApi;
+
+    public ModuleManager(APIPluginMain mainApi) {
+        this.mainApi = mainApi;
+    }
 
     public void loadModules() {
         File dir = new File("modules/");
@@ -38,6 +44,7 @@ public class ModuleManager {
                         Class<?> clazz = classLoader.loadClass(data.get("main").toString());
                         Class<? extends Module> pluginClass = clazz.asSubclass(Module.class);
                         Module module = pluginClass.newInstance();
+                        module.setModuleManager(this);
                         ModuleLoader moduleLoader = new ModuleLoader(module);
                         moduleLoader.loadModule();
                     } else {
@@ -72,6 +79,10 @@ public class ModuleManager {
         for(Module c : getModules()) {
             c.onDisable();
         }
+    }
+
+    public APIPluginMain getMainApi() {
+        return mainApi;
     }
 
 }
