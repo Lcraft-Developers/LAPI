@@ -1,0 +1,8 @@
+name: Testplugin
+version: '1.0.0'
+main: lcraft.api.testplugin.Testplugin
+api-version: 1.17
+authors:
+  - LPD
+  - Lcraft
+description: This is a test

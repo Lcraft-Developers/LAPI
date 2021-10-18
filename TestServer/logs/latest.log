@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 [10:05:41] [main/INFO]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
 [10:05:41] [main/INFO]: Reloading ResourceManager: Default, bukkit
 [10:05:42] [Worker-Main-2/INFO]: Loaded 7 recipes
@@ -32,6 +33,39 @@ java.lang.UnsupportedOperationException: null
 	at de.lcraft.api.plugin.modules.ModuleManager.loadModule(ModuleManager.java:49) ~[original-api.plugin-1.0.0.jar:?]
 	at de.lcraft.api.plugin.modules.ModuleManager.loadModules(ModuleManager.java:29) ~[original-api.plugin-1.0.0.jar:?]
 	at de.lcraft.api.plugin.APIPluginMain.onEnable(APIPluginMain.java:27) ~[original-api.plugin-1.0.0.jar:?]
+=======
+[15:07:58] [main/INFO]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[15:07:58] [main/INFO]: Reloading ResourceManager: Default, bukkit
+[15:07:59] [Worker-Main-4/INFO]: Loaded 7 recipes
+[15:08:00] [Server thread/INFO]: Starting minecraft server version 1.17.1
+[15:08:00] [Server thread/INFO]: Loading properties
+[15:08:00] [Server thread/INFO]: This server is running Purpur version git-Purpur-1393 (MC: 1.17.1) (Implementing API version 1.17.1-R0.1-SNAPSHOT) (Git: 3ff85ed on ver/1.17.1)
+[15:08:00] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[15:08:00] [Server thread/INFO]: Using 4 threads for Netty based IO
+[15:08:00] [Server thread/INFO]: Default game type: SURVIVAL
+[15:08:00] [Server thread/INFO]: Generating keypair
+[15:08:00] [Server thread/INFO]: Starting Minecraft server on *:25565
+[15:08:00] [Server thread/INFO]: Using default channel type
+[15:08:00] [Server thread/INFO]: Paper: Using Java 11 compression from Velocity.
+[15:08:00] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
+[15:08:01] [Server thread/INFO]: [LcraftAPI] Loading LcraftAPI v1.0.0
+[15:08:01] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[15:08:01] [Server thread/INFO]: Preparing level "world"
+[15:08:01] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[15:08:02] [Server thread/INFO]: Time elapsed: 285 ms
+[15:08:02] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
+[15:08:02] [Server thread/INFO]: Time elapsed: 91 ms
+[15:08:02] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
+[15:08:02] [Server thread/INFO]: Time elapsed: 61 ms
+[15:08:02] [Server thread/INFO]: [LcraftAPI] Enabling LcraftAPI v1.0.0
+[15:08:02] [Server thread/ERROR]: Error occurred while enabling LcraftAPI v1.0.0 (Is it up to date?)
+java.lang.NullPointerException: entry
+	at java.util.Objects.requireNonNull(Objects.java:233) ~[?:?]
+	at java.util.zip.ZipFile.getInputStream(ZipFile.java:352) ~[?:?]
+	at de.lcraft.api.plugin.modules.ModuleManager.loadModule(ModuleManager.java:33) ~[LcraftAPI.API-1.0.0.jar:?]
+	at de.lcraft.api.plugin.modules.ModuleManager.loadModules(ModuleManager.java:23) ~[LcraftAPI.API-1.0.0.jar:?]
+	at de.lcraft.api.plugin.APIPluginMain.onEnable(APIPluginMain.java:18) ~[LcraftAPI.API-1.0.0.jar:?]
+>>>>>>> Stashed changes
 	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:264) ~[patched_1.17.1.jar:git-Purpur-1393]
 	at org.bukkit.plugin.java.JavaPluginLoader.enablePlugin(JavaPluginLoader.java:370) ~[patched_1.17.1.jar:git-Purpur-1393]
 	at org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManager.java:500) ~[patched_1.17.1.jar:git-Purpur-1393]
@@ -42,6 +76,7 @@ java.lang.UnsupportedOperationException: null
 	at net.minecraft.server.MinecraftServer.x(MinecraftServer.java:1216) ~[patched_1.17.1.jar:git-Purpur-1393]
 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:321) ~[patched_1.17.1.jar:git-Purpur-1393]
 	at java.lang.Thread.run(Thread.java:831) [?:?]
+<<<<<<< Updated upstream
 [10:05:44] [Server thread/INFO]: [LcraftAPI] Disabling LcraftAPI v1.0.0
 [10:05:44] [Server thread/INFO]: Running delayed init tasks
 [10:05:44] [Server thread/INFO]: Done (1.620s)! For help, type "help"
@@ -94,3 +129,30 @@ java.lang.UnsupportedOperationException: null
 [10:09:35] [Server thread/INFO]: Cooler_LK issued server command: /pl
 [10:10:23] [Server thread/INFO]: Cooler_LK lost connection: Disconnected
 [10:10:23] [Server thread/INFO]: Cooler_LK left the game
+=======
+[15:08:02] [Server thread/INFO]: [LcraftAPI] Disabling LcraftAPI v1.0.0
+[15:08:02] [Server thread/INFO]: Running delayed init tasks
+[15:08:02] [Server thread/INFO]: Done (1.925s)! For help, type "help"
+[15:08:02] [Server thread/INFO]: Timings Reset
+[15:11:51] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
+[15:11:51] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
+[15:11:51] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[15:11:51] [Server thread/INFO]: Using 4 threads for Netty based IO
+[15:11:51] [Server thread/INFO]: Reloading ResourceManager: Default, bukkit
+[15:11:51] [Server thread/INFO]: Loaded 7 recipes
+[15:11:52] [Server thread/INFO]: [LcraftAPI] Loading LcraftAPI v1.0.0
+[15:11:52] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[15:11:52] [Server thread/INFO]: [LcraftAPI] Enabling LcraftAPI v1.0.0
+[15:11:52] [Server thread/INFO]: [LcraftAPI] Das Modul Test Plugin wird geladen.
+[15:11:52] [Server thread/INFO]: [Test Plugin] INFO >> This Plugin loaded
+[15:11:52] [Server thread/INFO]: [LcraftAPI] This Plugin loaded
+[15:11:52] [Server thread/INFO]: [LcraftAPI] Das Modul Test Plugin wurde geladen.
+[15:11:52] [Server thread/INFO]: [Test Plugin] INFO >> This Plugin started
+[15:11:52] [Server thread/INFO]: [LcraftAPI] This Plugin started
+[15:11:52] [Server thread/INFO]: [Test Plugin] INFO >> This Plugin loaded
+[15:11:52] [Server thread/INFO]: [LcraftAPI] This Plugin loaded
+[15:11:52] [Server thread/INFO]: [Test Plugin] INFO >> This Plugin started
+[15:11:52] [Server thread/INFO]: [LcraftAPI] This Plugin started
+[15:11:52] [Server thread/INFO]: CONSOLE: Reload complete.
+[15:11:52] [Server thread/INFO]: Timings Reset
+>>>>>>> Stashed changes

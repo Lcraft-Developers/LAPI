@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="API Plugin">
-    <output-path>$PROJECT_DIR$/../TestServer/plugins</output-path>
-    <root id="archive" name="API Plugin.jar">
-      <element id="module-output" name="API &amp; API Plugin" />
-    </root>
-  </artifact>
-</component>

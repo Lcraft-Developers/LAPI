@@ -6,8 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="API &amp; API Plugin" />
-        <module name="Test API Plugin" />
+        <module name="LcraftAPI-API" />
+        <module name="LcraftAPI-TestAPI" />
       </profile>
     </annotationProcessing>
   </component>
