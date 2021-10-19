@@ -1,8 +1,20 @@
-<h1 align="center">Hi 👋, We're Lcraft Developers</h1>
-<h3 align="center">Our Lcraft APIs for Languges, Simplify and MySQL Managment</h3>
+# Lcraft APIs
 
-- 📫 How to reach me **lpd@lcraft.de**
+[![Join us on Discord](https://img.shields.io/discord/856084949827321876.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/j2KwBaHZgD)
 
+Lcraft APIs are APIs for Minecraft. We have a normal, Languages and more APIs in this reposetory!
 
-<h3 align="left">Languages and Tools:</h3>
-<p align="left"> <a href="https://www.java.com" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="java" width="40" height="40"/> </a> <a href="https://www.mongodb.com/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg" alt="mongodb" width="40" height="40"/> </a> <a href="https://www.mysql.com/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/> </a> <a href="https://www.sqlite.org/" target="_blank"> <img src="https://www.vectorlogo.zone/logos/sqlite/sqlite-icon.svg" alt="sqlite" width="40" height="40"/> </a> </p>
+</div>
+
+## Contact
+[![Join us on Discord](https://img.shields.io/discord/856084949827321876.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/j2KwBaHZgD)
+
+Join us on [Discord](https://discord.gg/j2KwBaHZgD)
+
+## Downloads
+![Downloads](https://img.shields.io/github/downloads/Lcraft-Developers/Lcraft-APIs/total?event=push&label=Downloads&logo=github)
+
+Downloads can be obtained from the [GitHub Page](https://github.com/Lcraft-Developers/Lcraft-APIs) or the [SpigotMc Page]().
+
+## More Help
+[Go to our Wiki](https://github.com/Lcraft-Developers/Lcraft-APIs)
