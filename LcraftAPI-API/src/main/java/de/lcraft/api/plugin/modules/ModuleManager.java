@@ -15,7 +15,7 @@ public class ModuleManager {
     public static volatile ArrayList<Module> modules = new ArrayList<>();
 
     public void loadModules() {
-        File dir = new File("modules/");
+        File dir = new File("lmodules/");
         if(!dir.exists()) dir.mkdir();
         File[] directoryListing = dir.listFiles();
         if(directoryListing != null) {

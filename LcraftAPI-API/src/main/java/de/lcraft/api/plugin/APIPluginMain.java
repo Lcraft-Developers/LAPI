@@ -4,9 +4,11 @@ import de.lcraft.api.plugin.modules.ModuleManager;
 import de.lcraft.api.plugin.utils.Config;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.HashMap;
+
 public class APIPluginMain extends JavaPlugin {
 
-    private APIPluginMain apiPluginMain;
+    private static APIPluginMain apiPluginMain;
     private Config cfg;
     private ModuleManager moduleManager;
 
@@ -26,7 +28,7 @@ public class APIPluginMain extends JavaPlugin {
         moduleManager.onDisableAllModules();
     }
 
-    public APIPluginMain getApiPluginMain() {
+    public static APIPluginMain getApiPluginMain() {
         return apiPluginMain;
     }
 

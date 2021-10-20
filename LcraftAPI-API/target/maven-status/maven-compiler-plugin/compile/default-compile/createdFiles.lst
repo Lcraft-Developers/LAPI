@@ -1,7 +1,8 @@
-de\lcraft\api\plugin\utils\Config.class
-de\lcraft\api\plugin\logger\LoggerType.class
 de\lcraft\api\plugin\modules\Module.class
 de\lcraft\api\plugin\modules\ModuleLoader.class
+de\lcraft\api\plugin\modules\listeners\Listener.class
+de\lcraft\api\plugin\utils\Config.class
+de\lcraft\api\plugin\logger\LoggerType.class
 de\lcraft\api\plugin\APIPluginMain.class
 de\lcraft\api\plugin\logger\Logger.class
 de\lcraft\api\plugin\modules\ModuleManager.class

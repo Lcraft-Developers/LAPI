@@ -1,6 +1,6 @@
 name: Testplugin
 version: '1.0.0'
-main: lcraft.api.testplugin.Testplugin
+main: lcraft.api.testplugin.TestPlugin
 api-version: 1.17
 authors:
   - LPD
