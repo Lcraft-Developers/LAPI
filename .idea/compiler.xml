@@ -7,7 +7,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="LcraftAPI-API" />
-        <module name="LcraftAPI-TestAPI" />
+        <module name="LcraftAPI-Spigot-TestPlugin" />
+        <module name="Lcraft-BungeeCord-TestPlugin" />
       </profile>
     </annotationProcessing>
   </component>

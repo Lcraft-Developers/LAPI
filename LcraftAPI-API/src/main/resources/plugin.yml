@@ -1,0 +1,9 @@
+name: LcraftAPI
+version: '${project.version}'
+main: de.lcraft.api.plugin.main.spigot.APIPluginMain
+api-version: 1.17
+authors:
+  - LPD
+  - Lcraft Developers
+description: '${project.description}'
+website: lcraft.de

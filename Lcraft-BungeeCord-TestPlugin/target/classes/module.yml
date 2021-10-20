@@ -1,0 +1,8 @@
+name: 'Lcraft BungeeCord Test'
+version: '1.0.0'
+main: lcraft.api.bungeecord.testplugin.TestPlugin
+api-version: "1.17"
+authors:
+  - LPD
+  - Lcraft
+description: This is a test

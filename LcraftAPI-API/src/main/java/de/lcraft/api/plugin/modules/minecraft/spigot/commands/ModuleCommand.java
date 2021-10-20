@@ -1,13 +1,12 @@
 package de.lcraft.api.plugin.modules.minecraft.spigot.commands;
 
-import de.lcraft.api.plugin.logger.Logger;
-import de.lcraft.api.plugin.logger.LoggerPlace;
-import de.lcraft.api.plugin.logger.LoggerType;
+import de.lcraft.api.plugin.modules.minecraft.spigot.logger.Logger;
+import de.lcraft.api.plugin.modules.minecraft.spigot.logger.LoggerPlace;
+import de.lcraft.api.plugin.modules.minecraft.spigot.logger.LoggerType;
 import de.lcraft.api.plugin.modules.minecraft.spigot.Module;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.defaults.BukkitCommand;
 import org.bukkit.entity.Player;
-import org.jetbrains.annotations.NotNull;
 
 public abstract class ModuleCommand extends BukkitCommand {
 
@@ -33,7 +32,7 @@ public abstract class ModuleCommand extends BukkitCommand {
     }
 
     @Override
-    public boolean execute(@NotNull CommandSender var1, @NotNull String var2, @NotNull String[] var3) {
+    public boolean execute(CommandSender var1, String var2, String[] var3) {
         onCommand(var1, var3);
         if(var1 != null && var1 instanceof Player) {
             return onPlayerCommand((Player) var1, var3);
@@ -47,7 +46,7 @@ public abstract class ModuleCommand extends BukkitCommand {
     public boolean onConsoleCommand(CommandSender s, String[] args) {return false;}
 
     @Override
-    public @NotNull String getName() {
+    public String getName() {
         return super.getName();
     }
 

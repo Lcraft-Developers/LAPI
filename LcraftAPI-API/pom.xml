@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <url>lcraft.de</url>
-    <name></name>
+    <name>Lcraft API</name>
     <version>1.0.0</version>
     <description>Das ist mein Plugin/API für weitere Module/Plugins von meiner Sorte.</description>
 

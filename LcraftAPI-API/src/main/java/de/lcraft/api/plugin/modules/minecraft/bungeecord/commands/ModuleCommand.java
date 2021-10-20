@@ -1,12 +1,11 @@
 package de.lcraft.api.plugin.modules.minecraft.bungeecord.commands;
 
-import de.lcraft.api.plugin.logger.Logger;
-import de.lcraft.api.plugin.logger.LoggerPlace;
-import de.lcraft.api.plugin.logger.LoggerType;
 import de.lcraft.api.plugin.modules.minecraft.bungeecord.Module;
+import de.lcraft.api.plugin.modules.minecraft.bungeecord.logger.Logger;
+import de.lcraft.api.plugin.modules.minecraft.bungeecord.logger.LoggerType;
 import net.md_5.bungee.api.CommandSender;
+import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.api.plugin.Command;
-import org.bukkit.entity.Player;
 
 public abstract class ModuleCommand extends Command {
 
@@ -32,15 +31,15 @@ public abstract class ModuleCommand extends Command {
     @Override
     public void execute(CommandSender var1, String[] var2) {
         onCommand(var1, var2);
-        if(var1 != null && var1 instanceof Player) {
-            onPlayerCommand((Player) var1, var2);
+        if(var1 != null && var1 instanceof ProxiedPlayer) {
+            onPlayerCommand((ProxiedPlayer) var1, var2);
         } else {
             onConsoleCommand(var1, var2);
         }
     }
 
     public abstract boolean onCommand(CommandSender s, String[] args);
-    public boolean onPlayerCommand(Player p, String[] args) {return false;}
+    public boolean onPlayerCommand(ProxiedPlayer p, String[] args) {return false;}
     public boolean onConsoleCommand(CommandSender s, String[] args) {return false;}
 
     @Override
@@ -48,20 +47,20 @@ public abstract class ModuleCommand extends Command {
         return super.getName();
     }
 
-    public final void sendInfoMessage(String message, LoggerPlace loggerPlace) {
-        getLogger().sendModule(LoggerType.INFO, loggerPlace, message);
+    public final void sendInfoMessage(String message) {
+        getLogger().sendModule(LoggerType.INFO, message);
     }
 
-    public final void sendWarningMessage(String message, LoggerPlace loggerPlace) {
-        getLogger().sendModule(LoggerType.WARNING, loggerPlace, message);
+    public final void sendWarningMessage(String message) {
+        getLogger().sendModule(LoggerType.WARNING, message);
     }
 
-    public final void sendErrorMessage(String message, LoggerPlace loggerPlace) {
-        getLogger().sendModule(LoggerType.ERROR, loggerPlace, message);
+    public final void sendErrorMessage(String message) {
+        getLogger().sendModule(LoggerType.ERROR, message);
     }
 
-    public final void sendMessage(String message, LoggerPlace loggerPlace) {
-        getLogger().sendModule(LoggerType.NOTHING, loggerPlace, message);
+    public final void sendMessage(String message) {
+        getLogger().sendModule(LoggerType.NOTHING, message);
     }
 
 }

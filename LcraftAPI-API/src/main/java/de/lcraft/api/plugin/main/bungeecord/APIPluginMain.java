@@ -1,8 +1,10 @@
 package de.lcraft.api.plugin.main.bungeecord;
 
 import de.lcraft.api.plugin.modules.minecraft.bungeecord.ModuleManager;
-import de.lcraft.api.plugin.utils.Config;
+import de.lcraft.api.plugin.modules.minecraft.bungeecord.utils.Config;
 import net.md_5.bungee.api.plugin.Plugin;
+
+import java.io.IOException;
 
 public class APIPluginMain extends Plugin {
 
@@ -13,7 +15,11 @@ public class APIPluginMain extends Plugin {
     @Override
     public void onEnable() {
         apiPluginMain = this;
-        cfg = new Config("config.yml");
+        try {
+            cfg = new Config("config.yml");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         moduleManager = new ModuleManager();
         moduleManager.loadModules(this);
         moduleManager.onLoadAllModules();

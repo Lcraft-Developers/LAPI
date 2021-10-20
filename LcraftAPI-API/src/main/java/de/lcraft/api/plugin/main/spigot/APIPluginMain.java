@@ -1,7 +1,7 @@
 package de.lcraft.api.plugin.main.spigot;
 
 import de.lcraft.api.plugin.modules.minecraft.spigot.ModuleManager;
-import de.lcraft.api.plugin.utils.Config;
+import de.lcraft.api.plugin.modules.minecraft.spigot.utils.Config;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class APIPluginMain extends JavaPlugin {
