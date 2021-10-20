@@ -1,7 +1,7 @@
 package lcraft.api.testplugin.commands;
 
-import de.lcraft.api.plugin.modules.Module;
-import de.lcraft.api.plugin.modules.commands.ModuleCommand;
+import de.lcraft.api.plugin.modules.minecraft.spigot.Module;
+import de.lcraft.api.plugin.modules.minecraft.spigot.commands.ModuleCommand;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 

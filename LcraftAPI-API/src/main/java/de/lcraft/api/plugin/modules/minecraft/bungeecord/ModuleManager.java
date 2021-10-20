@@ -1,6 +1,8 @@
-package de.lcraft.api.plugin.modules;
+package de.lcraft.api.plugin.modules.minecraft.bungeecord;
 
+import net.md_5.bungee.api.plugin.Plugin;
 import org.yaml.snakeyaml.Yaml;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -14,18 +16,18 @@ public class ModuleManager {
 
     public static volatile ArrayList<Module> modules = new ArrayList<>();
 
-    public void loadModules() {
+    public void loadModules(Plugin plugin) {
         File dir = new File("lmodules/");
         if(!dir.exists()) dir.mkdir();
         File[] directoryListing = dir.listFiles();
         if(directoryListing != null) {
             for(File file : directoryListing) {
-                loadModule(file);
+                loadModule(file, plugin);
                 break;
             }
         }
     }
-    public void loadModule(File file) {
+    public void loadModule(File file, Plugin plugin) {
         if(!file.isDirectory() && file.getName().endsWith(".jar")) {
             try {
                 ZipFile jarFile = new ZipFile(file);
@@ -38,13 +40,14 @@ public class ModuleManager {
                         Class<?> clazz = classLoader.loadClass(data.get("main").toString());
                         Class<? extends Module> pluginClass = clazz.asSubclass(Module.class);
                         Module module = pluginClass.newInstance();
+                        module.setPlugin(plugin);
                         ModuleLoader moduleLoader = new ModuleLoader(module);
                         moduleLoader.loadModule();
                     } else {
-                        System.out.println("Das Modul " + data.get("name") + " konnte nicht geladen werden da die main in der module.yml nicht existiert");
+                        System.out.println("The bungeecord module " + data.get("name") + " could not be loaded because the main does not exist in module.yml");
                     }
                 } else {
-                    System.out.println("Ein Modul konnte nicht geladen werdem da der Name in der module.yml nicht existiert!");
+                    System.out.println("A bungeecord module could not be loaded because the name in module.yml does not exist!");
                 }
             } catch(IOException | ClassNotFoundException | IllegalAccessException | InstantiationException exception) {
                 exception.printStackTrace();

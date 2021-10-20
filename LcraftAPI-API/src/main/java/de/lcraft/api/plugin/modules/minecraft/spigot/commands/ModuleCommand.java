@@ -1,16 +1,13 @@
-package de.lcraft.api.plugin.modules.commands;
+package de.lcraft.api.plugin.modules.minecraft.spigot.commands;
 
 import de.lcraft.api.plugin.logger.Logger;
 import de.lcraft.api.plugin.logger.LoggerPlace;
 import de.lcraft.api.plugin.logger.LoggerType;
-import de.lcraft.api.plugin.modules.Module;
-import org.bukkit.command.Command;
+import de.lcraft.api.plugin.modules.minecraft.spigot.Module;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.defaults.BukkitCommand;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.List;
 
 public abstract class ModuleCommand extends BukkitCommand {
 

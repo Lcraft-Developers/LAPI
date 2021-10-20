@@ -1,6 +1,6 @@
 package lcraft.api.testplugin;
 
-import de.lcraft.api.plugin.modules.Module;
+import de.lcraft.api.plugin.modules.minecraft.spigot.Module;
 import lcraft.api.testplugin.commands.TestCommand;
 
 public class TestPlugin extends Module {

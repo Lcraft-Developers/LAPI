@@ -1,4 +1,4 @@
-package de.lcraft.api.plugin.modules.utils;
+package de.lcraft.api.plugin.modules.minecraft.spigot.utils;
 
 import de.lcraft.api.plugin.utils.Config;
 
@@ -9,11 +9,11 @@ public class ModuleConfig extends Config {
     }
 
     public ModuleConfig(Module m, String path, String filename) {
-        super("modules//" + m.getName(), path, filename);
+        super("lmodules//" + m.getName(), path, filename);
     }
 
     public ModuleConfig(Module m, String filename) {
-        super("modules//" + m.getName(), filename);
+        super("lmodules//" + m.getName(), filename);
     }
 
 }

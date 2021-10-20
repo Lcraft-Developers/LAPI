@@ -1,14 +1,11 @@
-package de.lcraft.api.plugin.modules.commands;
+package de.lcraft.api.plugin.modules.minecraft.spigot.commands;
 
-import de.lcraft.api.plugin.APIPluginMain;
-import de.lcraft.api.plugin.modules.Module;
+import de.lcraft.api.plugin.main.spigot.APIPluginMain;
+import de.lcraft.api.plugin.modules.minecraft.spigot.Module;
 import org.bukkit.Bukkit;
-import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandMap;
-import org.bukkit.command.defaults.BukkitCommand;
 
 import java.lang.reflect.Field;
-import java.util.HashMap;
 
 public class ModuleCommandManager {
 

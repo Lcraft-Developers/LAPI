@@ -1,12 +1,10 @@
-package de.lcraft.api.plugin;
+package de.lcraft.api.plugin.main.bungeecord;
 
-import de.lcraft.api.plugin.modules.ModuleManager;
+import de.lcraft.api.plugin.modules.minecraft.bungeecord.ModuleManager;
 import de.lcraft.api.plugin.utils.Config;
-import org.bukkit.plugin.java.JavaPlugin;
+import net.md_5.bungee.api.plugin.Plugin;
 
-import java.util.HashMap;
-
-public class APIPluginMain extends JavaPlugin {
+public class APIPluginMain extends Plugin {
 
     private static APIPluginMain apiPluginMain;
     private Config cfg;
@@ -17,7 +15,7 @@ public class APIPluginMain extends JavaPlugin {
         apiPluginMain = this;
         cfg = new Config("config.yml");
         moduleManager = new ModuleManager();
-        moduleManager.loadModules();
+        moduleManager.loadModules(this);
         moduleManager.onLoadAllModules();
 
         moduleManager.onEnableAllModules();

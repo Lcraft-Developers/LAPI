@@ -1,4 +1,4 @@
-package de.lcraft.api.plugin.modules;
+package de.lcraft.api.plugin.modules.minecraft.spigot;
 
 public class ModuleLoader {
 
@@ -8,17 +8,17 @@ public class ModuleLoader {
     }
 
     public void loadModule() {
-        System.out.println("Das Modul " + module.getName() + " wird geladen.");
+        System.out.println("The Spigot Module " + module.getName() + " will be loaded.");
         module.onLoad();
         enableModule();
     }
     public void enableModule() {
-        System.out.println("Das Modul " + module.getName() + " wurde geladen.");
+        System.out.println("The Spigot Module " + module.getName() + " is loaded.");
         module.onEnable();
         ModuleManager.modules.add(module);
     }
     public void disableModule() {
-        System.out.println("Das Modul " + module.getName() + " wurde deaktiviert.");
+        System.out.println("The Spigot Module " + module.getName() + " was disabled.");
         module.onDisable();
         ModuleManager.modules.remove(module);
     }
