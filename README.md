@@ -17,4 +17,4 @@ Join us on [Discord](https://discord.gg/j2KwBaHZgD)
 Downloads can be obtained from the [GitHub Page](https://github.com/Lcraft-Developers/Lcraft-APIs) or the [SpigotMc Page]().
 
 ## More Help
-[Go to our Wiki](https://github.com/Lcraft-Developers/Lcraft-APIs/wiki)
+[Go to our Wiki Page](https://github.com/Lcraft-Developers/Lcraft-APIs/wiki)
