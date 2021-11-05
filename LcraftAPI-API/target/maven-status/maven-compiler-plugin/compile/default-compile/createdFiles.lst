@@ -24,7 +24,9 @@ de\lcraft\api\plugin\modules\minecraft\bungeecord\utils\Config.class
 de\lcraft\api\plugin\modules\minecraft\bungeecord\commands\ModuleCommand.class
 de\lcraft\api\plugin\modules\minecraft\spigot\logger\LoggerType.class
 de\lcraft\api\plugin\main\bungeecord\APIPluginMain.class
+de\lcraft\api\plugin\modules\java\mysql\MySQLServerHelper.class
 de\lcraft\api\plugin\modules\minecraft\bungeecord\logger\LoggerType.class
+de\lcraft\api\plugin\modules\java\mysql\MySQLServer.class
 de\lcraft\api\plugin\modules\minecraft\spigot\commands\ModuleCommand.class
 de\lcraft\api\plugin\modules\minecraft\spigot\utils\ItemBuilder.class
 de\lcraft\api\plugin\modules\minecraft\spigot\Module.class
