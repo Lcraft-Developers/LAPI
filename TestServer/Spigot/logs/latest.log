@@ -1,9 +1,9 @@
-[15:38:13] [main/INFO]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
-[15:38:13] [main/INFO]: Reloading ResourceManager: Default, bukkit
-[15:38:14] [Worker-Main-4/INFO]: Loaded 7 recipes
-[15:38:15] [Server thread/INFO]: Starting minecraft server version 1.17.1
-[15:38:15] [Server thread/INFO]: Loading properties
-[15:38:15] [Server console handler/WARN]: [org.jline] Failed to load history
+[15:21:07] [main/INFO]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[15:21:07] [main/INFO]: Reloading ResourceManager: Default, bukkit
+[15:21:08] [Worker-Main-4/INFO]: Loaded 7 recipes
+[15:21:09] [Server thread/INFO]: Starting minecraft server version 1.17.1
+[15:21:09] [Server thread/INFO]: Loading properties
+[15:21:09] [Server console handler/WARN]: [org.jline] Failed to load history
 java.lang.IllegalArgumentException: Bad history file syntax! The history file `.console_history` may be an older history: please remove it or use a different history file.
 	at org.jline.reader.impl.history.DefaultHistory.addHistoryLine(DefaultHistory.java:179) ~[patched_1.17.1.jar:git-Purpur-1393]
 	at org.jline.reader.impl.history.DefaultHistory.addHistoryLine(DefaultHistory.java:169) ~[patched_1.17.1.jar:git-Purpur-1393]
@@ -18,28 +18,28 @@ java.lang.IllegalArgumentException: Bad history file syntax! The history file `.
 	at net.minecrell.terminalconsole.SimpleTerminalConsole.readCommands(SimpleTerminalConsole.java:158) [patched_1.17.1.jar:git-Purpur-1393]
 	at net.minecrell.terminalconsole.SimpleTerminalConsole.start(SimpleTerminalConsole.java:141) [patched_1.17.1.jar:git-Purpur-1393]
 	at net.minecraft.server.dedicated.DedicatedServer$1.run(DedicatedServer.java:113) [patched_1.17.1.jar:git-Purpur-1393]
-[15:38:15] [Server thread/INFO]: This server is running Purpur version git-Purpur-1393 (MC: 1.17.1) (Implementing API version 1.17.1-R0.1-SNAPSHOT) (Git: 3ff85ed on ver/1.17.1)
-[15:38:15] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[15:38:15] [Server thread/INFO]: Using 4 threads for Netty based IO
-[15:38:15] [Server thread/INFO]: Default game type: SURVIVAL
-[15:38:15] [Server thread/INFO]: Generating keypair
-[15:38:15] [Server thread/INFO]: Starting Minecraft server on *:25565
-[15:38:15] [Server thread/INFO]: Using default channel type
-[15:38:15] [Server thread/INFO]: Paper: Using Java 11 compression from Velocity.
-[15:38:15] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
-[15:38:15] [Server thread/INFO]: [LcraftAPI] Loading LcraftAPI v1.0.0
-[15:38:15] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[15:38:15] [Server thread/INFO]: Preparing level "world"
-[15:38:16] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
-[15:38:16] [Server thread/INFO]: Time elapsed: 318 ms
-[15:38:16] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
-[15:38:16] [Server thread/INFO]: Time elapsed: 97 ms
-[15:38:16] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
-[15:38:16] [Server thread/INFO]: Time elapsed: 66 ms
-[15:38:16] [Server thread/INFO]: [LcraftAPI] Enabling LcraftAPI v1.0.0
-[15:38:16] [Server thread/INFO]: [LcraftAPI] The Spigot Module Lcraft Spigot Test will be loaded.
-[15:38:16] [Server thread/INFO]: [LcraftAPI] The Spigot Module Lcraft Spigot Test is loaded.
-[15:38:16] [Server thread/INFO]: Running delayed init tasks
-[15:38:16] [Server thread/INFO]: Done (1.775s)! For help, type "help"
-[15:38:16] [Server thread/INFO]: Timings Reset
-[15:38:20] [Server thread/INFO]: Testing...
+[15:21:09] [Server thread/INFO]: This server is running Purpur version git-Purpur-1393 (MC: 1.17.1) (Implementing API version 1.17.1-R0.1-SNAPSHOT) (Git: 3ff85ed on ver/1.17.1)
+[15:21:09] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[15:21:09] [Server thread/INFO]: Using 4 threads for Netty based IO
+[15:21:09] [Server thread/INFO]: Default game type: SURVIVAL
+[15:21:09] [Server thread/INFO]: Generating keypair
+[15:21:09] [Server thread/INFO]: Starting Minecraft server on *:25565
+[15:21:09] [Server thread/INFO]: Using default channel type
+[15:21:09] [Server thread/INFO]: Paper: Using Java 11 compression from Velocity.
+[15:21:09] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
+[15:21:09] [Server thread/INFO]: [LcraftAPI] Loading LcraftAPI v1.0.0
+[15:21:09] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[15:21:09] [Server thread/INFO]: Preparing level "world"
+[15:21:10] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[15:21:10] [Server thread/INFO]: Time elapsed: 296 ms
+[15:21:10] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
+[15:21:10] [Server thread/INFO]: Time elapsed: 103 ms
+[15:21:10] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
+[15:21:10] [Server thread/INFO]: Time elapsed: 64 ms
+[15:21:10] [Server thread/INFO]: [LcraftAPI] Enabling LcraftAPI v1.0.0
+[15:21:10] [Server thread/INFO]: [LcraftAPI] The Spigot Module Lcraft Spigot Test will be loaded.
+[15:21:10] [Server thread/INFO]: [LcraftAPI] The Spigot Module Lcraft Spigot Test is loaded.
+[15:21:10] [Server thread/INFO]: Running delayed init tasks
+[15:21:10] [Server thread/INFO]: Done (1.794s)! For help, type "help"
+[15:21:10] [Server thread/INFO]: Timings Reset
+[15:21:53] [Server thread/INFO]: Plugins (1): LcraftAPI

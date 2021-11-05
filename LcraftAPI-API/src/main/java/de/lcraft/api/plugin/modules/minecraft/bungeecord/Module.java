@@ -4,8 +4,9 @@ import de.lcraft.api.plugin.modules.minecraft.bungeecord.commands.ModuleCommandM
 import de.lcraft.api.plugin.modules.minecraft.bungeecord.listeners.ListenerManager;
 import de.lcraft.api.plugin.modules.minecraft.bungeecord.logger.Logger;
 import net.md_5.bungee.api.plugin.Plugin;
-
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public abstract class Module {
 
@@ -18,11 +19,14 @@ public abstract class Module {
     private ModuleCommandManager moduleCommandManager;
     private Plugin plugin;
     private ListenerManager listenerManager;
+    private List<Module> requiredModules;
 
-    public Module() {
+    public Module(Module... requiredModules) {
         logger = new Logger(getName());
         moduleCommandManager = new ModuleCommandManager(this);
         listenerManager = new ListenerManager(this);
+
+        this.requiredModules = Arrays.stream(requiredModules).toList();
     }
 
     public abstract void onLoad();
@@ -70,6 +74,9 @@ public abstract class Module {
     }
     public ArrayList<String> getAuthors() {
         return authors;
+    }
+    public List<Module> getRequiredModules() {
+        return requiredModules;
     }
 
 }

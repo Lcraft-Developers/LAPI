@@ -5,6 +5,8 @@ import de.lcraft.api.plugin.modules.minecraft.spigot.commands.ModuleCommandManag
 import de.lcraft.api.plugin.modules.minecraft.spigot.listeners.ListenerManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public abstract class Module {
 
@@ -17,11 +19,14 @@ public abstract class Module {
     private ModuleCommandManager moduleCommandManager;
     private JavaPlugin plugin;
     private ListenerManager listenerManager;
+    private List<Module> requiredModules;
 
-    public Module() {
+    public Module(Module... requiredModules) {
         logger = new Logger(getName());
         moduleCommandManager = new ModuleCommandManager(this);
         listenerManager = new ListenerManager(this);
+
+        this.requiredModules = Arrays.stream(requiredModules).toList();
     }
 
     public abstract void onLoad();
@@ -69,6 +74,9 @@ public abstract class Module {
     }
     public ArrayList<String> getAuthors() {
         return authors;
+    }
+    public List<Module> getRequiredModules() {
+        return requiredModules;
     }
 
 }
