@@ -1,0 +1,9 @@
+name: '${project.name}'
+version: '${project.version}'
+spigot-main: de.lcraft.apis.languages.main.spigot.ModuleMain
+bungee-main: de.lcraft.apis.languages.main.spigot.ModuleMain
+api-version: 1.17
+authors:
+  - LPD
+  - Lcraft
+description: This is a test

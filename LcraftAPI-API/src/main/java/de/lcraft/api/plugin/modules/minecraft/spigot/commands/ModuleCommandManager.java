@@ -6,13 +6,16 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.CommandMap;
 
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 
 public class ModuleCommandManager {
 
     private Module module;
+    private ArrayList<ModuleCommand> modulesCmds;
 
     public ModuleCommandManager(Module module) {
         this.module = module;
+        modulesCmds = new ArrayList<>();
     }
 
     public void addCommand(String command, ModuleCommand executor) {
@@ -35,6 +38,7 @@ public class ModuleCommandManager {
         } catch (final IllegalAccessException | NoSuchFieldException ex) {
             ex.printStackTrace();
         }
+        modulesCmds.add(executor);
     }
 
     /*public void addInvisibleCommand(String command, CommandExecutor executor) {
@@ -50,5 +54,7 @@ public class ModuleCommandManager {
         commands.put(command, nested);
         plugin.getCommand(command).setExecutor(executor);
     }*/
-
+    public ArrayList<ModuleCommand> getModulesCmds() {
+        return modulesCmds;
+    }
 }

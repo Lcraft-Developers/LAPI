@@ -1,6 +1,6 @@
 name: '${project.name}'
 version: '${project.version}'
-main: lcraft.api.bungeecord.testplugin.TestPlugin
+bungee-main: lcraft.api.bungeecord.testplugin.TestPlugin
 api-version: "1.17"
 authors:
   - LPD

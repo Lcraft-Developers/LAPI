@@ -5,13 +5,16 @@ import de.lcraft.api.plugin.modules.minecraft.bungeecord.Module;
 import net.md_5.bungee.api.ProxyServer;
 
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 
 public class ModuleCommandManager {
 
     private Module module;
+    private ArrayList<ModuleCommand> modulesCmds;
 
     public ModuleCommandManager(Module module) {
         this.module = module;
+        modulesCmds = new ArrayList<>();
     }
 
     public void addCommand(String command, ModuleCommand executor) {
@@ -26,6 +29,7 @@ public class ModuleCommandManager {
         }
         commands.put(command, nested);*/
         ProxyServer.getInstance().getPluginManager().registerCommand(plugin, executor);
+        modulesCmds.add(executor);
     }
 
     /*public void addInvisibleCommand(String command, CommandExecutor executor) {
@@ -42,4 +46,7 @@ public class ModuleCommandManager {
         plugin.getCommand(command).setExecutor(executor);
     }*/
 
+    public ArrayList<ModuleCommand> getModulesCmds() {
+        return modulesCmds;
+    }
 }

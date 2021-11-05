@@ -8,7 +8,6 @@ import java.io.InputStream;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.zip.ZipFile;
@@ -37,8 +36,13 @@ public class ModuleManager {
                 Map<String, Object> data = yaml.load(inputStream);
                 if(data.get("name") != null) {
                     String name = data.get("name").toString();
-                    if(data.get("main") != null) {
-                        String main = data.get("main").toString();
+                    if(data.get("bungee-main") != null || data.get("spigot-main") != null) {
+                        String main= "";
+                        if(data.get("bungee-main") != null) {
+                            main = data.get("bungee-main").toString();
+                        } else if(data.get("spigot-main") != null) {
+                            main = data.get("spigot-main").toString();
+                        }
                         if(data.get("version") != null) {
                             String version = data.get("version").toString();
                             if(data.get("api-version") != null) {

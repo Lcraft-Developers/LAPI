@@ -4,6 +4,8 @@ import de.lcraft.api.plugin.modules.minecraft.spigot.logger.Logger;
 import de.lcraft.api.plugin.modules.minecraft.spigot.commands.ModuleCommandManager;
 import de.lcraft.api.plugin.modules.minecraft.spigot.listeners.ListenerManager;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -29,7 +31,7 @@ public abstract class Module {
         this.requiredModules = Arrays.stream(requiredModules).toList();
     }
 
-    public abstract void onLoad();
+    public abstract void onLoad() throws IOException;
     public abstract void onEnable();
     public abstract void onDisable();
 

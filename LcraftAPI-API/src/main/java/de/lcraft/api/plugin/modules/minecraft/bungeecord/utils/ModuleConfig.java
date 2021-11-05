@@ -1,5 +1,7 @@
 package de.lcraft.api.plugin.modules.minecraft.bungeecord.utils;
 
+import de.lcraft.api.plugin.modules.minecraft.bungeecord.Module;
+
 import java.io.IOException;
 
 public class ModuleConfig extends Config {

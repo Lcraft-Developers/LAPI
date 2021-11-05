@@ -1,6 +1,6 @@
 name: 'Lcraft Spigot Test'
 version: '1.0.0'
-main: lcraft.api.spigot.testplugin.TestPlugin
+spigot-main: lcraft.api.spigot.testplugin.TestPlugin
 api-version: 1.17
 authors:
   - LPD

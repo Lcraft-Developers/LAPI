@@ -2,7 +2,8 @@ package de.lcraft.api.plugin.modules.minecraft.spigot;
 
 public class ModuleLoader {
 
-    Module module;
+    private Module module;
+
     public ModuleLoader(Module module) {
         this.module = module;
     }

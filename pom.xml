@@ -12,6 +12,8 @@
         <module>LcraftAPI-API</module>
         <module>LcraftAPI-Spigot-TestPlugin</module>
         <module>Lcraft-BungeeCord-TestPlugin</module>
+        <module>Lcraft-Permissions-API</module>
+        <module>Lcraft-Languages-API</module>
     </modules>
 
     <properties>
