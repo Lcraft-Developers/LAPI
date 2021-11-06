@@ -2,6 +2,7 @@ package de.lcraft.apis.languages.system.bungeecord.filesystem;
 
 import de.lcraft.api.plugin.modules.minecraft.bungeecord.Module;
 import de.lcraft.api.plugin.modules.minecraft.bungeecord.utils.ModuleConfig;
+import de.lcraft.apis.languages.system.bungeecord.ModuleCommandManager;
 import de.lcraft.apis.languages.system.bungeecord.filesystem.impl.English;
 import de.lcraft.apis.languages.system.bungeecord.filesystem.impl.German;
 
@@ -14,16 +15,25 @@ public class LanguagesManager {
     private ArrayList<Language> langs;
     private Module m;
     private ModuleConfig userCFG, cfg;
+    private ModuleCommandManager moduleCommandManager;
 
-    public LanguagesManager(Module m) throws IOException {
+    public LanguagesManager(Module m, ModuleCommandManager moduleCommandManager) throws IOException {
         langs = new ArrayList<>();
         userCFG = new ModuleConfig(m, "lang", "users.yml");
         cfg = new ModuleConfig(m, "lang", "config.yml");
+
+        this.moduleCommandManager = moduleCommandManager;
 
         addLang(new German(m));
         addLang(new English(m));
 
         this.m = m;
+
+        for(Language lang : langs) {
+            for(String c : moduleCommandManager.getAllTranslatedTexts()) {
+                lang.translate(c);
+            }
+        }
     }
 
     public Module getModule() {
@@ -37,6 +47,9 @@ public class LanguagesManager {
     }
     public ModuleConfig getUserCFG() {
         return userCFG;
+    }
+    public ModuleCommandManager getModuleCommandManager() {
+        return moduleCommandManager;
     }
 
     public void addLang(Language lang) {

@@ -19,6 +19,6 @@ public abstract class ModuleCommand extends de.lcraft.api.plugin.modules.minecra
         return ModuleMain.getLanguagesManager().getPlayer(player).translate(translate);
     }
 
-    public abstract ArrayList<String> allPermissions(ArrayList<String> beforeAllPermissions);
+    public abstract ArrayList<String> allLanguages(ArrayList<String> beforeAllLanguages);
 
 }

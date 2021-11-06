@@ -18,4 +18,12 @@ public class ModuleCommandManager {
         commandManager.addCommand(command, executor);
     }
 
+    public ArrayList<String> getAllTranslatedTexts() {
+        ArrayList<String> allTranslations = new ArrayList<>();
+        for(ModuleCommand cmd : commands) {
+            allTranslations = cmd.allLanguages(allTranslations);
+        }
+        return allTranslations;
+    }
+
 }
