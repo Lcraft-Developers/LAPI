@@ -6,9 +6,9 @@ import java.util.ArrayList;
 public class ModuleCommandManager {
 
     private ArrayList<ModuleCommand> commands;
-    private ModuleCommandManager commandManager;
+    private de.lcraft.apis.languages.system.spigot.ModuleCommandManager commandManager;
 
-    public ModuleCommandManager(ModuleCommandManager commandManager) {
+    public ModuleCommandManager(de.lcraft.apis.languages.system.spigot.ModuleCommandManager commandManager) {
         this.commandManager = commandManager;
         commands = new ArrayList<>();
     }
