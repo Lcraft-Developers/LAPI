@@ -1,5 +1,6 @@
 package de.lcraft.api.plugin.modules.minecraft.bungeecord;
 
+import de.lcraft.api.plugin.modules.java.utils.FileUtils;
 import net.md_5.bungee.api.plugin.Plugin;
 import org.yaml.snakeyaml.Yaml;
 import java.io.File;
@@ -8,6 +9,7 @@ import java.io.InputStream;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.zip.ZipFile;
@@ -19,11 +21,10 @@ public class ModuleManager {
     public void loadModules(Plugin plugin) {
         File dir = new File("lmodules/");
         if(!dir.exists()) dir.mkdir();
-        File[] directoryListing = dir.listFiles();
-        if(directoryListing != null) {
-            for(File file : directoryListing) {
+        List<File> files = FileUtils.getAllFilesFromADirectory("lmodules/");
+        if(files != null) {
+            for(File file : files) {
                 loadModule(file, plugin);
-                break;
             }
         }
     }

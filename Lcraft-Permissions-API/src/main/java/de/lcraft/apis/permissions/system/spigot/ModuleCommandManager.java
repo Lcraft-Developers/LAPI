@@ -26,4 +26,11 @@ public class ModuleCommandManager {
         return allPermissions;
     }
 
+    public ArrayList<ModuleCommand> getCommands() {
+        return commands;
+    }
+    public de.lcraft.apis.languages.system.spigot.ModuleCommandManager getCommandManager() {
+        return commandManager;
+    }
+
 }

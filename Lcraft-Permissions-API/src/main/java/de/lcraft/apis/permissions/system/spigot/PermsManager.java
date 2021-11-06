@@ -174,5 +174,8 @@ public class PermsManager {
     public ModuleConfig getCfg() {
         return cfg;
     }
+    public ModuleCommandManager getCommandManager() {
+        return commandManager;
+    }
 
 }

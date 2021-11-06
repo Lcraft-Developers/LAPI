@@ -1,5 +1,5 @@
-name: '${project.name}'
-version: '${project.version}'
+name: 'Lcraft BungeeCord TestPlugin'
+version: '1.0'
 bungee-main: lcraft.api.bungeecord.testplugin.TestPlugin
 api-version: "1.17"
 authors:

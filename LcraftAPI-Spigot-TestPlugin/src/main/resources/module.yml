@@ -1,5 +1,5 @@
-name: '${project.name}'
-version: '${project.version}'
+name: 'Lcraft Spigot TestPlugin'
+version: '1.0'
 spigot-main: lcraft.api.spigot.testplugin.TestPlugin
 api-version: 1.17
 authors:

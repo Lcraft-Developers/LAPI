@@ -1,9 +1,11 @@
 package lcraft.api.bungeecord.testplugin.commands;
 
 import de.lcraft.api.plugin.modules.minecraft.bungeecord.Module;
-import de.lcraft.api.plugin.modules.minecraft.bungeecord.commands.ModuleCommand;
 import de.lcraft.api.plugin.modules.minecraft.bungeecord.logger.LoggerType;
+import de.lcraft.apis.permissions.utils.bungeecord.ModuleCommand;
 import net.md_5.bungee.api.CommandSender;
+
+import java.util.ArrayList;
 
 public class TestCommand extends ModuleCommand {
 
@@ -17,4 +19,17 @@ public class TestCommand extends ModuleCommand {
         return false;
     }
 
+    @Override
+    public ArrayList<String> allLanguages(ArrayList<String> beforeAllLanguages) {
+        beforeAllLanguages.add("test-spigot-lang");
+        return beforeAllLanguages;
+    }
+
+    @Override
+    public ArrayList<String> allPermissions(ArrayList<String> beforeAllPermissions) {
+        beforeAllPermissions.add("test-spigot-perm");
+        return beforeAllPermissions;
+    }
+
 }
+
