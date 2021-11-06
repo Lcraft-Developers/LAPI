@@ -36,13 +36,8 @@ public class ModuleManager {
                 Map<String, Object> data = yaml.load(inputStream);
                 if(data.get("name") != null) {
                     String name = data.get("name").toString();
-                    if(data.get("bungee-main") != null || data.get("spigot-main") != null) {
-                        String main = "";
-                        if(data.get("spigot-main") != null) {
-                            main = data.get("spigot-main").toString();
-                        } else if(data.get("bungee-main") != null) {
-                            main = data.get("bungee-main").toString();
-                        }
+                    if(data.get("spigot-main") != null) {
+                        String main = data.get("spigot-main").toString();
                         if(data.get("version") != null) {
                             String version = data.get("version").toString();
                             if(data.get("api-version") != null) {
@@ -112,7 +107,7 @@ public class ModuleManager {
         }
     }
 
-    public void onLoadAllModules() {
+    public void onLoadAllModules() throws IOException {
         for(Module c : getModules()) {
             c.onLoad();
         }

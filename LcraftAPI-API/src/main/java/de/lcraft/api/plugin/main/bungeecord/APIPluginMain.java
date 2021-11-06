@@ -22,7 +22,11 @@ public class APIPluginMain extends Plugin {
         }
         moduleManager = new ModuleManager();
         moduleManager.loadModules(this);
-        moduleManager.onLoadAllModules();
+        try {
+            moduleManager.onLoadAllModules();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         moduleManager.onEnableAllModules();
     }

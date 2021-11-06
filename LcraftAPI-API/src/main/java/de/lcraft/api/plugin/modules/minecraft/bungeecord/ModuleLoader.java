@@ -1,5 +1,7 @@
 package de.lcraft.api.plugin.modules.minecraft.bungeecord;
 
+import java.io.IOException;
+
 public class ModuleLoader {
 
     Module module;
@@ -7,7 +9,7 @@ public class ModuleLoader {
         this.module = module;
     }
 
-    public void loadModule() {
+    public void loadModule() throws IOException {
         System.out.println("The BungeeCord Module " + module.getName() + " will be loaded.");
         module.onLoad();
         enableModule();
