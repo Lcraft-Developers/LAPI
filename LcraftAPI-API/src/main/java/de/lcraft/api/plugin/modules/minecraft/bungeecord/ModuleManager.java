@@ -61,7 +61,7 @@ public class ModuleManager {
 
                                         ClassLoader classLoader = URLClassLoader.newInstance(new URL[]{file.toURI().toURL()}, getClass().getClassLoader());
                                         Class<?> clazz = classLoader.loadClass(main);
-                                        FileUtils.addPath(file);
+                                        FileUtils.ClassPathManager.addFile(file);
                                         Class<? extends Module> pluginClass = clazz.asSubclass(Module.class);
                                         Module module = pluginClass.newInstance();
 

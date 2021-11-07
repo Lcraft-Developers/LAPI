@@ -34,6 +34,7 @@ de\lcraft\api\plugin\modules\minecraft\spigot\commands\ModuleCommand.class
 de\lcraft\api\plugin\modules\minecraft\spigot\utils\ItemBuilder.class
 de\lcraft\api\plugin\modules\minecraft\spigot\Module.class
 de\lcraft\api\plugin\modules\java\utils\Internet$SpigotMc.class
+de\lcraft\api\plugin\modules\java\utils\FileUtils$ClassPathManager.class
 de\lcraft\api\plugin\modules\minecraft\spigot\utils\WorldUtil.class
 de\lcraft\api\plugin\modules\minecraft\bungeecord\ModuleManager.class
 de\lcraft\api\plugin\modules\minecraft\spigot\utils\ModuleConfig.class

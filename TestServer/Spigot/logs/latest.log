@@ -1,9 +1,9 @@
-[12:34:22] [main/INFO]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
-[12:34:22] [main/INFO]: Reloading ResourceManager: Default, bukkit
-[12:34:23] [Worker-Main-2/INFO]: Loaded 7 recipes
-[12:34:24] [Server thread/INFO]: Starting minecraft server version 1.17.1
-[12:34:24] [Server thread/INFO]: Loading properties
-[12:34:24] [Server console handler/WARN]: [org.jline] Failed to load history
+[13:38:32] [main/INFO]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[13:38:32] [main/INFO]: Reloading ResourceManager: Default, bukkit
+[13:38:33] [Worker-Main-2/INFO]: Loaded 7 recipes
+[13:38:34] [Server thread/INFO]: Starting minecraft server version 1.17.1
+[13:38:34] [Server thread/INFO]: Loading properties
+[13:38:34] [Server console handler/WARN]: [org.jline] Failed to load history
 java.lang.IllegalArgumentException: Bad history file syntax! The history file `.console_history` may be an older history: please remove it or use a different history file.
 	at org.jline.reader.impl.history.DefaultHistory.addHistoryLine(DefaultHistory.java:179) ~[patched_1.17.1.jar:git-Purpur-1393]
 	at org.jline.reader.impl.history.DefaultHistory.addHistoryLine(DefaultHistory.java:169) ~[patched_1.17.1.jar:git-Purpur-1393]
@@ -18,70 +18,133 @@ java.lang.IllegalArgumentException: Bad history file syntax! The history file `.
 	at net.minecrell.terminalconsole.SimpleTerminalConsole.readCommands(SimpleTerminalConsole.java:158) [patched_1.17.1.jar:git-Purpur-1393]
 	at net.minecrell.terminalconsole.SimpleTerminalConsole.start(SimpleTerminalConsole.java:141) [patched_1.17.1.jar:git-Purpur-1393]
 	at net.minecraft.server.dedicated.DedicatedServer$1.run(DedicatedServer.java:113) [patched_1.17.1.jar:git-Purpur-1393]
-[12:34:24] [Server thread/INFO]: This server is running Purpur version git-Purpur-1393 (MC: 1.17.1) (Implementing API version 1.17.1-R0.1-SNAPSHOT) (Git: 3ff85ed on ver/1.17.1)
-[12:34:24] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[12:34:24] [Server thread/INFO]: Using 4 threads for Netty based IO
-[12:34:24] [Server thread/INFO]: Default game type: SURVIVAL
-[12:34:24] [Server thread/INFO]: Generating keypair
-[12:34:24] [Server thread/INFO]: Starting Minecraft server on *:25565
-[12:34:24] [Server thread/INFO]: Using default channel type
-[12:34:24] [Server thread/INFO]: Paper: Using Java 11 compression from Velocity.
-[12:34:24] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
-[12:34:25] [Server thread/INFO]: [LcraftAPI] Loading LcraftAPI v1.0.0
-[12:34:25] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[12:34:25] [Server thread/INFO]: Preparing level "world"
-[12:34:25] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
-[12:34:25] [Server thread/INFO]: Time elapsed: 136 ms
-[12:34:25] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
-[12:34:25] [Server thread/INFO]: Time elapsed: 99 ms
-[12:34:25] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
-[12:34:25] [Server thread/INFO]: Time elapsed: 89 ms
-[12:34:25] [Server thread/INFO]: [LcraftAPI] Enabling LcraftAPI v1.0.0
-[12:34:25] [Server thread/WARN]: java.lang.ClassCastException: class jdk.internal.loader.ClassLoaders$PlatformClassLoader cannot be cast to class java.net.URLClassLoader (jdk.internal.loader.ClassLoaders$PlatformClassLoader and java.net.URLClassLoader are in module java.base of loader 'bootstrap')
-[12:34:25] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.modules.java.utils.FileUtils.addPath(FileUtils.java:18)
-[12:34:25] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.modules.minecraft.spigot.ModuleManager.loadModule(ModuleManager.java:65)
-[12:34:25] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.modules.minecraft.spigot.ModuleManager.loadModules(ModuleManager.java:27)
-[12:34:25] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.main.spigot.APIPluginMain.onEnable(APIPluginMain.java:24)
-[12:34:25] [Server thread/WARN]: 	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:264)
-[12:34:25] [Server thread/WARN]: 	at org.bukkit.plugin.java.JavaPluginLoader.enablePlugin(JavaPluginLoader.java:370)
-[12:34:25] [Server thread/WARN]: 	at org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManager.java:500)
-[12:34:25] [Server thread/WARN]: 	at org.bukkit.craftbukkit.v1_17_R1.CraftServer.enablePlugin(CraftServer.java:535)
-[12:34:25] [Server thread/WARN]: 	at org.bukkit.craftbukkit.v1_17_R1.CraftServer.enablePlugins(CraftServer.java:449)
-[12:34:25] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.loadWorld(MinecraftServer.java:727)
-[12:34:25] [Server thread/WARN]: 	at net.minecraft.server.dedicated.DedicatedServer.init(DedicatedServer.java:318)
-[12:34:25] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.x(MinecraftServer.java:1216)
-[12:34:25] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:321)
-[12:34:25] [Server thread/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:831)
-[12:34:25] [Server thread/WARN]: java.lang.ClassCastException: class jdk.internal.loader.ClassLoaders$PlatformClassLoader cannot be cast to class java.net.URLClassLoader (jdk.internal.loader.ClassLoaders$PlatformClassLoader and java.net.URLClassLoader are in module java.base of loader 'bootstrap')
-[12:34:25] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.modules.java.utils.FileUtils.addPath(FileUtils.java:18)
-[12:34:25] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.modules.minecraft.spigot.ModuleManager.loadModule(ModuleManager.java:65)
-[12:34:25] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.modules.minecraft.spigot.ModuleManager.loadModules(ModuleManager.java:27)
-[12:34:25] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.main.spigot.APIPluginMain.onEnable(APIPluginMain.java:24)
-[12:34:25] [Server thread/WARN]: 	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:264)
-[12:34:25] [Server thread/WARN]: 	at org.bukkit.plugin.java.JavaPluginLoader.enablePlugin(JavaPluginLoader.java:370)
-[12:34:25] [Server thread/WARN]: 	at org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManager.java:500)
-[12:34:25] [Server thread/WARN]: 	at org.bukkit.craftbukkit.v1_17_R1.CraftServer.enablePlugin(CraftServer.java:535)
-[12:34:25] [Server thread/WARN]: 	at org.bukkit.craftbukkit.v1_17_R1.CraftServer.enablePlugins(CraftServer.java:449)
-[12:34:25] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.loadWorld(MinecraftServer.java:727)
-[12:34:25] [Server thread/WARN]: 	at net.minecraft.server.dedicated.DedicatedServer.init(DedicatedServer.java:318)
-[12:34:25] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.x(MinecraftServer.java:1216)
-[12:34:25] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:321)
-[12:34:25] [Server thread/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:831)
-[12:34:25] [Server thread/WARN]: java.lang.ClassCastException: class jdk.internal.loader.ClassLoaders$PlatformClassLoader cannot be cast to class java.net.URLClassLoader (jdk.internal.loader.ClassLoaders$PlatformClassLoader and java.net.URLClassLoader are in module java.base of loader 'bootstrap')
-[12:34:25] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.modules.java.utils.FileUtils.addPath(FileUtils.java:18)
-[12:34:25] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.modules.minecraft.spigot.ModuleManager.loadModule(ModuleManager.java:65)
-[12:34:25] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.modules.minecraft.spigot.ModuleManager.loadModules(ModuleManager.java:27)
-[12:34:25] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.main.spigot.APIPluginMain.onEnable(APIPluginMain.java:24)
-[12:34:25] [Server thread/WARN]: 	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:264)
-[12:34:25] [Server thread/WARN]: 	at org.bukkit.plugin.java.JavaPluginLoader.enablePlugin(JavaPluginLoader.java:370)
-[12:34:25] [Server thread/WARN]: 	at org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManager.java:500)
-[12:34:25] [Server thread/WARN]: 	at org.bukkit.craftbukkit.v1_17_R1.CraftServer.enablePlugin(CraftServer.java:535)
-[12:34:25] [Server thread/WARN]: 	at org.bukkit.craftbukkit.v1_17_R1.CraftServer.enablePlugins(CraftServer.java:449)
-[12:34:25] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.loadWorld(MinecraftServer.java:727)
-[12:34:25] [Server thread/WARN]: 	at net.minecraft.server.dedicated.DedicatedServer.init(DedicatedServer.java:318)
-[12:34:25] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.x(MinecraftServer.java:1216)
-[12:34:25] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:321)
-[12:34:25] [Server thread/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:831)
-[12:34:25] [Server thread/INFO]: Running delayed init tasks
-[12:34:25] [Server thread/INFO]: Done (1.457s)! For help, type "help"
-[12:34:25] [Server thread/INFO]: Timings Reset
+[13:38:34] [Server thread/INFO]: This server is running Purpur version git-Purpur-1393 (MC: 1.17.1) (Implementing API version 1.17.1-R0.1-SNAPSHOT) (Git: 3ff85ed on ver/1.17.1)
+[13:38:34] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[13:38:34] [Server thread/INFO]: Using 4 threads for Netty based IO
+[13:38:34] [Server thread/INFO]: Default game type: SURVIVAL
+[13:38:34] [Server thread/INFO]: Generating keypair
+[13:38:34] [Server thread/INFO]: Starting Minecraft server on *:25565
+[13:38:34] [Server thread/INFO]: Using default channel type
+[13:38:34] [Server thread/INFO]: Paper: Using Java 11 compression from Velocity.
+[13:38:34] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
+[13:38:35] [Server thread/INFO]: [LcraftAPI] Loading LcraftAPI v1.0.0
+[13:38:35] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[13:38:35] [Server thread/INFO]: Preparing level "world"
+[13:38:35] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[13:38:35] [Server thread/INFO]: Time elapsed: 146 ms
+[13:38:35] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
+[13:38:35] [Server thread/INFO]: Time elapsed: 64 ms
+[13:38:35] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
+[13:38:35] [Server thread/INFO]: Time elapsed: 107 ms
+[13:38:35] [Server thread/INFO]: [LcraftAPI] Enabling LcraftAPI v1.0.0
+[13:38:35] [Server thread/WARN]: java.lang.reflect.InaccessibleObjectException: Unable to make protected void java.net.URLClassLoader.addURL(java.net.URL) accessible: module java.base does not "opens java.net" to unnamed module @b32cb0e
+[13:38:35] [Server thread/WARN]: 	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:357)
+[13:38:35] [Server thread/WARN]: 	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:297)
+[13:38:35] [Server thread/WARN]: 	at java.base/java.lang.reflect.Method.checkCanSetAccessible(Method.java:199)
+[13:38:35] [Server thread/WARN]: 	at java.base/java.lang.reflect.Method.setAccessible(Method.java:193)
+[13:38:35] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.modules.java.utils.FileUtils$ClassPathManager.addURL(FileUtils.java:48)
+[13:38:35] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.modules.java.utils.FileUtils$ClassPathManager.addFile(FileUtils.java:36)
+[13:38:35] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.modules.minecraft.spigot.ModuleManager.loadModule(ModuleManager.java:64)
+[13:38:35] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.modules.minecraft.spigot.ModuleManager.loadModules(ModuleManager.java:26)
+[13:38:35] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.main.spigot.APIPluginMain.onEnable(APIPluginMain.java:24)
+[13:38:35] [Server thread/WARN]: 	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:264)
+[13:38:35] [Server thread/WARN]: 	at org.bukkit.plugin.java.JavaPluginLoader.enablePlugin(JavaPluginLoader.java:370)
+[13:38:35] [Server thread/WARN]: 	at org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManager.java:500)
+[13:38:35] [Server thread/WARN]: 	at org.bukkit.craftbukkit.v1_17_R1.CraftServer.enablePlugin(CraftServer.java:535)
+[13:38:35] [Server thread/WARN]: 	at org.bukkit.craftbukkit.v1_17_R1.CraftServer.enablePlugins(CraftServer.java:449)
+[13:38:35] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.loadWorld(MinecraftServer.java:727)
+[13:38:35] [Server thread/WARN]: 	at net.minecraft.server.dedicated.DedicatedServer.init(DedicatedServer.java:318)
+[13:38:35] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.x(MinecraftServer.java:1216)
+[13:38:35] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:321)
+[13:38:35] [Server thread/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:831)
+[13:38:35] [Server thread/WARN]: java.io.IOException: Error, could not add URL to system classloader
+[13:38:35] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.modules.java.utils.FileUtils$ClassPathManager.addURL(FileUtils.java:52)
+[13:38:35] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.modules.java.utils.FileUtils$ClassPathManager.addFile(FileUtils.java:36)
+[13:38:35] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.modules.minecraft.spigot.ModuleManager.loadModule(ModuleManager.java:64)
+[13:38:35] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.modules.minecraft.spigot.ModuleManager.loadModules(ModuleManager.java:26)
+[13:38:35] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.main.spigot.APIPluginMain.onEnable(APIPluginMain.java:24)
+[13:38:35] [Server thread/WARN]: 	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:264)
+[13:38:35] [Server thread/WARN]: 	at org.bukkit.plugin.java.JavaPluginLoader.enablePlugin(JavaPluginLoader.java:370)
+[13:38:35] [Server thread/WARN]: 	at org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManager.java:500)
+[13:38:35] [Server thread/WARN]: 	at org.bukkit.craftbukkit.v1_17_R1.CraftServer.enablePlugin(CraftServer.java:535)
+[13:38:35] [Server thread/WARN]: 	at org.bukkit.craftbukkit.v1_17_R1.CraftServer.enablePlugins(CraftServer.java:449)
+[13:38:35] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.loadWorld(MinecraftServer.java:727)
+[13:38:35] [Server thread/WARN]: 	at net.minecraft.server.dedicated.DedicatedServer.init(DedicatedServer.java:318)
+[13:38:35] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.x(MinecraftServer.java:1216)
+[13:38:35] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:321)
+[13:38:35] [Server thread/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:831)
+[13:38:35] [Server thread/WARN]: java.lang.reflect.InaccessibleObjectException: Unable to make protected void java.net.URLClassLoader.addURL(java.net.URL) accessible: module java.base does not "opens java.net" to unnamed module @b32cb0e
+[13:38:35] [Server thread/WARN]: 	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:357)
+[13:38:35] [Server thread/WARN]: 	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:297)
+[13:38:35] [Server thread/WARN]: 	at java.base/java.lang.reflect.Method.checkCanSetAccessible(Method.java:199)
+[13:38:35] [Server thread/WARN]: 	at java.base/java.lang.reflect.Method.setAccessible(Method.java:193)
+[13:38:35] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.modules.java.utils.FileUtils$ClassPathManager.addURL(FileUtils.java:48)
+[13:38:35] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.modules.java.utils.FileUtils$ClassPathManager.addFile(FileUtils.java:36)
+[13:38:35] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.modules.minecraft.spigot.ModuleManager.loadModule(ModuleManager.java:64)
+[13:38:35] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.modules.minecraft.spigot.ModuleManager.loadModules(ModuleManager.java:26)
+[13:38:35] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.main.spigot.APIPluginMain.onEnable(APIPluginMain.java:24)
+[13:38:35] [Server thread/WARN]: 	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:264)
+[13:38:35] [Server thread/WARN]: 	at org.bukkit.plugin.java.JavaPluginLoader.enablePlugin(JavaPluginLoader.java:370)
+[13:38:35] [Server thread/WARN]: 	at org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManager.java:500)
+[13:38:35] [Server thread/WARN]: 	at org.bukkit.craftbukkit.v1_17_R1.CraftServer.enablePlugin(CraftServer.java:535)
+[13:38:35] [Server thread/WARN]: 	at org.bukkit.craftbukkit.v1_17_R1.CraftServer.enablePlugins(CraftServer.java:449)
+[13:38:35] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.loadWorld(MinecraftServer.java:727)
+[13:38:35] [Server thread/WARN]: 	at net.minecraft.server.dedicated.DedicatedServer.init(DedicatedServer.java:318)
+[13:38:35] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.x(MinecraftServer.java:1216)
+[13:38:35] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:321)
+[13:38:35] [Server thread/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:831)
+[13:38:35] [Server thread/WARN]: java.io.IOException: Error, could not add URL to system classloader
+[13:38:35] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.modules.java.utils.FileUtils$ClassPathManager.addURL(FileUtils.java:52)
+[13:38:35] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.modules.java.utils.FileUtils$ClassPathManager.addFile(FileUtils.java:36)
+[13:38:35] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.modules.minecraft.spigot.ModuleManager.loadModule(ModuleManager.java:64)
+[13:38:35] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.modules.minecraft.spigot.ModuleManager.loadModules(ModuleManager.java:26)
+[13:38:35] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.main.spigot.APIPluginMain.onEnable(APIPluginMain.java:24)
+[13:38:35] [Server thread/WARN]: 	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:264)
+[13:38:35] [Server thread/WARN]: 	at org.bukkit.plugin.java.JavaPluginLoader.enablePlugin(JavaPluginLoader.java:370)
+[13:38:35] [Server thread/WARN]: 	at org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManager.java:500)
+[13:38:35] [Server thread/WARN]: 	at org.bukkit.craftbukkit.v1_17_R1.CraftServer.enablePlugin(CraftServer.java:535)
+[13:38:35] [Server thread/WARN]: 	at org.bukkit.craftbukkit.v1_17_R1.CraftServer.enablePlugins(CraftServer.java:449)
+[13:38:35] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.loadWorld(MinecraftServer.java:727)
+[13:38:35] [Server thread/WARN]: 	at net.minecraft.server.dedicated.DedicatedServer.init(DedicatedServer.java:318)
+[13:38:35] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.x(MinecraftServer.java:1216)
+[13:38:35] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:321)
+[13:38:35] [Server thread/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:831)
+[13:38:35] [Server thread/WARN]: java.lang.reflect.InaccessibleObjectException: Unable to make protected void java.net.URLClassLoader.addURL(java.net.URL) accessible: module java.base does not "opens java.net" to unnamed module @b32cb0e
+[13:38:35] [Server thread/WARN]: 	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:357)
+[13:38:35] [Server thread/WARN]: 	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:297)
+[13:38:35] [Server thread/WARN]: 	at java.base/java.lang.reflect.Method.checkCanSetAccessible(Method.java:199)
+[13:38:35] [Server thread/WARN]: 	at java.base/java.lang.reflect.Method.setAccessible(Method.java:193)
+[13:38:35] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.modules.java.utils.FileUtils$ClassPathManager.addURL(FileUtils.java:48)
+[13:38:35] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.modules.java.utils.FileUtils$ClassPathManager.addFile(FileUtils.java:36)
+[13:38:35] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.modules.minecraft.spigot.ModuleManager.loadModule(ModuleManager.java:64)
+[13:38:35] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.modules.minecraft.spigot.ModuleManager.loadModules(ModuleManager.java:26)
+[13:38:35] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.main.spigot.APIPluginMain.onEnable(APIPluginMain.java:24)
+[13:38:35] [Server thread/WARN]: 	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:264)
+[13:38:35] [Server thread/WARN]: 	at org.bukkit.plugin.java.JavaPluginLoader.enablePlugin(JavaPluginLoader.java:370)
+[13:38:35] [Server thread/WARN]: 	at org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManager.java:500)
+[13:38:35] [Server thread/WARN]: 	at org.bukkit.craftbukkit.v1_17_R1.CraftServer.enablePlugin(CraftServer.java:535)
+[13:38:35] [Server thread/WARN]: 	at org.bukkit.craftbukkit.v1_17_R1.CraftServer.enablePlugins(CraftServer.java:449)
+[13:38:35] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.loadWorld(MinecraftServer.java:727)
+[13:38:35] [Server thread/WARN]: 	at net.minecraft.server.dedicated.DedicatedServer.init(DedicatedServer.java:318)
+[13:38:35] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.x(MinecraftServer.java:1216)
+[13:38:35] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:321)
+[13:38:35] [Server thread/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:831)
+[13:38:35] [Server thread/WARN]: java.io.IOException: Error, could not add URL to system classloader
+[13:38:35] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.modules.java.utils.FileUtils$ClassPathManager.addURL(FileUtils.java:52)
+[13:38:35] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.modules.java.utils.FileUtils$ClassPathManager.addFile(FileUtils.java:36)
+[13:38:35] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.modules.minecraft.spigot.ModuleManager.loadModule(ModuleManager.java:64)
+[13:38:35] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.modules.minecraft.spigot.ModuleManager.loadModules(ModuleManager.java:26)
+[13:38:35] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.main.spigot.APIPluginMain.onEnable(APIPluginMain.java:24)
+[13:38:35] [Server thread/WARN]: 	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:264)
+[13:38:35] [Server thread/WARN]: 	at org.bukkit.plugin.java.JavaPluginLoader.enablePlugin(JavaPluginLoader.java:370)
+[13:38:35] [Server thread/WARN]: 	at org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManager.java:500)
+[13:38:35] [Server thread/WARN]: 	at org.bukkit.craftbukkit.v1_17_R1.CraftServer.enablePlugin(CraftServer.java:535)
+[13:38:35] [Server thread/WARN]: 	at org.bukkit.craftbukkit.v1_17_R1.CraftServer.enablePlugins(CraftServer.java:449)
+[13:38:35] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.loadWorld(MinecraftServer.java:727)
+[13:38:35] [Server thread/WARN]: 	at net.minecraft.server.dedicated.DedicatedServer.init(DedicatedServer.java:318)
+[13:38:35] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.x(MinecraftServer.java:1216)
+[13:38:35] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:321)
+[13:38:35] [Server thread/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:831)
+[13:38:35] [Server thread/INFO]: Running delayed init tasks
+[13:38:35] [Server thread/INFO]: Done (1.540s)! For help, type "help"
+[13:38:35] [Server thread/INFO]: Timings Reset
