@@ -1,8 +1,8 @@
 package de.lcraft.api.plugin.modules.minecraft.bungeecord.commands;
 
 import de.lcraft.api.plugin.modules.minecraft.bungeecord.Module;
-import de.lcraft.api.plugin.modules.minecraft.bungeecord.logger.Logger;
-import de.lcraft.api.plugin.modules.minecraft.bungeecord.logger.LoggerType;
+import de.lcraft.api.plugin.modules.minecraft.bungeecord.logger.ModuleLogger;
+import de.lcraft.api.plugin.modules.minecraft.bungeecord.logger.ModuleLoggerType;
 import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.api.plugin.Command;
@@ -24,7 +24,7 @@ public abstract class ModuleCommand extends Command {
         return module;
     }
 
-    public final Logger getLogger() {
+    public final ModuleLogger getLogger() {
         return module.getLogger();
     }
 
@@ -48,19 +48,19 @@ public abstract class ModuleCommand extends Command {
     }
 
     public final void sendInfoMessage(String message) {
-        getLogger().sendModule(LoggerType.INFO, message);
+        getLogger().sendModule(ModuleLoggerType.INFO, message);
     }
 
     public final void sendWarningMessage(String message) {
-        getLogger().sendModule(LoggerType.WARNING, message);
+        getLogger().sendModule(ModuleLoggerType.WARNING, message);
     }
 
     public final void sendErrorMessage(String message) {
-        getLogger().sendModule(LoggerType.ERROR, message);
+        getLogger().sendModule(ModuleLoggerType.ERROR, message);
     }
 
     public final void sendMessage(String message) {
-        getLogger().sendModule(LoggerType.NOTHING, message);
+        getLogger().sendModule(ModuleLoggerType.NOTHING, message);
     }
 
 }

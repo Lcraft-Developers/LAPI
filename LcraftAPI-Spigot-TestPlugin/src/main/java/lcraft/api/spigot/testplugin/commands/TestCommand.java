@@ -1,8 +1,8 @@
 package lcraft.api.spigot.testplugin.commands;
 
 import de.lcraft.api.plugin.modules.minecraft.spigot.Module;
-import de.lcraft.api.plugin.modules.minecraft.spigot.logger.LoggerPlace;
-import de.lcraft.api.plugin.modules.minecraft.spigot.logger.LoggerType;
+import de.lcraft.api.plugin.modules.minecraft.spigot.logger.ModuleLoggerPlace;
+import de.lcraft.api.plugin.modules.minecraft.spigot.logger.ModuleLoggerType;
 import de.lcraft.apis.permissions.utils.spigot.ModuleCommand;
 import org.bukkit.command.CommandSender;
 
@@ -16,7 +16,7 @@ public class TestCommand extends ModuleCommand {
 
     @Override
     public boolean onCommand(CommandSender s, String[] args) {
-        getLogger().send(LoggerType.NOTHING, LoggerPlace.SERVER, "Testing...");
+        getLogger().send(ModuleLoggerType.NOTHING, ModuleLoggerPlace.SERVER, "Testing...");
         return false;
     }
 

@@ -1,7 +1,7 @@
 package lcraft.api.bungeecord.testplugin.commands;
 
 import de.lcraft.api.plugin.modules.minecraft.bungeecord.Module;
-import de.lcraft.api.plugin.modules.minecraft.bungeecord.logger.LoggerType;
+import de.lcraft.api.plugin.modules.minecraft.bungeecord.logger.ModuleLoggerType;
 import de.lcraft.apis.permissions.utils.bungeecord.ModuleCommand;
 import net.md_5.bungee.api.CommandSender;
 
@@ -15,7 +15,7 @@ public class TestCommand extends ModuleCommand {
 
     @Override
     public boolean onCommand(CommandSender s, String[] args) {
-        getLogger().send(LoggerType.NOTHING, "Testing...");
+        getLogger().send(ModuleLoggerType.NOTHING, "Testing...");
         return false;
     }
 

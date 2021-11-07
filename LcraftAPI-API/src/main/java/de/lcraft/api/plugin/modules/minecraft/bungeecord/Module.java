@@ -2,7 +2,7 @@ package de.lcraft.api.plugin.modules.minecraft.bungeecord;
 
 import de.lcraft.api.plugin.modules.minecraft.bungeecord.commands.ModuleCommandManager;
 import de.lcraft.api.plugin.modules.minecraft.bungeecord.listeners.ListenerManager;
-import de.lcraft.api.plugin.modules.minecraft.bungeecord.logger.Logger;
+import de.lcraft.api.plugin.modules.minecraft.bungeecord.logger.ModuleLogger;
 import net.md_5.bungee.api.plugin.Plugin;
 
 import java.io.IOException;
@@ -17,14 +17,14 @@ public abstract class Module {
                    api_version,
                    description;
     private ArrayList<String> authors;
-    private Logger logger;
+    private ModuleLogger moduleLogger;
     private ModuleCommandManager moduleCommandManager;
     private Plugin plugin;
     private ListenerManager listenerManager;
     private List<Module> requiredModules;
 
     public Module(Module... requiredModules) {
-        logger = new Logger(getName());
+        moduleLogger = new ModuleLogger(getName());
         moduleCommandManager = new ModuleCommandManager(this);
         listenerManager = new ListenerManager(this);
 
@@ -41,8 +41,8 @@ public abstract class Module {
     public void setName(String name) {
         this.name = name;
     }
-    public Logger getLogger() {
-        return logger;
+    public ModuleLogger getLogger() {
+        return moduleLogger;
     }
     public ModuleCommandManager getModuleCommandManager() {
         return moduleCommandManager;

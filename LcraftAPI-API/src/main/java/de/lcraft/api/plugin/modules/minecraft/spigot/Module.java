@@ -1,6 +1,6 @@
 package de.lcraft.api.plugin.modules.minecraft.spigot;
 
-import de.lcraft.api.plugin.modules.minecraft.spigot.logger.Logger;
+import de.lcraft.api.plugin.modules.minecraft.spigot.logger.ModuleLogger;
 import de.lcraft.api.plugin.modules.minecraft.spigot.commands.ModuleCommandManager;
 import de.lcraft.api.plugin.modules.minecraft.spigot.listeners.ListenerManager;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -17,14 +17,14 @@ public abstract class Module {
                    api_version,
                    description;
     private ArrayList<String> authors = new ArrayList<>();
-    private Logger logger;
+    private ModuleLogger moduleLogger;
     private ModuleCommandManager moduleCommandManager;
     private JavaPlugin plugin;
     private ListenerManager listenerManager;
     private List<Module> requiredModules;
 
     public Module(Module... requiredModules) {
-        logger = new Logger(getName());
+        moduleLogger = new ModuleLogger(getName());
         moduleCommandManager = new ModuleCommandManager(this);
         listenerManager = new ListenerManager(this);
 
@@ -41,8 +41,8 @@ public abstract class Module {
     public void setName(String name) {
         this.name = name;
     }
-    public Logger getLogger() {
-        return logger;
+    public ModuleLogger getLogger() {
+        return moduleLogger;
     }
     public ModuleCommandManager getModuleCommandManager() {
         return moduleCommandManager;

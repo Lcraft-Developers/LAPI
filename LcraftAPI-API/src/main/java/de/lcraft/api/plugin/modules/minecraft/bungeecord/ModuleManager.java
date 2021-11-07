@@ -9,7 +9,6 @@ import java.io.InputStream;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.zip.ZipFile;
@@ -62,6 +61,7 @@ public class ModuleManager {
 
                                         ClassLoader classLoader = URLClassLoader.newInstance(new URL[]{file.toURI().toURL()}, getClass().getClassLoader());
                                         Class<?> clazz = classLoader.loadClass(main);
+                                        FileUtils.addPath(file);
                                         Class<? extends Module> pluginClass = clazz.asSubclass(Module.class);
                                         Module module = pluginClass.newInstance();
 
@@ -94,6 +94,8 @@ public class ModuleManager {
                 }
             } catch(IOException | ClassNotFoundException | IllegalAccessException | InstantiationException exception) {
                 exception.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         }
     }

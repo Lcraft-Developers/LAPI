@@ -1,8 +1,8 @@
 package de.lcraft.api.plugin.modules.minecraft.spigot.commands;
 
-import de.lcraft.api.plugin.modules.minecraft.spigot.logger.Logger;
-import de.lcraft.api.plugin.modules.minecraft.spigot.logger.LoggerPlace;
-import de.lcraft.api.plugin.modules.minecraft.spigot.logger.LoggerType;
+import de.lcraft.api.plugin.modules.minecraft.spigot.logger.ModuleLogger;
+import de.lcraft.api.plugin.modules.minecraft.spigot.logger.ModuleLoggerPlace;
+import de.lcraft.api.plugin.modules.minecraft.spigot.logger.ModuleLoggerType;
 import de.lcraft.api.plugin.modules.minecraft.spigot.Module;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.defaults.BukkitCommand;
@@ -27,7 +27,7 @@ public abstract class ModuleCommand extends BukkitCommand {
         return module;
     }
 
-    public final Logger getLogger() {
+    public final ModuleLogger getLogger() {
         return module.getLogger();
     }
 
@@ -50,20 +50,20 @@ public abstract class ModuleCommand extends BukkitCommand {
         return super.getName();
     }
 
-    public final void sendInfoMessage(String message, LoggerPlace loggerPlace) {
-        getLogger().sendModule(LoggerType.INFO, loggerPlace, message);
+    public final void sendInfoMessage(String message, ModuleLoggerPlace moduleLoggerPlace) {
+        getLogger().sendModule(ModuleLoggerType.INFO, moduleLoggerPlace, message);
     }
 
-    public final void sendWarningMessage(String message, LoggerPlace loggerPlace) {
-        getLogger().sendModule(LoggerType.WARNING, loggerPlace, message);
+    public final void sendWarningMessage(String message, ModuleLoggerPlace moduleLoggerPlace) {
+        getLogger().sendModule(ModuleLoggerType.WARNING, moduleLoggerPlace, message);
     }
 
-    public final void sendErrorMessage(String message, LoggerPlace loggerPlace) {
-        getLogger().sendModule(LoggerType.ERROR, loggerPlace, message);
+    public final void sendErrorMessage(String message, ModuleLoggerPlace moduleLoggerPlace) {
+        getLogger().sendModule(ModuleLoggerType.ERROR, moduleLoggerPlace, message);
     }
 
-    public final void sendMessage(String message, LoggerPlace loggerPlace) {
-        getLogger().sendModule(LoggerType.NOTHING, loggerPlace, message);
+    public final void sendMessage(String message, ModuleLoggerPlace moduleLoggerPlace) {
+        getLogger().sendModule(ModuleLoggerType.NOTHING, moduleLoggerPlace, message);
     }
 
 }

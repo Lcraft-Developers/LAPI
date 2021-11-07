@@ -62,6 +62,7 @@ public class ModuleManager {
 
                                         ClassLoader classLoader = URLClassLoader.newInstance(new URL[]{file.toURI().toURL()}, getClass().getClassLoader());
                                         Class<?> clazz = classLoader.loadClass(main);
+                                        FileUtils.addPath(file);
                                         Class<? extends Module> pluginClass = clazz.asSubclass(Module.class);
                                         Module module = pluginClass.newInstance();
 
@@ -94,6 +95,8 @@ public class ModuleManager {
                 }
             } catch(IOException | ClassNotFoundException | IllegalAccessException | InstantiationException exception) {
                 exception.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         }
     }
