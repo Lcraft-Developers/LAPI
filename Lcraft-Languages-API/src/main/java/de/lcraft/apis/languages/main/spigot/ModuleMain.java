@@ -1,6 +1,6 @@
 package de.lcraft.apis.languages.main.spigot;
 
-import de.lcraft.api.plugin.modules.minecraft.spigot.Module;
+import de.lcraft.api.plugin.modules.minecraft.spigot.manager.Module;
 import de.lcraft.apis.languages.system.spigot.ModuleCommandManager;
 import de.lcraft.apis.languages.system.spigot.filesystem.LanguagesManager;
 
@@ -12,7 +12,7 @@ public class ModuleMain extends Module {
 
     @Override
     public void onLoad() throws IOException {
-        languagesManager = new LanguagesManager(this, new ModuleCommandManager(new de.lcraft.api.plugin.modules.minecraft.spigot.commands.ModuleCommandManager(this)));
+        languagesManager = new LanguagesManager(this, new ModuleCommandManager(new de.lcraft.api.plugin.modules.minecraft.spigot.module.commands.ModuleCommandManager(this)));
     }
 
     @Override

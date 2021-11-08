@@ -1,6 +1,6 @@
 package de.lcraft.apis.permissions.utils.spigot;
 
-import de.lcraft.api.plugin.modules.minecraft.spigot.Module;
+import de.lcraft.api.plugin.modules.minecraft.spigot.manager.Module;
 import java.util.ArrayList;
 
 public abstract class ModuleCommand extends de.lcraft.apis.languages.utils.spigot.ModuleCommand {

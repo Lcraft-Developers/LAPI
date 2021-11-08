@@ -1,7 +1,6 @@
 package de.lcraft.apis.languages.system.bungeecord.filesystem;
 
-import de.lcraft.api.plugin.modules.minecraft.bungeecord.Module;
-import de.lcraft.api.plugin.modules.minecraft.bungeecord.utils.ModuleConfig;
+import de.lcraft.api.plugin.modules.minecraft.bungeecord.module.configs.ModuleConfig;
 import java.io.IOException;
 
 public abstract class Language {

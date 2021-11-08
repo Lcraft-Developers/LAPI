@@ -1,12 +1,12 @@
 package de.lcraft.apis.languages.utils.spigot;
 
-import de.lcraft.api.plugin.modules.minecraft.spigot.Module;
+import de.lcraft.api.plugin.modules.minecraft.spigot.manager.Module;
 import de.lcraft.apis.languages.main.spigot.ModuleMain;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.UUID;
 
-public abstract class ModuleCommand extends de.lcraft.api.plugin.modules.minecraft.spigot.commands.ModuleCommand {
+public abstract class ModuleCommand extends de.lcraft.api.plugin.modules.minecraft.spigot.module.commands.ModuleCommand {
 
     private Module m;
 

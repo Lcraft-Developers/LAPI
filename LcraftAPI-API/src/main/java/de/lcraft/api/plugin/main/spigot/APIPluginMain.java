@@ -1,8 +1,9 @@
 package de.lcraft.api.plugin.main.spigot;
 
-import de.lcraft.api.plugin.modules.minecraft.spigot.ModuleManager;
-import de.lcraft.api.plugin.modules.minecraft.spigot.utils.Config;
-import de.lcraft.api.plugin.modules.minecraft.spigot.utils.ServerTPS;
+import de.lcraft.api.plugin.modules.minecraft.spigot.manager.ModuleManager;
+import de.lcraft.api.plugin.modules.minecraft.spigot.module.configs.Config;
+import de.lcraft.api.plugin.modules.minecraft.spigot.module.server.ServerTPS;
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.IOException;
@@ -20,24 +21,35 @@ public class APIPluginMain extends JavaPlugin {
         cfg = new Config("config.yml");
         serverTPS = new ServerTPS(apiPluginMain);
 
-        moduleManager = new ModuleManager();
-        moduleManager.loadModules(this);
+        moduleManager = new ModuleManager(apiPluginMain);
         try {
+            moduleManager.loadAllModules();
             moduleManager.onLoadAllModules();
-        } catch (IOException e) {
+            Bukkit.getScheduler().scheduleSyncDelayedTask(this, new Runnable() {
+                @Override
+                public void run() {
+                    moduleManager.onEnableAllModules();
+                }
+            }, 5);
+        } catch (Exception e) {
             e.printStackTrace();
         }
-
-        moduleManager.onEnableAllModules();
     }
 
     @Override
     public void onDisable() {
-        moduleManager.onDisableAllModules();
+        try {
+            moduleManager.onDisableAllModules();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public static APIPluginMain getApiPluginMain() {
         return apiPluginMain;
+    }
+    public ModuleManager getModuleManager() {
+        return moduleManager;
     }
 
 }

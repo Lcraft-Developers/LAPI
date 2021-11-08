@@ -1,6 +1,5 @@
 package de.lcraft.apis.permissions.main.bungeecord;
 
-import de.lcraft.api.plugin.modules.minecraft.bungeecord.Module;
 import de.lcraft.apis.permissions.system.bungeecord.ModuleCommandManager;
 import de.lcraft.apis.permissions.system.bungeecord.PermsManager;
 
@@ -12,7 +11,7 @@ public class ModuleMain extends Module {
 
     @Override
     public void onLoad() throws IOException {
-        permsManager = new PermsManager(this, new ModuleCommandManager(new de.lcraft.apis.languages.system.bungeecord.ModuleCommandManager(new de.lcraft.api.plugin.modules.minecraft.bungeecord.commands.ModuleCommandManager(this))));
+        permsManager = new PermsManager(this, new ModuleCommandManager(new de.lcraft.apis.languages.system.bungeecord.ModuleCommandManager(new de.lcraft.api.plugin.modules.minecraft.bungeecord.module.commands.ModuleCommandManager(this))));
     }
 
     @Override

@@ -1,7 +1,7 @@
 package de.lcraft.apis.languages.system.spigot;
 
-import de.lcraft.api.plugin.modules.minecraft.spigot.Module;
-import de.lcraft.api.plugin.modules.minecraft.spigot.utils.ModuleConfig;
+import de.lcraft.api.plugin.modules.minecraft.spigot.manager.Module;
+import de.lcraft.api.plugin.modules.minecraft.spigot.module.configs.ModuleConfig;
 
 public class StartHelper {
 

@@ -6,9 +6,9 @@ import java.util.ArrayList;
 public class ModuleCommandManager {
 
     private ArrayList<ModuleCommand> commands;
-    private de.lcraft.api.plugin.modules.minecraft.bungeecord.commands.ModuleCommandManager commandManager;
+    private de.lcraft.api.plugin.modules.minecraft.bungeecord.module.commands.ModuleCommandManager commandManager;
 
-    public ModuleCommandManager(de.lcraft.api.plugin.modules.minecraft.bungeecord.commands.ModuleCommandManager commandManager) {
+    public ModuleCommandManager(de.lcraft.api.plugin.modules.minecraft.bungeecord.module.commands.ModuleCommandManager commandManager) {
         this.commandManager = commandManager;
         commands = new ArrayList<>();
     }

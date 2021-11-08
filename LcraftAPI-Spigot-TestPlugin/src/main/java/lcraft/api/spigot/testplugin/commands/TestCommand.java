@@ -1,8 +1,8 @@
 package lcraft.api.spigot.testplugin.commands;
 
-import de.lcraft.api.plugin.modules.minecraft.spigot.Module;
-import de.lcraft.api.plugin.modules.minecraft.spigot.logger.ModuleLoggerPlace;
-import de.lcraft.api.plugin.modules.minecraft.spigot.logger.ModuleLoggerType;
+import de.lcraft.api.plugin.modules.minecraft.spigot.manager.Module;
+import de.lcraft.api.plugin.modules.minecraft.spigot.manager.logger.ModuleLoggerPlace;
+import de.lcraft.api.plugin.modules.minecraft.spigot.manager.logger.ModuleLoggerType;
 import de.lcraft.apis.permissions.utils.spigot.ModuleCommand;
 import org.bukkit.command.CommandSender;
 

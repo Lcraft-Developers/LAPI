@@ -1,6 +1,6 @@
 package de.lcraft.apis.permissions.main.spigot;
 
-import de.lcraft.api.plugin.modules.minecraft.spigot.Module;
+import de.lcraft.api.plugin.modules.minecraft.spigot.manager.Module;
 import de.lcraft.apis.permissions.system.spigot.ModuleCommandManager;
 import de.lcraft.apis.permissions.system.spigot.PermsManager;
 
@@ -12,7 +12,7 @@ public class ModuleMain extends Module {
 
     @Override
     public void onLoad() throws IOException {
-        permsManager = new PermsManager(this, new ModuleCommandManager(new de.lcraft.apis.languages.system.spigot.ModuleCommandManager(new de.lcraft.api.plugin.modules.minecraft.spigot.commands.ModuleCommandManager(this))));
+        permsManager = new PermsManager(this, new ModuleCommandManager(new de.lcraft.apis.languages.system.spigot.ModuleCommandManager(new de.lcraft.api.plugin.modules.minecraft.spigot.module.commands.ModuleCommandManager(this))));
     }
 
     @Override

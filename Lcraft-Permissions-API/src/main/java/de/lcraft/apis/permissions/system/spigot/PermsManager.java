@@ -1,7 +1,7 @@
 package de.lcraft.apis.permissions.system.spigot;
 
-import de.lcraft.api.plugin.modules.minecraft.spigot.Module;
-import de.lcraft.api.plugin.modules.minecraft.spigot.utils.ModuleConfig;
+import de.lcraft.api.plugin.modules.minecraft.spigot.manager.Module;
+import de.lcraft.api.plugin.modules.minecraft.spigot.module.configs.ModuleConfig;
 import org.bukkit.entity.Player;
 
 public class PermsManager {

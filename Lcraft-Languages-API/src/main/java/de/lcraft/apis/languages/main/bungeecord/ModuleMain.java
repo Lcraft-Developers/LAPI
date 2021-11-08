@@ -1,6 +1,5 @@
 package de.lcraft.apis.languages.main.bungeecord;
 
-import de.lcraft.api.plugin.modules.minecraft.bungeecord.Module;
 import de.lcraft.apis.languages.system.bungeecord.filesystem.LanguagesManager;
 import de.lcraft.apis.languages.system.bungeecord.ModuleCommandManager;
 
@@ -12,7 +11,7 @@ public class ModuleMain extends Module {
 
     @Override
     public void onLoad() throws IOException {
-        languagesManager = new de.lcraft.apis.languages.system.bungeecord.filesystem.LanguagesManager(this, new ModuleCommandManager(new de.lcraft.api.plugin.modules.minecraft.bungeecord.commands.ModuleCommandManager(this)));
+        languagesManager = new de.lcraft.apis.languages.system.bungeecord.filesystem.LanguagesManager(this, new ModuleCommandManager(new de.lcraft.api.plugin.modules.minecraft.bungeecord.module.commands.ModuleCommandManager(this)));
     }
 
     @Override

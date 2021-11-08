@@ -737,3 +737,178 @@ java.lang.NullPointerException: Cannot invoke "Object.toString()" because "c" is
 18:44:10 [INFORMATION] Enabled plugin cmd_send version git:cmd_send:1.17-R0.1-SNAPSHOT:6613aae:1607 by SpigotMC
 18:44:10 [INFORMATION] Enabled plugin cmd_list version git:cmd_list:1.17-R0.1-SNAPSHOT:6613aae:1607 by SpigotMC
 18:44:10 [INFORMATION] Listening on /0.0.0.0:25577
+18:32:41 [INFO] Using standard Java JCE cipher.
+18:32:41 [INFO] Using standard Java compressor.
+18:32:41 [INFO] Enabled BungeeCord version git:BungeeCord-Bootstrap:1.17-R0.1-SNAPSHOT:6613aae:1607
+18:32:41 [INFO] Discovered module: ModuleSpec(name=cmd_alert, file=modules\cmd_alert.jar, provider=JenkinsModuleSource())
+
+18:32:41 [INFO] Discovered module: ModuleSpec(name=cmd_find, file=modules\cmd_find.jar, provider=JenkinsModuleSource())
+
+18:32:41 [INFO] Discovered module: ModuleSpec(name=cmd_list, file=modules\cmd_list.jar, provider=JenkinsModuleSource())
+
+18:32:41 [INFO] Discovered module: ModuleSpec(name=cmd_send, file=modules\cmd_send.jar, provider=JenkinsModuleSource())
+
+18:32:41 [INFO] Discovered module: ModuleSpec(name=cmd_server, file=modules\cmd_server.jar, provider=JenkinsModuleSource())
+
+18:32:41 [INFO] Discovered module: ModuleSpec(name=reconnect_yaml, file=modules\reconnect_yaml.jar, provider=JenkinsModuleSource())
+
+18:32:41 [INFO] Loaded plugin reconnect_yaml version git:reconnect_yaml:1.17-R0.1-SNAPSHOT:6613aae:1607 by SpigotMC
+18:32:41 [INFO] Loaded plugin LcraftAPI version 1.0.0 by null
+18:32:41 [INFO] Loaded plugin cmd_find version git:cmd_find:1.17-R0.1-SNAPSHOT:6613aae:1607 by SpigotMC
+18:32:41 [INFO] Loaded plugin cmd_server version git:cmd_server:1.17-R0.1-SNAPSHOT:6613aae:1607 by SpigotMC
+18:32:41 [INFO] Loaded plugin cmd_alert version git:cmd_alert:1.17-R0.1-SNAPSHOT:6613aae:1607 by SpigotMC
+18:32:41 [INFO] Loaded plugin cmd_send version git:cmd_send:1.17-R0.1-SNAPSHOT:6613aae:1607 by SpigotMC
+18:32:41 [INFO] Loaded plugin cmd_list version git:cmd_list:1.17-R0.1-SNAPSHOT:6613aae:1607 by SpigotMC
+18:32:41 [WARNING] Forced host server pvp is not defined
+18:32:41 [INFO] Enabled plugin reconnect_yaml version git:reconnect_yaml:1.17-R0.1-SNAPSHOT:6613aae:1607 by SpigotMC
+18:32:41 [SEVERE] java.lang.reflect.InaccessibleObjectException: Unable to make protected void java.net.URLClassLoader.addURL(java.net.URL) accessible: module java.base does not "opens java.net" to unnamed module @57abad67
+
+18:32:41 [SEVERE] 	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:357)
+
+18:32:41 [SEVERE] 	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:297)
+
+18:32:41 [SEVERE] 	at java.base/java.lang.reflect.Method.checkCanSetAccessible(Method.java:199)
+
+18:32:41 [SEVERE] 	at java.base/java.lang.reflect.Method.setAccessible(Method.java:193)
+
+18:32:41 [SEVERE] 	at de.lcraft.api.plugin.modules.java.utils.FileUtils$ClassPathManager.addURL(FileUtils.java:48)
+
+18:32:41 [SEVERE] 	at de.lcraft.api.plugin.modules.java.utils.FileUtils$ClassPathManager.addFile(FileUtils.java:36)
+
+18:32:41 [SEVERE] 	at de.lcraft.api.plugin.modules.minecraft.bungeecord.ModuleManager.loadModule(ModuleManager.java:64)
+
+18:32:41 [SEVERE] 	at de.lcraft.api.plugin.modules.minecraft.bungeecord.ModuleManager.loadModules(ModuleManager.java:26)
+
+18:32:41 [SEVERE] 	at de.lcraft.api.plugin.main.bungeecord.APIPluginMain.onEnable(APIPluginMain.java:24)
+
+18:32:41 [SEVERE] 	at net.md_5.bungee.api.plugin.PluginManager.enablePlugins(PluginManager.java:265)
+
+18:32:41 [SEVERE] 	at net.md_5.bungee.BungeeCord.start(BungeeCord.java:285)
+
+18:32:41 [SEVERE] 	at net.md_5.bungee.BungeeCordLauncher.main(BungeeCordLauncher.java:67)
+
+18:32:41 [SEVERE] 	at net.md_5.bungee.Bootstrap.main(Bootstrap.java:15)
+
+18:32:41 [SEVERE] java.io.IOException: Error, could not add URL to system classloader
+
+18:32:41 [SEVERE] 	at de.lcraft.api.plugin.modules.java.utils.FileUtils$ClassPathManager.addURL(FileUtils.java:52)
+
+18:32:41 [SEVERE] 	at de.lcraft.api.plugin.modules.java.utils.FileUtils$ClassPathManager.addFile(FileUtils.java:36)
+
+18:32:41 [SEVERE] 	at de.lcraft.api.plugin.modules.minecraft.bungeecord.ModuleManager.loadModule(ModuleManager.java:64)
+
+18:32:41 [SEVERE] 	at de.lcraft.api.plugin.modules.minecraft.bungeecord.ModuleManager.loadModules(ModuleManager.java:26)
+
+18:32:41 [SEVERE] 	at de.lcraft.api.plugin.main.bungeecord.APIPluginMain.onEnable(APIPluginMain.java:24)
+
+18:32:41 [SEVERE] 	at net.md_5.bungee.api.plugin.PluginManager.enablePlugins(PluginManager.java:265)
+
+18:32:41 [SEVERE] 	at net.md_5.bungee.BungeeCord.start(BungeeCord.java:285)
+
+18:32:41 [SEVERE] 	at net.md_5.bungee.BungeeCordLauncher.main(BungeeCordLauncher.java:67)
+
+18:32:41 [SEVERE] 	at net.md_5.bungee.Bootstrap.main(Bootstrap.java:15)
+
+18:32:41 [SEVERE] java.lang.reflect.InaccessibleObjectException: Unable to make protected void java.net.URLClassLoader.addURL(java.net.URL) accessible: module java.base does not "opens java.net" to unnamed module @57abad67
+
+18:32:41 [SEVERE] 	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:357)
+
+18:32:41 [SEVERE] 	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:297)
+
+18:32:41 [SEVERE] 	at java.base/java.lang.reflect.Method.checkCanSetAccessible(Method.java:199)
+
+18:32:41 [SEVERE] 	at java.base/java.lang.reflect.Method.setAccessible(Method.java:193)
+
+18:32:41 [SEVERE] 	at de.lcraft.api.plugin.modules.java.utils.FileUtils$ClassPathManager.addURL(FileUtils.java:48)
+
+18:32:41 [SEVERE] 	at de.lcraft.api.plugin.modules.java.utils.FileUtils$ClassPathManager.addFile(FileUtils.java:36)
+
+18:32:41 [SEVERE] 	at de.lcraft.api.plugin.modules.minecraft.bungeecord.ModuleManager.loadModule(ModuleManager.java:64)
+
+18:32:41 [SEVERE] 	at de.lcraft.api.plugin.modules.minecraft.bungeecord.ModuleManager.loadModules(ModuleManager.java:26)
+
+18:32:41 [SEVERE] 	at de.lcraft.api.plugin.main.bungeecord.APIPluginMain.onEnable(APIPluginMain.java:24)
+
+18:32:41 [SEVERE] 	at net.md_5.bungee.api.plugin.PluginManager.enablePlugins(PluginManager.java:265)
+
+18:32:41 [SEVERE] 	at net.md_5.bungee.BungeeCord.start(BungeeCord.java:285)
+
+18:32:41 [SEVERE] 	at net.md_5.bungee.BungeeCordLauncher.main(BungeeCordLauncher.java:67)
+
+18:32:41 [SEVERE] 	at net.md_5.bungee.Bootstrap.main(Bootstrap.java:15)
+
+18:32:41 [SEVERE] java.io.IOException: Error, could not add URL to system classloader
+
+18:32:41 [SEVERE] 	at de.lcraft.api.plugin.modules.java.utils.FileUtils$ClassPathManager.addURL(FileUtils.java:52)
+
+18:32:41 [SEVERE] 	at de.lcraft.api.plugin.modules.java.utils.FileUtils$ClassPathManager.addFile(FileUtils.java:36)
+
+18:32:41 [SEVERE] 	at de.lcraft.api.plugin.modules.minecraft.bungeecord.ModuleManager.loadModule(ModuleManager.java:64)
+
+18:32:41 [SEVERE] 	at de.lcraft.api.plugin.modules.minecraft.bungeecord.ModuleManager.loadModules(ModuleManager.java:26)
+
+18:32:41 [SEVERE] 	at de.lcraft.api.plugin.main.bungeecord.APIPluginMain.onEnable(APIPluginMain.java:24)
+
+18:32:41 [SEVERE] 	at net.md_5.bungee.api.plugin.PluginManager.enablePlugins(PluginManager.java:265)
+
+18:32:41 [SEVERE] 	at net.md_5.bungee.BungeeCord.start(BungeeCord.java:285)
+
+18:32:41 [SEVERE] 	at net.md_5.bungee.BungeeCordLauncher.main(BungeeCordLauncher.java:67)
+
+18:32:41 [SEVERE] 	at net.md_5.bungee.Bootstrap.main(Bootstrap.java:15)
+
+18:32:41 [SEVERE] java.lang.reflect.InaccessibleObjectException: Unable to make protected void java.net.URLClassLoader.addURL(java.net.URL) accessible: module java.base does not "opens java.net" to unnamed module @57abad67
+
+18:32:41 [SEVERE] 	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:357)
+
+18:32:41 [SEVERE] 	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:297)
+
+18:32:41 [SEVERE] 	at java.base/java.lang.reflect.Method.checkCanSetAccessible(Method.java:199)
+
+18:32:41 [SEVERE] 	at java.base/java.lang.reflect.Method.setAccessible(Method.java:193)
+
+18:32:41 [SEVERE] 	at de.lcraft.api.plugin.modules.java.utils.FileUtils$ClassPathManager.addURL(FileUtils.java:48)
+
+18:32:41 [SEVERE] 	at de.lcraft.api.plugin.modules.java.utils.FileUtils$ClassPathManager.addFile(FileUtils.java:36)
+
+18:32:41 [SEVERE] 	at de.lcraft.api.plugin.modules.minecraft.bungeecord.ModuleManager.loadModule(ModuleManager.java:64)
+
+18:32:41 [SEVERE] 	at de.lcraft.api.plugin.modules.minecraft.bungeecord.ModuleManager.loadModules(ModuleManager.java:26)
+
+18:32:41 [SEVERE] 	at de.lcraft.api.plugin.main.bungeecord.APIPluginMain.onEnable(APIPluginMain.java:24)
+
+18:32:41 [SEVERE] 	at net.md_5.bungee.api.plugin.PluginManager.enablePlugins(PluginManager.java:265)
+
+18:32:41 [SEVERE] 	at net.md_5.bungee.BungeeCord.start(BungeeCord.java:285)
+
+18:32:41 [SEVERE] 	at net.md_5.bungee.BungeeCordLauncher.main(BungeeCordLauncher.java:67)
+
+18:32:41 [SEVERE] 	at net.md_5.bungee.Bootstrap.main(Bootstrap.java:15)
+
+18:32:41 [SEVERE] java.io.IOException: Error, could not add URL to system classloader
+
+18:32:41 [SEVERE] 	at de.lcraft.api.plugin.modules.java.utils.FileUtils$ClassPathManager.addURL(FileUtils.java:52)
+
+18:32:41 [SEVERE] 	at de.lcraft.api.plugin.modules.java.utils.FileUtils$ClassPathManager.addFile(FileUtils.java:36)
+
+18:32:41 [SEVERE] 	at de.lcraft.api.plugin.modules.minecraft.bungeecord.ModuleManager.loadModule(ModuleManager.java:64)
+
+18:32:41 [SEVERE] 	at de.lcraft.api.plugin.modules.minecraft.bungeecord.ModuleManager.loadModules(ModuleManager.java:26)
+
+18:32:41 [SEVERE] 	at de.lcraft.api.plugin.main.bungeecord.APIPluginMain.onEnable(APIPluginMain.java:24)
+
+18:32:41 [SEVERE] 	at net.md_5.bungee.api.plugin.PluginManager.enablePlugins(PluginManager.java:265)
+
+18:32:41 [SEVERE] 	at net.md_5.bungee.BungeeCord.start(BungeeCord.java:285)
+
+18:32:41 [SEVERE] 	at net.md_5.bungee.BungeeCordLauncher.main(BungeeCordLauncher.java:67)
+
+18:32:41 [SEVERE] 	at net.md_5.bungee.Bootstrap.main(Bootstrap.java:15)
+
+18:32:41 [INFO] Enabled plugin LcraftAPI version 1.0.0 by null
+18:32:41 [INFO] Enabled plugin cmd_find version git:cmd_find:1.17-R0.1-SNAPSHOT:6613aae:1607 by SpigotMC
+18:32:41 [INFO] Enabled plugin cmd_server version git:cmd_server:1.17-R0.1-SNAPSHOT:6613aae:1607 by SpigotMC
+18:32:41 [INFO] Enabled plugin cmd_alert version git:cmd_alert:1.17-R0.1-SNAPSHOT:6613aae:1607 by SpigotMC
+18:32:41 [INFO] Enabled plugin cmd_send version git:cmd_send:1.17-R0.1-SNAPSHOT:6613aae:1607 by SpigotMC
+18:32:41 [INFO] Enabled plugin cmd_list version git:cmd_list:1.17-R0.1-SNAPSHOT:6613aae:1607 by SpigotMC
+18:32:42 [INFO] Listening on /0.0.0.0:25577
