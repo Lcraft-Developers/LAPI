@@ -8,7 +8,7 @@ public class ModuleLoader {
         this.moduleManager = moduleManager;
     }
 
-    public void loadModule(Module module) {
+    public void loadModuleToClasspath(Module module) {
         getModuleManager().getModules().add(module);
 
         // TODO: Add the file from module to the classpath

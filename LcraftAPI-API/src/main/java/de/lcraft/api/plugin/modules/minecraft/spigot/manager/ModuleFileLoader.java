@@ -176,7 +176,7 @@ public class ModuleFileLoader {
         module.setDescription(description);
         module.setMainFile(file);
 
-        getModuleManager().getModuleLoader().loadModule(module);
+        getModuleManager().getModuleLoader().loadModuleToClasspath(module);
     }
 
     /*public void loadModule(File file, JavaPlugin plugin) {
