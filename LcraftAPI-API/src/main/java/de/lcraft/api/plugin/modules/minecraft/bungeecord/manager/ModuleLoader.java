@@ -1,7 +1,5 @@
 package de.lcraft.api.plugin.modules.minecraft.bungeecord.manager;
 
-import de.lcraft.api.plugin.modules.minecraft.spigot.manager.classloader.ClassLoader;
-
 public class ModuleLoader {
 
     private ModuleManager moduleManager;
@@ -14,8 +12,6 @@ public class ModuleLoader {
         getModuleManager().getModules().add(module);
 
         // TODO: Add the file from module to the classpath
-        ClassLoader classLoader = new ClassLoader();
-        classLoader.addFile(module.getMainFile());
     }
 
     public ModuleManager getModuleManager() {

@@ -12,10 +12,6 @@ public class ClassLoader extends URLClassLoader {
         super(urls);
     }
 
-    public ClassLoader() {
-        super(null);
-    }
-
     public void addFile(File file) {
         addPath(file.toPath());
     }
