@@ -7,3 +7,4 @@ authors:
   - LPD
   - Lcraft
 description: This is a test
+required-apis: "Lcraft-API"

@@ -1,5 +1,6 @@
 package de.lcraft.api.plugin.modules.minecraft.bungeecord.module.commands;
 
+import de.lcraft.api.plugin.modules.minecraft.bungeecord.manager.Module;
 import de.lcraft.api.plugin.modules.minecraft.bungeecord.manager.logger.ModuleLogger;
 import de.lcraft.api.plugin.modules.minecraft.bungeecord.manager.logger.ModuleLoggerType;
 import net.md_5.bungee.api.CommandSender;

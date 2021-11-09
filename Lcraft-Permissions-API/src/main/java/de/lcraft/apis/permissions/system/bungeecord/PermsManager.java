@@ -1,5 +1,6 @@
 package de.lcraft.apis.permissions.system.bungeecord;
 
+import de.lcraft.api.plugin.modules.minecraft.bungeecord.manager.Module;
 import de.lcraft.api.plugin.modules.minecraft.bungeecord.module.configs.ModuleConfig;
 import org.bukkit.entity.Player;
 import java.io.IOException;

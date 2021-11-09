@@ -1,5 +1,6 @@
 package de.lcraft.apis.languages.utils.bungeecord;
 
+import de.lcraft.api.plugin.modules.minecraft.bungeecord.manager.Module;
 import de.lcraft.apis.languages.main.bungeecord.ModuleMain;
 import java.io.IOException;
 import java.util.ArrayList;

@@ -1,5 +1,6 @@
 package lcraft.api.bungeecord.testplugin;
 
+import de.lcraft.api.plugin.modules.minecraft.bungeecord.manager.Module;
 import de.lcraft.api.plugin.modules.minecraft.bungeecord.manager.logger.ModuleLoggerType;
 import de.lcraft.apis.permissions.main.bungeecord.ModuleMain;
 import lcraft.api.bungeecord.testplugin.commands.TestCommand;

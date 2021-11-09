@@ -1,5 +1,6 @@
 package de.lcraft.apis.languages.main.bungeecord;
 
+import de.lcraft.api.plugin.modules.minecraft.bungeecord.manager.Module;
 import de.lcraft.apis.languages.system.bungeecord.filesystem.LanguagesManager;
 import de.lcraft.apis.languages.system.bungeecord.ModuleCommandManager;
 
