@@ -6,7 +6,6 @@ de\lcraft\api\plugin\modules\minecraft\spigot\module\configs\ModuleConfig.class
 de\lcraft\api\plugin\modules\minecraft\spigot\manager\Module.class
 de\lcraft\api\plugin\main\spigot\APIPluginMain.class
 de\lcraft\api\plugin\modules\minecraft\bungeecord\module\commands\ModuleCommandManager.class
-de\lcraft\api\plugin\modules\minecraft\spigot\manager\classloader\PluginClassLoader.class
 de\lcraft\api\plugin\modules\java\exeptions\InternetNotFoundException.class
 de\lcraft\api\plugin\modules\minecraft\spigot\module\commands\ModuleCommand.class
 de\lcraft\api\plugin\modules\minecraft\spigot\module\commands\ModuleCommandManager.class
@@ -20,6 +19,7 @@ de\lcraft\api\plugin\modules\minecraft\spigot\manager\logger\ModuleLogger.class
 de\lcraft\api\plugin\modules\minecraft\spigot\manager\ModuleLoader.class
 de\lcraft\api\plugin\modules\minecraft\spigot\module\server\ServerTPS.class
 de\lcraft\api\plugin\modules\minecraft\spigot\module\listeners\ListenerManager.class
+de\lcraft\api\plugin\modules\minecraft\bungeecord\manager\classloader\ClassLoader.class
 de\lcraft\api\plugin\modules\minecraft\spigot\manager\ModuleFileLoader.class
 de\lcraft\api\plugin\modules\java\utils\Internet$SpigotMc.class
 de\lcraft\api\plugin\main\bungeecord\APIPluginMain$1.class
@@ -29,7 +29,6 @@ de\lcraft\api\plugin\modules\minecraft\spigot\module\server\ServerTPS$Lag.class
 de\lcraft\api\plugin\modules\minecraft\bungeecord\manager\ModuleEventManager.class
 de\lcraft\api\plugin\modules\minecraft\spigot\manager\logger\ModuleLoggerPlace.class
 de\lcraft\api\plugin\modules\minecraft\spigot\manager\ModuleManager.class
-de\lcraft\api\plugin\modules\minecraft\bungeecord\manager\classloader\PluginClassLoader.class
 de\lcraft\api\plugin\modules\minecraft\bungeecord\manager\ModuleManager.class
 de\lcraft\api\plugin\modules\java\exeptions\VersionNotFound.class
 de\lcraft\api\plugin\modules\java\utils\Internet.class
@@ -42,6 +41,7 @@ de\lcraft\api\plugin\modules\minecraft\bungeecord\module\configs\Config.class
 de\lcraft\api\plugin\modules\java\utils\FileUtils.class
 de\lcraft\api\plugin\modules\minecraft\spigot\manager\NewModule.class
 de\lcraft\api\plugin\modules\java\mysql\MySQLServer.class
+de\lcraft\api\plugin\modules\minecraft\spigot\manager\classloader\ClassLoader.class
 de\lcraft\api\plugin\main\spigot\APIPluginMain$1.class
 de\lcraft\api\plugin\modules\minecraft\bungeecord\manager\ModuleLoader.class
 de\lcraft\api\plugin\modules\minecraft\spigot\module\items\HeadBuilder.class

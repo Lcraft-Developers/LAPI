@@ -12,6 +12,10 @@ public class ClassLoader extends URLClassLoader {
         super(urls);
     }
 
+    public ClassLoader() {
+        super(null);
+    }
+
     public void addFile(File file) {
         addPath(file.toPath());
     }
@@ -21,6 +25,16 @@ public class ClassLoader extends URLClassLoader {
             addURL(path.toUri().toURL());
         } catch (MalformedURLException e) {
             throw new AssertionError(e);
+        }
+    }
+
+    public void addToClasspath(Object plugin, Path path) {
+        java.lang.ClassLoader pluginClassloader = path.getClass().getClassLoader();
+        if (pluginClassloader instanceof ClassLoader) {
+            ((ClassLoader) pluginClassloader).addPath(path);
+        } else {
+            throw new UnsupportedOperationException(
+                    "Operation is not supported on non-Java Velocity plugins.");
         }
     }
 

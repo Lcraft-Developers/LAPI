@@ -24,4 +24,14 @@ public class ClassLoader extends URLClassLoader {
         }
     }
 
+    public void addToClasspath(Object plugin, Path path) {
+        java.lang.ClassLoader pluginClassloader = path.getClass().getClassLoader();
+        if (pluginClassloader instanceof ClassLoader) {
+            ((ClassLoader) pluginClassloader).addPath(path);
+        } else {
+            throw new UnsupportedOperationException(
+                    "Operation is not supported on non-Java Velocity plugins.");
+        }
+    }
+
 }

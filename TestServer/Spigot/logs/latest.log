@@ -1,9 +1,9 @@
-[16:17:40] [main/INFO]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
-[16:17:40] [main/INFO]: Reloading ResourceManager: Default, bukkit
-[16:17:41] [Worker-Main-3/INFO]: Loaded 7 recipes
-[16:17:42] [Server thread/INFO]: Starting minecraft server version 1.17.1
-[16:17:42] [Server thread/INFO]: Loading properties
-[16:17:42] [Server console handler/WARN]: [org.jline] Failed to load history
+[16:49:12] [main/INFO]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[16:49:13] [main/INFO]: Reloading ResourceManager: Default, bukkit
+[16:49:13] [Worker-Main-4/INFO]: Loaded 7 recipes
+[16:49:14] [Server thread/INFO]: Starting minecraft server version 1.17.1
+[16:49:14] [Server thread/INFO]: Loading properties
+[16:49:14] [Server console handler/WARN]: [org.jline] Failed to load history
 java.lang.IllegalArgumentException: Bad history file syntax! The history file `.console_history` may be an older history: please remove it or use a different history file.
 	at org.jline.reader.impl.history.DefaultHistory.addHistoryLine(DefaultHistory.java:179) ~[patched_1.17.1.jar:git-Purpur-1393]
 	at org.jline.reader.impl.history.DefaultHistory.addHistoryLine(DefaultHistory.java:169) ~[patched_1.17.1.jar:git-Purpur-1393]
@@ -18,42 +18,46 @@ java.lang.IllegalArgumentException: Bad history file syntax! The history file `.
 	at net.minecrell.terminalconsole.SimpleTerminalConsole.readCommands(SimpleTerminalConsole.java:158) [patched_1.17.1.jar:git-Purpur-1393]
 	at net.minecrell.terminalconsole.SimpleTerminalConsole.start(SimpleTerminalConsole.java:141) [patched_1.17.1.jar:git-Purpur-1393]
 	at net.minecraft.server.dedicated.DedicatedServer$1.run(DedicatedServer.java:113) [patched_1.17.1.jar:git-Purpur-1393]
-[16:17:42] [Server thread/INFO]: This server is running Purpur version git-Purpur-1393 (MC: 1.17.1) (Implementing API version 1.17.1-R0.1-SNAPSHOT) (Git: 3ff85ed on ver/1.17.1)
-[16:17:42] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[16:17:42] [Server thread/INFO]: Using 4 threads for Netty based IO
-[16:17:42] [Server thread/INFO]: Default game type: SURVIVAL
-[16:17:42] [Server thread/INFO]: Generating keypair
-[16:17:42] [Server thread/INFO]: Starting Minecraft server on *:25565
-[16:17:42] [Server thread/INFO]: Using default channel type
-[16:17:42] [Server thread/INFO]: Paper: Using Java 11 compression from Velocity.
-[16:17:42] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
-[16:17:43] [Server thread/INFO]: [LcraftAPI] Loading LcraftAPI v1.0.0
-[16:17:43] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[16:17:43] [Server thread/INFO]: Preparing level "world"
-[16:17:43] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
-[16:17:43] [Server thread/INFO]: Time elapsed: 250 ms
-[16:17:43] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
-[16:17:43] [Server thread/INFO]: Time elapsed: 110 ms
-[16:17:43] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
-[16:17:44] [Server thread/INFO]: Time elapsed: 120 ms
-[16:17:44] [Server thread/INFO]: [LcraftAPI] Enabling LcraftAPI v1.0.0
-[16:17:44] [Server thread/WARN]: java.lang.UnsupportedOperationException: Operation is not supported on non-Java Spigot plugins.
-[16:17:44] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.modules.minecraft.spigot.manager.ModuleLoader.loadModuleToClasspath(ModuleLoader.java:24)
-[16:17:44] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.modules.minecraft.spigot.manager.ModuleFileLoader.loadModule(ModuleFileLoader.java:179)
-[16:17:44] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.modules.minecraft.spigot.manager.ModuleFileLoader.queuedModule(ModuleFileLoader.java:129)
-[16:17:44] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.modules.minecraft.spigot.manager.ModuleFileLoader.loadModules(ModuleFileLoader.java:41)
-[16:17:44] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.modules.minecraft.spigot.manager.ModuleManager.loadAllModules(ModuleManager.java:22)
-[16:17:44] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.main.spigot.APIPluginMain.onEnable(APIPluginMain.java:26)
-[16:17:44] [Server thread/WARN]: 	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:264)
-[16:17:44] [Server thread/WARN]: 	at org.bukkit.plugin.java.JavaPluginLoader.enablePlugin(JavaPluginLoader.java:370)
-[16:17:44] [Server thread/WARN]: 	at org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManager.java:500)
-[16:17:44] [Server thread/WARN]: 	at org.bukkit.craftbukkit.v1_17_R1.CraftServer.enablePlugin(CraftServer.java:535)
-[16:17:44] [Server thread/WARN]: 	at org.bukkit.craftbukkit.v1_17_R1.CraftServer.enablePlugins(CraftServer.java:449)
-[16:17:44] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.loadWorld(MinecraftServer.java:727)
-[16:17:44] [Server thread/WARN]: 	at net.minecraft.server.dedicated.DedicatedServer.init(DedicatedServer.java:318)
-[16:17:44] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.x(MinecraftServer.java:1216)
-[16:17:44] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:321)
-[16:17:44] [Server thread/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:831)
-[16:17:44] [Server thread/INFO]: Running delayed init tasks
-[16:17:44] [Server thread/INFO]: Done (2.009s)! For help, type "help"
-[16:17:44] [Server thread/INFO]: Timings Reset
+[16:49:14] [Server thread/INFO]: This server is running Purpur version git-Purpur-1393 (MC: 1.17.1) (Implementing API version 1.17.1-R0.1-SNAPSHOT) (Git: 3ff85ed on ver/1.17.1)
+[16:49:14] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[16:49:14] [Server thread/INFO]: Using 4 threads for Netty based IO
+[16:49:15] [Server thread/INFO]: Default game type: SURVIVAL
+[16:49:15] [Server thread/INFO]: Generating keypair
+[16:49:15] [Server thread/INFO]: Starting Minecraft server on *:25565
+[16:49:15] [Server thread/INFO]: Using default channel type
+[16:49:15] [Server thread/INFO]: Paper: Using Java 11 compression from Velocity.
+[16:49:15] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
+[16:49:15] [Server thread/INFO]: [LcraftAPI] Loading LcraftAPI v1.0.0
+[16:49:15] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[16:49:15] [Server thread/INFO]: Preparing level "world"
+[16:49:16] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[16:49:16] [Server thread/INFO]: Time elapsed: 285 ms
+[16:49:16] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
+[16:49:16] [Server thread/INFO]: Time elapsed: 87 ms
+[16:49:16] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
+[16:49:16] [Server thread/INFO]: Time elapsed: 70 ms
+[16:49:16] [Server thread/INFO]: [LcraftAPI] Enabling LcraftAPI v1.0.0
+[16:49:16] [Server thread/WARN]: java.lang.NullPointerException: Cannot read the array length because "urls" is null
+[16:49:16] [Server thread/WARN]: 	at java.base/jdk.internal.loader.URLClassPath.<init>(URLClassPath.java:153)
+[16:49:16] [Server thread/WARN]: 	at java.base/jdk.internal.loader.URLClassPath.<init>(URLClassPath.java:174)
+[16:49:16] [Server thread/WARN]: 	at java.base/java.net.URLClassLoader.<init>(URLClassLoader.java:149)
+[16:49:16] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.modules.minecraft.spigot.manager.classloader.ClassLoader.<init>(ClassLoader.java:16)
+[16:49:16] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.modules.minecraft.spigot.manager.ModuleLoader.loadModuleToClasspath(ModuleLoader.java:17)
+[16:49:16] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.modules.minecraft.spigot.manager.ModuleFileLoader.loadModule(ModuleFileLoader.java:179)
+[16:49:16] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.modules.minecraft.spigot.manager.ModuleFileLoader.queuedModule(ModuleFileLoader.java:129)
+[16:49:16] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.modules.minecraft.spigot.manager.ModuleFileLoader.loadModules(ModuleFileLoader.java:41)
+[16:49:16] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.modules.minecraft.spigot.manager.ModuleManager.loadAllModules(ModuleManager.java:22)
+[16:49:16] [Server thread/WARN]: 	at LcraftAPI.API-1.0.0.jar//de.lcraft.api.plugin.main.spigot.APIPluginMain.onEnable(APIPluginMain.java:26)
+[16:49:16] [Server thread/WARN]: 	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:264)
+[16:49:16] [Server thread/WARN]: 	at org.bukkit.plugin.java.JavaPluginLoader.enablePlugin(JavaPluginLoader.java:370)
+[16:49:16] [Server thread/WARN]: 	at org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManager.java:500)
+[16:49:16] [Server thread/WARN]: 	at org.bukkit.craftbukkit.v1_17_R1.CraftServer.enablePlugin(CraftServer.java:535)
+[16:49:16] [Server thread/WARN]: 	at org.bukkit.craftbukkit.v1_17_R1.CraftServer.enablePlugins(CraftServer.java:449)
+[16:49:16] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.loadWorld(MinecraftServer.java:727)
+[16:49:16] [Server thread/WARN]: 	at net.minecraft.server.dedicated.DedicatedServer.init(DedicatedServer.java:318)
+[16:49:16] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.x(MinecraftServer.java:1216)
+[16:49:16] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:321)
+[16:49:16] [Server thread/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:831)
+[16:49:16] [Server thread/INFO]: Running delayed init tasks
+[16:49:16] [Server thread/INFO]: Done (2.054s)! For help, type "help"
+[16:49:16] [Server thread/INFO]: Timings Reset
