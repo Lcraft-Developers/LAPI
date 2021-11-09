@@ -12,6 +12,7 @@ public class ModuleLoader {
         getModuleManager().getModules().add(module);
 
         // TODO: Add the file from module to the classpath
+
     }
 
     public ModuleManager getModuleManager() {
