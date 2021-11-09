@@ -95,8 +95,7 @@ public class ModuleFileLoader {
             boolean hasNoRequriement = false;
             if(m.getRequiredModules().length != 0) {
                 for(String c : m.getRequiredModules()) {
-                    if(!c.equalsIgnoreCase("LcraftAPI")) {
-                    } else if(m.getRequiredModules().length == 1) {
+                    if((c.equalsIgnoreCase("LcraftAPI")  || c.equalsIgnoreCase("Lcraft-API")) && m.getRequiredModules().length == 1) {
                         hasNoRequriement = true;
                     }
                 }

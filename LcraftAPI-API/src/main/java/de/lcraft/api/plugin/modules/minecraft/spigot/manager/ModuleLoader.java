@@ -18,6 +18,7 @@ public class ModuleLoader {
         getModuleManager().getModules().add(module);
 
         // TODO: Add the file from module to the classpath
+
         URL[] urls = new URL[1];
         try {
             urls[0] = new File("lmodules/").toURL();

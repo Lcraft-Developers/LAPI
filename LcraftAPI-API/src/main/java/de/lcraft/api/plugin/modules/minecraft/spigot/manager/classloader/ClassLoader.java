@@ -1,6 +1,8 @@
 package de.lcraft.api.plugin.modules.minecraft.spigot.manager.classloader;
 
 import java.io.File;
+import java.io.IOException;
+import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLClassLoader;
@@ -18,19 +20,26 @@ public class ClassLoader extends URLClassLoader {
 
     public void addPath(Path path) {
         try {
-            addURL(path.toUri().toURL());
+            //addURL(path.toUri().toURL());
+            addToClasspath(path.toUri().toURL());
         } catch (MalformedURLException e) {
             throw new AssertionError(e);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
-    public void addToClasspath(Object plugin, Path path) {
-        java.lang.ClassLoader pluginClassloader = path.getClass().getClassLoader();
-        if (pluginClassloader instanceof ClassLoader) {
-            ((ClassLoader) pluginClassloader).addPath(path);
-        } else {
-            throw new UnsupportedOperationException(
-                    "Operation is not supported on non-Java Velocity plugins.");
+    public void addToClasspath(URL url) throws IOException {
+        java.lang.ClassLoader sysloader = ClassLoader.getSystemClassLoader();
+        Class sysclass = URLClassLoader.class;
+
+        try {
+            Method method = sysclass.getDeclaredMethod("addURL");
+            method.setAccessible(true);
+            method.invoke(sysloader, new Object[]{url});
+        } catch (Throwable t) {
+            t.printStackTrace();
+            throw new IOException("Error, could not add URL to system classloader");
         }
     }
 
