@@ -2,6 +2,7 @@ package de.lcraft.api.plugin.modules.minecraft.spigot.manager;
 
 import de.lcraft.api.plugin.modules.java.utils.FileUtils;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.checkerframework.checker.units.qual.A;
 import org.yaml.snakeyaml.Yaml;
 import java.io.File;
 import java.io.InputStream;
@@ -17,11 +18,13 @@ public class ModuleFileLoader {
 
     private ModuleManager moduleManager;
     private HashMap<Integer, File> whatLoadFirst;
+    private ArrayList<Module> modules;
 
     public ModuleFileLoader(ModuleManager moduleManager) {
         this.moduleManager = moduleManager;
 
         whatLoadFirst = new HashMap<>();
+        modules = new ArrayList<>();
     }
 
     public void loadModules(JavaPlugin plugin) throws Exception {
@@ -39,6 +42,7 @@ public class ModuleFileLoader {
             }
         }
         queuedModule(goodFiles, plugin);
+        getModuleManager().getModuleLoader().loadModuleToService(modules);
     }
     public Map<String, Object> getAllDatasFromFile(File file) throws Exception {
         ZipFile jarFile = new ZipFile(file);
@@ -103,8 +107,10 @@ public class ModuleFileLoader {
                 hasNoRequriement = true;
             }
             if(hasNoRequriement) {
+                getModuleManager().getModuleLoader().addToRuntime(m.getFile());
+
                 newModules.put(m, true);
-                loadModule(m.getFile(), plugin);
+                modules.add(getModule(m.getFile(), plugin));
             }
         }
 
@@ -124,8 +130,10 @@ public class ModuleFileLoader {
                     }
 
                     if(allRequiredModulesHasBeenLoaded) {
+                        getModuleManager().getModuleLoader().addToRuntime(m.getFile());
+
                         newModules.put(m, true);
-                        loadModule(m.getFile(), plugin);
+                        modules.add(getModule(m.getFile(), plugin));
                     }
                 }
             }
@@ -141,7 +149,7 @@ public class ModuleFileLoader {
             }
         }
     }
-    public void loadModule(File file, JavaPlugin plugin) throws Exception {
+    public Module getModule(File file, JavaPlugin plugin) throws Exception {
         Map<String, Object> data = getAllDatasFromFile(file);
         String name = data.get("name").toString();
         String main = data.get("spigot-main").toString();
@@ -175,7 +183,7 @@ public class ModuleFileLoader {
         module.setDescription(description);
         module.setMainFile(file);
 
-        getModuleManager().getModuleLoader().loadModuleToClasspath(module);
+        return module;
     }
 
     /*public void loadModule(File file, JavaPlugin plugin) {

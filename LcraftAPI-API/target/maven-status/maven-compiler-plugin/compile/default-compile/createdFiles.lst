@@ -1,5 +1,6 @@
 de\lcraft\api\plugin\modules\minecraft\bungeecord\module\listeners\ListenerManager.class
 de\lcraft\api\plugin\modules\minecraft\bungeecord\manager\logger\ModuleLogger.class
+de\lcraft\api\plugin\modules\minecraft\spigot\manager\classes\ClassManager.class
 de\lcraft\api\plugin\modules\minecraft\spigot\module\configs\Config.class
 de\lcraft\api\plugin\modules\minecraft\bungeecord\module\commands\ModuleCommand.class
 de\lcraft\api\plugin\modules\minecraft\spigot\module\configs\ModuleConfig.class
@@ -41,7 +42,6 @@ de\lcraft\api\plugin\modules\minecraft\bungeecord\module\configs\Config.class
 de\lcraft\api\plugin\modules\java\utils\FileUtils.class
 de\lcraft\api\plugin\modules\minecraft\spigot\manager\NewModule.class
 de\lcraft\api\plugin\modules\java\mysql\MySQLServer.class
-de\lcraft\api\plugin\modules\minecraft\spigot\manager\classloader\ClassLoader.class
 de\lcraft\api\plugin\main\spigot\APIPluginMain$1.class
 de\lcraft\api\plugin\modules\minecraft\bungeecord\manager\ModuleLoader.class
 de\lcraft\api\plugin\modules\minecraft\spigot\module\items\HeadBuilder.class

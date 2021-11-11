@@ -17,11 +17,13 @@ public class ModuleFileLoader {
 
     private ModuleManager moduleManager;
     private HashMap<Integer, File> whatLoadFirst;
+    private ArrayList<Module> modules;
 
     public ModuleFileLoader(ModuleManager moduleManager) {
         this.moduleManager = moduleManager;
 
         whatLoadFirst = new HashMap<>();
+        modules = new ArrayList<>();
     }
 
     public void loadModules(Plugin plugin) throws Exception {
@@ -39,6 +41,7 @@ public class ModuleFileLoader {
             }
         }
         queuedModule(goodFiles, plugin);
+        getModuleManager().getModuleLoader().loadModuleToClasspath(modules);
     }
     public Map<String, Object> getAllDatasFromFile(File file) throws Exception {
         ZipFile jarFile = new ZipFile(file);
@@ -104,7 +107,7 @@ public class ModuleFileLoader {
             }
             if(hasNoRequriement) {
                 newModules.put(m, true);
-                loadModule(m.getFile(), plugin);
+                modules.add(getModule(m.getFile(), plugin));
             }
         }
 
@@ -125,7 +128,7 @@ public class ModuleFileLoader {
 
                     if(allRequiredModulesHasBeenLoaded) {
                         newModules.put(m, true);
-                        loadModule(m.getFile(), plugin);
+                        modules.add(getModule(m.getFile(), plugin));
                     }
                 }
             }
@@ -141,7 +144,7 @@ public class ModuleFileLoader {
             }
         }
     }
-    public void loadModule(File file, Plugin plugin) throws Exception {
+    public Module getModule(File file, Plugin plugin) throws Exception {
         Map<String, Object> data = getAllDatasFromFile(file);
         String name = data.get("name").toString();
         String main = data.get("spigot-main").toString();
@@ -175,7 +178,7 @@ public class ModuleFileLoader {
         module.setDescription(description);
         module.setMainFile(file);
 
-        getModuleManager().getModuleLoader().loadModuleToClasspath(module);
+        return module;
     }
 
     /*public void loadModule(File file, Plugin plugin) {
