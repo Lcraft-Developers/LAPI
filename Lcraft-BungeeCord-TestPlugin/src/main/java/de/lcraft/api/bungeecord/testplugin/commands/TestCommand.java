@@ -1,34 +1,32 @@
 package de.lcraft.api.bungeecord.testplugin.commands;
 
-import de.lcraft.api.plugin.modules.minecraft.bungeecord.manager.Module;
-import de.lcraft.api.plugin.modules.minecraft.bungeecord.manager.logger.ModuleLoggerType;
-import de.lcraft.apis.permissions.utils.bungeecord.ModuleCommand;
+import de.lcraft.api.utils.minecraft.bungeecord.module.Module;
+import de.lcraft.api.utils.minecraft.bungeecord.module.logger.ModuleLoggerType;
+import de.lcraft.api.utils.minecraft.bungeecord.module.utils.command.ModuleCommand;
 import net.md_5.bungee.api.CommandSender;
-
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class TestCommand extends ModuleCommand {
 
-    public TestCommand(Module m) {
-        super("test-bungee", m);
+    public TestCommand(Module m) throws IOException {
+        super("bungee-spigot", "This is a Test Command", m, false);
     }
 
     @Override
     public boolean onCommand(CommandSender s, String[] args) {
-        getLogger().send(ModuleLoggerType.NOTHING, "Testing...");
-        return false;
+        getLogger().send(ModuleLoggerType.NOTHING, "Test");
+        return super.onCommand(s, args);
     }
 
     @Override
-    public ArrayList<String> allLanguages(ArrayList<String> beforeAllLanguages) {
-        beforeAllLanguages.add("test-spigot-lang");
-        return beforeAllLanguages;
+    public ArrayList<String> getAllPermissions(ArrayList<String> allPermissions) {
+        return null;
     }
 
     @Override
-    public ArrayList<String> allPermissions(ArrayList<String> beforeAllPermissions) {
-        beforeAllPermissions.add("test-spigot-perm");
-        return beforeAllPermissions;
+    public ArrayList<String> getAllTranslations(ArrayList<String> allTranslations) {
+        return null;
     }
 
 }

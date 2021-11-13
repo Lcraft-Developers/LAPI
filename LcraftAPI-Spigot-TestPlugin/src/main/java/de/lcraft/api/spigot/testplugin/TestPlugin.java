@@ -1,14 +1,15 @@
 package de.lcraft.api.spigot.testplugin;
 
-import de.lcraft.api.plugin.modules.minecraft.spigot.manager.Module;
-import de.lcraft.apis.permissions.main.spigot.ModuleMain;
+import de.lcraft.api.utils.minecraft.spigot.module.Module;
 import de.lcraft.api.spigot.testplugin.commands.TestCommand;
+
+import java.io.IOException;
 
 public class TestPlugin extends Module {
 
     @Override
-    public void onLoad() {
-        ModuleMain.getPermsManager().getCommandManager().addCommand("test-spigot", new TestCommand(this));
+    public void onLoad() throws IOException {
+        getModuleCommandManager().addCommand(new TestCommand(this));
     }
 
     @Override

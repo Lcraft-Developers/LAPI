@@ -1,6 +1,6 @@
 name: 'Lcraft Spigot TestPlugin'
 description: This is the Spigot Plugin
-version: '1.0'
+version: '1.0.0'
 spigot-main: de.lcraft.api.spigot.testplugin.TestPlugin
 authors:
   - LPD
