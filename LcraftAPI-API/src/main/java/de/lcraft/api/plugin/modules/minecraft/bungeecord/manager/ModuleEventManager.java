@@ -11,15 +11,15 @@ public class ModuleEventManager {
     }
 
     public void loadModule() throws IOException {
-        System.out.println("The Spigot Module " + module.getName() + " will be loaded.");
+        System.out.println("The BungeeCord Module " + module.getModuleDescriptionFile().getName() + " will be loaded.");
         module.onLoad();
     }
     public void enableModule() throws IOException {
-        System.out.println("The Spigot Module " + module.getName() + " is loaded.");
+        System.out.println("The BungeeCord Module " + module.getModuleDescriptionFile().getName() + " is loaded.");
         module.onEnable();
     }
     public void disableModule() throws IOException {
-        System.out.println("The Spigot Module " + module.getName() + " was disabled.");
+        System.out.println("The BungeeCord Module " + module.getModuleDescriptionFile().getName() + " was disabled.");
         module.onDisable();
     }
 

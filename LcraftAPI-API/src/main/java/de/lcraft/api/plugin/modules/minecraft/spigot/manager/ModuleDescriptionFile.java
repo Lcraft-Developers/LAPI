@@ -29,8 +29,8 @@ public class ModuleDescriptionFile {
         if(hasEnoughInformation()) {
             name = data.get("name").toString();
             spigot_main = data.get("spigot-main").toString();
-            if(data.containsKey("bungeecord-main")) {
-                bungeecord_main = data.get("bungeecord-main").toString();
+            if(data.containsKey("bungee-main")) {
+                bungeecord_main = data.get("bungee-main").toString();
             } else {
                 bungeecord_main = null;
             }

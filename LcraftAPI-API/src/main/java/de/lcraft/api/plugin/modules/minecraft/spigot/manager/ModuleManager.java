@@ -1,6 +1,8 @@
 package de.lcraft.api.plugin.modules.minecraft.spigot.manager;
 
 import de.lcraft.api.plugin.main.spigot.APIPluginMain;
+import de.lcraft.api.plugin.modules.minecraft.spigot.manager.classloaders.ModuleClassLoader;
+
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -16,6 +18,11 @@ public class ModuleManager {
 
         moduleFileLoader = new ModuleFileLoader(this);
         moduleLoader = new ModuleLoader(this);
+
+        // BungeeCord Classloader adding to mine
+        ModuleClassLoader.classLoaders.add(pluginMain.getClass().getClassLoader());
+        // Spigot Classloader adding to mine
+        // ModuleClassLoader.classLoaders.add(pluginMain.getClass().getClassLoader());
     }
 
     public void loadAllModules() throws Exception {

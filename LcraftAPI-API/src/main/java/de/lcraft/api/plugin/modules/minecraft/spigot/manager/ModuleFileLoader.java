@@ -105,6 +105,7 @@ public class ModuleFileLoader {
         Class<?> clazz = moduleClassLoader.loadClass(descriptionFile.getSpigot_main());
         Class<? extends Module> pluginClass = clazz.asSubclass(Module.class);
         Module module = pluginClass.newInstance();
+        //Module module = (Module) clazz.getDeclaredConstructor().newInstance();
 
         module.setPlugin(plugin);
         module.setFile(file);

@@ -1,9 +1,9 @@
 package de.lcraft.api.plugin.modules.minecraft.spigot.manager.classloaders;
 
 import com.google.common.io.ByteStreams;
-import de.lcraft.api.plugin.modules.minecraft.spigot.manager.Module;
 import de.lcraft.api.plugin.modules.minecraft.spigot.manager.ModuleDescriptionFile;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -25,20 +25,23 @@ public class ModuleClassLoader extends URLClassLoader {
     private JarFile jar;
     private URL url;
     private Manifest manifest;
-    private ModuleDescriptionFile descriptionFile;
-    public static ArrayList<ModuleClassLoader> classLoaders = new ArrayList<>();
+    public static ArrayList<ClassLoader> classLoaders = new ArrayList<>();
 
     public ModuleClassLoader(ModuleDescriptionFile file) throws IOException {
+        this(file.getFile());
+    }
+
+    public ModuleClassLoader(File file) throws IOException {
         super(new URL[]
                 {
-                        file.getFile().toURI().toURL()
+                        file.toURI().toURL()
                 } );
-        this.descriptionFile = file;
-        jar = new JarFile(file.getFile());
-        this.url = file.getFile().toURI().toURL();
+        jar = new JarFile(file);
+        this.url = file.toURI().toURL();
         classLoaders.add(this);
         this.manifest = jar.getManifest();
     }
+
 
     @Override
     protected Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException
@@ -60,7 +63,7 @@ public class ModuleClassLoader extends URLClassLoader {
         {
         }
 
-        if ( checkLibraries)
+        /*if ( checkLibraries && libraryLoader != null )
         {
             try
             {
@@ -68,17 +71,17 @@ public class ModuleClassLoader extends URLClassLoader {
             } catch ( ClassNotFoundException ex )
             {
             }
-        }
+        }*/
 
         if ( checkOther )
         {
-            for (ModuleClassLoader loader : classLoaders )
+            for (ClassLoader loader : classLoaders )
             {
                 if ( loader != this )
                 {
                     try
                     {
-                        return loader.loadClass0( name, resolve, false, true);
+                        return loader.loadClass(name);
                     } catch ( ClassNotFoundException ex )
                     {
                     }
@@ -140,10 +143,7 @@ public class ModuleClassLoader extends URLClassLoader {
         return super.findClass( name );
     }
 
-    public ModuleDescriptionFile getDescriptionFile() {
-        return descriptionFile;
-    }
-    public static ArrayList<ModuleClassLoader> getClassLoaders() {
+    public static ArrayList<ClassLoader> getClassLoaders() {
         return classLoaders;
     }
     public JarFile getJar() {

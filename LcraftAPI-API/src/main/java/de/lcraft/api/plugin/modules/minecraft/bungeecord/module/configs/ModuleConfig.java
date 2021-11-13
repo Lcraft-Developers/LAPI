@@ -9,13 +9,11 @@ public class ModuleConfig extends Config {
     public ModuleConfig(String startpath, String path, String filename) throws IOException {
         super(startpath, path, filename);
     }
-
     public ModuleConfig(Module m, String path, String filename) throws IOException {
-        super("lmodules//" + m.getName(), path, filename);
+        super("lmodules//" + m.getModuleDescriptionFile().getName(), path, filename);
     }
-
     public ModuleConfig(Module m, String filename) throws IOException {
-        super("lmodules//" + m.getName(), filename);
+        super("lmodules//" + m.getModuleDescriptionFile().getName(), filename);
     }
 
 }

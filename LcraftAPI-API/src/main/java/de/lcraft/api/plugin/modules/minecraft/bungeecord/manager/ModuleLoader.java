@@ -9,13 +9,18 @@ public class ModuleLoader {
     public ModuleLoader(ModuleManager moduleManager) {
         this.moduleManager = moduleManager;
     }
+    public void loadModuleToService(ArrayList<Module> modules) throws Exception {
+        // Add Modules to ArrayList
+        for(Module c : modules) {
+            getModuleManager().getModules().add(c);
+        }
 
-    public void loadModuleToClasspath(ArrayList<Module> modules) {
-        //getModuleManager().getModules().add(module);
-
-        // TODO: Add the file from module to the classpath
+        // Reload Configuration
+        for(Module c : modules) {
+            c.getModuleDescriptionFile().load();
+            c.getModuleDescriptionFile().reloadRequiredModules(moduleManager);
+        }
     }
-
     public ModuleManager getModuleManager() {
         return moduleManager;
     }

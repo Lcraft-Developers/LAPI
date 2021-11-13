@@ -1,9 +1,8 @@
 name: 'Lcraft Spigot TestPlugin'
+description: This is the Permissions API
 version: '1.0'
-spigot-main: lcraft.api.spigot.testplugin.TestPlugin
-api-version: 1.17
+spigot-main: de.lcraft.api.spigot.testplugin.TestPlugin
 authors:
   - LPD
   - Lcraft
-description: This is a test
-required-apis: "Lcraft-API, Lcraft Permissions API, Lcraft Languages API"
+required-modules: 'Lcraft-API, Lcraft Permissions API, Lcraft Languages API'

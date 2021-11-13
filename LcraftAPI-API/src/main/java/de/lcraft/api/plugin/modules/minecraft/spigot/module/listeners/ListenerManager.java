@@ -11,6 +11,7 @@ public class ListenerManager {
 
     public ListenerManager(Module m) {
         this.m = m;
+        allListeners = new ArrayList<>();
     }
 
     public void addListener(Listener listener) {

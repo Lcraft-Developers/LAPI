@@ -1,6 +1,7 @@
 package de.lcraft.api.plugin.modules.minecraft.bungeecord.manager;
 
 import de.lcraft.api.plugin.main.bungeecord.APIPluginMain;
+import de.lcraft.api.plugin.modules.minecraft.bungeecord.manager.classloaders.ModuleClassLoader;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -16,12 +17,16 @@ public class ModuleManager {
 
         moduleFileLoader = new ModuleFileLoader(this);
         moduleLoader = new ModuleLoader(this);
+
+        // BungeeCord Classloader adding to mine
+        //ModuleClassLoader.classLoaders.add(pluginMain.getClass().getClassLoader());
+        // Spigot Classloader adding to mine
+        ModuleClassLoader.classLoaders.add(pluginMain.getClass().getClassLoader());
     }
 
     public void loadAllModules() throws Exception {
         moduleFileLoader.loadModules(pluginMain);
     }
-
     public void onEnableAllModules() {
         for(Module c : getModules()) {
             try {
@@ -31,13 +36,11 @@ public class ModuleManager {
             }
         }
     }
-
     public void onLoadAllModules() throws IOException {
         for(Module c : getModules()) {
             c.onLoad();
         }
     }
-
     public void onDisableAllModules() throws IOException {
         for(Module c : getModules()) {
             c.onDisable();
