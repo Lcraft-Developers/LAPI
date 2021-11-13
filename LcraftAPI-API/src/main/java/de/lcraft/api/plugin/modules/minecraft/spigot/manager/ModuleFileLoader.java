@@ -4,6 +4,7 @@ import de.lcraft.api.plugin.modules.java.utils.FileUtils;
 import de.lcraft.api.plugin.modules.minecraft.spigot.manager.classloaders.ModuleClassLoader;
 import org.bukkit.plugin.java.JavaPlugin;
 import java.io.File;
+import java.net.URLClassLoader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -101,11 +102,9 @@ public class ModuleFileLoader {
     public Module getModule(File file, JavaPlugin plugin, ModuleDescriptionFile descriptionFile) throws Exception {
         // Loading of Main
 
-        ModuleClassLoader moduleClassLoader = new ModuleClassLoader(descriptionFile);
-        Class<?> clazz = moduleClassLoader.loadClass(descriptionFile.getSpigot_main());
-        Class<? extends Module> pluginClass = clazz.asSubclass(Module.class);
-        Module module = pluginClass.newInstance();
-        //Module module = (Module) clazz.getDeclaredConstructor().newInstance();
+        URLClassLoader moduleClassLoader = new ModuleClassLoader(descriptionFile);
+        Class<?> main = moduleClassLoader.loadClass(descriptionFile.getSpigot_main());
+        Module module = (Module) main.getDeclaredConstructor().newInstance();
 
         module.setPlugin(plugin);
         module.setFile(file);

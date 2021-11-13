@@ -912,3 +912,156 @@ java.lang.NullPointerException: Cannot invoke "Object.toString()" because "c" is
 18:32:41 [INFO] Enabled plugin cmd_send version git:cmd_send:1.17-R0.1-SNAPSHOT:6613aae:1607 by SpigotMC
 18:32:41 [INFO] Enabled plugin cmd_list version git:cmd_list:1.17-R0.1-SNAPSHOT:6613aae:1607 by SpigotMC
 18:32:42 [INFO] Listening on /0.0.0.0:25577
+15:03:01 [INFO] Using standard Java JCE cipher.
+15:03:01 [INFO] Using standard Java compressor.
+15:03:01 [INFO] Enabled BungeeCord version git:BungeeCord-Bootstrap:1.17-R0.1-SNAPSHOT:6613aae:1607
+15:03:01 [INFO] Discovered module: ModuleSpec(name=cmd_alert, file=modules\cmd_alert.jar, provider=JenkinsModuleSource())
+
+15:03:01 [INFO] Discovered module: ModuleSpec(name=cmd_find, file=modules\cmd_find.jar, provider=JenkinsModuleSource())
+
+15:03:01 [INFO] Discovered module: ModuleSpec(name=cmd_list, file=modules\cmd_list.jar, provider=JenkinsModuleSource())
+
+15:03:01 [INFO] Discovered module: ModuleSpec(name=cmd_send, file=modules\cmd_send.jar, provider=JenkinsModuleSource())
+
+15:03:01 [INFO] Discovered module: ModuleSpec(name=cmd_server, file=modules\cmd_server.jar, provider=JenkinsModuleSource())
+
+15:03:01 [INFO] Discovered module: ModuleSpec(name=reconnect_yaml, file=modules\reconnect_yaml.jar, provider=JenkinsModuleSource())
+
+15:03:02 [INFO] Loaded plugin reconnect_yaml version git:reconnect_yaml:1.17-R0.1-SNAPSHOT:6613aae:1607 by SpigotMC
+15:03:02 [INFO] Loaded plugin LcraftAPI version 1.0.0 by null
+15:03:02 [INFO] Loaded plugin cmd_find version git:cmd_find:1.17-R0.1-SNAPSHOT:6613aae:1607 by SpigotMC
+15:03:02 [INFO] Loaded plugin cmd_server version git:cmd_server:1.17-R0.1-SNAPSHOT:6613aae:1607 by SpigotMC
+15:03:02 [INFO] Loaded plugin cmd_alert version git:cmd_alert:1.17-R0.1-SNAPSHOT:6613aae:1607 by SpigotMC
+15:03:02 [INFO] Loaded plugin cmd_send version git:cmd_send:1.17-R0.1-SNAPSHOT:6613aae:1607 by SpigotMC
+15:03:02 [INFO] Loaded plugin cmd_list version git:cmd_list:1.17-R0.1-SNAPSHOT:6613aae:1607 by SpigotMC
+15:03:02 [WARNING] Forced host server pvp is not defined
+15:03:02 [INFO] Enabled plugin reconnect_yaml version git:reconnect_yaml:1.17-R0.1-SNAPSHOT:6613aae:1607 by SpigotMC
+15:03:02 [SEVERE] java.lang.ClassCastException: class de.lcraft.apis.languages.main.spigot.ModuleMain cannot be cast to class de.lcraft.api.plugin.modules.minecraft.bungeecord.manager.Module (de.lcraft.apis.languages.main.spigot.ModuleMain is in unnamed module of loader de.lcraft.api.plugin.modules.minecraft.bungeecord.manager.classloaders.ModuleClassLoader @1c3b9394; de.lcraft.api.plugin.modules.minecraft.bungeecord.manager.Module is in unnamed module of loader net.md_5.bungee.api.plugin.PluginClassloader @74589991)
+
+15:03:02 [SEVERE] 	at de.lcraft.api.plugin.modules.minecraft.bungeecord.manager.ModuleFileLoader.getModule(ModuleFileLoader.java:107)
+
+15:03:02 [SEVERE] 	at de.lcraft.api.plugin.modules.minecraft.bungeecord.manager.ModuleFileLoader.queuedModule(ModuleFileLoader.java:65)
+
+15:03:02 [SEVERE] 	at de.lcraft.api.plugin.modules.minecraft.bungeecord.manager.ModuleFileLoader.loadModules(ModuleFileLoader.java:38)
+
+15:03:02 [SEVERE] 	at de.lcraft.api.plugin.modules.minecraft.bungeecord.manager.ModuleManager.loadAllModules(ModuleManager.java:28)
+
+15:03:02 [SEVERE] 	at de.lcraft.api.plugin.main.bungeecord.APIPluginMain.onEnable(APIPluginMain.java:26)
+
+15:03:02 [SEVERE] 	at net.md_5.bungee.api.plugin.PluginManager.enablePlugins(PluginManager.java:265)
+
+15:03:02 [SEVERE] 	at net.md_5.bungee.BungeeCord.start(BungeeCord.java:285)
+
+15:03:02 [SEVERE] 	at net.md_5.bungee.BungeeCordLauncher.main(BungeeCordLauncher.java:67)
+
+15:03:02 [SEVERE] 	at net.md_5.bungee.Bootstrap.main(Bootstrap.java:15)
+
+15:03:02 [INFO] Enabled plugin LcraftAPI version 1.0.0 by null
+15:03:02 [INFO] Enabled plugin cmd_find version git:cmd_find:1.17-R0.1-SNAPSHOT:6613aae:1607 by SpigotMC
+15:03:02 [INFO] Enabled plugin cmd_server version git:cmd_server:1.17-R0.1-SNAPSHOT:6613aae:1607 by SpigotMC
+15:03:02 [INFO] Enabled plugin cmd_alert version git:cmd_alert:1.17-R0.1-SNAPSHOT:6613aae:1607 by SpigotMC
+15:03:02 [INFO] Enabled plugin cmd_send version git:cmd_send:1.17-R0.1-SNAPSHOT:6613aae:1607 by SpigotMC
+15:03:02 [INFO] Enabled plugin cmd_list version git:cmd_list:1.17-R0.1-SNAPSHOT:6613aae:1607 by SpigotMC
+15:03:02 [INFO] Listening on /0.0.0.0:25577
+15:36:21 [INFO] Using standard Java JCE cipher.
+15:36:21 [INFO] Using standard Java compressor.
+15:36:21 [INFO] Enabled BungeeCord version git:BungeeCord-Bootstrap:1.17-R0.1-SNAPSHOT:6613aae:1607
+15:36:21 [INFO] Discovered module: ModuleSpec(name=cmd_alert, file=modules\cmd_alert.jar, provider=JenkinsModuleSource())
+
+15:36:21 [INFO] Discovered module: ModuleSpec(name=cmd_find, file=modules\cmd_find.jar, provider=JenkinsModuleSource())
+
+15:36:21 [INFO] Discovered module: ModuleSpec(name=cmd_list, file=modules\cmd_list.jar, provider=JenkinsModuleSource())
+
+15:36:21 [INFO] Discovered module: ModuleSpec(name=cmd_send, file=modules\cmd_send.jar, provider=JenkinsModuleSource())
+
+15:36:21 [INFO] Discovered module: ModuleSpec(name=cmd_server, file=modules\cmd_server.jar, provider=JenkinsModuleSource())
+
+15:36:21 [INFO] Discovered module: ModuleSpec(name=reconnect_yaml, file=modules\reconnect_yaml.jar, provider=JenkinsModuleSource())
+
+15:36:21 [INFO] Loaded plugin reconnect_yaml version git:reconnect_yaml:1.17-R0.1-SNAPSHOT:6613aae:1607 by SpigotMC
+15:36:21 [INFO] Loaded plugin LcraftAPI version 1.0.0 by null
+15:36:21 [INFO] Loaded plugin cmd_find version git:cmd_find:1.17-R0.1-SNAPSHOT:6613aae:1607 by SpigotMC
+15:36:21 [INFO] Loaded plugin cmd_server version git:cmd_server:1.17-R0.1-SNAPSHOT:6613aae:1607 by SpigotMC
+15:36:21 [INFO] Loaded plugin cmd_alert version git:cmd_alert:1.17-R0.1-SNAPSHOT:6613aae:1607 by SpigotMC
+15:36:21 [INFO] Loaded plugin cmd_send version git:cmd_send:1.17-R0.1-SNAPSHOT:6613aae:1607 by SpigotMC
+15:36:21 [INFO] Loaded plugin cmd_list version git:cmd_list:1.17-R0.1-SNAPSHOT:6613aae:1607 by SpigotMC
+15:36:21 [WARNING] Forced host server pvp is not defined
+15:36:21 [INFO] Enabled plugin reconnect_yaml version git:reconnect_yaml:1.17-R0.1-SNAPSHOT:6613aae:1607 by SpigotMC
+15:36:21 [SEVERE] java.lang.ClassCastException: class de.lcraft.apis.languages.main.spigot.ModuleMain cannot be cast to class de.lcraft.api.plugin.modules.minecraft.bungeecord.manager.Module (de.lcraft.apis.languages.main.spigot.ModuleMain is in unnamed module of loader de.lcraft.api.plugin.modules.minecraft.bungeecord.manager.classloaders.ModuleClassLoader @1c3b9394; de.lcraft.api.plugin.modules.minecraft.bungeecord.manager.Module is in unnamed module of loader net.md_5.bungee.api.plugin.PluginClassloader @74589991)
+
+15:36:21 [SEVERE] 	at de.lcraft.api.plugin.modules.minecraft.bungeecord.manager.ModuleFileLoader.getModule(ModuleFileLoader.java:107)
+
+15:36:21 [SEVERE] 	at de.lcraft.api.plugin.modules.minecraft.bungeecord.manager.ModuleFileLoader.queuedModule(ModuleFileLoader.java:65)
+
+15:36:21 [SEVERE] 	at de.lcraft.api.plugin.modules.minecraft.bungeecord.manager.ModuleFileLoader.loadModules(ModuleFileLoader.java:38)
+
+15:36:21 [SEVERE] 	at de.lcraft.api.plugin.modules.minecraft.bungeecord.manager.ModuleManager.loadAllModules(ModuleManager.java:28)
+
+15:36:21 [SEVERE] 	at de.lcraft.api.plugin.main.bungeecord.APIPluginMain.onEnable(APIPluginMain.java:26)
+
+15:36:21 [SEVERE] 	at net.md_5.bungee.api.plugin.PluginManager.enablePlugins(PluginManager.java:265)
+
+15:36:21 [SEVERE] 	at net.md_5.bungee.BungeeCord.start(BungeeCord.java:285)
+
+15:36:21 [SEVERE] 	at net.md_5.bungee.BungeeCordLauncher.main(BungeeCordLauncher.java:67)
+
+15:36:21 [SEVERE] 	at net.md_5.bungee.Bootstrap.main(Bootstrap.java:15)
+
+15:36:21 [INFO] Enabled plugin LcraftAPI version 1.0.0 by null
+15:36:21 [INFO] Enabled plugin cmd_find version git:cmd_find:1.17-R0.1-SNAPSHOT:6613aae:1607 by SpigotMC
+15:36:21 [INFO] Enabled plugin cmd_server version git:cmd_server:1.17-R0.1-SNAPSHOT:6613aae:1607 by SpigotMC
+15:36:21 [INFO] Enabled plugin cmd_alert version git:cmd_alert:1.17-R0.1-SNAPSHOT:6613aae:1607 by SpigotMC
+15:36:21 [INFO] Enabled plugin cmd_send version git:cmd_send:1.17-R0.1-SNAPSHOT:6613aae:1607 by SpigotMC
+15:36:21 [INFO] Enabled plugin cmd_list version git:cmd_list:1.17-R0.1-SNAPSHOT:6613aae:1607 by SpigotMC
+15:36:21 [INFO] Listening on /0.0.0.0:25577
+15:36:50 [INFO] Using standard Java JCE cipher.
+15:36:50 [INFO] Using standard Java compressor.
+15:36:50 [INFO] Enabled BungeeCord version git:BungeeCord-Bootstrap:1.17-R0.1-SNAPSHOT:6613aae:1607
+15:36:50 [INFO] Discovered module: ModuleSpec(name=cmd_alert, file=modules\cmd_alert.jar, provider=JenkinsModuleSource())
+
+15:36:50 [INFO] Discovered module: ModuleSpec(name=cmd_find, file=modules\cmd_find.jar, provider=JenkinsModuleSource())
+
+15:36:50 [INFO] Discovered module: ModuleSpec(name=cmd_list, file=modules\cmd_list.jar, provider=JenkinsModuleSource())
+
+15:36:50 [INFO] Discovered module: ModuleSpec(name=cmd_send, file=modules\cmd_send.jar, provider=JenkinsModuleSource())
+
+15:36:50 [INFO] Discovered module: ModuleSpec(name=cmd_server, file=modules\cmd_server.jar, provider=JenkinsModuleSource())
+
+15:36:50 [INFO] Discovered module: ModuleSpec(name=reconnect_yaml, file=modules\reconnect_yaml.jar, provider=JenkinsModuleSource())
+
+15:36:50 [INFO] Loaded plugin reconnect_yaml version git:reconnect_yaml:1.17-R0.1-SNAPSHOT:6613aae:1607 by SpigotMC
+15:36:50 [INFO] Loaded plugin LcraftAPI version 1.0.0 by null
+15:36:50 [INFO] Loaded plugin cmd_find version git:cmd_find:1.17-R0.1-SNAPSHOT:6613aae:1607 by SpigotMC
+15:36:50 [INFO] Loaded plugin cmd_server version git:cmd_server:1.17-R0.1-SNAPSHOT:6613aae:1607 by SpigotMC
+15:36:50 [INFO] Loaded plugin cmd_alert version git:cmd_alert:1.17-R0.1-SNAPSHOT:6613aae:1607 by SpigotMC
+15:36:50 [INFO] Loaded plugin cmd_send version git:cmd_send:1.17-R0.1-SNAPSHOT:6613aae:1607 by SpigotMC
+15:36:50 [INFO] Loaded plugin cmd_list version git:cmd_list:1.17-R0.1-SNAPSHOT:6613aae:1607 by SpigotMC
+15:36:51 [WARNING] Forced host server pvp is not defined
+15:36:51 [INFO] Enabled plugin reconnect_yaml version git:reconnect_yaml:1.17-R0.1-SNAPSHOT:6613aae:1607 by SpigotMC
+15:36:51 [SEVERE] java.lang.ClassCastException: class de.lcraft.apis.languages.main.spigot.ModuleMain cannot be cast to class de.lcraft.api.plugin.modules.minecraft.bungeecord.manager.Module (de.lcraft.apis.languages.main.spigot.ModuleMain is in unnamed module of loader de.lcraft.api.plugin.modules.minecraft.bungeecord.manager.classloaders.ModuleClassLoader @1c3b9394; de.lcraft.api.plugin.modules.minecraft.bungeecord.manager.Module is in unnamed module of loader net.md_5.bungee.api.plugin.PluginClassloader @74589991)
+
+15:36:51 [SEVERE] 	at de.lcraft.api.plugin.modules.minecraft.bungeecord.manager.ModuleFileLoader.getModule(ModuleFileLoader.java:107)
+
+15:36:51 [SEVERE] 	at de.lcraft.api.plugin.modules.minecraft.bungeecord.manager.ModuleFileLoader.queuedModule(ModuleFileLoader.java:65)
+
+15:36:51 [SEVERE] 	at de.lcraft.api.plugin.modules.minecraft.bungeecord.manager.ModuleFileLoader.loadModules(ModuleFileLoader.java:38)
+
+15:36:51 [SEVERE] 	at de.lcraft.api.plugin.modules.minecraft.bungeecord.manager.ModuleManager.loadAllModules(ModuleManager.java:28)
+
+15:36:51 [SEVERE] 	at de.lcraft.api.plugin.main.bungeecord.APIPluginMain.onEnable(APIPluginMain.java:26)
+
+15:36:51 [SEVERE] 	at net.md_5.bungee.api.plugin.PluginManager.enablePlugins(PluginManager.java:265)
+
+15:36:51 [SEVERE] 	at net.md_5.bungee.BungeeCord.start(BungeeCord.java:285)
+
+15:36:51 [SEVERE] 	at net.md_5.bungee.BungeeCordLauncher.main(BungeeCordLauncher.java:67)
+
+15:36:51 [SEVERE] 	at net.md_5.bungee.Bootstrap.main(Bootstrap.java:15)
+
+15:36:51 [INFO] Enabled plugin LcraftAPI version 1.0.0 by null
+15:36:51 [INFO] Enabled plugin cmd_find version git:cmd_find:1.17-R0.1-SNAPSHOT:6613aae:1607 by SpigotMC
+15:36:51 [INFO] Enabled plugin cmd_server version git:cmd_server:1.17-R0.1-SNAPSHOT:6613aae:1607 by SpigotMC
+15:36:51 [INFO] Enabled plugin cmd_alert version git:cmd_alert:1.17-R0.1-SNAPSHOT:6613aae:1607 by SpigotMC
+15:36:51 [INFO] Enabled plugin cmd_send version git:cmd_send:1.17-R0.1-SNAPSHOT:6613aae:1607 by SpigotMC
+15:36:51 [INFO] Enabled plugin cmd_list version git:cmd_list:1.17-R0.1-SNAPSHOT:6613aae:1607 by SpigotMC
+15:36:51 [INFO] Listening on /0.0.0.0:25577

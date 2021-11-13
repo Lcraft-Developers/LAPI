@@ -24,14 +24,17 @@ public class APIPluginMain extends Plugin {
         moduleManager = new ModuleManager(apiPluginMain);
         try {
             moduleManager.loadAllModules();
-            moduleManager.onLoadAllModules();
-            getProxy().getScheduler().schedule(this, new Runnable() {
-                @Override
-                public void run() {
-                    moduleManager.onEnableAllModules();
-                }
-            }, 50, TimeUnit.MILLISECONDS);
         } catch (Exception e) {
+            e.printStackTrace();
+        }
+        try {
+            moduleManager.onLoadAllModules();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            moduleManager.onEnableAllModules();
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

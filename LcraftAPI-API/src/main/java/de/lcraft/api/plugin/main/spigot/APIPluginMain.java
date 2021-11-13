@@ -24,14 +24,17 @@ public class APIPluginMain extends JavaPlugin {
         moduleManager = new ModuleManager(apiPluginMain);
         try {
             moduleManager.loadAllModules();
-            moduleManager.onLoadAllModules();
-            Bukkit.getScheduler().scheduleSyncDelayedTask(this, new Runnable() {
-                @Override
-                public void run() {
-                    moduleManager.onEnableAllModules();
-                }
-            }, 5);
         } catch (Exception e) {
+            e.printStackTrace();
+        }
+        try {
+            moduleManager.onLoadAllModules();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            moduleManager.onEnableAllModules();
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

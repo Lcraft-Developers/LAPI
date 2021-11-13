@@ -1,5 +1,5 @@
 name: 'Lcraft BungeeCord TestPlugin'
-description: This is the Permissions API
+description: This is the BungeeCord Plugin
 version: '1.0'
 bungee-main: de.lcraft.api.bungeecord.testplugin.TestPlugin
 authors:

@@ -13,13 +13,9 @@ public class TestPlugin extends Module {
     }
 
     @Override
-    public void onEnable() {
-        getLogger().sendModule(ModuleLoggerType.INFO, "Loaded successfully Test");
-    }
+    public void onEnable() { }
 
     @Override
-    public void onDisable() {
-
-    }
+    public void onDisable() { }
 
 }

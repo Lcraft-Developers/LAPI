@@ -27,23 +27,22 @@ public class ModuleManager {
     public void loadAllModules() throws Exception {
         moduleFileLoader.loadModules(pluginMain);
     }
-    public void onEnableAllModules() {
+    public void onEnableAllModules() throws IOException {
         for(Module c : getModules()) {
-            try {
-                c.onEnable();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            ModuleEventManager eventManager = new ModuleEventManager(c);
+            eventManager.enableModule();
         }
     }
     public void onLoadAllModules() throws IOException {
         for(Module c : getModules()) {
-            c.onLoad();
+            ModuleEventManager eventManager = new ModuleEventManager(c);
+            eventManager.enableModule();
         }
     }
     public void onDisableAllModules() throws IOException {
         for(Module c : getModules()) {
-            c.onDisable();
+            ModuleEventManager eventManager = new ModuleEventManager(c);
+            eventManager.enableModule();
         }
     }
 

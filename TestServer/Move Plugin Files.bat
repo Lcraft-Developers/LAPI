@@ -26,7 +26,7 @@ del ".\BungeeCord\plugins\LcraftAPI.API-1.0.0.jar"
 del ".\BungeeCord\lmodules\Lcraft.API.Language-1.0-SNAPSHOT.jar"
 del ".\BungeeCord\lmodules\Lcraft.API.Permissions-1.0-SNAPSHOT.jar"
 
-del ".\BungeeCord\lmodules\LcraftAPI.spigot.test-1.0.0.jar"
+del ".\BungeeCord\lmodules\LcraftAPI.bungeecord.test-1.0.0.jar"
 
 
 echo Copy Bungee Versions
