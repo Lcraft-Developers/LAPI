@@ -20,7 +20,7 @@ public abstract class ModuleCommand extends Command {
     private PermsManager permsManager;
     private String description;
 
-    protected ModuleCommand(final String command, final String desc, Module m, boolean splitting) throws IOException {
+    public ModuleCommand(final String command, final String desc, Module m, boolean splitting) throws IOException {
         super(command);
         this.description = desc;
         this.module = m;

@@ -21,7 +21,7 @@ public abstract class ModuleCommand extends BukkitCommand {
     private LanguagesManager languagesManager;
     private PermsManager permsManager;
 
-    protected ModuleCommand(final String command, final String desc, final String usage, Module m, boolean splitting) throws IOException {
+    public ModuleCommand(final String command, final String desc, final String usage, Module m, boolean splitting) throws IOException {
         super(command);
         this.description = desc;
         this.usageMessage = usage;
