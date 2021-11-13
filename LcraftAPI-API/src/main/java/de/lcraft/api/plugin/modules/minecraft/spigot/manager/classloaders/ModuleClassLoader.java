@@ -78,7 +78,7 @@ public class ModuleClassLoader extends URLClassLoader {
                 {
                     try
                     {
-                        return loader.loadClass0( name, resolve, false, false);
+                        return loader.loadClass0( name, resolve, false, true);
                     } catch ( ClassNotFoundException ex )
                     {
                     }

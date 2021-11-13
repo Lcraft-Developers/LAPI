@@ -1,9 +1,9 @@
-[12:42:53] [main/INFO]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
-[12:42:53] [main/INFO]: Reloading ResourceManager: Default, bukkit
-[12:42:54] [Worker-Main-4/INFO]: Loaded 7 recipes
-[12:42:55] [Server thread/INFO]: Starting minecraft server version 1.17.1
-[12:42:55] [Server thread/INFO]: Loading properties
-[12:42:55] [Server console handler/WARN]: [org.jline] Failed to load history
+[12:50:30] [main/INFO]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[12:50:30] [main/INFO]: Reloading ResourceManager: Default, bukkit
+[12:50:31] [Worker-Main-3/INFO]: Loaded 7 recipes
+[12:50:32] [Server thread/INFO]: Starting minecraft server version 1.17.1
+[12:50:32] [Server thread/INFO]: Loading properties
+[12:50:32] [Server console handler/WARN]: [org.jline] Failed to load history
 java.lang.IllegalArgumentException: Bad history file syntax! The history file `.console_history` may be an older history: please remove it or use a different history file.
 	at org.jline.reader.impl.history.DefaultHistory.addHistoryLine(DefaultHistory.java:179) ~[patched_1.17.1.jar:git-Purpur-1393]
 	at org.jline.reader.impl.history.DefaultHistory.addHistoryLine(DefaultHistory.java:169) ~[patched_1.17.1.jar:git-Purpur-1393]
@@ -18,28 +18,28 @@ java.lang.IllegalArgumentException: Bad history file syntax! The history file `.
 	at net.minecrell.terminalconsole.SimpleTerminalConsole.readCommands(SimpleTerminalConsole.java:158) [patched_1.17.1.jar:git-Purpur-1393]
 	at net.minecrell.terminalconsole.SimpleTerminalConsole.start(SimpleTerminalConsole.java:141) [patched_1.17.1.jar:git-Purpur-1393]
 	at net.minecraft.server.dedicated.DedicatedServer$1.run(DedicatedServer.java:113) [patched_1.17.1.jar:git-Purpur-1393]
-[12:42:55] [Server thread/INFO]: This server is running Purpur version git-Purpur-1393 (MC: 1.17.1) (Implementing API version 1.17.1-R0.1-SNAPSHOT) (Git: 3ff85ed on ver/1.17.1)
-[12:42:55] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[12:42:55] [Server thread/INFO]: Using 4 threads for Netty based IO
-[12:42:55] [Server thread/INFO]: Default game type: SURVIVAL
-[12:42:55] [Server thread/INFO]: Generating keypair
-[12:42:55] [Server thread/INFO]: Starting Minecraft server on *:25565
-[12:42:55] [Server thread/INFO]: Using default channel type
-[12:42:55] [Server thread/INFO]: Paper: Using Java 11 compression from Velocity.
-[12:42:55] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
-[12:42:56] [Server thread/INFO]: [LcraftAPI] Loading LcraftAPI v1.0.0
-[12:42:56] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[12:42:56] [Server thread/INFO]: Preparing level "world"
-[12:42:56] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
-[12:42:56] [Server thread/INFO]: Time elapsed: 253 ms
-[12:42:56] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
-[12:42:56] [Server thread/INFO]: Time elapsed: 88 ms
-[12:42:56] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
-[12:42:57] [Server thread/INFO]: Time elapsed: 91 ms
-[12:42:57] [Server thread/INFO]: [LcraftAPI] Enabling LcraftAPI v1.0.0
-[12:42:57] [Server thread/INFO]: [LcraftAPI] The spigot module Lcraft Languages API could not be loaded because the required-modules does not exist in module.yml
-[12:42:57] [Server thread/INFO]: [LcraftAPI] The spigot module Lcraft Languages API could not be loaded because the required-modules does not exist in module.yml
-[12:42:57] [Server thread/ERROR]: Error occurred while enabling LcraftAPI v1.0.0 (Is it up to date?)
+[12:50:32] [Server thread/INFO]: This server is running Purpur version git-Purpur-1393 (MC: 1.17.1) (Implementing API version 1.17.1-R0.1-SNAPSHOT) (Git: 3ff85ed on ver/1.17.1)
+[12:50:32] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[12:50:32] [Server thread/INFO]: Using 4 threads for Netty based IO
+[12:50:32] [Server thread/INFO]: Default game type: SURVIVAL
+[12:50:32] [Server thread/INFO]: Generating keypair
+[12:50:32] [Server thread/INFO]: Starting Minecraft server on *:25565
+[12:50:32] [Server thread/INFO]: Using default channel type
+[12:50:32] [Server thread/INFO]: Paper: Using Java 11 compression from Velocity.
+[12:50:32] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
+[12:50:33] [Server thread/INFO]: [LcraftAPI] Loading LcraftAPI v1.0.0
+[12:50:33] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[12:50:33] [Server thread/INFO]: Preparing level "world"
+[12:50:33] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[12:50:33] [Server thread/INFO]: Time elapsed: 259 ms
+[12:50:33] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
+[12:50:33] [Server thread/INFO]: Time elapsed: 81 ms
+[12:50:33] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
+[12:50:34] [Server thread/INFO]: Time elapsed: 89 ms
+[12:50:34] [Server thread/INFO]: [LcraftAPI] Enabling LcraftAPI v1.0.0
+[12:50:34] [Server thread/INFO]: [LcraftAPI] The spigot module Lcraft Languages API could not be loaded because the required-modules does not exist in module.yml
+[12:50:34] [Server thread/INFO]: [LcraftAPI] The spigot module Lcraft Languages API could not be loaded because the required-modules does not exist in module.yml
+[12:50:34] [Server thread/ERROR]: Error occurred while enabling LcraftAPI v1.0.0 (Is it up to date?)
 java.lang.StackOverflowError: null
 	at java.util.jar.JarFile.getEntry(JarFile.java:519) ~[?:?]
 	at java.util.jar.JarFile.getJarEntry(JarFile.java:474) ~[?:?]
@@ -1065,7 +1065,7 @@ java.lang.StackOverflowError: null
 	at de.lcraft.api.plugin.modules.minecraft.spigot.manager.classloaders.ModuleClassLoader.loadClass0(ModuleClassLoader.java:67) ~[LcraftAPI.API-1.0.0.jar:?]
 	at de.lcraft.api.plugin.modules.minecraft.spigot.manager.classloaders.ModuleClassLoader.loadClass(ModuleClassLoader.java:46) ~[LcraftAPI.API-1.0.0.jar:?]
 	at java.lang.ClassLoader.loadClass(ClassLoader.java:519) ~[?:?]
-[12:42:57] [Server thread/INFO]: [LcraftAPI] Disabling LcraftAPI v1.0.0
-[12:42:57] [Server thread/INFO]: Running delayed init tasks
-[12:42:57] [Server thread/INFO]: Done (2.561s)! For help, type "help"
-[12:42:57] [Server thread/INFO]: Timings Reset
+[12:50:34] [Server thread/INFO]: [LcraftAPI] Disabling LcraftAPI v1.0.0
+[12:50:34] [Server thread/INFO]: Running delayed init tasks
+[12:50:34] [Server thread/INFO]: Done (2.635s)! For help, type "help"
+[12:50:34] [Server thread/INFO]: Timings Reset
