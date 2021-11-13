@@ -24,7 +24,6 @@ public class ItemBuilder {
         iMeta.setDisplayName(name);
         return this;
     }
-
     public ItemBuilder setLoreString(String... lore) {
         ArrayList<String> l = new ArrayList<>();
         for (String c : lore) {
@@ -33,14 +32,13 @@ public class ItemBuilder {
         setLore(l);
         return this;
     }
-
     public ItemBuilder setLore(ArrayList<String> lore) {
         iMeta.setLore(lore);
         return this;
     }
-
     public ItemStack build() {
         i.setItemMeta(iMeta);
         return i;
     }
+
 }

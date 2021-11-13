@@ -1,3 +1,4 @@
+C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\plugin\modules\minecraft\spigot\manager\classloaders\ModuleClassLoader.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\plugin\modules\minecraft\spigot\module\items\HeadBuilder.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\plugin\modules\minecraft\spigot\module\configs\Config.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\plugin\main\spigot\APIPluginMain.java
@@ -5,7 +6,6 @@ C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\plugin\modules\minecraft\spigot\manager\ModuleManager.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\plugin\modules\java\exeptions\InternetNotFoundException.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\plugin\modules\minecraft\spigot\manager\ModuleLoader.java
-C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\plugin\modules\minecraft\spigot\manager\classloaders\URLDynamicClassLoader.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\plugin\modules\minecraft\bungeecord\manager\ModuleEventManager.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\plugin\modules\minecraft\spigot\module\items\ItemBuilder.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\plugin\main\bungeecord\APIPluginMain.java
@@ -15,6 +15,7 @@ C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\plugin\modules\minecraft\bungeecord\manager\NewModule.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\plugin\modules\minecraft\spigot\manager\logger\ModuleLoggerType.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\plugin\modules\minecraft\spigot\manager\ModuleFileLoader.java
+C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\plugin\modules\minecraft\spigot\manager\ModuleDescriptionFile.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\plugin\modules\minecraft\spigot\module\commands\ModuleCommandManager.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\plugin\modules\java\exeptions\VersionNotFound.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\plugin\modules\minecraft\spigot\manager\ModuleEventManager.java
@@ -25,6 +26,7 @@ C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\plugin\modules\minecraft\spigot\module\listeners\Listener.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\plugin\modules\java\mysql\MySQLServer.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\plugin\modules\minecraft\spigot\module\configs\ModuleConfig.java
+C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\plugin\modules\java\utils\ArrayHelper.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\plugin\modules\minecraft\bungeecord\manager\ModuleLoader.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\plugin\modules\minecraft\spigot\manager\logger\ModuleLoggerPlace.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\plugin\modules\minecraft\bungeecord\module\configs\ModuleConfig.java
@@ -36,7 +38,6 @@ C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\plugin\modules\minecraft\bungeecord\module\configs\Config.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\plugin\modules\java\utils\FileUtils.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\plugin\modules\minecraft\spigot\module\server\ServerTPS.java
-C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\plugin\modules\minecraft\spigot\manager\NewModule.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\plugin\modules\minecraft\spigot\module\listeners\ListenerManager.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\plugin\modules\minecraft\bungeecord\manager\classloader\ClassLoader.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\plugin\modules\minecraft\spigot\manager\Module.java

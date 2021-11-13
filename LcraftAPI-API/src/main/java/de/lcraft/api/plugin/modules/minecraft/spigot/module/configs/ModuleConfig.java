@@ -7,13 +7,11 @@ public class ModuleConfig extends Config {
     public ModuleConfig(String startpath, String path, String filename) {
         super(startpath, path, filename);
     }
-
     public ModuleConfig(Module m, String path, String filename) {
-        super("lmodules//" + m.getName(), path, filename);
+        super("lmodules//" + m.getModuleDescriptionFile().getName(), path, filename);
     }
-
     public ModuleConfig(Module m, String filename) {
-        super("lmodules//" + m.getName(), filename);
+        super("lmodules//" + m.getModuleDescriptionFile().getName(), filename);
     }
 
 }

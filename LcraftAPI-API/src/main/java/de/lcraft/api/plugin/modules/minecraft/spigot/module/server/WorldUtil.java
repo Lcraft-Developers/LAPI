@@ -1,7 +1,6 @@
 package de.lcraft.api.plugin.modules.minecraft.spigot.module.server;
 
 import org.bukkit.Bukkit;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -12,14 +11,15 @@ import java.util.Comparator;
 import java.util.Properties;
 import java.util.logging.Level;
 
-
 public class WorldUtil {
+
     public void resetWorld() {
         deleteFolder("world");
         deleteFolder("world_nether");
         deleteFolder("world_the_end");
-    }
 
+        createFiles();
+    }
     private void deleteFolder(String folder) {
         if (Files.exists(Paths.get(folder))) {
             try {
@@ -36,8 +36,6 @@ public class WorldUtil {
             }
         }
     }
-
-
     private void createFiles() {
         File propertiesFile = new File(Bukkit.getWorldContainer(), "server.properties");
         try (FileInputStream stream = new FileInputStream(propertiesFile)) {
@@ -65,4 +63,5 @@ public class WorldUtil {
             e.printStackTrace();
         }
     }
+
 }

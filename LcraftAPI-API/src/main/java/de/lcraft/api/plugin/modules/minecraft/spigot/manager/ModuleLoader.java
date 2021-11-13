@@ -14,28 +14,25 @@ public class ModuleLoader {
         this.moduleManager = moduleManager;
     }
 
-    public void loadModuleToService(ArrayList<Module> modules) {
+    public void loadModuleToService(ArrayList<Module> modules) throws Exception {
+        // Add Modules to ArrayList
         for(Module c : modules) {
             getModuleManager().getModules().add(c);
         }
-    }
 
-    public void addToRuntime(File file) {
-        for(Class<?> c : file.getClass().getClasses()) {
-            System.out.println(c.getName());
-            getModuleManager().getClassManager().setClass(c.getName(), c);
-            System.out.println(c.getName());
+        // Reload Configuration
+        for(Module c : modules) {
+            c.getModuleDescriptionFile().load();
+            c.getModuleDescriptionFile().reloadRequiredModules(moduleManager);
         }
     }
-
     public List<File> getFilesFromModule(List<Module> modules) {
         List<File> files = new ArrayList<>();
         for(Module c : modules) {
-            files.add(c.getMainFile());
+            files.add(c.getFile());
         }
         return files;
     }
-
     public List<URL> getURLs(List<File> files) throws MalformedURLException {
         List<URL> urls = new ArrayList<>();
         for(File c : files) {

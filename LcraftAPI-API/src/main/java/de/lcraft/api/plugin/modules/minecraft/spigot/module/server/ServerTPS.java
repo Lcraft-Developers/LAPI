@@ -11,13 +11,10 @@ public class ServerTPS {
         lagometer = new Lag();
         Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(plugin, lagometer, 100L, 1L);
     }
-
-    public class Lag
-            implements Runnable
-    {
+    public class Lag implements Runnable {
         public static int TICK_COUNT= 0;
         public static long[] TICKS= new long[600];
-        public static long LAST_TICK= 0L;
+        public static long LAST_TICK = 0L;
 
         public static double getTPS()
         {
@@ -52,7 +49,6 @@ public class ServerTPS {
             TICK_COUNT+= 1;
         }
     }
-
     public static Lag getLagOmeter() {
         return lagometer;
     }

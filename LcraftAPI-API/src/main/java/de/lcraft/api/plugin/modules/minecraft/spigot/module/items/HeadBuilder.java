@@ -18,7 +18,6 @@ public class HeadBuilder {
         iMeta = (SkullMeta) i.getItemMeta();
         iMeta.setOwner(name);
     }
-
     public HeadBuilder(String name) {
         this(name, 1);
     }
@@ -27,25 +26,21 @@ public class HeadBuilder {
         iMeta.setDisplayName(name);
         return this;
     }
-
-
     public HeadBuilder setOwner(String name) {
         iMeta.setOwner(name);
         return this;
     }
-
     public HeadBuilder setLoreString(String... lore) {
         setLore((ArrayList) Arrays.<String>asList(lore));
         return this;
     }
-
     public HeadBuilder setLore(ArrayList<String> lore) {
         iMeta.setLore(lore);
         return this;
     }
-
     public ItemStack build() {
         i.setItemMeta((ItemMeta) iMeta);
         return i;
     }
+
 }

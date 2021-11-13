@@ -51,9 +51,6 @@ public class MySQLServer {
     public String getIp() {
         return ip;
     }
-    public String getPassword() {
-        return password;
-    }
     public String getPort() {
         return port;
     }

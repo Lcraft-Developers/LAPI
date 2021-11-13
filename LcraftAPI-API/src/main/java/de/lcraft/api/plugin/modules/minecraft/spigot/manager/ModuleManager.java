@@ -1,8 +1,6 @@
 package de.lcraft.api.plugin.modules.minecraft.spigot.manager;
 
 import de.lcraft.api.plugin.main.spigot.APIPluginMain;
-import de.lcraft.api.plugin.modules.minecraft.spigot.manager.classes.ClassManager;
-
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -12,20 +10,17 @@ public class ModuleManager {
     private APIPluginMain pluginMain;
     private ModuleFileLoader moduleFileLoader;
     private ModuleLoader moduleLoader;
-    private ClassManager classManager;
 
     public ModuleManager(APIPluginMain pluginMain) {
         this.pluginMain = pluginMain;
 
         moduleFileLoader = new ModuleFileLoader(this);
         moduleLoader = new ModuleLoader(this);
-        classManager = new ClassManager(this);
     }
 
     public void loadAllModules() throws Exception {
         moduleFileLoader.loadModules(pluginMain);
     }
-
     public void onEnableAllModules() {
         for(Module c : getModules()) {
             try {
@@ -35,13 +30,11 @@ public class ModuleManager {
             }
         }
     }
-
     public void onLoadAllModules() throws IOException {
         for(Module c : getModules()) {
             c.onLoad();
         }
     }
-
     public void onDisableAllModules() throws IOException {
         for(Module c : getModules()) {
             c.onDisable();
@@ -59,9 +52,6 @@ public class ModuleManager {
     }
     public ModuleLoader getModuleLoader() {
         return moduleLoader;
-    }
-    public ClassManager getClassManager() {
-        return classManager;
     }
 
 }
