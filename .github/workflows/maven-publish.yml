@@ -15,7 +15,6 @@ jobs:
     steps:
       - name: Step 1 - Checkout main branch of Gituhb
         uses: actions/checkout@v2
-        run: mvn clean install
 
       - name: Step 2 - Clean Maven
         run: mvn clean install
