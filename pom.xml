@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>de.lcraft</groupId>
-    <artifactId>LcraftAPI</artifactId>
+    <groupId>de.lcraft.api</groupId>
+    <artifactId>APIs</artifactId>
     <packaging>pom</packaging>
     <version>1.0.0</version>
     <modules>
@@ -13,6 +13,8 @@
         <module>LcraftAPI-Spigot-TestPlugin</module>
         <module>Lcraft-BungeeCord-TestPlugin</module>
     </modules>
+
+
 
     <properties>
         <maven.compiler.source>16</maven.compiler.source>
