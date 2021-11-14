@@ -26,3 +26,22 @@ jobs:
     - name: Step 3 - Build with Maven
       run: mvn -B package --file pom.xml
 
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Maven Central Repository
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+          distribution: 'adopt'
+          server-id: ossrh
+          server-username: LPDMinecraft
+          server-password: MAVENSECRETTOKEN!!!
+      - name: Publish package
+        run: mvn --batch-mode deploy
+        env:
+          MAVEN_USERNAME: ${{ secrets.LPDMinecraft }}
+          MAVEN_PASSWORD: ${{ secrets.MAVENSECRETTOKEN!!! }}
+
+
