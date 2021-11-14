@@ -8,15 +8,15 @@ import java.io.IOException;
 public class TestPlugin extends Module {
 
     @Override
-    public void onLoad() throws IOException {
+    public void onLoad() {}
+
+    @Override
+    public void onEnable() throws IOException {
         getModuleCommandManager().addCommand(new TestCommand(this));
 
         getListenerManager().addListener(new JoinListener());
         getListenerManager().registerAllListeners();
     }
-
-    @Override
-    public void onEnable() { }
 
     @Override
     public void onDisable() { }

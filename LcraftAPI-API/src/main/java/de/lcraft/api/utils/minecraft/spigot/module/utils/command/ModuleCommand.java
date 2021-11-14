@@ -5,6 +5,7 @@ import de.lcraft.api.utils.minecraft.spigot.module.logger.ModuleLogger;
 import de.lcraft.api.utils.minecraft.spigot.module.logger.ModuleLoggerPlace;
 import de.lcraft.api.utils.minecraft.spigot.module.logger.ModuleLoggerType;
 import de.lcraft.api.utils.minecraft.spigot.module.Module;
+import de.lcraft.api.utils.minecraft.spigot.module.utils.prefixhelper.PrefixHelper;
 import de.lcraft.api.utils.minecraft.spigot.permissions.PermsManager;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.defaults.BukkitCommand;
@@ -82,6 +83,9 @@ public abstract class ModuleCommand extends BukkitCommand {
     }
     public final void sendMessage(String message, ModuleLoggerPlace moduleLoggerPlace) {
         getLogger().sendModule(ModuleLoggerType.NOTHING, moduleLoggerPlace, message);
+    }
+    public PrefixHelper prefixHelper() {
+        return module.getPrefixHelper();
     }
 
 }

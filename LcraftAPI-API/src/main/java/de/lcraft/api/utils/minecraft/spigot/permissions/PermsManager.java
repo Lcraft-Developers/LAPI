@@ -54,16 +54,15 @@ public class PermsManager {
         }
 
     }
-
     public boolean hasPermissions(Player p, String permission) {
-        if(cfg.cfg().contains("ModuleConfig.opcanall")) {
-            if(cfg.cfg().getBoolean("ModuleConfig.opcanall")) {
+        if(cfg.cfg().contains("cfg.opcanall")) {
+            if(cfg.cfg().getBoolean("cfg.opcanall")) {
                 if(p.isOp()) {
                     return true;
                 }
             }
         } else {
-            cfg.cfg().set("ModuleConfig.opcanall", true);
+            cfg.cfg().set("cfg.opcanall", true);
             cfg.save();
             if(p.isOp()) {
                 return true;

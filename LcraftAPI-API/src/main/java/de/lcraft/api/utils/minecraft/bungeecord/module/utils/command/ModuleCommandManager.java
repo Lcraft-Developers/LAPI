@@ -31,14 +31,18 @@ public class ModuleCommandManager {
 
     public void reloadConfigs() throws IOException {
         PermsManager manager = new PermsManager();
-        for(String c : getAllPermissions()) {
-            manager.logPermission(c);
+        if(getAllPermissions() != null) {
+            for(String c : getAllPermissions()) {
+                manager.logPermission(c);
+            }
         }
 
         LanguagesManager languagesManager = new LanguagesManager();
-        for(String c : getAllTranslatedTexts()) {
-            for(Language lang : languagesManager.getLangs()) {
-                lang.translate(c);
+        if(getAllTranslatedTexts() != null) {
+            for(String c : getAllTranslatedTexts()) {
+                for(Language lang : languagesManager.getLangs()) {
+                    lang.translate(c);
+                }
             }
         }
     }

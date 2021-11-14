@@ -9,6 +9,7 @@ C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\utils\minecraft\bungeecord\manager\ModuleEventManager.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\utils\minecraft\bungeecord\languages\filesystem\Language.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\utils\minecraft\bungeecord\languages\websystem\WebSystemManager.java
+C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\utils\minecraft\spigot\module\utils\inventory\Inventory.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\utils\minecraft\bungeecord\languages\filesystem\LanguagesManager.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\utils\minecraft\bungeecord\languages\filesystem\impl\German.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\utils\minecraft\spigot\manager\ModuleLoader.java
@@ -18,6 +19,7 @@ C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\utils\minecraft\spigot\manager\ModuleManager.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\utils\minecraft\bungeecord\manager\classloaders\ModuleClassLoader.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\utils\minecraft\bungeecord\module\utils\command\ModuleCommandManager.java
+C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\utils\minecraft\spigot\module\utils\prefixhelper\PrefixHelper.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\utils\minecraft\spigot\permissions\PermsManager.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\utils\minecraft\spigot\module\logger\ModuleLoggerPlace.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\utils\minecraft\spigot\module\utils\crafting\CraftingRecipe.java
@@ -29,14 +31,17 @@ C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\utils\minecraft\spigot\manager\ModuleEventManager.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\utils\minecraft\spigot\languages\websystem\WebSystemManager.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\utils\minecraft\spigot\languages\filesystem\impl\German.java
+C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\utils\minecraft\spigot\module\utils\inventory\InventoryManager.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\utils\java\utils\Math.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\utils\minecraft\bungeecord\module\utils\configs\Config.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\utils\minecraft\spigot\module\utils\items\HeadBuilder.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\utils\java\utils\Internet.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\utils\minecraft\spigot\module\utils\listeners\ListenerManager.java
+C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\utils\minecraft\spigot\module\utils\inventory\options\InventoryIntegerOption.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\utils\minecraft\bungeecord\module\Module.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\utils\minecraft\bungeecord\module\utils\listeners\ListenerManager.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\utils\minecraft\spigot\module\utils\command\ModuleCommand.java
+C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\utils\minecraft\spigot\module\utils\inventory\options\InventoryBooleanOption.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\utils\mysql\MySQLServerHelper.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\utils\minecraft\spigot\module\utils\configs\Config.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\utils\minecraft\bungeecord\module\logger\ModuleLogger.java
@@ -53,6 +58,7 @@ C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\utils\minecraft\bungeecord\languages\filesystem\impl\English.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\utils\minecraft\bungeecord\module\utils\server\WorldUtil.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\utils\minecraft\spigot\manager\classloaders\ModuleClassLoader.java
+C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\utils\minecraft\bungeecord\module\utils\prefixhelper\PrefixHelper.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\utils\minecraft\spigot\module\utils\items\ItemBuilder.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\utils\minecraft\spigot\module\logger\ModuleLoggerType.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\LcraftAPI-API\src\main\java\de\lcraft\api\utils\minecraft\spigot\SpigotClass.java

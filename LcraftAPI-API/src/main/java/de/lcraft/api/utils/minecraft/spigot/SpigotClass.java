@@ -5,7 +5,6 @@ import de.lcraft.api.utils.minecraft.spigot.manager.ModuleManager;
 import de.lcraft.api.utils.minecraft.spigot.module.utils.configs.Config;
 import de.lcraft.api.utils.minecraft.spigot.module.utils.server.ServerTPS;
 import org.bukkit.plugin.java.JavaPlugin;
-
 import java.io.IOException;
 
 public class SpigotClass extends JavaPlugin {
@@ -31,16 +30,6 @@ public class SpigotClass extends JavaPlugin {
         try {
             moduleManager.loadAllModules();
         } catch (Exception e) {
-            e.printStackTrace();
-        }
-        try {
-            moduleManager.onLoadAllModules();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        try {
-            moduleManager.onEnableAllModules();
-        } catch (IOException e) {
             e.printStackTrace();
         }
     }

@@ -3,19 +3,17 @@ package de.lcraft.api.utils.minecraft.spigot.module.utils.items;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-
 import java.util.ArrayList;
 
-
 public class ItemBuilder {
-    private static ItemStack i;
-    private static ItemMeta iMeta;
+
+    public ItemStack i;
+    public ItemMeta iMeta;
 
     public ItemBuilder(Material m, int amount) {
         i = new ItemStack(m, amount);
         iMeta = i.getItemMeta();
     }
-
     public ItemBuilder(Material m) {
         this(m, 1);
     }

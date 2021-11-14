@@ -1,9 +1,14 @@
 package de.lcraft.api.utils.minecraft.spigot.module;
 
+import de.lcraft.api.utils.minecraft.spigot.SpigotClass;
 import de.lcraft.api.utils.minecraft.spigot.languages.filesystem.LanguagesManager;
+import de.lcraft.api.utils.minecraft.spigot.manager.ModuleEventManager;
 import de.lcraft.api.utils.minecraft.spigot.manager.ModuleManager;
 import de.lcraft.api.utils.minecraft.spigot.module.logger.ModuleLogger;
 import de.lcraft.api.utils.minecraft.spigot.module.utils.command.ModuleCommandManager;
+import de.lcraft.api.utils.minecraft.spigot.module.utils.configs.ModuleConfig;
+import de.lcraft.api.utils.minecraft.spigot.module.utils.inventory.InventoryManager;
+import de.lcraft.api.utils.minecraft.spigot.module.utils.prefixhelper.PrefixHelper;
 import de.lcraft.api.utils.minecraft.spigot.permissions.PermsManager;
 import de.lcraft.api.utils.minecraft.spigot.module.utils.listeners.ListenerManager;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -21,19 +26,32 @@ public abstract class Module {
     private File file;
     private ModuleManager manager;
     private PermsManager permsManager;
+    private InventoryManager inventoryManager;
+    private PrefixHelper prefixHelper;
+    private ModuleConfig config;
 
     public void load(ModuleManager manager) throws Exception {
+        ModuleEventManager eventManager = new ModuleEventManager(this);
         this.manager = manager;
 
         moduleDescriptionFile = new ModuleDescriptionFile(file);
         moduleDescriptionFile.load();
         moduleLogger = new ModuleLogger(moduleDescriptionFile.getName());
+        config = new ModuleConfig(getModuleDescriptionFile().getName(), "config.yml");
+
+        eventManager.loadModule();
 
         permsManager = new PermsManager();
         languagesManager = new LanguagesManager();
-
         moduleCommandManager = new ModuleCommandManager(this);
         listenerManager = new ListenerManager(this);
+
+        inventoryManager = new InventoryManager(SpigotClass.getApiPluginMain());
+        prefixHelper = new PrefixHelper();
+        prefixHelper.startPlugin(config);
+
+        eventManager.enableModule();
+
         listenerManager.registerAllListeners();
         moduleCommandManager.reloadConfigs();
     }
@@ -69,6 +87,9 @@ public abstract class Module {
     public void setModuleDescriptionFile(ModuleDescriptionFile moduleDescriptionFile) {
         this.moduleDescriptionFile = moduleDescriptionFile;
     }
+    public InventoryManager getInventoryManager() {
+        return inventoryManager;
+    }
     public LanguagesManager getLanguagesManager() {
         return languagesManager;
     }
@@ -77,6 +98,9 @@ public abstract class Module {
     }
     public PermsManager getPermsManager() {
         return permsManager;
+    }
+    public PrefixHelper getPrefixHelper() {
+        return prefixHelper;
     }
 
 }
