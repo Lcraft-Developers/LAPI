@@ -2,7 +2,6 @@ package de.lcraft.api.utils.minecraft.bungeecord.permissions;
 
 import de.lcraft.api.utils.minecraft.bungeecord.module.utils.configs.ModuleConfig;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
-
 import java.io.IOException;
 
 public class PermsManager {
@@ -16,33 +15,30 @@ public class PermsManager {
         this.adminsCfg = new ModuleConfig("Lcraft Permissions", "admins.yml");
         this.cfg = new ModuleConfig("Lcraft Permissions", "config.yml");
     }
+
     public static class Permission {
 
         public Permission() {}
 
         private String name;
-        private boolean isEnabled,
-                opCanIt;
+        private boolean isEnabled;
 
         public void load(String perm, ModuleConfig allPermissionsCfg) {
             String root = "permissions." + perm;
             if(allPermissionsCfg.cfg().contains(root)) {
                 name = perm;
                 isEnabled = allPermissionsCfg.cfg().getBoolean(root + ".enabled");
-                opCanIt = allPermissionsCfg.cfg().getBoolean(root + ".opCanIt");
             } else {
-                set(perm, true, true, allPermissionsCfg);
+                set(perm, true, allPermissionsCfg);
             }
         }
 
-        public void set(String perm, boolean isEnabled, boolean opCanIt, ModuleConfig allPermissionsCfg) {
+        public void set(String perm, boolean isEnabled, ModuleConfig allPermissionsCfg) {
             String root = "permissions." + perm;
             allPermissionsCfg.cfg().set(root + ".name", perm);
             allPermissionsCfg.cfg().set(root + ".enabled", isEnabled);
-            allPermissionsCfg.cfg().set(root + ".opCanIt", opCanIt);
             this.name = perm;
             this.isEnabled = isEnabled;
-            this.opCanIt = opCanIt;
             allPermissionsCfg.save();
         }
 

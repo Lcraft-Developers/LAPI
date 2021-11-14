@@ -25,18 +25,6 @@ public class ModuleManager {
     public void loadAllModules() throws Exception {
         moduleFileLoader.loadModules(pluginMain);
     }
-    public void onEnableAllModules() throws IOException {
-        for(Module c : getModules()) {
-            ModuleEventManager eventManager = new ModuleEventManager(c);
-            eventManager.enableModule();
-        }
-    }
-    public void onLoadAllModules() throws IOException {
-        for(Module c : getModules()) {
-            ModuleEventManager eventManager = new ModuleEventManager(c);
-            eventManager.loadModule();
-        }
-    }
     public void onDisableAllModules() throws IOException {
         for(Module c : getModules()) {
             ModuleEventManager eventManager = new ModuleEventManager(c);

@@ -5,6 +5,7 @@ import de.lcraft.api.utils.minecraft.bungeecord.module.Module;
 import de.lcraft.api.utils.minecraft.bungeecord.module.logger.ModuleLogger;
 import de.lcraft.api.utils.minecraft.bungeecord.module.logger.ModuleLoggerType;
 import de.lcraft.api.utils.minecraft.bungeecord.permissions.PermsManager;
+import de.lcraft.api.utils.minecraft.bungeecord.module.utils.prefixhelper.PrefixHelper;
 import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.api.plugin.Command;
@@ -86,6 +87,9 @@ public abstract class ModuleCommand extends Command {
     }
     public final void sendMessage(String message) {
         getLogger().sendModule(ModuleLoggerType.NOTHING, message);
+    }
+    public PrefixHelper prefixHelper() {
+        return module.getPrefixHelper();
     }
 
 }

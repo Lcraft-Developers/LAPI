@@ -33,16 +33,6 @@ public class BungeeClass extends Plugin {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        try {
-            moduleManager.onLoadAllModules();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        try {
-            moduleManager.onEnableAllModules();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
     @Override
     public void onDisable() {

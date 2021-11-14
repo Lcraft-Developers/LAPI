@@ -6,6 +6,9 @@ import de.lcraft.api.utils.minecraft.bungeecord.module.logger.ModuleLogger;
 import de.lcraft.api.utils.minecraft.bungeecord.module.utils.command.ModuleCommandManager;
 import de.lcraft.api.utils.minecraft.bungeecord.module.utils.listeners.ListenerManager;
 import de.lcraft.api.utils.minecraft.bungeecord.permissions.PermsManager;
+import de.lcraft.api.utils.minecraft.bungeecord.module.utils.configs.ModuleConfig;
+import de.lcraft.api.utils.minecraft.bungeecord.module.utils.prefixhelper.PrefixHelper;
+import de.lcraft.api.utils.minecraft.bungeecord.manager.ModuleEventManager;
 import net.md_5.bungee.api.plugin.Plugin;
 import java.io.File;
 import java.io.IOException;
@@ -21,19 +24,30 @@ public abstract class Module {
     private File file;
     private ModuleManager manager;
     private PermsManager permsManager;
+    private PrefixHelper prefixHelper;
+    private ModuleConfig config;
 
     public void load(ModuleManager manager) throws Exception {
         this.manager = manager;
+        ModuleEventManager eventManager = new ModuleEventManager(this);
 
         moduleDescriptionFile = new ModuleDescriptionFile(file);
         moduleDescriptionFile.load();
         moduleLogger = new ModuleLogger(moduleDescriptionFile.getName());
+        config = new ModuleConfig(getModuleDescriptionFile().getName(), "config.yml");
+
+        eventManager.loadModule();
 
         permsManager = new PermsManager();
         languagesManager = new LanguagesManager();
-
         moduleCommandManager = new ModuleCommandManager(this);
         listenerManager = new ListenerManager(this);
+
+        prefixHelper = new PrefixHelper();
+        prefixHelper.startPlugin(config);
+
+        eventManager.enableModule();
+
         listenerManager.registerAllListeners();
         moduleCommandManager.reloadConfigs();
     }
@@ -77,6 +91,9 @@ public abstract class Module {
     }
     public PermsManager getPermsManager() {
         return permsManager;
+    }
+    public PrefixHelper getPrefixHelper() {
+        return prefixHelper;
     }
 
 }
