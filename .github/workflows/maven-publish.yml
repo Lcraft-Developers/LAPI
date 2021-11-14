@@ -17,7 +17,10 @@ jobs:
         uses: actions/checkout@v2
         run: mvn clean install
 
-      - name: Step 2 - Set up JDK 16
+      - name: Step 2 - Clean Maven
+        run: mvn clean install
+
+      - name: Step 3 - Set up JDK 16
         uses: actions/setup-java@v2
         with:
           java-version: 16
