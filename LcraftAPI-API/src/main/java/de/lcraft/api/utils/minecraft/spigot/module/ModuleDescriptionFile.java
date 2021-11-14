@@ -80,9 +80,14 @@ public class ModuleDescriptionFile {
     public Map<String, Object> getAllDatasFromModuleFile() throws Exception {
         ZipFile jarFile = new ZipFile(file);
         Yaml yaml = new Yaml();
-        InputStream inputStream = jarFile.getInputStream(jarFile.getEntry("module.yml"));
-        Map<String, Object> data = yaml.load(inputStream);
-        return data;
+        if(jarFile.getEntry("module.yml") != null) {
+            InputStream inputStream = jarFile.getInputStream(jarFile.getEntry("module.yml"));
+            Map<String, Object> data = yaml.load(inputStream);
+            return data;
+        } else {
+            new Exception("No module.yml found").printStackTrace();
+            return null;
+        }
     }
     public boolean hasEnoughInformation() throws Exception {
         Map<String, Object> data = getAllDatasFromModuleFile();
