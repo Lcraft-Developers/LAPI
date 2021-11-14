@@ -13,11 +13,13 @@
     <version>1.0.2</version>
     <description>Das ist mein Plugin/API für weitere Module/Plugins von meiner Sorte.</description>
 
-    <artifactId>LcraftAPI.API</artifactId>
+    <groupId>de.lcraft.api</groupId>
+    <artifactId>API</artifactId>
 
     <properties>
         <maven.compiler.source>16</maven.compiler.source>
         <maven.compiler.target>16</maven.compiler.target>
+        <java.version>16</java.version>
     </properties>
 
     <repositories>

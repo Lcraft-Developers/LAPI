@@ -13,11 +13,13 @@
     <version>1.0.0</version>
     <description>Das ist mein Plugin/API für weitere Module/Plugins von meiner Sorte.</description>
 
-    <artifactId>LcraftAPI.bungeecord.test</artifactId>
+    <groupId>de.lcraft.api</groupId>
+    <artifactId>BungeeCordTest</artifactId>
 
     <properties>
         <maven.compiler.source>16</maven.compiler.source>
         <maven.compiler.target>16</maven.compiler.target>
+        <java.version>16</java.version>
     </properties>
 
     <repositories>
@@ -43,8 +45,8 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>de.lcraft</groupId>
-            <artifactId>LcraftAPI.API</artifactId>
+            <groupId>de.lcraft.api</groupId>
+            <artifactId>API</artifactId>
             <version>1.0.2</version>
         </dependency>
     </dependencies>
