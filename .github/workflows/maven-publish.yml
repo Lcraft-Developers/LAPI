@@ -42,6 +42,6 @@ jobs:
         run: mvn --batch-mode deploy
         env:
           MAVEN_USERNAME: ${{ secrets.LPDMinecraft }}
-          MAVEN_PASSWORD: ${{ secrets.MAVENSECRETTOKEN!!! }}
+          MAVEN_PASSWORD: ${{ secrets.MAVENSECRETTOKEN }}
 
 
