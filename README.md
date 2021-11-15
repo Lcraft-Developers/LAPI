@@ -2,7 +2,7 @@
 
 [![Join us on Discord](https://img.shields.io/discord/856084949827321876.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/j2KwBaHZgD)
 
-Lcraft APIs are APIs for Minecraft. We have a normal, Languages and more APIs in this reposetory!
+Lcraft APIs are APIs for Minecraft and Java.
 
 </div>
 
