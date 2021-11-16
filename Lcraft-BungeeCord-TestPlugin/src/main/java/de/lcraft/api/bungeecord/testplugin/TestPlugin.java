@@ -12,7 +12,7 @@ public class TestPlugin extends Module {
 
     @Override
     public void onEnable() throws IOException {
-        getModuleCommandManager().addCommand(new TestCommand(this));
+        getModuleCommandManager().addCommand(new TestCommand(this), true);
 
         getListenerManager().addListener(new JoinListener());
         getListenerManager().registerAllListeners();

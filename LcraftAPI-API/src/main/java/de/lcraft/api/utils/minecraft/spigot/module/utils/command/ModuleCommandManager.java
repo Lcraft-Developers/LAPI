@@ -1,9 +1,12 @@
 package de.lcraft.api.utils.minecraft.spigot.module.utils.command;
 
+import de.lcraft.api.utils.minecraft.bungeecord.BungeeClass;
+import de.lcraft.api.utils.minecraft.spigot.module.utils.configs.ModuleConfig;
 import de.lcraft.api.utils.minecraft.spigot.languages.filesystem.Language;
 import de.lcraft.api.utils.minecraft.spigot.languages.filesystem.LanguagesManager;
 import de.lcraft.api.utils.minecraft.spigot.module.Module;
 import de.lcraft.api.utils.minecraft.spigot.permissions.PermsManager;
+import net.md_5.bungee.api.ProxyServer;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandMap;
 
@@ -15,23 +18,36 @@ public class ModuleCommandManager {
 
     private Module module;
     private ArrayList<ModuleCommand> modulesCmds;
+    private ModuleConfig moduleCommands;
 
     public ModuleCommandManager(Module module) {
         this.module = module;
         modulesCmds = new ArrayList<>();
+        moduleCommands = new ModuleConfig(module, "commands.yml");
     }
 
-    public void addCommand(ModuleCommand executor) {
-        try {
-            final Field commandMapField = Bukkit.getServer().getClass().getDeclaredField("commandMap");
-            commandMapField.setAccessible(true);
+    public void addCommand(ModuleCommand executor, boolean canDisableInConfig) {
+        if(canDisableInConfig) {
+            if(moduleCommands.cfg().contains("commands." + executor.getName())) {
+                if(moduleCommands.cfg().getBoolean("commands." + executor.getName())) {
+                    addCommand(executor, false);
+                }
+            } else {
+                moduleCommands.cfg().set("commands." + executor.getName(), true);
+                addCommand(executor, canDisableInConfig);
+            }
+        } else {
+            try {
+                final Field commandMapField = Bukkit.getServer().getClass().getDeclaredField("commandMap");
+                commandMapField.setAccessible(true);
 
-            final CommandMap commandMap = ((CommandMap) commandMapField.get(Bukkit.getServer()));
-            commandMap.register(executor.getName(), executor);
-        } catch (final IllegalAccessException | NoSuchFieldException ex) {
-            ex.printStackTrace();
+                final CommandMap commandMap = ((CommandMap) commandMapField.get(Bukkit.getServer()));
+                commandMap.register(executor.getName(), executor);
+            } catch (final IllegalAccessException | NoSuchFieldException ex) {
+                ex.printStackTrace();
+            }
+            modulesCmds.add(executor);
         }
-        modulesCmds.add(executor);
     }
 
     public void reloadConfigs() throws IOException {

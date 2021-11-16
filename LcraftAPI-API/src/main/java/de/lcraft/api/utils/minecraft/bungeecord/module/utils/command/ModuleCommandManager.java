@@ -5,28 +5,37 @@ import de.lcraft.api.utils.minecraft.bungeecord.languages.filesystem.Language;
 import de.lcraft.api.utils.minecraft.bungeecord.languages.filesystem.LanguagesManager;
 import de.lcraft.api.utils.minecraft.bungeecord.module.Module;
 import de.lcraft.api.utils.minecraft.bungeecord.permissions.PermsManager;
+import de.lcraft.api.utils.minecraft.bungeecord.module.utils.configs.ModuleConfig;
 import net.md_5.bungee.api.ProxyServer;
-import net.md_5.bungee.api.plugin.Plugin;
-import org.bukkit.Bukkit;
-import org.bukkit.command.CommandMap;
-
 import java.io.IOException;
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 
 public class ModuleCommandManager {
 
     private Module module;
     private ArrayList<ModuleCommand> modulesCmds;
+    private ModuleConfig moduleCommands;
 
-    public ModuleCommandManager(Module module) {
+    public ModuleCommandManager(Module module) throws IOException {
         this.module = module;
         modulesCmds = new ArrayList<>();
+        moduleCommands = new ModuleConfig(module, "commands.yml");
     }
 
-    public void addCommand(ModuleCommand executor) {
-        ProxyServer.getInstance().getPluginManager().registerCommand(BungeeClass.getApiPluginMain(), executor);
-        modulesCmds.add(executor);
+    public void addCommand(ModuleCommand executor, boolean canDisableInConfig) {
+        if(canDisableInConfig) {
+            if(moduleCommands.cfg().contains("commands." + executor.getName())) {
+                if(moduleCommands.cfg().getBoolean("commands." + executor.getName())) {
+                    addCommand(executor, false);
+                }
+            } else {
+                moduleCommands.cfg().set("commands." + executor.getName(), true);
+                addCommand(executor, canDisableInConfig);
+            }
+        } else {
+            ProxyServer.getInstance().getPluginManager().registerCommand(BungeeClass.getApiPluginMain(), executor);
+            modulesCmds.add(executor);
+        }
     }
 
     public void reloadConfigs() throws IOException {
