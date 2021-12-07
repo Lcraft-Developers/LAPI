@@ -17,9 +17,9 @@
     <artifactId>SpigotTest</artifactId>
 
     <properties>
-        <maven.compiler.source>16</maven.compiler.source>
-        <maven.compiler.target>16</maven.compiler.target>
-        <java.version>16</java.version>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <java.version>17</java.version>
     </properties>
 
     <repositories>
@@ -33,7 +33,7 @@
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
-            <version>1.17.1-R0.1-SNAPSHOT</version>
+            <version>1.18-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>

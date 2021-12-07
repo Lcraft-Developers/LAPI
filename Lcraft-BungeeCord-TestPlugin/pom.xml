@@ -17,9 +17,9 @@
     <artifactId>BungeeCordTest</artifactId>
 
     <properties>
-        <maven.compiler.source>16</maven.compiler.source>
-        <maven.compiler.target>16</maven.compiler.target>
-        <java.version>16</java.version>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <java.version>17</java.version>
     </properties>
 
     <repositories>
@@ -33,22 +33,23 @@
         <dependency>
             <groupId>net.md-5</groupId>
             <artifactId>bungeecord-api</artifactId>
-            <version>1.17-R0.1-SNAPSHOT</version>
+            <version>1.18-R0.1-SNAPSHOT</version>
             <type>jar</type>
             <scope>provided</scope>
         </dependency>
+
         <dependency>
             <groupId>net.md-5</groupId>
             <artifactId>bungeecord-api</artifactId>
-            <version>1.17-R0.1-SNAPSHOT</version>
+            <version>1.18-R0.1-SNAPSHOT</version>
             <type>javadoc</type>
             <scope>provided</scope>
         </dependency>
+
         <dependency>
             <groupId>de.lcraft.api</groupId>
             <artifactId>API</artifactId>
             <version>1.0.2</version>
         </dependency>
     </dependencies>
-
 </project>
