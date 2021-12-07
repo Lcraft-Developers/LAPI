@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
     <url>lcraft.de</url>
     <name>Lcraft API</name>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <description>Das ist mein Plugin/API für weitere Module/Plugins von meiner Sorte.</description>
 
     <groupId>de.lcraft.api</groupId>
