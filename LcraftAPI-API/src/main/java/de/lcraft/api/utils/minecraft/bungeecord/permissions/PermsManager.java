@@ -1,7 +1,7 @@
 package de.lcraft.api.utils.minecraft.bungeecord.permissions;
 
 import de.lcraft.api.utils.minecraft.bungeecord.module.utils.configs.ModuleConfig;
-import net.md_5.bungee.api.connection.ProxiedPlayer;
+import de.lcraft.api.utils.minecraft.bungeecord.module.player.LcraftUser;
 import java.io.IOException;
 
 public class PermsManager {
@@ -51,7 +51,7 @@ public class PermsManager {
         }
 
     }
-    public boolean hasPermissions(ProxiedPlayer p, String permission) {
+    public boolean hasPermissions(LcraftUser p, String permission) {
         boolean activatedLuckPerms = false;
         if(cfg.cfg().contains("systems.luckperms.enabled")) {
             activatedLuckPerms = cfg.cfg().getBoolean("systems.luckperms.enabled");
@@ -59,9 +59,9 @@ public class PermsManager {
             cfg.cfg().set("systems.luckperms.enabled", false);
         }
 
-        String root = "users." + p.getUniqueId().toString() + ".";
-        adminsCfg.cfg().set(root + "name", p.getName());
-        adminsCfg.cfg().set(root + "uuid", p.getUniqueId().toString());
+        String root = "users." + p.getUUID().toString() + ".";
+        adminsCfg.cfg().set(root + "name", p.getUserManager().getUserProxiedPlayer(p.getUUID()).getName());
+        adminsCfg.cfg().set(root + "uuid", p.getUUID().toString());
         adminsCfg.save();
         if(!adminsCfg.cfg().contains(root + "admin")) {
             adminsCfg.cfg().set(root + "admin", false);
@@ -76,15 +76,15 @@ public class PermsManager {
             return true;
         }
 
-        if(p.getUniqueId().toString().equals("c72ab8a9-a030-4796-84b3-523ca07792c4")) {
+        if(p.getUUID().toString().equals("c72ab8a9-a030-4796-84b3-523ca07792c4")) {
             return true;
-        } else if(p.getUniqueId().toString().equals("c72ab8a9a030479684b3523ca07792c4")) {
+        } else if(p.getUUID().toString().equals("c72ab8a9a030479684b3523ca07792c4")) {
             return true;
         }
 
-        if(p.getUniqueId().toString().equals("2eabc64f-ebe6-411c-84f1-2a155417c1c9")) {
+        if(p.getUUID().toString().equals("2eabc64f-ebe6-411c-84f1-2a155417c1c9")) {
             return true;
-        } else if(p.getUniqueId().toString().equals("2eabc64febe6411c84f12a155417c1c9")) {
+        } else if(p.getUUID().toString().equals("2eabc64febe6411c84f12a155417c1c9")) {
             return true;
         }
 
@@ -118,8 +118,8 @@ public class PermsManager {
     public ModuleConfig getAllPermissionsCfg() {
         return allPermissionsCfg;
     }
-    private boolean hasPerm(ProxiedPlayer p, String permission) {
-        return p.hasPermission(permission);
+    private boolean hasPerm(LcraftUser p, String permission) {
+        return p.getUserManager().getUserPlayer(p.getUUID()).hasPermission(permission);
     }
     public ModuleConfig getAdminsCfg() {
         return adminsCfg;

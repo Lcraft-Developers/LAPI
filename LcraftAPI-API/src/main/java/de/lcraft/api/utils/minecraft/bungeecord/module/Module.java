@@ -3,8 +3,9 @@ package de.lcraft.api.utils.minecraft.bungeecord.module;
 import de.lcraft.api.utils.minecraft.bungeecord.languages.filesystem.LanguagesManager;
 import de.lcraft.api.utils.minecraft.bungeecord.manager.ModuleManager;
 import de.lcraft.api.utils.minecraft.bungeecord.module.logger.ModuleLogger;
+import de.lcraft.api.utils.minecraft.bungeecord.module.player.UserManager;
 import de.lcraft.api.utils.minecraft.bungeecord.module.utils.command.ModuleCommandManager;
-import de.lcraft.api.utils.minecraft.bungeecord.module.utils.listeners.ListenerManager;
+import de.lcraft.api.utils.minecraft.bungeecord.utils.listeners.ListenerManager;
 import de.lcraft.api.utils.minecraft.bungeecord.permissions.PermsManager;
 import de.lcraft.api.utils.minecraft.bungeecord.module.utils.configs.ModuleConfig;
 import de.lcraft.api.utils.minecraft.bungeecord.module.utils.prefixhelper.PrefixHelper;
@@ -26,6 +27,7 @@ public abstract class Module {
     private PermsManager permsManager;
     private PrefixHelper prefixHelper;
     private ModuleConfig config;
+    private UserManager lcraftUserManager;
 
     public void load(ModuleManager manager) throws Exception {
         this.manager = manager;
@@ -36,12 +38,13 @@ public abstract class Module {
         moduleLogger = new ModuleLogger(moduleDescriptionFile.getName());
         config = new ModuleConfig(getModuleDescriptionFile().getName(), "config.yml");
 
-        eventManager.loadModule();
-
         permsManager = new PermsManager();
         languagesManager = new LanguagesManager();
         moduleCommandManager = new ModuleCommandManager(this);
         listenerManager = new ListenerManager(this);
+        lcraftUserManager = new UserManager(listenerManager);
+
+        eventManager.loadModule();
 
         prefixHelper = new PrefixHelper();
         prefixHelper.startPlugin(config);

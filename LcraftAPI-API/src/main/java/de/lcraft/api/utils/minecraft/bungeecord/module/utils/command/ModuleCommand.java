@@ -4,10 +4,10 @@ import de.lcraft.api.utils.minecraft.bungeecord.languages.filesystem.LanguagesMa
 import de.lcraft.api.utils.minecraft.bungeecord.module.Module;
 import de.lcraft.api.utils.minecraft.bungeecord.module.logger.ModuleLogger;
 import de.lcraft.api.utils.minecraft.bungeecord.module.logger.ModuleLoggerType;
+import de.lcraft.api.utils.minecraft.bungeecord.module.player.LcraftUser;
 import de.lcraft.api.utils.minecraft.bungeecord.permissions.PermsManager;
 import de.lcraft.api.utils.minecraft.bungeecord.module.utils.prefixhelper.PrefixHelper;
 import net.md_5.bungee.api.CommandSender;
-import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.api.plugin.Command;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -34,15 +34,15 @@ public abstract class ModuleCommand extends Command {
     public String translate(UUID uuid, String text) throws IOException {
         return languagesManager.getPlayer(uuid).translate(text);
     }
-    public boolean hasPermissions(ProxiedPlayer p, String perm) {
+    public boolean hasPermissions(LcraftUser p, String perm) {
         return permsManager.hasPermissions(p, perm);
     }
 
     @Override
     public void execute(CommandSender commandSender, String[] strings) {
         if(splitting) {
-            if(commandSender != null && commandSender instanceof ProxiedPlayer) {
-                onPlayerCommand((ProxiedPlayer) commandSender, strings);
+            if(commandSender != null && commandSender instanceof LcraftUser) {
+                onPlayerCommand((LcraftUser) commandSender, strings);
             } else {
                 onConsoleCommand(commandSender, strings);
             }
@@ -52,7 +52,7 @@ public abstract class ModuleCommand extends Command {
     }
 
     public boolean onCommand(CommandSender s, String[] args) {return false;}
-    public boolean onPlayerCommand(ProxiedPlayer p, String[] args) {return false;}
+    public boolean onPlayerCommand(LcraftUser p, String[] args) {return false;}
     public boolean onConsoleCommand(CommandSender s, String[] args) {return false;}
 
     public abstract ArrayList<String> getAllPermissions(ArrayList<String> allPermissions);

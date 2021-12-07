@@ -5,12 +5,11 @@ import de.lcraft.api.utils.minecraft.spigot.module.logger.ModuleLogger;
 import de.lcraft.api.utils.minecraft.spigot.module.logger.ModuleLoggerPlace;
 import de.lcraft.api.utils.minecraft.spigot.module.logger.ModuleLoggerType;
 import de.lcraft.api.utils.minecraft.spigot.module.Module;
+import de.lcraft.api.utils.minecraft.spigot.module.player.LcraftUser;
 import de.lcraft.api.utils.minecraft.spigot.module.utils.prefixhelper.PrefixHelper;
 import de.lcraft.api.utils.minecraft.spigot.permissions.PermsManager;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.defaults.BukkitCommand;
-import org.bukkit.entity.Player;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.UUID;
@@ -35,15 +34,15 @@ public abstract class ModuleCommand extends BukkitCommand {
     public String translate(UUID uuid, String text) throws IOException {
         return languagesManager.getPlayer(uuid).translate(text);
     }
-    public boolean hasPermissions(Player p, String perm) {
+    public boolean hasPermissions(LcraftUser p, String perm) {
         return permsManager.hasPermissions(p, perm);
     }
 
     @Override
     public boolean execute(CommandSender var1, String var2, String[] var3) {
         if(splitting) {
-            if(var1 != null && var1 instanceof Player) {
-                return onPlayerCommand((Player) var1, var3);
+            if(var1 != null && var1 instanceof LcraftUser) {
+                return onLcraftUserCommand((LcraftUser) var1, var3);
             } else {
                 return onConsoleCommand(var1, var3);
             }
@@ -52,7 +51,7 @@ public abstract class ModuleCommand extends BukkitCommand {
         }
     }
     public boolean onCommand(CommandSender s, String[] args) {return false;}
-    public boolean onPlayerCommand(Player p, String[] args) {return false;}
+    public boolean onLcraftUserCommand(LcraftUser p, String[] args) {return false;}
     public boolean onConsoleCommand(CommandSender s, String[] args) {return false;}
 
     public abstract ArrayList<String> getAllPermissions(ArrayList<String> allPermissions);

@@ -1,0 +1,213 @@
+21:05:20 [INFO] Using standard Java JCE cipher.
+21:05:20 [INFO] Using standard Java compressor.
+21:05:20 [INFO] Enabled BungeeCord version git:BungeeCord-Bootstrap:1.18-R0.1-SNAPSHOT:a9d75c5:1616
+21:05:20 [INFO] Discovered module: ModuleSpec(name=cmd_alert, file=modules\cmd_alert.jar, provider=JenkinsModuleSource())
+
+21:05:20 [INFO] Discovered module: ModuleSpec(name=cmd_find, file=modules\cmd_find.jar, provider=JenkinsModuleSource())
+
+21:05:20 [INFO] Discovered module: ModuleSpec(name=cmd_list, file=modules\cmd_list.jar, provider=JenkinsModuleSource())
+
+21:05:20 [INFO] Discovered module: ModuleSpec(name=cmd_send, file=modules\cmd_send.jar, provider=JenkinsModuleSource())
+
+21:05:20 [INFO] Discovered module: ModuleSpec(name=cmd_server, file=modules\cmd_server.jar, provider=JenkinsModuleSource())
+
+21:05:20 [INFO] Discovered module: ModuleSpec(name=reconnect_yaml, file=modules\reconnect_yaml.jar, provider=JenkinsModuleSource())
+
+21:05:20 [INFO] Attempting to update plugin from null to ModuleVersion(build=1616, git=a9d75c5)
+
+21:05:20 [INFO] Attempting to Jenkins download module cmd_alert v1616
+
+21:05:21 [INFO] Download complete
+
+21:05:21 [INFO] Attempting to update plugin from null to ModuleVersion(build=1616, git=a9d75c5)
+
+21:05:21 [INFO] Attempting to Jenkins download module cmd_find v1616
+
+21:05:21 [INFO] Download complete
+
+21:05:21 [INFO] Attempting to update plugin from null to ModuleVersion(build=1616, git=a9d75c5)
+
+21:05:21 [INFO] Attempting to Jenkins download module cmd_list v1616
+
+21:05:21 [INFO] Download complete
+
+21:05:21 [INFO] Attempting to update plugin from null to ModuleVersion(build=1616, git=a9d75c5)
+
+21:05:21 [INFO] Attempting to Jenkins download module cmd_send v1616
+
+21:05:21 [INFO] Download complete
+
+21:05:21 [INFO] Attempting to update plugin from null to ModuleVersion(build=1616, git=a9d75c5)
+
+21:05:21 [INFO] Attempting to Jenkins download module cmd_server v1616
+
+21:05:21 [INFO] Download complete
+
+21:05:21 [INFO] Attempting to update plugin from null to ModuleVersion(build=1616, git=a9d75c5)
+
+21:05:21 [INFO] Attempting to Jenkins download module reconnect_yaml v1616
+
+21:05:21 [INFO] Download complete
+
+21:05:21 [INFO] Loaded plugin reconnect_yaml version git:reconnect_yaml:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:05:21 [INFO] Loaded plugin LcraftAPI version 1.0.2 by null
+21:05:21 [INFO] Loaded plugin cmd_find version git:cmd_find:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:05:21 [INFO] Loaded plugin cmd_server version git:cmd_server:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:05:21 [INFO] Loaded plugin cmd_alert version git:cmd_alert:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:05:21 [INFO] Loaded plugin cmd_send version git:cmd_send:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:05:21 [INFO] Loaded plugin cmd_list version git:cmd_list:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:05:21 [WARNING] Forced host server pvp is not defined
+21:05:21 [INFO] Enabled plugin reconnect_yaml version git:reconnect_yaml:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:05:21 [INFO] The Spigot Module Lcraft BungeeCord TestPlugin will be loaded.
+
+21:05:21 [INFO] The Spigot Module Lcraft BungeeCord TestPlugin is loaded.
+
+21:05:21 [INFO] Enabled plugin LcraftAPI version 1.0.2 by null
+21:05:21 [INFO] Enabled plugin cmd_find version git:cmd_find:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:05:21 [INFO] Enabled plugin cmd_server version git:cmd_server:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:05:21 [INFO] Enabled plugin cmd_alert version git:cmd_alert:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:05:21 [INFO] Enabled plugin cmd_send version git:cmd_send:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:05:21 [INFO] Enabled plugin cmd_list version git:cmd_list:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:05:21 [INFO] Listening on /0.0.0.0:25577
+21:05:26 [INFO] §cCommand not found
+21:05:27 [INFO] §cCommand not found
+21:06:07 [INFO] Using standard Java JCE cipher.
+21:06:07 [INFO] Using standard Java compressor.
+21:06:07 [INFO] Enabled BungeeCord version git:BungeeCord-Bootstrap:1.18-R0.1-SNAPSHOT:a9d75c5:1616
+21:06:08 [INFO] Discovered module: ModuleSpec(name=cmd_alert, file=modules\cmd_alert.jar, provider=JenkinsModuleSource())
+
+21:06:08 [INFO] Discovered module: ModuleSpec(name=cmd_find, file=modules\cmd_find.jar, provider=JenkinsModuleSource())
+
+21:06:08 [INFO] Discovered module: ModuleSpec(name=cmd_list, file=modules\cmd_list.jar, provider=JenkinsModuleSource())
+
+21:06:08 [INFO] Discovered module: ModuleSpec(name=cmd_send, file=modules\cmd_send.jar, provider=JenkinsModuleSource())
+
+21:06:08 [INFO] Discovered module: ModuleSpec(name=cmd_server, file=modules\cmd_server.jar, provider=JenkinsModuleSource())
+
+21:06:08 [INFO] Discovered module: ModuleSpec(name=reconnect_yaml, file=modules\reconnect_yaml.jar, provider=JenkinsModuleSource())
+
+21:06:08 [INFO] Loaded plugin reconnect_yaml version git:reconnect_yaml:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:06:08 [INFO] Loaded plugin LcraftAPI version 1.0.2 by null
+21:06:08 [INFO] Loaded plugin cmd_find version git:cmd_find:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:06:08 [INFO] Loaded plugin cmd_server version git:cmd_server:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:06:08 [INFO] Loaded plugin cmd_alert version git:cmd_alert:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:06:08 [INFO] Loaded plugin cmd_send version git:cmd_send:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:06:08 [INFO] Loaded plugin cmd_list version git:cmd_list:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:06:08 [WARNING] Forced host server pvp is not defined
+21:06:08 [INFO] Enabled plugin reconnect_yaml version git:reconnect_yaml:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:06:08 [INFO] The Spigot Module Lcraft BungeeCord TestPlugin will be loaded.
+
+21:06:08 [INFO] The Spigot Module Lcraft BungeeCord TestPlugin is loaded.
+
+21:06:08 [INFO] Enabled plugin LcraftAPI version 1.0.2 by null
+21:06:08 [INFO] Enabled plugin cmd_find version git:cmd_find:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:06:08 [INFO] Enabled plugin cmd_server version git:cmd_server:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:06:08 [INFO] Enabled plugin cmd_alert version git:cmd_alert:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:06:08 [INFO] Enabled plugin cmd_send version git:cmd_send:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:06:08 [INFO] Enabled plugin cmd_list version git:cmd_list:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:06:08 [INFO] Listening on /0.0.0.0:25577
+21:06:35 [INFO] Using standard Java JCE cipher.
+21:06:35 [INFO] Using standard Java compressor.
+21:06:35 [INFO] Enabled BungeeCord version git:BungeeCord-Bootstrap:1.18-R0.1-SNAPSHOT:a9d75c5:1616
+21:06:36 [INFO] Discovered module: ModuleSpec(name=cmd_alert, file=modules\cmd_alert.jar, provider=JenkinsModuleSource())
+
+21:06:36 [INFO] Discovered module: ModuleSpec(name=cmd_find, file=modules\cmd_find.jar, provider=JenkinsModuleSource())
+
+21:06:36 [INFO] Discovered module: ModuleSpec(name=cmd_list, file=modules\cmd_list.jar, provider=JenkinsModuleSource())
+
+21:06:36 [INFO] Discovered module: ModuleSpec(name=cmd_send, file=modules\cmd_send.jar, provider=JenkinsModuleSource())
+
+21:06:36 [INFO] Discovered module: ModuleSpec(name=cmd_server, file=modules\cmd_server.jar, provider=JenkinsModuleSource())
+
+21:06:36 [INFO] Discovered module: ModuleSpec(name=reconnect_yaml, file=modules\reconnect_yaml.jar, provider=JenkinsModuleSource())
+
+21:06:36 [INFO] Loaded plugin reconnect_yaml version git:reconnect_yaml:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:06:36 [INFO] Loaded plugin LcraftAPI version 1.0.2 by null
+21:06:36 [INFO] Loaded plugin cmd_find version git:cmd_find:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:06:36 [INFO] Loaded plugin cmd_server version git:cmd_server:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:06:36 [INFO] Loaded plugin cmd_alert version git:cmd_alert:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:06:36 [INFO] Loaded plugin cmd_send version git:cmd_send:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:06:36 [INFO] Loaded plugin cmd_list version git:cmd_list:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:06:36 [WARNING] Forced host server pvp is not defined
+21:06:36 [INFO] Enabled plugin reconnect_yaml version git:reconnect_yaml:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:06:36 [INFO] The Spigot Module Lcraft BungeeCord TestPlugin will be loaded.
+
+21:06:36 [INFO] The Spigot Module Lcraft BungeeCord TestPlugin is loaded.
+
+21:06:36 [INFO] Enabled plugin LcraftAPI version 1.0.2 by null
+21:06:36 [INFO] Enabled plugin cmd_find version git:cmd_find:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:06:36 [INFO] Enabled plugin cmd_server version git:cmd_server:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:06:36 [INFO] Enabled plugin cmd_alert version git:cmd_alert:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:06:36 [INFO] Enabled plugin cmd_send version git:cmd_send:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:06:36 [INFO] Enabled plugin cmd_list version git:cmd_list:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:06:36 [INFO] Listening on /0.0.0.0:25577
+21:14:49 [INFO] Using standard Java JCE cipher.
+21:14:49 [INFO] Using standard Java compressor.
+21:14:49 [INFO] Enabled BungeeCord version git:BungeeCord-Bootstrap:1.18-R0.1-SNAPSHOT:a9d75c5:1616
+21:14:50 [INFO] Discovered module: ModuleSpec(name=cmd_alert, file=modules\cmd_alert.jar, provider=JenkinsModuleSource())
+
+21:14:50 [INFO] Discovered module: ModuleSpec(name=cmd_find, file=modules\cmd_find.jar, provider=JenkinsModuleSource())
+
+21:14:50 [INFO] Discovered module: ModuleSpec(name=cmd_list, file=modules\cmd_list.jar, provider=JenkinsModuleSource())
+
+21:14:50 [INFO] Discovered module: ModuleSpec(name=cmd_send, file=modules\cmd_send.jar, provider=JenkinsModuleSource())
+
+21:14:50 [INFO] Discovered module: ModuleSpec(name=cmd_server, file=modules\cmd_server.jar, provider=JenkinsModuleSource())
+
+21:14:50 [INFO] Discovered module: ModuleSpec(name=reconnect_yaml, file=modules\reconnect_yaml.jar, provider=JenkinsModuleSource())
+
+21:14:50 [INFO] Loaded plugin reconnect_yaml version git:reconnect_yaml:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:14:50 [INFO] Loaded plugin LcraftAPI version 1.0.2 by null
+21:14:50 [INFO] Loaded plugin cmd_find version git:cmd_find:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:14:50 [INFO] Loaded plugin cmd_server version git:cmd_server:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:14:50 [INFO] Loaded plugin cmd_alert version git:cmd_alert:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:14:50 [INFO] Loaded plugin cmd_send version git:cmd_send:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:14:50 [INFO] Loaded plugin cmd_list version git:cmd_list:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:14:50 [WARNING] Forced host server pvp is not defined
+21:14:50 [INFO] Enabled plugin reconnect_yaml version git:reconnect_yaml:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:14:50 [INFO] The Spigot Module Lcraft BungeeCord TestPlugin will be loaded.
+
+21:14:50 [INFO] The Spigot Module Lcraft BungeeCord TestPlugin is loaded.
+
+21:14:50 [INFO] Enabled plugin LcraftAPI version 1.0.2 by null
+21:14:50 [INFO] Enabled plugin cmd_find version git:cmd_find:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:14:50 [INFO] Enabled plugin cmd_server version git:cmd_server:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:14:50 [INFO] Enabled plugin cmd_alert version git:cmd_alert:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:14:50 [INFO] Enabled plugin cmd_send version git:cmd_send:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:14:50 [INFO] Enabled plugin cmd_list version git:cmd_list:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:14:50 [INFO] Listening on /0.0.0.0:15577
+21:15:07 [INFO] Using standard Java JCE cipher.
+21:15:07 [INFO] Using standard Java compressor.
+21:15:07 [INFO] Enabled BungeeCord version git:BungeeCord-Bootstrap:1.18-R0.1-SNAPSHOT:a9d75c5:1616
+21:15:07 [INFO] Discovered module: ModuleSpec(name=cmd_alert, file=modules\cmd_alert.jar, provider=JenkinsModuleSource())
+
+21:15:07 [INFO] Discovered module: ModuleSpec(name=cmd_find, file=modules\cmd_find.jar, provider=JenkinsModuleSource())
+
+21:15:07 [INFO] Discovered module: ModuleSpec(name=cmd_list, file=modules\cmd_list.jar, provider=JenkinsModuleSource())
+
+21:15:07 [INFO] Discovered module: ModuleSpec(name=cmd_send, file=modules\cmd_send.jar, provider=JenkinsModuleSource())
+
+21:15:07 [INFO] Discovered module: ModuleSpec(name=cmd_server, file=modules\cmd_server.jar, provider=JenkinsModuleSource())
+
+21:15:07 [INFO] Discovered module: ModuleSpec(name=reconnect_yaml, file=modules\reconnect_yaml.jar, provider=JenkinsModuleSource())
+
+21:15:07 [INFO] Loaded plugin reconnect_yaml version git:reconnect_yaml:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:15:07 [INFO] Loaded plugin LcraftAPI version 1.0.2 by null
+21:15:07 [INFO] Loaded plugin cmd_find version git:cmd_find:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:15:07 [INFO] Loaded plugin cmd_server version git:cmd_server:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:15:07 [INFO] Loaded plugin cmd_alert version git:cmd_alert:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:15:07 [INFO] Loaded plugin cmd_send version git:cmd_send:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:15:07 [INFO] Loaded plugin cmd_list version git:cmd_list:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:15:07 [WARNING] Forced host server pvp is not defined
+21:15:07 [INFO] Enabled plugin reconnect_yaml version git:reconnect_yaml:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:15:07 [INFO] The Spigot Module Lcraft BungeeCord TestPlugin will be loaded.
+
+21:15:07 [INFO] The Spigot Module Lcraft BungeeCord TestPlugin is loaded.
+
+21:15:07 [INFO] Enabled plugin LcraftAPI version 1.0.2 by null
+21:15:07 [INFO] Enabled plugin cmd_find version git:cmd_find:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:15:07 [INFO] Enabled plugin cmd_server version git:cmd_server:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:15:07 [INFO] Enabled plugin cmd_alert version git:cmd_alert:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:15:07 [INFO] Enabled plugin cmd_send version git:cmd_send:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:15:07 [INFO] Enabled plugin cmd_list version git:cmd_list:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:15:07 [INFO] Listening on /0.0.0.0:15577

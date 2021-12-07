@@ -5,12 +5,13 @@ import de.lcraft.api.utils.minecraft.spigot.languages.filesystem.LanguagesManage
 import de.lcraft.api.utils.minecraft.spigot.manager.ModuleEventManager;
 import de.lcraft.api.utils.minecraft.spigot.manager.ModuleManager;
 import de.lcraft.api.utils.minecraft.spigot.module.logger.ModuleLogger;
+import de.lcraft.api.utils.minecraft.spigot.module.player.UserManager;
 import de.lcraft.api.utils.minecraft.spigot.module.utils.command.ModuleCommandManager;
 import de.lcraft.api.utils.minecraft.spigot.module.utils.configs.ModuleConfig;
 import de.lcraft.api.utils.minecraft.spigot.module.utils.inventory.InventoryManager;
 import de.lcraft.api.utils.minecraft.spigot.module.utils.prefixhelper.PrefixHelper;
 import de.lcraft.api.utils.minecraft.spigot.permissions.PermsManager;
-import de.lcraft.api.utils.minecraft.spigot.module.utils.listeners.ListenerManager;
+import de.lcraft.api.utils.minecraft.spigot.utils.listeners.ListenerManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import java.io.File;
 import java.io.IOException;
@@ -29,6 +30,7 @@ public abstract class Module {
     private InventoryManager inventoryManager;
     private PrefixHelper prefixHelper;
     private ModuleConfig config;
+    private UserManager lcraftUserManager;
 
     public void load(ModuleManager manager) throws Exception {
         ModuleEventManager eventManager = new ModuleEventManager(this);
@@ -39,12 +41,13 @@ public abstract class Module {
         moduleLogger = new ModuleLogger(moduleDescriptionFile.getName());
         config = new ModuleConfig(getModuleDescriptionFile().getName(), "config.yml");
 
-        eventManager.loadModule();
-
         permsManager = new PermsManager();
         languagesManager = new LanguagesManager();
         moduleCommandManager = new ModuleCommandManager(this);
         listenerManager = new ListenerManager(this);
+        lcraftUserManager = new UserManager(listenerManager);
+
+        eventManager.loadModule();
 
         inventoryManager = new InventoryManager(SpigotClass.getApiPluginMain());
         prefixHelper = new PrefixHelper();
@@ -101,6 +104,9 @@ public abstract class Module {
     }
     public PrefixHelper getPrefixHelper() {
         return prefixHelper;
+    }
+    public UserManager getLcraftUserManager() {
+        return lcraftUserManager;
     }
 
 }

