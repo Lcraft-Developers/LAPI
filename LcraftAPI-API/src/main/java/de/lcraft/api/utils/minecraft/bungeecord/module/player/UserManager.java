@@ -3,22 +3,15 @@ package de.lcraft.api.utils.minecraft.bungeecord.module.player;
 import de.lcraft.api.utils.minecraft.bungeecord.utils.listeners.ListenerManager;
 import net.md_5.bungee.api.ProxyServer;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
-import org.bukkit.Bukkit;
-import org.bukkit.entity.Player;
-
 import java.util.ArrayList;
 import java.util.UUID;
 
 public class UserManager {
 
     public ArrayList<LcraftUser> users;
-    private LcraftBungeecordUserListener userListener;
 
     public UserManager(ListenerManager listenerManager) {
         users = new ArrayList<>();
-
-        userListener = new LcraftBungeecordUserListener(this);
-        listenerManager.registerListener(userListener);
     }
 
     public LcraftUser addPlayer(UUID player) {
@@ -30,9 +23,6 @@ public class UserManager {
         }
         users.add(user);
         return user;
-    }
-    public Player getUserPlayer(UUID player) {
-        return Bukkit.getPlayer(player);
     }
     public ProxiedPlayer getUserProxiedPlayer(UUID player) {
         return ProxyServer.getInstance().getPlayer(player);

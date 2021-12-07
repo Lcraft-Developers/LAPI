@@ -119,7 +119,7 @@ public class PermsManager {
         return allPermissionsCfg;
     }
     private boolean hasPerm(LcraftUser p, String permission) {
-        return p.getUserManager().getUserPlayer(p.getUUID()).hasPermission(permission);
+        return p.getUserManager().getUserProxiedPlayer(p.getUUID()).hasPermission(permission);
     }
     public ModuleConfig getAdminsCfg() {
         return adminsCfg;

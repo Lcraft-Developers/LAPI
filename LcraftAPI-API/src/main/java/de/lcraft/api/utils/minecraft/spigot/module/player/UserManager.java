@@ -1,11 +1,8 @@
 package de.lcraft.api.utils.minecraft.spigot.module.player;
 
 import de.lcraft.api.utils.minecraft.spigot.utils.listeners.ListenerManager;
-import net.md_5.bungee.api.ProxyServer;
-import net.md_5.bungee.api.connection.ProxiedPlayer;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
-
 import java.util.ArrayList;
 import java.util.UUID;
 
@@ -23,9 +20,6 @@ public class UserManager {
 
     public Player getUserPlayer(UUID player) {
         return Bukkit.getPlayer(player);
-    }
-    public ProxiedPlayer getUserProxiedPlayer(UUID player) {
-        return ProxyServer.getInstance().getPlayer(player);
     }
     public LcraftUser addPlayer(UUID player) {
         LcraftUser user;

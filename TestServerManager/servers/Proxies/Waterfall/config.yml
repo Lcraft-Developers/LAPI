@@ -1,4 +1,3 @@
-prevent_proxy_connections: false
 listeners:
 - query_port: 15555
   motd: '&1Another Bungee server'
@@ -30,6 +29,7 @@ log_pings: true
 connection_throttle_limit: 3
 server_connect_timeout: 5000
 timeout: 30000
+stats: a2abb166-d94e-41c5-9273-0cf535f5034d
 player_limit: -1
 ip_forward: false
 groups:
@@ -38,7 +38,7 @@ groups:
 remote_ping_timeout: 5000
 connection_throttle: 4000
 log_commands: false
-stats: a2abb166-d94e-41c5-9273-0cf535f5034d
+prevent_proxy_connections: false
 online_mode: true
 forge_support: true
 disabled_commands:

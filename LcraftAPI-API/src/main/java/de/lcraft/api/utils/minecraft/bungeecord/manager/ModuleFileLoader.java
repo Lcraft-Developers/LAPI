@@ -106,7 +106,7 @@ public class ModuleFileLoader {
 
         URLClassLoader moduleClassLoader = new ModuleClassLoader(descriptionFile);
         Class<?> main = moduleClassLoader.loadClass(descriptionFile.getBungeeCord_Main());
-        Module module = (Module) main.getDeclaredConstructor().newInstance();
+        Module module = (Module) main.newInstance();
 
         module.setPlugin(plugin);
         module.setFile(file);

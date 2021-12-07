@@ -1,2 +1,20 @@
-[21:15:21] [ServerMain/INFO]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
-[21:15:22] [ServerMain/INFO]: Reloading ResourceManager: Default, bukkit
+[21:11:02] [ServerMain/INFO]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[21:11:10] [ServerMain/INFO]: Reloading ResourceManager: Default, bukkit
+[21:11:14] [Worker-Main-18/INFO]: Loaded 7 recipes
+[21:11:30] [Server thread/INFO]: Starting minecraft server version 1.18
+[21:11:30] [Server thread/INFO]: Loading properties
+[21:11:31] [Server thread/INFO]: This server is running CraftBukkit version 3336-Spigot-a5dea1c-a008701 (MC: 1.18) (Implementing API version 1.18-R0.1-SNAPSHOT)
+[21:11:31] [Server thread/INFO]: Debug logging is disabled
+[21:11:31] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[21:11:31] [Server thread/INFO]: Using 4 threads for Netty based IO
+[21:11:31] [Server thread/INFO]: Default game type: SURVIVAL
+[21:11:31] [Server thread/INFO]: Generating keypair
+[21:11:31] [Server thread/INFO]: Starting Minecraft server on *:16555
+[21:11:32] [Server thread/INFO]: Using default channel type
+[21:11:33] [Server thread/WARN]: **** FAILED TO BIND TO PORT!
+[21:11:33] [Server thread/WARN]: The exception was: java.net.BindException: Address already in use: bind
+[21:11:33] [Server thread/WARN]: Perhaps a server is already running on that port?
+[21:11:33] [Server thread/INFO]: Stopping server
+[21:11:33] [Server thread/INFO]: Saving players
+[21:11:33] [Server thread/INFO]: Saving worlds
+[21:11:33] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved

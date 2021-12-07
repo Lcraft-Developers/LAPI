@@ -98,5 +98,8 @@ public abstract class Module {
     public PrefixHelper getPrefixHelper() {
         return prefixHelper;
     }
+    public UserManager getUserManager() {
+        return lcraftUserManager;
+    }
 
 }

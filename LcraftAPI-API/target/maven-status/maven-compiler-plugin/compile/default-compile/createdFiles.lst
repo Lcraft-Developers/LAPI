@@ -66,7 +66,6 @@ de\lcraft\api\utils\minecraft\spigot\module\utils\inventory\Inventory.class
 de\lcraft\api\utils\minecraft\bungeecord\languages\filesystem\impl\German.class
 de\lcraft\api\utils\minecraft\spigot\module\player\LcraftBukkitUserListener.class
 de\lcraft\api\utils\minecraft\spigot\module\utils\server\WorldUtil.class
-de\lcraft\api\utils\minecraft\bungeecord\module\player\LcraftBungeecordUserListener.class
 de\lcraft\api\utils\minecraft\spigot\module\utils\server\ServerTPS$Lag.class
 de\lcraft\api\utils\minecraft\bungeecord\module\player\LcraftSender.class
 de\lcraft\api\utils\minecraft\bungeecord\permissions\PermsManager.class

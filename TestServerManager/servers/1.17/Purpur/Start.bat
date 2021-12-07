@@ -3,7 +3,7 @@ title Purpur Server Starter
 
 :start
 echo Pupur Server starting...
-java -jar pupur-1.17.jar
+java -jar purpur-1.17.jar 
 echo.
 echo.
 echo.

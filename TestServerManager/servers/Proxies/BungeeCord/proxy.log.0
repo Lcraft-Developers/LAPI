@@ -211,3 +211,356 @@
 21:15:07 [INFO] Enabled plugin cmd_send version git:cmd_send:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
 21:15:07 [INFO] Enabled plugin cmd_list version git:cmd_list:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
 21:15:07 [INFO] Listening on /0.0.0.0:15577
+21:10:35 [INFO] Using standard Java JCE cipher.
+21:10:35 [INFO] Using standard Java compressor.
+21:10:35 [INFO] Enabled BungeeCord version git:BungeeCord-Bootstrap:1.18-R0.1-SNAPSHOT:a9d75c5:1616
+21:10:38 [INFO] Discovered module: ModuleSpec(name=cmd_alert, file=modules\cmd_alert.jar, provider=JenkinsModuleSource())
+
+21:10:38 [INFO] Discovered module: ModuleSpec(name=cmd_find, file=modules\cmd_find.jar, provider=JenkinsModuleSource())
+
+21:10:38 [INFO] Discovered module: ModuleSpec(name=cmd_list, file=modules\cmd_list.jar, provider=JenkinsModuleSource())
+
+21:10:38 [INFO] Discovered module: ModuleSpec(name=cmd_send, file=modules\cmd_send.jar, provider=JenkinsModuleSource())
+
+21:10:38 [INFO] Discovered module: ModuleSpec(name=cmd_server, file=modules\cmd_server.jar, provider=JenkinsModuleSource())
+
+21:10:38 [INFO] Discovered module: ModuleSpec(name=reconnect_yaml, file=modules\reconnect_yaml.jar, provider=JenkinsModuleSource())
+
+21:10:39 [INFO] Loaded plugin reconnect_yaml version git:reconnect_yaml:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:10:39 [INFO] Loaded plugin LcraftAPI version 1.0.2 by null
+21:10:39 [INFO] Loaded plugin cmd_find version git:cmd_find:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:10:39 [INFO] Loaded plugin cmd_server version git:cmd_server:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:10:39 [INFO] Loaded plugin cmd_alert version git:cmd_alert:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:10:39 [INFO] Loaded plugin cmd_send version git:cmd_send:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:10:39 [INFO] Loaded plugin cmd_list version git:cmd_list:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:10:39 [WARNING] Forced host server pvp is not defined
+21:10:39 [INFO] Enabled plugin reconnect_yaml version git:reconnect_yaml:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:10:40 [WARNING] Exception encountered when loading plugin: LcraftAPI
+java.lang.NoClassDefFoundError: org/bukkit/event/player/PlayerJoinEvent
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3402)
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2504)
+	at net.md_5.bungee.api.plugin.PluginManager.registerListener(PluginManager.java:436)
+	at de.lcraft.api.utils.minecraft.bungeecord.utils.listeners.ListenerManager.registerListener(ListenerManager.java:22)
+	at de.lcraft.api.utils.minecraft.bungeecord.module.player.UserManager.<init>(UserManager.java:21)
+	at de.lcraft.api.utils.minecraft.bungeecord.module.Module.load(Module.java:45)
+	at de.lcraft.api.utils.minecraft.bungeecord.manager.ModuleFileLoader.getModule(ModuleFileLoader.java:113)
+	at de.lcraft.api.utils.minecraft.bungeecord.manager.ModuleFileLoader.queuedModule(ModuleFileLoader.java:89)
+	at de.lcraft.api.utils.minecraft.bungeecord.manager.ModuleFileLoader.loadModules(ModuleFileLoader.java:40)
+	at de.lcraft.api.utils.minecraft.bungeecord.manager.ModuleManager.loadAllModules(ModuleManager.java:26)
+	at de.lcraft.api.utils.minecraft.bungeecord.BungeeClass.onEnable(BungeeClass.java:32)
+	at net.md_5.bungee.api.plugin.PluginManager.enablePlugins(PluginManager.java:265)
+	at net.md_5.bungee.BungeeCord.start(BungeeCord.java:285)
+	at net.md_5.bungee.BungeeCordLauncher.main(BungeeCordLauncher.java:67)
+	at net.md_5.bungee.Bootstrap.main(Bootstrap.java:15)
+Caused by: java.lang.ClassNotFoundException: org.bukkit.event.player.PlayerJoinEvent
+	at net.md_5.bungee.api.plugin.PluginClassloader.loadClass0(PluginClassloader.java:103)
+	at net.md_5.bungee.api.plugin.PluginClassloader.loadClass(PluginClassloader.java:59)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+	... 16 more
+21:10:40 [INFO] Enabled plugin cmd_find version git:cmd_find:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:10:40 [INFO] Enabled plugin cmd_server version git:cmd_server:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:10:40 [INFO] Enabled plugin cmd_alert version git:cmd_alert:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:10:40 [INFO] Enabled plugin cmd_send version git:cmd_send:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:10:40 [INFO] Enabled plugin cmd_list version git:cmd_list:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:10:40 [INFO] Listening on /0.0.0.0:25577
+21:14:55 [INFO] Using standard Java JCE cipher.
+21:14:55 [INFO] Using standard Java compressor.
+21:14:55 [INFO] Enabled BungeeCord version git:BungeeCord-Bootstrap:1.18-R0.1-SNAPSHOT:a9d75c5:1616
+21:14:55 [INFO] Discovered module: ModuleSpec(name=cmd_alert, file=modules\cmd_alert.jar, provider=JenkinsModuleSource())
+
+21:14:55 [INFO] Discovered module: ModuleSpec(name=cmd_find, file=modules\cmd_find.jar, provider=JenkinsModuleSource())
+
+21:14:55 [INFO] Discovered module: ModuleSpec(name=cmd_list, file=modules\cmd_list.jar, provider=JenkinsModuleSource())
+
+21:14:55 [INFO] Discovered module: ModuleSpec(name=cmd_send, file=modules\cmd_send.jar, provider=JenkinsModuleSource())
+
+21:14:55 [INFO] Discovered module: ModuleSpec(name=cmd_server, file=modules\cmd_server.jar, provider=JenkinsModuleSource())
+
+21:14:55 [INFO] Discovered module: ModuleSpec(name=reconnect_yaml, file=modules\reconnect_yaml.jar, provider=JenkinsModuleSource())
+
+21:14:56 [INFO] Loaded plugin reconnect_yaml version git:reconnect_yaml:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:14:56 [INFO] Loaded plugin LcraftAPI version 1.0.2 by null
+21:14:56 [INFO] Loaded plugin cmd_find version git:cmd_find:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:14:56 [INFO] Loaded plugin cmd_server version git:cmd_server:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:14:56 [INFO] Loaded plugin cmd_alert version git:cmd_alert:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:14:56 [INFO] Loaded plugin cmd_send version git:cmd_send:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:14:56 [INFO] Loaded plugin cmd_list version git:cmd_list:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:14:56 [WARNING] Forced host server pvp is not defined
+21:14:56 [INFO] Enabled plugin reconnect_yaml version git:reconnect_yaml:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:14:56 [WARNING] Exception encountered when loading plugin: LcraftAPI
+java.lang.NoClassDefFoundError: org/bukkit/event/player/PlayerJoinEvent
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3402)
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2504)
+	at net.md_5.bungee.api.plugin.PluginManager.registerListener(PluginManager.java:436)
+	at de.lcraft.api.utils.minecraft.bungeecord.utils.listeners.ListenerManager.registerListener(ListenerManager.java:22)
+	at de.lcraft.api.utils.minecraft.bungeecord.module.player.UserManager.<init>(UserManager.java:21)
+	at de.lcraft.api.utils.minecraft.bungeecord.module.Module.load(Module.java:45)
+	at de.lcraft.api.utils.minecraft.bungeecord.manager.ModuleFileLoader.getModule(ModuleFileLoader.java:113)
+	at de.lcraft.api.utils.minecraft.bungeecord.manager.ModuleFileLoader.queuedModule(ModuleFileLoader.java:89)
+	at de.lcraft.api.utils.minecraft.bungeecord.manager.ModuleFileLoader.loadModules(ModuleFileLoader.java:40)
+	at de.lcraft.api.utils.minecraft.bungeecord.manager.ModuleManager.loadAllModules(ModuleManager.java:26)
+	at de.lcraft.api.utils.minecraft.bungeecord.BungeeClass.onEnable(BungeeClass.java:32)
+	at net.md_5.bungee.api.plugin.PluginManager.enablePlugins(PluginManager.java:265)
+	at net.md_5.bungee.BungeeCord.start(BungeeCord.java:285)
+	at net.md_5.bungee.BungeeCordLauncher.main(BungeeCordLauncher.java:67)
+	at net.md_5.bungee.Bootstrap.main(Bootstrap.java:15)
+Caused by: java.lang.ClassNotFoundException: org.bukkit.event.player.PlayerJoinEvent
+	at net.md_5.bungee.api.plugin.PluginClassloader.loadClass0(PluginClassloader.java:103)
+	at net.md_5.bungee.api.plugin.PluginClassloader.loadClass(PluginClassloader.java:59)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+	... 16 more
+21:14:56 [INFO] Enabled plugin cmd_find version git:cmd_find:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:14:56 [INFO] Enabled plugin cmd_server version git:cmd_server:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:14:56 [INFO] Enabled plugin cmd_alert version git:cmd_alert:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:14:56 [INFO] Enabled plugin cmd_send version git:cmd_send:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:14:56 [INFO] Enabled plugin cmd_list version git:cmd_list:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:14:56 [INFO] Listening on /0.0.0.0:25577
+21:16:42 [INFO] Using standard Java JCE cipher.
+21:16:42 [INFO] Using standard Java compressor.
+21:16:42 [INFO] Enabled BungeeCord version git:BungeeCord-Bootstrap:1.18-R0.1-SNAPSHOT:a9d75c5:1616
+21:16:42 [INFO] Discovered module: ModuleSpec(name=cmd_alert, file=modules\cmd_alert.jar, provider=JenkinsModuleSource())
+
+21:16:42 [INFO] Discovered module: ModuleSpec(name=cmd_find, file=modules\cmd_find.jar, provider=JenkinsModuleSource())
+
+21:16:42 [INFO] Discovered module: ModuleSpec(name=cmd_list, file=modules\cmd_list.jar, provider=JenkinsModuleSource())
+
+21:16:42 [INFO] Discovered module: ModuleSpec(name=cmd_send, file=modules\cmd_send.jar, provider=JenkinsModuleSource())
+
+21:16:42 [INFO] Discovered module: ModuleSpec(name=cmd_server, file=modules\cmd_server.jar, provider=JenkinsModuleSource())
+
+21:16:42 [INFO] Discovered module: ModuleSpec(name=reconnect_yaml, file=modules\reconnect_yaml.jar, provider=JenkinsModuleSource())
+
+21:16:42 [INFO] Loaded plugin reconnect_yaml version git:reconnect_yaml:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:16:42 [INFO] Loaded plugin LcraftAPI version 1.0.2 by null
+21:16:42 [INFO] Loaded plugin cmd_find version git:cmd_find:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:16:42 [INFO] Loaded plugin cmd_server version git:cmd_server:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:16:42 [INFO] Loaded plugin cmd_alert version git:cmd_alert:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:16:42 [INFO] Loaded plugin cmd_send version git:cmd_send:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:16:42 [INFO] Loaded plugin cmd_list version git:cmd_list:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:16:42 [WARNING] Forced host server pvp is not defined
+21:16:42 [INFO] Enabled plugin reconnect_yaml version git:reconnect_yaml:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:16:42 [WARNING] Exception encountered when loading plugin: LcraftAPI
+java.lang.NoClassDefFoundError: org/bukkit/event/player/PlayerJoinEvent
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3402)
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2504)
+	at net.md_5.bungee.api.plugin.PluginManager.registerListener(PluginManager.java:436)
+	at de.lcraft.api.utils.minecraft.bungeecord.utils.listeners.ListenerManager.registerListener(ListenerManager.java:22)
+	at de.lcraft.api.utils.minecraft.bungeecord.module.player.UserManager.<init>(UserManager.java:21)
+	at de.lcraft.api.utils.minecraft.bungeecord.module.Module.load(Module.java:45)
+	at de.lcraft.api.utils.minecraft.bungeecord.manager.ModuleFileLoader.getModule(ModuleFileLoader.java:113)
+	at de.lcraft.api.utils.minecraft.bungeecord.manager.ModuleFileLoader.queuedModule(ModuleFileLoader.java:89)
+	at de.lcraft.api.utils.minecraft.bungeecord.manager.ModuleFileLoader.loadModules(ModuleFileLoader.java:40)
+	at de.lcraft.api.utils.minecraft.bungeecord.manager.ModuleManager.loadAllModules(ModuleManager.java:26)
+	at de.lcraft.api.utils.minecraft.bungeecord.BungeeClass.onEnable(BungeeClass.java:32)
+	at net.md_5.bungee.api.plugin.PluginManager.enablePlugins(PluginManager.java:265)
+	at net.md_5.bungee.BungeeCord.start(BungeeCord.java:285)
+	at net.md_5.bungee.BungeeCordLauncher.main(BungeeCordLauncher.java:67)
+	at net.md_5.bungee.Bootstrap.main(Bootstrap.java:15)
+Caused by: java.lang.ClassNotFoundException: org.bukkit.event.player.PlayerJoinEvent
+	at net.md_5.bungee.api.plugin.PluginClassloader.loadClass0(PluginClassloader.java:103)
+	at net.md_5.bungee.api.plugin.PluginClassloader.loadClass(PluginClassloader.java:59)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+	... 16 more
+21:16:42 [INFO] Enabled plugin cmd_find version git:cmd_find:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:16:42 [INFO] Enabled plugin cmd_server version git:cmd_server:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:16:42 [INFO] Enabled plugin cmd_alert version git:cmd_alert:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:16:42 [INFO] Enabled plugin cmd_send version git:cmd_send:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:16:42 [INFO] Enabled plugin cmd_list version git:cmd_list:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:16:43 [INFO] Listening on /0.0.0.0:25577
+21:23:39 [INFO] Using standard Java JCE cipher.
+21:23:39 [INFO] Using standard Java compressor.
+21:23:39 [INFO] Enabled BungeeCord version git:BungeeCord-Bootstrap:1.18-R0.1-SNAPSHOT:a9d75c5:1616
+21:23:39 [INFO] Discovered module: ModuleSpec(name=cmd_alert, file=modules\cmd_alert.jar, provider=JenkinsModuleSource())
+
+21:23:39 [INFO] Discovered module: ModuleSpec(name=cmd_find, file=modules\cmd_find.jar, provider=JenkinsModuleSource())
+
+21:23:39 [INFO] Discovered module: ModuleSpec(name=cmd_list, file=modules\cmd_list.jar, provider=JenkinsModuleSource())
+
+21:23:39 [INFO] Discovered module: ModuleSpec(name=cmd_send, file=modules\cmd_send.jar, provider=JenkinsModuleSource())
+
+21:23:39 [INFO] Discovered module: ModuleSpec(name=cmd_server, file=modules\cmd_server.jar, provider=JenkinsModuleSource())
+
+21:23:39 [INFO] Discovered module: ModuleSpec(name=reconnect_yaml, file=modules\reconnect_yaml.jar, provider=JenkinsModuleSource())
+
+21:23:39 [INFO] Loaded plugin reconnect_yaml version git:reconnect_yaml:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:23:39 [INFO] Loaded plugin LcraftAPI version 1.0.2 by null
+21:23:39 [INFO] Loaded plugin cmd_find version git:cmd_find:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:23:39 [INFO] Loaded plugin cmd_server version git:cmd_server:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:23:39 [INFO] Loaded plugin cmd_alert version git:cmd_alert:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:23:39 [INFO] Loaded plugin cmd_send version git:cmd_send:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:23:39 [INFO] Loaded plugin cmd_list version git:cmd_list:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:23:39 [WARNING] Forced host server pvp is not defined
+21:23:39 [INFO] Enabled plugin reconnect_yaml version git:reconnect_yaml:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:23:39 [WARNING] Exception encountered when loading plugin: LcraftAPI
+java.lang.NoClassDefFoundError: org/bukkit/event/player/PlayerJoinEvent
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3402)
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2504)
+	at net.md_5.bungee.api.plugin.PluginManager.registerListener(PluginManager.java:436)
+	at de.lcraft.api.utils.minecraft.bungeecord.utils.listeners.ListenerManager.registerListener(ListenerManager.java:22)
+	at de.lcraft.api.utils.minecraft.bungeecord.module.player.UserManager.<init>(UserManager.java:21)
+	at de.lcraft.api.utils.minecraft.bungeecord.module.Module.load(Module.java:45)
+	at de.lcraft.api.utils.minecraft.bungeecord.manager.ModuleFileLoader.getModule(ModuleFileLoader.java:113)
+	at de.lcraft.api.utils.minecraft.bungeecord.manager.ModuleFileLoader.queuedModule(ModuleFileLoader.java:89)
+	at de.lcraft.api.utils.minecraft.bungeecord.manager.ModuleFileLoader.loadModules(ModuleFileLoader.java:40)
+	at de.lcraft.api.utils.minecraft.bungeecord.manager.ModuleManager.loadAllModules(ModuleManager.java:26)
+	at de.lcraft.api.utils.minecraft.bungeecord.BungeeClass.onEnable(BungeeClass.java:32)
+	at net.md_5.bungee.api.plugin.PluginManager.enablePlugins(PluginManager.java:265)
+	at net.md_5.bungee.BungeeCord.start(BungeeCord.java:285)
+	at net.md_5.bungee.BungeeCordLauncher.main(BungeeCordLauncher.java:67)
+	at net.md_5.bungee.Bootstrap.main(Bootstrap.java:15)
+Caused by: java.lang.ClassNotFoundException: org.bukkit.event.player.PlayerJoinEvent
+	at net.md_5.bungee.api.plugin.PluginClassloader.loadClass0(PluginClassloader.java:103)
+	at net.md_5.bungee.api.plugin.PluginClassloader.loadClass(PluginClassloader.java:59)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+	... 16 more
+21:23:39 [INFO] Enabled plugin cmd_find version git:cmd_find:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:23:39 [INFO] Enabled plugin cmd_server version git:cmd_server:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:23:39 [INFO] Enabled plugin cmd_alert version git:cmd_alert:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:23:39 [INFO] Enabled plugin cmd_send version git:cmd_send:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:23:39 [INFO] Enabled plugin cmd_list version git:cmd_list:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:23:39 [INFO] Listening on /0.0.0.0:25577
+21:26:15 [INFO] Using standard Java JCE cipher.
+21:26:15 [INFO] Using standard Java compressor.
+21:26:15 [INFO] Enabled BungeeCord version git:BungeeCord-Bootstrap:1.18-R0.1-SNAPSHOT:a9d75c5:1616
+21:26:15 [INFO] Discovered module: ModuleSpec(name=cmd_alert, file=modules\cmd_alert.jar, provider=JenkinsModuleSource())
+
+21:26:15 [INFO] Discovered module: ModuleSpec(name=cmd_find, file=modules\cmd_find.jar, provider=JenkinsModuleSource())
+
+21:26:15 [INFO] Discovered module: ModuleSpec(name=cmd_list, file=modules\cmd_list.jar, provider=JenkinsModuleSource())
+
+21:26:15 [INFO] Discovered module: ModuleSpec(name=cmd_send, file=modules\cmd_send.jar, provider=JenkinsModuleSource())
+
+21:26:15 [INFO] Discovered module: ModuleSpec(name=cmd_server, file=modules\cmd_server.jar, provider=JenkinsModuleSource())
+
+21:26:15 [INFO] Discovered module: ModuleSpec(name=reconnect_yaml, file=modules\reconnect_yaml.jar, provider=JenkinsModuleSource())
+
+21:26:15 [INFO] Loaded plugin reconnect_yaml version git:reconnect_yaml:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:26:15 [INFO] Loaded plugin LcraftAPI version 1.0.2 by null
+21:26:15 [INFO] Loaded plugin cmd_find version git:cmd_find:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:26:15 [INFO] Loaded plugin cmd_server version git:cmd_server:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:26:15 [INFO] Loaded plugin cmd_alert version git:cmd_alert:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:26:15 [INFO] Loaded plugin cmd_send version git:cmd_send:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:26:15 [INFO] Loaded plugin cmd_list version git:cmd_list:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:26:15 [WARNING] Forced host server pvp is not defined
+21:26:15 [INFO] Enabled plugin reconnect_yaml version git:reconnect_yaml:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:26:15 [WARNING] Exception encountered when loading plugin: LcraftAPI
+java.lang.NoClassDefFoundError: org/bukkit/event/player/PlayerJoinEvent
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3402)
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2504)
+	at net.md_5.bungee.api.plugin.PluginManager.registerListener(PluginManager.java:436)
+	at de.lcraft.api.utils.minecraft.bungeecord.utils.listeners.ListenerManager.registerListener(ListenerManager.java:22)
+	at de.lcraft.api.utils.minecraft.bungeecord.module.player.UserManager.<init>(UserManager.java:21)
+	at de.lcraft.api.utils.minecraft.bungeecord.module.Module.load(Module.java:45)
+	at de.lcraft.api.utils.minecraft.bungeecord.manager.ModuleFileLoader.getModule(ModuleFileLoader.java:113)
+	at de.lcraft.api.utils.minecraft.bungeecord.manager.ModuleFileLoader.queuedModule(ModuleFileLoader.java:89)
+	at de.lcraft.api.utils.minecraft.bungeecord.manager.ModuleFileLoader.loadModules(ModuleFileLoader.java:40)
+	at de.lcraft.api.utils.minecraft.bungeecord.manager.ModuleManager.loadAllModules(ModuleManager.java:26)
+	at de.lcraft.api.utils.minecraft.bungeecord.BungeeClass.onEnable(BungeeClass.java:32)
+	at net.md_5.bungee.api.plugin.PluginManager.enablePlugins(PluginManager.java:265)
+	at net.md_5.bungee.BungeeCord.start(BungeeCord.java:285)
+	at net.md_5.bungee.BungeeCordLauncher.main(BungeeCordLauncher.java:67)
+	at net.md_5.bungee.Bootstrap.main(Bootstrap.java:15)
+Caused by: java.lang.ClassNotFoundException: org.bukkit.event.player.PlayerJoinEvent
+	at net.md_5.bungee.api.plugin.PluginClassloader.loadClass0(PluginClassloader.java:103)
+	at net.md_5.bungee.api.plugin.PluginClassloader.loadClass(PluginClassloader.java:59)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+	... 16 more
+21:26:15 [INFO] Enabled plugin cmd_find version git:cmd_find:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:26:15 [INFO] Enabled plugin cmd_server version git:cmd_server:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:26:15 [INFO] Enabled plugin cmd_alert version git:cmd_alert:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:26:15 [INFO] Enabled plugin cmd_send version git:cmd_send:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:26:15 [INFO] Enabled plugin cmd_list version git:cmd_list:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:26:16 [INFO] Listening on /0.0.0.0:25577
+21:31:17 [INFO] Using standard Java JCE cipher.
+21:31:17 [INFO] Using standard Java compressor.
+21:31:17 [INFO] Enabled BungeeCord version git:BungeeCord-Bootstrap:1.18-R0.1-SNAPSHOT:a9d75c5:1616
+21:31:17 [INFO] Discovered module: ModuleSpec(name=cmd_alert, file=modules\cmd_alert.jar, provider=JenkinsModuleSource())
+
+21:31:17 [INFO] Discovered module: ModuleSpec(name=cmd_find, file=modules\cmd_find.jar, provider=JenkinsModuleSource())
+
+21:31:17 [INFO] Discovered module: ModuleSpec(name=cmd_list, file=modules\cmd_list.jar, provider=JenkinsModuleSource())
+
+21:31:17 [INFO] Discovered module: ModuleSpec(name=cmd_send, file=modules\cmd_send.jar, provider=JenkinsModuleSource())
+
+21:31:17 [INFO] Discovered module: ModuleSpec(name=cmd_server, file=modules\cmd_server.jar, provider=JenkinsModuleSource())
+
+21:31:17 [INFO] Discovered module: ModuleSpec(name=reconnect_yaml, file=modules\reconnect_yaml.jar, provider=JenkinsModuleSource())
+
+21:31:17 [INFO] Loaded plugin reconnect_yaml version git:reconnect_yaml:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:31:17 [INFO] Loaded plugin LcraftAPI version 1.0.2 by null
+21:31:17 [INFO] Loaded plugin cmd_find version git:cmd_find:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:31:17 [INFO] Loaded plugin cmd_server version git:cmd_server:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:31:17 [INFO] Loaded plugin cmd_alert version git:cmd_alert:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:31:17 [INFO] Loaded plugin cmd_send version git:cmd_send:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:31:17 [INFO] Loaded plugin cmd_list version git:cmd_list:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:31:17 [WARNING] Forced host server pvp is not defined
+21:31:17 [INFO] Enabled plugin reconnect_yaml version git:reconnect_yaml:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:31:17 [WARNING] Exception encountered when loading plugin: LcraftAPI
+java.lang.NoClassDefFoundError: org/bukkit/event/player/PlayerJoinEvent
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3402)
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2504)
+	at net.md_5.bungee.api.plugin.PluginManager.registerListener(PluginManager.java:436)
+	at de.lcraft.api.utils.minecraft.bungeecord.utils.listeners.ListenerManager.registerListener(ListenerManager.java:22)
+	at de.lcraft.api.utils.minecraft.bungeecord.module.player.UserManager.<init>(UserManager.java:21)
+	at de.lcraft.api.utils.minecraft.bungeecord.module.Module.load(Module.java:45)
+	at de.lcraft.api.utils.minecraft.bungeecord.manager.ModuleFileLoader.getModule(ModuleFileLoader.java:113)
+	at de.lcraft.api.utils.minecraft.bungeecord.manager.ModuleFileLoader.queuedModule(ModuleFileLoader.java:89)
+	at de.lcraft.api.utils.minecraft.bungeecord.manager.ModuleFileLoader.loadModules(ModuleFileLoader.java:40)
+	at de.lcraft.api.utils.minecraft.bungeecord.manager.ModuleManager.loadAllModules(ModuleManager.java:26)
+	at de.lcraft.api.utils.minecraft.bungeecord.BungeeClass.onEnable(BungeeClass.java:32)
+	at net.md_5.bungee.api.plugin.PluginManager.enablePlugins(PluginManager.java:265)
+	at net.md_5.bungee.BungeeCord.start(BungeeCord.java:285)
+	at net.md_5.bungee.BungeeCordLauncher.main(BungeeCordLauncher.java:67)
+	at net.md_5.bungee.Bootstrap.main(Bootstrap.java:15)
+Caused by: java.lang.ClassNotFoundException: org.bukkit.event.player.PlayerJoinEvent
+	at net.md_5.bungee.api.plugin.PluginClassloader.loadClass0(PluginClassloader.java:103)
+	at net.md_5.bungee.api.plugin.PluginClassloader.loadClass(PluginClassloader.java:59)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+	... 16 more
+21:31:17 [INFO] Enabled plugin cmd_find version git:cmd_find:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:31:17 [INFO] Enabled plugin cmd_server version git:cmd_server:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:31:17 [INFO] Enabled plugin cmd_alert version git:cmd_alert:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:31:17 [INFO] Enabled plugin cmd_send version git:cmd_send:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:31:17 [INFO] Enabled plugin cmd_list version git:cmd_list:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:31:17 [INFO] Listening on /0.0.0.0:25577
+21:37:12 [INFO] Using standard Java JCE cipher.
+21:37:12 [INFO] Using standard Java compressor.
+21:37:12 [INFO] Enabled BungeeCord version git:BungeeCord-Bootstrap:1.18-R0.1-SNAPSHOT:a9d75c5:1616
+21:37:12 [INFO] Discovered module: ModuleSpec(name=cmd_alert, file=modules\cmd_alert.jar, provider=JenkinsModuleSource())
+
+21:37:12 [INFO] Discovered module: ModuleSpec(name=cmd_find, file=modules\cmd_find.jar, provider=JenkinsModuleSource())
+
+21:37:12 [INFO] Discovered module: ModuleSpec(name=cmd_list, file=modules\cmd_list.jar, provider=JenkinsModuleSource())
+
+21:37:12 [INFO] Discovered module: ModuleSpec(name=cmd_send, file=modules\cmd_send.jar, provider=JenkinsModuleSource())
+
+21:37:12 [INFO] Discovered module: ModuleSpec(name=cmd_server, file=modules\cmd_server.jar, provider=JenkinsModuleSource())
+
+21:37:12 [INFO] Discovered module: ModuleSpec(name=reconnect_yaml, file=modules\reconnect_yaml.jar, provider=JenkinsModuleSource())
+
+21:37:12 [INFO] Loaded plugin reconnect_yaml version git:reconnect_yaml:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:37:12 [INFO] Loaded plugin LcraftAPI version 1.0.2 by null
+21:37:12 [INFO] Loaded plugin cmd_find version git:cmd_find:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:37:12 [INFO] Loaded plugin cmd_server version git:cmd_server:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:37:12 [INFO] Loaded plugin cmd_alert version git:cmd_alert:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:37:12 [INFO] Loaded plugin cmd_send version git:cmd_send:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:37:12 [INFO] Loaded plugin cmd_list version git:cmd_list:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:37:12 [WARNING] Forced host server pvp is not defined
+21:37:12 [INFO] Enabled plugin reconnect_yaml version git:reconnect_yaml:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:37:12 [INFO] The Spigot Module Lcraft BungeeCord TestPlugin will be loaded.
+
+21:37:12 [INFO] The Spigot Module Lcraft BungeeCord TestPlugin is loaded.
+
+21:37:12 [INFO] Enabled plugin LcraftAPI version 1.0.2 by null
+21:37:12 [INFO] Enabled plugin cmd_find version git:cmd_find:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:37:12 [INFO] Enabled plugin cmd_server version git:cmd_server:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:37:12 [INFO] Enabled plugin cmd_alert version git:cmd_alert:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:37:12 [INFO] Enabled plugin cmd_send version git:cmd_send:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:37:12 [INFO] Enabled plugin cmd_list version git:cmd_list:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+21:37:12 [INFO] Listening on /0.0.0.0:25577
