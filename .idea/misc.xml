@@ -12,14 +12,15 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/LcraftAPI-Spigot-TestAPI/pom.xml" />
-        <option value="$PROJECT_DIR$/LcraftAPI-Spigot-TestPlugin/pom.xml" />
-        <option value="$PROJECT_DIR$/LcraftAPI-API/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/Lcraft-BungeeCord-TestPlugin/pom.xml" />
         <option value="$PROJECT_DIR$/Lcraft-Languages-API/pom.xml" />
         <option value="$PROJECT_DIR$/Lcraft-Permissions-API/pom.xml" />
+        <option value="$PROJECT_DIR$/LcraftAPI-API/pom.xml" />
+        <option value="$PROJECT_DIR$/LcraftAPI-Spigot-TestPlugin/pom.xml" />
       </set>
     </option>
   </component>
