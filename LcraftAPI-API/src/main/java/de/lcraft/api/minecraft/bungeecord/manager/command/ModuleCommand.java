@@ -40,24 +40,50 @@ public abstract class ModuleCommand extends Command {
     public boolean hasPermissions(ProxiedPlayer p, String perm) {
         return permsManager.hasPermissions(p, perm);
     }
+
     public void addSubCommand(SubModuleCommand subModuleCommand) {
         subModuleCommands.add(subModuleCommand);
+    }
+    public SubModuleCommand getSubCommand(String name) {
+        for(SubModuleCommand m : subModuleCommands) {
+            if(m.getName().equalsIgnoreCase(name)) {
+                return m;
+            }
+        }
+        return null;
+    }
+    public boolean existsSubCommand(String name) {
+        if(getSubCommand(name) != null) {
+            return true;
+        }
+        return false;
     }
 
     @Override
     public void execute(CommandSender commandSender, String[] strings) {
-        if(strings.length > 1) {
-
-        } else {
-            if(splitting) {
-                if(commandSender != null && commandSender instanceof ProxiedPlayer) {
-                    onPlayerCommand((ProxiedPlayer) commandSender, strings);
-                } else {
-                    onConsoleCommand(commandSender, strings);
+        if(strings != null && strings.length > 0) {
+            if(existsSubCommand(strings[0])) {
+                String[] new_args = new String[strings.length - 1];
+                for(int i = 1; i < strings.length; i++) {
+                    new_args[i - 1] = strings[i];
                 }
+                getSubCommand(strings[0]).execute(commandSender, new_args);
+            } else {
+                split(commandSender, strings);
             }
-            onCommand(commandSender, strings);
+        } else {
+            split(commandSender, strings);
         }
+    }
+    public void split(CommandSender commandSender, String[] strings) {
+        if(splitting) {
+            if(commandSender != null && commandSender instanceof ProxiedPlayer) {
+                onPlayerCommand((ProxiedPlayer) commandSender, strings);
+            } else {
+                onConsoleCommand(commandSender, strings);
+            }
+        }
+        onCommand(commandSender, strings);
     }
 
     public boolean onCommand(CommandSender s, String[] args) {return false;}
