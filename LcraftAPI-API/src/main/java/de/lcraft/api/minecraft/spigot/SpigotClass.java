@@ -2,6 +2,7 @@ package de.lcraft.api.minecraft.spigot;
 
 import de.lcraft.api.minecraft.spigot.manager.Config;
 import de.lcraft.api.minecraft.spigot.manager.ModuleManager;
+import de.lcraft.api.minecraft.spigot.utils.server.ServerTPS;
 import org.bukkit.plugin.java.JavaPlugin;
 import java.io.IOException;
 
@@ -10,12 +11,14 @@ public class SpigotClass extends JavaPlugin {
     private static SpigotClass apiPluginMain;
     private Config cfg;
     private ModuleManager moduleManager;
+    private ServerTPS serverTPS;
 
     @Override
     public void onEnable() {
         try {
             apiPluginMain = this;
             cfg = new Config("", "config.yml");
+            serverTPS = new ServerTPS(getAPIPluginMain());
 
             moduleManager = new ModuleManager(apiPluginMain);
             moduleManager.loadAllModules();
@@ -40,6 +43,9 @@ public class SpigotClass extends JavaPlugin {
     }
     public Config getMainCfg() {
         return cfg;
+    }
+    public ServerTPS getServerTPS() {
+        return serverTPS;
     }
 
 }
