@@ -10,8 +10,6 @@
     <version>1.0.0</version>
     <modules>
         <module>LcraftAPI-API</module>
-        <module>LcraftAPI-Spigot-TestPlugin</module>
-        <module>Lcraft-BungeeCord-TestPlugin</module>
     </modules>
 
     <properties>
