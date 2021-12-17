@@ -28,9 +28,11 @@ public class ModuleManager {
         moduleFileLoader.loadModules(pluginMain);
     }
     public void onDisableAllModules() throws IOException {
-        for(Module c : getModules()) {
-            ModuleEventManager eventManager = new ModuleEventManager(c);
-            eventManager.disableModule();
+        if(!getModules().isEmpty()) {
+            for(Module c : getModules()) {
+                ModuleEventManager eventManager = new ModuleEventManager(c);
+                eventManager.disableModule();
+            }
         }
     }
 

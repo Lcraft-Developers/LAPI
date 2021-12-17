@@ -8,13 +8,12 @@
         <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <url>lcraft.de</url>
     <name>Lcraft API</name>
-    <version>1.0.3</version>
     <description>Das ist mein Plugin/API für weitere Module/Plugins von meiner Sorte.</description>
 
     <groupId>de.lcraft.api</groupId>
     <artifactId>API</artifactId>
+    <version>1.0.5</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>

@@ -564,3 +564,38 @@ Caused by: java.lang.ClassNotFoundException: org.bukkit.event.player.PlayerJoinE
 21:37:12 [INFO] Enabled plugin cmd_send version git:cmd_send:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
 21:37:12 [INFO] Enabled plugin cmd_list version git:cmd_list:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
 21:37:12 [INFO] Listening on /0.0.0.0:25577
+20:04:00 [INFO] Using standard Java JCE cipher.
+20:04:00 [INFO] Using standard Java compressor.
+20:04:00 [INFO] Enabled BungeeCord version git:BungeeCord-Bootstrap:1.18-R0.1-SNAPSHOT:a9d75c5:1616
+20:04:00 [INFO] Discovered module: ModuleSpec(name=cmd_alert, file=modules\cmd_alert.jar, provider=JenkinsModuleSource())
+
+20:04:00 [INFO] Discovered module: ModuleSpec(name=cmd_find, file=modules\cmd_find.jar, provider=JenkinsModuleSource())
+
+20:04:00 [INFO] Discovered module: ModuleSpec(name=cmd_list, file=modules\cmd_list.jar, provider=JenkinsModuleSource())
+
+20:04:00 [INFO] Discovered module: ModuleSpec(name=cmd_send, file=modules\cmd_send.jar, provider=JenkinsModuleSource())
+
+20:04:00 [INFO] Discovered module: ModuleSpec(name=cmd_server, file=modules\cmd_server.jar, provider=JenkinsModuleSource())
+
+20:04:00 [INFO] Discovered module: ModuleSpec(name=reconnect_yaml, file=modules\reconnect_yaml.jar, provider=JenkinsModuleSource())
+
+20:04:00 [INFO] Loaded plugin reconnect_yaml version git:reconnect_yaml:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+20:04:00 [INFO] Loaded plugin LcraftAPI version 1.0.5 by null
+20:04:00 [INFO] Loaded plugin cmd_find version git:cmd_find:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+20:04:00 [INFO] Loaded plugin cmd_server version git:cmd_server:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+20:04:00 [INFO] Loaded plugin cmd_alert version git:cmd_alert:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+20:04:00 [INFO] Loaded plugin cmd_send version git:cmd_send:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+20:04:00 [INFO] Loaded plugin cmd_list version git:cmd_list:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+20:04:00 [WARNING] Forced host server pvp is not defined
+20:04:00 [INFO] Enabled plugin reconnect_yaml version git:reconnect_yaml:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+20:04:00 [INFO] The Spigot Module Lcraft BungeeCord TestPlugin is loaded.
+
+20:04:00 [INFO] Enabled plugin LcraftAPI version 1.0.5 by null
+20:04:00 [INFO] Enabled plugin cmd_find version git:cmd_find:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+20:04:00 [INFO] Enabled plugin cmd_server version git:cmd_server:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+20:04:00 [INFO] Enabled plugin cmd_alert version git:cmd_alert:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+20:04:00 [INFO] Enabled plugin cmd_send version git:cmd_send:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+20:04:00 [INFO] Enabled plugin cmd_list version git:cmd_list:1.18-R0.1-SNAPSHOT:a9d75c5:1616 by SpigotMC
+20:04:00 [INFO] Listening on /0.0.0.0:25577
+20:04:03 [INFO] Hello
+20:04:06 [INFO] test hello

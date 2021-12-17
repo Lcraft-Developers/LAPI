@@ -4,14 +4,16 @@ title Move and Rename Files
 mkdir sources
 cd sources
 
-remove .\LcraftAPI.jar
+del .\LcraftAPI.jar
 xcopy "..\..\LcraftAPI-API\target\API-*.jar" ".\" /Y
 ren "API-*.jar" "LcraftAPI.jar"
 
-remove .\Lcraft Bukkit Test.jar
-xcopy "..\..\LcraftAPI-Spigot-TestPlugin\target\SpigotTest-*.jar" ".\" /Y
-ren "SpigotTest-*.jar" "Lcraft Bukkit Test.jar"
+del .\Lcraft Bukkit Test.jar
+xcopy "..\..\Lcraft Spigot Test Plugin\target\SpigotTestPlugin-*.jar" ".\" /Y
+ren "SpigotTestPlugin-*.jar" "Lcraft Bukkit Test.jar"
 
-remove .\Lcraft BungeeCord Test.jar
-xcopy "..\..\Lcraft-BungeeCord-TestPlugin\target\BungeeCordTest-*.jar" ".\" /Y
-ren "BungeeCordTest-*.jar" "Lcraft BungeeCord Test.jar"
+del .\Lcraft BungeeCord Test.jar
+xcopy "..\..\Lcraft BungeeCord Test Plugin\target\BungeeCordTestPlugin-*.jar" ".\" /Y
+ren "BungeeCordTestPlugin-*.jar" "Lcraft BungeeCord Test.jar"
+
+pause

@@ -1,7 +1,6 @@
 name: LcraftAPI
-version: '1.0.3'
-main: de.lcraft.api.utils.minecraft.spigot.SpigotClass
-api-version: 1.17
+version: '1.0.5'
+main: de.lcraft.api.minecraft.spigot.SpigotClass
 authors:
   - LPD
   - Lcraft Developers

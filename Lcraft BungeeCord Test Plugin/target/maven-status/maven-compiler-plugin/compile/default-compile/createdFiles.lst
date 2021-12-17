@@ -1,0 +1,4 @@
+de\lcraft\test\bungeecord\commands\HelloCommand\HelloCommand.class
+de\lcraft\test\bungeecord\commands\HelloCommand\subcommands\HelloTestCommand.class
+de\lcraft\test\bungeecord\listeners\JoinListener.class
+de\lcraft\test\bungeecord\BungeeTest.class

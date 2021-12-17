@@ -1,39 +1,33 @@
-[21:10:19] [main/INFO]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
-[21:10:20] [main/INFO]: Found new data pack file/bukkit, loading it automatically
-[21:10:20] [main/INFO]: Reloading ResourceManager: Default, bukkit
-[21:10:23] [Worker-Main-3/INFO]: Loaded 7 recipes
-[21:10:33] [Server thread/INFO]: Starting minecraft server version 1.17.1
-[21:10:33] [Server thread/INFO]: Loading properties
-[21:10:34] [Server thread/INFO]: This server is running Purpur version git-Purpur-1428 (MC: 1.17.1) (Implementing API version 1.17.1-R0.1-SNAPSHOT) (Git: 9beb23b on ver/1.17.1)
-[21:10:34] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[21:10:34] [Server thread/INFO]: Using 4 threads for Netty based IO
-[21:10:34] [Server thread/INFO]: Default game type: SURVIVAL
-[21:10:34] [Server thread/INFO]: Generating keypair
-[21:10:35] [Server thread/INFO]: Starting Minecraft server on *:16566
-[21:10:35] [Server thread/INFO]: Using default channel type
-[21:10:35] [Server thread/INFO]: Paper: Using Java 11 compression from Velocity.
-[21:10:35] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
-[21:10:37] [Server thread/INFO]: [LcraftAPI] Loading LcraftAPI v1.0.2
-[21:10:37] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[21:10:37] [Server thread/INFO]: Preparing level "world"
-[21:10:54] [Server thread/WARN]: Unable to find spawn biome
-[21:11:01] [Server thread/WARN]: Unable to find spawn biome
-[21:11:04] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
-[21:11:06] [Server thread/INFO]: Time elapsed: 1606 ms
-[21:11:06] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
-[21:11:06] [Server thread/INFO]: Time elapsed: 362 ms
-[21:11:06] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
-[21:11:08] [Worker-Main-2/INFO]: Preparing spawn area: 0%
-[21:11:08] [Worker-Main-6/INFO]: Preparing spawn area: 0%
-[21:11:08] [Worker-Main-5/INFO]: Preparing spawn area: 0%
-[21:11:08] [Worker-Main-1/INFO]: Preparing spawn area: 0%
-[21:11:08] [Worker-Main-4/INFO]: Preparing spawn area: 0%
-[21:11:09] [Worker-Main-6/INFO]: Preparing spawn area: 0%
-[21:11:09] [Server thread/INFO]: Time elapsed: 3008 ms
-[21:11:10] [Server thread/INFO]: [LcraftAPI] Enabling LcraftAPI v1.0.2
-[21:11:11] [Server thread/INFO]: [LcraftAPI] The Spigot Module Lcraft Spigot TestPlugin will be loaded.
-[21:11:12] [Server thread/INFO]: [LcraftAPI] The Spigot Module Lcraft Spigot TestPlugin is loaded.
-[21:11:13] [Server thread/INFO]: Running delayed init tasks
-[21:11:13] [Server thread/INFO]: Done (39.588s)! For help, type "help"
-[21:11:13] [Server thread/INFO]: Timings Reset
-[21:11:53] [Server thread/INFO]: Test
+[19:24:16] [main/INFO]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[19:24:16] [main/INFO]: Found new data pack file/bukkit, loading it automatically
+[19:24:16] [main/INFO]: Reloading ResourceManager: Default, bukkit
+[19:24:16] [Worker-Main-2/INFO]: Loaded 7 recipes
+[19:24:17] [Server thread/INFO]: Starting minecraft server version 1.17.1
+[19:24:17] [Server thread/INFO]: Loading properties
+[19:24:18] [Server thread/INFO]: This server is running Purpur version git-Purpur-1428 (MC: 1.17.1) (Implementing API version 1.17.1-R0.1-SNAPSHOT) (Git: 9beb23b on ver/1.17.1)
+[19:24:18] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[19:24:18] [Server thread/INFO]: Using 4 threads for Netty based IO
+[19:24:18] [Server thread/INFO]: Default game type: SURVIVAL
+[19:24:18] [Server thread/INFO]: Generating keypair
+[19:24:18] [Server thread/INFO]: Starting Minecraft server on *:16566
+[19:24:18] [Server thread/INFO]: Using default channel type
+[19:24:18] [Server thread/INFO]: Paper: Using Java 11 compression from Velocity.
+[19:24:18] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
+[19:24:18] [Server thread/ERROR]: (org.bukkit.craftbukkit.v1_17_R1.legacy.CraftLegacy:259) Initializing Legacy Material Support. Unless you have legacy plugins and/or data this is a bug!
+[19:24:21] [Server thread/WARN]: Legacy plugin LcraftAPI v1.0.5 does not specify an api-version.
+[19:24:21] [Server thread/INFO]: [LcraftAPI] Loading LcraftAPI v1.0.5
+[19:24:21] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[19:24:21] [Server thread/INFO]: Preparing level "world"
+[19:24:23] [Server thread/WARN]: Unable to find spawn biome
+[19:24:23] [Server thread/WARN]: Unable to find spawn biome
+[19:24:24] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[19:24:24] [Worker-Main-2/INFO]: Preparing spawn area: 0%
+[19:24:24] [Server thread/INFO]: Time elapsed: 434 ms
+[19:24:24] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
+[19:24:24] [Server thread/INFO]: Time elapsed: 192 ms
+[19:24:24] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
+[19:24:24] [Server thread/INFO]: Time elapsed: 144 ms
+[19:24:24] [Server thread/INFO]: [LcraftAPI] Enabling LcraftAPI v1.0.5*
+[19:24:24] [Server thread/INFO]: Running delayed init tasks
+[19:24:24] [Server thread/INFO]: Done (6.930s)! For help, type "help"
+[19:24:24] [Server thread/INFO]: Timings Reset

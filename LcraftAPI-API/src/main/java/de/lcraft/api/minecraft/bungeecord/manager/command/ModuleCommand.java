@@ -83,10 +83,10 @@ public abstract class ModuleCommand extends Command {
                 onConsoleCommand(commandSender, strings);
             }
         }
-        onCommand(commandSender, strings);
+        onCommandExecute(commandSender, strings);
     }
 
-    public boolean onCommand(CommandSender s, String[] args) {return false;}
+    public boolean onCommandExecute(CommandSender s, String[] args) {return false;}
     public boolean onPlayerCommand(ProxiedPlayer p, String[] args) {return false;}
     public boolean onConsoleCommand(CommandSender s, String[] args) {return false;}
 

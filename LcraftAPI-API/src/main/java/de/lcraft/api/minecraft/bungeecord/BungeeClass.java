@@ -1,8 +1,7 @@
 package de.lcraft.api.minecraft.bungeecord;
 
 import de.lcraft.api.minecraft.bungeecord.manager.ModuleManager;
-import de.lcraft.api.java_utils.Config;
-import de.lcraft.api.minecraft.bungeecord.manager.utils.language.LanguagesManager;
+import de.lcraft.api.minecraft.bungeecord.manager.Config;
 import net.md_5.bungee.api.plugin.Plugin;
 import java.io.IOException;
 
