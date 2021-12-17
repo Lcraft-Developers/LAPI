@@ -25,7 +25,7 @@ public class InventoryIntegerOption implements Listener {
         this.itemUp = itemUp;
         this.middleSlot = middleSlot;
         Bukkit.getPluginManager().registerEvents(this, plugin);
-        this.title = title;
+        this.title = invTitle;
     }
 
     public Inventory useIt(Inventory inv, int middleSlot, Consumer<InventoryClickEvent> middleConsumer, Consumer<InventoryClickEvent> downConsumer, Consumer<InventoryClickEvent> upConsumer) {

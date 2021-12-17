@@ -1,6 +1,7 @@
 package de.lcraft.api.mysql;
 
 import java.sql.*;
+import java.util.HashMap;
 
 public class MySQLServer {
 
@@ -24,13 +25,11 @@ public class MySQLServer {
 
         isConnected = true;
     }
-
     public void reconnect() throws SQLException {
         if(this.username != null && this.password != null && ip != null && port != null && !isConnected) {
             connectToUser(this.username, this.password);
         }
     }
-
     public void stopConnection() throws SQLException {
         if(connection != null && isConnected) {
             connection.close();
@@ -54,6 +53,21 @@ public class MySQLServer {
             ex.printStackTrace();
         }
         return flag;
+    }
+
+    public void createTable(String name, HashMap<String, String> values) {
+        String query = "create table " + name + "(";
+        int i = 0;
+        for(String key : values.keySet()) {
+            i++;
+            String value = values.get(key);
+            if(values.size() > i) {
+                query = query + key + "   " + value + ", ";
+            } else {
+                query = query + key + "   " + value + ");";
+            }
+        }
+        executeUpdate(query);
     }
 
     public Connection getConnection() {
