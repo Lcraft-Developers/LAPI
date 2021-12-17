@@ -20,7 +20,7 @@ public class LanguagesManager {
 	}
 
 	public void setIDLanguage(int id, Language lang) {
-		userConfig.cfg().set("users." + id + ".lang", lang.getShort());
+		userConfig.cfg().set("users." + id + ".lang", lang.getShortLanguage().toLowerCase());
 		userConfig.save();
 	}
 	public boolean hasIDAnLanguage(int id) {
@@ -371,7 +371,7 @@ public class LanguagesManager {
 	}
 	public boolean existsLanguage(String shortLanguage, String shortLanguageType) throws IOException {
 		for(Language c : getAllLanguages()) {
-			if((c.getShortLanguage().equalsIgnoreCase(shortLanguage) && c.getShortLanguageType().equalsIgnoreCase(shortLanguageType))) {
+			if((c.getShortLanguage().toLowerCase().equalsIgnoreCase(shortLanguage) && c.getShortLanguageType().toLowerCase().equalsIgnoreCase(shortLanguageType))) {
 				return true;
 			}
 		}
@@ -379,7 +379,7 @@ public class LanguagesManager {
 	}
 	public boolean existsAddedLanguage(String shortLanguage, String shortLanguageType) {
 		for(Language c : getAddedLanguages()) {
-			if((c.getShortLanguage().equalsIgnoreCase(shortLanguage) && c.getShortLanguageType().equalsIgnoreCase(shortLanguageType))) {
+			if((c.getShortLanguage().toLowerCase().equalsIgnoreCase(shortLanguage) && c.getShortLanguageType().toLowerCase().equalsIgnoreCase(shortLanguageType))) {
 				return true;
 			}
 		}
@@ -451,6 +451,48 @@ public class LanguagesManager {
 				return "hd";
 			}
 		}; allLanguages.add(de_hd);
+		Language de_ch = new Language(this) {
+			@Override
+			public String getName() {
+				return "Schwizerdütsch";
+			}
+
+			@Override
+			public String getEnglishName() {
+				return "Swiss German";
+			}
+
+			@Override
+			public String getShortLanguage() {
+				return "de";
+			}
+
+			@Override
+			public String getShortLanguageType() {
+				return "schw";
+			}
+		}; allLanguages.add(de_ch);
+		Language de_öster = new Language(this) {
+			@Override
+			public String getName() {
+				return "Österreichisches Deutsch";
+			}
+
+			@Override
+			public String getEnglishName() {
+				return "Austrian German";
+			}
+
+			@Override
+			public String getShortLanguage() {
+				return "de";
+			}
+
+			@Override
+			public String getShortLanguageType() {
+				return "öster";
+			}
+		}; allLanguages.add(de_öster);
 
 		return allLanguages;
 	}
@@ -470,13 +512,13 @@ public class LanguagesManager {
 	}
 	public Language getLanguageByFullShort(String short_) throws IOException {
 		for(Language c : getAllLanguages()) {
-			if(c.getShort().equalsIgnoreCase(short_)) return c;
+			if(c.getShortLanguage().toLowerCase().equalsIgnoreCase(short_)) return c;
 		}
 		return null;
 	}
 	public Language getLanguageByShortLanguage(String shortLanguage, String shortLanguageType) throws IOException {
 		for(Language c : getAllLanguages()) {
-			if(c.getShortLanguage().equalsIgnoreCase(shortLanguage) && c.getShortLanguageType().equalsIgnoreCase(shortLanguageType)) return c;
+			if(c.getShortLanguage().toLowerCase().equalsIgnoreCase(shortLanguage) && c.getShortLanguageType().toLowerCase().equalsIgnoreCase(shortLanguageType)) return c;
 		}
 		return null;
 	}
@@ -495,13 +537,13 @@ public class LanguagesManager {
 	}
 	public Language getAddedLanguageByFullShort(String short_) {
 		for(Language c : getAddedLanguages()) {
-			if(c.getShort().equalsIgnoreCase(short_)) return c;
+			if(c.getShortLanguage().toLowerCase().equalsIgnoreCase(short_)) return c;
 		}
 		return null;
 	}
 	public Language getAddedLanguageByShortLanguage(String shortLanguage, String shortLanguageType) {
 		for(Language c : getAddedLanguages()) {
-			if(c.getShortLanguage().equalsIgnoreCase(shortLanguage) && c.getShortLanguageType().equalsIgnoreCase(shortLanguageType)) return c;
+			if(c.getShortLanguage().toLowerCase().equalsIgnoreCase(shortLanguage) && c.getShortLanguageType().toLowerCase().equalsIgnoreCase(shortLanguageType)) return c;
 		}
 		return null;
 	}
@@ -520,13 +562,13 @@ public class LanguagesManager {
 	}
 	public Language getAllLanguageByFullShort(String short_) throws IOException {
 		for(Language c : getAllLanguagesAndAdded()) {
-			if(c.getShort().equalsIgnoreCase(short_)) return c;
+			if(c.getShortLanguage().toLowerCase().equalsIgnoreCase(short_)) return c;
 		}
 		return null;
 	}
 	public Language getAllLanguageByShortLanguage(String shortLanguage, String shortLanguageType) throws IOException {
 		for(Language c : getAllLanguagesAndAdded()) {
-			if(c.getShortLanguage().equalsIgnoreCase(shortLanguage) && c.getShortLanguageType().equalsIgnoreCase(shortLanguageType)) return c;
+			if(c.getShortLanguage().toLowerCase().equalsIgnoreCase(shortLanguage) && c.getShortLanguageType().toLowerCase().equalsIgnoreCase(shortLanguageType)) return c;
 		}
 		return null;
 	}
