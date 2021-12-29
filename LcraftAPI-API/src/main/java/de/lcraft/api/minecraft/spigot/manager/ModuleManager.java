@@ -4,6 +4,7 @@ import de.lcraft.api.minecraft.spigot.SpigotClass;
 import de.lcraft.api.minecraft.spigot.manager.loaders.ModuleClassLoader;
 import de.lcraft.api.minecraft.spigot.manager.loaders.ModuleFileLoader;
 import de.lcraft.api.minecraft.spigot.manager.loaders.ModuleLoader;
+
 import java.io.IOException;
 import java.util.ArrayList;
 

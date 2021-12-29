@@ -28,7 +28,7 @@
         <dependency>
             <groupId>de.lcraft.api</groupId>
             <artifactId>API</artifactId>
-            <version>1.0.6</version>
+            <version>1.0.7</version>
         </dependency>
         <dependency>
             <groupId>net.md-5</groupId>

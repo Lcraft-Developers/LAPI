@@ -2,41 +2,62 @@ package de.lcraft.api.minecraft.spigot.utils.items;
 
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
+
 import java.util.ArrayList;
 
 public class ItemBuilder {
 
-    public ItemStack i;
-    public ItemMeta iMeta;
+    private ArrayList<String> lore;
+    private Material material;
+    private int amount;
+    private String displayName;
 
-    public ItemBuilder(Material m, int amount) {
-        i = new ItemStack(m, amount);
-        iMeta = i.getItemMeta();
+    public ItemBuilder(Material material, int amount) {
+        this.material = material;
+        this.amount = amount;
+
+        lore = new ArrayList<>();
     }
     public ItemBuilder(Material m) {
         this(m, 1);
     }
 
     public ItemBuilder setDisplayName(String name) {
-        iMeta.setDisplayName(name);
+        displayName = name;
         return this;
     }
-    public ItemBuilder setLoreString(String... lore) {
+    public ItemBuilder addLoreString(String... lore) {
         ArrayList<String> l = new ArrayList<>();
         for (String c : lore) {
             l.add(c);
         }
-        setLore(l);
+        addLore(l);
         return this;
     }
-    public ItemBuilder setLore(ArrayList<String> lore) {
-        iMeta.setLore(lore);
+    public ItemBuilder addLore(ArrayList<String> lores) {
+        for(String c : lores) {
+            lore.add(c);
+        }
         return this;
     }
     public ItemStack build() {
-        i.setItemMeta(iMeta);
+        ItemStack i = new ItemStack(getMaterial(), getAmount());
+        i.getItemMeta().setDisplayName(getDisplayName());
+        i.getItemMeta().setLore(getLore());
         return i;
+    }
+
+    public ArrayList<String> getLore() {
+        return lore;
+    }
+    public Material getMaterial() {
+        return material;
+    }
+    public int getAmount() {
+        return amount;
+    }
+    public String getDisplayName() {
+        return displayName;
     }
 
 }

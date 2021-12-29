@@ -2,9 +2,8 @@ package de.lcraft.api.minecraft.spigot.manager.command;
 
 import de.lcraft.api.minecraft.spigot.manager.Module;
 import de.lcraft.api.minecraft.spigot.manager.ModuleConfig;
-import de.lcraft.api.minecraft.spigot.manager.utils.language.Language;
-import de.lcraft.api.minecraft.spigot.manager.utils.language.LanguagesManager;
-import de.lcraft.api.minecraft.spigot.manager.utils.permissions.PermsManager;
+import de.lcraft.api.minecraft.spigot.manager.utils.LanguagesManager;
+import de.lcraft.api.minecraft.spigot.manager.utils.PermsManager;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandMap;
 import java.io.IOException;
@@ -57,7 +56,7 @@ public class ModuleCommandManager {
         LanguagesManager languagesManager = module.getLanguagesManager();
         if(getAllTranslatedTexts() != null) {
             for(String c : getAllTranslatedTexts()) {
-                for(Language lang : languagesManager.getAllLanguagesAndAdded()) {
+                for(LanguagesManager.Language lang : languagesManager.getAllLanguagesAndAdded()) {
                     lang.translate(c);
                 }
             }

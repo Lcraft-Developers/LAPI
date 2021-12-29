@@ -2,6 +2,7 @@ package de.lcraft.api.minecraft.spigot.manager.loaders;
 
 import de.lcraft.api.minecraft.spigot.manager.Module;
 import de.lcraft.api.minecraft.spigot.manager.ModuleManager;
+
 import java.util.ArrayList;
 
 public class ModuleLoader {

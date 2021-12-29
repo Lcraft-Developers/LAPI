@@ -2,6 +2,7 @@ package de.lcraft.api.java_utils;
 
 import de.lcraft.api.java_utils.exeptions.InternetNotFoundException;
 import de.lcraft.api.java_utils.exeptions.VersionNotFound;
+
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.InetAddress;

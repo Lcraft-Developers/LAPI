@@ -1,12 +1,12 @@
 package de.lcraft.api.minecraft.spigot.manager.command;
 
+import de.lcraft.api.minecraft.spigot.SpigotClass;
 import de.lcraft.api.minecraft.spigot.manager.Module;
 import de.lcraft.api.minecraft.spigot.manager.logger.ModuleLogger;
 import de.lcraft.api.minecraft.spigot.manager.logger.ModuleLoggerType;
-import de.lcraft.api.minecraft.spigot.manager.utils.language.LanguagesManager;
-import de.lcraft.api.minecraft.spigot.manager.utils.permissions.PermsManager;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
+import de.lcraft.api.minecraft.spigot.manager.utils.LPlayer;
+import de.lcraft.api.minecraft.spigot.manager.utils.LanguagesManager;
+import de.lcraft.api.minecraft.spigot.manager.utils.PermsManager;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.defaults.BukkitCommand;
 import org.bukkit.entity.Player;
@@ -39,7 +39,7 @@ public abstract class ModuleCommand extends BukkitCommand {
     public String translate(UUID uuid, String text) throws IOException {
         return languagesManager.getIDLanguage(languagesManager.getIDFromUUID(uuid)).translate(text);
     }
-    public boolean hasPermissions(Player p, String perm) {
+    public boolean hasPermissions(LPlayer p, String perm) {
         return permsManager.hasPermissions(p, perm);
     }
 
@@ -80,8 +80,8 @@ public abstract class ModuleCommand extends BukkitCommand {
     }
     public void split(CommandSender commandSender, String[] strings) {
         if(splitting) {
-            if(commandSender != null && commandSender instanceof Player) {
-                onPlayerCommand((Player) commandSender, strings);
+            if(commandSender != null && commandSender instanceof LPlayer) {
+                onLPlayerCommand(SpigotClass.getAPIPluginMain().getLPlayerByUUID(((Player) commandSender).getUniqueId()), strings);
             } else {
                 onConsoleCommand(commandSender, strings);
             }
@@ -90,7 +90,7 @@ public abstract class ModuleCommand extends BukkitCommand {
     }
 
     public boolean onCommandExecute(CommandSender s, String[] args) {return false;}
-    public boolean onPlayerCommand(Player p, String[] args) {return false;}
+    public boolean onLPlayerCommand(LPlayer p, String[] args) {return false;}
     public boolean onConsoleCommand(CommandSender s, String[] args) {return false;}
 
     public abstract ArrayList<String> getAllPermissions(ArrayList<String> allPermissions);

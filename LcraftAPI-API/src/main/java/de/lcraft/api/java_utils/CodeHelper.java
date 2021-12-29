@@ -15,6 +15,13 @@ public class CodeHelper {
         }
         return all;
     }
+    public ArrayList<String> makeStringArrayToArrayList(String... array) {
+        ArrayList<String> all = new ArrayList<>();
+        for(String c : array) {
+            all.add(c);
+        }
+        return all;
+    }
     public boolean containsFromStringArray(String[] array, String cont) {
         for(String c : array) {
             if(c.equalsIgnoreCase(cont)) {

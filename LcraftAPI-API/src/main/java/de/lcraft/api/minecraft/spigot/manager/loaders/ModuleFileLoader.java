@@ -5,6 +5,7 @@ import de.lcraft.api.minecraft.spigot.manager.Module;
 import de.lcraft.api.minecraft.spigot.manager.ModuleDescriptionFile;
 import de.lcraft.api.minecraft.spigot.manager.ModuleManager;
 import org.bukkit.plugin.java.JavaPlugin;
+
 import java.io.File;
 import java.net.URLClassLoader;
 import java.util.ArrayList;

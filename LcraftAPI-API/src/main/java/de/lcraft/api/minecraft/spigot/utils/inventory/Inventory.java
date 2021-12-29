@@ -2,7 +2,7 @@ package de.lcraft.api.minecraft.spigot.utils.inventory;
 
 import de.lcraft.api.minecraft.spigot.SpigotClass;
 import de.lcraft.api.minecraft.spigot.manager.ModuleConfig;
-import de.lcraft.api.minecraft.spigot.manager.utils.language.LanguagesManager;
+import de.lcraft.api.minecraft.spigot.manager.utils.LanguagesManager;
 import de.lcraft.api.minecraft.spigot.utils.items.ItemBuilder;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;

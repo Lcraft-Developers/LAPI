@@ -1,40 +1,44 @@
-[20:03:33] [main/INFO]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
-[20:03:34] [main/INFO]: Found new data pack file/bukkit, loading it automatically
-[20:03:34] [main/INFO]: Reloading ResourceManager: Default, bukkit
-[20:03:34] [Worker-Main-2/INFO]: Loaded 7 recipes
-[20:03:36] [Server thread/INFO]: Starting minecraft server version 1.17.1
-[20:03:36] [Server thread/INFO]: Loading properties
-[20:03:36] [Server thread/INFO]: This server is running Paper version git-Paper-397 (MC: 1.17.1) (Implementing API version 1.17.1-R0.1-SNAPSHOT) (Git: 1a83e90 on ver/1.17.1)
-[20:03:36] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[20:03:36] [Server thread/INFO]: Using 4 threads for Netty based IO
-[20:03:36] [Server thread/INFO]: Default game type: SURVIVAL
-[20:03:36] [Server thread/INFO]: Generating keypair
-[20:03:36] [Server thread/INFO]: Starting Minecraft server on *:16577
-[20:03:36] [Server thread/INFO]: Using default channel type
-[20:03:36] [Server thread/INFO]: Paper: Using Java 11 compression from Velocity.
-[20:03:36] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
-[20:03:36] [Server thread/ERROR]: [STDERR] [org.bukkit.craftbukkit.v1_17_R1.legacy.CraftLegacy] Initializing Legacy Material Support. Unless you have legacy plugins and/or data this is a bug!
-[20:03:39] [Server thread/WARN]: Legacy plugin LcraftAPI v1.0.5 does not specify an api-version.
-[20:03:39] [Server thread/INFO]: [LcraftAPI] Loading LcraftAPI v1.0.5
-[20:03:39] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[20:03:39] [Server thread/INFO]: Preparing level "world"
-[20:03:41] [Server thread/WARN]: Unable to find spawn biome
-[20:03:41] [Server thread/WARN]: Unable to find spawn biome
-[20:03:42] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
-[20:03:42] [Worker-Main-3/INFO]: Preparing spawn area: 0%
-[20:03:42] [Server thread/INFO]: Time elapsed: 391 ms
-[20:03:42] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
-[20:03:42] [Worker-Main-1/INFO]: Preparing spawn area: 0%
-[20:03:42] [Server thread/INFO]: Time elapsed: 309 ms
-[20:03:42] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
-[20:03:42] [Worker-Main-4/INFO]: Preparing spawn area: 0%
-[20:03:43] [Worker-Main-2/INFO]: Preparing spawn area: 0%
-[20:03:43] [Server thread/INFO]: Time elapsed: 717 ms
-[20:03:43] [Server thread/INFO]: [LcraftAPI] Enabling LcraftAPI v1.0.5*
-[20:03:43] [Server thread/INFO]: [LcraftAPI] [STDOUT] The Spigot Module Lcraft Spigot TestPlugin is loaded.
-[20:03:43] [Server thread/WARN]: Nag author(s): '[LPD, Lcraft Developers]' of 'LcraftAPI' about their usage of System.out/err.print. Please use your plugin's logger instead (JavaPlugin#getLogger).
-[20:03:43] [Server thread/INFO]: Running delayed init tasks
-[20:03:43] [Server thread/INFO]: Done (7.432s)! For help, type "help"
-[20:03:43] [Server thread/INFO]: Timings Reset
-[20:03:48] [Server thread/INFO]: Hello
-[20:03:50] [Server thread/INFO]: test hello
+[16:00:05] [main/INFO]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[16:00:06] [main/INFO]: Found new data pack file/bukkit, loading it automatically
+[16:00:06] [main/INFO]: Reloading ResourceManager: Default, bukkit
+[16:00:07] [Worker-Main-4/INFO]: Loaded 7 recipes
+[16:00:09] [Server thread/INFO]: Starting minecraft server version 1.17.1
+[16:00:09] [Server thread/INFO]: Loading properties
+[16:00:09] [Server thread/INFO]: This server is running Paper version git-Paper-397 (MC: 1.17.1) (Implementing API version 1.17.1-R0.1-SNAPSHOT) (Git: 1a83e90 on ver/1.17.1)
+[16:00:09] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[16:00:09] [Server thread/INFO]: Using 4 threads for Netty based IO
+[16:00:09] [Server thread/INFO]: Default game type: SURVIVAL
+[16:00:09] [Server thread/INFO]: Generating keypair
+[16:00:09] [Server thread/INFO]: Starting Minecraft server on *:16577
+[16:00:09] [Server thread/INFO]: Using default channel type
+[16:00:10] [Server thread/INFO]: Paper: Using Java 11 compression from Velocity.
+[16:00:10] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
+[16:00:10] [Server thread/ERROR]: [STDERR] [org.bukkit.craftbukkit.v1_17_R1.legacy.CraftLegacy] Initializing Legacy Material Support. Unless you have legacy plugins and/or data this is a bug!
+[16:00:15] [Server thread/WARN]: Legacy plugin LcraftAPI v1.0.7 does not specify an api-version.
+[16:00:15] [Server thread/INFO]: [LcraftAPI] Loading LcraftAPI v1.0.7
+[16:00:15] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[16:00:15] [Server thread/INFO]: Preparing level "world"
+[16:00:19] [Server thread/WARN]: Unable to find spawn biome
+[16:00:20] [Server thread/WARN]: Unable to find spawn biome
+[16:00:20] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[16:00:20] [Worker-Main-3/INFO]: Preparing spawn area: 0%
+[16:00:21] [Worker-Main-4/INFO]: Preparing spawn area: 0%
+[16:00:21] [Server thread/INFO]: Time elapsed: 748 ms
+[16:00:21] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
+[16:00:21] [Worker-Main-5/INFO]: Preparing spawn area: 0%
+[16:00:21] [Server thread/INFO]: Time elapsed: 235 ms
+[16:00:21] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
+[16:00:22] [Worker-Main-2/INFO]: Preparing spawn area: 0%
+[16:00:22] [Worker-Main-4/INFO]: Preparing spawn area: 0%
+[16:00:22] [Worker-Main-5/INFO]: Preparing spawn area: 0%
+[16:00:22] [Server thread/INFO]: Time elapsed: 1216 ms
+[16:00:22] [Server thread/INFO]: [LcraftAPI] Enabling LcraftAPI v1.0.7*
+[16:00:22] [Server thread/INFO]: [LcraftAPI] [STDOUT] The Spigot Module Lcraft Spigot TestPlugin is loaded.
+[16:00:22] [Server thread/WARN]: Nag author(s): '[LPD, Lcraft Developers]' of 'LcraftAPI' about their usage of System.out/err.print. Please use your plugin's logger instead (JavaPlugin#getLogger).
+[16:00:22] [Server thread/INFO]: Running delayed init tasks
+[16:00:22] [Server thread/INFO]: Done (13.508s)! For help, type "help"
+[16:00:22] [Server thread/INFO]: Timings Reset
+[16:00:24] [Server thread/INFO]: Unknown command. Type "/help" for help.
+[16:00:46] [Server thread/INFO]: Unknown command. Type "/help" for help.
+[16:00:58] [Server thread/INFO]: Hello
+[16:01:01] [Server thread/INFO]: test hello
