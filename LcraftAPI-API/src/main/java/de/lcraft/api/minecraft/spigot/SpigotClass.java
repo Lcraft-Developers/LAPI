@@ -1,6 +1,6 @@
 package de.lcraft.api.minecraft.spigot;
 
-import de.lcraft.api.minecraft.spigot.manager.Config;
+import de.lcraft.api.minecraft.spigot.manager.utils.Config;
 import de.lcraft.api.minecraft.spigot.manager.ModuleManager;
 import de.lcraft.api.minecraft.spigot.manager.utils.LPlayer;
 import de.lcraft.api.minecraft.spigot.manager.utils.LanguagesManager;
@@ -101,6 +101,10 @@ public class SpigotClass extends JavaPlugin implements Listener {
             }
         }
         return null;
+    }
+    public boolean existsPlayer(UUID uuid) {
+        if(getLPlayerByUUID(uuid) != null) return true;
+        return false;
     }
 
     public static SpigotClass getAPIPluginMain() {

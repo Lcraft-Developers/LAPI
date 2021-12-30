@@ -1,6 +1,5 @@
 package de.lcraft.api.minecraft.spigot.manager.utils;
 
-import de.lcraft.api.minecraft.spigot.manager.ModuleConfig;
 import org.bukkit.entity.Player;
 import java.io.IOException;
 import java.util.ArrayList;

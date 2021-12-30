@@ -1,6 +1,6 @@
 package de.lcraft.api.minecraft.bungee;
 
-import de.lcraft.api.minecraft.bungee.manager.Config;
+import de.lcraft.api.minecraft.bungee.manager.utils.Config;
 import de.lcraft.api.minecraft.bungee.manager.ModuleManager;
 import de.lcraft.api.minecraft.bungee.manager.utils.LPlayer;
 import de.lcraft.api.minecraft.bungee.manager.utils.LanguagesManager;
@@ -98,6 +98,10 @@ public class BungeeClass extends Plugin implements Listener {
             }
         }
         return null;
+    }
+    public boolean existsPlayer(UUID uuid) {
+        if(getLPlayerByUUID(uuid) != null) return true;
+        return false;
     }
 
     public static BungeeClass getAPIPluginMain() {

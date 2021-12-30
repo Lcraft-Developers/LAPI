@@ -1,7 +1,6 @@
 package de.lcraft.api.minecraft.spigot.manager.utils;
 
 import de.lcraft.api.minecraft.spigot.SpigotClass;
-import de.lcraft.api.minecraft.spigot.manager.Config;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;

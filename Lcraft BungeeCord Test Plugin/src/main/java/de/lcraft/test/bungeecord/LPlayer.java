@@ -1,6 +1,6 @@
 package de.lcraft.test.bungeecord;
 
-import de.lcraft.api.minecraft.bungee.manager.Config;
+import de.lcraft.api.minecraft.bungee.manager.utils.Config;
 import de.lcraft.api.minecraft.bungee.manager.utils.LanguagesManager;
 import de.lcraft.api.minecraft.bungee.manager.utils.ListenerManager;
 import net.md_5.bungee.api.plugin.Plugin;

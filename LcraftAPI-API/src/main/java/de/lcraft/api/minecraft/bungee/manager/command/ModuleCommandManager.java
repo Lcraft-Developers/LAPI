@@ -2,7 +2,7 @@ package de.lcraft.api.minecraft.bungee.manager.command;
 
 import de.lcraft.api.minecraft.bungee.BungeeClass;
 import de.lcraft.api.minecraft.bungee.manager.Module;
-import de.lcraft.api.minecraft.bungee.manager.ModuleConfig;
+import de.lcraft.api.minecraft.bungee.manager.utils.ModuleConfig;
 import de.lcraft.api.minecraft.bungee.manager.utils.LanguagesManager;
 import de.lcraft.api.minecraft.bungee.manager.utils.PermsManager;
 import net.md_5.bungee.api.ProxyServer;

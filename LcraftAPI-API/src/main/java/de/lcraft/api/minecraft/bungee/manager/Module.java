@@ -4,6 +4,7 @@ import de.lcraft.api.minecraft.bungee.manager.command.ModuleCommandManager;
 import de.lcraft.api.minecraft.bungee.manager.logger.ModuleLogger;
 import de.lcraft.api.minecraft.bungee.manager.utils.LanguagesManager;
 import de.lcraft.api.minecraft.bungee.manager.utils.ListenerManager;
+import de.lcraft.api.minecraft.bungee.manager.utils.ModuleConfig;
 import de.lcraft.api.minecraft.bungee.manager.utils.PermsManager;
 import net.md_5.bungee.api.plugin.Plugin;
 import java.io.File;

@@ -1,7 +1,7 @@
 package de.lcraft.api.minecraft.spigot.manager.command;
 
 import de.lcraft.api.minecraft.spigot.manager.Module;
-import de.lcraft.api.minecraft.spigot.manager.ModuleConfig;
+import de.lcraft.api.minecraft.spigot.manager.utils.ModuleConfig;
 import de.lcraft.api.minecraft.spigot.manager.utils.LanguagesManager;
 import de.lcraft.api.minecraft.spigot.manager.utils.PermsManager;
 import org.bukkit.Bukkit;

@@ -1,6 +1,5 @@
 package de.lcraft.api.minecraft.bungee.manager.utils;
 
-import de.lcraft.api.minecraft.bungee.manager.ModuleConfig;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 import java.io.IOException;
 import java.util.ArrayList;

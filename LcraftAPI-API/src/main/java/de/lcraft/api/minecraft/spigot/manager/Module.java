@@ -4,6 +4,7 @@ import de.lcraft.api.minecraft.spigot.manager.command.ModuleCommandManager;
 import de.lcraft.api.minecraft.spigot.manager.logger.ModuleLogger;
 import de.lcraft.api.minecraft.spigot.manager.utils.ListenerManager;
 import de.lcraft.api.minecraft.spigot.manager.utils.LanguagesManager;
+import de.lcraft.api.minecraft.spigot.manager.utils.ModuleConfig;
 import de.lcraft.api.minecraft.spigot.manager.utils.PermsManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import java.io.File;

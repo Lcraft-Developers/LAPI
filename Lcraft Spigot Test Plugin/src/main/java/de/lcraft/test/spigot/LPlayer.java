@@ -1,7 +1,7 @@
 package de.lcraft.test.spigot;
 
 import de.lcraft.api.minecraft.spigot.SpigotClass;
-import de.lcraft.api.minecraft.spigot.manager.Config;
+import de.lcraft.api.minecraft.spigot.manager.utils.Config;
 import de.lcraft.api.minecraft.spigot.manager.utils.LanguagesManager;
 import de.lcraft.api.minecraft.spigot.manager.utils.ListenerManager;
 import org.bukkit.plugin.java.JavaPlugin;

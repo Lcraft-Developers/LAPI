@@ -1,4 +1,4 @@
-package de.lcraft.api.minecraft.spigot.utils.crafting;
+package de.lcraft.api.minecraft.spigot.utils;
 
 import de.lcraft.api.minecraft.spigot.SpigotClass;
 import org.bukkit.Bukkit;
@@ -82,6 +82,21 @@ public class CraftingRecipe {
         for(CraftingRecipe c : craftingRecipes) {
             c.unregister();
         }
+    }
+
+    public enum CraftingPlace {
+
+        FIRST('A'), SECOND('B'), THIRD('C'), FOURTH('D'), FIFTH('E'), SIXTH('F'), SEVENTH('G'), EIGHT('H'), NINTH('I');
+
+
+        private final char key;
+        CraftingPlace(char key) {
+            this.key = key;
+        }
+        public char getKey() {
+            return key;
+        }
+
     }
 
 }

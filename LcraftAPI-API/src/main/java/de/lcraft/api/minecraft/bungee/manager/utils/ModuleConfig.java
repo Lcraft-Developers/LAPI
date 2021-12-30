@@ -1,4 +1,6 @@
-package de.lcraft.api.minecraft.spigot.manager;
+package de.lcraft.api.minecraft.bungee.manager.utils;
+
+import de.lcraft.api.minecraft.bungee.manager.Module;
 
 import java.io.IOException;
 

@@ -1,15 +1,15 @@
-package de.lcraft.api.minecraft.spigot.manager;
+package de.lcraft.api.minecraft.bungee.manager.utils;
 
-import org.bukkit.configuration.Configuration;
-import org.bukkit.configuration.file.YamlConfiguration;
-
+import net.md_5.bungee.config.Configuration;
+import net.md_5.bungee.config.ConfigurationProvider;
+import net.md_5.bungee.config.YamlConfiguration;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
 public class Config {
 
-    private YamlConfiguration cfg;
+    private Configuration cfg;
     private File file;
     private File folder;
 
@@ -27,7 +27,7 @@ public class Config {
                 e.printStackTrace();
             }
         }
-        cfg = YamlConfiguration.loadConfiguration(file);
+        cfg = ConfigurationProvider.getProvider(YamlConfiguration.class).load(file);
     }
     public Config(String path, String filename) throws IOException {
         this("plugins//Lcraft-API//", path, filename);
@@ -57,7 +57,7 @@ public class Config {
         if(!root.endsWith(".")) root = root + ".";
         ArrayList<Object> list = new ArrayList<>();
 
-        for(String c : cfg.getConfigurationSection(root).getKeys(false)) {
+        for(String c : cfg.getSection(root).getKeys()) {
             list.add(cfg.get(root + c));
         }
 
@@ -65,7 +65,7 @@ public class Config {
     }
     public void save() {
         try {
-            cfg.save(file);
+            ConfigurationProvider.getProvider(YamlConfiguration.class).save(cfg, file);
         } catch (IOException e) {
             e.printStackTrace();
         }
