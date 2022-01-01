@@ -12,6 +12,7 @@
         <module name="BungeeCordTestPlugin" />
         <module name="API" />
         <module name="SpigotTestPlugin" />
+        <module name="API-beta" />
         <module name="LcraftAPI.bungeecord.test" />
         <module name="LcraftAPI.spigot.test" />
       </profile>
