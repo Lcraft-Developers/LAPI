@@ -1,16 +1,15 @@
 package de.lcraft.api.minecraft.spigot.manager;
 
-import de.lcraft.api.java_utils.Internet;
 import de.lcraft.api.java_utils.connection.SpigotMc;
 import de.lcraft.api.minecraft.spigot.listeners.ModuleListenerManager;
 import de.lcraft.api.minecraft.spigot.manager.command.ModuleCommandManager;
-import de.lcraft.api.minecraft.spigot.listeners.ListenerManager;
 import de.lcraft.api.minecraft.spigot.manager.logger.ModuleLogger;
 import de.lcraft.api.minecraft.spigot.manager.logger.ModuleLoggerType;
 import de.lcraft.api.minecraft.spigot.manager.util.LanguagesManager;
 import de.lcraft.api.minecraft.spigot.manager.configs.ModuleConfig;
 import de.lcraft.api.minecraft.spigot.manager.util.ModuleDescriptionFileManager;
 import de.lcraft.api.minecraft.spigot.manager.util.PermsManager;
+import de.lcraft.api.minecraft.spigot.player.LPlayerManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import java.io.File;
 import java.io.IOException;
@@ -27,9 +26,11 @@ public abstract class Module {
     private ModuleManager manager;
     private PermsManager permsManager;
     private ModuleConfig config;
+    private LPlayerManager lPlayerManager;
 
     public void load(ModuleManager manager) throws Exception {
         this.manager = manager;
+        this.lPlayerManager = manager.getPluginMain().getLPlayerManager();
 
         moduleDescriptionFileManager = new ModuleDescriptionFileManager(file);
         moduleDescriptionFileManager.load();

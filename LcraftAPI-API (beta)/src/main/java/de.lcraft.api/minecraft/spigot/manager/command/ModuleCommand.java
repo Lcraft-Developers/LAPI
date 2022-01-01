@@ -1,12 +1,12 @@
 package de.lcraft.api.minecraft.spigot.manager.command;
 
-import de.lcraft.api.minecraft.spigot.SpigotClass;
 import de.lcraft.api.minecraft.spigot.manager.Module;
 import de.lcraft.api.minecraft.spigot.manager.logger.ModuleLogger;
 import de.lcraft.api.minecraft.spigot.manager.logger.ModuleLoggerType;
-import _old.LPlayer;
+import de.lcraft.api.minecraft.spigot.player.LPlayer;
 import de.lcraft.api.minecraft.spigot.manager.util.LanguagesManager;
 import de.lcraft.api.minecraft.spigot.manager.util.PermsManager;
+import de.lcraft.api.minecraft.spigot.player.LPlayerManager;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -23,16 +23,15 @@ public abstract class ModuleCommand extends Command {
     private String description;
     private ArrayList<SubModuleCommand> subModuleCommands;
     private String command;
-    private SpigotClass spigotClass;
+    private LPlayerManager lPlayerManager;
 
-    public ModuleCommand(String command, String desc, Module m, SpigotClass spigotClass, boolean splitting) {
+    public ModuleCommand(String command, String desc, Module m, boolean splitting) {
         super(command, desc, "", new ArrayList<>());
         subModuleCommands = new ArrayList<>();
         this.module = m;
         this.description = desc;
         this.splitting = splitting;
         this.command = command;
-        this.spigotClass = spigotClass;
 
         permsManager = m.getPermsManager();
         languagesManager = m.getLanguagesManager();
@@ -83,7 +82,7 @@ public abstract class ModuleCommand extends Command {
     public void split(CommandSender commandSender, String[] strings) {
         if(splitting) {
             if(commandSender != null && commandSender instanceof LPlayer) {
-                onLPlayerCommand(spigotClass.getLPlayerByUUID(((Player) commandSender).getUniqueId()), strings);
+                onLPlayerCommand(module.getModuleManager().getPluginMain().getLPlayerManager().getLPlayerByUUID(((Player) commandSender).getUniqueId()), strings);
             } else {
                 onConsoleCommand(commandSender, strings);
             }

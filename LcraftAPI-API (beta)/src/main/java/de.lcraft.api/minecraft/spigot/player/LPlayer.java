@@ -1,4 +1,4 @@
-package _old;
+package de.lcraft.api.minecraft.spigot.player;
 
 import de.lcraft.api.minecraft.spigot.SpigotClass;
 import de.lcraft.api.minecraft.spigot.manager.configs.Config;
@@ -27,14 +27,16 @@ public class LPlayer implements Listener {
 	private LanguagesManager.Language lang;
 	private SpigotClass plugin;
 	private Config userCFG;
+	private LPlayerManager lPlayerManager;
 
-	public LPlayer(UUID uuid, Config userCFG, ListenerManager listenerManager, LanguagesManager languagesManager, SpigotClass plugin) throws IOException {
+	public LPlayer(LPlayerManager manager, UUID uuid, Config userCFG, ListenerManager listenerManager, LanguagesManager languagesManager) {
 		this.uuid = uuid;
 		this.plugin = plugin;
 		this.userCFG = userCFG;
 		this.listenerManager = listenerManager;
 		this.listenerManager.registerListener(this);
 		this.languagesManager = languagesManager;
+		this.lPlayerManager = manager;
 
 		onEveryTick();
 	}
@@ -77,14 +79,14 @@ public class LPlayer implements Listener {
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void onJoin(PlayerJoinEvent e) {
 		e.setJoinMessage(null);
-		for(LPlayer c : plugin.getPlayers()) {
+		for(LPlayer c : getlPlayerManager().getPlayers()) {
 			c.getPlayer().sendMessage(c.getLang().getJoinMessage());
 		}
 	}
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void onQuit(PlayerQuitEvent e) {
 		e.setQuitMessage(null);
-		for(LPlayer c : plugin.getPlayers()) {
+		for(LPlayer c : getlPlayerManager().getPlayers()) {
 			c.getPlayer().sendMessage(c.getLang().getQuitMessage());
 		}
 	}
@@ -96,7 +98,7 @@ public class LPlayer implements Listener {
 		return getDefaultChatMessage(from, msg);
 	}
 	public void sendDefaultChatMessage(String msg) {
-		for(LPlayer c : plugin.getPlayers()) {
+		for(LPlayer c : getlPlayerManager().getPlayers()) {
 			if(c.isOnline()) {
 				c.getPlayer().sendMessage(getDefaultChatMessage(this, msg));
 			}
@@ -129,6 +131,9 @@ public class LPlayer implements Listener {
 		} else {
 			return null;
 		}
+	}
+	public LPlayerManager getlPlayerManager() {
+		return lPlayerManager;
 	}
 
 	public String getRealName() {

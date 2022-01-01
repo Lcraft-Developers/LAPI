@@ -1,7 +1,7 @@
 package de.lcraft.api.minecraft.spigot.manager.util;
 
 import de.lcraft.api.java_utils.CodeHelper;
-import _old.LPlayer;
+import de.lcraft.api.minecraft.spigot.player.LPlayer;
 import de.lcraft.api.minecraft.spigot.manager.configs.ModuleConfig;
 import net.luckperms.api.LuckPerms;
 import net.luckperms.api.context.ContextCalculator;

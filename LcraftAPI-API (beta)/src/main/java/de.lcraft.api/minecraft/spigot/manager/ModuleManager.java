@@ -3,6 +3,7 @@ package de.lcraft.api.minecraft.spigot.manager;
 import de.lcraft.api.minecraft.spigot.SpigotClass;
 import de.lcraft.api.minecraft.spigot.manager.loaders.ModuleClassLoader;
 import de.lcraft.api.minecraft.spigot.manager.loaders.ModuleFileLoader;
+import de.lcraft.api.minecraft.spigot.player.LPlayerManager;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -15,10 +16,7 @@ public class ModuleManager {
 
     public ModuleManager(SpigotClass pluginMain) {
         this.pluginMain = pluginMain;
-
         moduleFileLoader = new ModuleFileLoader(this);
-
-        ModuleClassLoader.classLoaders.add(pluginMain.getClass().getClassLoader());
     }
 
     public void loadAllModules() throws Exception {
