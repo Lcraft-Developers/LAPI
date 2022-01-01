@@ -10,19 +10,19 @@ import java.io.IOException;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 
-public class ModuleCommandManager {
+public class CommandManager {
 
     private Module module;
-    private ArrayList<ModuleCommand> modulesCmds;
+    private ArrayList<Command> modulesCmds;
     private ModuleConfig moduleCommands;
 
-    public ModuleCommandManager(Module module) throws IOException {
+    public CommandManager(Module module) throws IOException {
         this.module = module;
         modulesCmds = new ArrayList<>();
         moduleCommands = new ModuleConfig(module, "commands.yml");
     }
 
-    public void addCommand(ModuleCommand executor, boolean canDisableInConfig) {
+    public void addCommand(Command executor, boolean canDisableInConfig) {
         if(canDisableInConfig) {
             if(moduleCommands.exists("commands." + executor.getName())) {
                 if(moduleCommands.getBoolean("commands." + executor.getName())) {
@@ -65,20 +65,20 @@ public class ModuleCommandManager {
 
     public ArrayList<String> getAllTranslatedTexts() {
         ArrayList<String> allTranslations = new ArrayList<>();
-        for(ModuleCommand cmd : getModulesCmds()) {
+        for(Command cmd : getModulesCmds()) {
             allTranslations = cmd.getAllTranslations(allTranslations);
         }
         return allTranslations;
     }
     public ArrayList<String> getAllPermissions() {
         ArrayList<String> allPermissions = new ArrayList<>();
-        for(ModuleCommand cmd : getModulesCmds()) {
+        for(Command cmd : getModulesCmds()) {
             allPermissions = cmd.getAllPermissions(allPermissions);
         }
         return allPermissions;
     }
 
-    public ArrayList<ModuleCommand> getModulesCmds() {
+    public ArrayList<Command> getModulesCmds() {
         return modulesCmds;
     }
 

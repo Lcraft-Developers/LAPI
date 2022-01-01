@@ -3,7 +3,7 @@ package de.lcraft.api.minecraft.spigot.player;
 import de.lcraft.api.minecraft.spigot.SpigotClass;
 import de.lcraft.api.minecraft.spigot.manager.configs.Config;
 import de.lcraft.api.minecraft.spigot.manager.util.LanguagesManager;
-import de.lcraft.api.minecraft.spigot.listeners.ListenerManager;
+import de.lcraft.api.minecraft.spigot.manager.listeners.ListenerManager;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
@@ -34,7 +34,8 @@ public class LPlayer implements Listener {
 		this.plugin = plugin;
 		this.userCFG = userCFG;
 		this.listenerManager = listenerManager;
-		this.listenerManager.registerListener(this);
+		this.listenerManager.addListener(this);
+		this.listenerManager.flushRegistrationAllListeners();
 		this.languagesManager = languagesManager;
 		this.lPlayerManager = manager;
 

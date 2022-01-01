@@ -1,8 +1,8 @@
 package de.lcraft.api.minecraft.spigot.manager;
 
 import de.lcraft.api.java_utils.connection.SpigotMc;
-import de.lcraft.api.minecraft.spigot.listeners.ModuleListenerManager;
-import de.lcraft.api.minecraft.spigot.manager.command.ModuleCommandManager;
+import de.lcraft.api.minecraft.spigot.manager.listeners.ModuleListenerManager;
+import de.lcraft.api.minecraft.spigot.manager.command.CommandManager;
 import de.lcraft.api.minecraft.spigot.manager.logger.ModuleLogger;
 import de.lcraft.api.minecraft.spigot.manager.logger.ModuleLoggerType;
 import de.lcraft.api.minecraft.spigot.manager.util.LanguagesManager;
@@ -17,7 +17,7 @@ public abstract class Module {
 
     private ModuleDescriptionFileManager moduleDescriptionFileManager;
     private ModuleLogger moduleLogger;
-    private ModuleCommandManager moduleCommandManager;
+    private CommandManager moduleCommandManager;
     private LanguagesManager languagesManager;
     private JavaPlugin plugin;
     private ModuleListenerManager listenerManager;
@@ -38,12 +38,12 @@ public abstract class Module {
 
         permsManager = new PermsManager();
         languagesManager = new LanguagesManager();
-        moduleCommandManager = new ModuleCommandManager(this);
+        moduleCommandManager = new CommandManager(this);
         listenerManager = new ModuleListenerManager(this);
 
         enableModule();
 
-        listenerManager.registerAllListeners();
+        listenerManager.flushRegistrationAllListeners();
         moduleCommandManager.reloadConfigs();
 
         sendUpdateMessageModule();
@@ -78,7 +78,7 @@ public abstract class Module {
     public ModuleLogger getLogger() {
         return moduleLogger;
     }
-    public ModuleCommandManager getModuleCommandManager() {
+    public CommandManager getModuleCommandManager() {
         return moduleCommandManager;
     }
     public JavaPlugin getPlugin() {
@@ -111,5 +111,14 @@ public abstract class Module {
     public PermsManager getPermsManager() {
         return permsManager;
     }
-
+    public LPlayerManager getlPlayerManager() {
+        return lPlayerManager;
+    }
+    public ModuleLogger getModuleLogger() {
+        return moduleLogger;
+    }
+    public ModuleManager getManager() {
+        return manager;
+    }
+    
 }

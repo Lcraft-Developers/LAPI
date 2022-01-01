@@ -1,4 +1,4 @@
-package de.lcraft.api.minecraft.spigot.listeners;
+package de.lcraft.api.minecraft.spigot.manager.listeners;
 
 import de.lcraft.api.minecraft.spigot.manager.Module;
 

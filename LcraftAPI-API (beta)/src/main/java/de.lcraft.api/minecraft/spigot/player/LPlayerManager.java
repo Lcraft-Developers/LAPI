@@ -1,6 +1,6 @@
 package de.lcraft.api.minecraft.spigot.player;
 
-import de.lcraft.api.minecraft.spigot.listeners.ListenerManager;
+import de.lcraft.api.minecraft.spigot.manager.listeners.ListenerManager;
 import de.lcraft.api.minecraft.spigot.manager.configs.Config;
 import de.lcraft.api.minecraft.spigot.manager.util.LanguagesManager;
 import org.bukkit.entity.Player;
@@ -25,7 +25,8 @@ public class LPlayerManager implements Listener {
 		this.languagesManager = languagesManager;
 		players = new ArrayList<>();
 
-		getListenerManager().registerListener(this);
+		getListenerManager().addListener(this);
+		getListenerManager().flushRegistrationAllListeners();
 	}
 
 	public void reloadPlayers() throws IOException {

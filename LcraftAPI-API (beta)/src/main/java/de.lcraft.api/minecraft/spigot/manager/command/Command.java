@@ -1,40 +1,35 @@
 package de.lcraft.api.minecraft.spigot.manager.command;
 
-import de.lcraft.api.minecraft.spigot.manager.Module;
-import de.lcraft.api.minecraft.spigot.manager.logger.ModuleLogger;
-import de.lcraft.api.minecraft.spigot.manager.logger.ModuleLoggerType;
 import de.lcraft.api.minecraft.spigot.player.LPlayer;
 import de.lcraft.api.minecraft.spigot.manager.util.LanguagesManager;
 import de.lcraft.api.minecraft.spigot.manager.util.PermsManager;
 import de.lcraft.api.minecraft.spigot.player.LPlayerManager;
-import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.UUID;
 
-public abstract class ModuleCommand extends Command {
+public abstract class Command extends org.bukkit.command.Command {
 
-    private Module module;
     private boolean splitting;
     private LanguagesManager languagesManager;
     private PermsManager permsManager;
     private String description;
-    private ArrayList<SubModuleCommand> subModuleCommands;
+    private ArrayList<SubCommand> subModuleCommands;
     private String command;
     private LPlayerManager lPlayerManager;
 
-    public ModuleCommand(String command, String desc, Module m, boolean splitting) {
+    public Command(String command, String desc, PermsManager permsManager, LPlayerManager lPlayerManager, LanguagesManager languagesManager, boolean splitting) {
         super(command, desc, "", new ArrayList<>());
         subModuleCommands = new ArrayList<>();
-        this.module = m;
         this.description = desc;
         this.splitting = splitting;
         this.command = command;
 
-        permsManager = m.getPermsManager();
-        languagesManager = m.getLanguagesManager();
+        this.permsManager = permsManager;
+        this.languagesManager = languagesManager;
+        this.lPlayerManager = lPlayerManager;
     }
 
     public String translate(UUID uuid, String text) throws IOException {
@@ -44,11 +39,11 @@ public abstract class ModuleCommand extends Command {
         return permsManager.hasPermissions(p, perm);
     }
 
-    public void addSubCommand(SubModuleCommand subModuleCommand) {
+    public void addSubCommand(SubCommand subModuleCommand) {
         subModuleCommands.add(subModuleCommand);
     }
-    public SubModuleCommand getSubCommand(String name) {
-        for(SubModuleCommand m : subModuleCommands) {
+    public SubCommand getSubCommand(String name) {
+        for(SubCommand m : subModuleCommands) {
             if(m.getName().equalsIgnoreCase(name)) {
                 return m;
             }
@@ -82,7 +77,7 @@ public abstract class ModuleCommand extends Command {
     public void split(CommandSender commandSender, String[] strings) {
         if(splitting) {
             if(commandSender != null && commandSender instanceof LPlayer) {
-                onLPlayerCommand(module.getModuleManager().getPluginMain().getLPlayerManager().getLPlayerByUUID(((Player) commandSender).getUniqueId()), strings);
+                onLPlayerCommand(getLPlayerManager().getLPlayerByUUID(((Player) commandSender).getUniqueId()), strings);
             } else {
                 onConsoleCommand(commandSender, strings);
             }
@@ -97,33 +92,14 @@ public abstract class ModuleCommand extends Command {
     public abstract ArrayList<String> getAllPermissions(ArrayList<String> allPermissions);
     public abstract ArrayList<String> getAllTranslations(ArrayList<String> allTranslations);
 
-    public void setModule(Module module) {
-        this.module = module;
-    }
-    public Module getModule() {
-        return module;
-    }
-    public ModuleLogger getLogger() {
-        return module.getLogger();
-    }
     public String getDescription() {
         return description;
     }
 	public String getName() {
         return command;
     }
-
-    public void sendInfoMessage(String message) {
-        getLogger().sendModule(ModuleLoggerType.INFO, message);
-    }
-    public void sendWarningMessage(String message) {
-        getLogger().sendModule(ModuleLoggerType.WARNING, message);
-    }
-    public void sendErrorMessage(String message) {
-        getLogger().sendModule(ModuleLoggerType.ERROR, message);
-    }
-    public void sendMessage(String message) {
-        getLogger().sendModule(ModuleLoggerType.NOTHING, message);
+    public LPlayerManager getLPlayerManager() {
+        return lPlayerManager;
     }
 
 }

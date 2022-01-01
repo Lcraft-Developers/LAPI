@@ -1,6 +1,6 @@
 package de.lcraft.api.minecraft.spigot.util.inventory;
 
-import de.lcraft.api.minecraft.spigot.listeners.ListenerManager;
+import de.lcraft.api.minecraft.spigot.manager.listeners.ListenerManager;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
@@ -34,7 +34,8 @@ public class InventoryItem implements Listener {
 		this.invTitle = invTitle;
 		this.itemNameStartsWith = itemNameStartsWith;
 
-		listenerManager.registerListener(this);
+		listenerManager.addListener(this);
+		listenerManager.flushRegistrationAllListeners();
 	}
 	public InventoryItem(InventorySlot slot, ItemStack item) {
 		this.slot = slot;
