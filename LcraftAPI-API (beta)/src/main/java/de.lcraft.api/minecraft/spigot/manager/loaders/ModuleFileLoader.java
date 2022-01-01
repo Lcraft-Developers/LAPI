@@ -2,7 +2,7 @@ package de.lcraft.api.minecraft.spigot.manager.loaders;
 
 import de.lcraft.api.java_utils.CodeHelper;
 import de.lcraft.api.minecraft.spigot.manager.Module;
-import de.lcraft.api.minecraft.spigot.manager.ModuleDescriptionFile;
+import de.lcraft.api.minecraft.spigot.manager.util.ModuleDescriptionFileManager;
 import de.lcraft.api.minecraft.spigot.manager.ModuleManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -30,7 +30,7 @@ public class ModuleFileLoader {
         if(files != null) {
             for(File file : files) {
                 if(file.getName().endsWith(".jar")) {
-                    ModuleDescriptionFile descriptionFile = new ModuleDescriptionFile(file);
+                    ModuleDescriptionFileManager descriptionFile = new ModuleDescriptionFileManager(file);
                     descriptionFile.load();
                     if(descriptionFile.hasEnoughInformation()) {
                         goodFiles.add(file);
@@ -39,20 +39,20 @@ public class ModuleFileLoader {
             }
         }
         queuedModule(goodFiles, plugin);
-        getModuleManager().getModuleLoader().loadModuleToService(modules);
+        loadModuleToService(modules);
     }
     public void queuedModule(List<File> files, JavaPlugin plugin) throws Exception {
-        HashMap<ModuleDescriptionFile, Boolean> newModules = new HashMap<>();
+        HashMap<ModuleDescriptionFileManager, Boolean> newModules = new HashMap<>();
 
         // Add Module to ArrayList
         for(File file : files) {
-            ModuleDescriptionFile moduleDescriptionFile = new ModuleDescriptionFile(file);
-            moduleDescriptionFile.load();
-            newModules.put(moduleDescriptionFile, false);
+            ModuleDescriptionFileManager moduleDescriptionFileManager = new ModuleDescriptionFileManager(file);
+            moduleDescriptionFileManager.load();
+            newModules.put(moduleDescriptionFileManager, false);
         }
 
         // Look if Module it has no requiements
-        for(ModuleDescriptionFile m : newModules.keySet()) {
+        for(ModuleDescriptionFileManager m : newModules.keySet()) {
             boolean hasNoRequriement = false;
             if(m.getRequiredStringModules().length != 0) {
                 for(String c : m.getRequiredStringModules()) {
@@ -72,12 +72,12 @@ public class ModuleFileLoader {
         // Load Requiered
         boolean allHasBeenLoaded = false;
         while(!allHasBeenLoaded) {
-            for(ModuleDescriptionFile m : newModules.keySet()) {
+            for(ModuleDescriptionFileManager m : newModules.keySet()) {
                 boolean isLoaded = newModules.get(m);
                 if(!isLoaded) {
                     boolean allRequiredModulesHasBeenLoaded = true;
                     for(String allModules : m.getRequiredStringModules()) {
-                        for(ModuleDescriptionFile c : newModules.keySet()) {
+                        for(ModuleDescriptionFileManager c : newModules.keySet()) {
                             boolean isLoadedc = newModules.get(c);
                             if(allModules.equalsIgnoreCase(c.getName())) {
                                 if(!isLoadedc) allRequiredModulesHasBeenLoaded = false;
@@ -94,7 +94,7 @@ public class ModuleFileLoader {
 
 
             boolean hasBeenLoaded = true;
-            for(ModuleDescriptionFile m : newModules.keySet()) {
+            for(ModuleDescriptionFileManager m : newModules.keySet()) {
                 if(!newModules.get(m)) hasBeenLoaded = false;
             }
             if(hasBeenLoaded) {
@@ -102,7 +102,7 @@ public class ModuleFileLoader {
             }
         }
     }
-    public Module getModule(File file, JavaPlugin plugin, ModuleDescriptionFile descriptionFile) throws Exception {
+    public Module getModule(File file, JavaPlugin plugin, ModuleDescriptionFileManager descriptionFile) throws Exception {
         URLClassLoader moduleClassLoader = new ModuleClassLoader(descriptionFile);
         Class<?> main = moduleClassLoader.loadClass(descriptionFile.getSpigot_main());
         Module module = (Module) main.newInstance();
@@ -112,6 +112,18 @@ public class ModuleFileLoader {
         module.load(moduleManager);
 
         return module;
+    }
+    public void loadModuleToService(ArrayList<Module> modules) throws Exception {
+        // Reload Configuration
+        for(Module c : modules) {
+            c.getModuleDescriptionFile().load();
+            c.getModuleDescriptionFile().reloadRequiredModules(moduleManager);
+        }
+
+        // Add Modules to ArrayList
+        for(Module c : modules) {
+            getModuleManager().getModules().add(c);
+        }
     }
 
     public ModuleManager getModuleManager() {

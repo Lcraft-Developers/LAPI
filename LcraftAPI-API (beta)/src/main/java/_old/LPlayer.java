@@ -1,8 +1,8 @@
 package _old;
 
 import de.lcraft.api.minecraft.spigot.SpigotClass;
-import de.lcraft.api.minecraft.spigot.manager.utils.Config;
-import de.lcraft.api.minecraft.spigot.manager.utils.LanguagesManager;
+import de.lcraft.api.minecraft.spigot.manager.configs.Config;
+import de.lcraft.api.minecraft.spigot.manager.util.LanguagesManager;
 import de.lcraft.api.minecraft.spigot.listeners.ListenerManager;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
@@ -13,7 +13,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
-import org.bukkit.plugin.java.JavaPlugin;
 import java.io.IOException;
 import java.util.UUID;
 
@@ -26,10 +25,10 @@ public class LPlayer implements Listener {
 	private ListenerManager listenerManager;
 	private LanguagesManager languagesManager;
 	private LanguagesManager.Language lang;
-	private JavaPlugin plugin;
+	private SpigotClass plugin;
 	private Config userCFG;
 
-	public LPlayer(UUID uuid, Config userCFG, ListenerManager listenerManager, LanguagesManager languagesManager, JavaPlugin plugin) throws IOException {
+	public LPlayer(UUID uuid, Config userCFG, ListenerManager listenerManager, LanguagesManager languagesManager, SpigotClass plugin) throws IOException {
 		this.uuid = uuid;
 		this.plugin = plugin;
 		this.userCFG = userCFG;
@@ -78,14 +77,14 @@ public class LPlayer implements Listener {
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void onJoin(PlayerJoinEvent e) {
 		e.setJoinMessage(null);
-		for(LPlayer c : SpigotClass.getAPIPluginMain().getPlayers()) {
+		for(LPlayer c : plugin.getPlayers()) {
 			c.getPlayer().sendMessage(c.getLang().getJoinMessage());
 		}
 	}
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void onQuit(PlayerQuitEvent e) {
 		e.setQuitMessage(null);
-		for(LPlayer c : SpigotClass.getAPIPluginMain().getPlayers()) {
+		for(LPlayer c : plugin.getPlayers()) {
 			c.getPlayer().sendMessage(c.getLang().getQuitMessage());
 		}
 	}
@@ -97,7 +96,7 @@ public class LPlayer implements Listener {
 		return getDefaultChatMessage(from, msg);
 	}
 	public void sendDefaultChatMessage(String msg) {
-		for(LPlayer c : SpigotClass.getAPIPluginMain().getPlayers()) {
+		for(LPlayer c : plugin.getPlayers()) {
 			if(c.isOnline()) {
 				c.getPlayer().sendMessage(getDefaultChatMessage(this, msg));
 			}
@@ -191,10 +190,10 @@ public class LPlayer implements Listener {
 	}
 	public void reloadFromConfig() throws IOException {
 		if(isInEntry(uuid)) {
-			uuid = UUID.fromString(userCFG.cfg().getString("user." + uuid.toString() + ".uuid"));
-			realName = userCFG.cfg().getString("user." + uuid.toString() + ".name");
-			nickName = userCFG.cfg().getString("user." + uuid.toString() + ".nickname");
-			vanished = Boolean.valueOf(userCFG.cfg().getString("user." + uuid.toString() + ".vanished"));
+			uuid = UUID.fromString(userCFG.getString("user." + uuid.toString() + ".uuid"));
+			realName = userCFG.getString("user." + uuid.toString() + ".name");
+			nickName = userCFG.getString("user." + uuid.toString() + ".nickname");
+			vanished = Boolean.valueOf(userCFG.getString("user." + uuid.toString() + ".vanished"));
 			lang = getLanguagesManager().getIDLanguage(getLanguagesManager().getIDFromUUID(uuid));
 		} else {
 			reloadFromPlayerData();
@@ -202,7 +201,7 @@ public class LPlayer implements Listener {
 		}
 	}
 	public boolean isInEntry(UUID uuid) {
-		if(userCFG.cfg().contains("user." + uuid.toString() + ".uuid")) {
+		if(userCFG.exists("user." + uuid.toString() + ".uuid")) {
 			return true;
 		} else {
 			return false;
@@ -210,15 +209,13 @@ public class LPlayer implements Listener {
 	}
 
 	public Object set(String root, Object def, boolean isChangeable) {
-		userCFG.cfg().set(root, def);
-		userCFG.cfg().set(root + ".changeable", isChangeable);
-		userCFG.save();
-
+		userCFG.set(root, def);
+		userCFG.set(root + ".changeable", isChangeable);
 		return def;
 	}
 	public Object get(String root, Object def, boolean isChangeable) {
-		if(userCFG.cfg().contains(root)) {
-			return userCFG.cfg().get(root);
+		if(userCFG.exists(root)) {
+			return userCFG.get(root);
 		} else {
 			return set(root, def, isChangeable);
 		}

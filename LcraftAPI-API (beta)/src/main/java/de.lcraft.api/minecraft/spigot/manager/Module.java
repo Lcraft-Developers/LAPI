@@ -1,23 +1,28 @@
 package de.lcraft.api.minecraft.spigot.manager;
 
+import de.lcraft.api.java_utils.Internet;
+import de.lcraft.api.java_utils.connection.SpigotMc;
+import de.lcraft.api.minecraft.spigot.listeners.ModuleListenerManager;
 import de.lcraft.api.minecraft.spigot.manager.command.ModuleCommandManager;
-import de.lcraft.api.minecraft.spigot.manager.logger.ModuleLogger;
 import de.lcraft.api.minecraft.spigot.listeners.ListenerManager;
-import de.lcraft.api.minecraft.spigot.manager.utils.LanguagesManager;
-import de.lcraft.api.minecraft.spigot.utils.ModuleConfig;
-import de.lcraft.api.minecraft.spigot.manager.utils.PermsManager;
+import de.lcraft.api.minecraft.spigot.manager.logger.ModuleLogger;
+import de.lcraft.api.minecraft.spigot.manager.logger.ModuleLoggerType;
+import de.lcraft.api.minecraft.spigot.manager.util.LanguagesManager;
+import de.lcraft.api.minecraft.spigot.manager.configs.ModuleConfig;
+import de.lcraft.api.minecraft.spigot.manager.util.ModuleDescriptionFileManager;
+import de.lcraft.api.minecraft.spigot.manager.util.PermsManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import java.io.File;
 import java.io.IOException;
 
 public abstract class Module {
 
-    private ModuleDescriptionFile moduleDescriptionFile;
+    private ModuleDescriptionFileManager moduleDescriptionFileManager;
     private ModuleLogger moduleLogger;
     private ModuleCommandManager moduleCommandManager;
     private LanguagesManager languagesManager;
     private JavaPlugin plugin;
-    private ListenerManager.ModuleListenerManager listenerManager;
+    private ModuleListenerManager listenerManager;
     private File file;
     private ModuleManager manager;
     private PermsManager permsManager;
@@ -25,29 +30,51 @@ public abstract class Module {
 
     public void load(ModuleManager manager) throws Exception {
         this.manager = manager;
-        ModuleEventManager eventManager = new ModuleEventManager(this);
 
-        moduleDescriptionFile = new ModuleDescriptionFile(file);
-        moduleDescriptionFile.load();
-        moduleLogger = new ModuleLogger(moduleDescriptionFile.getName());
+        moduleDescriptionFileManager = new ModuleDescriptionFileManager(file);
+        moduleDescriptionFileManager.load();
+        moduleLogger = new ModuleLogger(moduleDescriptionFileManager.getName());
         config = new ModuleConfig(getModuleDescriptionFile().getName(), "config.yml");
 
         permsManager = new PermsManager();
         languagesManager = new LanguagesManager();
         moduleCommandManager = new ModuleCommandManager(this);
-        listenerManager = new ListenerManager.ModuleListenerManager(this);
+        listenerManager = new ModuleListenerManager(this);
 
-        eventManager.enableModule();
+        enableModule();
 
         listenerManager.registerAllListeners();
         moduleCommandManager.reloadConfigs();
 
-        eventManager.sendUpdateMessageModule();
+        sendUpdateMessageModule();
     }
 
     public abstract void onEnable() throws IOException;
     public abstract void onDisable() throws IOException;
 
+    public void enableModule() throws IOException {
+        getLogger().send(ModuleLoggerType.INFO, "The Spigot Module " + getModuleDescriptionFile().getName() + " is loaded.");
+        onEnable();
+    }
+    public void sendUpdateMessageModule() {
+        if(getModuleDescriptionFile().getUpdate_url() != null) {
+            if(new SpigotMc().isUpdated(getModuleDescriptionFile().getUpdate_url(), getModuleDescriptionFile().getVersion())) {
+                getLogger().send(ModuleLoggerType.INFO, "The Spigot Module " + getModuleDescriptionFile().getName() + " is up to date.");
+            } else {
+                getLogger().send(ModuleLoggerType.INFO, "The Spigot Module " + getModuleDescriptionFile().getName() + " is outdated.");
+            }
+        } else if(getModuleDescriptionFile().getSpigotmc_id() != null) {
+            if(new SpigotMc().isUpdated(Integer.valueOf(getModuleDescriptionFile().getSpigotmc_id()), getModuleDescriptionFile().getVersion())) {
+                getLogger().send(ModuleLoggerType.INFO, "The Spigot Module " + getModuleDescriptionFile().getName() + " is up to date.");
+            } else {
+                getLogger().send(ModuleLoggerType.INFO, "The Spigot Module " + getModuleDescriptionFile().getName() + " is outdated.");
+            }
+        }
+    }
+    public void disableModule() throws IOException {
+        getLogger().send(ModuleLoggerType.INFO, "The Spigot Module " + getModuleDescriptionFile().getName() + " was disabled.");
+        onDisable();
+    }
     public ModuleLogger getLogger() {
         return moduleLogger;
     }
@@ -66,14 +93,14 @@ public abstract class Module {
     public File getFile() {
         return file;
     }
-    public ListenerManager.ModuleListenerManager getListenerManager() {
+    public ModuleListenerManager getListenerManager() {
         return listenerManager;
     }
-    public ModuleDescriptionFile getModuleDescriptionFile() {
-        return moduleDescriptionFile;
+    public ModuleDescriptionFileManager getModuleDescriptionFile() {
+        return moduleDescriptionFileManager;
     }
-    public void setModuleDescriptionFile(ModuleDescriptionFile moduleDescriptionFile) {
-        this.moduleDescriptionFile = moduleDescriptionFile;
+    public void setModuleDescriptionFile(ModuleDescriptionFileManager moduleDescriptionFileManager) {
+        this.moduleDescriptionFileManager = moduleDescriptionFileManager;
     }
     public LanguagesManager getLanguagesManager() {
         return languagesManager;

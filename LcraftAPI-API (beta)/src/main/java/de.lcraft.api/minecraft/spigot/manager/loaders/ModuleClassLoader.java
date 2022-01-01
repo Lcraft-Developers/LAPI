@@ -1,7 +1,7 @@
 package de.lcraft.api.minecraft.spigot.manager.loaders;
 
 import com.google.common.io.ByteStreams;
-import de.lcraft.api.minecraft.spigot.manager.ModuleDescriptionFile;
+import de.lcraft.api.minecraft.spigot.manager.util.ModuleDescriptionFileManager;
 
 import java.io.File;
 import java.io.IOException;
@@ -26,7 +26,7 @@ public class ModuleClassLoader extends URLClassLoader {
     private Manifest manifest;
     public static ArrayList<ClassLoader> classLoaders = new ArrayList<>();
 
-    public ModuleClassLoader(ModuleDescriptionFile file) throws IOException {
+    public ModuleClassLoader(ModuleDescriptionFileManager file) throws IOException {
         this(file.getFile());
     }
     public ModuleClassLoader(File file) throws IOException {

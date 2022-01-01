@@ -66,41 +66,4 @@ public class Internet {
         return null;
     }
 
-    public static class SpigotMc {
-
-        private boolean isOutdated = true,
-                        isUpdated = false;
-
-        public boolean isUpdated(int resourcesID, String currentVersion) {
-            return isUpdated(getUpdateLink(resourcesID), currentVersion);
-        }
-
-        public boolean isUpdated(String updateLink, String currentVersion) {
-            getLatestVersion(updateLink, updateLink, version -> {
-                if (currentVersion.equals(version)) {
-                    isUpdated = true;
-                } else {
-                    isUpdated = false;
-                }
-            });
-            return isUpdated;
-        }
-
-        public void getLatestVersion(String updateLink, String nameOrRecourcesID, Consumer<String> consumer) {
-            try (InputStream inputStream = new URL(updateLink).openStream();
-                 Scanner scanner = new Scanner(inputStream)) {
-                if (scanner.hasNext()) {
-                    consumer.accept(scanner.next());
-                }
-            } catch (IOException exception) {
-                new VersionNotFound(nameOrRecourcesID).printStackTrace();
-            }
-        }
-
-        public String getUpdateLink(int resourcesID) {
-            return "https://api.spigotmc.org/legacy/update.php?resource=" + resourcesID;
-        }
-
-    }
-
 }

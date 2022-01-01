@@ -1,9 +1,9 @@
 package de.lcraft.api.minecraft.spigot.manager.command;
 
 import de.lcraft.api.minecraft.spigot.manager.Module;
-import de.lcraft.api.minecraft.spigot.utils.ModuleConfig;
-import de.lcraft.api.minecraft.spigot.manager.utils.LanguagesManager;
-import de.lcraft.api.minecraft.spigot.manager.utils.PermsManager;
+import de.lcraft.api.minecraft.spigot.manager.configs.ModuleConfig;
+import de.lcraft.api.minecraft.spigot.manager.util.LanguagesManager;
+import de.lcraft.api.minecraft.spigot.manager.util.PermsManager;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandMap;
 import java.io.IOException;
@@ -24,12 +24,12 @@ public class ModuleCommandManager {
 
     public void addCommand(ModuleCommand executor, boolean canDisableInConfig) {
         if(canDisableInConfig) {
-            if(moduleCommands.cfg().contains("commands." + executor.getName())) {
-                if(moduleCommands.cfg().getBoolean("commands." + executor.getName())) {
+            if(moduleCommands.exists("commands." + executor.getName())) {
+                if(moduleCommands.getBoolean("commands." + executor.getName())) {
                     addCommand(executor, false);
                 }
             } else {
-                moduleCommands.cfg().set("commands." + executor.getName(), true);
+                moduleCommands.set("commands." + executor.getName(), true);
                 addCommand(executor, true);
             }
         } else {

@@ -1,11 +1,11 @@
 package de.lcraft.api.minecraft.spigot;
 
-import de.lcraft.api.minecraft.spigot.manager.utils.Config;
+import de.lcraft.api.minecraft.spigot.manager.configs.Config;
 import de.lcraft.api.minecraft.spigot.manager.ModuleManager;
 import _old.LPlayer;
-import de.lcraft.api.minecraft.spigot.manager.utils.LanguagesManager;
+import de.lcraft.api.minecraft.spigot.manager.util.LanguagesManager;
 import de.lcraft.api.minecraft.spigot.listeners.ListenerManager;
-import de.lcraft.api.minecraft.spigot.utils.server.ServerTPS;
+import de.lcraft.api.minecraft.spigot.util.server.ServerTPS;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -18,7 +18,7 @@ import java.util.UUID;
 
 public class SpigotClass extends JavaPlugin implements Listener {
 
-    private static SpigotClass apiPluginMain;
+    private SpigotClass apiPluginMain;
     private Config cfg,
                    userConfig;
     private ModuleManager moduleManager;
@@ -59,8 +59,8 @@ public class SpigotClass extends JavaPlugin implements Listener {
     }
 
     public void reloadPlayers() throws IOException {
-        if(userConfig.cfg().getConfigurationSection("user") != null) {
-            for(String c : userConfig.cfg().getConfigurationSection("user").getKeys(false)) {
+        if(userConfig.getSection("user") != null) {
+            for(String c : userConfig.getSection("user").getKeys(false)) {
                 UUID uuid = UUID.fromString(c);
                 LPlayer p = new LPlayer(uuid, userConfig, getListenerManager(), getLanguagesManager(), getAPIPluginMain());
                 players.add(p);
@@ -107,7 +107,7 @@ public class SpigotClass extends JavaPlugin implements Listener {
         return false;
     }
 
-    public static SpigotClass getAPIPluginMain() {
+    public SpigotClass getAPIPluginMain() {
         return apiPluginMain;
     }
     public Config getMainCfg() {
