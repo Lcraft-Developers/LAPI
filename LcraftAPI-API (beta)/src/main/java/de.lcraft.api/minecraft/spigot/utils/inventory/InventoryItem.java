@@ -1,7 +1,7 @@
 package de.lcraft.api.minecraft.spigot.utils.inventory;
 
 import de.lcraft.api.minecraft.spigot.SpigotClass;
-import de.lcraft.api.minecraft.spigot.entitys.LPlayer;
+import _old.LPlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

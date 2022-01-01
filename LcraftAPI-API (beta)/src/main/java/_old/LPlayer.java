@@ -1,4 +1,4 @@
-package de.lcraft.api.minecraft.spigot.entitys;
+package _old;
 
 import de.lcraft.api.minecraft.spigot.SpigotClass;
 import de.lcraft.api.minecraft.spigot.manager.utils.Config;

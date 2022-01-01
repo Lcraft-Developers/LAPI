@@ -2,7 +2,7 @@ package de.lcraft.api.minecraft.spigot;
 
 import de.lcraft.api.minecraft.spigot.manager.utils.Config;
 import de.lcraft.api.minecraft.spigot.manager.ModuleManager;
-import de.lcraft.api.minecraft.spigot.entitys.LPlayer;
+import _old.LPlayer;
 import de.lcraft.api.minecraft.spigot.manager.utils.LanguagesManager;
 import de.lcraft.api.minecraft.spigot.listeners.ListenerManager;
 import de.lcraft.api.minecraft.spigot.utils.server.ServerTPS;
