@@ -1,7 +1,7 @@
 package de.lcraft.api.minecraft.spigot.manager.loaders;
 
 import com.google.common.io.ByteStreams;
-import de.lcraft.api.minecraft.spigot.manager.util.ModuleDescriptionFileManager;
+import de.lcraft.api.minecraft.spigot.manager.ModuleDescriptionFileManager;
 
 import java.io.File;
 import java.io.IOException;

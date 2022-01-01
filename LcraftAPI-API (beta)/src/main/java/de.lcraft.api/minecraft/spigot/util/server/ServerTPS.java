@@ -5,7 +5,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class ServerTPS {
 
-	private static Lag lagometer;
+	private Lag lagometer;
 
 	public ServerTPS(JavaPlugin plugin) {
 		lagometer = new Lag();
@@ -13,15 +13,15 @@ public class ServerTPS {
 	}
 
 	public class Lag implements Runnable {
-		public static int TICK_COUNT = 0;
-		public static long[] TICKS = new long[600];
-		public static long LAST_TICK = 0L;
+		public int TICK_COUNT = 0;
+		public long[] TICKS = new long[600];
+		public long LAST_TICK = 0L;
 
-		public static double getTPS() {
+		public double getTPS() {
 			return getTPS(100);
 		}
 
-		public static double getTPS(int ticks) {
+		public double getTPS(int ticks) {
 			if (TICK_COUNT < ticks) {
 				return 20.0D;
 			}
@@ -31,7 +31,7 @@ public class ServerTPS {
 			return ticks / (elapsed / 1000.0D);
 		}
 
-		public static long getElapsed(int tickID) {
+		public long getElapsed(int tickID) {
 			if (TICK_COUNT - tickID >= TICKS.length) {
 			}
 
@@ -45,8 +45,7 @@ public class ServerTPS {
 			TICK_COUNT += 1;
 		}
 	}
-
-	public static Lag getLagOmeter() {
+	public Lag getLagOmeter() {
 		return lagometer;
 	}
 

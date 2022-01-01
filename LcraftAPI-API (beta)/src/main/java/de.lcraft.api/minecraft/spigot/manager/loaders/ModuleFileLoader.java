@@ -2,7 +2,7 @@ package de.lcraft.api.minecraft.spigot.manager.loaders;
 
 import de.lcraft.api.java_utils.CodeHelper;
 import de.lcraft.api.minecraft.spigot.manager.Module;
-import de.lcraft.api.minecraft.spigot.manager.util.ModuleDescriptionFileManager;
+import de.lcraft.api.minecraft.spigot.manager.ModuleDescriptionFileManager;
 import de.lcraft.api.minecraft.spigot.manager.ModuleManager;
 import org.bukkit.plugin.java.JavaPlugin;
 

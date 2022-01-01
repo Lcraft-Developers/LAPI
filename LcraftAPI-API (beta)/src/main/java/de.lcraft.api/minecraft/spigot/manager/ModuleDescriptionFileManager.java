@@ -1,4 +1,4 @@
-package de.lcraft.api.minecraft.spigot.manager.util;
+package de.lcraft.api.minecraft.spigot.manager;
 
 import de.lcraft.api.java_utils.CodeHelper;
 import de.lcraft.api.java_utils.Internet;

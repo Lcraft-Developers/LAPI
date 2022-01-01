@@ -1,6 +1,7 @@
 package de.lcraft.api.minecraft.spigot.util.items;
 
 import org.bukkit.Material;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.ArrayList;
@@ -15,7 +16,6 @@ public class ItemBuilder {
     public ItemBuilder(Material material, int amount) {
         this.material = material;
         this.amount = amount;
-
         lore = new ArrayList<>();
     }
     public ItemBuilder(Material m) {
