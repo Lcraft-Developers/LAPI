@@ -99,6 +99,9 @@ public abstract class Module {
     public ModuleDescriptionFileManager getModuleDescriptionFile() {
         return moduleDescriptionFileManager;
     }
+    public String getName() {
+        return getModuleDescriptionFile().getName();
+    }
     public void setModuleDescriptionFile(ModuleDescriptionFileManager moduleDescriptionFileManager) {
         this.moduleDescriptionFileManager = moduleDescriptionFileManager;
     }
@@ -120,5 +123,19 @@ public abstract class Module {
     public ModuleManager getManager() {
         return manager;
     }
-    
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Module module = (Module) o;
+
+        return getName() != null ? getName().equals(module.getName()) : module.getName() == null;
+    }
+    @Override
+    public int hashCode() {
+        return getName() != null ? getName().hashCode() : 0;
+    }
+
 }
