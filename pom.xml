@@ -13,6 +13,8 @@
         <module>LcraftAPI-API (beta)</module>
         <module>Lcraft Spigot Test Plugin</module>
         <module>Lcraft BungeeCord Test Plugin</module>
+        <module>beta</module>
+        <module>latest</module>
     </modules>
 
     <properties>

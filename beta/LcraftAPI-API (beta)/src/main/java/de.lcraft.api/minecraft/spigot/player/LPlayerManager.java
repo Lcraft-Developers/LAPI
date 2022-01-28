@@ -1,5 +1,6 @@
 package de.lcraft.api.minecraft.spigot.player;
 
+import de.lcraft.api.minecraft.spigot.SpigotClass;
 import de.lcraft.api.minecraft.spigot.manager.listeners.ListenerManager;
 import de.lcraft.api.minecraft.spigot.manager.configs.Config;
 import de.lcraft.api.minecraft.spigot.manager.util.LanguagesManager;
@@ -19,12 +20,14 @@ public class LPlayerManager implements Listener {
 	private Config userConfig;
 	private ListenerManager listenerManager;
 	private LanguagesManager languagesManager;
+	private SpigotClass spigotPlugin;
 
-	public LPlayerManager(Config userConfig, ListenerManager listenerManager, LanguagesManager languagesManager) {
+	public LPlayerManager(SpigotClass spigotPlugin, Config userConfig, ListenerManager listenerManager, LanguagesManager languagesManager) {
 		this.userConfig = userConfig;
 		this.listenerManager = listenerManager;
 		this.languagesManager = languagesManager;
 		players = new ArrayList<>();
+		this.spigotPlugin = spigotPlugin;
 
 		getListenerManager().addListener(this);
 		getListenerManager().flushRegistrationAllListeners();
@@ -34,7 +37,7 @@ public class LPlayerManager implements Listener {
 		if(Objects.nonNull(userConfig.getSection("user"))) {
 			for(String c : userConfig.getSection("user").getKeys(false)) {
 				UUID uuid = UUID.fromString(c);
-				LPlayer p = new LPlayer(this, uuid, userConfig, getListenerManager(), getLanguagesManager());
+				LPlayer p = new LPlayer(getSpigotPlugin(), this, uuid, userConfig, getListenerManager(), getLanguagesManager());
 				players.add(p);
 			}
 		}
@@ -50,7 +53,7 @@ public class LPlayerManager implements Listener {
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void onJoin(PlayerJoinEvent e) {
 		if(getLPlayerByUUID(e.getPlayer().getUniqueId()) == null) {
-			LPlayer p = new LPlayer(this, e.getPlayer().getUniqueId(), getUserConfig(), getListenerManager(), getLanguagesManager());
+			LPlayer p = new LPlayer(getSpigotPlugin(), this, e.getPlayer().getUniqueId(), getUserConfig(), getListenerManager(), getLanguagesManager());
 			players.add(p);
 		}
 	}
@@ -101,6 +104,9 @@ public class LPlayerManager implements Listener {
 	}
 	public void setUserConfig(Config userConfig) {
 		this.userConfig = userConfig;
+	}
+	public SpigotClass getSpigotPlugin() {
+		return spigotPlugin;
 	}
 
 }

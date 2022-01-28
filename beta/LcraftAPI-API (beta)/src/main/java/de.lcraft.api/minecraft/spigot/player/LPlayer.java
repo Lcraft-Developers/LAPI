@@ -31,9 +31,9 @@ public class LPlayer implements Listener {
 	private Config userCFG;
 	private LPlayerManager lPlayerManager;
 
-	public LPlayer(LPlayerManager manager, UUID uuid, Config userCFG, ListenerManager listenerManager, LanguagesManager languagesManager) {
+	public LPlayer(SpigotClass spigotPlugin, LPlayerManager manager, UUID uuid, Config userCFG, ListenerManager listenerManager, LanguagesManager languagesManager) {
 		this.uuid = uuid;
-		this.plugin = plugin;
+		this.plugin = spigotPlugin;
 		this.userCFG = userCFG;
 		this.listenerManager = listenerManager;
 		this.listenerManager.addListener(this);
@@ -178,7 +178,7 @@ public class LPlayer implements Listener {
 		set("user." + uuid.toString() + ".uuid", uuid, false);
 		set("user." + uuid.toString() + ".name", realName, false);
 		set("user." + uuid.toString() + ".nickname", nickName, true);
-		set("user." + uuid.toString() + ".vanished", vanished, true);
+		//set("user." + uuid.toString() + ".vanished", vanished, true);
 		getLanguagesManager().setIDLanguage(getLanguagesManager().getIDFromUUID(uuid), lang);
 	}
 	public void reloadFromPlayerData() {
@@ -191,7 +191,7 @@ public class LPlayer implements Listener {
 				nickName = getOfflinePlayer().getName();
 			}
 		}
-		vanished = false;
+		//vanished = false;
 		lang = getLanguagesManager().getIDLanguage(getLanguagesManager().getIDFromUUID(uuid));
 	}
 	public void reloadFromConfig() {
@@ -199,7 +199,7 @@ public class LPlayer implements Listener {
 			uuid = UUID.fromString(userCFG.getString("user." + uuid.toString() + ".uuid"));
 			realName = userCFG.getString("user." + uuid.toString() + ".name");
 			nickName = userCFG.getString("user." + uuid.toString() + ".nickname");
-			vanished = Boolean.valueOf(userCFG.getString("user." + uuid.toString() + ".vanished"));
+			//vanished = Boolean.valueOf(userCFG.getString("user." + uuid.toString() + ".vanished"));
 			lang = getLanguagesManager().getIDLanguage(getLanguagesManager().getIDFromUUID(uuid));
 		} else {
 			reloadFromPlayerData();

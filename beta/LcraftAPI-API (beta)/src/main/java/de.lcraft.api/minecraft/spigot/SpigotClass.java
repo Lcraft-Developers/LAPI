@@ -29,26 +29,20 @@ public class SpigotClass extends JavaPlugin {
             serverTPS = new ServerTPS(getAPIPluginMain());
             listenerManager = new ListenerManager(apiPluginMain);
             languagesManager = new LanguagesManager();
-            lPlayerManager = new LPlayerManager(userConfig, listenerManager, languagesManager);
+            lPlayerManager = new LPlayerManager(apiPluginMain, userConfig, listenerManager, languagesManager);
             lPlayerManager.reloadPlayers();
 
             moduleManager = new ModuleManager(apiPluginMain);
             moduleManager.loadAllModules();
-        } catch (IOException e) {
-            e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
     @Override
     public void onDisable() {
-        try {
-            lPlayerManager.savePlayers();
+        lPlayerManager.savePlayers();
 
-            moduleManager.onDisableAllModules();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        moduleManager.onDisableAllModules();
     }
 
     public SpigotClass getAPIPluginMain() {

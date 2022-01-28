@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>de.lcraft.plugins</groupId>
-    <artifactId>spigot-testplugin</artifactId>
+    <artifactId>bungeecord-testplugin</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -19,21 +19,29 @@
 
     <repositories>
         <repository>
-            <id>spigot-repo</id>
-            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+            <id>bungeecord-repo</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </repository>
     </repositories>
 
     <dependencies>
         <dependency>
             <groupId>de.lcraft.api</groupId>
-            <artifactId>API</artifactId>
+            <artifactId>api</artifactId>
             <version>1.0.7</version>
         </dependency>
         <dependency>
-            <groupId>org.spigotmc</groupId>
-            <artifactId>spigot-api</artifactId>
+            <groupId>net.md-5</groupId>
+            <artifactId>bungeecord-api</artifactId>
             <version>1.18-R0.1-SNAPSHOT</version>
+            <type>jar</type>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.md-5</groupId>
+            <artifactId>bungeecord-api</artifactId>
+            <version>1.18-R0.1-SNAPSHOT</version>
+            <type>javadoc</type>
             <scope>provided</scope>
         </dependency>
         <dependency>
