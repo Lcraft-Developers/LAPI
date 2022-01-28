@@ -471,7 +471,7 @@ public class LanguagesManager {
 				return "schw";
 			}
 		}; allLanguages.add(de_ch);
-		Language de_öster = new Language(this) {
+		Language de_oester = new Language(this) {
 			@Override
 			public String getName() {
 				return "Österreichisches Deutsch";
@@ -491,7 +491,7 @@ public class LanguagesManager {
 			public String getShortLanguageType() {
 				return "öster";
 			}
-		}; allLanguages.add(de_öster);
+		}; allLanguages.add(de_oester);
 
 		return allLanguages;
 	}

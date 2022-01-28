@@ -8,10 +8,9 @@
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="JavadocGenerationManager">
-    <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/../Lcraft-Websiten/Meine Website 2.5/javadocs.lcraft.de" />
+    <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/docs/Lcraft API (1.0.7)" />
     <option name="OPTION_SCOPE" value="private" />
-    <option name="HEAP_SIZE" value="16384" />
-    <option name="OPTION_INCLUDE_LIBS" value="true" />
+    <option name="OTHER_OPTIONS" value="-encoding UTF-8" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
