@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>de.lcraft.api</groupId>
-    <artifactId>APIs</artifactId>
+    <artifactId>apis</artifactId>
     <packaging>pom</packaging>
     <version>1.0.0</version>
     <modules>
