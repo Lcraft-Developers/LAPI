@@ -13,7 +13,9 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
-import java.io.IOException;
+
+import java.util.ArrayList;
+import java.util.Objects;
 import java.util.UUID;
 
 public class LPlayer implements Listener {
@@ -21,7 +23,7 @@ public class LPlayer implements Listener {
 	private UUID uuid;
 	private String nickName;
 	private String realName;
-	private boolean vanished;
+
 	private ListenerManager listenerManager;
 	private LanguagesManager languagesManager;
 	private LanguagesManager.Language lang;
@@ -46,11 +48,7 @@ public class LPlayer implements Listener {
 
 			@Override
 			public void run() {
-				try {
-					reloadFromConfig();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
+				reloadFromConfig();
 
 				if(isOnline()) {
 					getPlayer().setCustomName(nickName);
@@ -60,10 +58,12 @@ public class LPlayer implements Listener {
 					if(isVanished()) {
 						for(Player c : Bukkit.getOnlinePlayers()) {
 							c.hidePlayer(plugin, getPlayer());
+							continue;
 						}
 					} else {
 						for(Player c : Bukkit.getOnlinePlayers()) {
 							c.showPlayer(plugin, getPlayer());
+							continue;
 						}
 					}
 				}
@@ -80,14 +80,14 @@ public class LPlayer implements Listener {
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void onJoin(PlayerJoinEvent e) {
 		e.setJoinMessage(null);
-		for(LPlayer c : getlPlayerManager().getPlayers()) {
+		for(LPlayer c : getlPlayerManager().getAllLPlayers()) {
 			c.getPlayer().sendMessage(c.getLang().getJoinMessage());
 		}
 	}
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void onQuit(PlayerQuitEvent e) {
 		e.setQuitMessage(null);
-		for(LPlayer c : getlPlayerManager().getPlayers()) {
+		for(LPlayer c : getlPlayerManager().getAllLPlayers()) {
 			c.getPlayer().sendMessage(c.getLang().getQuitMessage());
 		}
 	}
@@ -99,7 +99,7 @@ public class LPlayer implements Listener {
 		return getDefaultChatMessage(from, msg);
 	}
 	public void sendDefaultChatMessage(String msg) {
-		for(LPlayer c : getlPlayerManager().getPlayers()) {
+		for(LPlayer c : getlPlayerManager().getAllLPlayers()) {
 			if(c.isOnline()) {
 				c.getPlayer().sendMessage(getDefaultChatMessage(this, msg));
 			}
@@ -113,7 +113,7 @@ public class LPlayer implements Listener {
 		return uuid;
 	}
 	public boolean isOnline() {
-		if(getPlayer() != null) {
+		if(Objects.nonNull(getPlayer())) {
 			return true;
 		} else {
 			return false;
@@ -127,7 +127,7 @@ public class LPlayer implements Listener {
 		}
 	}
 	public OfflinePlayer getOfflinePlayer() {
-		if(Bukkit.getOfflinePlayer(uuid) != null) {
+		if(Objects.nonNull(Bukkit.getOfflinePlayer(uuid))) {
 			return Bukkit.getOfflinePlayer(uuid);
 		} else {
 			return null;
@@ -174,15 +174,15 @@ public class LPlayer implements Listener {
 		}
 		return false;
 	}
-	public void setToConfig() throws IOException {
+	public void setToConfig() {
 		set("user." + uuid.toString() + ".uuid", uuid, false);
 		set("user." + uuid.toString() + ".name", realName, false);
 		set("user." + uuid.toString() + ".nickname", nickName, true);
 		set("user." + uuid.toString() + ".vanished", vanished, true);
 		getLanguagesManager().setIDLanguage(getLanguagesManager().getIDFromUUID(uuid), lang);
 	}
-	public void reloadFromPlayerData() throws IOException {
-		if(uuid != null) {
+	public void reloadFromPlayerData() {
+		if(Objects.nonNull(uuid)) {
 			if(isOnline()) {
 				realName = getPlayer().getName();
 				nickName = getPlayer().getDisplayName();
@@ -194,7 +194,7 @@ public class LPlayer implements Listener {
 		vanished = false;
 		lang = getLanguagesManager().getIDLanguage(getLanguagesManager().getIDFromUUID(uuid));
 	}
-	public void reloadFromConfig() throws IOException {
+	public void reloadFromConfig() {
 		if(isInEntry(uuid)) {
 			uuid = UUID.fromString(userCFG.getString("user." + uuid.toString() + ".uuid"));
 			realName = userCFG.getString("user." + uuid.toString() + ".name");

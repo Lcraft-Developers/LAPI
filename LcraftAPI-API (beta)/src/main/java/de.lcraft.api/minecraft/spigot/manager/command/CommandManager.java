@@ -9,6 +9,7 @@ import org.bukkit.command.CommandMap;
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class CommandManager {
 
@@ -16,7 +17,7 @@ public class CommandManager {
     private ArrayList<Command> modulesCmds;
     private ModuleConfig moduleCommands;
 
-    public CommandManager(Module module) throws IOException {
+    public CommandManager(Module module) {
         this.module = module;
         modulesCmds = new ArrayList<>();
         moduleCommands = new ModuleConfig(module, "commands.yml");
@@ -45,16 +46,16 @@ public class CommandManager {
             modulesCmds.add(executor);
         }
     }
-    public void reloadConfigs() throws IOException {
+    public void reloadConfigs() {
         PermsManager manager = module.getPermsManager();
-        if(getAllPermissions() != null) {
+        if(Objects.nonNull(getAllPermissions()) && !getAllPermissions().isEmpty()) {
             for(String c : getAllPermissions()) {
                 manager.logPermission(c);
             }
         }
 
         LanguagesManager languagesManager = module.getLanguagesManager();
-        if(getAllTranslatedTexts() != null) {
+        if(Objects.nonNull(getAllTranslatedTexts()) && !getAllTranslatedTexts().isEmpty()) {
             for(String c : getAllTranslatedTexts()) {
                 for(LanguagesManager.Language lang : languagesManager.getAllLanguagesAndAdded()) {
                     lang.translate(c);

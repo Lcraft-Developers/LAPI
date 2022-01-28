@@ -12,6 +12,7 @@ import de.lcraft.api.minecraft.spigot.player.LPlayerManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import java.io.File;
 import java.io.IOException;
+import java.util.Objects;
 
 public abstract class Module {
 
@@ -27,7 +28,7 @@ public abstract class Module {
     private ModuleConfig config;
     private LPlayerManager lPlayerManager;
 
-    public void load(ModuleManager manager) throws Exception {
+    public void load(ModuleManager manager) {
         this.manager = manager;
         this.lPlayerManager = manager.getPluginMain().getLPlayerManager();
 
@@ -49,21 +50,21 @@ public abstract class Module {
         sendUpdateMessageModule();
     }
 
-    public abstract void onEnable() throws IOException;
-    public abstract void onDisable() throws IOException;
+    public abstract void onEnable();
+    public abstract void onDisable();
 
-    public void enableModule() throws IOException {
+    public void enableModule() {
         getLogger().send(ModuleLoggerType.INFO, "The Spigot Module " + getModuleDescriptionFile().getName() + " is loaded.");
         onEnable();
     }
     public void sendUpdateMessageModule() {
-        if(getModuleDescriptionFile().getUpdate_url() != null) {
+        if(Objects.nonNull(getModuleDescriptionFile().getUpdate_url())) {
             if(new SpigotMc().isUpdated(getModuleDescriptionFile().getUpdate_url(), getModuleDescriptionFile().getVersion())) {
                 getLogger().send(ModuleLoggerType.INFO, "The Spigot Module " + getModuleDescriptionFile().getName() + " is up to date.");
             } else {
                 getLogger().send(ModuleLoggerType.INFO, "The Spigot Module " + getModuleDescriptionFile().getName() + " is outdated.");
             }
-        } else if(getModuleDescriptionFile().getSpigotmc_id() != null) {
+        } else if(Objects.nonNull(getModuleDescriptionFile().getSpigotmc_id())) {
             if(new SpigotMc().isUpdated(Integer.valueOf(getModuleDescriptionFile().getSpigotmc_id()), getModuleDescriptionFile().getVersion())) {
                 getLogger().send(ModuleLoggerType.INFO, "The Spigot Module " + getModuleDescriptionFile().getName() + " is up to date.");
             } else {
@@ -71,7 +72,7 @@ public abstract class Module {
             }
         }
     }
-    public void disableModule() throws IOException {
+    public void disableModule() {
         getLogger().send(ModuleLoggerType.INFO, "The Spigot Module " + getModuleDescriptionFile().getName() + " was disabled.");
         onDisable();
     }
@@ -131,11 +132,11 @@ public abstract class Module {
 
         Module module = (Module) o;
 
-        return getName() != null ? getName().equals(module.getName()) : module.getName() == null;
+        return Objects.nonNull(getName()) ? getName().equals(module.getName()) : module.getName() == null;
     }
     @Override
     public int hashCode() {
-        return getName() != null ? getName().hashCode() : 0;
+        return Objects.nonNull(getName()) ? getName().hashCode() : 0;
     }
 
 }

@@ -43,6 +43,7 @@ public class InventorySlot {
 			if(inv.getItem(i) == null || (inv.getItem(i).getType() == Material.AIR || inv.getItem(i) instanceof InventoryHolder)) {
 				return i;
 			}
+			continue;
 		}
 		return -1;
 	}

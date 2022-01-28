@@ -8,6 +8,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.UUID;
 
 public abstract class Command extends org.bukkit.command.Command {
@@ -32,7 +33,7 @@ public abstract class Command extends org.bukkit.command.Command {
         this.lPlayerManager = lPlayerManager;
     }
 
-    public String translate(UUID uuid, String text) throws IOException {
+    public String translate(UUID uuid, String text) {
         return languagesManager.getIDLanguage(languagesManager.getIDFromUUID(uuid)).translate(text);
     }
     public boolean hasPermissions(LPlayer p, String perm) {
@@ -47,11 +48,12 @@ public abstract class Command extends org.bukkit.command.Command {
             if(m.getName().equalsIgnoreCase(name)) {
                 return m;
             }
+            continue;
         }
         return null;
     }
     public boolean existsSubCommand(String name) {
-        if(getSubCommand(name) != null) {
+        if(Objects.nonNull(getSubCommand(name))) {
             return true;
         }
         return false;
@@ -59,7 +61,7 @@ public abstract class Command extends org.bukkit.command.Command {
 
     @Override
     public boolean execute(CommandSender commandSender, String var3, String[] strings) {
-        if(strings != null && strings.length > 0) {
+        if(Objects.nonNull(strings) && strings.length > 0) {
             if(existsSubCommand(strings[0])) {
                 String[] new_args = new String[strings.length - 1];
                 for(int i = 1; i < strings.length; i++) {
@@ -76,7 +78,7 @@ public abstract class Command extends org.bukkit.command.Command {
     }
     public void split(CommandSender commandSender, String[] strings) {
         if(splitting) {
-            if(commandSender != null && commandSender instanceof LPlayer) {
+            if(Objects.nonNull(commandSender) && commandSender instanceof LPlayer) {
                 onLPlayerCommand(getLPlayerManager().getLPlayerByUUID(((Player) commandSender).getUniqueId()), strings);
             } else {
                 onConsoleCommand(commandSender, strings);

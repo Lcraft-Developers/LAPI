@@ -7,7 +7,7 @@ import java.io.IOException;
 
 public abstract class SubCommand extends Command {
 
-	public SubCommand(String subCommand, String desc, PermsManager permsManager, LPlayerManager lPlayerManager, LanguagesManager languagesManager, boolean splitting) throws IOException {
+	public SubCommand(String subCommand, String desc, PermsManager permsManager, LPlayerManager lPlayerManager, LanguagesManager languagesManager, boolean splitting) {
 		super(subCommand, desc, permsManager, lPlayerManager, languagesManager, splitting);
 	}
 

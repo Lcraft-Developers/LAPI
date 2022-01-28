@@ -10,6 +10,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.UUID;
 
 public class LPlayerManager implements Listener {
@@ -29,8 +30,8 @@ public class LPlayerManager implements Listener {
 		getListenerManager().flushRegistrationAllListeners();
 	}
 
-	public void reloadPlayers() throws IOException {
-		if(userConfig.getSection("user") != null) {
+	public void reloadPlayers() {
+		if(Objects.nonNull(userConfig.getSection("user"))) {
 			for(String c : userConfig.getSection("user").getKeys(false)) {
 				UUID uuid = UUID.fromString(c);
 				LPlayer p = new LPlayer(this, uuid, userConfig, getListenerManager(), getLanguagesManager());
@@ -38,7 +39,7 @@ public class LPlayerManager implements Listener {
 			}
 		}
 	}
-	public void savePlayers() throws IOException {
+	public void savePlayers() {
 		if(!players.isEmpty()) {
 			for(LPlayer c : players) {
 				c.setToConfig();
@@ -47,21 +48,22 @@ public class LPlayerManager implements Listener {
 	}
 
 	@EventHandler(priority = EventPriority.HIGHEST)
-	public void onJoin(PlayerJoinEvent e) throws IOException {
+	public void onJoin(PlayerJoinEvent e) {
 		if(getLPlayerByUUID(e.getPlayer().getUniqueId()) == null) {
 			LPlayer p = new LPlayer(this, e.getPlayer().getUniqueId(), getUserConfig(), getListenerManager(), getLanguagesManager());
 			players.add(p);
 		}
 	}
 
-	public LPlayer getLPlayerByPlayer(Player p) {
-		return getLPlayerByUUID(p.getUniqueId());
+	public LPlayer getLPlayerByPlayer(Player player) {
+		return getLPlayerByUUID(player.getUniqueId());
 	}
 	public LPlayer getLPlayerByRealName(String realName) {
 		for(LPlayer c : players) {
 			if(c.getRealName().equalsIgnoreCase(realName)) {
 				return c;
 			}
+			continue;
 		}
 		return null;
 	}
@@ -70,12 +72,16 @@ public class LPlayerManager implements Listener {
 			if(c.getUUID().equals(uuid)) {
 				return c;
 			}
+			continue;
 		}
 		return null;
 	}
-	public boolean existsPlayer(UUID uuid) {
-		if(getLPlayerByUUID(uuid) != null) return true;
+	public boolean existsLPlayer(UUID uuid) {
+		if(Objects.nonNull(getLPlayerByUUID(uuid))) return true;
 		return false;
+	}
+	public ArrayList<LPlayer> getAllLPlayers() {
+		return players;
 	}
 
 	public LanguagesManager getLanguagesManager() {
@@ -86,9 +92,6 @@ public class LPlayerManager implements Listener {
 	}
 	public Config getUserConfig() {
 		return userConfig;
-	}
-	public ArrayList<LPlayer> getPlayers() {
-		return players;
 	}
 	public void setListenerManager(ListenerManager listenerManager) {
 		this.listenerManager = listenerManager;

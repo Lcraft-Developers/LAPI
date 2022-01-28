@@ -4,6 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class ListenerManager {
 
@@ -26,7 +27,7 @@ public class ListenerManager {
         registeredListeners.add(listener);
     }
     public void removeListener(Listener listener) {
-        if(listener != null) {
+        if(Objects.nonNull(listener)) {
             if(registeredListeners.contains(listener)) {
                 registeredListeners.remove(listener);
             } else if(flushListeners.contains(listener)) {
@@ -36,10 +37,11 @@ public class ListenerManager {
     }
     public ArrayList<Listener> flushRegistrationAllListeners() {
         if(!flushListeners.isEmpty()) {
-            for(Listener l : flushListeners) {
-                if(l != null) {
-                    registerListener(l);
+            for(Listener listener : flushListeners) {
+                if(Objects.nonNull(listener)) {
+                    registerListener(listener);
                 }
+                continue;
             }
         }
         return flushListeners;

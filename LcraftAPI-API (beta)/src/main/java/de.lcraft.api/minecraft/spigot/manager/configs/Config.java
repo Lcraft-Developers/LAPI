@@ -34,7 +34,7 @@ public class Config {
     public Config(String path, String filename) {
         this("plugins//Lcraft-API//", path, filename);
     }
-    public Config(String filename) throws IOException {
+    public Config(String filename) {
         this("", filename);
     }
 

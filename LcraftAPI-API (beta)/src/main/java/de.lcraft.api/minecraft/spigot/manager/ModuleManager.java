@@ -19,10 +19,10 @@ public class ModuleManager {
         moduleFileLoader = new ModuleFileLoader(this);
     }
 
-    public void loadAllModules() throws Exception {
+    public void loadAllModules() {
         moduleFileLoader.loadModules(pluginMain);
     }
-    public void onDisableAllModules() throws IOException {
+    public void onDisableAllModules() {
         if(!getModules().isEmpty()) {
             for(Module c : getModules()) {
                 c.disableModule();

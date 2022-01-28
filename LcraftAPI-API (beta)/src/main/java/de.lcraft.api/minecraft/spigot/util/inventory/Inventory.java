@@ -8,6 +8,7 @@ import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.UUID;
 
 public class Inventory {
@@ -24,14 +25,14 @@ public class Inventory {
 		this.items = new ArrayList<>();
 	}
 
-	public org.bukkit.inventory.Inventory getInventory(String title, UUID player) throws IOException {
+	public org.bukkit.inventory.Inventory getInventory(String title, UUID player) {
 		org.bukkit.inventory.Inventory inv = Bukkit.createInventory(null, getSize(), getTitle(title, player));
 		for(InventoryItem c : items) {
 			inv = c.getSlot().setItem(inv, c.getItem());
 		}
 		return inv;
 	}
-	public org.bukkit.inventory.Inventory getListPageInventory(String title, UUID player, int itemsAmountPerSite, int page, InventoryItem LAST_PAGE, InventoryItem NEXT_PAGE) throws IOException {
+	public org.bukkit.inventory.Inventory getListPageInventory(String title, UUID player, int itemsAmountPerSite, int page, InventoryItem LAST_PAGE, InventoryItem NEXT_PAGE) {
 		org.bukkit.inventory.Inventory inv = Bukkit.createInventory(null, getSize(), getListTitle(title, player, page, getMaxListPages(itemsAmountPerSite)));
 		for(InventoryItem c : getAllItemsNeeded(itemsAmountPerSite, page)) {
 			inv = c.getSlot().setItem(inv, c.getItem());
@@ -58,14 +59,15 @@ public class Inventory {
 	}
 	public Inventory addPlaceHolders(ItemStack placeHolder) {
 		for(int i = 0; i < getSize(); i++) {
-			if(getItem(i) == null || (getItem(i) != null && (getItem(i).getItem().getType() == Material.AIR || getItem(i) instanceof InventoryHolder))) {
+			if(getItem(i) == null || (Objects.nonNull(getItem(i)) && (getItem(i).getItem().getType() == Material.AIR || getItem(i) instanceof InventoryHolder))) {
 				setItem(new InventoryItem(new InventorySlot(i), placeHolder));
 			}
+			continue;
 		}
 		return this;
 	}
 	public boolean existsItemAtSlot(int slot) {
-		if(getItemFromSlot(slot) != null) return true;
+		if(Objects.nonNull(getItemFromSlot(slot))) return true;
 		else return false;
 	}
 	public InventoryItem getItemFromSlot(int slot) {
@@ -73,6 +75,7 @@ public class Inventory {
 			if(i.getSlot().getSlot() == slot) {
 				return i;
 			}
+			continue;
 		}
 		return null;
 	}
@@ -85,6 +88,7 @@ public class Inventory {
 			if(!existsItemAtSlot(i)) {
 				return i;
 			}
+			continue;
 		}
 		return -1;
 	}
@@ -110,13 +114,14 @@ public class Inventory {
 				pagethings = 1;
 				pages = pages + 1;
 			}
+			continue;
 		}
 		return pages;
 	}
-	public String getListTitle(String title, UUID player, int currentPage, int pages) throws IOException {
+	public String getListTitle(String title, UUID player, int currentPage, int pages) {
 		return getLanguagesManager().getIDLanguage(getLanguagesManager().getIDFromUUID(player)).translate(title + " §6%cpage%§7/§6%maxpage%").replace("%cpage%", currentPage + "").replace("%maxpage%", pages + "");
 	}
-	public String getTitle(String title, UUID player) throws IOException {
+	public String getTitle(String title, UUID player) {
 		return getLanguagesManager().getIDLanguage(getLanguagesManager().getIDFromUUID(player)).translate(title);
 	}
 	public ArrayList<InventoryItem> getAllItemsNeeded(int itemsAmountPerSite, int page) {
@@ -132,6 +137,7 @@ public class Inventory {
 			if(pages == page) {
 				item.add(items.get(i));
 			}
+			continue;
 		}
 		return item;
 	}

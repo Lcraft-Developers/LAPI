@@ -5,6 +5,7 @@ import de.lcraft.api.minecraft.spigot.manager.command.Command;
 import de.lcraft.api.minecraft.spigot.manager.logger.ModuleLogger;
 import de.lcraft.api.minecraft.spigot.manager.logger.ModuleLoggerType;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public abstract class ModuleCommand extends Command {
 
@@ -25,11 +26,12 @@ public abstract class ModuleCommand extends Command {
 			if(m.getName().equalsIgnoreCase(name)) {
 				return m;
 			}
+			continue;
 		}
 		return null;
 	}
 	public boolean existsModuleSubCommand(String name) {
-		if(getSubCommand(name) != null) {
+		if(Objects.nonNull(getSubCommand(name))) {
 			return true;
 		}
 		return false;

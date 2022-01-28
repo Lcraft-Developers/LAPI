@@ -14,6 +14,7 @@ import org.bukkit.plugin.RegisteredServiceProvider;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.UUID;
 
 public class PermsManager {
@@ -22,7 +23,7 @@ public class PermsManager {
                          adminsCfg,
                          cfg;
 
-    public PermsManager() throws IOException {
+    public PermsManager() {
         this.allPermissionsCfg = new ModuleConfig("Lcraft Permissions", "allPermissions.yml");
         this.adminsCfg = new ModuleConfig("Lcraft Permissions", "admins.yml");
         this.cfg = new ModuleConfig("Lcraft Permissions", "config.yml");
@@ -317,21 +318,22 @@ public class PermsManager {
                 bid = bid + 94;
                 id = id + bid;
             }
+            continue;
         }
         return bid + id;
     }
     public int getIDFromUUID(UUID uuid) {
         return getIDFromString(uuid.toString());
     }
-    public int getIDFromPlayer(Player p) {
-        return getIDFromUUID(p.getUniqueId());
+    public int getIDFromPlayer(Player player) {
+        return getIDFromUUID(player.getUniqueId());
     }
-    public boolean hasPermissions(LPlayer p, String permission) {
-        int id = getIDFromUUID(p.getUUID());
+    public boolean hasPermissions(LPlayer player, String permission) {
+        int id = getIDFromUUID(player.getUUID());
 
         String root = "users." + id + ".";
-        adminsCfg.set(root + "name", p.getRealName());
-        adminsCfg.set(root + "uuid", p.getUUID());
+        adminsCfg.set(root + "name", player.getRealName());
+        adminsCfg.set(root + "uuid", player.getUUID());
         if(!adminsCfg.exists(root + "admin")) {
             adminsCfg.set(root + "admin", false);
         } else {
@@ -344,13 +346,13 @@ public class PermsManager {
         if(!logPermission(permission)) {
             return true;
         }
-        if(p.hasPermission(permission)) {
+        if(player.hasPermission(permission)) {
             return true;
         }
         RegisteredServiceProvider<LuckPerms> provider = Bukkit.getServicesManager().getRegistration(LuckPerms.class);
-        if (provider != null && isLuckPermsEnabled()) {
+        if (Objects.nonNull(provider) && isLuckPermsEnabled()) {
             LuckPerms api = provider.getProvider();
-            if(api.getUserManager().getUser(p.getUUID()).getCachedData().getPermissionData().checkPermission(permission).asBoolean()) {
+            if(api.getUserManager().getUser(player.getUUID()).getCachedData().getPermissionData().checkPermission(permission).asBoolean()) {
                 return true;
             }
         }
@@ -359,21 +361,22 @@ public class PermsManager {
         root = "";
         for(String c : permission.split(".")) {
             root = root + c + ".";
-            if(p.hasPermission(root + "*")) {
+            if(player.hasPermission(root + "*")) {
                 return true;
             }
-            if(p.hasPermission(root + "admin")) {
+            if(player.hasPermission(root + "admin")) {
                 return true;
             }
-            if (provider != null && isLuckPermsEnabled()) {
+            if (Objects.nonNull(provider) && isLuckPermsEnabled()) {
                 LuckPerms api = provider.getProvider();
-                if(api.getUserManager().getUser(p.getUUID()).getCachedData().getPermissionData().checkPermission(root + "*").asBoolean()) {
+                if(api.getUserManager().getUser(player.getUUID()).getCachedData().getPermissionData().checkPermission(root + "*").asBoolean()) {
                     return true;
                 }
-                if(api.getUserManager().getUser(p.getUUID()).getCachedData().getPermissionData().checkPermission(root + "admin").asBoolean()) {
+                if(api.getUserManager().getUser(player.getUUID()).getCachedData().getPermissionData().checkPermission(root + "admin").asBoolean()) {
                     return true;
                 }
             }
+            continue;
         }
 
         return false;
@@ -384,6 +387,8 @@ public class PermsManager {
             root = root + c + ".";
             new Permission().load(root + "*", allPermissionsCfg).isEnabled();
             new Permission().load(root + "admin", allPermissionsCfg).isEnabled();
+
+            continue;
         }
         return new Permission().load(permission, allPermissionsCfg).isEnabled();
     }
@@ -414,7 +419,7 @@ public class PermsManager {
                 set(perm, true, allPermissionsCfg);
             }
             RegisteredServiceProvider<LuckPerms> provider = Bukkit.getServicesManager().getRegistration(LuckPerms.class);
-            if (provider != null && isLuckPermsEnabled()) {
+            if (Objects.nonNull(provider) && isLuckPermsEnabled()) {
                 LuckPerms api = provider.getProvider();
                 api.getContextManager().registerCalculator(new CustomCalculator(perm, "*", "admin"));
             }

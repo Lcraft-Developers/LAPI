@@ -8,9 +8,11 @@ import de.lcraft.api.minecraft.spigot.manager.ModuleManager;
 import org.yaml.snakeyaml.Yaml;
 
 import java.io.File;
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Map;
+import java.util.Objects;
 import java.util.zip.ZipFile;
 
 public class ModuleDescriptionFileManager {
@@ -30,7 +32,7 @@ public class ModuleDescriptionFileManager {
     public ModuleDescriptionFileManager(File file) {
         this.file = file;
     }
-    public void load() throws Exception {
+    public void load() {
         Map<String, Object> data = getAllDatasFromModuleFile();
         if(hasEnoughInformation()) {
             name = data.get("name").toString();
@@ -53,21 +55,21 @@ public class ModuleDescriptionFileManager {
 
             // Load Authors
             ArrayList<String> authors = new ArrayList<>();
-            if(data.get("authors") != null) {
+            if(Objects.nonNull(data.get("authors"))) {
                 // Like [LPD, Lcraft]
                 String c = data.get("authors").toString().replace("[", "").replace("]", "");
                 for(String a : c.split(", ")) {
                     authors.add(a);
                 }
             }
-            if(data.get("author") != null) {
+            if(Objects.nonNull(data.get("author"))) {
                 authors.add(data.get("author").toString());
             }
             this.authors = new CodeHelper().makeArrayListToStringArray(authors);
 
             // Load required String Modules
             ArrayList<String> requiredModulesStringList = new ArrayList<>();
-            if(data.get("required-modules") != null) {
+            if(Objects.nonNull(data.get("required-modules"))) {
                 String c = data.get("required-modules").toString().replace("[", "").replace("]", "");
                 for(String a : c.split(", ")) {
                     requiredModulesStringList.add(a);
@@ -84,33 +86,47 @@ public class ModuleDescriptionFileManager {
                 requiredM[i] = c;
                 i++;
             }
+            continue;
         }
         this.requiredModules = requiredM;
 
         return requiredModules;
     }
 
-    public Map<String, Object> getAllDatasFromModuleFile() throws Exception {
-        ZipFile jarFile = new ZipFile(file);
-        Yaml yaml = new Yaml();
-        if(jarFile.getEntry("module.yml") != null) {
-            InputStream inputStream = jarFile.getInputStream(jarFile.getEntry("module.yml"));
-            Map<String, Object> data = yaml.load(inputStream);
-            return data;
-        } else {
-            new Exception("No module.yml found").printStackTrace();
-            return null;
+    public Map<String, Object> getAllDatasFromModuleFile() {
+        ZipFile jarFile = null;
+        try {
+            jarFile = new ZipFile(file);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+        Yaml yaml = new Yaml();
+        try {
+            if(Objects.nonNull(jarFile.getEntry("module.yml")) && Objects.nonNull(jarFile)) {
+                InputStream inputStream = jarFile.getInputStream(jarFile.getEntry("module.yml"));
+                Map<String, Object> data = yaml.load(inputStream);
+                return data;
+            } else if(Objects.nonNull(jarFile.getEntry("module.yml"))) {
+                new Exception("No module.yml found").printStackTrace();
+                return null;
+            } else if(Objects.nonNull(jarFile)) {
+                new Exception("No jarFile found or file is not a jarFile").printStackTrace();
+                return null;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
-    public boolean hasEnoughInformation() throws Exception {
+    public boolean hasEnoughInformation() {
         Map<String, Object> data = getAllDatasFromModuleFile();
-        if(data.get("name") != null) {
+        if(Objects.nonNull(data.get("name"))) {
             String name = data.get("name").toString();
-            if(data.get("spigot-main") != null) {
-                if(data.get("version") != null) {
-                    if(data.get("authors") != null || data.get("author") != null) {
-                        if(data.get("description") != null) {
-                            if(data.get("required-modules") != null) {
+            if(Objects.nonNull(data.get("spigot-main"))) {
+                if(Objects.nonNull(data.get("version"))) {
+                    if(Objects.nonNull(data.get("authors")) || Objects.nonNull(data.get("author"))) {
+                        if(Objects.nonNull(data.get("description"))) {
+                            if(Objects.nonNull(data.get("required-modules"))) {
                                 return true;
                             } else {
                                 System.out.println("The spigot module " + name + " could not be loaded because the required-modules does not exist in module.yml");

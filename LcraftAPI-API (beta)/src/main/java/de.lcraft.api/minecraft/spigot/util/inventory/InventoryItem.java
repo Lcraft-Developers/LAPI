@@ -48,28 +48,28 @@ public class InventoryItem implements Listener {
 		if(e.getWhoClicked() instanceof Player) {
 			if(SpigotClass.getAPIPluginMain().existsPlayer(e.getWhoClicked().getUniqueId())) {
 				LPlayer l = SpigotClass.getAPIPluginMain().getLPlayerByUUID(e.getWhoClicked().getUniqueId());
-				if(e.getClickedInventory() != null) {
-					if(e.getClickedInventory().getType() != null) {
+				if(Objects.nonNull(e.getClickedInventory())) {
+					if(Objects.nonNull(e.getClickedInventory().getType())) {
 						if(e.getClickedInventory().getType() == InventoryType.CHEST) {
-							if(e.getView().getTitle() != null) {
+							if(Objects.nonNull(e.getView().getTitle())) {
 								if((titleStartsWith && e.getView().getTitle().startsWith(invTitle)) ||
 										(!titleStartsWith && e.getView().getTitle().equals(invTitle))) {
-									if(e.getCurrentItem() != null) {
-										if(e.getCurrentItem().getItemMeta() != null) {
-											if(e.getCurrentItem().getType() != null) {
+									if(Objects.nonNull(e.getCurrentItem())) {
+										if(Objects.nonNull(e.getCurrentItem().getItemMeta())) {
+											if(Objects.nonNull(e.getCurrentItem().getType())) {
 												if(e.getCurrentItem().getType() == item.getType()) {
-													if(e.getCurrentItem().getItemMeta().getDisplayName() != null) {
+													if(Objects.nonNull(e.getCurrentItem().getItemMeta().getDisplayName())) {
 														if((itemNameStartsWith && e.getCurrentItem().getItemMeta().getDisplayName().startsWith(itemDisplayName)) ||
 																(!itemNameStartsWith && e.getCurrentItem().getItemMeta().getDisplayName().equals(itemDisplayName))) {
 															e.setCancelled(cancellingEvent);
 															if(areConsumerActivated) {
 																if(e.getClick().isLeftClick()) {
-																	if(leftClickConsumer != null) {
+																	if(Objects.nonNull(leftClickConsumer)) {
 																		leftClickConsumer.accept(e);
 																	}
 																}
 																if(e.getClick().isRightClick()) {
-																	if(rightClickConsumer != null) {
+																	if(Objects.nonNull(rightClickConsumer)) {
 																		rightClickConsumer.accept(e);
 																	}
 																}

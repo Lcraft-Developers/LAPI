@@ -27,6 +27,7 @@ public class CodeHelper {
             if(c.equalsIgnoreCase(cont)) {
                 return true;
             }
+            continue;
         }
         return false;
     }

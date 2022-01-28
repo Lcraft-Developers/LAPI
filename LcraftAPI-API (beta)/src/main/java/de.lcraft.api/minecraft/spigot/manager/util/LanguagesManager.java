@@ -4,6 +4,7 @@ import de.lcraft.api.minecraft.spigot.manager.configs.ModuleConfig;
 import org.bukkit.entity.Player;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.UUID;
 
 public class LanguagesManager {
@@ -12,20 +13,20 @@ public class LanguagesManager {
 	private ModuleConfig fileConfig,
 			             userConfig;
 
-	public LanguagesManager() throws IOException {
+	public LanguagesManager() {
 		fileConfig = new ModuleConfig("Lcraft Languages", "config.yml");
 		userConfig = new ModuleConfig("Lcraft Languages", "users.yml");
 		addedLanguages = new ArrayList<>();
 	}
 
-	public void setIDLanguage(int id, Language lang) throws IOException {
+	public void setIDLanguage(int id, Language lang) {
 		if(lang == null) lang = getMainLanguage();
 		userConfig.set("users." + id + ".lang", lang.getShortLanguage().toLowerCase());
 	}
 	public boolean hasIDAnLanguage(int id) {
 		return userConfig.exists("users." + id + ".lang");
 	}
-	public Language getIDLanguage(int id) throws IOException {
+	public Language getIDLanguage(int id) {
 		if(hasIDAnLanguage(id)) {
 			return getAllLanguageByFullShort(userConfig.getString("users." + id + ".lang"));
 		} else {
@@ -322,16 +323,17 @@ public class LanguagesManager {
 				bid = bid + 94;
 				id = id + bid;
 			}
+			continue;
 		}
 		return bid + id;
 	}
 	public int getIDFromUUID(UUID uuid) {
 		return getIDFromString(uuid.toString());
 	}
-	public int getIDFromPlayer(Player p) {
-		return getIDFromUUID(p.getUniqueId());
+	public int getIDFromPlayer(Player player) {
+		return getIDFromUUID(player.getUniqueId());
 	}
-	public Language getMainLanguage() throws IOException {
+	public Language getMainLanguage() {
 		if(hasIDAnLanguage(0)) {
 			return getIDLanguage(0);
 		} else {
@@ -340,7 +342,7 @@ public class LanguagesManager {
 		}
 	}
 
-	public Language addExtraLanguage(String name, String englishName, String shortLanguage, String shortLanguageType) throws IOException {
+	public Language addExtraLanguage(String name, String englishName, String shortLanguage, String shortLanguageType) {
 		if(!existsLanguage(shortLanguageType, shortLanguageType) && !existsAddedLanguage(shortLanguage, shortLanguageType)) {
 			Language c = new Language(this) {
 				@Override
@@ -368,11 +370,12 @@ public class LanguagesManager {
 		}
 		return null;
 	}
-	public boolean existsLanguage(String shortLanguage, String shortLanguageType) throws IOException {
+	public boolean existsLanguage(String shortLanguage, String shortLanguageType) {
 		for(Language c : getAllLanguages()) {
 			if((c.getShortLanguage().toLowerCase().equalsIgnoreCase(shortLanguage) && c.getShortLanguageType().toLowerCase().equalsIgnoreCase(shortLanguageType))) {
 				return true;
 			}
+			continue;
 		}
 		return false;
 	}
@@ -381,10 +384,11 @@ public class LanguagesManager {
 			if((c.getShortLanguage().toLowerCase().equalsIgnoreCase(shortLanguage) && c.getShortLanguageType().toLowerCase().equalsIgnoreCase(shortLanguageType))) {
 				return true;
 			}
+			continue;
 		}
 		return false;
 	}
-	public ArrayList<Language> getAllLanguages() throws IOException {
+	public ArrayList<Language> getAllLanguages() {
 		ArrayList<Language> allLanguages = new ArrayList<>();
 
 		Language en_us = new Language(this) {
@@ -495,7 +499,7 @@ public class LanguagesManager {
 
 		return allLanguages;
 	}
-	public ArrayList<Language> getAllLanguagesAndAdded() throws IOException {
+	public ArrayList<Language> getAllLanguagesAndAdded() {
 		ArrayList<Language> languages = getAllLanguages();
 		for(Language c : getAddedLanguages()) {
 			languages.add(c);
@@ -503,77 +507,87 @@ public class LanguagesManager {
 		return languages;
 	}
 
-	public Language getLanguageByName(String name) throws IOException {
+	public Language getLanguageByName(String name) {
 		for(Language c : getAllLanguages()) {
 			if(c.getName().equalsIgnoreCase(name)) return c;
 		}
 		return null;
 	}
-	public Language getLanguageByFullShort(String short_) throws IOException {
+	public Language getLanguageByFullShort(String short_) {
 		for(Language c : getAllLanguages()) {
 			if(c.getShortLanguage().toLowerCase().equalsIgnoreCase(short_)) return c;
 		}
 		return null;
 	}
-	public Language getLanguageByShortLanguage(String shortLanguage, String shortLanguageType) throws IOException {
+	public Language getLanguageByShortLanguage(String shortLanguage, String shortLanguageType) {
 		for(Language c : getAllLanguages()) {
-			if(c.getShortLanguage().toLowerCase().equalsIgnoreCase(shortLanguage) && c.getShortLanguageType().toLowerCase().equalsIgnoreCase(shortLanguageType)) return c;
+			if(c.getShortLanguage().toLowerCase().equalsIgnoreCase(shortLanguage) && c.getShortLanguageType().toLowerCase().equalsIgnoreCase(shortLanguageType))
+				return c;
 		}
 		return null;
 	}
-	public Language getLanguageByEnglishName(String englishName) throws IOException {
+	public Language getLanguageByEnglishName(String englishName) {
 		for(Language c : getAllLanguages()) {
-			if(c.getEnglishName().equalsIgnoreCase(englishName)) return c;
+			if(c.getEnglishName().equalsIgnoreCase(englishName))
+				return c;
 		}
 		return null;
 	}
 
 	public Language getAddedLanguageByName(String name) {
 		for(Language c : getAddedLanguages()) {
-			if(c.getName().equalsIgnoreCase(name)) return c;
+			if(c.getName().equalsIgnoreCase(name))
+				return c;
 		}
 		return null;
 	}
 	public Language getAddedLanguageByFullShort(String short_) {
 		for(Language c : getAddedLanguages()) {
-			if(c.getShortLanguage().toLowerCase().equalsIgnoreCase(short_)) return c;
+			if(c.getShortLanguage().toLowerCase().equalsIgnoreCase(short_))
+				return c;
 		}
 		return null;
 	}
 	public Language getAddedLanguageByShortLanguage(String shortLanguage, String shortLanguageType) {
 		for(Language c : getAddedLanguages()) {
-			if(c.getShortLanguage().toLowerCase().equalsIgnoreCase(shortLanguage) && c.getShortLanguageType().toLowerCase().equalsIgnoreCase(shortLanguageType)) return c;
+			if(c.getShortLanguage().toLowerCase().equalsIgnoreCase(shortLanguage) && c.getShortLanguageType().toLowerCase().equalsIgnoreCase(shortLanguageType))
+				return c;
 		}
 		return null;
 	}
 	public Language getAddedLanguageByEnglishName(String englishName) {
 		for(Language c : getAddedLanguages()) {
-			if(c.getEnglishName().equalsIgnoreCase(englishName)) return c;
+			if(c.getEnglishName().equalsIgnoreCase(englishName))
+				return c;
 		}
 		return null;
 	}
 
-	public Language getAllLanguageByName(String name) throws IOException {
+	public Language getAllLanguageByName(String name) {
 		for(Language c : getAllLanguagesAndAdded()) {
-			if(c.getName().equalsIgnoreCase(name)) return c;
+			if(c.getName().equalsIgnoreCase(name))
+				return c;
 		}
 		return null;
 	}
-	public Language getAllLanguageByFullShort(String short_) throws IOException {
+	public Language getAllLanguageByFullShort(String short_) {
 		for(Language c : getAllLanguagesAndAdded()) {
-			if(c.getShortLanguage().toLowerCase().equalsIgnoreCase(short_)) return c;
+			if(c.getShortLanguage().toLowerCase().equalsIgnoreCase(short_))
+				return c;
 		}
 		return null;
 	}
-	public Language getAllLanguageByShortLanguage(String shortLanguage, String shortLanguageType) throws IOException {
+	public Language getAllLanguageByShortLanguage(String shortLanguage, String shortLanguageType) {
 		for(Language c : getAllLanguagesAndAdded()) {
-			if(c.getShortLanguage().toLowerCase().equalsIgnoreCase(shortLanguage) && c.getShortLanguageType().toLowerCase().equalsIgnoreCase(shortLanguageType)) return c;
+			if(c.getShortLanguage().toLowerCase().equalsIgnoreCase(shortLanguage) && c.getShortLanguageType().toLowerCase().equalsIgnoreCase(shortLanguageType))
+				return c;
 		}
 		return null;
 	}
-	public Language getAllLanguageByEnglishName(String englishName) throws IOException {
+	public Language getAllLanguageByEnglishName(String englishName) {
 		for(Language c :getAllLanguagesAndAdded()) {
-			if(c.getEnglishName().equalsIgnoreCase(englishName)) return c;
+			if(c.getEnglishName().equalsIgnoreCase(englishName))
+				return c;
 		}
 		return null;
 	}
@@ -595,7 +609,7 @@ public class LanguagesManager {
 		private ModuleConfig cfg;
 		private LanguagesManager languagesManager;
 
-		public Language(LanguagesManager languagesManager) throws IOException {
+		public Language(LanguagesManager languagesManager) {
 			translations = new ModuleConfig("Lcraft Languages/" + getShort(), "translations.yml");
 			help = new ModuleConfig("Lcraft Languages/" + getShort(), "help.yml");
 			cfg = new ModuleConfig("Lcraft Languages/" + getShort(), "config.yml");
@@ -641,7 +655,7 @@ public class LanguagesManager {
 		public String[] getHelp() {
 			String[] help = new String[1];
 			help[0] = "No Help Message seted in Language " + getEnglishName();
-			if(getHelpFile().getSection(getShort() + ".help") != null) {
+			if(Objects.nonNull(getHelpFile().getSection(getShort() + ".help"))) {
 				help = new String[getHelpFile().getSection(getShort() + ".help").getKeys(false).size()];
 				for(int i = 0; i < getHelpFile().getSection(getShort() + ".help").getKeys(false).size(); i++) {
 					help[i] = getHelpFile().getString(getShort() + ".help." + i);

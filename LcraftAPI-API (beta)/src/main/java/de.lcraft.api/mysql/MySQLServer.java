@@ -2,6 +2,7 @@ package de.lcraft.api.mysql;
 
 import java.sql.*;
 import java.util.HashMap;
+import java.util.Objects;
 
 public class MySQLServer {
 
@@ -17,35 +18,47 @@ public class MySQLServer {
         this.port = port;
     }
 
-    public void connectToUser(String username, String password) throws SQLException {
+    public void connectToUser(String username, String password) {
         this.username = username;
         this.password = password;
 
-        connection = DriverManager.getConnection("jdbc:mysql://" + ip + ":" + port + "/mydb", this.username, this.password);
-
-        isConnected = true;
+        try {
+            connection = DriverManager.getConnection("jdbc:mysql://" + ip + ":" + port + "/mydb", this.username, this.password);
+            isConnected = true;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
     }
-    public void reconnect() throws SQLException {
-        if(this.username != null && this.password != null && ip != null && port != null && !isConnected) {
+    public void reconnect() {
+        if(Objects.nonNull(this.username) && Objects.nonNull(this.password) && Objects.nonNull(ip) && Objects.nonNull(port) && !isConnected) {
             connectToUser(this.username, this.password);
         }
     }
-    public void stopConnection() throws SQLException {
-        if(connection != null && isConnected) {
-            connection.close();
+    public void stopConnection() {
+        if(Objects.nonNull(connection) && isConnected) {
+            try {
+                connection.close();
 
-            isConnected = false;
-            connection = null;
+                isConnected = false;
+                connection = null;
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
         }
     }
 
-    public PreparedStatement makeStatement(String sql) throws SQLException {
-        return getConnection().prepareStatement(sql);
+    public PreparedStatement makeStatement(String sql) {
+        try {
+            return getConnection().prepareStatement(sql);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return null;
     }
     public boolean executeUpdate(String query) {
         boolean flag = false;
         try (Statement statement = getConnection().createStatement()) {
-            if (statement != null) {
+            if (Objects.nonNull(statement)) {
                 statement.executeUpdate(query);
                 flag = true;
             }
@@ -66,6 +79,7 @@ public class MySQLServer {
             } else {
                 query = query + key + "   " + value + ");";
             }
+            continue;
         }
         executeUpdate(query);
     }
