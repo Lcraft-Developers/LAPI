@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Lcraft BungeeCord Test Plugin/BungeeCordTestPlugin.iml" filepath="$PROJECT_DIR$/Lcraft BungeeCord Test Plugin/BungeeCordTestPlugin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LcraftAPI-API/LcraftAPI.API.iml" filepath="$PROJECT_DIR$/LcraftAPI-API/LcraftAPI.API.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lcraft Spigot Test Plugin/SpigotTestPlugin.iml" filepath="$PROJECT_DIR$/Lcraft Spigot Test Plugin/SpigotTestPlugin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LcraftAPI-API (beta)/api-beta.iml" filepath="$PROJECT_DIR$/LcraftAPI-API (beta)/api-beta.iml" />
+    </modules>
+  </component>
+</project>
