@@ -23,7 +23,7 @@ public class CommandManager {
         moduleCommands = new ModuleConfig(module, "commands.yml");
     }
 
-    public void addCommand(Command executor, boolean canDisableInConfig) {
+    public final void addCommand(Command executor, boolean canDisableInConfig) {
         if(canDisableInConfig) {
             if(moduleCommands.exists("commands." + executor.getName())) {
                 if(moduleCommands.getBoolean("commands." + executor.getName())) {
@@ -46,7 +46,7 @@ public class CommandManager {
             modulesCmds.add(executor);
         }
     }
-    public void reloadConfigs() {
+    public final void reloadConfigs() {
         PermsManager manager = module.getPermsManager();
         if(Objects.nonNull(getAllPermissions()) && !getAllPermissions().isEmpty()) {
             for(String c : getAllPermissions()) {
@@ -64,22 +64,21 @@ public class CommandManager {
         }
     }
 
-    public ArrayList<String> getAllTranslatedTexts() {
+    public final ArrayList<String> getAllTranslatedTexts() {
         ArrayList<String> allTranslations = new ArrayList<>();
         for(Command cmd : getModulesCmds()) {
             allTranslations = cmd.getAllTranslations(allTranslations);
         }
         return allTranslations;
     }
-    public ArrayList<String> getAllPermissions() {
+    public final ArrayList<String> getAllPermissions() {
         ArrayList<String> allPermissions = new ArrayList<>();
         for(Command cmd : getModulesCmds()) {
             allPermissions = cmd.getAllPermissions(allPermissions);
         }
         return allPermissions;
     }
-
-    public ArrayList<Command> getModulesCmds() {
+    public final ArrayList<Command> getModulesCmds() {
         return modulesCmds;
     }
 

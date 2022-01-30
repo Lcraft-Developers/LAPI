@@ -9,7 +9,7 @@ public class ModuleLogger extends Logger {
 	public ModuleLogger(String moduleName) {
 		this.moduleName = moduleName;
 	}
-	public void sendModule(ModuleLoggerType type, String msg) {
+	public final void sendModule(ModuleLoggerType type, String msg) {
 		if(type == ModuleLoggerType.ERROR) {
 			Bukkit.getConsoleSender().sendMessage("[" + moduleName + "] " + "ERROR >> " + msg);
 		} else if(type == ModuleLoggerType.WARNING) {

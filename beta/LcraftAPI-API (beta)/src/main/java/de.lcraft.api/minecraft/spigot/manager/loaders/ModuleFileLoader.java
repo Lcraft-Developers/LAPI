@@ -24,7 +24,7 @@ public class ModuleFileLoader {
         modules = new ArrayList<>();
     }
 
-    public void loadModules(JavaPlugin plugin) {
+    public final void loadModules(JavaPlugin plugin) {
         File dir = new File("lmodules/");
         if(!dir.exists()) dir.mkdir();
         List<File> files = new CodeHelper().getAllFilesFromADirectory("lmodules/");
@@ -44,7 +44,7 @@ public class ModuleFileLoader {
         queuedModule(goodFiles, plugin);
         loadModuleToService(modules);
     }
-    public void queuedModule(List<File> files, JavaPlugin plugin) {
+    public final void queuedModule(List<File> files, JavaPlugin plugin) {
         HashMap<ModuleDescriptionFileManager, Boolean> newModules = new HashMap<>();
 
         // Add Module to ArrayList
@@ -111,7 +111,7 @@ public class ModuleFileLoader {
             }
         }
     }
-    public Module getModule(File file, JavaPlugin plugin, ModuleDescriptionFileManager descriptionFile) {
+    public final Module getModule(File file, JavaPlugin plugin, ModuleDescriptionFileManager descriptionFile) {
         try {
             URLClassLoader moduleClassLoader = new ModuleClassLoader(descriptionFile);
             Class<?> main = moduleClassLoader.loadClass(descriptionFile.getSpigot_main());
@@ -133,7 +133,7 @@ public class ModuleFileLoader {
         }
         return null;
     }
-    public void loadModuleToService(ArrayList<Module> modules) {
+    public final void loadModuleToService(ArrayList<Module> modules) {
         // Reload Configuration
         for(Module c : modules) {
             c.getModuleDescriptionFile().load();
@@ -148,7 +148,7 @@ public class ModuleFileLoader {
         }
     }
 
-    public ModuleManager getModuleManager() {
+    public final ModuleManager getModuleManager() {
         return moduleManager;
     }
 

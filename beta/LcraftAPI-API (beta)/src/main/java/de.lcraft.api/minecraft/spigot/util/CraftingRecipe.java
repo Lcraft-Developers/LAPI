@@ -1,13 +1,11 @@
 package de.lcraft.api.minecraft.spigot.util;
 
-import de.lcraft.api.minecraft.spigot.SpigotClass;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.plugin.java.JavaPlugin;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -35,19 +33,19 @@ public class CraftingRecipe {
         namespacedKey = new NamespacedKey(plugin, name);
     }
 
-    public void setRecipeSlot(CraftingPlace slot, Material item) {
+    public final void setRecipeSlot(CraftingPlace slot, Material item) {
         if(hasSlotBeenSet(slot)) {
             removeRecipeSlot(slot);
         }
 
         recipeItems.put(slot.getKey(), item);
     }
-    public void removeRecipeSlot(CraftingPlace slot) {
+    public final void removeRecipeSlot(CraftingPlace slot) {
         if(hasSlotBeenSet(slot)) {
             recipeItems.remove(slot.getKey());
         }
     }
-    public boolean hasSlotBeenSet(CraftingPlace slot) {
+    public final boolean hasSlotBeenSet(CraftingPlace slot) {
         if(recipeItems.containsKey(slot.getKey())) {
             return true;
         }
@@ -79,18 +77,17 @@ public class CraftingRecipe {
             craftingRecipes.remove(this);
         }
     }
-    public void unregisterAll() {
+    public final void unregisterAll() {
         for(CraftingRecipe c : craftingRecipes) {
             c.unregister();
         }
     }
 
     public enum CraftingPlace {
-
         FIRST('A'), SECOND('B'), THIRD('C'), FOURTH('D'), FIFTH('E'), SIXTH('F'), SEVENTH('G'), EIGHT('H'), NINTH('I');
 
-
         private final char key;
+
         CraftingPlace(char key) {
             this.key = key;
         }

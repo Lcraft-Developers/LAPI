@@ -17,15 +17,18 @@ import java.util.jar.JarFile;
 import java.util.jar.Manifest;
 
 public class ModuleClassLoader extends URLClassLoader {
+    // ClassLoader Manager
 
+    public static ArrayList<ClassLoader> classLoaders = new ArrayList<>();
     static {
         ClassLoader.registerAsParallelCapable();
     }
 
+    // Normal Classloader
+
     private JarFile jar;
     private URL url;
     private Manifest manifest;
-    public static ArrayList<ClassLoader> classLoaders = new ArrayList<>();
 
     public ModuleClassLoader(ModuleDescriptionFileManager file) throws MalformedURLException {
         this(file.getFile());
@@ -45,10 +48,10 @@ public class ModuleClassLoader extends URLClassLoader {
     }
 
     @Override
-    protected Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
+    protected final Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
         return loadClass0( name, resolve, true, true );
     }
-    private Class<?> loadClass0(String name, boolean resolve, boolean checkOther, boolean checkLibraries) throws ClassNotFoundException {
+    private final Class<?> loadClass0(String name, boolean resolve, boolean checkOther, boolean checkLibraries) throws ClassNotFoundException {
         try {
             Class<?> result = super.loadClass( name, resolve );
 
@@ -72,7 +75,7 @@ public class ModuleClassLoader extends URLClassLoader {
         throw new ClassNotFoundException( name );
     }
     @Override
-    protected Class<?> findClass(String name) throws ClassNotFoundException {
+    protected final Class<?> findClass(String name) throws ClassNotFoundException {
         String path = name.replace( '.', '/' ).concat( ".class" );
         JarEntry entry = jar.getJarEntry( path );
 
@@ -115,17 +118,17 @@ public class ModuleClassLoader extends URLClassLoader {
     public static ArrayList<ClassLoader> getClassLoaders() {
         return classLoaders;
     }
-    public JarFile getJar() {
+    public final JarFile getJar() {
         return jar;
     }
-    public Manifest getManifest() {
+    public final Manifest getManifest() {
         return manifest;
     }
-    public URL getUrl() {
+    public final URL getUrl() {
         return url;
     }
     @Override
-    public URL[] getURLs() {
+    public final URL[] getURLs() {
         return super.getURLs();
     }
 

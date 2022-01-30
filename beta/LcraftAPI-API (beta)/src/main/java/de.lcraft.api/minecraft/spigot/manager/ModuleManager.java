@@ -19,10 +19,10 @@ public class ModuleManager {
         moduleFileLoader = new ModuleFileLoader(this);
     }
 
-    public void loadAllModules() {
+    public final void loadAllModules() {
         moduleFileLoader.loadModules(pluginMain);
     }
-    public void onDisableAllModules() {
+    public final void onDisableAllModules() {
         if(!getModules().isEmpty()) {
             for(Module c : getModules()) {
                 c.disableModule();
@@ -30,13 +30,13 @@ public class ModuleManager {
         }
     }
 
-    public ArrayList<Module> getModules() {
+    public final ArrayList<Module> getModules() {
         return modules;
     }
-    public SpigotClass getPluginMain() {
+    public final SpigotClass getPluginMain() {
         return pluginMain;
     }
-    public ModuleFileLoader getModuleFileLoader() {
+    public final ModuleFileLoader getModuleFileLoader() {
         return moduleFileLoader;
     }
 

@@ -1,5 +1,6 @@
 package de.lcraft.api.minecraft.spigot.util.items;
 
+import de.lcraft.api.minecraft.spigot.manager.listeners.ListenerManager;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.SkullMeta;
@@ -8,12 +9,12 @@ public class HeadBuilder extends ItemBuilder {
 
     private String owner;
 
-    public HeadBuilder(String name, int amount) {
-        super(Material.PLAYER_HEAD, amount);
+    public HeadBuilder(ListenerManager manager, String name, int amount) {
+        super(manager, Material.PLAYER_HEAD, amount);
         owner = name;
     }
-    public HeadBuilder(String name) {
-        this(name, 1);
+    public HeadBuilder(ListenerManager manager, String name) {
+        this(manager, name, 1);
     }
 
     @Override
@@ -25,11 +26,11 @@ public class HeadBuilder extends ItemBuilder {
         return i;
     }
 
-    public HeadBuilder setOwner(String name) {
+    public final HeadBuilder setOwner(String name) {
         owner = name;
         return this;
     }
-    public String getOwner() {
+    public final String getOwner() {
         return owner;
     }
 

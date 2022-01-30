@@ -18,15 +18,15 @@ public class ListenerManager {
         registeredListeners = new ArrayList<>();
     }
 
-    public void addListener(Listener listener) {
+    public final void addListener(Listener listener) {
         flushListeners.add(listener);
     }
-    public void registerListener(Listener listener) {
+    public final void registerListener(Listener listener) {
         flushListeners.remove(listener);
         Bukkit.getPluginManager().registerEvents(listener, plugin);
         registeredListeners.add(listener);
     }
-    public void removeListener(Listener listener) {
+    public final void removeListener(Listener listener) {
         if(Objects.nonNull(listener)) {
             if(registeredListeners.contains(listener)) {
                 registeredListeners.remove(listener);
@@ -35,7 +35,7 @@ public class ListenerManager {
             }
         }
     }
-    public ArrayList<Listener> flushRegistrationAllListeners() {
+    public final ArrayList<Listener> flushRegistrationAllListeners() {
         if(!flushListeners.isEmpty()) {
             for(Listener listener : flushListeners) {
                 if(Objects.nonNull(listener)) {
@@ -47,13 +47,13 @@ public class ListenerManager {
         return flushListeners;
     }
 
-    public ArrayList<Listener> getRegisteredListeners() {
+    public final ArrayList<Listener> getRegisteredListeners() {
         return registeredListeners;
     }
-    public ArrayList<Listener> getAddedListeners() {
+    public final ArrayList<Listener> getAddedListeners() {
         return flushListeners;
     }
-    public JavaPlugin getPlugin() {
+    public final JavaPlugin getPlugin() {
         return plugin;
     }
 

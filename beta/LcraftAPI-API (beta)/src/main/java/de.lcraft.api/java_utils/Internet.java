@@ -1,19 +1,15 @@
 package de.lcraft.api.java_utils;
 
 import de.lcraft.api.java_utils.exeptions.InternetNotFoundException;
-import de.lcraft.api.java_utils.exeptions.VersionNotFound;
-
 import java.io.*;
 import java.net.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
-import java.util.Scanner;
-import java.util.function.Consumer;
 
 public class Internet {
 
-    public boolean websiteExist(String url) {
+    public final boolean websiteExist(String url) {
         try {
             URL u = new URL(url);
             HttpURLConnection huc = (HttpURLConnection) u.openConnection();
@@ -29,26 +25,22 @@ public class Internet {
         return false;
     }
 
-    public boolean hasInternet() {
+    public final boolean hasInternet() {
         return hasInternet(250);
     }
-    public boolean hasInternet(int millisecoundtimeout) {
+    public final boolean hasInternet(int millisecoundtimeout) {
         boolean internet = false;
 
         try {
             if(InetAddress.getLocalHost().isReachable(millisecoundtimeout)) internet = true;
 
-            try {
-                if (websiteExist("wikipedia.de")) internet = true;
-                if (websiteExist("wikipedia.com")) internet = true;
-                if (websiteExist("google.de")) internet = true;
-                if (websiteExist("google.com")) internet = true;
-                if (websiteExist("youtube.de")) internet = true;
-                if (websiteExist("youtube.com")) internet = true;
-                if (websiteExist("lcraft.de")) internet = true;
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            if (websiteExist("wikipedia.de")) internet = true;
+            if (websiteExist("wikipedia.com")) internet = true;
+            if (websiteExist("google.de")) internet = true;
+            if (websiteExist("google.com")) internet = true;
+            if (websiteExist("youtube.de")) internet = true;
+            if (websiteExist("youtube.com")) internet = true;
+            if (websiteExist("lcraft.de")) internet = true;
         } catch (UnknownHostException ex) {
             ex.printStackTrace();
         } catch (IOException ex) {
@@ -58,7 +50,7 @@ public class Internet {
         return internet;
     }
 
-    public File download(String url, String filename, String folder) {
+    public final File download(String url, String filename, String folder) {
         if (hasInternet()) {
             try {
                 BufferedInputStream in = new BufferedInputStream(new URL(url).openStream());

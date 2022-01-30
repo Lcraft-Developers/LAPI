@@ -13,9 +13,9 @@ import java.util.Set;
 
 public class Config {
 
-    private YamlConfiguration cfg;
-    private File file;
-    private File folder;
+    private final YamlConfiguration cfg;
+    private final File file;
+    private final File folder;
 
     public Config(String startPath, String path, String filename) {
         folder = new File(startPath + "//" + path);
@@ -56,52 +56,52 @@ public class Config {
         return c().contains(root);
     }
 
-    public Object get(String root) {
+    public final Object get(String root) {
         Object obj = c().get(root);
         return obj;
     }
-    public String getString(String root) {
+    public final String getString(String root) {
         return get(root).toString();
     }
-    public Integer getInteger(String root) {
+    public final Integer getInteger(String root) {
         if(get(root) instanceof Integer) {
             return Integer.valueOf(getString(root));
         } else {
             return null;
         }
     }
-    public Double getDouble(String root) {
+    public final Double getDouble(String root) {
         if(get(root) instanceof Double) {
             return Double.valueOf(getString(root));
         } else {
             return null;
         }
     }
-    public Float getFloat(String root) {
+    public final Float getFloat(String root) {
         if(get(root) instanceof Float) {
             return Float.valueOf(getString(root));
         } else {
             return null;
         }
     }
-    public Boolean getBoolean(String root) {
+    public final Boolean getBoolean(String root) {
         if(get(root) instanceof Boolean) {
             return Boolean.valueOf(getString(root));
         } else {
             return null;
         }
     }
-    public ConfigurationSection getSection(String root) {
+    public final ConfigurationSection getSection(String root) {
         return c().getConfigurationSection(root);
     }
-    public Set<String> getSectionKeys(String root) {
+    public final Set<String> getSectionKeys(String root) {
         return getSection(root).getKeys(false);
     }
 
-    public void saveStringArrayList(String root, ArrayList<String> list) {
+    public final void saveStringArrayList(String root, ArrayList<String> list) {
         set(root, list);
     }
-    public ArrayList<String> getStringArrayList(String root) {
+    public final ArrayList<String> getStringArrayList(String root) {
         if(Objects.nonNull(c().getStringList(root))) {
             ArrayList<String> all = new ArrayList<>();
             for(String c : c().getStringList(root)) {
@@ -113,14 +113,14 @@ public class Config {
         return getStringArrayList(root);
     }
 
-    public void save() {
+    public final void save() {
         try {
             cfg.save(file);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-    private Configuration c() {
+    private final Configuration c() {
         return cfg;
     }
 

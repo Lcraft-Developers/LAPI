@@ -140,7 +140,7 @@ public class LPlayer implements Listener {
 		return lPlayerManager;
 	}
 
-	public boolean hasPermission(String permission) {
+	public final boolean hasPermission(String permission) {
 		if(isOnline()) {
 			return getPlayer().hasPermission(permission);
 		}
@@ -163,7 +163,7 @@ public class LPlayer implements Listener {
 		return getLanguage();
 	}
 
-	public void vanishFromPlayer(ArrayList<LPlayer> viewers, boolean visible) {
+	public final void vanishFromPlayer(ArrayList<LPlayer> viewers, boolean visible) {
 		for(LPlayer c : viewers) {
 			ArrayList<String> vanished = c.getVanishedUUID();
 			if(visible) {
@@ -174,57 +174,57 @@ public class LPlayer implements Listener {
 			c.getUserCFG().saveStringArrayList("user." + getUUID().toString() + ".vanished", vanished);
 		}
 	}
-	public void vanishFromAllPlayers(boolean visible) {
+	public final void vanishFromAllPlayers(boolean visible) {
 		vanishFromPlayer(getLPlayerManager().getAllLPlayers(), visible);
 	}
 
-	public String getRealName() {
+	public final String getRealName() {
 		if(isOnline()) {
 			return getPlayer().getName();
 		} else {
 			return getOfflinePlayer().getName();
 		}
 	}
-	public String getNickName() {
+	public final String getNickName() {
 		if(isOnline()) {
 			return getString("user." + getUUID().toString() + ".nickname", getPlayer().getName(), true);
 		} else {
 			return getString("user." + getUUID().toString() + ".nickname", getOfflinePlayer().getName(), true);
 		}
 	}
-	public LanguagesManager.Language getLanguage() {
+	public final LanguagesManager.Language getLanguage() {
 		return getLanguagesManager().getIDLanguage(getLanguagesManager().getIDFromUUID(getUUID()));
 	}
-	public ArrayList<String> getVanishedUUID() {
+	public final ArrayList<String> getVanishedUUID() {
 		return getUserCFG().getStringArrayList("user." + getUUID().toString() + ".vanished");
 	}
 
-	public ListenerManager getListenerManager() {
+	public final ListenerManager getListenerManager() {
 		return listenerManager;
 	}
-	public LanguagesManager getLanguagesManager() {
+	public final LanguagesManager getLanguagesManager() {
 		return languagesManager;
 	}
-	public SpigotClass getPlugin() {
+	public final SpigotClass getPlugin() {
 		return plugin;
 	}
-	public Config getUserCFG() {
+	public final Config getUserCFG() {
 		return userCFG;
 	}
 
-	public Object set(String root, Object def, boolean isChangeable) {
+	public final Object set(String root, Object def, boolean isChangeable) {
 		userCFG.set(root, def);
 		userCFG.set(root + ".changeable", isChangeable);
 		return def;
 	}
-	public Object get(String root, Object def, boolean isChangeable) {
+	public final Object get(String root, Object def, boolean isChangeable) {
 		if(userCFG.exists(root)) {
 			return userCFG.get(root);
 		} else {
 			return set(root, def, isChangeable);
 		}
 	}
-	public String getString(String root, Object def, boolean isChangeable) {
+	public final String getString(String root, Object def, boolean isChangeable) {
 		return String.valueOf(get(root, def, isChangeable));
 	}
 

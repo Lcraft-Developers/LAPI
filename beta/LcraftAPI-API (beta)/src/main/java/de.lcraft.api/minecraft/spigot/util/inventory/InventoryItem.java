@@ -1,6 +1,7 @@
 package de.lcraft.api.minecraft.spigot.util.inventory;
 
 import de.lcraft.api.minecraft.spigot.manager.listeners.ListenerManager;
+import de.lcraft.api.minecraft.spigot.util.items.ItemBuilder;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
@@ -9,26 +10,20 @@ import org.bukkit.util.Consumer;
 public class InventoryItem implements Listener {
 
 	private InventorySlot slot;
-	private ItemStack item;
-	private Consumer<InventoryClickEvent> rightClickConsumer;
-	private Consumer<InventoryClickEvent> leftClickConsumer;
+	private ItemBuilder item;
 	private boolean areConsumerActivated = false,
 	                cancellingEvent,
 	                titleStartsWith,
 	                itemNameStartsWith;
-	private String invTitle,
-	               itemDisplayName;
+	private String invTitle;
 
-	public InventoryItem(ListenerManager listenerManager, InventorySlot slot, String invTitle, boolean cancelEvent, boolean titleStartsWith, boolean itemNameStartsWith, ItemStack item, Consumer<InventoryClickEvent> rightClickConsumer, Consumer<InventoryClickEvent> leftClickConsumer) {
+	public InventoryItem(ListenerManager listenerManager, InventorySlot slot, String invTitle, boolean cancelEvent, boolean titleStartsWith, boolean itemNameStartsWith, ItemBuilder item, Consumer<InventoryClickEvent> rightClickConsumer, Consumer<InventoryClickEvent> leftClickConsumer) {
 		this(listenerManager, slot, invTitle, cancelEvent, titleStartsWith, itemNameStartsWith, item);
-		this.rightClickConsumer = rightClickConsumer;
-		this.leftClickConsumer = leftClickConsumer;
 		this.areConsumerActivated = true;
 	}
-	public InventoryItem(ListenerManager listenerManager, InventorySlot slot, String invTitle, boolean cancelEvent, boolean titleStartsWith, boolean itemNameStartsWith, ItemStack item) {
+	public InventoryItem(ListenerManager listenerManager, InventorySlot slot, String invTitle, boolean cancelEvent, boolean titleStartsWith, boolean itemNameStartsWith, ItemBuilder item) {
 		this.slot = slot;
 		this.item = item;
-		this.itemDisplayName = item.getItemMeta().getDisplayName();
 		this.cancellingEvent = cancelEvent;
 		this.titleStartsWith = titleStartsWith;
 		this.invTitle = invTitle;
@@ -37,10 +32,9 @@ public class InventoryItem implements Listener {
 		listenerManager.addListener(this);
 		listenerManager.flushRegistrationAllListeners();
 	}
-	public InventoryItem(InventorySlot slot, ItemStack item) {
+	public InventoryItem(InventorySlot slot, ItemBuilder item) {
 		this.slot = slot;
 		this.item = item;
-		this.itemDisplayName = item.getItemMeta().getDisplayName();
 	}
 
 	/*@EventHandler
@@ -89,35 +83,32 @@ public class InventoryItem implements Listener {
 		}
 	}*/
 
-	public InventorySlot getSlot() {
+	public final InventorySlot getSlot() {
 		return slot;
 	}
-	public ItemStack getItem() {
+	public final ItemBuilder getItem() {
 		return item;
 	}
-	public Consumer<InventoryClickEvent> getRightClickConsumer() {
-		return rightClickConsumer;
+	public final Consumer<InventoryClickEvent> getRightClickConsumer() {
+		return getItem().getRightClickConsumer();
 	}
-	public Consumer<InventoryClickEvent> getLeftClickConsumer() {
-		return leftClickConsumer;
+	public final Consumer<InventoryClickEvent> getLeftClickConsumer() {
+		return getItem().getLeftClickConsumer();
 	}
-	public boolean areConsumerActivated() {
+	public final boolean areConsumerActivated() {
 		return areConsumerActivated;
 	}
-	public boolean isCancellingEvent() {
+	public final boolean isCancellingEvent() {
 		return cancellingEvent;
 	}
-	public boolean isTitleStartsWith() {
+	public final boolean isTitleStartsWith() {
 		return titleStartsWith;
 	}
-	public boolean isItemNameStartsWith() {
+	public final boolean isItemNameStartsWith() {
 		return itemNameStartsWith;
 	}
-	public String getInvTitle() {
+	public final String getInvTitle() {
 		return invTitle;
-	}
-	public String getItemDisplayName() {
-		return itemDisplayName;
 	}
 
 }

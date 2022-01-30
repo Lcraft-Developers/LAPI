@@ -19,14 +19,14 @@ public class LanguagesManager {
 		addedLanguages = new ArrayList<>();
 	}
 
-	public void setIDLanguage(int id, Language lang) {
+	public final void setIDLanguage(int id, Language lang) {
 		if(lang == null) lang = getMainLanguage();
 		userConfig.set("users." + id + ".lang", lang.getShortLanguage().toLowerCase());
 	}
-	public boolean hasIDAnLanguage(int id) {
+	public final boolean hasIDAnLanguage(int id) {
 		return userConfig.exists("users." + id + ".lang");
 	}
-	public Language getIDLanguage(int id) {
+	public final Language getIDLanguage(int id) {
 		if(hasIDAnLanguage(id)) {
 			return getAllLanguageByFullShort(userConfig.getString("users." + id + ".lang"));
 		} else {
@@ -34,7 +34,7 @@ public class LanguagesManager {
 		}
 	}
 
-	public int getIDFromString(String normal) {
+	public final int getIDFromString(String normal) {
 		int id = 0;
 		int bid = 0;
 		for(String c : normal.split("")) {
@@ -327,13 +327,13 @@ public class LanguagesManager {
 		}
 		return bid + id;
 	}
-	public int getIDFromUUID(UUID uuid) {
+	public final int getIDFromUUID(UUID uuid) {
 		return getIDFromString(uuid.toString());
 	}
-	public int getIDFromPlayer(Player player) {
+	public final int getIDFromPlayer(Player player) {
 		return getIDFromUUID(player.getUniqueId());
 	}
-	public Language getMainLanguage() {
+	public final Language getMainLanguage() {
 		if(hasIDAnLanguage(0)) {
 			return getIDLanguage(0);
 		} else {
@@ -342,7 +342,7 @@ public class LanguagesManager {
 		}
 	}
 
-	public Language addExtraLanguage(String name, String englishName, String shortLanguage, String shortLanguageType) {
+	public final Language addExtraLanguage(String name, String englishName, String shortLanguage, String shortLanguageType) {
 		if(!existsLanguage(shortLanguageType, shortLanguageType) && !existsAddedLanguage(shortLanguage, shortLanguageType)) {
 			Language c = new Language(this) {
 				@Override
@@ -370,7 +370,7 @@ public class LanguagesManager {
 		}
 		return null;
 	}
-	public boolean existsLanguage(String shortLanguage, String shortLanguageType) {
+	public final boolean existsLanguage(String shortLanguage, String shortLanguageType) {
 		for(Language c : getAllLanguages()) {
 			if((c.getShortLanguage().toLowerCase().equalsIgnoreCase(shortLanguage) && c.getShortLanguageType().toLowerCase().equalsIgnoreCase(shortLanguageType))) {
 				return true;
@@ -379,7 +379,7 @@ public class LanguagesManager {
 		}
 		return false;
 	}
-	public boolean existsAddedLanguage(String shortLanguage, String shortLanguageType) {
+	public final boolean existsAddedLanguage(String shortLanguage, String shortLanguageType) {
 		for(Language c : getAddedLanguages()) {
 			if((c.getShortLanguage().toLowerCase().equalsIgnoreCase(shortLanguage) && c.getShortLanguageType().toLowerCase().equalsIgnoreCase(shortLanguageType))) {
 				return true;
@@ -388,7 +388,7 @@ public class LanguagesManager {
 		}
 		return false;
 	}
-	public ArrayList<Language> getAllLanguages() {
+	public final ArrayList<Language> getAllLanguages() {
 		ArrayList<Language> allLanguages = new ArrayList<>();
 
 		Language en_us = new Language(this) {
@@ -499,7 +499,7 @@ public class LanguagesManager {
 
 		return allLanguages;
 	}
-	public ArrayList<Language> getAllLanguagesAndAdded() {
+	public final ArrayList<Language> getAllLanguagesAndAdded() {
 		ArrayList<Language> languages = getAllLanguages();
 		for(Language c : getAddedLanguages()) {
 			languages.add(c);
@@ -507,26 +507,26 @@ public class LanguagesManager {
 		return languages;
 	}
 
-	public Language getLanguageByName(String name) {
+	public final Language getLanguageByName(String name) {
 		for(Language c : getAllLanguages()) {
 			if(c.getName().equalsIgnoreCase(name)) return c;
 		}
 		return null;
 	}
-	public Language getLanguageByFullShort(String short_) {
+	public final Language getLanguageByFullShort(String short_) {
 		for(Language c : getAllLanguages()) {
 			if(c.getShortLanguage().toLowerCase().equalsIgnoreCase(short_)) return c;
 		}
 		return null;
 	}
-	public Language getLanguageByShortLanguage(String shortLanguage, String shortLanguageType) {
+	public final Language getLanguageByShortLanguage(String shortLanguage, String shortLanguageType) {
 		for(Language c : getAllLanguages()) {
 			if(c.getShortLanguage().toLowerCase().equalsIgnoreCase(shortLanguage) && c.getShortLanguageType().toLowerCase().equalsIgnoreCase(shortLanguageType))
 				return c;
 		}
 		return null;
 	}
-	public Language getLanguageByEnglishName(String englishName) {
+	public final Language getLanguageByEnglishName(String englishName) {
 		for(Language c : getAllLanguages()) {
 			if(c.getEnglishName().equalsIgnoreCase(englishName))
 				return c;
@@ -534,28 +534,28 @@ public class LanguagesManager {
 		return null;
 	}
 
-	public Language getAddedLanguageByName(String name) {
+	public final Language getAddedLanguageByName(String name) {
 		for(Language c : getAddedLanguages()) {
 			if(c.getName().equalsIgnoreCase(name))
 				return c;
 		}
 		return null;
 	}
-	public Language getAddedLanguageByFullShort(String short_) {
+	public final Language getAddedLanguageByFullShort(String short_) {
 		for(Language c : getAddedLanguages()) {
 			if(c.getShortLanguage().toLowerCase().equalsIgnoreCase(short_))
 				return c;
 		}
 		return null;
 	}
-	public Language getAddedLanguageByShortLanguage(String shortLanguage, String shortLanguageType) {
+	public final Language getAddedLanguageByShortLanguage(String shortLanguage, String shortLanguageType) {
 		for(Language c : getAddedLanguages()) {
 			if(c.getShortLanguage().toLowerCase().equalsIgnoreCase(shortLanguage) && c.getShortLanguageType().toLowerCase().equalsIgnoreCase(shortLanguageType))
 				return c;
 		}
 		return null;
 	}
-	public Language getAddedLanguageByEnglishName(String englishName) {
+	public final Language getAddedLanguageByEnglishName(String englishName) {
 		for(Language c : getAddedLanguages()) {
 			if(c.getEnglishName().equalsIgnoreCase(englishName))
 				return c;
@@ -563,28 +563,28 @@ public class LanguagesManager {
 		return null;
 	}
 
-	public Language getAllLanguageByName(String name) {
+	public final Language getAllLanguageByName(String name) {
 		for(Language c : getAllLanguagesAndAdded()) {
 			if(c.getName().equalsIgnoreCase(name))
 				return c;
 		}
 		return null;
 	}
-	public Language getAllLanguageByFullShort(String short_) {
+	public final Language getAllLanguageByFullShort(String short_) {
 		for(Language c : getAllLanguagesAndAdded()) {
 			if(c.getShortLanguage().toLowerCase().equalsIgnoreCase(short_))
 				return c;
 		}
 		return null;
 	}
-	public Language getAllLanguageByShortLanguage(String shortLanguage, String shortLanguageType) {
+	public final Language getAllLanguageByShortLanguage(String shortLanguage, String shortLanguageType) {
 		for(Language c : getAllLanguagesAndAdded()) {
 			if(c.getShortLanguage().toLowerCase().equalsIgnoreCase(shortLanguage) && c.getShortLanguageType().toLowerCase().equalsIgnoreCase(shortLanguageType))
 				return c;
 		}
 		return null;
 	}
-	public Language getAllLanguageByEnglishName(String englishName) {
+	public final Language getAllLanguageByEnglishName(String englishName) {
 		for(Language c :getAllLanguagesAndAdded()) {
 			if(c.getEnglishName().equalsIgnoreCase(englishName))
 				return c;
@@ -592,13 +592,13 @@ public class LanguagesManager {
 		return null;
 	}
 
-	public ArrayList<Language> getAddedLanguages() {
+	public final ArrayList<Language> getAddedLanguages() {
 		return addedLanguages;
 	}
-	public ModuleConfig getFileConfig() {
+	public final ModuleConfig getFileConfig() {
 		return fileConfig;
 	}
-	public ModuleConfig getUserConfig() {
+	public final ModuleConfig getUserConfig() {
 		return userConfig;
 	}
 
@@ -621,7 +621,7 @@ public class LanguagesManager {
 		public abstract String getShortLanguage();
 		public abstract String getShortLanguageType();
 
-		public String translate(String def) {
+		public final String translate(String def) {
 			String root = "translate." + languagesManager.getIDFromString(def);
 			translations.set(root + ".default", def);
 			if(translations.exists(root + ".translation")) {
@@ -631,7 +631,7 @@ public class LanguagesManager {
 			}
 			return def;
 		}
-		public String getJoinMessage() {
+		public final String getJoinMessage() {
 			String root = "msgs.join";
 			if(cfg.exists(root)) {
 				return cfg.getString(root);
@@ -641,7 +641,7 @@ public class LanguagesManager {
 			}
 			return getJoinMessage();
 		}
-		public String getQuitMessage() {
+		public final String getQuitMessage() {
 			String root = "msgs.quit";
 			if(cfg.exists(root)) {
 				return cfg.getString(root);
@@ -652,7 +652,7 @@ public class LanguagesManager {
 			return getQuitMessage();
 		}
 
-		public String[] getHelp() {
+		public final String[] getHelp() {
 			String[] help = new String[1];
 			help[0] = "No Help Message seted in Language " + getEnglishName();
 			if(Objects.nonNull(getHelpFile().getSection(getShort() + ".help"))) {
@@ -663,13 +663,13 @@ public class LanguagesManager {
 			}
 			return help;
 		}
-		public ModuleConfig getTranslationsFile() {
+		public final ModuleConfig getTranslationsFile() {
 			return translations;
 		}
-		public ModuleConfig getHelpFile() {
+		public final ModuleConfig getHelpFile() {
 			return help;
 		}
-		public String getShort() {
+		public final String getShort() {
 			return getShortLanguage() + "-" + getShortLanguageType();
 		}
 

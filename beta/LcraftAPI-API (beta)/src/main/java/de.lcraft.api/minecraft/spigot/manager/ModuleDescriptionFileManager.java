@@ -32,7 +32,7 @@ public class ModuleDescriptionFileManager {
     public ModuleDescriptionFileManager(File file) {
         this.file = file;
     }
-    public void load() {
+    public final void load() {
         Map<String, Object> data = getAllDatasFromModuleFile();
         if(hasEnoughInformation()) {
             name = data.get("name").toString();
@@ -78,7 +78,7 @@ public class ModuleDescriptionFileManager {
             requiredStringModules = new CodeHelper().makeArrayListToStringArray(requiredModulesStringList);
         }
     }
-    public Module[] reloadRequiredModules(ModuleManager manager) {
+    public final Module[] reloadRequiredModules(ModuleManager manager) {
         Module[] requiredM = new Module[requiredStringModules.length];
         int i = 0;
         for(Module c : manager.getModules()) {
@@ -93,7 +93,7 @@ public class ModuleDescriptionFileManager {
         return requiredModules;
     }
 
-    public Map<String, Object> getAllDatasFromModuleFile() {
+    public final Map<String, Object> getAllDatasFromModuleFile() {
         ZipFile jarFile = null;
         try {
             jarFile = new ZipFile(file);
@@ -118,7 +118,7 @@ public class ModuleDescriptionFileManager {
         }
         return null;
     }
-    public boolean hasEnoughInformation() {
+    public final boolean hasEnoughInformation() {
         Map<String, Object> data = getAllDatasFromModuleFile();
         if(Objects.nonNull(data.get("name"))) {
             String name = data.get("name").toString();
@@ -148,37 +148,37 @@ public class ModuleDescriptionFileManager {
         }
         return false;
     }
-    public String getName() {
+    public final String getName() {
         return name;
     }
-    public File getFile() {
+    public final File getFile() {
         return file;
     }
-    public String[] getAuthors() {
+    public final String[] getAuthors() {
         return authors;
     }
-    public String getVersion() {
+    public final String getVersion() {
         return version;
     }
-    public String getDescription() {
+    public final String getDescription() {
         return description;
     }
-    public String getBungeeCord_Main() {
+    public final String getBungeeCord_Main() {
         return bungeecord_main;
     }
-    public String getSpigot_main() {
+    public final String getSpigot_main() {
         return spigot_main;
     }
-    public Module[] getRequiredModules() {
+    public final Module[] getRequiredModules() {
         return requiredModules;
     }
-    public String[] getRequiredStringModules() {
+    public final String[] getRequiredStringModules() {
         return requiredStringModules;
     }
-    public String getSpigotmc_id() {
+    public final String getSpigotmc_id() {
         return spigotmc_id;
     }
-    public String getUpdate_url() {
+    public final String getUpdate_url() {
         return update_url;
     }
 

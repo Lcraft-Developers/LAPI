@@ -21,7 +21,7 @@ public class SpigotClass extends JavaPlugin {
     private LPlayerManager lPlayerManager;
 
     @Override
-    public void onEnable() {
+    public final void onEnable() {
         try {
             apiPluginMain = this;
             cfg = new Config("", "config.yml");
@@ -39,31 +39,29 @@ public class SpigotClass extends JavaPlugin {
         }
     }
     @Override
-    public void onDisable() {
-        lPlayerManager.savePlayers();
-
+    public final void onDisable() {
         moduleManager.onDisableAllModules();
     }
 
-    public SpigotClass getAPIPluginMain() {
+    public final SpigotClass getAPIPluginMain() {
         return apiPluginMain;
     }
-    public Config getMainCfg() {
+    public final Config getMainCfg() {
         return cfg;
     }
-    public ServerTPS getServerTPS() {
+    public final ServerTPS getServerTPS() {
         return serverTPS;
     }
-    public Config getUserConfig() {
+    public final Config getUserConfig() {
         return userConfig;
     }
-    public ListenerManager getListenerManager() {
+    public final ListenerManager getListenerManager() {
         return listenerManager;
     }
-    public LanguagesManager getLanguagesManager() {
+    public final LanguagesManager getLanguagesManager() {
         return languagesManager;
     }
-    public LPlayerManager getLPlayerManager() {
+    public final LPlayerManager getLPlayerManager() {
         return lPlayerManager;
     }
 

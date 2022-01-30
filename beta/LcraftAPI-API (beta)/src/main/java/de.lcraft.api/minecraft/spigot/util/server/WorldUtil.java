@@ -14,14 +14,14 @@ import java.util.logging.Level;
 
 public class WorldUtil {
 
-	public void resetWorld() {
+	public final void resetWorld() {
 		deleteFolder("world");
 		deleteFolder("world_nether");
 		deleteFolder("world_the_end");
 
 		createFiles();
 	}
-	public void deleteFolder(String folder) {
+	public final void deleteFolder(String folder) {
 		if (Files.exists(Paths.get(folder))) {
 			try {
 				Files.walk(Paths.get(folder), new java.nio.file.FileVisitOption[0])
@@ -37,7 +37,7 @@ public class WorldUtil {
 			}
 		}
 	}
-	public void createFiles() {
+	public final void createFiles() {
 		File propertiesFile = new File(Bukkit.getWorldContainer(), "server.properties");
 		try (FileInputStream stream = new FileInputStream(propertiesFile)) {
 			Properties properties = new Properties();

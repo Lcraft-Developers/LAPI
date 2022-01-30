@@ -29,7 +29,7 @@ public class MySQLServer {
             throwables.printStackTrace();
         }
     }
-    public void reconnect() {
+    public final void reconnect() {
         if(Objects.nonNull(this.username) && Objects.nonNull(this.password) && Objects.nonNull(ip) && Objects.nonNull(port) && !isConnected) {
             connectToUser(this.username, this.password);
         }
@@ -84,19 +84,19 @@ public class MySQLServer {
         executeUpdate(query);
     }
 
-    public Connection getConnection() {
+    public final Connection getConnection() {
         return connection;
     }
-    public String getIp() {
+    public final String getIp() {
         return ip;
     }
-    public String getPort() {
+    public final String getPort() {
         return port;
     }
-    public String getUsername() {
+    public final String getUsername() {
         return username;
     }
-    public String getIpWithPort() {
+    public final String getIpWithPort() {
         return ip + ":" + port;
     }
 

@@ -29,7 +29,7 @@ public class PermsManager {
         this.cfg = new ModuleConfig("Lcraft Permissions", "config.yml");
     }
 
-    public int getIDFromString(String normal) {
+    public final int getIDFromString(String normal) {
         int id = 0;
         int bid = 0;
         for(String c : normal.split("")) {
@@ -322,13 +322,13 @@ public class PermsManager {
         }
         return bid + id;
     }
-    public int getIDFromUUID(UUID uuid) {
+    public final int getIDFromUUID(UUID uuid) {
         return getIDFromString(uuid.toString());
     }
-    public int getIDFromPlayer(Player player) {
+    public final int getIDFromPlayer(Player player) {
         return getIDFromUUID(player.getUniqueId());
     }
-    public boolean hasPermissions(LPlayer player, String permission) {
+    public final boolean hasPermissions(LPlayer player, String permission) {
         int id = getIDFromUUID(player.getUUID());
 
         String root = "users." + id + ".";
@@ -381,7 +381,7 @@ public class PermsManager {
 
         return false;
     }
-    public boolean logPermission(String permission) {
+    public final boolean logPermission(String permission) {
         String root = "";
         for(String c : permission.split(".")) {
             root = root + c + ".";
@@ -402,7 +402,7 @@ public class PermsManager {
         }
     }
 
-    public ModuleConfig getAllPermissionsCfg() {
+    public final ModuleConfig getAllPermissionsCfg() {
         return allPermissionsCfg;
     }
     public class Permission {
@@ -426,7 +426,7 @@ public class PermsManager {
 
             return this;
         }
-        public void set(String perm, boolean isEnabled, ModuleConfig allPermissionsCfg) {
+        public final void set(String perm, boolean isEnabled, ModuleConfig allPermissionsCfg) {
             this.name = perm;
             this.isEnabled = isEnabled;
 
@@ -435,10 +435,10 @@ public class PermsManager {
             allPermissionsCfg.set(root + ".enabled", isEnabled);
         }
 
-        public String getName() {
+        public final String getName() {
             return name;
         }
-        public boolean isEnabled() {
+        public final boolean isEnabled() {
             return isEnabled;
         }
 
@@ -454,14 +454,14 @@ public class PermsManager {
         }
 
         @Override
-        public void calculate(Player player, ContextConsumer contextConsumer) {
+        public final void calculate(Player player, ContextConsumer contextConsumer) {
             for(String c : next) {
                 contextConsumer.accept(permission, c);
             }
         }
 
         @Override
-        public ContextSet estimatePotentialContexts() {
+        public final ContextSet estimatePotentialContexts() {
             ImmutableContextSet.Builder builder = ImmutableContextSet.builder();
             for(String c : next) {
                 builder.add(permission, c);

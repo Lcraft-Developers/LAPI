@@ -1,5 +1,6 @@
 package de.lcraft.api.minecraft.spigot.util.inventory;
 
+import de.lcraft.api.minecraft.spigot.util.items.ItemBuilder;
 import org.bukkit.Material;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
@@ -23,22 +24,22 @@ public class InventorySlot {
 		this.y = convertToY(getNextFreeSlot(inv));
 	}
 
-	public Inventory addItem(Inventory inv, ItemStack item) {
+	public final Inventory addItem(Inventory inv, ItemBuilder item) {
 		if(isAnyFreeSpaceLeft(inv)) {
-			inv.setItem(getNextFreeSlot(inv), item);
+			inv.setItem(getNextFreeSlot(inv), item.build());
 		}
 		return inv;
 	}
-	public Inventory setItem(Inventory inv, ItemStack item) {
-		inv.setItem(getSlot(), item);
+	public final Inventory setItem(Inventory inv, ItemBuilder item) {
+		inv.setItem(getSlot(), item.build());
 		return inv;
 	}
 
-	public boolean isAnyFreeSpaceLeft(Inventory inv) {
+	public final boolean isAnyFreeSpaceLeft(Inventory inv) {
 		if(getNextFreeSlot(inv) == -1) return false;
 		return true;
 	}
-	public int getNextFreeSlot(Inventory inv) {
+	public final int getNextFreeSlot(Inventory inv) {
 		for(int i = 0; i < inv.getSize(); i++) {
 			if(inv.getItem(i) == null || (inv.getItem(i).getType() == Material.AIR || inv.getItem(i) instanceof InventoryHolder)) {
 				return i;
@@ -48,27 +49,27 @@ public class InventorySlot {
 		return -1;
 	}
 
-	public int convertToX(int slot) {
+	public final int convertToX(int slot) {
 		return ((slot - 1) - (convertToY(slot) * 9));
 	}
-	public int convertToY(int slot) {
+	public final int convertToY(int slot) {
 		int y = 1;
 		for(int c = 1; c < slot; c+=9) {
 			y++;
 		}
 		return y;
 	}
-	public int convertToSlot(int x, int y) {
+	public final int convertToSlot(int x, int y) {
 		return (x + (y * 9)) - 1;
 	}
 
-	public int getSlot() {
+	public final int getSlot() {
 		return convertToSlot(x,y);
 	}
-	public int getX() {
+	public final int getX() {
 		return convertToX(getSlot());
 	}
-	public int getY() {
+	public final int getY() {
 		return convertToY(getSlot());
 	}
 

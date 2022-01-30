@@ -10,7 +10,7 @@ public class ModuleListenerManager extends ListenerManager {
 		super(module.getPlugin());
 		this.module = module;
 	}
-	public Module getModule() {
+	public final Module getModule() {
 		return module;
 	}
 

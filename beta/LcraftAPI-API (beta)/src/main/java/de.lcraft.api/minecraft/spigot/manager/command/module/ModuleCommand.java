@@ -18,10 +18,10 @@ public abstract class ModuleCommand extends Command {
 		subModuleCommands = new ArrayList<>();
 	}
 
-	public void addModuleSubCommand(ModuleSubCommand subModuleCommand) {
+	public final void addModuleSubCommand(ModuleSubCommand subModuleCommand) {
 		subModuleCommands.add(subModuleCommand);
 	}
-	public ModuleSubCommand getModuleSubCommand(String name) {
+	public final ModuleSubCommand getModuleSubCommand(String name) {
 		for(ModuleSubCommand m : subModuleCommands) {
 			if(m.getName().equalsIgnoreCase(name)) {
 				return m;
@@ -30,20 +30,20 @@ public abstract class ModuleCommand extends Command {
 		}
 		return null;
 	}
-	public boolean existsModuleSubCommand(String name) {
+	public final boolean existsModuleSubCommand(String name) {
 		if(Objects.nonNull(getSubCommand(name))) {
 			return true;
 		}
 		return false;
 	}
 
-	public void setModule(Module module) {
+	public final void setModule(Module module) {
 		this.module = module;
 	}
-	public Module getModule() {
+	public final Module getModule() {
 		return module;
 	}
-	public ModuleLogger getLogger() {
+	public final ModuleLogger getLogger() {
 		return module.getLogger();
 	}
 

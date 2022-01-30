@@ -28,7 +28,7 @@ public abstract class Module {
     private ModuleConfig config;
     private LPlayerManager lPlayerManager;
 
-    public void load(ModuleManager manager) {
+    public final void load(ModuleManager manager) {
         this.manager = manager;
         this.lPlayerManager = manager.getPluginMain().getLPlayerManager();
 
@@ -53,7 +53,7 @@ public abstract class Module {
     public abstract void onEnable();
     public abstract void onDisable();
 
-    public void enableModule() {
+    public final void enableModule() {
         getLogger().send(ModuleLoggerType.INFO, "The Spigot Module " + getModuleDescriptionFile().getName() + " is loaded.");
         onEnable();
     }
@@ -72,57 +72,59 @@ public abstract class Module {
             }
         }
     }
-    public void disableModule() {
+    public final void disableModule() {
         getLogger().send(ModuleLoggerType.INFO, "The Spigot Module " + getModuleDescriptionFile().getName() + " was disabled.");
         onDisable();
     }
-    public ModuleLogger getLogger() {
-        return moduleLogger;
-    }
-    public CommandManager getModuleCommandManager() {
-        return moduleCommandManager;
-    }
-    public JavaPlugin getPlugin() {
-        return plugin;
-    }
-    public void setPlugin(JavaPlugin plugin) {
+
+    public final void setPlugin(JavaPlugin plugin) {
         this.plugin = plugin;
     }
-    public void setFile(File file) {
+    public final void setFile(File file) {
         this.file = file;
     }
-    public File getFile() {
-        return file;
-    }
-    public ModuleListenerManager getListenerManager() {
-        return listenerManager;
-    }
-    public ModuleDescriptionFileManager getModuleDescriptionFile() {
-        return moduleDescriptionFileManager;
-    }
-    public String getName() {
-        return getModuleDescriptionFile().getName();
-    }
-    public void setModuleDescriptionFile(ModuleDescriptionFileManager moduleDescriptionFileManager) {
+    public final void setModuleDescriptionFile(ModuleDescriptionFileManager moduleDescriptionFileManager) {
         this.moduleDescriptionFileManager = moduleDescriptionFileManager;
     }
-    public LanguagesManager getLanguagesManager() {
+
+    public final File getFile() {
+        return file;
+    }
+    public final ModuleListenerManager getListenerManager() {
+        return listenerManager;
+    }
+    public final ModuleDescriptionFileManager getModuleDescriptionFile() {
+        return moduleDescriptionFileManager;
+    }
+    public final String getName() {
+        return getModuleDescriptionFile().getName();
+    }
+    public final LanguagesManager getLanguagesManager() {
         return languagesManager;
     }
-    public ModuleManager getModuleManager() {
+    public final ModuleManager getModuleManager() {
         return manager;
     }
-    public PermsManager getPermsManager() {
+    public final PermsManager getPermsManager() {
         return permsManager;
     }
-    public LPlayerManager getlPlayerManager() {
+    public final LPlayerManager getlPlayerManager() {
         return lPlayerManager;
     }
-    public ModuleLogger getModuleLogger() {
+    public final ModuleLogger getModuleLogger() {
         return moduleLogger;
     }
-    public ModuleManager getManager() {
+    public final ModuleManager getManager() {
         return manager;
+    }
+    public final ModuleLogger getLogger() {
+        return moduleLogger;
+    }
+    public final CommandManager getModuleCommandManager() {
+        return moduleCommandManager;
+    }
+    public final JavaPlugin getPlugin() {
+        return plugin;
     }
 
     @Override

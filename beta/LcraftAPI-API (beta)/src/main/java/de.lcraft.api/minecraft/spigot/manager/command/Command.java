@@ -33,17 +33,17 @@ public abstract class Command extends org.bukkit.command.Command {
         this.lPlayerManager = lPlayerManager;
     }
 
-    public String translate(UUID uuid, String text) {
+    public final String translate(UUID uuid, String text) {
         return languagesManager.getIDLanguage(languagesManager.getIDFromUUID(uuid)).translate(text);
     }
-    public boolean hasPermissions(LPlayer p, String perm) {
+    public final boolean hasPermissions(LPlayer p, String perm) {
         return permsManager.hasPermissions(p, perm);
     }
 
-    public void addSubCommand(SubCommand subModuleCommand) {
+    public final void addSubCommand(SubCommand subModuleCommand) {
         subModuleCommands.add(subModuleCommand);
     }
-    public SubCommand getSubCommand(String name) {
+    public final SubCommand getSubCommand(String name) {
         for(SubCommand m : subModuleCommands) {
             if(m.getName().equalsIgnoreCase(name)) {
                 return m;
@@ -52,7 +52,7 @@ public abstract class Command extends org.bukkit.command.Command {
         }
         return null;
     }
-    public boolean existsSubCommand(String name) {
+    public final boolean existsSubCommand(String name) {
         if(Objects.nonNull(getSubCommand(name))) {
             return true;
         }
@@ -94,13 +94,13 @@ public abstract class Command extends org.bukkit.command.Command {
     public abstract ArrayList<String> getAllPermissions(ArrayList<String> allPermissions);
     public abstract ArrayList<String> getAllTranslations(ArrayList<String> allTranslations);
 
-    public String getDescription() {
+    public final String getDescription() {
         return description;
     }
-	public String getName() {
+	public final String getName() {
         return command;
     }
-    public LPlayerManager getLPlayerManager() {
+    public final LPlayerManager getLPlayerManager() {
         return lPlayerManager;
     }
 

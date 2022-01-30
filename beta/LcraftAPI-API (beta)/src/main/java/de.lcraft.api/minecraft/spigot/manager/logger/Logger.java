@@ -4,7 +4,7 @@ import org.bukkit.Bukkit;
 
 public abstract class Logger {
 
-	public void send(ModuleLoggerType type, String msg) {
+	public final void send(ModuleLoggerType type, String msg) {
 		if(type == ModuleLoggerType.ERROR) {
 			Bukkit.getConsoleSender().sendMessage("ERROR >> " + msg);
 		} else if(type == ModuleLoggerType.WARNING) {

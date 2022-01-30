@@ -42,13 +42,6 @@ public class LPlayerManager implements Listener {
 			}
 		}
 	}
-	public void savePlayers() {
-		if(!players.isEmpty()) {
-			for(LPlayer c : players) {
-				c.setToConfig();
-			}
-		}
-	}
 
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void onJoin(PlayerJoinEvent e) {

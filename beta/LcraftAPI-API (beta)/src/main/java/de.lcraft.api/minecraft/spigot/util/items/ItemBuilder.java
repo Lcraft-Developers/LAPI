@@ -1,15 +1,14 @@
 package de.lcraft.api.minecraft.spigot.util.items;
 
 import de.lcraft.api.minecraft.spigot.manager.listeners.ListenerManager;
-import net.md_5.bungee.api.plugin.Listener;
 import org.bukkit.Material;
-import org.bukkit.enchantments.Enchantment;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.Consumer;
-
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class ItemBuilder implements Listener {
 
@@ -30,11 +29,11 @@ public class ItemBuilder implements Listener {
         this(manager, m, 1);
     }
 
-    public ItemBuilder setDisplayName(String name) {
+    public final ItemBuilder setDisplayName(String name) {
         displayName = name;
         return this;
     }
-    public ItemBuilder addLoreString(String... lore) {
+    public final ItemBuilder addLoreString(String... lore) {
         ArrayList<String> l = new ArrayList<>();
         for (String c : lore) {
             l.add(c);
@@ -42,16 +41,16 @@ public class ItemBuilder implements Listener {
         addLore(l);
         return this;
     }
-    public ItemBuilder addLore(ArrayList<String> lores) {
+    public final ItemBuilder addLore(ArrayList<String> lores) {
         for(String c : lores) {
             lore.add(c);
         }
         return this;
     }
-    public void setRightClickConsumer(Consumer<InventoryClickEvent> rightClickConsumer) {
+    public final void setRightClickConsumer(Consumer<InventoryClickEvent> rightClickConsumer) {
         this.rightClickConsumer = rightClickConsumer;
     }
-    public void setLeftClickConsumer(Consumer<InventoryClickEvent> leftClickConsumer) {
+    public final void setLeftClickConsumer(Consumer<InventoryClickEvent> leftClickConsumer) {
         this.leftClickConsumer = leftClickConsumer;
     }
     public ItemStack build() {
@@ -61,22 +60,34 @@ public class ItemBuilder implements Listener {
         return i;
     }
 
-    public ArrayList<String> getLore() {
+    public final ArrayList<String> getLore() {
         return lore;
     }
-    public Material getMaterial() {
+    public final Material getMaterial() {
         return material;
     }
-    public int getAmount() {
+    public final int getAmount() {
         return amount;
     }
-    public String getDisplayName() {
+    public final String getDisplayName() {
         return displayName;
+    }
+    public final Consumer<InventoryClickEvent> getLeftClickConsumer() {
+        return leftClickConsumer;
+    }
+    public final Consumer<InventoryClickEvent> getRightClickConsumer() {
+        return rightClickConsumer;
     }
 
     @EventHandler
-    public void onClick(InventoryClickEvent e) {
-
+    public final void onClick(InventoryClickEvent e) {
+        if(Objects.nonNull(e.getAction())) {
+            if(e.getClick().isRightClick()) {
+                getRightClickConsumer().accept(e);
+            } else if(e.getClick().isLeftClick()) {
+                getLeftClickConsumer().accept(e);
+            }
+        }
     }
 
 }
