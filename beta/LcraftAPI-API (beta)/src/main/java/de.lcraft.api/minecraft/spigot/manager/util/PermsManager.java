@@ -29,7 +29,8 @@ public class PermsManager {
         this.cfg = new ModuleConfig("Lcraft Permissions", "config.yml");
     }
 
-    public final int getIDFromString(String normal) {
+    // Old ID Getter
+    /*public final int getIDFromString(String normal) {
         int id = 0;
         int bid = 0;
         for(String c : normal.split("")) {
@@ -321,15 +322,38 @@ public class PermsManager {
             continue;
         }
         return bid + id;
+    }*/
+    public final long getIDFromString(String current) {
+        long textID = 0;
+        for(String c : current.split("")) {
+            long i = c.hashCode() * 2;
+
+            i = i + (c.getBytes().length * 2);
+            i = i + c.split("").length;
+
+            i = i + c.toLowerCase().length();
+            i = i + c.toUpperCase().length();
+            i = i + c.length();
+
+            i = i + c.toLowerCase().hashCode();
+            i = i + c.toUpperCase().hashCode();
+            i = i + c.hashCode();
+
+            i = i + new CodeHelper().lenghtAllUpperCaseLetters(c);
+            i = i + new CodeHelper().lenghtAllSpaces(c);
+            textID = textID + i;
+            continue;
+        }
+        return textID;
     }
-    public final int getIDFromUUID(UUID uuid) {
+    public final long getIDFromUUID(UUID uuid) {
         return getIDFromString(uuid.toString());
     }
-    public final int getIDFromPlayer(Player player) {
+    public final long getIDFromPlayer(Player player) {
         return getIDFromUUID(player.getUniqueId());
     }
     public final boolean hasPermissions(LPlayer player, String permission) {
-        int id = getIDFromUUID(player.getUUID());
+        long id = getIDFromUUID(player.getUUID());
 
         String root = "users." + id + ".";
         adminsCfg.set(root + "name", player.getRealName());

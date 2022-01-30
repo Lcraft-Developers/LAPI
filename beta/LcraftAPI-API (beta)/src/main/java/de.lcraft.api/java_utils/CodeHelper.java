@@ -38,5 +38,38 @@ public class CodeHelper {
     public final List<File> getAllFilesFromADirectory(String path) {
         return Arrays.stream(new File(path).listFiles()).toList();
     }
+    public final int lenghtAllLowerCaseLetters(String word) {
+        int amount = 0;
+        for(String c : word.split("")) {
+            if(Character.isLowerCase(c.charAt(0))) {
+                amount++;
+            }
+            if(!Character.isAlphabetic(c.charAt(0))) {
+                amount++;
+            }
+        }
+        return amount;
+    }
+    public final int lenghtAllUpperCaseLetters(String word) {
+        int amount = 0;
+        for(String c : word.split("")) {
+            if(Character.isUpperCase(c.charAt(0))) {
+                amount++;
+            }
+            if(!Character.isAlphabetic(c.charAt(0))) {
+                amount++;
+            }
+        }
+        return amount;
+    }
+    public final int lenghtAllSpaces(String word) {
+        int amount = 0;
+        for(String c : word.split("")) {
+            if(Character.isSpaceChar(c.charAt(0))) {
+                amount++;
+            }
+        }
+        return amount;
+    }
 
 }

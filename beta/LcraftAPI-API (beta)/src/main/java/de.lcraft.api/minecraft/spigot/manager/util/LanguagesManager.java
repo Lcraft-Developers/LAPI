@@ -1,5 +1,6 @@
 package de.lcraft.api.minecraft.spigot.manager.util;
 
+import de.lcraft.api.java_utils.CodeHelper;
 import de.lcraft.api.minecraft.spigot.manager.configs.ModuleConfig;
 import org.bukkit.entity.Player;
 import java.io.IOException;
@@ -19,14 +20,14 @@ public class LanguagesManager {
 		addedLanguages = new ArrayList<>();
 	}
 
-	public final void setIDLanguage(int id, Language lang) {
+	public final void setIDLanguage(long id, Language lang) {
 		if(lang == null) lang = getMainLanguage();
 		userConfig.set("users." + id + ".lang", lang.getShortLanguage().toLowerCase());
 	}
-	public final boolean hasIDAnLanguage(int id) {
+	public final boolean hasIDAnLanguage(long id) {
 		return userConfig.exists("users." + id + ".lang");
 	}
-	public final Language getIDLanguage(int id) {
+	public final Language getIDLanguage(long id) {
 		if(hasIDAnLanguage(id)) {
 			return getAllLanguageByFullShort(userConfig.getString("users." + id + ".lang"));
 		} else {
@@ -34,7 +35,8 @@ public class LanguagesManager {
 		}
 	}
 
-	public final int getIDFromString(String normal) {
+	// Old ID Getter
+	/*public final int getIDFromString(String normal) {
 		int id = 0;
 		int bid = 0;
 		for(String c : normal.split("")) {
@@ -326,11 +328,34 @@ public class LanguagesManager {
 			continue;
 		}
 		return bid + id;
+	}*/
+	public final long getIDFromString(String current) {
+		long textID = 0;
+		for(String c : current.split("")) {
+			long i = c.hashCode() * 2;
+
+			i = i + (c.getBytes().length * 2);
+			i = i + c.split("").length;
+
+			i = i + c.toLowerCase().length();
+			i = i + c.toUpperCase().length();
+			i = i + c.length();
+
+			i = i + c.toLowerCase().hashCode();
+			i = i + c.toUpperCase().hashCode();
+			i = i + c.hashCode();
+
+			i = i + new CodeHelper().lenghtAllUpperCaseLetters(c);
+			i = i + new CodeHelper().lenghtAllSpaces(c);
+			textID = textID + i;
+			continue;
+		}
+		return textID;
 	}
-	public final int getIDFromUUID(UUID uuid) {
+	public final long getIDFromUUID(UUID uuid) {
 		return getIDFromString(uuid.toString());
 	}
-	public final int getIDFromPlayer(Player player) {
+	public final long getIDFromPlayer(Player player) {
 		return getIDFromUUID(player.getUniqueId());
 	}
 	public final Language getMainLanguage() {
@@ -365,7 +390,7 @@ public class LanguagesManager {
 					return shortLanguageType;
 				}
 			};
-			addedLanguages.add(c);
+			getAddedLanguages().add(c);
 			return c;
 		}
 		return null;
