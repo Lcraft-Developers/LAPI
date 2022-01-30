@@ -7,27 +7,25 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Lcraft-Languages-API" />
-        <module name="api-beta" />
+        <module name="LcraftAPI-API" />
         <module name="Lcraft-Permissions-API" />
-        <module name="LcraftAPI.API" />
-        <module name="BungeeCordTestPlugin" />
+        <module name="Lcraft Spigot Test Plugin" />
+        <module name="LcraftAPI-API (beta)" />
         <module name="API" />
-        <module name="SpigotTestPlugin" />
         <module name="API-beta" />
         <module name="LcraftAPI.bungeecord.test" />
         <module name="LcraftAPI.spigot.test" />
         <module name="beta" />
         <module name="latest" />
+        <module name="Lcraft BungeeCord Test Plugin" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="api-beta" target="17" />
       <module name="BungeeCordTestPlugin" target="17" />
-      <module name="Lcraft Spigot Test Plugin" target="17" />
       <module name="Lcraft-BungeeCord-TestPlugin" target="17" />
       <module name="Lcraft.API.Language" target="16" />
       <module name="Lcraft.API.Permissions" target="16" />
-      <module name="LcraftAPI-API" target="17" />
       <module name="LcraftAPI-Spigot-TestPlugin" target="17" />
       <module name="LcraftAPI.API" target="17" />
       <module name="SpigotTest" target="17" />

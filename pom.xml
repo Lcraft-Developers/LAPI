@@ -9,10 +9,10 @@
     <packaging>pom</packaging>
     <version>1.0.0</version>
     <modules>
-        <module>LcraftAPI-API</module>
-        <module>LcraftAPI-API (beta)</module>
-        <module>Lcraft Spigot Test Plugin</module>
-        <module>Lcraft BungeeCord Test Plugin</module>
+        <module>latest/LcraftAPI-API</module>
+        <module>beta/LcraftAPI-API (beta)</module>
+        <module>latest/Lcraft Spigot Test Plugin</module>
+        <module>latest/Lcraft BungeeCord Test Plugin</module>
         <module>beta</module>
         <module>latest</module>
     </modules>

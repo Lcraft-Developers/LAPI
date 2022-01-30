@@ -21,7 +21,7 @@ public class ListenerManager {
     public void addListener(Listener listener) {
         flushListeners.add(listener);
     }
-    private void registerListener(Listener listener) {
+    public void registerListener(Listener listener) {
         flushListeners.remove(listener);
         Bukkit.getPluginManager().registerEvents(listener, plugin);
         registeredListeners.add(listener);

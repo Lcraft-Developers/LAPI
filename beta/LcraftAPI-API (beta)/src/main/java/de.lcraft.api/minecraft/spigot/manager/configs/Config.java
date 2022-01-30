@@ -7,6 +7,8 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 
 public class Config {
@@ -38,7 +40,7 @@ public class Config {
         this("", filename);
     }
 
-    public Object getOptionWhenNotExistsCreate(String path, Object start) {
+    public Object getDefault(String path, Object start) {
         if(exists(path)) {
             return get(path);
         } else {
@@ -47,11 +49,15 @@ public class Config {
         }
     }
     public void set(String root, Object obj) {
-        cfg().set(root, obj);
+        c().set(root, obj);
         save();
     }
+    public boolean exists(String root) {
+        return c().contains(root);
+    }
+
     public Object get(String root) {
-        Object obj = cfg().get(root);
+        Object obj = c().get(root);
         return obj;
     }
     public String getString(String root) {
@@ -85,14 +91,26 @@ public class Config {
             return null;
         }
     }
-    public boolean exists(String root) {
-        return cfg().contains(root);
-    }
     public ConfigurationSection getSection(String root) {
-        return cfg().getConfigurationSection(root);
+        return c().getConfigurationSection(root);
     }
     public Set<String> getSectionKeys(String root) {
         return getSection(root).getKeys(false);
+    }
+
+    public void saveStringArrayList(String root, ArrayList<String> list) {
+        set(root, list);
+    }
+    public ArrayList<String> getStringArrayList(String root) {
+        if(Objects.nonNull(c().getStringList(root))) {
+            ArrayList<String> all = new ArrayList<>();
+            for(String c : c().getStringList(root)) {
+                all.add(c);
+            }
+            return all;
+        }
+        saveStringArrayList(root, new ArrayList<>());
+        return getStringArrayList(root);
     }
 
     public void save() {
@@ -102,7 +120,7 @@ public class Config {
             e.printStackTrace();
         }
     }
-    private Configuration cfg() {
+    private Configuration c() {
         return cfg;
     }
 

@@ -21,12 +21,13 @@ import java.util.UUID;
 public class LPlayer implements Listener {
 
 	private UUID uuid;
-	private String nickName;
+	/*private String nickName;
 	private String realName;
+	private List<UUID> hiddenPlayers;
+	private LanguagesManager.Language lang;*/
 
 	private ListenerManager listenerManager;
 	private LanguagesManager languagesManager;
-	private LanguagesManager.Language lang;
 	private SpigotClass plugin;
 	private Config userCFG;
 	private LPlayerManager lPlayerManager;
@@ -48,25 +49,24 @@ public class LPlayer implements Listener {
 
 			@Override
 			public void run() {
-				reloadFromConfig();
-
+				// Set NickName
 				if(isOnline()) {
-					getPlayer().setCustomName(nickName);
-					getPlayer().setDisplayName(nickName);
+					getPlayer().setCustomName(getNickName());
+					getPlayer().setDisplayName(getNickName());
 				}
+				// Make Players unseen
 				if(isOnline()) {
-					if(isVanished()) {
-						for(Player c : Bukkit.getOnlinePlayers()) {
-							c.hidePlayer(plugin, getPlayer());
-							continue;
-						}
-					} else {
-						for(Player c : Bukkit.getOnlinePlayers()) {
-							c.showPlayer(plugin, getPlayer());
-							continue;
+					for(Player p : Bukkit.getOnlinePlayers()) {
+						if(Objects.nonNull(getVanishedUUID()) && !getVanishedUUID().isEmpty()) {
+							if(getVanishedUUID().contains(p.getUniqueId().toString())) {
+								getPlayer().hidePlayer(getPlugin(), p);
+							} else {
+								getPlayer().showPlayer(getPlugin(), p);
+							}
 						}
 					}
 				}
+
 			}
 
 		}, 2l, 2l);
@@ -80,15 +80,18 @@ public class LPlayer implements Listener {
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void onJoin(PlayerJoinEvent e) {
 		e.setJoinMessage(null);
-		for(LPlayer c : getlPlayerManager().getAllLPlayers()) {
-			c.getPlayer().sendMessage(c.getLang().getJoinMessage());
+		for(Player c : Bukkit.getOnlinePlayers()) {
+			e.getPlayer().hidePlayer(getPlugin(), c);
+		}
+		for(LPlayer c : getLPlayerManager().getAllLPlayers()) {
+			c.getPlayer().sendMessage(c.getLanguage().getJoinMessage());
 		}
 	}
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void onQuit(PlayerQuitEvent e) {
 		e.setQuitMessage(null);
-		for(LPlayer c : getlPlayerManager().getAllLPlayers()) {
-			c.getPlayer().sendMessage(c.getLang().getQuitMessage());
+		for(LPlayer c : getLPlayerManager().getAllLPlayers()) {
+			c.getPlayer().sendMessage(c.getLanguage().getQuitMessage());
 		}
 	}
 
@@ -98,74 +101,43 @@ public class LPlayer implements Listener {
 	public String onGetChatMessage(LPlayer from, String msg) {
 		return getDefaultChatMessage(from, msg);
 	}
-	public void sendDefaultChatMessage(String msg) {
-		for(LPlayer c : getlPlayerManager().getAllLPlayers()) {
+	public final void sendDefaultChatMessage(String msg) {
+		for(LPlayer c : getLPlayerManager().getAllLPlayers()) {
 			if(c.isOnline()) {
 				c.getPlayer().sendMessage(getDefaultChatMessage(this, msg));
 			}
 		}
 	}
-	public String getDefaultChatMessage(LPlayer from, String msg) {
+	public final String getDefaultChatMessage(LPlayer from, String msg) {
 		return from.getNickName() + ">>" + msg;
 	}
 
-	public UUID getUUID() {
+	public final UUID getUUID() {
 		return uuid;
 	}
-	public boolean isOnline() {
+	public final boolean isOnline() {
 		if(Objects.nonNull(getPlayer())) {
 			return true;
 		} else {
 			return false;
 		}
 	}
-	public Player getPlayer() {
+	public final Player getPlayer() {
 		if(Bukkit.getOnlinePlayers().contains(uuid)) {
 			return Bukkit.getPlayer(uuid);
 		} else {
 			return null;
 		}
 	}
-	public OfflinePlayer getOfflinePlayer() {
+	public final OfflinePlayer getOfflinePlayer() {
 		if(Objects.nonNull(Bukkit.getOfflinePlayer(uuid))) {
 			return Bukkit.getOfflinePlayer(uuid);
 		} else {
 			return null;
 		}
 	}
-	public LPlayerManager getlPlayerManager() {
+	public final LPlayerManager getLPlayerManager() {
 		return lPlayerManager;
-	}
-
-	public String getRealName() {
-		return realName;
-	}
-	public String setNickName(String nickName) {
-		set("user." + getUUID().toString() + ".nickname", nickName, true);
-		return getNickName();
-	}
-	public String getNickName() {
-		if(isOnline()) {
-			return getString("user." + getUUID().toString() + ".nickname", getPlayer().getName(), true);
-		} else {
-			return getString("user." + getUUID().toString() + ".nickname", getOfflinePlayer().getName(), true);
-		}
-	}
-	public boolean setVanished(boolean vanished) {
-		set("user." + getUUID().toString() + "vanished", vanished, true);
-		return isVanished();
-	}
-	public boolean isVanished() {
-		return Boolean.valueOf(getString("user." + uuid.toString() + "vanished", false, true));
-	}
-	public LanguagesManager.Language getLang() {
-		return lang;
-	}
-	public ListenerManager getListenerManager() {
-		return listenerManager;
-	}
-	public LanguagesManager getLanguagesManager() {
-		return languagesManager;
 	}
 
 	public boolean hasPermission(String permission) {
@@ -174,44 +146,70 @@ public class LPlayer implements Listener {
 		}
 		return false;
 	}
-	public void setToConfig() {
-		set("user." + uuid.toString() + ".uuid", uuid, false);
-		set("user." + uuid.toString() + ".name", realName, false);
-		set("user." + uuid.toString() + ".nickname", nickName, true);
-		//set("user." + uuid.toString() + ".vanished", vanished, true);
-		getLanguagesManager().setIDLanguage(getLanguagesManager().getIDFromUUID(uuid), lang);
-	}
-	public void reloadFromPlayerData() {
-		if(Objects.nonNull(uuid)) {
-			if(isOnline()) {
-				realName = getPlayer().getName();
-				nickName = getPlayer().getDisplayName();
-			} else {
-				realName = getOfflinePlayer().getName();
-				nickName = getOfflinePlayer().getName();
-			}
-		}
-		//vanished = false;
-		lang = getLanguagesManager().getIDLanguage(getLanguagesManager().getIDFromUUID(uuid));
-	}
-	public void reloadFromConfig() {
-		if(isInEntry(uuid)) {
-			uuid = UUID.fromString(userCFG.getString("user." + uuid.toString() + ".uuid"));
-			realName = userCFG.getString("user." + uuid.toString() + ".name");
-			nickName = userCFG.getString("user." + uuid.toString() + ".nickname");
-			//vanished = Boolean.valueOf(userCFG.getString("user." + uuid.toString() + ".vanished"));
-			lang = getLanguagesManager().getIDLanguage(getLanguagesManager().getIDFromUUID(uuid));
-		} else {
-			reloadFromPlayerData();
-			setToConfig();
-		}
-	}
-	public boolean isInEntry(UUID uuid) {
+	public final boolean isInEntry(UUID uuid) {
 		if(userCFG.exists("user." + uuid.toString() + ".uuid")) {
 			return true;
 		} else {
 			return false;
 		}
+	}
+
+	public final String setNickName(String nickName) {
+		set("user." + getUUID().toString() + ".nickname", nickName, true);
+		return getNickName();
+	}
+	public final LanguagesManager.Language setLanguage(LanguagesManager.Language language) {
+		getLanguagesManager().setIDLanguage(getLanguagesManager().getIDFromUUID(getUUID()), language);
+		return getLanguage();
+	}
+
+	public void vanishFromPlayer(ArrayList<LPlayer> viewers, boolean visible) {
+		for(LPlayer c : viewers) {
+			ArrayList<String> vanished = c.getVanishedUUID();
+			if(visible) {
+				vanished.remove(getUUID().toString());
+			} else {
+				vanished.add(getUUID().toString());
+			}
+			c.getUserCFG().saveStringArrayList("user." + getUUID().toString() + ".vanished", vanished);
+		}
+	}
+	public void vanishFromAllPlayers(boolean visible) {
+		vanishFromPlayer(getLPlayerManager().getAllLPlayers(), visible);
+	}
+
+	public String getRealName() {
+		if(isOnline()) {
+			return getPlayer().getName();
+		} else {
+			return getOfflinePlayer().getName();
+		}
+	}
+	public String getNickName() {
+		if(isOnline()) {
+			return getString("user." + getUUID().toString() + ".nickname", getPlayer().getName(), true);
+		} else {
+			return getString("user." + getUUID().toString() + ".nickname", getOfflinePlayer().getName(), true);
+		}
+	}
+	public LanguagesManager.Language getLanguage() {
+		return getLanguagesManager().getIDLanguage(getLanguagesManager().getIDFromUUID(getUUID()));
+	}
+	public ArrayList<String> getVanishedUUID() {
+		return getUserCFG().getStringArrayList("user." + getUUID().toString() + ".vanished");
+	}
+
+	public ListenerManager getListenerManager() {
+		return listenerManager;
+	}
+	public LanguagesManager getLanguagesManager() {
+		return languagesManager;
+	}
+	public SpigotClass getPlugin() {
+		return plugin;
+	}
+	public Config getUserCFG() {
+		return userCFG;
 	}
 
 	public Object set(String root, Object def, boolean isChangeable) {
