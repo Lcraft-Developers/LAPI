@@ -21,7 +21,6 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="api-beta" target="17" />
       <module name="BungeeCordTestPlugin" target="17" />
       <module name="Lcraft-BungeeCord-TestPlugin" target="17" />
       <module name="Lcraft.API.Language" target="16" />

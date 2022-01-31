@@ -2,6 +2,7 @@ package de.lcraft.api.minecraft.spigot.manager.configs;
 
 import org.bukkit.configuration.Configuration;
 import org.bukkit.configuration.ConfigurationSection;
+import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.io.File;
@@ -31,7 +32,14 @@ public class Config {
                 e.printStackTrace();
             }
         }
-        cfg = YamlConfiguration.loadConfiguration(file);
+        cfg = new YamlConfiguration();
+        try {
+            cfg.load(file);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InvalidConfigurationException e) {
+            e.printStackTrace();
+        }
     }
     public Config(String path, String filename) {
         this("plugins//Lcraft-API//", path, filename);
