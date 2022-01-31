@@ -3,7 +3,6 @@ package de.lcraft.api.minecraft.spigot.manager.command;
 import de.lcraft.api.minecraft.spigot.manager.util.LanguagesManager;
 import de.lcraft.api.minecraft.spigot.manager.util.PermsManager;
 import de.lcraft.api.minecraft.spigot.player.LPlayerManager;
-import java.io.IOException;
 
 public abstract class SubCommand extends Command {
 

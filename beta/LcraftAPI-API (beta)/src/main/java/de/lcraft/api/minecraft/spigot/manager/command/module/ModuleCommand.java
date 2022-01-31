@@ -1,9 +1,10 @@
 package de.lcraft.api.minecraft.spigot.manager.command.module;
 
 import de.lcraft.api.minecraft.spigot.manager.Module;
-import de.lcraft.api.minecraft.spigot.manager.command.Command;
 import de.lcraft.api.minecraft.spigot.manager.logger.ModuleLogger;
 import de.lcraft.api.minecraft.spigot.manager.logger.ModuleLoggerType;
+import de.lcraft.api.minecraft.spigot.manager.command.Command;
+
 import java.util.ArrayList;
 import java.util.Objects;
 

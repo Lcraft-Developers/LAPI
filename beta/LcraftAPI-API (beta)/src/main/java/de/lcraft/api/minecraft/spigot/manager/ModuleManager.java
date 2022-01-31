@@ -1,11 +1,8 @@
 package de.lcraft.api.minecraft.spigot.manager;
 
-import de.lcraft.api.minecraft.spigot.SpigotClass;
-import de.lcraft.api.minecraft.spigot.manager.loaders.ModuleClassLoader;
 import de.lcraft.api.minecraft.spigot.manager.loaders.ModuleFileLoader;
-import de.lcraft.api.minecraft.spigot.player.LPlayerManager;
+import de.lcraft.api.minecraft.spigot.SpigotClass;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
 public class ModuleManager {

@@ -6,7 +6,7 @@ import de.lcraft.api.minecraft.spigot.manager.util.LanguagesManager;
 import de.lcraft.api.minecraft.spigot.manager.util.PermsManager;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandMap;
-import java.io.IOException;
+
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Objects;

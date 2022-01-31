@@ -1,13 +1,12 @@
 package de.lcraft.api.minecraft.spigot.util.inventory;
 
-import de.lcraft.api.minecraft.spigot.manager.listeners.ListenerManager;
 import de.lcraft.api.minecraft.spigot.manager.util.LanguagesManager;
 import de.lcraft.api.minecraft.spigot.util.items.ItemBuilder;
+import de.lcraft.api.minecraft.spigot.manager.listeners.ListenerManager;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.inventory.InventoryHolder;
-import org.bukkit.inventory.ItemStack;
-import java.io.IOException;
+
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.UUID;

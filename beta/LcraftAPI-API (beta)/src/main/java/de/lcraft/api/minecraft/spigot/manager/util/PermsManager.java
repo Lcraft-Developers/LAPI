@@ -1,8 +1,8 @@
 package de.lcraft.api.minecraft.spigot.manager.util;
 
 import de.lcraft.api.java_utils.CodeHelper;
-import de.lcraft.api.minecraft.spigot.player.LPlayer;
 import de.lcraft.api.minecraft.spigot.manager.configs.ModuleConfig;
+import de.lcraft.api.minecraft.spigot.player.LPlayer;
 import net.luckperms.api.LuckPerms;
 import net.luckperms.api.context.ContextCalculator;
 import net.luckperms.api.context.ContextConsumer;
@@ -12,7 +12,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.RegisteredServiceProvider;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.UUID;

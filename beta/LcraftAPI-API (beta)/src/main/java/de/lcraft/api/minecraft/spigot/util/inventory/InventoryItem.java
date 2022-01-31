@@ -1,10 +1,9 @@
 package de.lcraft.api.minecraft.spigot.util.inventory;
 
-import de.lcraft.api.minecraft.spigot.manager.listeners.ListenerManager;
 import de.lcraft.api.minecraft.spigot.util.items.ItemBuilder;
+import de.lcraft.api.minecraft.spigot.manager.listeners.ListenerManager;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
-import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.Consumer;
 
 public class InventoryItem implements Listener {

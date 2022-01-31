@@ -2,8 +2,6 @@ package de.lcraft.api.minecraft.spigot.manager.configs;
 
 import de.lcraft.api.minecraft.spigot.manager.Module;
 
-import java.io.IOException;
-
 public class ModuleConfig extends Config {
 
     public ModuleConfig(String startPath, String path, String filename) {

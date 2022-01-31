@@ -1,10 +1,7 @@
 package de.lcraft.api.minecraft.spigot.manager;
 
 import de.lcraft.api.java_utils.CodeHelper;
-import de.lcraft.api.java_utils.Internet;
 import de.lcraft.api.java_utils.connection.SpigotMc;
-import de.lcraft.api.minecraft.spigot.manager.Module;
-import de.lcraft.api.minecraft.spigot.manager.ModuleManager;
 import org.yaml.snakeyaml.Yaml;
 
 import java.io.File;
