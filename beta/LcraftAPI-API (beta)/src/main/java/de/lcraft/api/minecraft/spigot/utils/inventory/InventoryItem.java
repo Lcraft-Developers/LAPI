@@ -2,18 +2,23 @@ package de.lcraft.api.minecraft.spigot.utils.inventory;
 
 import de.lcraft.api.minecraft.spigot.utils.items.ItemBuilder;
 import de.lcraft.api.minecraft.spigot.manager.utils.listeners.ListenerManager;
+import lombok.Getter;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.util.Consumer;
 
 public class InventoryItem implements Listener {
 
+	@Getter
 	private InventorySlot slot;
+	@Getter
 	private ItemBuilder item;
+	@Getter
 	private boolean areConsumerActivated = false,
 	                cancellingEvent,
 	                titleStartsWith,
 	                itemNameStartsWith;
+	@Getter
 	private String invTitle;
 
 	public InventoryItem(ListenerManager listenerManager, InventorySlot slot, String invTitle, boolean cancelEvent, boolean titleStartsWith, boolean itemNameStartsWith, ItemBuilder item, Consumer<InventoryClickEvent> rightClickConsumer, Consumer<InventoryClickEvent> leftClickConsumer) {
@@ -81,33 +86,5 @@ public class InventoryItem implements Listener {
 			}
 		}
 	}*/
-
-	public final InventorySlot getSlot() {
-		return slot;
-	}
-	public final ItemBuilder getItem() {
-		return item;
-	}
-	public final Consumer<InventoryClickEvent> getRightClickConsumer() {
-		return getItem().getRightClickConsumer();
-	}
-	public final Consumer<InventoryClickEvent> getLeftClickConsumer() {
-		return getItem().getLeftClickConsumer();
-	}
-	public final boolean areConsumerActivated() {
-		return areConsumerActivated;
-	}
-	public final boolean isCancellingEvent() {
-		return cancellingEvent;
-	}
-	public final boolean isTitleStartsWith() {
-		return titleStartsWith;
-	}
-	public final boolean isItemNameStartsWith() {
-		return itemNameStartsWith;
-	}
-	public final String getInvTitle() {
-		return invTitle;
-	}
 
 }

@@ -2,6 +2,8 @@ package de.lcraft.api.minecraft.spigot.manager.loaders;
 
 import com.google.common.io.ByteStreams;
 import de.lcraft.api.minecraft.spigot.manager.ModuleDescriptionFileManager;
+import lombok.Getter;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -19,15 +21,18 @@ import java.util.jar.Manifest;
 public class ModuleClassLoader extends URLClassLoader {
     // ClassLoader Manager
 
+    @Getter
     public static ArrayList<ClassLoader> classLoaders = new ArrayList<>();
     static {
         ClassLoader.registerAsParallelCapable();
     }
 
     // Normal Classloader
-
+    @Getter
     private JarFile jar;
+    @Getter
     private URL url;
+    @Getter
     private Manifest manifest;
 
     protected ModuleClassLoader(ModuleDescriptionFileManager file) throws MalformedURLException {
@@ -115,18 +120,6 @@ public class ModuleClassLoader extends URLClassLoader {
         return super.findClass( name );
     }
 
-    public static ArrayList<ClassLoader> getClassLoaders() {
-        return classLoaders;
-    }
-    public final JarFile getJar() {
-        return jar;
-    }
-    public final Manifest getManifest() {
-        return manifest;
-    }
-    public final URL getUrl() {
-        return url;
-    }
     @Override
     public final URL[] getURLs() {
         return super.getURLs();

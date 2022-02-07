@@ -6,6 +6,7 @@ import de.lcraft.api.minecraft.spigot.manager.utils.LPlayerManager;
 import de.lcraft.api.minecraft.spigot.manager.utils.language.Language;
 import de.lcraft.api.minecraft.spigot.manager.utils.language.LanguagesManager;
 import de.lcraft.api.minecraft.spigot.manager.utils.listeners.ListenerManager;
+import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
@@ -22,20 +23,25 @@ import java.util.UUID;
 
 public class LPlayer implements Listener {
 
-	private UUID uuid;
+	@Getter
+	private UUID UUID;
 	/*private String nickName;
 	private String realName;
 	private List<UUID> hiddenPlayers;
 	private LanguagesManager.Language lang;*/
-
+	@Getter
 	private ListenerManager listenerManager;
+	@Getter
 	private LanguagesManager languagesManager;
+	@Getter
 	private SpigotClass plugin;
+	@Getter
 	private BukkitConfig userCFG;
+	@Getter
 	private LPlayerManager lPlayerManager;
 
 	public LPlayer(SpigotClass spigotPlugin, LPlayerManager manager, UUID uuid, BukkitConfig userCFG, ListenerManager listenerManager, LanguagesManager languagesManager) {
-		this.uuid = uuid;
+		this.UUID = uuid;
 		this.plugin = spigotPlugin;
 		this.userCFG = userCFG;
 		this.listenerManager = listenerManager;
@@ -114,9 +120,6 @@ public class LPlayer implements Listener {
 		return from.getNickName() + ">>" + msg;
 	}
 
-	public final UUID getUUID() {
-		return uuid;
-	}
 	public final boolean isOnline() {
 		if(Objects.nonNull(getPlayer())) {
 			return true;
@@ -125,21 +128,18 @@ public class LPlayer implements Listener {
 		}
 	}
 	public final Player getPlayer() {
-		if(Bukkit.getOnlinePlayers().contains(uuid)) {
-			return Bukkit.getPlayer(uuid);
+		if(Bukkit.getOnlinePlayers().contains(getUUID())) {
+			return Bukkit.getPlayer(getUUID());
 		} else {
 			return null;
 		}
 	}
 	public final OfflinePlayer getOfflinePlayer() {
-		if(Objects.nonNull(Bukkit.getOfflinePlayer(uuid))) {
-			return Bukkit.getOfflinePlayer(uuid);
+		if(Objects.nonNull(Bukkit.getOfflinePlayer(getUUID()))) {
+			return Bukkit.getOfflinePlayer(getUUID());
 		} else {
 			return null;
 		}
-	}
-	public final LPlayerManager getLPlayerManager() {
-		return lPlayerManager;
 	}
 
 	public final boolean hasPermission(String permission) {

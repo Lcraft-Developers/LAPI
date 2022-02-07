@@ -1,12 +1,14 @@
 package de.lcraft.api.minecraft.spigot.utils.inventory;
 
 import de.lcraft.api.minecraft.spigot.utils.items.ItemBuilder;
+import lombok.Getter;
 import org.bukkit.Material;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 
 public class InventorySlot {
 
+	@Getter
 	private int x,
 	            y;
 
@@ -64,12 +66,6 @@ public class InventorySlot {
 
 	public final int getSlot() {
 		return convertToSlot(x,y);
-	}
-	public final int getX() {
-		return convertToX(getSlot());
-	}
-	public final int getY() {
-		return convertToY(getSlot());
 	}
 
 }

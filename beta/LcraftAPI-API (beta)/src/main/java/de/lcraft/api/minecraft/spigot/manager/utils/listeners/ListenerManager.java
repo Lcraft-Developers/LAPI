@@ -1,5 +1,6 @@
 package de.lcraft.api.minecraft.spigot.manager.utils.listeners;
 
+import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -8,21 +9,23 @@ import java.util.Objects;
 
 public class ListenerManager {
 
-    private ArrayList<Listener> flushListeners,
+    @Getter
+    private ArrayList<Listener> flushingListeners,
                                 registeredListeners;
+    @Getter
     private JavaPlugin plugin;
 
     public ListenerManager(JavaPlugin plugin) {
         this.plugin = plugin;
-        flushListeners = new ArrayList<>();
+        flushingListeners = new ArrayList<>();
         registeredListeners = new ArrayList<>();
     }
 
     public final void addListener(Listener listener) {
-        flushListeners.add(listener);
+        getFlushingListeners().add(listener);
     }
     public final void registerListener(Listener listener) {
-        flushListeners.remove(listener);
+        getFlushingListeners().remove(listener);
         Bukkit.getPluginManager().registerEvents(listener, plugin);
         registeredListeners.add(listener);
     }
@@ -30,31 +33,21 @@ public class ListenerManager {
         if(Objects.nonNull(listener)) {
             if(registeredListeners.contains(listener)) {
                 registeredListeners.remove(listener);
-            } else if(flushListeners.contains(listener)) {
-                flushListeners.remove(listener);
+            } else if(getFlushingListeners().contains(listener)) {
+                getFlushingListeners().remove(listener);
             }
         }
     }
     public final ArrayList<Listener> flushRegistrationAllListeners() {
-        if(!flushListeners.isEmpty()) {
-            for(Listener listener : flushListeners) {
+        if(!getFlushingListeners().isEmpty()) {
+            for(Listener listener : getFlushingListeners()) {
                 if(Objects.nonNull(listener)) {
                     registerListener(listener);
                 }
                 continue;
             }
         }
-        return flushListeners;
-    }
-
-    public final ArrayList<Listener> getRegisteredListeners() {
-        return registeredListeners;
-    }
-    public final ArrayList<Listener> getAddedListeners() {
-        return flushListeners;
-    }
-    public final JavaPlugin getPlugin() {
-        return plugin;
+        return getFlushingListeners();
     }
 
 }

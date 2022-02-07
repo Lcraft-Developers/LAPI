@@ -1,12 +1,15 @@
 package de.lcraft.api.minecraft.spigot.utils.items;
 
 import de.lcraft.api.minecraft.spigot.manager.utils.listeners.ListenerManager;
+import lombok.Getter;
+import lombok.Setter;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.SkullMeta;
 
 public class HeadBuilder extends ItemBuilder {
 
+    @Getter
     private String owner;
 
     public HeadBuilder(ListenerManager manager, String name, int amount) {
@@ -29,9 +32,6 @@ public class HeadBuilder extends ItemBuilder {
     public final HeadBuilder setOwner(String name) {
         owner = name;
         return this;
-    }
-    public final String getOwner() {
-        return owner;
     }
 
 }

@@ -3,10 +3,10 @@ de\lcraft\api\minecraft\spigot\manager\loaders\ModuleClassLoader.class
 de\lcraft\api\minecraft\spigot\manager\ModuleDescriptionFile.class
 de\lcraft\api\minecraft\bungee\manager\loaders\ModuleLoader.class
 de\lcraft\api\minecraft\bungee\manager\loaders\ModuleClassLoader.class
-de\lcraft\api\minecraft\spigot\manager\command\SubModuleCommand.class
 de\lcraft\api\minecraft\bungee\manager\utils\ListenerManager.class
 de\lcraft\api\minecraft\spigot\manager\logger\ModuleLoggerType.class
 de\lcraft\api\minecraft\spigot\manager\utils\LPlayer$1.class
+de\lcraft\api\minecraft\spigot\util\command\ModuleCommand.class
 de\lcraft\api\minecraft\bungee\manager\utils\PermsManager$Permission.class
 de\lcraft\api\minecraft\bungee\manager\utils\LanguagesManager$1.class
 de\lcraft\api\minecraft\bungee\manager\Module.class
@@ -19,6 +19,7 @@ de\lcraft\api\minecraft\bungee\manager\logger\ModuleLogger.class
 de\lcraft\api\minecraft\bungee\manager\utils\LanguagesManager$4.class
 de\lcraft\api\minecraft\spigot\utils\items\ItemBuilder.class
 de\lcraft\api\minecraft\spigot\utils\server\ServerTPS$Lag.class
+de\lcraft\api\minecraft\spigot\util\command\SubModuleCommand.class
 de\lcraft\api\minecraft\bungee\manager\utils\LPlayer.class
 de\lcraft\api\minecraft\bungee\manager\loaders\ModuleFileLoader.class
 de\lcraft\api\minecraft\spigot\utils\CraftingRecipe$CraftingPlace.class
@@ -43,7 +44,6 @@ de\lcraft\api\minecraft\spigot\manager\utils\PermsManager$CustomCalculator.class
 de\lcraft\api\minecraft\spigot\manager\utils\Config.class
 de\lcraft\api\minecraft\bungee\manager\utils\ModuleConfig.class
 de\lcraft\api\minecraft\bungee\manager\utils\LanguagesManager$6.class
-de\lcraft\api\minecraft\spigot\manager\command\ModuleCommandManager.class
 de\lcraft\api\minecraft\bungee\manager\utils\LPlayer$1.class
 de\lcraft\api\minecraft\spigot\manager\utils\LanguagesManager$2.class
 de\lcraft\api\minecraft\spigot\manager\utils\ModuleConfig.class
@@ -62,11 +62,11 @@ de\lcraft\api\mysql\MySQLServer.class
 de\lcraft\api\minecraft\spigot\manager\utils\PermsManager$Permission.class
 de\lcraft\api\minecraft\spigot\manager\ModuleManager.class
 de\lcraft\api\minecraft\spigot\utils\inventory\InventoryItem.class
-de\lcraft\api\minecraft\spigot\manager\command\ModuleCommand.class
 de\lcraft\api\minecraft\spigot\utils\server\ServerTPS.class
 de\lcraft\api\java_utils\exeptions\InternetNotFoundException.class
 de\lcraft\api\minecraft\spigot\utils\inventory\InventorySlot.class
 de\lcraft\api\minecraft\spigot\manager\utils\LanguagesManager$6.class
+de\lcraft\api\minecraft\spigot\util\command\ModuleCommandManager.class
 de\lcraft\api\minecraft\spigot\utils\items\SpawnerBuilder.class
 de\lcraft\api\minecraft\spigot\manager\utils\LPlayer.class
 de\lcraft\api\minecraft\bungee\manager\utils\LanguagesManager$2.class

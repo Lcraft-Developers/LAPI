@@ -2,6 +2,7 @@ package de.lcraft.api.minecraft.spigot.manager;
 
 import de.lcraft.api.java_utils.CodeHelper;
 import de.lcraft.api.java_utils.connection.SpigotMc;
+import lombok.Getter;
 import org.yaml.snakeyaml.Yaml;
 
 import java.io.File;
@@ -14,9 +15,13 @@ import java.util.zip.ZipFile;
 
 public class ModuleDescriptionFileManager {
 
+    @Getter
     private File file;
+    @Getter
     private String[] authors;
+    @Getter
     private String[] requiredStringModules;
+    @Getter
     private String name,
                    version,
                    spigot_main,
@@ -24,6 +29,7 @@ public class ModuleDescriptionFileManager {
                    description,
                    spigotmc_id,
                    update_url;
+    @Getter
     private Module[] requiredModules;
 
     public ModuleDescriptionFileManager(File file) {
@@ -144,39 +150,6 @@ public class ModuleDescriptionFileManager {
             System.out.println("A spigot module could not be loaded because the name in module.yml does not exist!");
         }
         return false;
-    }
-    public final String getName() {
-        return name;
-    }
-    public final File getFile() {
-        return file;
-    }
-    public final String[] getAuthors() {
-        return authors;
-    }
-    public final String getVersion() {
-        return version;
-    }
-    public final String getDescription() {
-        return description;
-    }
-    public final String getBungeeCord_Main() {
-        return bungeecord_main;
-    }
-    public final String getSpigot_main() {
-        return spigot_main;
-    }
-    public final Module[] getRequiredModules() {
-        return requiredModules;
-    }
-    public final String[] getRequiredStringModules() {
-        return requiredStringModules;
-    }
-    public final String getSpigotmc_id() {
-        return spigotmc_id;
-    }
-    public final String getUpdate_url() {
-        return update_url;
     }
 
 }

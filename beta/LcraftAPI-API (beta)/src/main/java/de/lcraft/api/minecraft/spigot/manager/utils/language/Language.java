@@ -1,6 +1,7 @@
 package de.lcraft.api.minecraft.spigot.manager.utils.language;
 
 import de.lcraft.api.minecraft.spigot.manager.configs.ModuleBukkitConfig;
+import lombok.Getter;
 
 import java.util.Objects;
 
@@ -9,6 +10,7 @@ public abstract class Language {
 	private ModuleBukkitConfig translations;
 	private ModuleBukkitConfig help;
 	private ModuleBukkitConfig cfg;
+	@Getter
 	private LanguagesManager languagesManager;
 
 	public Language(LanguagesManager languagesManager) {

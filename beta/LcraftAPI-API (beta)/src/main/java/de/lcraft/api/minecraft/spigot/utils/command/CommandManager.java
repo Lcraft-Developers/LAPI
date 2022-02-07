@@ -5,6 +5,7 @@ import de.lcraft.api.minecraft.spigot.manager.configs.ModuleBukkitConfig;
 import de.lcraft.api.minecraft.spigot.manager.utils.language.Language;
 import de.lcraft.api.minecraft.spigot.manager.utils.language.LanguagesManager;
 import de.lcraft.api.minecraft.spigot.manager.utils.PermsManager;
+import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandMap;
 
@@ -14,8 +15,11 @@ import java.util.Objects;
 
 public class CommandManager {
 
+    @Getter
     private Module module;
+    @Getter
     private ArrayList<Command> modulesCmds;
+    @Getter
     private ModuleBukkitConfig moduleCommands;
 
     public CommandManager(Module module) {
@@ -78,9 +82,6 @@ public class CommandManager {
             allPermissions = cmd.getAllPermissions(allPermissions);
         }
         return allPermissions;
-    }
-    public final ArrayList<Command> getModulesCmds() {
-        return modulesCmds;
     }
 
 }

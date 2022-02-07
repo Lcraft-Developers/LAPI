@@ -5,6 +5,8 @@ import de.lcraft.api.minecraft.spigot.manager.utils.listeners.ListenerManager;
 import de.lcraft.api.minecraft.spigot.manager.configs.BukkitConfig;
 import de.lcraft.api.minecraft.spigot.manager.utils.language.LanguagesManager;
 import de.lcraft.api.minecraft.spigot.manager.utils.entities.LPlayer;
+import lombok.AccessLevel;
+import lombok.Getter;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -17,10 +19,15 @@ import java.util.UUID;
 
 public class LPlayerManager implements Listener {
 
+	@Getter
 	private ArrayList<LPlayer> players;
+	@Getter (AccessLevel.PRIVATE)
 	private BukkitConfig userConfig;
+	@Getter
 	private ListenerManager listenerManager;
+	@Getter
 	private LanguagesManager languagesManager;
+	@Getter
 	private SpigotClass spigotPlugin;
 
 	public LPlayerManager(SpigotClass spigotPlugin, BukkitConfig userConfig, ListenerManager listenerManager, LanguagesManager languagesManager) {
@@ -80,27 +87,4 @@ public class LPlayerManager implements Listener {
 	public ArrayList<LPlayer> getAllLPlayers() {
 		return players;
 	}
-
-	public LanguagesManager getLanguagesManager() {
-		return languagesManager;
-	}
-	public ListenerManager getListenerManager() {
-		return listenerManager;
-	}
-	public BukkitConfig getUserConfig() {
-		return userConfig;
-	}
-	public void setListenerManager(ListenerManager listenerManager) {
-		this.listenerManager = listenerManager;
-	}
-	public void setLanguagesManager(LanguagesManager languagesManager) {
-		this.languagesManager = languagesManager;
-	}
-	public void setUserConfig(BukkitConfig userConfig) {
-		this.userConfig = userConfig;
-	}
-	public SpigotClass getSpigotPlugin() {
-		return spigotPlugin;
-	}
-
 }

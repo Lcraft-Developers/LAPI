@@ -3,6 +3,7 @@ package de.lcraft.api.minecraft.spigot.utils.inventory;
 import de.lcraft.api.minecraft.spigot.manager.utils.language.LanguagesManager;
 import de.lcraft.api.minecraft.spigot.utils.items.ItemBuilder;
 import de.lcraft.api.minecraft.spigot.manager.utils.listeners.ListenerManager;
+import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.inventory.InventoryHolder;
@@ -13,10 +14,14 @@ import java.util.UUID;
 
 public class Inventory {
 
+	@Getter
 	private LanguagesManager languagesManager;
+	@Getter
 	private int width,
 	            height;
+	@Getter
 	private ArrayList<InventoryItem> items;
+	@Getter
 	private ListenerManager listenerManager;
 
 	public Inventory(ListenerManager listenerManager, LanguagesManager languagesManager, int height) {
@@ -131,22 +136,8 @@ public class Inventory {
 		}
 		return item;
 	}
-
-	public final int getWidth() {
-		return width;
-	}
-	public final int getHeight() {
-		return height;
-	}
 	public final int getSize() {
 		return (width * height);
-	}
-	public final LanguagesManager getLanguagesManager() {
-		return languagesManager;
-	}
-
-	public ListenerManager getListenerManager() {
-		return listenerManager;
 	}
 
 }

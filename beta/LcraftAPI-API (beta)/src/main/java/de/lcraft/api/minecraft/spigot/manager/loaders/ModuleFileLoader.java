@@ -4,8 +4,8 @@ import de.lcraft.api.java_utils.CodeHelper;
 import de.lcraft.api.minecraft.spigot.manager.Module;
 import de.lcraft.api.minecraft.spigot.manager.ModuleDescriptionFileManager;
 import de.lcraft.api.minecraft.spigot.manager.ModuleManager;
+import lombok.Getter;
 import org.bukkit.plugin.java.JavaPlugin;
-
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URLClassLoader;
@@ -16,7 +16,9 @@ import java.util.Objects;
 
 public class ModuleFileLoader {
 
+    @Getter
     private ModuleManager moduleManager;
+    @Getter
     private ArrayList<Module> modules;
 
     public ModuleFileLoader(ModuleManager moduleManager) {
@@ -146,10 +148,6 @@ public class ModuleFileLoader {
         for(Module c : modules) {
             getModuleManager().getModules().add(c);
         }
-    }
-
-    public final ModuleManager getModuleManager() {
-        return moduleManager;
     }
 
 }
