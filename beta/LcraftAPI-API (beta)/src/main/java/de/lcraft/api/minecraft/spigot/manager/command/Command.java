@@ -21,8 +21,8 @@ public abstract class Command extends org.bukkit.command.Command {
     private String command;
     private LPlayerManager lPlayerManager;
 
-    public Command(String command, String desc, PermsManager permsManager, LPlayerManager lPlayerManager, LanguagesManager languagesManager, boolean splitting) {
-        super(command, desc, "", new ArrayList<>());
+    public Command(String label, String desc, PermsManager permsManager, LPlayerManager lPlayerManager, LanguagesManager languagesManager, boolean splitting) {
+        super(label, desc, "", new ArrayList<>());
         subModuleCommands = new ArrayList<>();
         this.description = desc;
         this.splitting = splitting;

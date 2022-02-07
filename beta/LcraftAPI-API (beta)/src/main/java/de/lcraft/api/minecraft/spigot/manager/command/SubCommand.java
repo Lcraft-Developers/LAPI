@@ -6,8 +6,8 @@ import de.lcraft.api.minecraft.spigot.player.LPlayerManager;
 
 public abstract class SubCommand extends Command {
 
-	public SubCommand(String subCommand, String desc, PermsManager permsManager, LPlayerManager lPlayerManager, LanguagesManager languagesManager, boolean splitting) {
-		super(subCommand, desc, permsManager, lPlayerManager, languagesManager, splitting);
+	public SubCommand(String subLabel, String desc, PermsManager permsManager, LPlayerManager lPlayerManager, LanguagesManager languagesManager, boolean splitting) {
+		super(subLabel, desc, permsManager, lPlayerManager, languagesManager, splitting);
 	}
 
 }
