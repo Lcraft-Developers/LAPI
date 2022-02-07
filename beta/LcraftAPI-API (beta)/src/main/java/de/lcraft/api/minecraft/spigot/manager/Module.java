@@ -27,6 +27,8 @@ public abstract class Module {
     private ModuleBukkitConfig config;
     private LPlayerManager lPlayerManager;
 
+    private Module() {}
+
     public final void load(ModuleManager manager) {
         this.manager = manager;
         this.lPlayerManager = manager.getPluginMain().getLPlayerManager();

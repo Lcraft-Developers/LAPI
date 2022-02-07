@@ -30,10 +30,10 @@ public class ModuleClassLoader extends URLClassLoader {
     private URL url;
     private Manifest manifest;
 
-    public ModuleClassLoader(ModuleDescriptionFileManager file) throws MalformedURLException {
+    protected ModuleClassLoader(ModuleDescriptionFileManager file) throws MalformedURLException {
         this(file.getFile());
     }
-    public ModuleClassLoader(File file) throws MalformedURLException {
+    protected ModuleClassLoader(File file) throws MalformedURLException {
         super(new URL[]{ file.toURI().toURL() });
         try {
             jar = new JarFile(file);
