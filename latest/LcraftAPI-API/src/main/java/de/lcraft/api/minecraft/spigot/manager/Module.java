@@ -1,6 +1,6 @@
 package de.lcraft.api.minecraft.spigot.manager;
 
-import de.lcraft.api.minecraft.spigot.manager.command.ModuleCommandManager;
+import de.lcraft.api.minecraft.spigot.util.command.ModuleCommandManager;
 import de.lcraft.api.minecraft.spigot.manager.logger.ModuleLogger;
 import de.lcraft.api.minecraft.spigot.manager.utils.ListenerManager;
 import de.lcraft.api.minecraft.spigot.manager.utils.LanguagesManager;

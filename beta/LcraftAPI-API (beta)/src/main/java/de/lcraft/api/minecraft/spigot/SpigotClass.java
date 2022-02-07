@@ -1,11 +1,11 @@
 package de.lcraft.api.minecraft.spigot;
 
 import de.lcraft.api.minecraft.spigot.manager.ModuleManager;
-import de.lcraft.api.minecraft.spigot.util.server.ServerTPS;
+import de.lcraft.api.minecraft.spigot.utils.server.ServerTPS;
 import de.lcraft.api.minecraft.spigot.manager.configs.BukkitConfig;
-import de.lcraft.api.minecraft.spigot.manager.util.language.LanguagesManager;
-import de.lcraft.api.minecraft.spigot.manager.listeners.ListenerManager;
-import de.lcraft.api.minecraft.spigot.player.LPlayerManager;
+import de.lcraft.api.minecraft.spigot.manager.utils.language.LanguagesManager;
+import de.lcraft.api.minecraft.spigot.manager.utils.listeners.ListenerManager;
+import de.lcraft.api.minecraft.spigot.manager.utils.LPlayerManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class SpigotClass extends JavaPlugin {

@@ -1,7 +1,7 @@
 package de.lcraft.test.spigot.commands.HelloCommand.subcommands;
 
 import de.lcraft.api.minecraft.spigot.manager.Module;
-import de.lcraft.api.minecraft.spigot.manager.command.SubModuleCommand;
+import de.lcraft.api.minecraft.spigot.util.command.SubModuleCommand;
 import de.lcraft.api.minecraft.spigot.manager.utils.LPlayer;
 import org.bukkit.command.CommandSender;
 
