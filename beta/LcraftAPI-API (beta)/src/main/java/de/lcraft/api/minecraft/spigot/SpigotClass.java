@@ -6,26 +6,17 @@ import de.lcraft.api.minecraft.spigot.manager.configs.BukkitConfig;
 import de.lcraft.api.minecraft.spigot.manager.utils.language.LanguagesManager;
 import de.lcraft.api.minecraft.spigot.manager.utils.listeners.ListenerManager;
 import de.lcraft.api.minecraft.spigot.manager.utils.LPlayerManager;
-import lombok.AccessLevel;
-import lombok.Getter;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class SpigotClass extends JavaPlugin {
 
-    @Getter
     private SpigotClass apiPluginMain;
-    @Getter (AccessLevel.PRIVATE)
     private BukkitConfig cfg,
                    userConfig;
-    @Getter
     private ModuleManager moduleManager;
-    @Getter
     private ServerTPS serverTPS;
-    @Getter
     private ListenerManager listenerManager;
-    @Getter
     private LanguagesManager languagesManager;
-    @Getter
     private LPlayerManager lPlayerManager;
 
     @Override
@@ -34,7 +25,7 @@ public class SpigotClass extends JavaPlugin {
             apiPluginMain = this;
             cfg = new BukkitConfig("", "config.yml");
             userConfig = new BukkitConfig("users.yml");
-            serverTPS = new ServerTPS(getApiPluginMain());
+            serverTPS = new ServerTPS(getAPIPluginMain());
             listenerManager = new ListenerManager(apiPluginMain);
             languagesManager = new LanguagesManager();
             lPlayerManager = new LPlayerManager(apiPluginMain, userConfig, listenerManager, languagesManager);
@@ -49,6 +40,28 @@ public class SpigotClass extends JavaPlugin {
     @Override
     public final void onDisable() {
         moduleManager.onDisableAllModules();
+    }
+
+    public final SpigotClass getAPIPluginMain() {
+        return apiPluginMain;
+    }
+    public final BukkitConfig getMainCfg() {
+        return cfg;
+    }
+    public final ServerTPS getServerTPS() {
+        return serverTPS;
+    }
+    public final BukkitConfig getUserConfig() {
+        return userConfig;
+    }
+    public final ListenerManager getListenerManager() {
+        return listenerManager;
+    }
+    public final LanguagesManager getLanguagesManager() {
+        return languagesManager;
+    }
+    public final LPlayerManager getLPlayerManager() {
+        return lPlayerManager;
     }
 
 }

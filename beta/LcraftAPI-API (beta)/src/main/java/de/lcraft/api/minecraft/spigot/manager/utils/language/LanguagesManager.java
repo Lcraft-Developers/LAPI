@@ -2,7 +2,6 @@ package de.lcraft.api.minecraft.spigot.manager.utils.language;
 
 import de.lcraft.api.java_utils.CodeHelper;
 import de.lcraft.api.minecraft.spigot.manager.configs.ModuleBukkitConfig;
-import lombok.Getter;
 import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
@@ -10,11 +9,9 @@ import java.util.UUID;
 
 public class LanguagesManager {
 
-	@Getter
 	private ArrayList<Language> addedLanguages;
-	@Getter
 	private ModuleBukkitConfig fileConfig,
-			                   userConfig;
+			             userConfig;
 
 	public LanguagesManager() {
 		fileConfig = new ModuleBukkitConfig("Lcraft Languages", "config.yml");
@@ -506,6 +503,16 @@ public class LanguagesManager {
 				return c;
 		}
 		return null;
+	}
+
+	public final ArrayList<Language> getAddedLanguages() {
+		return addedLanguages;
+	}
+	public final ModuleBukkitConfig getFileConfig() {
+		return fileConfig;
+	}
+	public final ModuleBukkitConfig getUserConfig() {
+		return userConfig;
 	}
 
 }

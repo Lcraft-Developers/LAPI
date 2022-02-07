@@ -1,11 +1,9 @@
 package de.lcraft.api.minecraft.spigot.manager.logger;
 
-import lombok.Getter;
 import org.bukkit.Bukkit;
 
 public class ModuleLogger extends Logger {
 
-	@Getter
 	private String moduleName;
 
 	public ModuleLogger(String moduleName) {

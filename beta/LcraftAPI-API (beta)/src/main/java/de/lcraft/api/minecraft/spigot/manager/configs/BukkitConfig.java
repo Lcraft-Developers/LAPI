@@ -1,6 +1,5 @@
 package de.lcraft.api.minecraft.spigot.manager.configs;
 
-import lombok.Getter;
 import org.bukkit.configuration.Configuration;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.InvalidConfigurationException;
@@ -14,11 +13,8 @@ import java.util.Set;
 
 public class BukkitConfig {
 
-    @Getter
     private final YamlConfiguration cfg;
-    @Getter
     private final File file;
-    @Getter
     private final File folder;
 
     public BukkitConfig(String startPath, String path, String filename) {
@@ -60,15 +56,15 @@ public class BukkitConfig {
         }
     }
     public void set(String root, Object obj) {
-        getCfg().set(root, obj);
+        c().set(root, obj);
         save();
     }
     public boolean exists(String root) {
-        return getCfg().contains(root);
+        return c().contains(root);
     }
 
     public final Object get(String root) {
-        Object obj = getCfg().get(root);
+        Object obj = c().get(root);
         return obj;
     }
     public final String getString(String root) {
@@ -103,7 +99,7 @@ public class BukkitConfig {
         }
     }
     public final ConfigurationSection getSection(String root) {
-        return getCfg().getConfigurationSection(root);
+        return c().getConfigurationSection(root);
     }
     public final Set<String> getSectionKeys(String root) {
         return getSection(root).getKeys(false);
@@ -113,9 +109,9 @@ public class BukkitConfig {
         set(root, list);
     }
     public final ArrayList<String> getStringArrayList(String root) {
-        if(Objects.nonNull(getCfg().getStringList(root))) {
+        if(Objects.nonNull(c().getStringList(root))) {
             ArrayList<String> all = new ArrayList<>();
-            for(String c : getCfg().getStringList(root)) {
+            for(String c : c().getStringList(root)) {
                 all.add(c);
             }
             return all;
@@ -130,6 +126,9 @@ public class BukkitConfig {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    private final Configuration c() {
+        return cfg;
     }
 
 }

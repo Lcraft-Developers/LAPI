@@ -1,6 +1,5 @@
 package de.lcraft.api.minecraft.spigot.utils;
 
-import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
@@ -12,17 +11,11 @@ import java.util.HashMap;
 
 public class CraftingRecipe {
 
-    @Getter
     private String name;
-    @Getter
     private ItemStack result;
-    @Getter
     private HashMap<Character, Material> recipeItems;
-    @Getter
     private boolean activated;
-    @Getter
     private NamespacedKey namespacedKey;
-    @Getter
     private ArrayList<CraftingRecipe> craftingRecipes = new ArrayList<>();
 
      /**

@@ -1,8 +1,6 @@
 package de.lcraft.api.java_utils.connection;
 
 import de.lcraft.api.java_utils.exeptions.SpigotMCPluginNotFound;
-import lombok.Getter;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -12,7 +10,7 @@ import java.util.function.Consumer;
 public class SpigotMc {
 
 	private boolean isOutdated = true,
-			        isUpdated = false;
+			isUpdated = false;
 
 	public final boolean isUpdated(int resourcesID, String currentVersion) {
 		return isUpdated(getUpdateLink(resourcesID), currentVersion);

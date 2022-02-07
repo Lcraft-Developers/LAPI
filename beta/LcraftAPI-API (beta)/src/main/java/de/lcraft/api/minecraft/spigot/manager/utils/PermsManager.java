@@ -3,8 +3,6 @@ package de.lcraft.api.minecraft.spigot.manager.utils;
 import de.lcraft.api.java_utils.CodeHelper;
 import de.lcraft.api.minecraft.spigot.manager.configs.ModuleBukkitConfig;
 import de.lcraft.api.minecraft.spigot.manager.utils.entities.LPlayer;
-import lombok.AccessLevel;
-import lombok.Getter;
 import net.luckperms.api.LuckPerms;
 import net.luckperms.api.context.ContextCalculator;
 import net.luckperms.api.context.ContextConsumer;
@@ -20,7 +18,6 @@ import java.util.UUID;
 
 public class PermsManager {
 
-    @Getter (AccessLevel.PRIVATE)
     private ModuleBukkitConfig allPermissionsCfg,
                          adminsCfg,
                          cfg;
@@ -411,12 +408,12 @@ public class PermsManager {
         String root = "";
         for(String c : permission.split(".")) {
             root = root + c + ".";
-            new Permission().load(root + "*", getAllPermissionsCfg()).isEnabled();
-            new Permission().load(root + "admin", getAllPermissionsCfg()).isEnabled();
+            new Permission().load(root + "*", allPermissionsCfg).isEnabled();
+            new Permission().load(root + "admin", allPermissionsCfg).isEnabled();
 
             continue;
         }
-        return new Permission().load(permission, getAllPermissionsCfg()).isEnabled();
+        return new Permission().load(permission, allPermissionsCfg).isEnabled();
     }
     public boolean isLuckPermsEnabled() {
         if(cfg.exists("systems.luckperms.enabled") && cfg.get("systems.luckperms.enabled") instanceof Boolean
@@ -436,13 +433,13 @@ public class PermsManager {
         private String name;
         private boolean isEnabled;
 
-        public Permission load(String perm, ModuleBukkitConfig allPermissionsCFG) {
+        public Permission load(String perm, ModuleBukkitConfig allPermissionsCfg) {
             String root = "permissions." + perm;
-            if(allPermissionsCFG.exists(root)) {
+            if(allPermissionsCfg.exists(root)) {
                 name = perm;
-                isEnabled = getAllPermissionsCfg().getBoolean(root + ".enabled");
+                isEnabled = allPermissionsCfg.getBoolean(root + ".enabled");
             } else {
-                set(perm, true, allPermissionsCFG);
+                set(perm, true, allPermissionsCfg);
             }
             RegisteredServiceProvider<LuckPerms> provider = Bukkit.getServicesManager().getRegistration(LuckPerms.class);
             if (Objects.nonNull(provider) && isLuckPermsEnabled()) {
@@ -452,13 +449,13 @@ public class PermsManager {
 
             return this;
         }
-        public final void set(String perm, boolean isEnabled, ModuleBukkitConfig allPermissionsCFG) {
+        public final void set(String perm, boolean isEnabled, ModuleBukkitConfig allPermissionsCfg) {
             this.name = perm;
             this.isEnabled = isEnabled;
 
             String root = "permissions." + perm;
-            allPermissionsCFG.set(root + ".name", perm);
-            allPermissionsCFG.set(root + ".enabled", isEnabled);
+            allPermissionsCfg.set(root + ".name", perm);
+            allPermissionsCfg.set(root + ".enabled", isEnabled);
         }
 
         public final String getName() {

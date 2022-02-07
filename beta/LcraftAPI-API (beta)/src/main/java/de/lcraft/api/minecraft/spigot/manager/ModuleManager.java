@@ -2,17 +2,13 @@ package de.lcraft.api.minecraft.spigot.manager;
 
 import de.lcraft.api.minecraft.spigot.manager.loaders.ModuleFileLoader;
 import de.lcraft.api.minecraft.spigot.SpigotClass;
-import lombok.Getter;
 
 import java.util.ArrayList;
 
 public class ModuleManager {
 
-    @Getter
     private volatile ArrayList<Module> modules = new ArrayList<>();
-    @Getter
     private SpigotClass pluginMain;
-    @Getter
     private ModuleFileLoader moduleFileLoader;
 
     public ModuleManager(SpigotClass pluginMain) {
@@ -29,6 +25,16 @@ public class ModuleManager {
                 c.disableModule();
             }
         }
+    }
+
+    public final ArrayList<Module> getModules() {
+        return modules;
+    }
+    public final SpigotClass getPluginMain() {
+        return pluginMain;
+    }
+    public final ModuleFileLoader getModuleFileLoader() {
+        return moduleFileLoader;
     }
 
 }

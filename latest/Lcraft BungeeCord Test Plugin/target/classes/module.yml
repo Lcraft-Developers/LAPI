@@ -1,8 +1,0 @@
-name: 'Lcraft BungeeCord TestPlugin'
-description: This is the BungeeCord Plugin
-version: '1.0.0'
-bungee-main: de.lcraft.test.bungeecord.BungeeTest
-authors:
-  - LPD
-  - Lcraft
-required-modules: 'Lcraft-API, Lcraft Permissions API, Lcraft Languages API'

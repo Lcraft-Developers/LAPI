@@ -4,17 +4,13 @@ import de.lcraft.api.minecraft.spigot.manager.Module;
 import de.lcraft.api.minecraft.spigot.manager.logger.ModuleLogger;
 import de.lcraft.api.minecraft.spigot.manager.logger.ModuleLoggerType;
 import de.lcraft.api.minecraft.spigot.utils.command.Command;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.Objects;
 
 public abstract class ModuleCommand extends Command {
 
-	@Getter @Setter
 	private Module module;
-	@Getter
 	private ArrayList<ModuleSubCommand> subModuleCommands;
 
 	public ModuleCommand(String label, String desc, Module m, boolean splitting) {
@@ -42,6 +38,12 @@ public abstract class ModuleCommand extends Command {
 		return false;
 	}
 
+	public final void setModule(Module module) {
+		this.module = module;
+	}
+	public final Module getModule() {
+		return module;
+	}
 	public final ModuleLogger getLogger() {
 		return module.getLogger();
 	}

@@ -1,7 +1,6 @@
 package de.lcraft.api.minecraft.spigot.utils.items;
 
 import de.lcraft.api.minecraft.spigot.manager.utils.listeners.ListenerManager;
-import lombok.Getter;
 import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -13,17 +12,11 @@ import java.util.Objects;
 
 public class ItemBuilder implements Listener {
 
-    @Getter
     private ArrayList<String> lore;
-    @Getter
     private Material material;
-    @Getter
     private int amount;
-    @Getter
     private String displayName;
-    @Getter
     private Consumer<InventoryClickEvent> rightClickConsumer;
-    @Getter
     private Consumer<InventoryClickEvent> leftClickConsumer;
 
     public ItemBuilder(ListenerManager manager, Material material, int amount) {
@@ -65,6 +58,25 @@ public class ItemBuilder implements Listener {
         i.getItemMeta().setDisplayName(getDisplayName());
         i.getItemMeta().setLore(getLore());
         return i;
+    }
+
+    public final ArrayList<String> getLore() {
+        return lore;
+    }
+    public final Material getMaterial() {
+        return material;
+    }
+    public final int getAmount() {
+        return amount;
+    }
+    public final String getDisplayName() {
+        return displayName;
+    }
+    public final Consumer<InventoryClickEvent> getLeftClickConsumer() {
+        return leftClickConsumer;
+    }
+    public final Consumer<InventoryClickEvent> getRightClickConsumer() {
+        return rightClickConsumer;
     }
 
     @EventHandler

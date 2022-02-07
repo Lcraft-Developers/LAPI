@@ -4,7 +4,6 @@ import de.lcraft.api.minecraft.spigot.manager.utils.language.LanguagesManager;
 import de.lcraft.api.minecraft.spigot.manager.utils.PermsManager;
 import de.lcraft.api.minecraft.spigot.manager.utils.entities.LPlayer;
 import de.lcraft.api.minecraft.spigot.manager.utils.LPlayerManager;
-import lombok.Getter;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
@@ -14,19 +13,12 @@ import java.util.UUID;
 
 public abstract class Command extends org.bukkit.command.Command {
 
-    @Getter
     private boolean splitting;
-    @Getter
     private LanguagesManager languagesManager;
-    @Getter
     private PermsManager permsManager;
-    @Getter
     private String description;
-    @Getter
     private ArrayList<SubCommand> subModuleCommands;
-    @Getter
     private String command;
-    @Getter
     private LPlayerManager lPlayerManager;
 
     public Command(String label, String desc, PermsManager permsManager, LPlayerManager lPlayerManager, LanguagesManager languagesManager, boolean splitting) {
@@ -101,5 +93,15 @@ public abstract class Command extends org.bukkit.command.Command {
 
     public abstract ArrayList<String> getAllPermissions(ArrayList<String> allPermissions);
     public abstract ArrayList<String> getAllTranslations(ArrayList<String> allTranslations);
+
+    public final String getDescription() {
+        return description;
+    }
+	public final String getName() {
+        return command;
+    }
+    public final LPlayerManager getLPlayerManager() {
+        return lPlayerManager;
+    }
 
 }

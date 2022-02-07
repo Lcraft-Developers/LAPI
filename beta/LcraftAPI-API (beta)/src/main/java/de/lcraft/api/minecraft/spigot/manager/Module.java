@@ -9,36 +9,22 @@ import de.lcraft.api.minecraft.spigot.manager.utils.language.LanguagesManager;
 import de.lcraft.api.minecraft.spigot.manager.configs.ModuleBukkitConfig;
 import de.lcraft.api.minecraft.spigot.manager.utils.PermsManager;
 import de.lcraft.api.minecraft.spigot.manager.utils.LPlayerManager;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.Setter;
 import org.bukkit.plugin.java.JavaPlugin;
 import java.io.File;
 import java.util.Objects;
 
 public abstract class Module {
 
-    @Getter @Setter(AccessLevel.PACKAGE)
     private ModuleDescriptionFileManager moduleDescriptionFileManager;
-    @Getter @Setter(AccessLevel.PACKAGE)
     private ModuleLogger moduleLogger;
-    @Getter @Setter(AccessLevel.PACKAGE)
     private CommandManager moduleCommandManager;
-    @Getter @Setter(AccessLevel.PACKAGE)
     private LanguagesManager languagesManager;
-    @Getter @Setter(AccessLevel.PACKAGE)
     private JavaPlugin plugin;
-    @Getter @Setter(AccessLevel.PACKAGE)
     private ModuleListenerManager listenerManager;
-    @Getter @Setter(AccessLevel.PACKAGE)
     private File file;
-    @Getter @Setter(AccessLevel.PACKAGE)
     private ModuleManager manager;
-    @Getter @Setter(AccessLevel.PACKAGE)
     private PermsManager permsManager;
-    @Getter @Setter(AccessLevel.PACKAGE)
     private ModuleBukkitConfig config;
-    @Getter @Setter(AccessLevel.PACKAGE)
     private LPlayerManager lPlayerManager;
 
     private Module() {}
