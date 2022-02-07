@@ -14,7 +14,6 @@ public abstract class ModuleCommand extends Command {
 
 	@Getter @Setter
 	private Module module;
-	@Getter
 	private ArrayList<ModuleSubCommand> subModuleCommands;
 
 	public ModuleCommand(String label, String desc, Module m, boolean splitting) {
@@ -26,7 +25,7 @@ public abstract class ModuleCommand extends Command {
 	public final void addModuleSubCommand(ModuleSubCommand subModuleCommand) {
 		subModuleCommands.add(subModuleCommand);
 	}
-	public final ModuleSubCommand getModuleSubCommand(String name) {
+	public final ModuleSubCommand getModuleSubCommandByName(String name) {
 		for(ModuleSubCommand m : subModuleCommands) {
 			if(m.getName().equalsIgnoreCase(name)) {
 				return m;
@@ -35,8 +34,8 @@ public abstract class ModuleCommand extends Command {
 		}
 		return null;
 	}
-	public final boolean existsModuleSubCommand(String name) {
-		if(Objects.nonNull(getSubCommand(name))) {
+	public final boolean existsModuleSubCommandByName(String name) {
+		if(Objects.nonNull(getSubCommandByName(name))) {
 			return true;
 		}
 		return false;

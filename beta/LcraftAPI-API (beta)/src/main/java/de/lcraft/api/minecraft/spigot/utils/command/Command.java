@@ -51,7 +51,7 @@ public abstract class Command extends org.bukkit.command.Command {
     public final void addSubCommand(SubCommand subModuleCommand) {
         subModuleCommands.add(subModuleCommand);
     }
-    public final SubCommand getSubCommand(String name) {
+    public final SubCommand getSubCommandByName(String name) {
         for(SubCommand m : subModuleCommands) {
             if(m.getName().equalsIgnoreCase(name)) {
                 return m;
@@ -61,7 +61,7 @@ public abstract class Command extends org.bukkit.command.Command {
         return null;
     }
     public final boolean existsSubCommand(String name) {
-        if(Objects.nonNull(getSubCommand(name))) {
+        if(Objects.nonNull(getSubCommandByName(name))) {
             return true;
         }
         return false;
@@ -75,7 +75,7 @@ public abstract class Command extends org.bukkit.command.Command {
                 for(int i = 1; i < strings.length; i++) {
                     new_args[i - 1] = strings[i];
                 }
-                getSubCommand(strings[0]).execute(commandSender, var3, new_args);
+                getSubCommandByName(strings[0]).execute(commandSender, var3, new_args);
             } else {
                 split(commandSender, strings);
             }
