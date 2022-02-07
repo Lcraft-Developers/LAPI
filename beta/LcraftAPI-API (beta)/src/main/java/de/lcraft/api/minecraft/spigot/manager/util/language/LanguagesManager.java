@@ -1,4 +1,4 @@
-package de.lcraft.api.minecraft.spigot.manager.util;
+package de.lcraft.api.minecraft.spigot.manager.util.language;
 
 import de.lcraft.api.java_utils.CodeHelper;
 import de.lcraft.api.minecraft.spigot.manager.configs.ModuleBukkitConfig;
@@ -396,7 +396,7 @@ public class LanguagesManager {
 		return null;
 	}
 	public final boolean existsLanguage(String shortLanguage, String shortLanguageType) {
-		for(Language c : getAllLanguages()) {
+		for(Language c : DefaultLanguages.getAllDefaultLanguages(this)) {
 			if((c.getShortLanguage().toLowerCase().equalsIgnoreCase(shortLanguage) && c.getShortLanguageType().toLowerCase().equalsIgnoreCase(shortLanguageType))) {
 				return true;
 			}
@@ -413,119 +413,8 @@ public class LanguagesManager {
 		}
 		return false;
 	}
-	public final ArrayList<Language> getAllLanguages() {
-		ArrayList<Language> allLanguages = new ArrayList<>();
-
-		Language en_us = new Language(this) {
-			@Override
-			public String getName() {
-				return "American English";
-			}
-
-			@Override
-			public String getEnglishName() {
-				return "American English";
-			}
-
-			@Override
-			public String getShortLanguage() {
-				return "en";
-			}
-
-			@Override
-			public String getShortLanguageType() {
-				return "us";
-			}
-		}; allLanguages.add(en_us);
-		Language en_be = new Language(this) {
-			@Override
-			public String getName() {
-				return "British English";
-			}
-
-			@Override
-			public String getEnglishName() {
-				return "British English";
-			}
-
-			@Override
-			public String getShortLanguage() {
-				return "en";
-			}
-
-			@Override
-			public String getShortLanguageType() {
-				return "be";
-			}
-		}; allLanguages.add(en_be);
-		Language de_hd = new Language(this) {
-			@Override
-			public String getName() {
-				return "Deutsch";
-			}
-
-			@Override
-			public String getEnglishName() {
-				return "German";
-			}
-
-			@Override
-			public String getShortLanguage() {
-				return "de";
-			}
-
-			@Override
-			public String getShortLanguageType() {
-				return "hd";
-			}
-		}; allLanguages.add(de_hd);
-		Language de_ch = new Language(this) {
-			@Override
-			public String getName() {
-				return "Schwizerdütsch";
-			}
-
-			@Override
-			public String getEnglishName() {
-				return "Swiss German";
-			}
-
-			@Override
-			public String getShortLanguage() {
-				return "de";
-			}
-
-			@Override
-			public String getShortLanguageType() {
-				return "schw";
-			}
-		}; allLanguages.add(de_ch);
-		Language de_oester = new Language(this) {
-			@Override
-			public String getName() {
-				return "Österreichisches Deutsch";
-			}
-
-			@Override
-			public String getEnglishName() {
-				return "Austrian German";
-			}
-
-			@Override
-			public String getShortLanguage() {
-				return "de";
-			}
-
-			@Override
-			public String getShortLanguageType() {
-				return "öster";
-			}
-		}; allLanguages.add(de_oester);
-
-		return allLanguages;
-	}
 	public final ArrayList<Language> getAllLanguagesAndAdded() {
-		ArrayList<Language> languages = getAllLanguages();
+		ArrayList<Language> languages = DefaultLanguages.getAllDefaultLanguages(this);
 		for(Language c : getAddedLanguages()) {
 			languages.add(c);
 		}
@@ -533,26 +422,26 @@ public class LanguagesManager {
 	}
 
 	public final Language getLanguageByName(String name) {
-		for(Language c : getAllLanguages()) {
+		for(Language c : DefaultLanguages.getAllDefaultLanguages(this)) {
 			if(c.getName().equalsIgnoreCase(name)) return c;
 		}
 		return null;
 	}
 	public final Language getLanguageByFullShort(String short_) {
-		for(Language c : getAllLanguages()) {
+		for(Language c : DefaultLanguages.getAllDefaultLanguages(this)) {
 			if(c.getShortLanguage().toLowerCase().equalsIgnoreCase(short_)) return c;
 		}
 		return null;
 	}
 	public final Language getLanguageByShortLanguage(String shortLanguage, String shortLanguageType) {
-		for(Language c : getAllLanguages()) {
+		for(Language c : DefaultLanguages.getAllDefaultLanguages(this)) {
 			if(c.getShortLanguage().toLowerCase().equalsIgnoreCase(shortLanguage) && c.getShortLanguageType().toLowerCase().equalsIgnoreCase(shortLanguageType))
 				return c;
 		}
 		return null;
 	}
 	public final Language getLanguageByEnglishName(String englishName) {
-		for(Language c : getAllLanguages()) {
+		for(Language c : DefaultLanguages.getAllDefaultLanguages(this)) {
 			if(c.getEnglishName().equalsIgnoreCase(englishName))
 				return c;
 		}
@@ -625,79 +514,6 @@ public class LanguagesManager {
 	}
 	public final ModuleBukkitConfig getUserConfig() {
 		return userConfig;
-	}
-
-	public abstract class Language {
-
-		private ModuleBukkitConfig translations;
-		private ModuleBukkitConfig help;
-		private ModuleBukkitConfig cfg;
-		private LanguagesManager languagesManager;
-
-		public Language(LanguagesManager languagesManager) {
-			translations = new ModuleBukkitConfig("Lcraft Languages/" + getShort(), "translations.yml");
-			help = new ModuleBukkitConfig("Lcraft Languages/" + getShort(), "help.yml");
-			cfg = new ModuleBukkitConfig("Lcraft Languages/" + getShort(), "config.yml");
-			this.languagesManager = languagesManager;
-		}
-
-		public abstract String getName();
-		public abstract String getEnglishName();
-		public abstract String getShortLanguage();
-		public abstract String getShortLanguageType();
-
-		public final String translate(String def) {
-			String root = "translate." + languagesManager.getIDFromString(def);
-			translations.set(root + ".default", def);
-			if(translations.exists(root + ".translation")) {
-				def = translations.getString(root + ".translation");
-			} else {
-				translations.set(root + ".translation", def);
-			}
-			return def;
-		}
-		public final String getJoinMessage() {
-			String root = "msgs.join";
-			if(cfg.exists(root)) {
-				return cfg.getString(root);
-			} else {
-				translations.set(root, "§6%PLAYER% §6joined the game");
-				translations.save();
-			}
-			return getJoinMessage();
-		}
-		public final String getQuitMessage() {
-			String root = "msgs.quit";
-			if(cfg.exists(root)) {
-				return cfg.getString(root);
-			} else {
-				translations.set(root, "§6%PLAYER% §6leaved the game");
-				translations.save();
-			}
-			return getQuitMessage();
-		}
-
-		public final String[] getHelp() {
-			String[] help = new String[1];
-			help[0] = "No Help Message seted in Language " + getEnglishName();
-			if(Objects.nonNull(getHelpFile().getSection(getShort() + ".help"))) {
-				help = new String[getHelpFile().getSection(getShort() + ".help").getKeys(false).size()];
-				for(int i = 0; i < getHelpFile().getSection(getShort() + ".help").getKeys(false).size(); i++) {
-					help[i] = getHelpFile().getString(getShort() + ".help." + i);
-				}
-			}
-			return help;
-		}
-		public final ModuleBukkitConfig getTranslationsFile() {
-			return translations;
-		}
-		public final ModuleBukkitConfig getHelpFile() {
-			return help;
-		}
-		public final String getShort() {
-			return getShortLanguage() + "-" + getShortLanguageType();
-		}
-
 	}
 
 }

@@ -1,6 +1,6 @@
 package de.lcraft.api.minecraft.spigot.util.inventory;
 
-import de.lcraft.api.minecraft.spigot.manager.util.LanguagesManager;
+import de.lcraft.api.minecraft.spigot.manager.util.language.LanguagesManager;
 import de.lcraft.api.minecraft.spigot.util.items.ItemBuilder;
 import de.lcraft.api.minecraft.spigot.manager.listeners.ListenerManager;
 import org.bukkit.Bukkit;

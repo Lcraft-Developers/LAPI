@@ -3,7 +3,7 @@ package de.lcraft.api.minecraft.spigot;
 import de.lcraft.api.minecraft.spigot.manager.ModuleManager;
 import de.lcraft.api.minecraft.spigot.util.server.ServerTPS;
 import de.lcraft.api.minecraft.spigot.manager.configs.BukkitConfig;
-import de.lcraft.api.minecraft.spigot.manager.util.LanguagesManager;
+import de.lcraft.api.minecraft.spigot.manager.util.language.LanguagesManager;
 import de.lcraft.api.minecraft.spigot.manager.listeners.ListenerManager;
 import de.lcraft.api.minecraft.spigot.player.LPlayerManager;
 import org.bukkit.plugin.java.JavaPlugin;

@@ -5,7 +5,7 @@ import de.lcraft.api.minecraft.spigot.manager.listeners.ModuleListenerManager;
 import de.lcraft.api.minecraft.spigot.manager.logger.ModuleLogger;
 import de.lcraft.api.minecraft.spigot.manager.logger.ModuleLoggerType;
 import de.lcraft.api.minecraft.spigot.manager.command.CommandManager;
-import de.lcraft.api.minecraft.spigot.manager.util.LanguagesManager;
+import de.lcraft.api.minecraft.spigot.manager.util.language.LanguagesManager;
 import de.lcraft.api.minecraft.spigot.manager.configs.ModuleBukkitConfig;
 import de.lcraft.api.minecraft.spigot.manager.util.PermsManager;
 import de.lcraft.api.minecraft.spigot.player.LPlayerManager;

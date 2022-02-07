@@ -2,7 +2,8 @@ package de.lcraft.api.minecraft.spigot.player;
 
 import de.lcraft.api.minecraft.spigot.SpigotClass;
 import de.lcraft.api.minecraft.spigot.manager.configs.BukkitConfig;
-import de.lcraft.api.minecraft.spigot.manager.util.LanguagesManager;
+import de.lcraft.api.minecraft.spigot.manager.util.language.Language;
+import de.lcraft.api.minecraft.spigot.manager.util.language.LanguagesManager;
 import de.lcraft.api.minecraft.spigot.manager.listeners.ListenerManager;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
@@ -158,7 +159,7 @@ public class LPlayer implements Listener {
 		set("user." + getUUID().toString() + ".nickname", nickName, true);
 		return getNickName();
 	}
-	public final LanguagesManager.Language setLanguage(LanguagesManager.Language language) {
+	public final Language setLanguage(Language language) {
 		getLanguagesManager().setIDLanguage(getLanguagesManager().getIDFromUUID(getUUID()), language);
 		return getLanguage();
 	}
@@ -192,7 +193,7 @@ public class LPlayer implements Listener {
 			return getString("user." + getUUID().toString() + ".nickname", getOfflinePlayer().getName(), true);
 		}
 	}
-	public final LanguagesManager.Language getLanguage() {
+	public final Language getLanguage() {
 		return getLanguagesManager().getIDLanguage(getLanguagesManager().getIDFromUUID(getUUID()));
 	}
 	public final ArrayList<String> getVanishedUUID() {
