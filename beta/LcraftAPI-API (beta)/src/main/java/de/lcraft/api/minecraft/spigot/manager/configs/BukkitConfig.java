@@ -8,17 +8,16 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
-public class Config {
+public class BukkitConfig {
 
     private final YamlConfiguration cfg;
     private final File file;
     private final File folder;
 
-    public Config(String startPath, String path, String filename) {
+    public BukkitConfig(String startPath, String path, String filename) {
         folder = new File(startPath + "//" + path);
         file = new File(folder, filename);
         if(!folder.exists()) {
@@ -41,10 +40,10 @@ public class Config {
             e.printStackTrace();
         }
     }
-    public Config(String path, String filename) {
+    public BukkitConfig(String path, String filename) {
         this("plugins//Lcraft-API//", path, filename);
     }
-    public Config(String filename) {
+    public BukkitConfig(String filename) {
         this("", filename);
     }
 

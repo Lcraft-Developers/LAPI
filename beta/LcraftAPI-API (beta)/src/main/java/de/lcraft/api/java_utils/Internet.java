@@ -9,7 +9,7 @@ import java.nio.file.StandardCopyOption;
 
 public class Internet {
 
-    public final boolean websiteExist(String url) {
+    public static final boolean websiteExist(String url) {
         try {
             URL u = new URL(url);
             HttpURLConnection huc = (HttpURLConnection) u.openConnection();
@@ -25,10 +25,10 @@ public class Internet {
         return false;
     }
 
-    public final boolean hasInternet() {
+    public static final boolean hasInternet() {
         return hasInternet(250);
     }
-    public final boolean hasInternet(int millisecoundtimeout) {
+    public static final boolean hasInternet(int millisecoundtimeout) {
         boolean internet = false;
 
         try {
@@ -50,7 +50,7 @@ public class Internet {
         return internet;
     }
 
-    public final File download(String url, String filename, String folder) {
+    public static final File download(String url, String filename, String folder) {
         if (hasInternet()) {
             try {
                 BufferedInputStream in = new BufferedInputStream(new URL(url).openStream());

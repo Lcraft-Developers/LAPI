@@ -1,7 +1,7 @@
 package de.lcraft.api.minecraft.spigot.manager.util;
 
 import de.lcraft.api.java_utils.CodeHelper;
-import de.lcraft.api.minecraft.spigot.manager.configs.ModuleConfig;
+import de.lcraft.api.minecraft.spigot.manager.configs.ModuleBukkitConfig;
 import de.lcraft.api.minecraft.spigot.player.LPlayer;
 import net.luckperms.api.LuckPerms;
 import net.luckperms.api.context.ContextCalculator;
@@ -18,14 +18,14 @@ import java.util.UUID;
 
 public class PermsManager {
 
-    private ModuleConfig allPermissionsCfg,
+    private ModuleBukkitConfig allPermissionsCfg,
                          adminsCfg,
                          cfg;
 
     public PermsManager() {
-        this.allPermissionsCfg = new ModuleConfig("Lcraft Permissions", "allPermissions.yml");
-        this.adminsCfg = new ModuleConfig("Lcraft Permissions", "admins.yml");
-        this.cfg = new ModuleConfig("Lcraft Permissions", "config.yml");
+        this.allPermissionsCfg = new ModuleBukkitConfig("Lcraft Permissions", "allPermissions.yml");
+        this.adminsCfg = new ModuleBukkitConfig("Lcraft Permissions", "admins.yml");
+        this.cfg = new ModuleBukkitConfig("Lcraft Permissions", "config.yml");
     }
 
     // Old ID Getter
@@ -425,7 +425,7 @@ public class PermsManager {
         }
     }
 
-    public final ModuleConfig getAllPermissionsCfg() {
+    public final ModuleBukkitConfig getAllPermissionsCfg() {
         return allPermissionsCfg;
     }
     public class Permission {
@@ -433,7 +433,7 @@ public class PermsManager {
         private String name;
         private boolean isEnabled;
 
-        public Permission load(String perm, ModuleConfig allPermissionsCfg) {
+        public Permission load(String perm, ModuleBukkitConfig allPermissionsCfg) {
             String root = "permissions." + perm;
             if(allPermissionsCfg.exists(root)) {
                 name = perm;
@@ -449,7 +449,7 @@ public class PermsManager {
 
             return this;
         }
-        public final void set(String perm, boolean isEnabled, ModuleConfig allPermissionsCfg) {
+        public final void set(String perm, boolean isEnabled, ModuleBukkitConfig allPermissionsCfg) {
             this.name = perm;
             this.isEnabled = isEnabled;
 

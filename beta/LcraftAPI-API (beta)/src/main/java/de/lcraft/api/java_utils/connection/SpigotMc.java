@@ -15,7 +15,7 @@ public class SpigotMc {
 	public final boolean isUpdated(int resourcesID, String currentVersion) {
 		return isUpdated(getUpdateLink(resourcesID), currentVersion);
 	}
-	public final boolean isUpdated(String updateLink, String currentVersion) {
+	public boolean isUpdated(String updateLink, String currentVersion) {
 		getLatestVersion(updateLink, updateLink, version -> {
 			if (currentVersion.equals(version)) {
 				isUpdated = true;
@@ -25,7 +25,7 @@ public class SpigotMc {
 		});
 		return isUpdated;
 	}
-	public final void getLatestVersion(String updateLink, String nameOrRecourcesID, Consumer<String> consumer) {
+	public static final void getLatestVersion(String updateLink, String nameOrRecourcesID, Consumer<String> consumer) {
 		try (InputStream inputStream = new URL(updateLink).openStream();
 			 Scanner scanner = new Scanner(inputStream)) {
 			if (scanner.hasNext()) {
@@ -35,7 +35,7 @@ public class SpigotMc {
 			new SpigotMCPluginNotFound(nameOrRecourcesID).printStackTrace();
 		}
 	}
-	public final String getUpdateLink(int resourcesID) {
+	public static final String getUpdateLink(int resourcesID) {
 		return "https://api.spigotmc.org/legacy/update.php?resource=" + resourcesID;
 	}
 

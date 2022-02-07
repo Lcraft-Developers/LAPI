@@ -1,7 +1,7 @@
 package de.lcraft.api.minecraft.spigot.manager.util;
 
 import de.lcraft.api.java_utils.CodeHelper;
-import de.lcraft.api.minecraft.spigot.manager.configs.ModuleConfig;
+import de.lcraft.api.minecraft.spigot.manager.configs.ModuleBukkitConfig;
 import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
@@ -11,12 +11,12 @@ import java.util.UUID;
 public class LanguagesManager {
 
 	private ArrayList<Language> addedLanguages;
-	private ModuleConfig fileConfig,
+	private ModuleBukkitConfig fileConfig,
 			             userConfig;
 
 	public LanguagesManager() {
-		fileConfig = new ModuleConfig("Lcraft Languages", "config.yml");
-		userConfig = new ModuleConfig("Lcraft Languages", "users.yml");
+		fileConfig = new ModuleBukkitConfig("Lcraft Languages", "config.yml");
+		userConfig = new ModuleBukkitConfig("Lcraft Languages", "users.yml");
 		addedLanguages = new ArrayList<>();
 	}
 
@@ -620,24 +620,24 @@ public class LanguagesManager {
 	public final ArrayList<Language> getAddedLanguages() {
 		return addedLanguages;
 	}
-	public final ModuleConfig getFileConfig() {
+	public final ModuleBukkitConfig getFileConfig() {
 		return fileConfig;
 	}
-	public final ModuleConfig getUserConfig() {
+	public final ModuleBukkitConfig getUserConfig() {
 		return userConfig;
 	}
 
 	public abstract class Language {
 
-		private ModuleConfig translations;
-		private ModuleConfig help;
-		private ModuleConfig cfg;
+		private ModuleBukkitConfig translations;
+		private ModuleBukkitConfig help;
+		private ModuleBukkitConfig cfg;
 		private LanguagesManager languagesManager;
 
 		public Language(LanguagesManager languagesManager) {
-			translations = new ModuleConfig("Lcraft Languages/" + getShort(), "translations.yml");
-			help = new ModuleConfig("Lcraft Languages/" + getShort(), "help.yml");
-			cfg = new ModuleConfig("Lcraft Languages/" + getShort(), "config.yml");
+			translations = new ModuleBukkitConfig("Lcraft Languages/" + getShort(), "translations.yml");
+			help = new ModuleBukkitConfig("Lcraft Languages/" + getShort(), "help.yml");
+			cfg = new ModuleBukkitConfig("Lcraft Languages/" + getShort(), "config.yml");
 			this.languagesManager = languagesManager;
 		}
 
@@ -688,10 +688,10 @@ public class LanguagesManager {
 			}
 			return help;
 		}
-		public final ModuleConfig getTranslationsFile() {
+		public final ModuleBukkitConfig getTranslationsFile() {
 			return translations;
 		}
-		public final ModuleConfig getHelpFile() {
+		public final ModuleBukkitConfig getHelpFile() {
 			return help;
 		}
 		public final String getShort() {

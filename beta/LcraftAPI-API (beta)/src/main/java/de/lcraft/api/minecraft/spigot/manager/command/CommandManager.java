@@ -1,7 +1,7 @@
 package de.lcraft.api.minecraft.spigot.manager.command;
 
 import de.lcraft.api.minecraft.spigot.manager.Module;
-import de.lcraft.api.minecraft.spigot.manager.configs.ModuleConfig;
+import de.lcraft.api.minecraft.spigot.manager.configs.ModuleBukkitConfig;
 import de.lcraft.api.minecraft.spigot.manager.util.LanguagesManager;
 import de.lcraft.api.minecraft.spigot.manager.util.PermsManager;
 import org.bukkit.Bukkit;
@@ -15,12 +15,12 @@ public class CommandManager {
 
     private Module module;
     private ArrayList<Command> modulesCmds;
-    private ModuleConfig moduleCommands;
+    private ModuleBukkitConfig moduleCommands;
 
     public CommandManager(Module module) {
         this.module = module;
         modulesCmds = new ArrayList<>();
-        moduleCommands = new ModuleConfig(module, "commands.yml");
+        moduleCommands = new ModuleBukkitConfig(module, "commands.yml");
     }
 
     public final void addCommand(Command executor, boolean canDisableInConfig) {

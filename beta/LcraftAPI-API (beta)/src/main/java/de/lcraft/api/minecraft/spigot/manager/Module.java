@@ -6,7 +6,7 @@ import de.lcraft.api.minecraft.spigot.manager.logger.ModuleLogger;
 import de.lcraft.api.minecraft.spigot.manager.logger.ModuleLoggerType;
 import de.lcraft.api.minecraft.spigot.manager.command.CommandManager;
 import de.lcraft.api.minecraft.spigot.manager.util.LanguagesManager;
-import de.lcraft.api.minecraft.spigot.manager.configs.ModuleConfig;
+import de.lcraft.api.minecraft.spigot.manager.configs.ModuleBukkitConfig;
 import de.lcraft.api.minecraft.spigot.manager.util.PermsManager;
 import de.lcraft.api.minecraft.spigot.player.LPlayerManager;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -24,7 +24,7 @@ public abstract class Module {
     private File file;
     private ModuleManager manager;
     private PermsManager permsManager;
-    private ModuleConfig config;
+    private ModuleBukkitConfig config;
     private LPlayerManager lPlayerManager;
 
     public final void load(ModuleManager manager) {
@@ -34,7 +34,7 @@ public abstract class Module {
         moduleDescriptionFileManager = new ModuleDescriptionFileManager(file);
         moduleDescriptionFileManager.load();
         moduleLogger = new ModuleLogger(moduleDescriptionFileManager.getName());
-        config = new ModuleConfig(getModuleDescriptionFile().getName(), "config.yml");
+        config = new ModuleBukkitConfig(getModuleDescriptionFile().getName(), "config.yml");
 
         permsManager = new PermsManager();
         languagesManager = new LanguagesManager();

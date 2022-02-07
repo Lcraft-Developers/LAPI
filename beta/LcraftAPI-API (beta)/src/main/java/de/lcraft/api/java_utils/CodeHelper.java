@@ -8,21 +8,21 @@ import java.util.Random;
 
 public class CodeHelper {
 
-    public final String[] makeArrayListToStringArray(ArrayList<String> arrayList) {
+    public static final String[] makeArrayListToStringArray(ArrayList<String> arrayList) {
         String[] all = new String[arrayList.size()];
         for(int i = 0; i < arrayList.size(); i++) {
             all[i] = arrayList.get(i);
         }
         return all;
     }
-    public final ArrayList<String> makeStringArrayToArrayList(String... array) {
+    public static final ArrayList<String> makeStringArrayToArrayList(String... array) {
         ArrayList<String> all = new ArrayList<>();
         for(String c : array) {
             all.add(c);
         }
         return all;
     }
-    public final boolean containsFromStringArray(String[] array, String cont) {
+    public static final boolean containsFromStringArray(String[] array, String cont) {
         for(String c : array) {
             if(c.equalsIgnoreCase(cont)) {
                 return true;
@@ -31,14 +31,14 @@ public class CodeHelper {
         }
         return false;
     }
-    public final int getRandom(int min, int max) {
+    public static final int getRandom(int min, int max) {
         Random r = new Random();
         return r.nextInt(max + 1 - min) + min;
     }
-    public final List<File> getAllFilesFromADirectory(String path) {
+    public static final List<File> getAllFilesFromADirectory(String path) {
         return Arrays.stream(new File(path).listFiles()).toList();
     }
-    public final int lenghtAllLowerCaseLetters(String word) {
+    public static final int lenghtAllLowerCaseLetters(String word) {
         int amount = 0;
         for(String c : word.split("")) {
             if(Character.isLowerCase(c.charAt(0))) {
@@ -50,7 +50,7 @@ public class CodeHelper {
         }
         return amount;
     }
-    public final int lenghtAllUpperCaseLetters(String word) {
+    public static final int lenghtAllUpperCaseLetters(String word) {
         int amount = 0;
         for(String c : word.split("")) {
             if(Character.isUpperCase(c.charAt(0))) {
@@ -62,7 +62,7 @@ public class CodeHelper {
         }
         return amount;
     }
-    public final int lenghtAllSpaces(String word) {
+    public static final int lenghtAllSpaces(String word) {
         int amount = 0;
         for(String c : word.split("")) {
             if(Character.isSpaceChar(c.charAt(0))) {

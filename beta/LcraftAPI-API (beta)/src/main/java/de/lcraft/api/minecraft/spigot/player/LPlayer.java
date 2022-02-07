@@ -1,7 +1,7 @@
 package de.lcraft.api.minecraft.spigot.player;
 
 import de.lcraft.api.minecraft.spigot.SpigotClass;
-import de.lcraft.api.minecraft.spigot.manager.configs.Config;
+import de.lcraft.api.minecraft.spigot.manager.configs.BukkitConfig;
 import de.lcraft.api.minecraft.spigot.manager.util.LanguagesManager;
 import de.lcraft.api.minecraft.spigot.manager.listeners.ListenerManager;
 import org.bukkit.Bukkit;
@@ -29,10 +29,10 @@ public class LPlayer implements Listener {
 	private ListenerManager listenerManager;
 	private LanguagesManager languagesManager;
 	private SpigotClass plugin;
-	private Config userCFG;
+	private BukkitConfig userCFG;
 	private LPlayerManager lPlayerManager;
 
-	public LPlayer(SpigotClass spigotPlugin, LPlayerManager manager, UUID uuid, Config userCFG, ListenerManager listenerManager, LanguagesManager languagesManager) {
+	public LPlayer(SpigotClass spigotPlugin, LPlayerManager manager, UUID uuid, BukkitConfig userCFG, ListenerManager listenerManager, LanguagesManager languagesManager) {
 		this.uuid = uuid;
 		this.plugin = spigotPlugin;
 		this.userCFG = userCFG;
@@ -208,7 +208,7 @@ public class LPlayer implements Listener {
 	public final SpigotClass getPlugin() {
 		return plugin;
 	}
-	public final Config getUserCFG() {
+	public final BukkitConfig getUserCFG() {
 		return userCFG;
 	}
 
