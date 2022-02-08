@@ -49,9 +49,12 @@ public class CommandManager {
     }
     public final void reloadConfigs() {
         PermsManager manager = module.getPermsManager();
+        ArrayList<String> extras = new ArrayList<>();
+        extras.add("admin");
+        extras.add("*");
         if(Objects.nonNull(getAllPermissions()) && !getAllPermissions().isEmpty()) {
             for(String c : getAllPermissions()) {
-                manager.logPermission(c);
+                manager.logPermissionWithExtra(c, extras);
             }
         }
 

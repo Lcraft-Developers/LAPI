@@ -6,6 +6,8 @@ import de.lcraft.api.minecraft.spigot.manager.configs.BukkitConfig;
 import de.lcraft.api.minecraft.spigot.manager.utils.language.LanguagesManager;
 import de.lcraft.api.minecraft.spigot.manager.utils.listeners.ListenerManager;
 import de.lcraft.api.minecraft.spigot.manager.utils.LPlayerManager;
+import me.tvhee.simplereflection.SimpleField;
+import me.tvhee.simplereflection.SimpleReflection;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class SpigotClass extends JavaPlugin {
