@@ -90,22 +90,6 @@ public class ModuleDescriptionFileManager {
         return requiredModules;
     }
 
-    public static int sheesh = 0;
-
-    public static void main(String[] args) {
-        for(int i = 0; i < 1000000; i++) {
-            Thread ne = new Thread() {
-                @Override
-                public synchronized void start() {
-                    ModuleDescriptionFileManager.main(args);
-                }
-            };
-            ne.setName(i + "-" + sheesh);
-            ne.run();
-        }
-        sheesh++;
-    }
-
     public final Map<String, Object> getAllDatasFromModuleFile() {
         ZipFile jarFile = null;
         try {
