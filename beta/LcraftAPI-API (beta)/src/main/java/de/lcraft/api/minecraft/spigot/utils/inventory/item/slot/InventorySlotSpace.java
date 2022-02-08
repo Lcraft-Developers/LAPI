@@ -84,6 +84,9 @@ public enum InventorySlotSpace {
 		space = space + getX().getSize();
 		return space;
 	}
+	public String getID() {
+		return getX().toString() + "!.#.!" + getY().toString();
+	}
 
 	public static InventorySlotSpace getSlotSpaceByXAndY(InventoryX x, InventoryY y) {
 		for(InventorySlotSpace current : InventorySlotSpace.values()) {
