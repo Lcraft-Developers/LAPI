@@ -4,10 +4,14 @@ import java.util.ArrayList;
 
 public class DefaultLanguages {
 
+	private static Language en_us,
+	                        en_be,
+	                        de_hd;
+
 	public static final ArrayList<Language> getAllDefaultLanguages(LanguagesManager languagesManager) {
 		ArrayList<Language> allLanguages = new ArrayList<>();
 
-		Language en_us = new Language(languagesManager) {
+		en_us = new Language(languagesManager) {
 			@Override
 			public String getName() {
 				return "American English";
@@ -28,7 +32,7 @@ public class DefaultLanguages {
 				return "us";
 			}
 		}; allLanguages.add(en_us);
-		Language en_be = new Language(languagesManager) {
+		en_be = new Language(languagesManager) {
 			@Override
 			public String getName() {
 				return "British English";
@@ -49,7 +53,7 @@ public class DefaultLanguages {
 				return "be";
 			}
 		}; allLanguages.add(en_be);
-		Language de_hd = new Language(languagesManager) {
+		de_hd = new Language(languagesManager) {
 			@Override
 			public String getName() {
 				return "Deutsch";
@@ -114,6 +118,16 @@ public class DefaultLanguages {
 		}; allLanguages.add(de_oester);*/
 
 		return allLanguages;
+	}
+
+	public static Language getEn_be() {
+		return en_be;
+	}
+	public static Language getDe_hd() {
+		return de_hd;
+	}
+	public static Language getEn_us() {
+		return en_us;
 	}
 
 }

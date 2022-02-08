@@ -10,6 +10,8 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
+import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -23,15 +25,14 @@ public class LPlayerManager implements Listener {
 	private LanguagesManager languagesManager;
 	private SpigotClass spigotPlugin;
 
-	public LPlayerManager(SpigotClass spigotPlugin, BukkitConfig userConfig, ListenerManager listenerManager, LanguagesManager languagesManager) {
+	public LPlayerManager(SpigotClass spigotPlugin, BukkitConfig userConfig, JavaPlugin plugin, LanguagesManager languagesManager) {
 		this.userConfig = userConfig;
-		this.listenerManager = listenerManager;
+		this.listenerManager = new ListenerManager(plugin);
 		this.languagesManager = languagesManager;
 		players = new ArrayList<>();
 		this.spigotPlugin = spigotPlugin;
 
-		getListenerManager().addListener(this);
-		getListenerManager().flushRegistrationAllListeners();
+		getListenerManager().registerListener(this);
 	}
 
 	public void reloadPlayers() {
@@ -46,9 +47,19 @@ public class LPlayerManager implements Listener {
 
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void onJoin(PlayerJoinEvent e) {
-		if(getLPlayerByUUID(e.getPlayer().getUniqueId()) == null) {
+		if(Objects.isNull(getLPlayerByUUID(e.getPlayer().getUniqueId()))) {
 			LPlayer p = new LPlayer(getSpigotPlugin(), this, e.getPlayer().getUniqueId(), getUserConfig(), getListenerManager(), getLanguagesManager());
 			players.add(p);
+			p.onJoin(e);
+		}
+	}
+
+	@EventHandler(priority = EventPriority.HIGHEST)
+	public void onQuit(PlayerQuitEvent e) {
+		if(Objects.nonNull(getLPlayerByUUID(e.getPlayer().getUniqueId()))) {
+			LPlayer p = getLPlayerByUUID(e.getPlayer().getUniqueId());
+			p.onQuit(e);
+			players.remove(p);
 		}
 	}
 

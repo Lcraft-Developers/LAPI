@@ -1,10 +1,10 @@
 @echo off
 title Copy Files to Servers
 
-del .\servers\Proxies\BungeeCord\plugins\LcraftAPI.jar
-xcopy ".\sources\LcraftAPI.jar" ".\servers\Proxies\BungeeCord\plugins\" /Y
-del .\servers\Proxies\Waterfall\plugins\LcraftAPI.jar
-xcopy ".\sources\LcraftAPI.jar" ".\servers\Proxies\Waterfall\plugins\" /Y
+del .\servers\Proxies\BungeeCord\plugins\LcraftAPI (beta).jar
+xcopy ".\sources\LcraftAPI (beta).jar" ".\servers\Proxies\BungeeCord\plugins\" /Y
+del .\servers\Proxies\Waterfall\plugins\LcraftAPI (beta).jar
+xcopy ".\sources\LcraftAPI (beta).jar" ".\servers\Proxies\Waterfall\plugins\" /Y
 
 
 del .\servers\Proxies\BungeeCord\plugins\Lcraft BungeeCord Test.jar

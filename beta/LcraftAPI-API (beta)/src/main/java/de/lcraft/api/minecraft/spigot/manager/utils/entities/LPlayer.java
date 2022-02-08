@@ -2,6 +2,9 @@ package de.lcraft.api.minecraft.spigot.manager.utils.entities;
 
 import de.lcraft.api.minecraft.spigot.SpigotClass;
 import de.lcraft.api.minecraft.spigot.manager.configs.BukkitConfig;
+import de.lcraft.api.minecraft.spigot.manager.logger.Logger;
+import de.lcraft.api.minecraft.spigot.manager.logger.ModuleLogger;
+import de.lcraft.api.minecraft.spigot.manager.logger.ModuleLoggerType;
 import de.lcraft.api.minecraft.spigot.manager.utils.LPlayerManager;
 import de.lcraft.api.minecraft.spigot.manager.utils.language.Language;
 import de.lcraft.api.minecraft.spigot.manager.utils.language.LanguagesManager;
@@ -33,17 +36,19 @@ public class LPlayer implements Listener {
 	private SpigotClass plugin;
 	private BukkitConfig userCFG;
 	private LPlayerManager lPlayerManager;
+	private Logger logger;
 
 	public LPlayer(SpigotClass spigotPlugin, LPlayerManager manager, UUID uuid, BukkitConfig userCFG, ListenerManager listenerManager, LanguagesManager languagesManager) {
 		this.uuid = uuid;
 		this.plugin = spigotPlugin;
 		this.userCFG = userCFG;
-		this.listenerManager = listenerManager;
-		this.listenerManager.addListener(this);
-		this.listenerManager.flushRegistrationAllListeners();
 		this.languagesManager = languagesManager;
 		this.lPlayerManager = manager;
+		this.listenerManager = listenerManager;
+		this.listenerManager.registerListener(this);
+		this.logger = new ModuleLogger("Lcraft Player Handler");
 
+		getNickName(); getRealName(); getVanishedUUID();
 		onEveryTick();
 	}
 	public void onEveryTick() {
@@ -82,18 +87,28 @@ public class LPlayer implements Listener {
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void onJoin(PlayerJoinEvent e) {
 		e.setJoinMessage(null);
+		getLogger().send(ModuleLoggerType.INFO, e.getPlayer().getName() + " connected to the game with UUID (" + e.getPlayer().getUniqueId().toString() + ")");
 		for(Player c : Bukkit.getOnlinePlayers()) {
 			e.getPlayer().hidePlayer(getPlugin(), c);
 		}
 		for(LPlayer c : getLPlayerManager().getAllLPlayers()) {
-			c.getPlayer().sendMessage(c.getLanguage().getJoinMessage());
+			for(String text : c.getLanguage().getJoinMessage()) {
+				if(Objects.nonNull(c) && c.isOnline()) {
+					c.getPlayer().sendMessage(text);
+				}
+			}
 		}
 	}
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void onQuit(PlayerQuitEvent e) {
 		e.setQuitMessage(null);
+		getLogger().send(ModuleLoggerType.INFO, e.getPlayer().getName() + " leaved the game with UUID (" + e.getPlayer().getUniqueId().toString() + ")");
 		for(LPlayer c : getLPlayerManager().getAllLPlayers()) {
-			c.getPlayer().sendMessage(c.getLanguage().getQuitMessage());
+			for(String text : c.getLanguage().getQuitMessage()) {
+				if(Objects.nonNull(c) && c.isOnline()) {
+					c.getPlayer().sendMessage(text);
+				}
+			}
 		}
 	}
 
@@ -125,8 +140,8 @@ public class LPlayer implements Listener {
 		}
 	}
 	public final Player getPlayer() {
-		if(Bukkit.getOnlinePlayers().contains(uuid)) {
-			return Bukkit.getPlayer(uuid);
+		if(Objects.nonNull(Bukkit.getPlayer(getUUID()))) {
+			return Bukkit.getPlayer(getUUID());
 		} else {
 			return null;
 		}
@@ -212,6 +227,9 @@ public class LPlayer implements Listener {
 	}
 	public final BukkitConfig getUserCFG() {
 		return userCFG;
+	}
+	public Logger getLogger() {
+		return logger;
 	}
 
 	public final Object set(String root, Object def, boolean isChangeable) {

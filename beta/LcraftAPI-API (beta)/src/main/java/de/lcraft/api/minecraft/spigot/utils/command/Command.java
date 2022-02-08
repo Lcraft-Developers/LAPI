@@ -1,17 +1,20 @@
 package de.lcraft.api.minecraft.spigot.utils.command;
 
+import de.lcraft.api.minecraft.spigot.manager.utils.language.Language;
 import de.lcraft.api.minecraft.spigot.manager.utils.language.LanguagesManager;
+import de.lcraft.api.minecraft.spigot.manager.utils.listeners.ListenerManager;
 import de.lcraft.api.minecraft.spigot.manager.utils.permissions.PermsManager;
 import de.lcraft.api.minecraft.spigot.manager.utils.entities.LPlayer;
 import de.lcraft.api.minecraft.spigot.manager.utils.LPlayerManager;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.event.Listener;
 
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.UUID;
 
-public abstract class Command extends org.bukkit.command.Command {
+public abstract class Command extends org.bukkit.command.Command implements Listener {
 
     private boolean splitting;
     private LanguagesManager languagesManager;
@@ -20,13 +23,15 @@ public abstract class Command extends org.bukkit.command.Command {
     private ArrayList<SubCommand> subModuleCommands;
     private String command;
     private LPlayerManager lPlayerManager;
+    private ListenerManager listenerManager;
 
-    public Command(String label, String desc, PermsManager permsManager, LPlayerManager lPlayerManager, LanguagesManager languagesManager, boolean splitting) {
+    public Command(String label, String desc, PermsManager permsManager, LPlayerManager lPlayerManager, LanguagesManager languagesManager, boolean splitting, ListenerManager listenerManager) {
         super(label, desc, "", new ArrayList<>());
         subModuleCommands = new ArrayList<>();
         this.description = desc;
         this.splitting = splitting;
-        this.command = command;
+        this.command = label;
+        this.listenerManager = listenerManager;
 
         this.permsManager = permsManager;
         this.languagesManager = languagesManager;
@@ -34,10 +39,10 @@ public abstract class Command extends org.bukkit.command.Command {
     }
 
     public final String translate(UUID uuid, String text) {
-        return languagesManager.getIDLanguage(languagesManager.getIDFromUUID(uuid)).translate(text);
+        return getLanguagesManager().getIDLanguage(getLanguagesManager().getIDFromUUID(uuid)).translate(text);
     }
     public final boolean hasPermissions(LPlayer p, String perm) {
-        return permsManager.hasPermissions(p, perm);
+        return getPermsManager().hasPermissions(p, perm);
     }
 
     public final void addSubCommand(SubCommand subModuleCommand) {
@@ -78,7 +83,7 @@ public abstract class Command extends org.bukkit.command.Command {
     }
     public void split(CommandSender commandSender, String[] strings) {
         if(splitting) {
-            if(Objects.nonNull(commandSender) && commandSender instanceof LPlayer) {
+            if(Objects.nonNull(commandSender) && commandSender instanceof Player) {
                 onLPlayerCommand(getLPlayerManager().getLPlayerByUUID(((Player) commandSender).getUniqueId()), strings);
             } else {
                 onConsoleCommand(commandSender, strings);
@@ -102,6 +107,15 @@ public abstract class Command extends org.bukkit.command.Command {
     }
     public final LPlayerManager getLPlayerManager() {
         return lPlayerManager;
+    }
+    public LanguagesManager getLanguagesManager() {
+        return languagesManager;
+    }
+    public PermsManager getPermsManager() {
+        return permsManager;
+    }
+    public ListenerManager getListenerManager() {
+        return listenerManager;
     }
 
 }

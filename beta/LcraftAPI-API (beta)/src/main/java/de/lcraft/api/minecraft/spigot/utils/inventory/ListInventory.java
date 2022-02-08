@@ -26,7 +26,7 @@ public class ListInventory extends Inventory {
 	}
 	public final int getMaxListPages(int itemAmountPerSite) {
 		int pagethings = 0;
-		int pages = 1;
+		int pages = 0;
 		for(int i = 0; i < getNormalItems().size(); i++) {
 			pagethings++;
 			if(pagethings > itemAmountPerSite) {

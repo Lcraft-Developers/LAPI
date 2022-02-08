@@ -14,7 +14,7 @@ public abstract class ModuleCommand extends Command {
 	private ArrayList<ModuleSubCommand> subModuleCommands;
 
 	public ModuleCommand(String label, String desc, Module m, boolean splitting) {
-		super(label, desc, m.getPermsManager(), m.getModuleManager().getPluginMain().getLPlayerManager(), m.getLanguagesManager(), splitting);
+		super(label, desc, m.getPermsManager(), m.getModuleManager().getPluginMain().getLPlayerManager(), m.getLanguagesManager(), splitting, m.getListenerManager());
 		this.module = m;
 		subModuleCommands = new ArrayList<>();
 	}

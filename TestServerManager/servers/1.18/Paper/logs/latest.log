@@ -1,62 +1,46 @@
-[20:00:36] [ServerMain/INFO]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
-[20:00:36] [ServerMain/INFO]: Found new data pack file/bukkit, loading it automatically
-[20:00:36] [ServerMain/INFO]: Reloading ResourceManager: Default, bukkit
-[20:00:36] [Worker-Main-2/INFO]: Loaded 7 recipes
-[20:00:38] [Server thread/INFO]: Starting minecraft server version 1.18
-[20:00:38] [Server thread/INFO]: Loading properties
-[20:00:38] [Server thread/INFO]: This server is running Paper version git-Paper-20 (MC: 1.18) (Implementing API version 1.18-R0.1-SNAPSHOT) (Git: 0cd411e)
-[20:00:38] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[20:00:38] [Server thread/INFO]: Using 4 threads for Netty based IO
-[20:00:38] [Server thread/INFO]: Default game type: SURVIVAL
-[20:00:38] [Server thread/INFO]: Generating keypair
-[20:00:38] [Server thread/INFO]: Starting Minecraft server on *:26577
-[20:00:38] [Server thread/INFO]: Using default channel type
-[20:00:38] [Server thread/INFO]: Paper: Using Java 11 compression from Velocity.
-[20:00:38] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
-[20:00:38] [Server thread/ERROR]: [STDERR] [org.bukkit.craftbukkit.v1_18_R1.legacy.CraftLegacy] Initializing Legacy Material Support. Unless you have legacy plugins and/or data this is a bug!
-[20:00:41] [Server thread/WARN]: Legacy plugin LcraftAPI v1.0.5 does not specify an api-version.
-[20:00:41] [Server thread/INFO]: [LcraftAPI] Loading LcraftAPI v1.0.5
-[20:00:41] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[20:00:41] [Server thread/INFO]: Preparing level "world"
-[20:00:45] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
-[20:00:45] [Worker-Main-2/INFO]: Preparing spawn area: 0%
-[20:00:45] [Server thread/INFO]: Time elapsed: 295 ms
-[20:00:45] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
-[20:00:46] [Worker-Main-4/INFO]: Preparing spawn area: 0%
-[20:00:46] [Worker-Main-1/INFO]: Preparing spawn area: 0%
-[20:00:46] [Server thread/INFO]: Time elapsed: 641 ms
-[20:00:46] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
-[20:00:47] [Worker-Main-3/INFO]: Preparing spawn area: 0%
-[20:00:47] [Worker-Main-3/INFO]: Preparing spawn area: 0%
-[20:00:47] [Server thread/INFO]: Time elapsed: 1029 ms
-[20:00:47] [Server thread/INFO]: [LcraftAPI] Enabling LcraftAPI v1.0.5*
-[20:00:47] [Server thread/INFO]: [LcraftAPI] [STDOUT] The Spigot Module Lcraft Spigot TestPlugin is loaded.
-[20:00:47] [Server thread/WARN]: Nag author(s): '[LPD, Lcraft Developers]' of 'LcraftAPI' about their usage of System.out/err.print. Please use your plugin's logger instead (JavaPlugin#getLogger).
-[20:00:47] [Server thread/WARN]: java.lang.NullPointerException: Cannot invoke "java.util.Collection.toArray()" because "c" is null
-[20:00:47] [Server thread/WARN]: 	at java.base/java.util.ArrayList.<init>(ArrayList.java:181)
-[20:00:47] [Server thread/WARN]: 	at org.bukkit.command.Command.<init>(Command.java:50)
-[20:00:47] [Server thread/WARN]: 	at org.bukkit.command.defaults.BukkitCommand.<init>(BukkitCommand.java:13)
-[20:00:47] [Server thread/WARN]: 	at LcraftAPI.jar//de.lcraft.api.minecraft.spigot.manager.command.ModuleCommand.<init>(ModuleCommand.java:28)
-[20:00:47] [Server thread/WARN]: 	at de.lcraft.test.spigot.commands.HelloCommand.HelloCommand.<init>(HelloCommand.java:14)
-[20:00:47] [Server thread/WARN]: 	at de.lcraft.test.spigot.SpigotTest.onEnable(SpigotTest.java:12)
-[20:00:47] [Server thread/WARN]: 	at LcraftAPI.jar//de.lcraft.api.minecraft.spigot.manager.ModuleEventManager.enableModule(ModuleEventManager.java:15)
-[20:00:47] [Server thread/WARN]: 	at LcraftAPI.jar//de.lcraft.api.minecraft.spigot.manager.Module.load(Module.java:39)
-[20:00:47] [Server thread/WARN]: 	at LcraftAPI.jar//de.lcraft.api.minecraft.spigot.manager.loaders.ModuleFileLoader.getModule(ModuleFileLoader.java:111)
-[20:00:47] [Server thread/WARN]: 	at LcraftAPI.jar//de.lcraft.api.minecraft.spigot.manager.loaders.ModuleFileLoader.queuedModule(ModuleFileLoader.java:89)
-[20:00:47] [Server thread/WARN]: 	at LcraftAPI.jar//de.lcraft.api.minecraft.spigot.manager.loaders.ModuleFileLoader.loadModules(ModuleFileLoader.java:40)
-[20:00:47] [Server thread/WARN]: 	at LcraftAPI.jar//de.lcraft.api.minecraft.spigot.manager.ModuleManager.loadAllModules(ModuleManager.java:27)
-[20:00:47] [Server thread/WARN]: 	at LcraftAPI.jar//de.lcraft.api.minecraft.spigot.SpigotClass.onEnable(SpigotClass.java:21)
-[20:00:47] [Server thread/WARN]: 	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:264)
-[20:00:47] [Server thread/WARN]: 	at org.bukkit.plugin.java.JavaPluginLoader.enablePlugin(JavaPluginLoader.java:370)
-[20:00:47] [Server thread/WARN]: 	at org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManager.java:500)
-[20:00:47] [Server thread/WARN]: 	at org.bukkit.craftbukkit.v1_18_R1.CraftServer.enablePlugin(CraftServer.java:565)
-[20:00:47] [Server thread/WARN]: 	at org.bukkit.craftbukkit.v1_18_R1.CraftServer.enablePlugins(CraftServer.java:479)
-[20:00:47] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.loadWorld0(MinecraftServer.java:726)
-[20:00:47] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.loadLevel(MinecraftServer.java:501)
-[20:00:47] [Server thread/WARN]: 	at net.minecraft.server.dedicated.DedicatedServer.e(DedicatedServer.java:313)
-[20:00:47] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.w(MinecraftServer.java:1201)
-[20:00:47] [Server thread/WARN]: 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:316)
-[20:00:47] [Server thread/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:833)
-[20:00:47] [Server thread/INFO]: Running delayed init tasks
-[20:00:47] [Server thread/INFO]: Done (9.338s)! For help, type "help"
-[20:00:47] [Server thread/INFO]: Timings Reset
+[19:51:26] [ServerMain/INFO]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[19:51:26] [ServerMain/INFO]: Reloading ResourceManager: Default, bukkit
+[19:51:26] [Worker-Main-5/INFO]: Loaded 7 recipes
+[19:51:28] [Server thread/INFO]: Starting minecraft server version 1.18
+[19:51:28] [Server thread/INFO]: Loading properties
+[19:51:28] [Server thread/INFO]: This server is running Paper version git-Paper-20 (MC: 1.18) (Implementing API version 1.18-R0.1-SNAPSHOT) (Git: 0cd411e)
+[19:51:28] [Server thread/INFO]: Using 4 threads for Netty based IO
+[19:51:28] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[19:51:28] [Server thread/INFO]: Default game type: SURVIVAL
+[19:51:28] [Server thread/INFO]: Generating keypair
+[19:51:28] [Server thread/INFO]: Starting Minecraft server on *:26577
+[19:51:28] [Server thread/INFO]: Using default channel type
+[19:51:28] [Server thread/INFO]: Paper: Using Java 11 compression from Velocity.
+[19:51:28] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
+[19:51:29] [Server thread/INFO]: [LcraftAPI] Loading LcraftAPI v1.0.8
+[19:51:29] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[19:51:29] [Server thread/INFO]: Preparing level "world"
+[19:51:29] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[19:51:30] [Server thread/INFO]: Time elapsed: 278 ms
+[19:51:30] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
+[19:51:30] [Server thread/INFO]: Time elapsed: 117 ms
+[19:51:30] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
+[19:51:30] [Server thread/INFO]: Time elapsed: 114 ms
+[19:51:30] [Server thread/INFO]: [LcraftAPI] Enabling LcraftAPI v1.0.8
+[19:51:30] [Server thread/INFO]: Running delayed init tasks
+[19:51:30] [Server thread/INFO]: Done (2.426s)! For help, type "help"
+[19:51:30] [Server thread/INFO]: Timings Reset
+[19:51:36] [User Authenticator #1/INFO]: UUID of player Cooler_LK is c72ab8a9-a030-4796-84b3-523ca07792c4
+[19:51:36] [Server thread/INFO]: INFO >> Cooler_LK connected to the game with UUID (c72ab8a9-a030-4796-84b3-523ca07792c4)
+[19:51:36] [Server thread/INFO]: Cooler_LK[/127.0.0.1:1171] logged in with entity id 212 at ([world]-2.51407692270422, 91.0, -3.5807874974493865)
+[19:51:41] [Server thread/INFO]: Cooler_LK issued server command: /lang
+[19:52:19] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
+[19:52:19] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
+[19:52:19] [Server thread/INFO]: Using 4 threads for Netty based IO
+[19:52:19] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[19:52:19] [Server thread/INFO]: [LcraftAPI] Disabling LcraftAPI v1.0.8
+[19:52:19] [Server thread/INFO]: Reloading ResourceManager: Default, bukkit
+[19:52:20] [Server thread/INFO]: Loaded 7 recipes
+[19:52:20] [Server thread/INFO]: [LcraftAPI] Loading LcraftAPI v1.0.8
+[19:52:20] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[19:52:20] [Server thread/INFO]: [LcraftAPI] Enabling LcraftAPI v1.0.8
+[19:52:20] [Server thread/INFO]: CONSOLE: Reload complete.
+[19:52:20] [Server thread/INFO]: Timings Reset
+[19:52:30] [Server thread/INFO]: Cooler_LK issued server command: /lcraft
+[19:52:40] [Server thread/INFO]: This Plugin was made by Lcraft Developers
+[19:52:49] [Server thread/INFO]: You have to be a player to do that!

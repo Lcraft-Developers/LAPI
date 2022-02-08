@@ -3,6 +3,7 @@ package de.lcraft.api.minecraft.spigot.utils.items;
 import de.lcraft.api.minecraft.spigot.manager.utils.listeners.ListenerManager;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.SkullMeta;
 
 public class HeadBuilder extends ItemBuilder {
@@ -20,9 +21,11 @@ public class HeadBuilder extends ItemBuilder {
     @Override
     public ItemStack build() {
         ItemStack i = new ItemStack(getMaterial(), getAmount());
-        i.getItemMeta().setDisplayName(getDisplayName());
-        i.getItemMeta().setLore(getLore());
-        ((SkullMeta) i.getItemMeta()).setOwner(getOwner());
+        SkullMeta itemMeta = (SkullMeta) i.getItemMeta();
+        itemMeta.setDisplayName(getDisplayName());
+        itemMeta.setLore(getLore());
+        itemMeta.setOwner(getOwner());
+        i.setItemMeta(itemMeta);
         return i;
     }
 

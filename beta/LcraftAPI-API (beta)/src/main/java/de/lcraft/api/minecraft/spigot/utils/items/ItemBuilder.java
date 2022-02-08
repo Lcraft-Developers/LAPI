@@ -6,9 +6,11 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.util.Consumer;
+import org.bukkit.inventory.meta.ItemMeta;
+
 import java.util.ArrayList;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 public class ItemBuilder implements Listener {
 
@@ -16,8 +18,6 @@ public class ItemBuilder implements Listener {
     private Material material;
     private int amount;
     private String displayName;
-    private Consumer<InventoryClickEvent> rightClickConsumer;
-    private Consumer<InventoryClickEvent> leftClickConsumer;
 
     public ItemBuilder(ListenerManager manager, Material material, int amount) {
         this.material = material;
@@ -47,16 +47,15 @@ public class ItemBuilder implements Listener {
         }
         return this;
     }
-    public final void setRightClickConsumer(Consumer<InventoryClickEvent> rightClickConsumer) {
-        this.rightClickConsumer = rightClickConsumer;
-    }
-    public final void setLeftClickConsumer(Consumer<InventoryClickEvent> leftClickConsumer) {
-        this.leftClickConsumer = leftClickConsumer;
+    public void setMaterial(Material material) {
+        this.material = material;
     }
     public ItemStack build() {
         ItemStack i = new ItemStack(getMaterial(), getAmount());
-        i.getItemMeta().setDisplayName(getDisplayName());
-        i.getItemMeta().setLore(getLore());
+        ItemMeta itemMeta = i.getItemMeta();
+        itemMeta.setDisplayName(getDisplayName());
+        itemMeta.setLore(getLore());
+        i.setItemMeta(itemMeta);
         return i;
     }
 
@@ -71,23 +70,6 @@ public class ItemBuilder implements Listener {
     }
     public final String getDisplayName() {
         return displayName;
-    }
-    public final Consumer<InventoryClickEvent> getLeftClickConsumer() {
-        return leftClickConsumer;
-    }
-    public final Consumer<InventoryClickEvent> getRightClickConsumer() {
-        return rightClickConsumer;
-    }
-
-    @EventHandler
-    public final void onClick(InventoryClickEvent e) {
-        if(Objects.nonNull(e.getAction())) {
-            if(e.getClick().isRightClick()) {
-                getRightClickConsumer().accept(e);
-            } else if(e.getClick().isLeftClick()) {
-                getLeftClickConsumer().accept(e);
-            }
-        }
     }
 
 }

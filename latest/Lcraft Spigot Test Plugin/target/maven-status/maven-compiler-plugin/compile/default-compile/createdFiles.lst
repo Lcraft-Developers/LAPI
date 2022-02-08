@@ -1,0 +1,5 @@
+de\lcraft\test\spigot\SpigotTest.class
+de\lcraft\test\spigot\commands\HelloCommand\HelloCommand.class
+de\lcraft\test\spigot\LPlayer.class
+de\lcraft\test\spigot\listeners\HandelListener.class
+de\lcraft\test\spigot\commands\HelloCommand\subcommands\HelloTestCommand.class

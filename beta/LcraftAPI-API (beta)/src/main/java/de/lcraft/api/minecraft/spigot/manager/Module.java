@@ -1,6 +1,7 @@
 package de.lcraft.api.minecraft.spigot.manager;
 
 import de.lcraft.api.java_utils.connection.SpigotMc;
+import de.lcraft.api.minecraft.spigot.manager.utils.command.ModuleCommandManager;
 import de.lcraft.api.minecraft.spigot.manager.utils.listeners.ModuleListenerManager;
 import de.lcraft.api.minecraft.spigot.manager.logger.ModuleLogger;
 import de.lcraft.api.minecraft.spigot.manager.logger.ModuleLoggerType;
@@ -17,7 +18,7 @@ public abstract class Module {
 
     private ModuleDescriptionFileManager moduleDescriptionFileManager;
     private ModuleLogger moduleLogger;
-    private CommandManager moduleCommandManager;
+    private ModuleCommandManager moduleCommandManager;
     private LanguagesManager languagesManager;
     private JavaPlugin plugin;
     private ModuleListenerManager listenerManager;
@@ -40,12 +41,11 @@ public abstract class Module {
 
         permsManager = new PermsManager();
         languagesManager = new LanguagesManager();
-        moduleCommandManager = new CommandManager(this);
+        moduleCommandManager = new ModuleCommandManager(this);
         listenerManager = new ModuleListenerManager(this);
 
         enableModule();
 
-        listenerManager.flushRegistrationAllListeners();
         moduleCommandManager.reloadConfigs();
 
         sendUpdateMessageModule();

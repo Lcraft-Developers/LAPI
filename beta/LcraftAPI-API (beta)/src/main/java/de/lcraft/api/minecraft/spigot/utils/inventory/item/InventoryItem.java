@@ -2,79 +2,67 @@ package de.lcraft.api.minecraft.spigot.utils.inventory.item;
 
 import de.lcraft.api.minecraft.spigot.SpigotClass;
 import de.lcraft.api.minecraft.spigot.manager.utils.entities.LPlayer;
-import de.lcraft.api.minecraft.spigot.utils.items.ItemBuilder;
 import de.lcraft.api.minecraft.spigot.manager.utils.listeners.ListenerManager;
+import de.lcraft.api.minecraft.spigot.utils.items.ItemBuilder;
+import de.lcraft.api.minecraft.spigot.utils.items.ItemConsumerBuilder;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryType;
-import org.bukkit.util.Consumer;
-
 import java.util.Objects;
+import java.util.function.Consumer;
 
 public class InventoryItem implements Listener {
 
 	private InventorySlot slot;
 	private ItemBuilder item;
-	private boolean areConsumerActivated = false,
-	                cancellingEvent,
-	                titleStartsWith,
+	private boolean titleStartsWith,
 	                itemNameStartsWith;
 	private String invTitle;
-	private Consumer<InventoryClickEvent> rightClickConsumer,
-	                                       leftClickConsumer;
+	private boolean isCanceling;
+	private boolean isEnabled;
 
-	public InventoryItem(ListenerManager listenerManager, InventorySlot slot, String invTitle, boolean cancelEvent, boolean titleStartsWith, boolean itemNameStartsWith, ItemBuilder item, boolean areConsumerActivated, Consumer<InventoryClickEvent> rightClickConsumer, Consumer<InventoryClickEvent> leftClickConsumer) {
-		this(listenerManager, slot, invTitle, cancelEvent, titleStartsWith, itemNameStartsWith, item);
-		this.areConsumerActivated = areConsumerActivated;
-		this.rightClickConsumer = rightClickConsumer;
-		this.leftClickConsumer = leftClickConsumer;
-	}
-	public InventoryItem(ListenerManager listenerManager, InventorySlot slot, String invTitle, boolean cancelEvent, boolean titleStartsWith, boolean itemNameStartsWith, ItemBuilder item) {
-		this.slot = slot;
-		this.item = item;
-		this.cancellingEvent = cancelEvent;
+	public InventoryItem(ListenerManager listenerManager, InventorySlot slot, String invTitle, boolean titleStartsWith, boolean isCanceling, boolean itemNameStartsWith, ItemBuilder item) {
 		this.titleStartsWith = titleStartsWith;
 		this.invTitle = invTitle;
-		this.itemNameStartsWith = itemNameStartsWith;
-
-		listenerManager.addListener(this);
-		listenerManager.flushRegistrationAllListeners();
-	}
-	public InventoryItem(InventorySlot slot, ItemBuilder item) {
 		this.slot = slot;
+		this.itemNameStartsWith = itemNameStartsWith;
 		this.item = item;
+		this.isCanceling = isCanceling;
+		this.isEnabled = true;
+
+		listenerManager.registerListener(this);
+	}
+
+	public InventoryItem(InventorySlot slot, ItemBuilder itemBuilder) {
+		this.slot = slot;
+		this.item = itemBuilder;
+		this.isEnabled = false;
 	}
 
 	@EventHandler
 	public void onClick(InventoryClickEvent e) {
-		if(e.getWhoClicked() instanceof Player) {
-			if(SpigotClass.getAPIPluginMain().getLPlayerManager().existsLPlayer(e.getWhoClicked().getUniqueId())) {
-				LPlayer l = SpigotClass.getAPIPluginMain().getLPlayerManager().getLPlayerByUUID(e.getWhoClicked().getUniqueId());
-				if(Objects.nonNull(e.getClickedInventory())) {
-					if(Objects.nonNull(e.getClickedInventory().getType())) {
-						if(e.getClickedInventory().getType() == InventoryType.CHEST) {
-							if(Objects.nonNull(e.getView().getTitle())) {
-								if((titleStartsWith && e.getView().getTitle().startsWith(invTitle)) ||
-										(!titleStartsWith && e.getView().getTitle().equals(invTitle))) {
-									if(Objects.nonNull(e.getCurrentItem())) {
-										if(Objects.nonNull(e.getCurrentItem().getItemMeta())) {
-											if(Objects.nonNull(e.getCurrentItem().getType())) {
-												if(e.getCurrentItem().getType() == item.getMaterial()) {
-													if(Objects.nonNull(e.getCurrentItem().getItemMeta().getDisplayName())) {
-														if((itemNameStartsWith && e.getCurrentItem().getItemMeta().getDisplayName().startsWith(getItem().getDisplayName())) ||
-																(!itemNameStartsWith && e.getCurrentItem().getItemMeta().getDisplayName().equals(getItem().getDisplayName()))) {
-															e.setCancelled(isCancellingEvent());
-															if(isConsumerActivated()) {
-																if(e.getClick().isLeftClick()) {
-																	if(Objects.nonNull(getLeftClickConsumer())) {
-																		getLeftClickConsumer().accept(e);
-																	}
-																}
-																if(e.getClick().isRightClick()) {
-																	if(Objects.nonNull(getRightClickConsumer())) {
-																		getRightClickConsumer().accept(e);
+		if(isEnabled()) {
+			if(e.getWhoClicked() instanceof Player) {
+				if(SpigotClass.getAPIPluginMain().getLPlayerManager().existsLPlayer(e.getWhoClicked().getUniqueId())) {
+					LPlayer l = SpigotClass.getAPIPluginMain().getLPlayerManager().getLPlayerByUUID(e.getWhoClicked().getUniqueId());
+					if(Objects.nonNull(e.getClickedInventory())) {
+						if(Objects.nonNull(e.getClickedInventory().getType())) {
+							if(e.getClickedInventory().getType() == InventoryType.CHEST) {
+								if(Objects.nonNull(e.getView().getTitle())) {
+									if((titleStartsWith && e.getView().getTitle().startsWith(invTitle)) ||
+											(!titleStartsWith && e.getView().getTitle().equals(invTitle))) {
+										if(Objects.nonNull(e.getCurrentItem())) {
+											if(Objects.nonNull(e.getCurrentItem().getItemMeta())) {
+												if(Objects.nonNull(e.getCurrentItem().getType())) {
+													if(e.getCurrentItem().getType() == item.getMaterial()) {
+														if(Objects.nonNull(e.getCurrentItem().getItemMeta().getDisplayName())) {
+															if(Objects.nonNull(getItem())) {
+																if(Objects.nonNull(getItem().getDisplayName())) {
+																	if((itemNameStartsWith && e.getCurrentItem().getItemMeta().getDisplayName().startsWith(getItem().getDisplayName())) ||
+																			(!itemNameStartsWith && e.getCurrentItem().getItemMeta().getDisplayName().equals(getItem().getDisplayName()))) {
+																		e.setCancelled(isCanceling());
 																	}
 																}
 															}
@@ -87,6 +75,7 @@ public class InventoryItem implements Listener {
 								}
 							}
 						}
+						e.setCancelled(isCanceling());
 					}
 				}
 			}
@@ -96,23 +85,14 @@ public class InventoryItem implements Listener {
 	public final InventorySlot getSlot() {
 		return slot;
 	}
-	public final ItemBuilder getItem() {
+	public ItemBuilder getItem() {
 		return item;
 	}
-	public boolean isConsumerActivated() {
-		return areConsumerActivated;
+	public boolean isCanceling() {
+		return isCanceling;
 	}
-	public final Consumer<InventoryClickEvent> getRightClickConsumer() {
-		return getItem().getRightClickConsumer();
-	}
-	public final Consumer<InventoryClickEvent> getLeftClickConsumer() {
-		return getItem().getLeftClickConsumer();
-	}
-	public final boolean areConsumerActivated() {
-		return areConsumerActivated;
-	}
-	public final boolean isCancellingEvent() {
-		return cancellingEvent;
+	public boolean isEnabled() {
+		return isEnabled;
 	}
 	public final boolean isTitleStartsWith() {
 		return titleStartsWith;

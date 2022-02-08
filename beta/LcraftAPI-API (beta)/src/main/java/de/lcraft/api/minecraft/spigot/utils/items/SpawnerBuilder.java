@@ -4,6 +4,7 @@ import de.lcraft.api.minecraft.spigot.manager.utils.listeners.ListenerManager;
 import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
 public class SpawnerBuilder extends ItemBuilder {
 
@@ -22,8 +23,10 @@ public class SpawnerBuilder extends ItemBuilder {
 	@Override
 	public ItemStack build() {
 		ItemStack i = new ItemStack(getMaterial(), getAmount());
-		i.getItemMeta().setDisplayName(getDisplayName());
-		i.getItemMeta().setLore(getLore());
+		ItemMeta itemMeta = i.getItemMeta();
+		itemMeta.setDisplayName(getDisplayName());
+		itemMeta.setLore(getLore());
+		i.setItemMeta(itemMeta);
 		return i;
 	}
 

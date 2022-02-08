@@ -1,6 +1,7 @@
 package de.lcraft.api.minecraft.spigot.utils.inventory;
 
 import de.lcraft.api.minecraft.spigot.manager.utils.language.LanguagesManager;
+import de.lcraft.api.minecraft.spigot.utils.inventory.item.InventoryConsumerItem;
 import de.lcraft.api.minecraft.spigot.utils.inventory.item.InventoryItem;
 import de.lcraft.api.minecraft.spigot.utils.inventory.item.InventorySlot;
 import de.lcraft.api.minecraft.spigot.utils.inventory.item.slot.InventorySlotSpace;
@@ -27,6 +28,7 @@ public class Inventory {
 		this.width = 9;
 		this.height = height;
 		this.listenerManager = listenerManager;
+		this.normalItems = new ArrayList<>();
 	}
 
 	public org.bukkit.inventory.Inventory getInventory(String title, UUID player) {
@@ -41,24 +43,34 @@ public class Inventory {
 		getNormalItems().add(item);
 		return this;
 	}
+	public final Inventory setItem(InventoryConsumerItem item) {
+		if(existsItemAtSlot(item.getSlot().getSlotSpace())) getNormalItems().remove(getItemFromSlot(item.getSlot().getSlotSpace()));
+		getNormalItems().add((InventoryItem) item);
+		return this;
+	}
 	public final InventoryItem getItem(InventorySlotSpace slot) {
-		if(existsItemAtSlot(slot)) {
+		if(Objects.nonNull(slot) && existsItemAtSlot(slot)) {
 			return getNormalItems().get(slot.getSpace());
+		} else if(Objects.isNull(slot) || (Objects.isNull(slot.getX()) || Objects.isNull(slot.getY()))) {
+			return null;
 		} else {
 			return new InventoryItem(new InventorySlot(slot.getX(), slot.getY()), new ItemBuilder(listenerManager, Material.AIR).setDisplayName(""));
 		}
 	}
 	public final Inventory addPlaceHolders(ItemBuilder placeHolder) {
 		for(int i = 0; i < getSize(); i++) {
+			InventorySlotSpace space = InventorySlotSpace.getSlotSpaceBySpace(i);
+			InventorySlot slot = new InventorySlot(space.getX(), space.getY());
 			InventoryItem item = getItem(InventorySlotSpace.getSlotSpaceBySpace(i));
+
 			if(Objects.isNull(item)) {
-				setItem(new InventoryItem(item.getSlot(), placeHolder));
+				setItem(new InventoryItem(slot, placeHolder));
 			} else if(Objects.isNull(item.getItem().getMaterial())) {
-				setItem(new InventoryItem(item.getSlot(), placeHolder));
+				setItem(new InventoryItem(slot, placeHolder));
 			} else if(item.getItem().getMaterial() == Material.AIR || item instanceof InventoryHolder) {
-				setItem(new InventoryItem(item.getSlot(), placeHolder));
+				setItem(new InventoryItem(slot, placeHolder));
 			} else if(Objects.nonNull(placeHolder) && item.equals(placeHolder)) {
-				setItem(new InventoryItem(item.getSlot(), placeHolder));
+				setItem(new InventoryItem(slot, placeHolder));
 			}
 			continue;
 		}
@@ -72,11 +84,13 @@ public class Inventory {
 		else return false;
 	}
 	public final InventoryItem getItemFromSlot(InventorySlotSpace slot) {
-		for(InventoryItem i : getNormalItems()) {
-			if(i.getSlot().getSlotSpace().equals(slot)) {
-				return i;
+		if(Objects.nonNull(getNormalItems()) && !getNormalItems().isEmpty()) {
+			for(InventoryItem i : getNormalItems()) {
+				if(i.getSlot().getSlotSpace().equals(slot)) {
+					return i;
+				}
+				continue;
 			}
-			continue;
 		}
 		return null;
 	}
@@ -97,7 +111,7 @@ public class Inventory {
 		return height;
 	}
 	public final int getSize() {
-		return (width * height);
+		return width * height;
 	}
 	public final LanguagesManager getLanguagesManager() {
 		return languagesManager;

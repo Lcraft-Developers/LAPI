@@ -17,11 +17,13 @@ public class LanguagesManager {
 		fileConfig = new ModuleBukkitConfig("Lcraft Languages", "config.yml");
 		userConfig = new ModuleBukkitConfig("Lcraft Languages", "users.yml");
 		addedLanguages = new ArrayList<>();
+		DefaultLanguages.getAllDefaultLanguages(this);
 	}
 
 	public final void setIDLanguage(long id, Language lang) {
 		if(lang == null) lang = getMainLanguage();
-		userConfig.set("users." + id + ".lang", lang.getShortLanguage().toLowerCase());
+		userConfig.set("users." + id + ".lang", lang.getShortLanguage().toLowerCase() + "-" + lang.getShortLanguageType().toLowerCase());
+		userConfig.save();
 	}
 	public final boolean hasIDAnLanguage(long id) {
 		return userConfig.exists("users." + id + ".lang");
@@ -361,7 +363,7 @@ public class LanguagesManager {
 		if(hasIDAnLanguage(0)) {
 			return getIDLanguage(0);
 		} else {
-			setIDLanguage(0, getAllLanguageByShortLanguage("en", "be"));
+			setIDLanguage(0, DefaultLanguages.getEn_be());
 			return getMainLanguage();
 		}
 	}
@@ -428,7 +430,9 @@ public class LanguagesManager {
 	}
 	public final Language getLanguageByFullShort(String short_) {
 		for(Language c : DefaultLanguages.getAllDefaultLanguages(this)) {
-			if(c.getShortLanguage().toLowerCase().equalsIgnoreCase(short_)) return c;
+			String shortLanguage = c.getShortLanguage().toLowerCase() + "-" + c.getShortLanguageType().toLowerCase();
+			if(shortLanguage.toLowerCase().equalsIgnoreCase(short_))
+				return c;
 		}
 		return null;
 	}
@@ -456,7 +460,8 @@ public class LanguagesManager {
 	}
 	public final Language getAddedLanguageByFullShort(String short_) {
 		for(Language c : getAddedLanguages()) {
-			if(c.getShortLanguage().toLowerCase().equalsIgnoreCase(short_))
+			String shortLanguage = c.getShortLanguage().toLowerCase() + "-" + c.getShortLanguageType().toLowerCase();
+			if(shortLanguage.toLowerCase().equalsIgnoreCase(short_))
 				return c;
 		}
 		return null;
@@ -485,7 +490,8 @@ public class LanguagesManager {
 	}
 	public final Language getAllLanguageByFullShort(String short_) {
 		for(Language c : getAllLanguagesAndAdded()) {
-			if(c.getShortLanguage().toLowerCase().equalsIgnoreCase(short_))
+			String shortLanguage = c.getShortLanguage().toLowerCase() + "-" + c.getShortLanguageType().toLowerCase();
+			if(shortLanguage.toLowerCase().equalsIgnoreCase(short_))
 				return c;
 		}
 		return null;

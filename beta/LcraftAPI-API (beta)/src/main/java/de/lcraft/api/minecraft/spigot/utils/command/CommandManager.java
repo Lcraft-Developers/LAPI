@@ -1,27 +1,24 @@
 package de.lcraft.api.minecraft.spigot.utils.command;
 
-import de.lcraft.api.minecraft.spigot.manager.Module;
+import de.lcraft.api.minecraft.spigot.manager.configs.BukkitConfig;
 import de.lcraft.api.minecraft.spigot.manager.configs.ModuleBukkitConfig;
 import de.lcraft.api.minecraft.spigot.manager.utils.language.Language;
 import de.lcraft.api.minecraft.spigot.manager.utils.language.LanguagesManager;
 import de.lcraft.api.minecraft.spigot.manager.utils.permissions.PermsManager;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandMap;
-
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Objects;
 
 public class CommandManager {
 
-    private Module module;
     private ArrayList<Command> modulesCmds;
-    private ModuleBukkitConfig moduleCommands;
+    private BukkitConfig moduleCommands;
 
-    public CommandManager(Module module) {
-        this.module = module;
+    public CommandManager() {
         modulesCmds = new ArrayList<>();
-        moduleCommands = new ModuleBukkitConfig(module, "commands.yml");
+        moduleCommands = new BukkitConfig("commands.yml");
     }
 
     public final void addCommand(Command executor, boolean canDisableInConfig) {
@@ -47,18 +44,16 @@ public class CommandManager {
             modulesCmds.add(executor);
         }
     }
-    public final void reloadConfigs() {
-        PermsManager manager = module.getPermsManager();
+    public final void reloadConfigs(PermsManager permsManager, LanguagesManager languagesManager) {
         ArrayList<String> extras = new ArrayList<>();
         extras.add("admin");
         extras.add("*");
         if(Objects.nonNull(getAllPermissions()) && !getAllPermissions().isEmpty()) {
             for(String c : getAllPermissions()) {
-                manager.logPermissionWithExtra(c, extras);
+                permsManager.logPermissionWithExtra(c, extras);
             }
         }
 
-        LanguagesManager languagesManager = module.getLanguagesManager();
         if(Objects.nonNull(getAllTranslatedTexts()) && !getAllTranslatedTexts().isEmpty()) {
             for(String c : getAllTranslatedTexts()) {
                 for(Language lang : languagesManager.getAllLanguagesAndAdded()) {
@@ -84,6 +79,10 @@ public class CommandManager {
     }
     public final ArrayList<Command> getModulesCmds() {
         return modulesCmds;
+    }
+
+    public void setModuleCommands(ModuleBukkitConfig moduleCommands) {
+        this.moduleCommands = moduleCommands;
     }
 
 }
