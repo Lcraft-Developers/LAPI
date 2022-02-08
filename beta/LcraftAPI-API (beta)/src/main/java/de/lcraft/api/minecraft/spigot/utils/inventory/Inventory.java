@@ -2,7 +2,7 @@ package de.lcraft.api.minecraft.spigot.utils.inventory;
 
 import de.lcraft.api.minecraft.spigot.manager.utils.language.LanguagesManager;
 import de.lcraft.api.minecraft.spigot.utils.inventory.item.InventoryItem;
-import de.lcraft.api.minecraft.spigot.utils.inventory.item.slot.InventorySlot;
+import de.lcraft.api.minecraft.spigot.utils.inventory.item.InventorySlot;
 import de.lcraft.api.minecraft.spigot.utils.inventory.item.slot.InventorySlotSpace;
 import de.lcraft.api.minecraft.spigot.utils.items.ItemBuilder;
 import de.lcraft.api.minecraft.spigot.manager.utils.listeners.ListenerManager;

@@ -1,5 +1,8 @@
-package de.lcraft.api.minecraft.spigot.utils.inventory.item.slot;
+package de.lcraft.api.minecraft.spigot.utils.inventory.item;
 
+import de.lcraft.api.minecraft.spigot.utils.inventory.item.slot.InventorySlotSpace;
+import de.lcraft.api.minecraft.spigot.utils.inventory.item.slot.InventoryX;
+import de.lcraft.api.minecraft.spigot.utils.inventory.item.slot.InventoryY;
 import de.lcraft.api.minecraft.spigot.utils.items.ItemBuilder;
 import org.bukkit.Material;
 import org.bukkit.inventory.Inventory;

@@ -2,7 +2,6 @@ package de.lcraft.api.minecraft.spigot.utils.inventory.item;
 
 import de.lcraft.api.minecraft.spigot.SpigotClass;
 import de.lcraft.api.minecraft.spigot.manager.utils.entities.LPlayer;
-import de.lcraft.api.minecraft.spigot.utils.inventory.item.slot.InventorySlot;
 import de.lcraft.api.minecraft.spigot.utils.items.ItemBuilder;
 import de.lcraft.api.minecraft.spigot.manager.utils.listeners.ListenerManager;
 import org.bukkit.entity.Player;
