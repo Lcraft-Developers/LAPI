@@ -42,7 +42,6 @@ public class ModuleFileLoader {
             }
         }
         queuedModule(goodFiles, plugin);
-        loadModuleToService(modules);
     }
     public final void queuedModule(List<File> files, JavaPlugin plugin) {
         HashMap<ModuleDescriptionFileManager, Boolean> newModules = new HashMap<>();
@@ -119,6 +118,7 @@ public class ModuleFileLoader {
 
             module.setPlugin(plugin);
             module.setFile(file);
+            loadModule(module);
             module.load(moduleManager);
 
             return module;
@@ -133,23 +133,18 @@ public class ModuleFileLoader {
         }
         return null;
     }
-    public final void loadModuleToService(ArrayList<Module> modules) {
-        // Reload Configuration
-        for(Module c : modules) {
-            c.getModuleDescriptionFile().load();
-            c.getModuleDescriptionFile().reloadRequiredModules(moduleManager);
+    public final void loadModule(Module module) {
+        module.getModuleDescriptionFile().load();
+        module.getModuleDescriptionFile().reloadRequiredModules(moduleManager);
 
-            continue;
-        }
-
-        // Add Modules to ArrayList
-        for(Module c : modules) {
-            getModuleManager().getModules().add(c);
-        }
+        getModuleManager().getModules().add(module);
     }
 
     public final ModuleManager getModuleManager() {
         return moduleManager;
+    }
+    public ArrayList<Module> getModules() {
+        return modules;
     }
 
 }
