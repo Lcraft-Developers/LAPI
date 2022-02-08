@@ -10,7 +10,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class SpigotClass extends JavaPlugin {
 
-    private SpigotClass apiPluginMain;
+    private static SpigotClass apiPluginMain;
     private BukkitConfig cfg,
                    userConfig;
     private ModuleManager moduleManager;
@@ -42,7 +42,7 @@ public class SpigotClass extends JavaPlugin {
         moduleManager.onDisableAllModules();
     }
 
-    public final SpigotClass getAPIPluginMain() {
+    public static final SpigotClass getAPIPluginMain() {
         return apiPluginMain;
     }
     public final BukkitConfig getMainCfg() {
