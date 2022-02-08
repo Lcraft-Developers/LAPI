@@ -1,16 +1,13 @@
 package de.lcraft.api.minecraft.spigot.utils;
 
-import de.lcraft.api.minecraft.spigot.manager.utils.permissions.LuckPermsHandler;
 import de.lcraft.api.minecraft.spigot.manager.utils.permissions.PermsManager;
 import net.luckperms.api.LuckPerms;
 import net.luckperms.api.model.group.Group;
 import net.luckperms.api.model.user.User;
 import org.bukkit.Bukkit;
-import org.bukkit.entity.Player;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.scoreboard.Scoreboard;
 import org.bukkit.scoreboard.Team;
-import org.checkerframework.checker.units.qual.A;
 
 import java.util.ArrayList;
 import java.util.Objects;
