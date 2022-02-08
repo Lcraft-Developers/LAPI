@@ -4,7 +4,7 @@ import de.lcraft.api.minecraft.spigot.manager.Module;
 import de.lcraft.api.minecraft.spigot.manager.configs.ModuleBukkitConfig;
 import de.lcraft.api.minecraft.spigot.manager.utils.language.Language;
 import de.lcraft.api.minecraft.spigot.manager.utils.language.LanguagesManager;
-import de.lcraft.api.minecraft.spigot.manager.utils.PermsManager;
+import de.lcraft.api.minecraft.spigot.manager.utils.permissions.PermsManager;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandMap;
 
