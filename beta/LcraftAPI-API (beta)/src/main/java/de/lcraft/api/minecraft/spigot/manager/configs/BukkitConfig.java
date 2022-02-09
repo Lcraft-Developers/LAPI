@@ -46,10 +46,25 @@ public class BukkitConfig {
     public BukkitConfig(String filename) {
         this("", filename);
     }
+    public boolean isEmpty() {
+        Set<String> section = getSectionKeys("");
+        if(Objects.nonNull(section) && !section.isEmpty()) {
+            return false;
+        }
+        return true;
+    }
 
     public Object getDefault(String path, Object start) {
         if(exists(path)) {
             return get(path);
+        } else {
+            set(path, start);
+            return start;
+        }
+    }
+    public String getStringDefault(String path, String start) {
+        if(exists(path)) {
+            return getString(path);
         } else {
             set(path, start);
             return start;

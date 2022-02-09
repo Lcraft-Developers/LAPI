@@ -31,9 +31,11 @@ de\lcraft\api\minecraft\spigot\manager\logger\ModuleLogger.class
 de\lcraft\api\minecraft\spigot\manager\utils\language\DefaultLanguages$1.class
 de\lcraft\api\minecraft\spigot\commands\lcraftCommands\LcraftCommand.class
 de\lcraft\api\minecraft\spigot\manager\utils\language\LanguagesManager.class
+de\lcraft\api\minecraft\spigot\manager\utils\language\StandardMessages.class
 de\lcraft\api\minecraft\spigot\utils\CraftingRecipe.class
 de\lcraft\api\minecraft\spigot\manager\utils\language\Language.class
 de\lcraft\api\minecraft\spigot\utils\ScoreBoard.class
+de\lcraft\api\minecraft\spigot\utils\inventory\BukkitInventoryValidator.class
 de\lcraft\api\minecraft\spigot\utils\command\CommandManager.class
 de\lcraft\api\minecraft\spigot\utils\items\HeadBuilder.class
 de\lcraft\api\java_utils\connection\SpigotMc.class

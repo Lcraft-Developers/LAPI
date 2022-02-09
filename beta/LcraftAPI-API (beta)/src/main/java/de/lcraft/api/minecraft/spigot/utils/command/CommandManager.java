@@ -4,6 +4,7 @@ import de.lcraft.api.minecraft.spigot.manager.configs.BukkitConfig;
 import de.lcraft.api.minecraft.spigot.manager.configs.ModuleBukkitConfig;
 import de.lcraft.api.minecraft.spigot.manager.utils.language.Language;
 import de.lcraft.api.minecraft.spigot.manager.utils.language.LanguagesManager;
+import de.lcraft.api.minecraft.spigot.manager.utils.language.StandardMessages;
 import de.lcraft.api.minecraft.spigot.manager.utils.permissions.PermsManager;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandMap;
@@ -15,10 +16,12 @@ public class CommandManager {
 
     private ArrayList<Command> modulesCmds;
     private BukkitConfig moduleCommands;
+    private StandardMessages standardMessages;
 
-    public CommandManager() {
-        modulesCmds = new ArrayList<>();
-        moduleCommands = new BukkitConfig("commands.yml");
+    public CommandManager(StandardMessages standardMessages) {
+        this.modulesCmds = new ArrayList<>();
+        this.moduleCommands = new BukkitConfig("commands.yml");
+        this.standardMessages = standardMessages;
     }
 
     public final void addCommand(Command executor, boolean canDisableInConfig) {

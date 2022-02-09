@@ -3,8 +3,15 @@ package de.lcraft.api.minecraft.spigot.utils.inventory;
 import de.lcraft.api.minecraft.spigot.manager.utils.language.LanguagesManager;
 import de.lcraft.api.minecraft.spigot.manager.utils.listeners.ListenerManager;
 import de.lcraft.api.minecraft.spigot.utils.inventory.item.InventoryItem;
+import de.lcraft.api.minecraft.spigot.utils.inventory.item.InventorySlot;
+import de.lcraft.api.minecraft.spigot.utils.inventory.item.slot.InventorySlotSpace;
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
+import org.bukkit.inventory.ItemStack;
+
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Objects;
 import java.util.UUID;
 
 public class ListInventory extends Inventory {
@@ -15,18 +22,23 @@ public class ListInventory extends Inventory {
 
 	public org.bukkit.inventory.Inventory getListPageInventory(String title, UUID player, int itemsAmountPerSite, int page, InventoryItem LAST_PAGE, InventoryItem NEXT_PAGE) {
 		org.bukkit.inventory.Inventory inv = Bukkit.createInventory(null, getSize(), getListTitle(title, player, page, getMaxListPages(itemsAmountPerSite)));
-		for(InventoryItem c : getAllItemsNeeded(itemsAmountPerSite, page)) {
-			inv = c.getSlot().setItem(inv, c.getItem());
-		}
 		if(page > 1)
-			inv = LAST_PAGE.getSlot().setItem(inv, LAST_PAGE.getItem());
+			setItem(LAST_PAGE, new InventorySlot(InventorySlotSpace.getSlotSpaceBySpace(getSize() - 8)));
 		if(page < getMaxListPages(itemsAmountPerSite))
-			inv = NEXT_PAGE.getSlot().setItem(inv, NEXT_PAGE.getItem());
+			setItem(NEXT_PAGE, new InventorySlot(InventorySlotSpace.getSlotSpaceBySpace(getSize() - 1)));
+		HashMap<InventorySlot, InventoryItem> allItems = getAllItemsNeeded(itemsAmountPerSite, page);
+		for(InventorySlot c : allItems.keySet()) {
+			if(Objects.nonNull(c) && Objects.nonNull(c.getSlotSpace()) && Objects.nonNull(c.getSlotSpace().getSpace())) {
+				if(Objects.nonNull(allItems.get(c)) && Objects.nonNull(allItems.get(c).getItem())) {
+					inv.setItem(c.getSlotSpace().getSpace(), allItems.get(c).getItem().build());
+				}
+			}
+		}
 		return inv;
 	}
 	public final int getMaxListPages(int itemAmountPerSite) {
 		int pagethings = 0;
-		int pages = 0;
+		int pages = 1;
 		for(int i = 0; i < getNormalItems().size(); i++) {
 			pagethings++;
 			if(pagethings > itemAmountPerSite) {
@@ -40,22 +52,23 @@ public class ListInventory extends Inventory {
 	public final String getListTitle(String title, UUID player, int currentPage, int pages) {
 		return getLanguagesManager().getIDLanguage(getLanguagesManager().getIDFromUUID(player)).translate(title + " §6%cpage%§7/§6%maxpage%").replace("%cpage%", currentPage + "").replace("%maxpage%", pages + "");
 	}
-	public final ArrayList<InventoryItem> getAllItemsNeeded(int itemsAmountPerSite, int page) {
+	public final HashMap<InventorySlot, InventoryItem> getAllItemsNeeded(int itemsAmountPerSite, int page) {
 		int pagethings = 0;
 		int pages = 1;
-		ArrayList<InventoryItem> item = new ArrayList<>();
-		for(int i = 0; i < getNormalItems().size(); i++) {
+		HashMap<InventorySlot, InventoryItem> items = new HashMap<>();
+		for(InventorySlot slot : getNormalItems().keySet()) {
+			InventoryItem item = getItem(slot);
 			pagethings++;
 			if(pagethings > itemsAmountPerSite) {
 				pagethings = 0;
 				pages = pages + 1;
 			}
 			if(pages == page) {
-				item.add(getNormalItems().get(i));
+				items.put(slot,item);
 			}
 			continue;
 		}
-		return item;
+		return items;
 	}
 
 }

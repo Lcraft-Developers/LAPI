@@ -2,6 +2,7 @@ package de.lcraft.api.minecraft.spigot.manager;
 
 import de.lcraft.api.java_utils.connection.SpigotMc;
 import de.lcraft.api.minecraft.spigot.manager.utils.command.ModuleCommandManager;
+import de.lcraft.api.minecraft.spigot.manager.utils.language.StandardMessages;
 import de.lcraft.api.minecraft.spigot.manager.utils.listeners.ModuleListenerManager;
 import de.lcraft.api.minecraft.spigot.manager.logger.ModuleLogger;
 import de.lcraft.api.minecraft.spigot.manager.logger.ModuleLoggerType;
@@ -27,6 +28,7 @@ public abstract class Module {
     private PermsManager permsManager;
     private ModuleBukkitConfig config;
     private LPlayerManager lPlayerManager;
+    private StandardMessages standardMessages;
 
     private Module() {}
 
@@ -38,10 +40,11 @@ public abstract class Module {
         moduleDescriptionFileManager.load();
         moduleLogger = new ModuleLogger(moduleDescriptionFileManager.getName());
         config = new ModuleBukkitConfig(getModuleDescriptionFile().getName(), "config.yml");
+        standardMessages = new StandardMessages(this);
 
         permsManager = new PermsManager();
         languagesManager = new LanguagesManager();
-        moduleCommandManager = new ModuleCommandManager(this);
+        moduleCommandManager = new ModuleCommandManager(getStandardMessages(), this);
         listenerManager = new ModuleListenerManager(this);
 
         enableModule();
@@ -126,6 +129,9 @@ public abstract class Module {
     }
     public final JavaPlugin getPlugin() {
         return plugin;
+    }
+    public final StandardMessages getStandardMessages() {
+        return standardMessages;
     }
 
     @Override

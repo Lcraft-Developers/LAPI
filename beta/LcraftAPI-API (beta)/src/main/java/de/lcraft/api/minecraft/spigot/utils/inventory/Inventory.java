@@ -1,17 +1,12 @@
 package de.lcraft.api.minecraft.spigot.utils.inventory;
 
 import de.lcraft.api.minecraft.spigot.manager.utils.language.LanguagesManager;
-import de.lcraft.api.minecraft.spigot.utils.inventory.item.InventoryConsumerItem;
 import de.lcraft.api.minecraft.spigot.utils.inventory.item.InventoryItem;
 import de.lcraft.api.minecraft.spigot.utils.inventory.item.InventorySlot;
 import de.lcraft.api.minecraft.spigot.utils.inventory.item.slot.InventorySlotSpace;
-import de.lcraft.api.minecraft.spigot.utils.items.ItemBuilder;
 import de.lcraft.api.minecraft.spigot.manager.utils.listeners.ListenerManager;
 import org.bukkit.Bukkit;
-import org.bukkit.Material;
-import org.bukkit.inventory.InventoryHolder;
-
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -20,7 +15,7 @@ public class Inventory {
 	private LanguagesManager languagesManager;
 	private int width,
 	            height;
-	private ArrayList<InventoryItem> normalItems;
+	private HashMap<InventorySlot, InventoryItem> normalItems;
 	private ListenerManager listenerManager;
 
 	public Inventory(ListenerManager listenerManager, LanguagesManager languagesManager, int height) {
@@ -28,71 +23,41 @@ public class Inventory {
 		this.width = 9;
 		this.height = height;
 		this.listenerManager = listenerManager;
-		this.normalItems = new ArrayList<>();
+		this.normalItems = new HashMap<>();
+	}
+
+	public final Inventory setItem(InventoryItem item, InventorySlot slot) {
+		if(existsItemAtSlot(slot.getSlotSpace())) getNormalItems().remove(slot);
+		getNormalItems().put(slot,item);
+		return this;
+	}
+	public final InventoryItem getItem(InventorySlot slot) {
+		if(Objects.nonNull(slot) && existsItemAtSlot(slot.getSlotSpace())) {
+			return getNormalItems().get(slot);
+		} else if(Objects.isNull(slot) || (Objects.isNull(slot.getX()) || Objects.isNull(slot.getY()))) {
+			return null;
+		}
+		return null;
 	}
 
 	public org.bukkit.inventory.Inventory getInventory(String title, UUID player) {
 		org.bukkit.inventory.Inventory inv = Bukkit.createInventory(null, getSize(), getTitle(title, player));
-		for(InventoryItem c : getNormalItems()) {
-			inv = c.getSlot().setItem(inv, c.getItem());
+		HashMap<InventorySlot, InventoryItem> allItems = getNormalItems();
+		for(InventorySlot c : allItems.keySet()) {
+			if(Objects.nonNull(c) && Objects.nonNull(c.getSlotSpace()) && Objects.nonNull(c.getSlotSpace().getSpace())) {
+				if(Objects.nonNull(allItems.get(c)) && Objects.nonNull(allItems.get(c).getItem())) {
+					inv.setItem(c.getSlotSpace().getSpace(), allItems.get(c).getItem().build());
+				}
+			}
 		}
 		return inv;
-	}
-	public final Inventory setItem(InventoryItem item) {
-		if(existsItemAtSlot(item.getSlot().getSlotSpace())) getNormalItems().remove(getItemFromSlot(item.getSlot().getSlotSpace()));
-		getNormalItems().add(item);
-		return this;
-	}
-	public final Inventory setItem(InventoryConsumerItem item) {
-		if(existsItemAtSlot(item.getSlot().getSlotSpace())) getNormalItems().remove(getItemFromSlot(item.getSlot().getSlotSpace()));
-		getNormalItems().add((InventoryItem) item);
-		return this;
-	}
-	public final InventoryItem getItem(InventorySlotSpace slot) {
-		if(Objects.nonNull(slot) && existsItemAtSlot(slot)) {
-			return getNormalItems().get(slot.getSpace());
-		} else if(Objects.isNull(slot) || (Objects.isNull(slot.getX()) || Objects.isNull(slot.getY()))) {
-			return null;
-		} else {
-			return new InventoryItem(new InventorySlot(slot.getX(), slot.getY()), new ItemBuilder(listenerManager, Material.AIR).setDisplayName(""));
-		}
-	}
-	public final Inventory addPlaceHolders(ItemBuilder placeHolder) {
-		for(int i = 0; i < getSize(); i++) {
-			InventorySlotSpace space = InventorySlotSpace.getSlotSpaceBySpace(i);
-			InventorySlot slot = new InventorySlot(space.getX(), space.getY());
-			InventoryItem item = getItem(InventorySlotSpace.getSlotSpaceBySpace(i));
-
-			if(Objects.isNull(item)) {
-				setItem(new InventoryItem(slot, placeHolder));
-			} else if(Objects.isNull(item.getItem().getMaterial())) {
-				setItem(new InventoryItem(slot, placeHolder));
-			} else if(item.getItem().getMaterial() == Material.AIR || item instanceof InventoryHolder) {
-				setItem(new InventoryItem(slot, placeHolder));
-			} else if(Objects.nonNull(placeHolder) && item.equals(placeHolder)) {
-				setItem(new InventoryItem(slot, placeHolder));
-			}
-			continue;
-		}
-		return this;
 	}
 	public final String getTitle(String title, UUID player) {
 		return getLanguagesManager().getIDLanguage(getLanguagesManager().getIDFromUUID(player)).translate(title);
 	}
 	public final boolean existsItemAtSlot(InventorySlotSpace slot) {
-		if(Objects.nonNull(getItemFromSlot(slot))) return true;
-		else return false;
-	}
-	public final InventoryItem getItemFromSlot(InventorySlotSpace slot) {
-		if(Objects.nonNull(getNormalItems()) && !getNormalItems().isEmpty()) {
-			for(InventoryItem i : getNormalItems()) {
-				if(i.getSlot().getSlotSpace().equals(slot)) {
-					return i;
-				}
-				continue;
-			}
-		}
-		return null;
+		if(Objects.nonNull(getNormalItems().containsKey(slot))) return true;
+		return false;
 	}
 	public final int getNextFreeSpaceInItems() {
 		for(int space = 0; space < getSize(); space++) {
@@ -119,7 +84,7 @@ public class Inventory {
 	public ListenerManager getListenerManager() {
 		return listenerManager;
 	}
-	public ArrayList<InventoryItem> getNormalItems() {
+	public HashMap<InventorySlot, InventoryItem> getNormalItems() {
 		return normalItems;
 	}
 

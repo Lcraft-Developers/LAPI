@@ -1,10 +1,12 @@
 package de.lcraft.api.minecraft.spigot.utils.items;
 
 import de.lcraft.api.minecraft.spigot.manager.utils.listeners.ListenerManager;
+import de.lcraft.api.minecraft.spigot.utils.inventory.BukkitInventoryValidator;
 import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.ArrayList;
@@ -58,21 +60,24 @@ public class ItemConsumerBuilder extends ItemBuilder {
 
     @EventHandler
     public final void onClick(InventoryClickEvent e) {
-        if(Objects.nonNull(e.getCurrentItem()) && Objects.nonNull(e.getCurrentItem().getItemMeta()) && Objects.nonNull(e.getCurrentItem().getItemMeta().getDisplayName())) {
-            if(areConsumersActivated()) {
-                if(Objects.nonNull(e.getAction())) {
-                    if(e.getClick().isRightClick()) {
-                        if(Objects.nonNull(getRightClickConsumer())) {
-                            getRightClickConsumer().accept(e);
-                        }
-                    } else if(e.getClick().isLeftClick()) {
-                        if(Objects.nonNull(getLeftClickConsumer())) {
-                            getLeftClickConsumer().accept(e);
+        BukkitInventoryValidator inventoryValidator = new BukkitInventoryValidator();
+        if(areConsumersActivated()) {
+            if(inventoryValidator.isLPlayer(e)) {
+                if(inventoryValidator.existsInventoryAndHasInventoryTitle(e)) {
+                    if(inventoryValidator.isInventoryType(e, InventoryType.CHEST)) {
+                        if(inventoryValidator.existsItemWithItemMetaAndDisplayName(e.getCurrentItem())) {
+                            if(inventoryValidator.isItemName(e.getCurrentItem(), getDisplayName(), true, true)) {
+                                e.setCancelled(isCancelEvent());
+                                if(inventoryValidator.isRightClick(e)) {
+                                    getRightClickConsumer().accept(e);
+                                } else if(inventoryValidator.isLeftClick(e)) {
+                                    getLeftClickConsumer().accept(e);
+                                }
+                            }
                         }
                     }
                 }
             }
-            e.setCancelled(isCancelEvent());
         }
     }
 

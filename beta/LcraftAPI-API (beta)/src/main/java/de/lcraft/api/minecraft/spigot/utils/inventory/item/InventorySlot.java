@@ -16,11 +16,15 @@ public class InventorySlot {
 	private InventorySlotSpace slotSpace;
 
 	public InventorySlot(InventoryX x, InventoryY y) {
-		this.slotSpace = InventorySlotSpace.getSlotSpaceByXAndY(x,y);
+		this(InventorySlotSpace.getSlotSpaceByXAndY(x,y));
+	}
+	public InventorySlot(InventorySlotSpace slotSpace) {
+		this.slotSpace = slotSpace;
 	}
 
 	public final Inventory setItem(Inventory inv, ItemBuilder item) {
-		inv.setItem(convertToSlot(), item.build());
+		int slot = convertToSlot();
+		if(slot != -1) inv.setItem(convertToSlot(), item.build());
 		return inv;
 	}
 
@@ -50,7 +54,10 @@ public class InventorySlot {
 	}
 
 	public final int convertToSlot() {
-		return getSlotSpace().getSpace();
+		if(Objects.nonNull(getSlotSpace()) && Objects.nonNull(getSlotSpace().getSpace())) {
+			return getSlotSpace().getSpace();
+		}
+		return -1;
 	}
 	public InventoryX getX() {
 		return getSlotSpace().getX();
@@ -61,5 +68,14 @@ public class InventorySlot {
 	public InventorySlotSpace getSlotSpace() {
 		return slotSpace;
 	}
+	@Override
+	public boolean equals(Object o) {
+		if(this == o) return true;
+		if(o == null || getClass() != o.getClass()) return false;
+		InventorySlot that = (InventorySlot) o;
+		if(slotSpace.equals(((InventorySlot) o).getSlotSpace())) return true;
+		if(slotSpace == ((InventorySlot) o).getSlotSpace()) return true;
 
+		return slotSpace == that.slotSpace;
+	}
 }

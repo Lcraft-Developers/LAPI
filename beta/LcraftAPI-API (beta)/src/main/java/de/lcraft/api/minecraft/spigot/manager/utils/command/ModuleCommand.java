@@ -3,6 +3,7 @@ package de.lcraft.api.minecraft.spigot.manager.utils.command;
 import de.lcraft.api.minecraft.spigot.manager.Module;
 import de.lcraft.api.minecraft.spigot.manager.logger.ModuleLogger;
 import de.lcraft.api.minecraft.spigot.manager.logger.ModuleLoggerType;
+import de.lcraft.api.minecraft.spigot.manager.utils.language.StandardMessages;
 import de.lcraft.api.minecraft.spigot.utils.command.Command;
 
 import java.util.ArrayList;
@@ -13,10 +14,13 @@ public abstract class ModuleCommand extends Command {
 	private Module module;
 	private ArrayList<ModuleSubCommand> subModuleCommands;
 
-	public ModuleCommand(String label, String desc, Module m, boolean splitting) {
-		super(label, desc, m.getPermsManager(), m.getModuleManager().getPluginMain().getLPlayerManager(), m.getLanguagesManager(), splitting, m.getListenerManager());
+	public ModuleCommand(StandardMessages standardMessages, String label, String desc, Module m, boolean splitting) {
+		super(standardMessages, label, desc, m.getPermsManager(), m.getModuleManager().getPluginMain().getLPlayerManager(), m.getLanguagesManager(), splitting, m.getListenerManager());
 		this.module = m;
 		subModuleCommands = new ArrayList<>();
+	}
+	public ModuleCommand(String label, String desc, Module m, boolean splitting) {
+		super(new StandardMessages(m), label, desc, m.getPermsManager(), m.getModuleManager().getPluginMain().getLPlayerManager(), m.getLanguagesManager(), splitting, m.getListenerManager());
 	}
 
 	public final void addModuleSubCommand(ModuleSubCommand subModuleCommand) {
