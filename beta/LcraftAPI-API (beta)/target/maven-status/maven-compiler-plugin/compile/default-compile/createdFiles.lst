@@ -1,4 +1,5 @@
 de\lcraft\api\java_utils\probability\ProbabilityCalculator.class
+de\lcraft\api\minecraft\spigot\utils\inventory\item\slot\InventorySlot.class
 de\lcraft\api\java_utils\serialize\SerializeObject.class
 de\lcraft\api\minecraft\spigot\commands\languagesCommands\LangCommand$1.class
 de\lcraft\api\minecraft\spigot\manager\loaders\ModuleClassLoader.class
@@ -6,6 +7,7 @@ de\lcraft\api\minecraft\spigot\manager\logger\Logger.class
 de\lcraft\api\minecraft\spigot\manager\utils\permissions\LuckPermsHandler.class
 de\lcraft\api\minecraft\spigot\utils\inventory\item\slot\InventoryY.class
 de\lcraft\api\minecraft\spigot\manager\utils\permissions\PermsManager.class
+de\lcraft\api\minecraft\spigot\utils\inventory\InventoryHelper.class
 de\lcraft\api\minecraft\spigot\manager\logger\ModuleLoggerType.class
 de\lcraft\api\minecraft\spigot\manager\utils\language\DefaultLanguages.class
 de\lcraft\api\minecraft\spigot\utils\TabList.class
@@ -61,7 +63,5 @@ de\lcraft\api\java_utils\exeptions\InternetNotFoundException.class
 de\lcraft\api\minecraft\spigot\manager\utils\command\ModuleCommand.class
 de\lcraft\api\minecraft\spigot\utils\command\Command.class
 de\lcraft\api\minecraft\spigot\utils\items\SpawnerBuilder.class
-de\lcraft\api\minecraft\spigot\utils\inventory\item\InventorySlot.class
 de\lcraft\api\minecraft\spigot\manager\loaders\ModuleFileLoader.class
 de\lcraft\api\minecraft\spigot\utils\server\WorldUtil.class
-de\lcraft\api\minecraft\spigot\utils\inventory\item\slot\InventorySlotSpace.class

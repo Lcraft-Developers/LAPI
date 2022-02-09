@@ -2,8 +2,7 @@ package de.lcraft.api.minecraft.spigot.utils.inventory;
 
 import de.lcraft.api.minecraft.spigot.manager.utils.language.LanguagesManager;
 import de.lcraft.api.minecraft.spigot.utils.inventory.item.InventoryItem;
-import de.lcraft.api.minecraft.spigot.utils.inventory.item.InventorySlot;
-import de.lcraft.api.minecraft.spigot.utils.inventory.item.slot.InventorySlotSpace;
+import de.lcraft.api.minecraft.spigot.utils.inventory.item.slot.InventorySlot;
 import de.lcraft.api.minecraft.spigot.manager.utils.listeners.ListenerManager;
 import org.bukkit.Bukkit;
 import java.util.HashMap;
@@ -27,12 +26,12 @@ public class Inventory {
 	}
 
 	public final Inventory setItem(InventoryItem item, InventorySlot slot) {
-		if(existsItemAtSlot(slot.getSlotSpace())) getNormalItems().remove(slot);
+		if(existsItemAtSlot(slot)) getNormalItems().remove(slot);
 		getNormalItems().put(slot,item);
 		return this;
 	}
 	public final InventoryItem getItem(InventorySlot slot) {
-		if(Objects.nonNull(slot) && existsItemAtSlot(slot.getSlotSpace())) {
+		if(Objects.nonNull(slot) && existsItemAtSlot(slot)) {
 			return getNormalItems().get(slot);
 		} else if(Objects.isNull(slot) || (Objects.isNull(slot.getX()) || Objects.isNull(slot.getY()))) {
 			return null;
@@ -44,9 +43,9 @@ public class Inventory {
 		org.bukkit.inventory.Inventory inv = Bukkit.createInventory(null, getSize(), getTitle(title, player));
 		HashMap<InventorySlot, InventoryItem> allItems = getNormalItems();
 		for(InventorySlot c : allItems.keySet()) {
-			if(Objects.nonNull(c) && Objects.nonNull(c.getSlotSpace()) && Objects.nonNull(c.getSlotSpace().getSpace())) {
+			if(Objects.nonNull(c) && Objects.nonNull(c) && Objects.nonNull(c.getSpace())) {
 				if(Objects.nonNull(allItems.get(c)) && Objects.nonNull(allItems.get(c).getItem())) {
-					inv.setItem(c.getSlotSpace().getSpace(), allItems.get(c).getItem().build());
+					inv.setItem(c.getSpace(), allItems.get(c).getItem().build());
 				}
 			}
 		}
@@ -55,18 +54,9 @@ public class Inventory {
 	public final String getTitle(String title, UUID player) {
 		return getLanguagesManager().getIDLanguage(getLanguagesManager().getIDFromUUID(player)).translate(title);
 	}
-	public final boolean existsItemAtSlot(InventorySlotSpace slot) {
+	public final boolean existsItemAtSlot(InventorySlot slot) {
 		if(Objects.nonNull(getNormalItems().containsKey(slot))) return true;
 		return false;
-	}
-	public final int getNextFreeSpaceInItems() {
-		for(int space = 0; space < getSize(); space++) {
-			if(!existsItemAtSlot(InventorySlotSpace.getSlotSpaceBySpace(space))) {
-				return space;
-			}
-			continue;
-		}
-		return -1;
 	}
 
 	public final int getWidth() {

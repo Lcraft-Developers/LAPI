@@ -9,14 +9,11 @@ import de.lcraft.api.minecraft.spigot.manager.utils.language.StandardMessages;
 import de.lcraft.api.minecraft.spigot.manager.utils.listeners.ListenerManager;
 import de.lcraft.api.minecraft.spigot.manager.utils.permissions.PermsManager;
 import de.lcraft.api.minecraft.spigot.utils.command.Command;
+import de.lcraft.api.minecraft.spigot.utils.inventory.InventoryHelper;
 import de.lcraft.api.minecraft.spigot.utils.inventory.ListInventory;
 import de.lcraft.api.minecraft.spigot.utils.inventory.item.InventoryConsumerItem;
 import de.lcraft.api.minecraft.spigot.utils.inventory.item.InventoryItem;
-import de.lcraft.api.minecraft.spigot.utils.inventory.item.InventorySlot;
-import de.lcraft.api.minecraft.spigot.utils.inventory.item.slot.InventorySlotSpace;
-import de.lcraft.api.minecraft.spigot.utils.inventory.item.slot.InventoryX;
-import de.lcraft.api.minecraft.spigot.utils.inventory.item.slot.InventoryY;
-import de.lcraft.api.minecraft.spigot.utils.items.ItemBuilder;
+import de.lcraft.api.minecraft.spigot.utils.inventory.item.slot.InventorySlot;
 import de.lcraft.api.minecraft.spigot.utils.items.ItemConsumerBuilder;
 import org.bukkit.Material;
 import org.bukkit.command.CommandSender;
@@ -71,7 +68,8 @@ public class LangCommand extends Command {
 		// Add all Languages to Inventory
 		for(Language c : getLanguagesManager().getAllLanguagesAndAdded()) {
 			String name = "§6" + c.getEnglishName() + " §7- §6" + c.getName();
-			InventorySlotSpace space = InventorySlotSpace.getSlotSpaceBySpace(inv.getNextFreeSpaceInItems());
+			InventoryHelper helper = new InventoryHelper();
+			InventorySlot space = helper.getNextFreeSlot(inv);
 
 			// Create consumer to choose the language
 			Consumer<InventoryClickEvent> clickConsumer = new Consumer<InventoryClickEvent>() {
@@ -96,12 +94,15 @@ public class LangCommand extends Command {
 				itemBuilder.setMaterial(Material.GLOWSTONE_DUST);
 			}
 			InventoryConsumerItem item = new InventoryConsumerItem(getListenerManager(), inv.getTitle(title, p.getUUID()), true, true, true, itemBuilder);
-			inv.setItem(item, new InventorySlot(space));
+			inv.setItem(item, space);
 
 			System.out.println(item);
 		}
 
-		return inv.getListPageInventory(title, p.getUUID(), 5*9, 1, lastPage, nextPage);
+		// Add Placeholder
+		InventoryHelper helper = new InventoryHelper();
+
+		return helper.makePlaceholders(inv.getListPageInventory(title, p.getUUID(), 5*9, 1, lastPage, nextPage), getListenerManager(), title);
 	}
 
 	@Override

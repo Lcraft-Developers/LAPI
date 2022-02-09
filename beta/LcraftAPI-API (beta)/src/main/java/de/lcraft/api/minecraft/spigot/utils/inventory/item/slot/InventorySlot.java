@@ -1,8 +1,11 @@
 package de.lcraft.api.minecraft.spigot.utils.inventory.item.slot;
 
+import de.lcraft.api.minecraft.spigot.utils.inventory.Inventory;
+import de.lcraft.api.minecraft.spigot.utils.inventory.item.InventoryItem;
+
 import java.util.Objects;
 
-public enum InventorySlotSpace {
+public enum InventorySlot {
 
 	ONE_ONE(InventoryX.ONE, InventoryY.ONE),
 	ONE_TWO(InventoryX.TWO, InventoryY.ONE),
@@ -68,9 +71,13 @@ public enum InventorySlotSpace {
 	private InventoryX x;
 	private InventoryY y;
 
-	InventorySlotSpace(InventoryX x, InventoryY y) {
+	InventorySlot(InventoryX x, InventoryY y) {
 		this.x = x;
 		this.y = y;
+	}
+
+	public Inventory setItem(Inventory inv, InventoryItem item) {
+		return inv.setItem(item, this);
 	}
 
 	public InventoryX getX() {
@@ -88,21 +95,22 @@ public enum InventorySlotSpace {
 		return getX().toString() + "!.#.!" + getY().toString();
 	}
 
-	public static InventorySlotSpace getSlotSpaceByXAndY(InventoryX x, InventoryY y) {
-		for(InventorySlotSpace current : InventorySlotSpace.values()) {
+	public static InventorySlot getSlotSpaceByXAndY(InventoryX x, InventoryY y) {
+		for(InventorySlot current : InventorySlot.values()) {
 			if(Objects.nonNull(current) && current.getX().equals(x) && current.getY().equals(y)) {
 				return current;
 			}
 		}
 		return null;
 	}
-	public static InventorySlotSpace getSlotSpaceBySpace(int space) {
-		for(InventorySlotSpace current : InventorySlotSpace.values()) {
+	public static InventorySlot getSlotSpaceBySpace(int space) {
+		for(InventorySlot current : InventorySlot.values()) {
 			if(Objects.nonNull(current) && current.getSpace() == space) {
 				return current;
 			}
 		}
 		return null;
 	}
+
 
 }
