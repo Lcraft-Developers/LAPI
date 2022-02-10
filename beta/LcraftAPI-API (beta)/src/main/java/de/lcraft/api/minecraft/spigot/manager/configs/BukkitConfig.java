@@ -1,5 +1,8 @@
 package de.lcraft.api.minecraft.spigot.manager.configs;
 
+import org.bukkit.Bukkit;
+import org.bukkit.Location;
+import org.bukkit.World;
 import org.bukkit.configuration.Configuration;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.InvalidConfigurationException;
@@ -76,6 +79,72 @@ public class BukkitConfig {
     }
     public boolean exists(String root) {
         return c().contains(root);
+    }
+
+    public void setBlockLocation(String root, Location loc) {
+        set(root + ".world", loc.getWorld().getName());
+        set(root + ".x", loc.getX());
+        set(root + ".y", loc.getY());
+        set(root + ".z", loc.getZ());
+    }
+    public Location getBlockLocation(String root) {
+        if(existsBlockLocation(root)) {
+            World w = Bukkit.getWorld(getString(root + ".world"));
+            double x = getDouble(root + ".x"),
+                   y = getDouble(root + ".y"),
+                   z = getDouble(root + ".z");
+            return new Location(w, x, y, z);
+        }
+        return null;
+    }
+    public boolean existsBlockLocation(String root) {
+        if(exists(root + ".world") && Objects.nonNull(Bukkit.getWorld(getString(root + ".world")))) {
+            if(exists(root + ".x")) {
+                if(exists(root + ".y")) {
+                    if(exists(root + ".z")) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    public void setLocation(String root, Location loc) {
+        set(root + ".world", loc.getWorld().getName());
+        set(root + ".x", loc.getX());
+        set(root + ".y", loc.getY());
+        set(root + ".z", loc.getZ());
+        set(root + ".yaw", loc.getYaw());
+        set(root + ".pitch", loc.getPitch());
+    }
+    public Location getLocation(String root, Location loc) {
+        if(existsLocation(root)) {
+            World w = Bukkit.getWorld(getString(root + ".world"));
+            double x = getDouble(root + ".x"),
+                    y = getDouble(root + ".y"),
+                    z = getDouble(root + ".z");
+            float yaw = getFloat(root + ".yaw");
+            float pitch = getFloat(root + ".pitch");
+            return new Location(w, x, y, z, yaw, pitch);
+        }
+        return null;
+    }
+    public boolean existsLocation(String root) {
+        if(exists(root + ".world") && Objects.nonNull(Bukkit.getWorld(getString(root + ".world")))) {
+            if(exists(root + ".x")) {
+                if(exists(root + ".y")) {
+                    if(exists(root + ".z")) {
+                        if(exists(root + ".yaw")) {
+                            if(exists(root + ".pitch")) {
+                                return true;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return false;
     }
 
     public final Object get(String root) {
