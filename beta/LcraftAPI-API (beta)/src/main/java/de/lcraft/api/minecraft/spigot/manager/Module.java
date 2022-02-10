@@ -30,8 +30,6 @@ public abstract class Module {
     private LPlayerManager lPlayerManager;
     private StandardMessages standardMessages;
 
-    private Module() {}
-
     public final void load(ModuleManager manager) {
         this.manager = manager;
         this.lPlayerManager = manager.getPluginMain().getLPlayerManager();

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Lcraft Beta">
+    <output-path>$PROJECT_DIR$/TestServerManager</output-path>
+    <root id="archive" name="Lcraft Beta.jar">
+      <element id="module-output" name="api-beta" />
+    </root>
+  </artifact>
+</component>
