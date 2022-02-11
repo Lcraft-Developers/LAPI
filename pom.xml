@@ -7,7 +7,11 @@
     <groupId>de.lcraft.api</groupId>
     <artifactId>apis</artifactId>
     <packaging>pom</packaging>
+
+    <name>Lcraft API</name>
+    <description></description>
     <version>1.0.0</version>
+
     <modules>
         <module>latest/LcraftAPI-API</module>
         <module>beta/LcraftAPI-API (beta)</module>

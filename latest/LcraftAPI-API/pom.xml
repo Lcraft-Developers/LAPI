@@ -8,13 +8,14 @@
         <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
+
     <name>Lcraft API</name>
     <description>Das ist mein Plugin/API für weitere Module/Plugins von meiner Sorte.</description>
+    <packaging>jar</packaging>
 
     <groupId>de.lcraft.api</groupId>
     <artifactId>api</artifactId>
     <version>1.0.7</version>
-    <packaging>jar</packaging>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
