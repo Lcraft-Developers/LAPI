@@ -3,7 +3,8 @@ package de.lcraft.api.java_utils.configuration;
 import de.lcraft.api.java_utils.configuration.sections.ConfigSection;
 import de.lcraft.api.java_utils.configuration.sections.ConfigSectionType;
 import de.lcraft.api.java_utils.configuration.writer.ConfigFileWriter;
-import de.lcraft.api.java_utils.configuration.writer.YAMLConfigFileWriter;
+import de.lcraft.api.java_utils.configuration.writer.EasyConfigFileWriter;
+import org.bukkit.configuration.InvalidConfigurationException;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -38,7 +39,7 @@ public class Config {
 		this.configWriter = configWriter;
 	}
 	public Config(String startPath, String path, String filename) {
-		this(startPath, path, filename, new YAMLConfigFileWriter());
+		this(startPath, path, filename, new EasyConfigFileWriter());
 	}
 	public Config(String path, String filename, ConfigFileWriter configWriter) {
 		this(null, path, filename, configWriter);
@@ -54,19 +55,11 @@ public class Config {
 	}
 
 	public void load() {
-		try {
-			getConfigWriter().loadFromCFGFile(this);
-		} catch (IOException exception) {
-			exception.printStackTrace();
-		}
+		getConfigWriter().loadFromCFGFile(this);
 	}
 	public void save() {
-		try {
-			getConfigWriter().clearCFGFile(this);
-			getConfigWriter().addIntoCFGFile(this);
-		} catch (IOException exception) {
-			exception.printStackTrace();
-		}
+		getConfigWriter().clearCFGFile(this);
+		getConfigWriter().addIntoCFGFile(this);
 	}
 	public boolean isEmpty() {
 		if(Objects.nonNull(getAllConfigurationSections()) && getAllConfigurationSections().isEmpty()) {
@@ -79,7 +72,7 @@ public class Config {
 	}
 
 	public boolean set(String root, Object obj) {
-		if(root.split(".").length < 1) {
+		if(root.contains("\\.")) {
 			// If root is a variable
 			System.out.println("-1");
 			if(existsSection(root)) {
@@ -100,7 +93,7 @@ public class Config {
 			}
 		} else {
 			String before = "";
-			for(String c : root.split(".")) {
+			for(String c : root.split("\\.")) {
 				String roo;
 				if(before.isEmpty() || before.isBlank()) {
 					roo = c;

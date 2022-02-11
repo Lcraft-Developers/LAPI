@@ -20,26 +20,34 @@ public class EasyConfigFileWriter implements ConfigFileWriter {
 		}
 	}
 	@Override
-	public void addIntoCFGFile(Config cfg) throws IOException {
-		FileWriterHelper writerHelper = new FileWriterHelper(cfg.getFile());
-		for(ConfigSection c : cfg.getAllConfigurationSections()) {
-			if(c.getConfigSectionType() == ConfigSectionType.OnlyValue || c.getConfigSectionType() == ConfigSectionType.ListAndValue) {
-				writerHelper.addLine(c.getRoot() + ": " + c.getValue().convertToString());
-			}
-			if(c.getConfigSectionType() == ConfigSectionType.LIST || c.getConfigSectionType() == ConfigSectionType.ListAndValue) {
-				for(String root : c.getAllKeys().keySet()) {
-					writerHelper.addLine(root + ": " + c.getAllKeys().get(root).convertToString());
+	public void addIntoCFGFile(Config cfg) {
+		try {
+			FileWriterHelper writerHelper = new FileWriterHelper(cfg.getFile());
+			for(ConfigSection c : cfg.getAllConfigurationSections()) {
+				if(c.getConfigSectionType() == ConfigSectionType.OnlyValue || c.getConfigSectionType() == ConfigSectionType.ListAndValue) {
+					writerHelper.addLine(c.getRoot() + ": " + c.getValue().convertToString());
+				}
+				if(c.getConfigSectionType() == ConfigSectionType.LIST || c.getConfigSectionType() == ConfigSectionType.ListAndValue) {
+					for(String root : c.getAllKeys().keySet()) {
+						writerHelper.addLine(root + ": " + c.getAllKeys().get(root).convertToString());
+					}
 				}
 			}
+		} catch (IOException exception) {
+			exception.printStackTrace();
 		}
 	}
 	@Override
-	public void loadFromCFGFile(Config cfg) throws IOException {
-		FileWriterHelper writerHelper = new FileWriterHelper(cfg.getFile());
-		for(String line : writerHelper.getAllLines()) {
-			String root = line.split(": ")[0];
-			String value = line.split(": ")[1];
-			cfg.set(root, value);
+	public void loadFromCFGFile(Config cfg) {
+		try {
+			FileWriterHelper writerHelper = new FileWriterHelper(cfg.getFile());
+			for(String line : writerHelper.getAllLines()) {
+				String root = line.split(": ")[0];
+				String value = line.split(": ")[1];
+				cfg.set(root, value);
+			}
+		} catch (IOException exception) {
+			exception.printStackTrace();
 		}
 	}
 

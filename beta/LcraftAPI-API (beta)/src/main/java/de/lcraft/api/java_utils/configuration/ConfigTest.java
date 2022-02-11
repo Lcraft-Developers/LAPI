@@ -3,7 +3,6 @@ package de.lcraft.api.java_utils.configuration;
 import de.lcraft.api.java_utils.configuration.sections.ConfigSection;
 import de.lcraft.api.java_utils.configuration.sections.ConfigSectionType;
 import de.lcraft.api.java_utils.configuration.writer.EasyConfigFileWriter;
-import de.lcraft.api.java_utils.configuration.writer.YAMLConfigFileWriter;
 
 public class ConfigTest {
 
@@ -30,6 +29,8 @@ public class ConfigTest {
 			}
 		}
 
+		/*System.out.println("\nNext Test:\n");
+
 
 		Config cfg3 = new Config("testYaml.yml", new YAMLConfigFileWriter());
 		cfg3.load();
@@ -51,7 +52,7 @@ public class ConfigTest {
 					}
 				}
 			}
-		}
+		}*/
 	}
 
 }
