@@ -22,7 +22,7 @@ public class YAMLConfigFileWriter implements ConfigFileWriter {
 	}
 	@Override
 	public void addIntoCFGFile(Config cfg) throws IOException {
-		HashMap<String, ConfigSection> allConfigSections = new HashMap<>();
+		/*HashMap<String, ConfigSection> allConfigSections = new HashMap<>();
 		for(ConfigSection c : cfg.getAllConfigurationSections()) {
 			if(c.getConfigSectionType() == ConfigSectionType.OnlyValue || c.getConfigSectionType() == ConfigSectionType.ListAndValue) {
 				allConfigSections.put(c.getRoot(), c);
@@ -34,11 +34,7 @@ public class YAMLConfigFileWriter implements ConfigFileWriter {
 			}
 		}
 
-		FileWriterHelper writerHelper = new FileWriterHelper(cfg.getFile());
-
-		for(String root : allConfigSections.keySet()) {
-			ConfigSection section = allConfigSections.get(root);
-		}
+		FileWriterHelper writerHelper = new FileWriterHelper(cfg.getFile());*/
 	}
 	@Override
 	public void loadFromCFGFile(Config cfg) {
