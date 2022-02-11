@@ -25,6 +25,7 @@ C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\s
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\minecraft\spigot\utils\inventory\item\InventoryConsumerItem.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\mysql\MySQLServer.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\java_utils\Internet.java
+C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\java_utils\language\DefaultLanguages.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\java_utils\exeptions\InternetNotFoundException.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\minecraft\spigot\manager\utils\listeners\ModuleListenerManager.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\minecraft\spigot\utils\items\HeadBuilder.java
@@ -35,8 +36,10 @@ C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\s
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\minecraft\spigot\manager\ModuleDescriptionFileManager.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\minecraft\spigot\manager\utils\language\Language.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\minecraft\spigot\manager\utils\permissions\LuckPermsHandler.java
+C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\java_utils\language\Language.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\minecraft\spigot\manager\utils\command\ModuleCommandManager.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\minecraft\spigot\utils\items\ItemBuilder.java
+C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\java_utils\language\LanguagesManager.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\java_utils\exeptions\SpigotMCPluginNotFound.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\minecraft\spigot\commands\languagesCommands\LangCommand.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\minecraft\spigot\manager\logger\Logger.java

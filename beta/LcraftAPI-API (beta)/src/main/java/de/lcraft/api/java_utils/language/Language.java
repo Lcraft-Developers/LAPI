@@ -15,7 +15,7 @@ public abstract class Language {
 		help = new Config("Lcraft Languages/" + getShort(), "help.yml");
 		cfg = new Config("Lcraft Languages/" + getShort(), "config.yml");
 		this.languagesManager = languagesManager;
-		getJoinMessage(); getQuitMessage(); getHelp();
+		getHelp();
 	}
 
 	public abstract String getName();
@@ -33,47 +33,6 @@ public abstract class Language {
 		}
 		save();
 		return def;
-	}
-	public final void setJoinMessage(String[] joinMessage) {
-		for(int i = 0; i < joinMessage.length; i++) {
-			getConfig().set(getShort() + ".joinMessage." + i, joinMessage[i]);
-		}
-		save();
-	}
-	public final String[] getJoinMessage() {
-		String[] joinMessage = new String[1];
-		joinMessage[0] = "No Join Message seted in " + getEnglishName();
-		if(Objects.nonNull(getConfig().getSection(getShort() + ".joinMessage"))) {
-			joinMessage = new String[getConfig().getSection(getShort() + ".joinMessage").size()];
-			for(int i = 0; i < getConfig().getSection(getShort() + ".joinMessage").size(); i++) {
-				joinMessage[i] = getConfig().getString(getShort() + ".joinMessage." + i);
-			}
-		} else {
-			setJoinMessage(joinMessage);
-			return getJoinMessage();
-		}
-		return joinMessage;
-	}
-	public final void setQuitMessage(String[] quitMessage) {
-		for(int i = 0; i < quitMessage.length; i++) {
-			getConfig().set(getShort() + ".quitMessage." + i, quitMessage[i]);
-		}
-		save();
-	}
-	public final String[] getQuitMessage() {
-		String[] quitMessage = new String[1];
-		quitMessage[0] = "No Quit Message setted in " + getEnglishName();
-		if(Objects.nonNull(getConfig().getSection(getShort() + ".quitMessage"))) {
-			quitMessage = new String[getConfig().getSection(getShort() + ".quitMessage").size()];
-			for(int i = 0; i < getConfig().getSection(getShort() + ".quitMessage").size(); i++) {
-				quitMessage[i] = getConfig().getString(getShort() + ".quitMessage." + i);
-			}
-		} else {
-			setQuitMessage(quitMessage);
-			return getQuitMessage();
-		}
-		save();
-		return quitMessage;
 	}
 	public final void setHelpMessage(String[] helpMessage) {
 		for(int i = 0; i < helpMessage.length; i++) {
