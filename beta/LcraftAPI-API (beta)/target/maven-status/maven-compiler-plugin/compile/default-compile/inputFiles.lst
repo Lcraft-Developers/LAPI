@@ -1,3 +1,4 @@
+C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\java_utils\configuration\writer\ConfigFileWriter.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\minecraft\spigot\manager\utils\entities\LPlayer.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\java_utils\serialize\SerializeObject.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\minecraft\spigot\manager\utils\listeners\ListenerManager.java
@@ -13,9 +14,13 @@ C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\s
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\java_utils\connection\SpigotMc.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\minecraft\spigot\manager\configs\ModuleBukkitConfig.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\minecraft\spigot\manager\loaders\ModuleClassLoader.java
+C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\java_utils\configuration\Config.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\minecraft\spigot\utils\inventory\item\InventoryItem.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\minecraft\spigot\utils\command\SubCommand.java
+C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\java_utils\configuration\ConfigTest.java
+C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\java_utils\configuration\sections\ConfigSection.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\minecraft\spigot\utils\items\SpawnerBuilder.java
+C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\java_utils\configuration\ConfigValue.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\minecraft\spigot\utils\CraftingRecipe.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\minecraft\spigot\utils\inventory\item\InventoryConsumerItem.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\mysql\MySQLServer.java
@@ -36,8 +41,10 @@ C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\s
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\minecraft\spigot\commands\languagesCommands\LangCommand.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\minecraft\spigot\manager\logger\Logger.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\minecraft\spigot\manager\utils\command\ModuleCommand.java
+C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\java_utils\configuration\writer\EasyConfigFileWriter.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\minecraft\spigot\manager\configs\BukkitConfig.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\minecraft\spigot\manager\Module.java
+C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\minecraft\spigot\manager\configs\ModuleConfig.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\minecraft\spigot\manager\ModuleManager.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\minecraft\spigot\SpigotClass.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\minecraft\spigot\utils\command\Command.java
@@ -46,6 +53,7 @@ C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\s
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\minecraft\spigot\manager\loaders\ModuleFileLoader.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\minecraft\spigot\utils\inventory\item\slot\InventoryX.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\minecraft\spigot\utils\inventory\item\slot\InventorySlot.java
+C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\java_utils\configuration\sections\ConfigSectionType.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\minecraft\spigot\utils\server\ServerTPS.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\minecraft\spigot\utils\TabList.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\java_utils\serialize\TestSerializeObject.java
@@ -55,5 +63,6 @@ C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\s
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\minecraft\spigot\manager\utils\language\StandardMessages.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\minecraft\spigot\utils\inventory\ListInventory.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\java_utils\CodeHelper.java
+C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\java_utils\FileWriterHelper.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\minecraft\spigot\utils\inventory\BukkitInventoryValidator.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\minecraft\spigot\manager\utils\language\LanguagesManager.java

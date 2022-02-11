@@ -55,5 +55,12 @@ public class ConfigSection {
 	public String getRoot() {
 		return root;
 	}
+	public int size() {
+		int size = allKeys.size();
+		if(configSectionType == ConfigSectionType.OnlyValue || configSectionType == ConfigSectionType.ListAndValue) {
+			size++;
+		}
+		return size;
+	}
 
 }
