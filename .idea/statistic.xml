@@ -7,8 +7,11 @@
       <list>
         <option value="$PROJECT_DIR$/.github" />
         <option value="$PROJECT_DIR$/.idea" />
+        <option value="$PROJECT_DIR$/.old" />
         <option value="$PROJECT_DIR$/_old" />
         <option value="$PROJECT_DIR$/latest" />
+        <option value="$PROJECT_DIR$/docs" />
+        <option value="$PROJECT_DIR$/TestServerManager" />
       </list>
     </option>
   </component>

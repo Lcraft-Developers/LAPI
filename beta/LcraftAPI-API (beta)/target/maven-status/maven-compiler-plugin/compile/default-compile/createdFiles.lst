@@ -1,3 +1,4 @@
+de\lcraft\api\java_utils\configuration\writer\DefaultConfigFileWriter.class
 de\lcraft\api\java_utils\probability\ProbabilityCalculator.class
 de\lcraft\api\minecraft\spigot\utils\inventory\item\slot\InventorySlot.class
 de\lcraft\api\java_utils\serialize\SerializeObject.class
@@ -9,11 +10,13 @@ de\lcraft\api\minecraft\spigot\utils\inventory\InventoryHelper.class
 de\lcraft\api\minecraft\spigot\manager\logger\ModuleLoggerType.class
 de\lcraft\api\minecraft\spigot\manager\utils\language\DefaultLanguages.class
 de\lcraft\api\minecraft\spigot\utils\TabList.class
+de\lcraft\api\java_utils\configuration\sections\ConfigSectionType.class
 de\lcraft\api\java_utils\serialize\TestSerializeObject.class
 de\lcraft\api\java_utils\probability\Proabilities.class
 de\lcraft\api\minecraft\spigot\utils\inventory\Inventory.class
 de\lcraft\api\minecraft\spigot\utils\TeamManager.class
 de\lcraft\api\minecraft\spigot\utils\inventory\ListInventory.class
+de\lcraft\api\java_utils\configuration\sections\ConfigSection.class
 de\lcraft\api\java_utils\exeptions\SpigotMCPluginNotFound.class
 de\lcraft\api\minecraft\spigot\utils\items\ItemBuilder.class
 de\lcraft\api\minecraft\spigot\utils\inventory\item\slot\InventoryX.class
@@ -22,7 +25,9 @@ de\lcraft\api\minecraft\spigot\utils\inventory\item\InventoryConsumerItem.class
 de\lcraft\api\java_utils\probability\Proabilities$Entry.class
 de\lcraft\api\minecraft\spigot\utils\CraftingRecipe$CraftingPlace.class
 de\lcraft\api\minecraft\spigot\manager\utils\language\DefaultLanguages$1.class
+de\lcraft\api\java_utils\configuration\Config.class
 de\lcraft\api\minecraft\spigot\commands\lcraftCommands\LcraftCommand.class
+de\lcraft\api\java_utils\configuration\writer\ConfigFileWriter.class
 de\lcraft\api\minecraft\spigot\utils\CraftingRecipe.class
 de\lcraft\api\minecraft\spigot\utils\ScoreBoard.class
 de\lcraft\api\minecraft\spigot\utils\inventory\BukkitInventoryValidator.class
@@ -31,9 +36,11 @@ de\lcraft\api\java_utils\connection\SpigotMc.class
 de\lcraft\api\minecraft\spigot\manager\utils\language\DefaultLanguages$2.class
 de\lcraft\api\minecraft\spigot\utils\items\ItemConsumerBuilder.class
 de\lcraft\api\java_utils\Internet.class
+de\lcraft\api\minecraft\spigot\manager\configs\ModuleConfig.class
 de\lcraft\api\minecraft\spigot\utils\command\SubCommand.class
 de\lcraft\api\minecraft\spigot\manager\utils\command\ModuleSubCommand.class
 de\lcraft\api\java_utils\CodeHelper.class
+de\lcraft\api\java_utils\configuration\ConfigValue.class
 de\lcraft\api\minecraft\spigot\manager\utils\language\DefaultLanguages$3.class
 de\lcraft\api\minecraft\spigot\utils\inventory\item\InventoryItem.class
 de\lcraft\api\java_utils\exeptions\InternetNotFoundException.class

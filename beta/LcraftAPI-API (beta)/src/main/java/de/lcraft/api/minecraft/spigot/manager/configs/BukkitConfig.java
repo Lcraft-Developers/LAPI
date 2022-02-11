@@ -57,7 +57,7 @@ public class BukkitConfig {
         return true;
     }
 
-    public Object getDefault(String path, Object start) {
+    public final Object getDefault(String path, Object start) {
         if(exists(path)) {
             return get(path);
         } else {
@@ -65,7 +65,7 @@ public class BukkitConfig {
             return start;
         }
     }
-    public String getStringDefault(String path, String start) {
+    public final String getStringDefault(String path, String start) {
         if(exists(path)) {
             return getString(path);
         } else {
@@ -73,11 +73,11 @@ public class BukkitConfig {
             return start;
         }
     }
-    public void set(String root, Object obj) {
+    public final void set(String root, Object obj) {
         c().set(root, obj);
         save();
     }
-    public boolean exists(String root) {
+    public final boolean exists(String root) {
         return c().contains(root);
     }
 
