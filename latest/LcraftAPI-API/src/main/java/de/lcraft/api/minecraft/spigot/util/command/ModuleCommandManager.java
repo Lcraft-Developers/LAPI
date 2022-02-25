@@ -1,9 +1,9 @@
 package de.lcraft.api.minecraft.spigot.util.command;
 
-import de.lcraft.api.minecraft.spigot.manager.Module;
-import de.lcraft.api.minecraft.spigot.manager.utils.ModuleConfig;
-import de.lcraft.api.minecraft.spigot.manager.utils.LanguagesManager;
-import de.lcraft.api.minecraft.spigot.manager.utils.PermsManager;
+import de.lcraft.api.minecraft.spigot.module.manager.Module;
+import de.lcraft.api.minecraft.spigot.module.manager.utils.ModuleConfig;
+import de.lcraft.api.minecraft.spigot.module.manager.utils.LanguagesManager;
+import de.lcraft.api.minecraft.spigot.module.manager.utils.PermsManager;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandMap;
 import java.io.IOException;

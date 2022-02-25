@@ -1,6 +1,6 @@
 package de.lcraft.api.minecraft.spigot.util.command;
 
-import de.lcraft.api.minecraft.spigot.manager.Module;
+import de.lcraft.api.minecraft.spigot.module.manager.Module;
 
 import java.io.IOException;
 

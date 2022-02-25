@@ -1,17 +1,16 @@
 package de.lcraft.api.minecraft.spigot;
 
-import de.lcraft.api.minecraft.spigot.commands.languagesCommands.LangCommand;
-import de.lcraft.api.minecraft.spigot.commands.lcraftCommands.LcraftCommand;
-import de.lcraft.api.minecraft.spigot.manager.ModuleManager;
-import de.lcraft.api.minecraft.spigot.manager.utils.language.DefaultLanguages;
-import de.lcraft.api.minecraft.spigot.manager.utils.language.StandardMessages;
-import de.lcraft.api.minecraft.spigot.manager.utils.permissions.PermsManager;
-import de.lcraft.api.minecraft.spigot.utils.command.CommandManager;
-import de.lcraft.api.minecraft.spigot.utils.server.ServerTPS;
-import de.lcraft.api.minecraft.spigot.manager.configs.BukkitConfig;
-import de.lcraft.api.minecraft.spigot.manager.utils.language.LanguagesManager;
-import de.lcraft.api.minecraft.spigot.manager.utils.listeners.ListenerManager;
-import de.lcraft.api.minecraft.spigot.manager.utils.LPlayerManager;
+import de.lcraft.api.java_utils.language.DefaultLanguages;
+import de.lcraft.api.java_utils.language.LanguagesManager;
+import de.lcraft.api.minecraft.spigot.plugin.commands.languagesCommands.LangCommand;
+import de.lcraft.api.minecraft.spigot.plugin.commands.lcraftCommands.LcraftCommand;
+import de.lcraft.api.minecraft.spigot.module.manager.ModuleManager;
+import de.lcraft.api.minecraft.spigot.module.manager.utils.language.StandardMessages;
+import de.lcraft.api.minecraft.spigot.module.manager.utils.permissions.PermsManager;
+import de.lcraft.api.minecraft.spigot.module.manager.command.CommandManager;
+import de.lcraft.api.minecraft.spigot.module.manager.configs.BukkitConfig;
+import de.lcraft.api.minecraft.spigot.module.manager.utils.listeners.ListenerManager;
+import de.lcraft.api.minecraft.spigot.module.player.LPlayerManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.logging.Level;
@@ -22,13 +21,12 @@ public class SpigotClass extends JavaPlugin {
     private BukkitConfig cfg,
                    userConfig;
     private ModuleManager moduleManager;
-    private ServerTPS serverTPS;
-    private ListenerManager listenerManager;
-    private LanguagesManager languagesManager;
-    private LPlayerManager lPlayerManager;
     private CommandManager commandManager;
-    private PermsManager permsManager;
+    private LPlayerManager lPlayerManager;
     private StandardMessages standardMessages;
+    private LanguagesManager languagesManager;
+    private PermsManager permsManager;
+    private ListenerManager listenerManager;
 
     @Override
     public final void onEnable() {
@@ -41,16 +39,15 @@ public class SpigotClass extends JavaPlugin {
             cfg = new BukkitConfig("", "config.yml");
             userConfig = new BukkitConfig("users.yml");
             standardMessages = new StandardMessages(new BukkitConfig("standardMessages.yml"));
-            serverTPS = new ServerTPS(getAPIPluginMain());
-            permsManager = new PermsManager("*", "admin");
-            listenerManager = new ListenerManager(apiPluginMain);
             languagesManager = new LanguagesManager();
-            lPlayerManager = new LPlayerManager(apiPluginMain, userConfig, getAPIPluginMain(), languagesManager);
-            lPlayerManager.reloadPlayers();
+            permsManager = new PermsManager("*", "admin");
             commandManager = new CommandManager(getStandardMessages());
-            commandManager.addCommand(new LangCommand(getStandardMessages(), getPermsManager(), getLPlayerManager(), getLanguagesManager(), getListenerManager()), true);
-            commandManager.addCommand(new LcraftCommand(getStandardMessages(), getPermsManager(), getLPlayerManager(), getLanguagesManager(), getListenerManager()), false);
-            commandManager.reloadConfigs(getPermsManager(), getLanguagesManager());
+            lPlayerManager = new LPlayerManager(getAPIPluginMain(), getUserConfig(), getAPIPluginMain(), getLanguagesManager());
+            lPlayerManager.reloadPlayers();
+            listenerManager = new ListenerManager(getAPIPluginMain());
+            getCommandManager().addCommand(new LangCommand(getStandardMessages(), getPermsManager(), getLPlayerManager(), getLanguagesManager()), true);
+            getCommandManager().addCommand(new LcraftCommand(getStandardMessages(), getPermsManager(), getLPlayerManager(), getLanguagesManager()), false);
+            getCommandManager().reloadConfigs(getPermsManager(), getLanguagesManager());
 
             // Load Modules
             moduleManager = new ModuleManager(apiPluginMain);
@@ -74,26 +71,29 @@ public class SpigotClass extends JavaPlugin {
     public final BukkitConfig getMainCfg() {
         return cfg;
     }
-    public final ServerTPS getServerTPS() {
-        return serverTPS;
-    }
     public final BukkitConfig getUserConfig() {
         return userConfig;
-    }
-    public final ListenerManager getListenerManager() {
-        return listenerManager;
-    }
-    public final LanguagesManager getLanguagesManager() {
-        return languagesManager;
     }
     public final LPlayerManager getLPlayerManager() {
         return lPlayerManager;
     }
-    public PermsManager getPermsManager() {
+    public final StandardMessages getStandardMessages() {
+        return standardMessages;
+    }
+    public final ModuleManager getModuleManager() {
+        return moduleManager;
+    }
+    private final LanguagesManager getLanguagesManager() {
+        return languagesManager;
+    }
+    public final CommandManager getCommandManager() {
+        return commandManager;
+    }
+    public final PermsManager getPermsManager() {
         return permsManager;
     }
-    public StandardMessages getStandardMessages() {
-        return standardMessages;
+    private final ListenerManager getListenerManager() {
+        return listenerManager;
     }
 
 }

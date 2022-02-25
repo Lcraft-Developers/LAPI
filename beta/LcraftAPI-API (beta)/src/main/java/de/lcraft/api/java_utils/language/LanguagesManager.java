@@ -34,6 +34,12 @@ public class LanguagesManager {
 		}
 	}
 
+	public void logText(String text) {
+		for(Language c : getAllLanguagesAndAdded()) {
+			c.translate(text);
+		}
+	}
+
 	// Old ID Getter
 	/*public final int getIDFromString(String normal) {
 		int id = 0;

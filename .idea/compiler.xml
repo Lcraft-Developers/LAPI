@@ -24,15 +24,16 @@
         <module name="Lcraft BungeeCord Test Plugin" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="BungeeCordTestPlugin" target="17" />
-      <module name="Lcraft-BungeeCord-TestPlugin" target="17" />
-      <module name="Lcraft.API.Language" target="16" />
-      <module name="Lcraft.API.Permissions" target="16" />
-      <module name="LcraftAPI-Spigot-TestPlugin" target="17" />
-      <module name="LcraftAPI.API" target="17" />
-      <module name="SpigotTest" target="17" />
-      <module name="SpigotTestPlugin" target="17" />
-    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_STRING" value="-Xmaxerrs 123 -Xmaxwarns 456" />
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="api" options="" />
+      <module name="api-beta" options="" />
+      <module name="beta" options="" />
+      <module name="bungeecord-testplugin" options="" />
+      <module name="latest" options="" />
+      <module name="spigot-testplugin" options="" />
+    </option>
   </component>
 </project>

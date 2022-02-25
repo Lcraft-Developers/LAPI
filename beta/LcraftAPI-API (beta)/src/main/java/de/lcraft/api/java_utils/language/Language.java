@@ -15,7 +15,6 @@ public abstract class Language {
 		help = new Config("Lcraft Languages/" + getShort(), "help.yml");
 		cfg = new Config("Lcraft Languages/" + getShort(), "config.yml");
 		this.languagesManager = languagesManager;
-		getHelp();
 	}
 
 	public abstract String getName();
@@ -34,27 +33,27 @@ public abstract class Language {
 		save();
 		return def;
 	}
-	public final void setHelpMessage(String[] helpMessage) {
+
+	public final void setMessage(String root, String[] helpMessage) {
 		for(int i = 0; i < helpMessage.length; i++) {
-			getHelpFile().set(getShort() + ".helpMessage." + i, helpMessage[i]);
+			getHelpFile().set(root + "." + i, helpMessage[i]);
 		}
 		save();
 	}
-	public final String[] getHelp() {
-		String[] help = new String[1];
-		help[0] = "No Help Message seted in Language " + getEnglishName();
-		if(Objects.nonNull(getHelpFile().getSection(getShort() + ".helpMessage"))) {
-			help = new String[getHelpFile().getSection(getShort() + ".helpMessage").size()];
-			for(int i = 0; i < getHelpFile().getSection(getShort() + ".helpMessage").size(); i++) {
-				help[i] = getHelpFile().getString(getShort() + ".helpMessage." + i);
+	public final String[] getMessage(String root, String[] defaultMessage) {
+		if(Objects.nonNull(getHelpFile().getSection(getShort() + "."))) {
+			defaultMessage = new String[getHelpFile().getSection(getShort() + ".").size()];
+			for(int i = 0; i < getHelpFile().getSection(getShort() + ".").size(); i++) {
+				defaultMessage[i] = getHelpFile().getString(getShort() + "." + i);
 			}
 		} else {
-			setHelpMessage(help);
-			return getHelp();
+			setMessage(root, defaultMessage);
+			return getMessage(root, defaultMessage);
 		}
 		save();
-		return help;
+		return defaultMessage;
 	}
+
 	public final Config getTranslationsFile() {
 		return translations;
 	}

@@ -1,11 +1,11 @@
 package de.lcraft.api.minecraft.spigot;
 
-import de.lcraft.api.minecraft.spigot.manager.utils.Config;
-import de.lcraft.api.minecraft.spigot.manager.ModuleManager;
-import de.lcraft.api.minecraft.spigot.manager.utils.LPlayer;
-import de.lcraft.api.minecraft.spigot.manager.utils.LanguagesManager;
-import de.lcraft.api.minecraft.spigot.manager.utils.ListenerManager;
-import de.lcraft.api.minecraft.spigot.utils.server.ServerTPS;
+import de.lcraft.api.minecraft.spigot.module.manager.utils.Config;
+import de.lcraft.api.minecraft.spigot.module.manager.ModuleManager;
+import de.lcraft.api.minecraft.spigot.module.manager.utils.LPlayer;
+import de.lcraft.api.minecraft.spigot.module.manager.utils.LanguagesManager;
+import de.lcraft.api.minecraft.spigot.module.manager.utils.ListenerManager;
+import de.lcraft.api.minecraft.spigot.module.utils.server.ServerTPS;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
