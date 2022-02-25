@@ -381,6 +381,9 @@ public class PermsManager {
 
         return false;
     }
+    public final void logPermission(String permission) {
+        logPermissionWithExtra(permission, getExtraPermissionEnding());
+    }
     public final void logPermissionWithExtra(String permission, String... extra) {
         logPermissionWithExtra(permission, Arrays.asList(extra));
     }

@@ -13,7 +13,6 @@
         <module name="bungeecord-testplugin" />
         <module name="Lcraft Spigot Test Plugin" />
         <module name="spigot-testplugin" />
-        <module name="LcraftAPI-API (beta)" />
         <module name="API" />
         <module name="API-beta" />
         <module name="api" />
@@ -28,6 +27,10 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_STRING" value="-Xmaxerrs 123 -Xmaxwarns 456" />
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Lcraft BungeeCord Test Plugin" options="" />
+      <module name="Lcraft Spigot Test Plugin" options="" />
+      <module name="LcraftAPI-API" options="" />
+      <module name="LcraftAPI-API (beta)" options="" />
       <module name="api" options="" />
       <module name="api-beta" options="" />
       <module name="beta" options="" />
