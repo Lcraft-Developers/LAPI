@@ -2,8 +2,8 @@ package de.lcraft.api.minecraft.spigot;
 
 import de.lcraft.api.java_utils.language.DefaultLanguages;
 import de.lcraft.api.java_utils.language.LanguagesManager;
-import de.lcraft.api.minecraft.spigot.plugin.commands.languagesCommands.LangCommand;
-import de.lcraft.api.minecraft.spigot.plugin.commands.lcraftCommands.LcraftCommand;
+import de.lcraft.api.minecraft.spigot.plugin.commands.language.LangCommand;
+import de.lcraft.api.minecraft.spigot.plugin.commands.lcraft.LcraftCommand;
 import de.lcraft.api.minecraft.spigot.module.manager.ModuleManager;
 import de.lcraft.api.minecraft.spigot.module.manager.utils.language.StandardMessages;
 import de.lcraft.api.minecraft.spigot.module.manager.utils.permissions.PermsManager;

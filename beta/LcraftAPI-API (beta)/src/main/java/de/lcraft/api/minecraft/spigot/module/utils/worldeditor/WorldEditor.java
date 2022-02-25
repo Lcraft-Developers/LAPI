@@ -1,4 +1,4 @@
-package de.lcraft.api.minecraft.spigot.module.utils.server.worldeditor;
+package de.lcraft.api.minecraft.spigot.module.utils.worldeditor;
 
 import org.bukkit.Bukkit;
 import org.bukkit.World;

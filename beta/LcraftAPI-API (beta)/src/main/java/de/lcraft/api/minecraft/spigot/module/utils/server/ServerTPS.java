@@ -31,9 +31,6 @@ public class ServerTPS implements Runnable {
 		return ticks / (elapsed / 1000.0D);
 	}
 	public final long getElapsed(int tickID) {
-		if (TICK_COUNT - tickID >= TICKS.length) {
-		}
-
 		long time = TICKS[(tickID % TICKS.length)];
 		return System.currentTimeMillis() - time;
 	}

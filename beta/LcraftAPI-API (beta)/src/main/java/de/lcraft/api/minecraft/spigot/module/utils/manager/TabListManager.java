@@ -1,16 +1,9 @@
-package de.lcraft.api.minecraft.spigot.module.utils;
+package de.lcraft.api.minecraft.spigot.module.utils.manager;
 
 import de.lcraft.api.minecraft.spigot.module.manager.utils.permissions.PermsManager;
-import net.luckperms.api.LuckPerms;
-import net.luckperms.api.model.group.Group;
-import net.luckperms.api.model.user.User;
-import org.bukkit.Bukkit;
-import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.scoreboard.Scoreboard;
-import org.bukkit.scoreboard.Team;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class TabListManager {
 

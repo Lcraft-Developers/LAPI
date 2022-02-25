@@ -1,4 +1,4 @@
-package de.lcraft.api.minecraft.spigot.module.utils;
+package de.lcraft.api.minecraft.spigot.module.utils.manager;
 
 import de.lcraft.api.minecraft.spigot.module.player.LPlayerManager;
 import de.lcraft.api.minecraft.spigot.module.player.LPlayer;

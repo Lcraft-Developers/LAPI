@@ -1,4 +1,4 @@
-package de.lcraft.api.minecraft.spigot.plugin.commands.lcraftCommands;
+package de.lcraft.api.minecraft.spigot.plugin.commands.lcraft;
 
 import de.lcraft.api.java_utils.language.LanguagesManager;
 import de.lcraft.api.minecraft.spigot.module.player.LPlayerManager;

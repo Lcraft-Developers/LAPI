@@ -1,4 +1,4 @@
-package de.lcraft.api.minecraft.spigot.plugin.commands.languagesCommands;
+package de.lcraft.api.minecraft.spigot.plugin.commands.language;
 
 import de.lcraft.api.java_utils.language.Language;
 import de.lcraft.api.java_utils.language.LanguagesManager;
