@@ -25,7 +25,7 @@ public class SpigotMc {
 		});
 		return isUpdated;
 	}
-	public static final void getLatestVersion(String updateLink, String nameOrRecourcesID, Consumer<String> consumer) {
+	public final void getLatestVersion(String updateLink, String nameOrRecourcesID, Consumer<String> consumer) {
 		try (InputStream inputStream = new URL(updateLink).openStream();
 			 Scanner scanner = new Scanner(inputStream)) {
 			if (scanner.hasNext()) {
@@ -35,7 +35,7 @@ public class SpigotMc {
 			new SpigotMCPluginNotFound(nameOrRecourcesID).printStackTrace();
 		}
 	}
-	public static final String getUpdateLink(int resourcesID) {
+	public final String getUpdateLink(int resourcesID) {
 		return "https://api.spigotmc.org/legacy/update.php?resource=" + resourcesID;
 	}
 

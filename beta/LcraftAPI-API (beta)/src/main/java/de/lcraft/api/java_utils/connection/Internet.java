@@ -1,4 +1,4 @@
-package de.lcraft.api.java_utils;
+package de.lcraft.api.java_utils.connection;
 
 import de.lcraft.api.java_utils.exeptions.InternetNotFoundException;
 import java.io.*;
