@@ -14,7 +14,6 @@ public class ServerTPS implements Runnable {
 	}
 	public final void run() {
 		TICKS[(TICK_COUNT % TICKS.length)] = System.currentTimeMillis();
-
 		TICK_COUNT += 1;
 	}
 
