@@ -112,14 +112,15 @@ public class ModuleFileLoader {
     }
     public final Module getModule(File file, JavaPlugin plugin, ModuleDescriptionFileManager descriptionFile) {
         try {
-            URLClassLoader moduleClassLoader = new ModuleClassLoader(descriptionFile);
+            URLClassLoader moduleClassLoader = new ModuleClassLoader(descriptionFile.getFile());
             Class<?> main = moduleClassLoader.loadClass(descriptionFile.getSpigot_main());
             Module module = (Module) main.newInstance();
 
             module.setPlugin(plugin);
             module.setFile(file);
-            loadModule(module);
             module.load(moduleManager);
+            loadModule(module);
+            module.enableModule();
 
             return module;
         } catch (MalformedURLException e) {

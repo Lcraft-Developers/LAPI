@@ -1,8 +1,7 @@
 package de.lcraft.api.minecraft.spigot.module.manager.command;
 
+import de.lcraft.api.java_utils.configuration.Config;
 import de.lcraft.api.java_utils.language.LanguagesManager;
-import de.lcraft.api.minecraft.spigot.module.manager.configs.BukkitConfig;
-import de.lcraft.api.minecraft.spigot.module.manager.configs.ModuleBukkitConfig;
 import de.lcraft.api.minecraft.spigot.module.manager.utils.language.StandardMessages;
 import de.lcraft.api.minecraft.spigot.module.manager.utils.permissions.PermsManager;
 import org.bukkit.Bukkit;
@@ -14,12 +13,12 @@ import java.util.Objects;
 public class CommandManager {
 
     private ArrayList<Command> modulesCmds;
-    private BukkitConfig moduleCommands;
+    private Config moduleCommands;
     private StandardMessages standardMessages;
 
     public CommandManager(StandardMessages standardMessages) {
         this.modulesCmds = new ArrayList<>();
-        this.moduleCommands = new BukkitConfig("commands.yml");
+        this.moduleCommands = new Config("commands.yml");
         this.standardMessages = standardMessages;
     }
 
@@ -84,7 +83,7 @@ public class CommandManager {
         return standardMessages;
     }
 
-    public void setModuleCommands(ModuleBukkitConfig moduleCommands) {
+    public void setModuleCommands(Config moduleCommands) {
         this.moduleCommands = moduleCommands;
     }
 

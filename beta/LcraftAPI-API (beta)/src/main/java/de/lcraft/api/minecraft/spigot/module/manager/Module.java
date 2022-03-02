@@ -2,13 +2,13 @@ package de.lcraft.api.minecraft.spigot.module.manager;
 
 import de.lcraft.api.java_utils.connection.SpigotMc;
 import de.lcraft.api.java_utils.language.LanguagesManager;
+import de.lcraft.api.minecraft.spigot.module.manager.configs.ModuleConfig;
 import de.lcraft.api.minecraft.spigot.module.manager.utils.command.ModuleCommandManager;
 import de.lcraft.api.minecraft.spigot.module.manager.utils.language.StandardMessages;
 import de.lcraft.api.minecraft.spigot.module.manager.utils.listeners.ModuleListenerManager;
 import de.lcraft.api.minecraft.spigot.module.manager.logger.ModuleLogger;
 import de.lcraft.api.minecraft.spigot.module.manager.logger.ModuleLoggerType;
 import de.lcraft.api.minecraft.spigot.module.manager.command.CommandManager;
-import de.lcraft.api.minecraft.spigot.module.manager.configs.ModuleBukkitConfig;
 import de.lcraft.api.minecraft.spigot.module.manager.utils.permissions.PermsManager;
 import de.lcraft.api.minecraft.spigot.module.player.LPlayerManager;
 import de.lcraft.api.minecraft.spigot.module.utils.server.ServerTPS;
@@ -27,7 +27,7 @@ public abstract class Module {
     private File file;
     private ModuleManager manager;
     private PermsManager permsManager;
-    private ModuleBukkitConfig config;
+    private ModuleConfig config;
     private LPlayerManager lPlayerManager;
     private StandardMessages standardMessages;
     private ServerTPS serverTPS;
@@ -40,15 +40,13 @@ public abstract class Module {
         moduleDescriptionFileManager = new ModuleDescriptionFileManager(file);
         moduleDescriptionFileManager.load();
         moduleLogger = new ModuleLogger(moduleDescriptionFileManager.getName());
-        config = new ModuleBukkitConfig(getModuleDescriptionFile().getName(), "config.yml");
+        config = new ModuleConfig(getModuleDescriptionFile().getName(), "config.yml");
         standardMessages = new StandardMessages(this);
 
         permsManager = new PermsManager();
         languagesManager = new LanguagesManager();
         moduleCommandManager = new ModuleCommandManager(getStandardMessages(), this);
         listenerManager = new ModuleListenerManager(this);
-
-        enableModule();
 
         moduleCommandManager.reloadConfigs();
 
@@ -131,7 +129,7 @@ public abstract class Module {
     public final JavaPlugin getPlugin() {
         return plugin;
     }
-    public final ModuleBukkitConfig getConfig() {
+    public final ModuleConfig getConfig() {
         return config;
     }
     public final StandardMessages getStandardMessages() {

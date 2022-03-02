@@ -365,7 +365,7 @@ public class LanguagesManager {
 			return getIDLanguage(0);
 		} else {
 			setIDLanguage(0, DefaultLanguages.getEn_be());
-			return getMainLanguage();
+			return DefaultLanguages.getEn_be();
 		}
 	}
 

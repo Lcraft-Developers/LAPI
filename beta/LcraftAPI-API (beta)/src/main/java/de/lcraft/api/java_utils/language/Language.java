@@ -41,10 +41,11 @@ public abstract class Language {
 		save();
 	}
 	public final String[] getMessage(String root, String[] defaultMessage) {
-		if(Objects.nonNull(getHelpFile().getSection(getShort() + "."))) {
-			defaultMessage = new String[getHelpFile().getSection(getShort() + ".").size()];
-			for(int i = 0; i < getHelpFile().getSection(getShort() + ".").size(); i++) {
-				defaultMessage[i] = getHelpFile().getString(getShort() + "." + i);
+		String mainRoot = getShort() + "." + root;
+		if(Objects.nonNull(getHelpFile().getSection(mainRoot))) {
+			defaultMessage = new String[getHelpFile().getSection(mainRoot).size()];
+			for(int i = 0; i < getHelpFile().getSection(mainRoot).size(); i++) {
+				defaultMessage[i] = getHelpFile().getString(mainRoot + "." + i);
 			}
 		} else {
 			setMessage(root, defaultMessage);

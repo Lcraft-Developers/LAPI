@@ -30,7 +30,6 @@ C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\s
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\java_utils\language\DefaultLanguages.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\minecraft\spigot\module\manager\utils\command\ModuleCommandManager.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\java_utils\exeptions\InternetNotFoundException.java
-C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\minecraft\spigot\module\manager\configs\BukkitConfig.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\minecraft\spigot\module\manager\logger\ModuleLoggerType.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\minecraft\spigot\module\utils\inventory\BukkitInventoryValidator.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\minecraft\spigot\module\utils\inventory\ListInventory.java
@@ -62,7 +61,6 @@ C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\s
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\minecraft\spigot\module\player\LPlayerManager.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\minecraft\spigot\module\utils\inventory\item\InventoryConsumerItem.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\minecraft\spigot\module\manager\command\CommandManager.java
-C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\minecraft\spigot\module\manager\configs\ModuleBukkitConfig.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\minecraft\spigot\module\manager\utils\command\ModuleSubCommand.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\minecraft\spigot\module\utils\items\ItemConsumerBuilder.java
 C:\Users\LPD\Desktop\Development\workspace\LcraftAPI\beta\LcraftAPI-API (beta)\src\main\java\de\lcraft\api\minecraft\spigot\module\manager\logger\ModuleLogger.java

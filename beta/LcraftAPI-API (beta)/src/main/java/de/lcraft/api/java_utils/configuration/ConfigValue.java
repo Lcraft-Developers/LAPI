@@ -26,9 +26,20 @@ public class ConfigValue {
 		}
 		return false;
 	}
+	public static boolean isNumeric(String strNum) {
+		if (strNum == null) {
+			return false;
+		}
+		try {
+			double d = Double.parseDouble(strNum);
+		} catch (NumberFormatException nfe) {
+			return false;
+		}
+		return true;
+	}
 	public boolean isInteger(String c) {
 		try {
-			if(Objects.nonNull(c) && Objects.nonNull(Integer.valueOf(c))) {
+			if(Objects.nonNull(c) && isNumeric(c) && Objects.nonNull(Integer.valueOf(c))) {
 				return true;
 			}
 		} catch (Exception e) {}
@@ -36,7 +47,7 @@ public class ConfigValue {
 	}
 	public boolean isDouble(String c) {
 		try {
-		    if(Objects.nonNull(c) && Objects.nonNull(Double.valueOf(c))) {
+		    if(Objects.nonNull(c) && isNumeric(c) && Objects.nonNull(Double.valueOf(c))) {
 			    return true;
 		    }
 		} catch (Exception e) {}
@@ -44,7 +55,7 @@ public class ConfigValue {
 	}
 	public boolean isFloat(String c) {
 		try {
-		    if(Objects.nonNull(c) && Objects.nonNull(Float.valueOf(c))) {
+		    if(Objects.nonNull(c) && isNumeric(c) && Objects.nonNull(Float.valueOf(c))) {
 			    return true;
 		    }
 		} catch (Exception e) {}
@@ -52,7 +63,7 @@ public class ConfigValue {
 	}
 	public boolean isLong(String c) {
 		try {
-		    if(Objects.nonNull(c) && Objects.nonNull(Long.valueOf(c))) {
+		    if(Objects.nonNull(c) && isNumeric(c) && Objects.nonNull(Long.valueOf(c))) {
 			    return true;
 		    }
 		} catch (Exception e) {}
@@ -60,7 +71,7 @@ public class ConfigValue {
 	}
 	public boolean isByte(String c) {
 		try {
-		    if(Objects.nonNull(c) && Objects.nonNull(Byte.valueOf(c))) {
+		    if(Objects.nonNull(c) && isNumeric(c) && Objects.nonNull(Byte.valueOf(c))) {
 				return true;
 			}
 		} catch (Exception e) {}
@@ -68,7 +79,7 @@ public class ConfigValue {
 	}
 	public boolean isBoolean(String c) {
 		try {
-		    if(Objects.nonNull(c) && Objects.nonNull(Boolean.valueOf(c))) {
+		    if(Objects.nonNull(c) && isNumeric(c) && Objects.nonNull(Boolean.valueOf(c))) {
 				    return true;
 			}
 		} catch (Exception e) {}

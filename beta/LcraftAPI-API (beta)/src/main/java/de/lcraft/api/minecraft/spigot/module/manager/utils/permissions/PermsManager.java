@@ -1,29 +1,26 @@
 package de.lcraft.api.minecraft.spigot.module.manager.utils.permissions;
 
 import de.lcraft.api.java_utils.CodeHelper;
-import de.lcraft.api.minecraft.spigot.module.manager.configs.ModuleBukkitConfig;
+import de.lcraft.api.minecraft.spigot.module.manager.configs.ModuleConfig;
 import de.lcraft.api.minecraft.spigot.module.player.LPlayer;
 import net.luckperms.api.LuckPerms;
-import net.luckperms.api.model.group.Group;
-import net.luckperms.api.model.user.User;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.RegisteredServiceProvider;
-import org.bukkit.scoreboard.Team;
 
 import java.util.*;
 
 public class PermsManager {
 
-    private ModuleBukkitConfig allPermissionsCfg,
+    private ModuleConfig allPermissionsCfg,
                          adminsCfg,
                          cfg;
     private ArrayList<String> extraPermissionEnding;
 
     public PermsManager(String... extraPermissionEnding) {
-        this.allPermissionsCfg = new ModuleBukkitConfig("Lcraft Permissions", "allPermissions.yml");
-        this.adminsCfg = new ModuleBukkitConfig("Lcraft Permissions", "admins.yml");
-        this.cfg = new ModuleBukkitConfig("Lcraft Permissions", "config.yml");
+        this.allPermissionsCfg = new ModuleConfig("Lcraft Permissions", "allPermissions.yml");
+        this.adminsCfg = new ModuleConfig("Lcraft Permissions", "admins.yml");
+        this.cfg = new ModuleConfig("Lcraft Permissions", "config.yml");
         this.extraPermissionEnding = new ArrayList<>();
 
         for(String c : extraPermissionEnding) {
@@ -31,17 +28,17 @@ public class PermsManager {
         }
     }
     public PermsManager() {
-        this.allPermissionsCfg = new ModuleBukkitConfig("Lcraft Permissions", "allPermissions.yml");
-        this.adminsCfg = new ModuleBukkitConfig("Lcraft Permissions", "admins.yml");
-        this.cfg = new ModuleBukkitConfig("Lcraft Permissions", "config.yml");
+        this.allPermissionsCfg = new ModuleConfig("Lcraft Permissions", "allPermissions.yml");
+        this.adminsCfg = new ModuleConfig("Lcraft Permissions", "admins.yml");
+        this.cfg = new ModuleConfig("Lcraft Permissions", "config.yml");
         this.extraPermissionEnding = new ArrayList<>();
         extraPermissionEnding.add("*");
         extraPermissionEnding.add("admin");
     }
     public PermsManager(ArrayList<String> extraPermissionEnding) {
-        this.allPermissionsCfg = new ModuleBukkitConfig("Lcraft Permissions", "allPermissions.yml");
-        this.adminsCfg = new ModuleBukkitConfig("Lcraft Permissions", "admins.yml");
-        this.cfg = new ModuleBukkitConfig("Lcraft Permissions", "config.yml");
+        this.allPermissionsCfg = new ModuleConfig("Lcraft Permissions", "allPermissions.yml");
+        this.adminsCfg = new ModuleConfig("Lcraft Permissions", "admins.yml");
+        this.cfg = new ModuleConfig("Lcraft Permissions", "config.yml");
         this.extraPermissionEnding = extraPermissionEnding;
     }
 
@@ -433,7 +430,7 @@ public class PermsManager {
         return false;
     }
     public boolean isLuckPermsEnabled() {
-        if(getConfig().exists("systems.luckperms.enabled") && getConfig().get("systems.luckperms.enabled") instanceof Boolean && getConfig().getBoolean("systems.luckperms.enabled")) {
+        if(getConfig().exists("systems.luckperms.enabled") && getConfig().existsAsBoolean("systems.luckperms.enabled") && getConfig().getBoolean("systems.luckperms.enabled")) {
             return true;
         } else {
             getConfig().set("systems.luckperms.enabled", false);
@@ -469,13 +466,13 @@ public class PermsManager {
         getAdminsCfg().set(root + "admin", isAdmin);
     }
 
-    public final ModuleBukkitConfig getAllPermissionsCfg() {
+    public ModuleConfig getAllPermissionsCfg() {
         return allPermissionsCfg;
     }
-    public final ModuleBukkitConfig getAdminsCfg() {
+    public ModuleConfig getAdminsCfg() {
         return adminsCfg;
     }
-    public final ModuleBukkitConfig getConfig() {
+    public ModuleConfig getConfig() {
         return cfg;
     }
     public final ArrayList<String> getExtraPermissionEnding() {

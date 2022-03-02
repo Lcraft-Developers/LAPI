@@ -1,9 +1,9 @@
 package de.lcraft.api.minecraft.spigot.module.player;
 
+import de.lcraft.api.java_utils.configuration.Config;
 import de.lcraft.api.java_utils.language.LanguagesManager;
 import de.lcraft.api.minecraft.spigot.SpigotClass;
 import de.lcraft.api.minecraft.spigot.module.manager.utils.listeners.ListenerManager;
-import de.lcraft.api.minecraft.spigot.module.manager.configs.BukkitConfig;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -19,12 +19,12 @@ import java.util.UUID;
 public class LPlayerManager implements Listener {
 
 	private ArrayList<LPlayer> players;
-	private BukkitConfig userConfig;
+	private Config userConfig;
 	private ListenerManager listenerManager;
 	private LanguagesManager languagesManager;
 	private SpigotClass spigotPlugin;
 
-	public LPlayerManager(SpigotClass spigotPlugin, BukkitConfig userConfig, JavaPlugin plugin, LanguagesManager languagesManager) {
+	public LPlayerManager(SpigotClass spigotPlugin, Config userConfig, JavaPlugin plugin, LanguagesManager languagesManager) {
 		this.userConfig = userConfig;
 		this.listenerManager = new ListenerManager(plugin);
 		this.languagesManager = languagesManager;
@@ -36,7 +36,7 @@ public class LPlayerManager implements Listener {
 
 	public final void reloadPlayers() {
 		if(Objects.nonNull(userConfig.getSection("user"))) {
-			for(String c : userConfig.getSection("user").getKeys(false)) {
+			for(String c : userConfig.getSection("user").getAllKeys().keySet()) {
 				UUID uuid = UUID.fromString(c);
 				LPlayer p = new LPlayer(getSpigotPlugin(), this, uuid, userConfig, getListenerManager(), getLanguagesManager());
 				players.add(p);
@@ -97,7 +97,7 @@ public class LPlayerManager implements Listener {
 	public ListenerManager getListenerManager() {
 		return listenerManager;
 	}
-	public BukkitConfig getUserConfig() {
+	public Config getUserConfig() {
 		return userConfig;
 	}
 	public void setListenerManager(ListenerManager listenerManager) {
@@ -106,7 +106,7 @@ public class LPlayerManager implements Listener {
 	public void setLanguagesManager(LanguagesManager languagesManager) {
 		this.languagesManager = languagesManager;
 	}
-	public void setUserConfig(BukkitConfig userConfig) {
+	public void setUserConfig(Config userConfig) {
 		this.userConfig = userConfig;
 	}
 	public SpigotClass getSpigotPlugin() {

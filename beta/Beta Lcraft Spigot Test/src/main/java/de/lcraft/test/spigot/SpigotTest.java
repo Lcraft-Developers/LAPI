@@ -1,17 +1,17 @@
 package de.lcraft.test.spigot;
 
 import de.lcraft.api.minecraft.spigot.module.manager.Module;
-import de.lcraft.api.minecraft.spigot.module.manager.configs.ModuleBukkitConfig;
+import de.lcraft.api.minecraft.spigot.module.manager.configs.ModuleConfig;
 import de.lcraft.test.spigot.commands.tps.TPSCommand;
 import de.lcraft.test.spigot.listeners.JoinListener;
 
 public class SpigotTest extends Module {
 
-	private ModuleBukkitConfig moduleConfig;
+	private ModuleConfig moduleConfig;
 
 	@Override
 	public void onEnable() {
-		moduleConfig = new ModuleBukkitConfig(this,"config.yml");
+		moduleConfig = new ModuleConfig(this,"config.yml");
 
 		getListenerManager().registerListener(new JoinListener());
 

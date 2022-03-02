@@ -117,7 +117,7 @@ public class ModuleDescriptionFileManager {
     }
     public final boolean hasEnoughInformation() {
         Map<String, Object> data = getAllDatasFromModuleFile();
-        if(Objects.nonNull(data.get("name"))) {
+        if(Objects.nonNull(data) && Objects.nonNull(data.get("name"))) {
             String name = data.get("name").toString();
             if(Objects.nonNull(data.get("spigot-main"))) {
                 if(Objects.nonNull(data.get("version"))) {

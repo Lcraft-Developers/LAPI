@@ -234,6 +234,23 @@ public class Config {
 		return false;
 	}
 
+	public final Object getDefault(String path, Object start) {
+		if(exists(path)) {
+			return get(path);
+		} else {
+			set(path, start);
+			return start;
+		}
+	}
+	public final String getStringDefault(String path, String start) {
+		if(exists(path)) {
+			return getString(path);
+		} else {
+			set(path, start);
+			return start;
+		}
+	}
+
 	public String getString(String root) {
 		ConfigValue value = get(root);
 		if(Objects.nonNull(value) && existsAsString(root)) {

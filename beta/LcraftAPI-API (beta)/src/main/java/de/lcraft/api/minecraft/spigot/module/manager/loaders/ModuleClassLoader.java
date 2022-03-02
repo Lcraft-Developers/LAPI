@@ -30,9 +30,6 @@ public class ModuleClassLoader extends URLClassLoader {
     private URL url;
     private Manifest manifest;
 
-    protected ModuleClassLoader(ModuleDescriptionFileManager file) throws MalformedURLException {
-        this(file.getFile());
-    }
     protected ModuleClassLoader(File file) throws MalformedURLException {
         super(new URL[]{ file.toURI().toURL() });
         try {

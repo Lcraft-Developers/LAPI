@@ -21,6 +21,7 @@ public abstract class ModuleCommand extends Command {
 	}
 	public ModuleCommand(String label, String desc, Module m, boolean splitting) {
 		super(new StandardMessages(m), label, desc, m.getPermsManager(), m.getLanguagesManager(), m.getModuleManager().getPluginMain().getLPlayerManager(), splitting);
+		this.module = m;
 	}
 
 	public final void addModuleSubCommand(ModuleSubCommand subModuleCommand) {

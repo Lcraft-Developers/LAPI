@@ -1,9 +1,10 @@
 package de.lcraft.api.minecraft.spigot.module.player;
 
+import de.lcraft.api.java_utils.configuration.Config;
+import de.lcraft.api.java_utils.configuration.ConfigValue;
 import de.lcraft.api.java_utils.language.Language;
 import de.lcraft.api.java_utils.language.LanguagesManager;
 import de.lcraft.api.minecraft.spigot.SpigotClass;
-import de.lcraft.api.minecraft.spigot.module.manager.configs.BukkitConfig;
 import de.lcraft.api.minecraft.spigot.module.manager.logger.Logger;
 import de.lcraft.api.minecraft.spigot.module.manager.logger.ModuleLogger;
 import de.lcraft.api.minecraft.spigot.module.manager.logger.ModuleLoggerType;
@@ -32,11 +33,11 @@ public class LPlayer implements Listener {
 	private ListenerManager listenerManager;
 	private LanguagesManager languagesManager;
 	private SpigotClass plugin;
-	private BukkitConfig userCFG;
+	private Config userCFG;
 	private LPlayerManager lPlayerManager;
 	private Logger logger;
 
-	public LPlayer(SpigotClass spigotPlugin, LPlayerManager manager, UUID uuid, BukkitConfig userCFG, ListenerManager listenerManager, LanguagesManager languagesManager) {
+	public LPlayer(SpigotClass spigotPlugin, LPlayerManager manager, UUID uuid, Config userCFG, ListenerManager listenerManager, LanguagesManager languagesManager) {
 		this.uuid = uuid;
 		this.plugin = spigotPlugin;
 		this.userCFG = userCFG;
@@ -197,7 +198,12 @@ public class LPlayer implements Listener {
 			} else {
 				vanished.add(getUUID().toString());
 			}
-			c.getUserCFG().saveStringArrayList("user." + getUUID().toString() + ".vanished", vanished);
+			int i = 0;
+			for(String array : vanished) {
+				c.getUserCFG().set("user." + getUUID().toString() + ".vanished." + i, array);
+				i++;
+			}
+			c.getUserCFG().save();
 		}
 	}
 	public final void vanishFromAllPlayers(boolean visible) {
@@ -212,17 +218,27 @@ public class LPlayer implements Listener {
 		}
 	}
 	public final String getNickName() {
-		if(isOnline()) {
-			return getString("user." + getUUID().toString() + ".nickname", getPlayer().getName(), true);
+		if(getUserCFG().exists("user." + getUUID().toString() + ".nickname")) {
+			return getUserCFG().getString("user." + getUUID().toString() + ".nickname");
 		} else {
-			return getString("user." + getUUID().toString() + ".nickname", getOfflinePlayer().getName(), true);
+			if(isOnline()) {
+				getUserCFG().set("user." + getUUID().toString() + ".nickname", getPlayer().getName());
+			} else {
+				getUserCFG().set("user." + getUUID().toString() + ".nickname", getOfflinePlayer().getName());
+			}
 		}
+		getUserCFG().save();
+		return getNickName();
 	}
 	public final Language getLanguage() {
 		return getLanguagesManager().getIDLanguage(getLanguagesManager().getIDFromUUID(getUUID()));
 	}
 	public final ArrayList<String> getVanishedUUID() {
-		return getUserCFG().getStringArrayList("user." + getUUID().toString() + ".vanished");
+		ArrayList<String> array = new ArrayList<>();
+		for(ConfigValue v : getUserCFG().getSection("user." + getUUID().toString() + ".vanished").getAllKeys().values()) {
+			array.add(v.convertToString());
+		}
+		return array;
 	}
 
 	public final ListenerManager getListenerManager() {
@@ -234,7 +250,7 @@ public class LPlayer implements Listener {
 	public final SpigotClass getPlugin() {
 		return plugin;
 	}
-	public final BukkitConfig getUserCFG() {
+	public Config getUserCFG() {
 		return userCFG;
 	}
 	public Logger getLogger() {
@@ -245,16 +261,6 @@ public class LPlayer implements Listener {
 		userCFG.set(root, def);
 		userCFG.set(root + ".changeable", isChangeable);
 		return def;
-	}
-	public final Object get(String root, Object def, boolean isChangeable) {
-		if(userCFG.exists(root)) {
-			return userCFG.get(root);
-		} else {
-			return set(root, def, isChangeable);
-		}
-	}
-	public final String getString(String root, Object def, boolean isChangeable) {
-		return String.valueOf(get(root, def, isChangeable));
 	}
 
 }

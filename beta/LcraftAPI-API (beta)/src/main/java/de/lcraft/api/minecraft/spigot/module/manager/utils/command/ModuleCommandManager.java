@@ -1,20 +1,20 @@
 package de.lcraft.api.minecraft.spigot.module.manager.utils.command;
 
 import de.lcraft.api.minecraft.spigot.module.manager.Module;
-import de.lcraft.api.minecraft.spigot.module.manager.configs.ModuleBukkitConfig;
+import de.lcraft.api.minecraft.spigot.module.manager.configs.ModuleConfig;
 import de.lcraft.api.minecraft.spigot.module.manager.utils.language.StandardMessages;
 import de.lcraft.api.minecraft.spigot.module.manager.command.CommandManager;
 
 public class ModuleCommandManager extends CommandManager {
 
 	private Module module;
-	private ModuleBukkitConfig moduleBukkitConfig;
+	private ModuleConfig moduleBukkitConfig;
 
 	public ModuleCommandManager(StandardMessages standardMessages, Module module) {
 		super(standardMessages);
 		this.module = module;
-		setModuleCommands(new ModuleBukkitConfig(getModule(), "commands.yml"));
-		this.moduleBukkitConfig = new ModuleBukkitConfig(getModule(), "commands.yml");
+		setModuleCommands(new ModuleConfig(getModule(), "commands.yml"));
+		this.moduleBukkitConfig = new ModuleConfig(getModule(), "commands.yml");
 	}
 	public ModuleCommandManager(Module module) {
 		this(module.getStandardMessages(), module);
@@ -25,7 +25,7 @@ public class ModuleCommandManager extends CommandManager {
 	public Module getModule() {
 		return module;
 	}
-	public ModuleBukkitConfig getModuleBukkitConfig() {
+	public ModuleConfig getModuleBukkitConfig() {
 		return moduleBukkitConfig;
 	}
 

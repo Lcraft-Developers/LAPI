@@ -1,8 +1,9 @@
 package de.lcraft.api.minecraft.spigot.module.manager.utils.language;
 
+import de.lcraft.api.java_utils.configuration.Config;
 import de.lcraft.api.minecraft.spigot.module.manager.Module;
-import de.lcraft.api.minecraft.spigot.module.manager.configs.BukkitConfig;
-import de.lcraft.api.minecraft.spigot.module.manager.configs.ModuleBukkitConfig;
+import de.lcraft.api.minecraft.spigot.module.manager.configs.ModuleConfig;
+
 import java.util.Objects;
 
 public class StandardMessages {
@@ -16,13 +17,13 @@ public class StandardMessages {
 	               NO_PLAYER_FOUND = "§cThis Player is not online!",
 	               NO_NUMBER = "§cYou have to type a number!",
 	               HELP_MESSAGE = "§cYou have to use %helpmessage%!";
-	private BukkitConfig config;
+	private Config config;
 
-	public StandardMessages(BukkitConfig config) {
+	public StandardMessages(Config config) {
 		this.config = config;
 	}
 	public StandardMessages(Module module) {
-		this(new ModuleBukkitConfig(module, "standardMessages.yml"));
+		this(new ModuleConfig(module, "standardMessages.yml"));
 	}
 
 	public void load() {
@@ -50,7 +51,7 @@ public class StandardMessages {
 	public final String getNO_NUMBER() {
 		return NO_NUMBER;
 	}
-	public final BukkitConfig getConfig() {
+	public final Config getConfig() {
 		return config;
 	}
 	public final String getNO_PERMISSIONS() {
@@ -75,7 +76,7 @@ public class StandardMessages {
 		return NO_PLAYER;
 	}
 
-	private final void setConfig(BukkitConfig config) {
+	private final void setConfig(Config config) {
 		this.config = config;
 	}
 	private final void setPREFIX(String PREFIX) {
