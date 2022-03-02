@@ -27,39 +27,51 @@ public class ConfigValue {
 		return false;
 	}
 	public boolean isInteger(String c) {
-		if(Objects.nonNull(Integer.valueOf(c))) {
-			return true;
-		}
+		try {
+			if(Objects.nonNull(c) && Objects.nonNull(Integer.valueOf(c))) {
+				return true;
+			}
+		} catch (Exception e) {}
 		return false;
 	}
 	public boolean isDouble(String c) {
-		if(Objects.nonNull(Double.valueOf(c))) {
-			return true;
-		}
+		try {
+		    if(Objects.nonNull(c) && Objects.nonNull(Double.valueOf(c))) {
+			    return true;
+		    }
+		} catch (Exception e) {}
 		return false;
 	}
 	public boolean isFloat(String c) {
-		if(Objects.nonNull(Float.valueOf(c))) {
-			return true;
-		}
+		try {
+		    if(Objects.nonNull(c) && Objects.nonNull(Float.valueOf(c))) {
+			    return true;
+		    }
+		} catch (Exception e) {}
 		return false;
 	}
 	public boolean isLong(String c) {
-		if(Objects.nonNull(Long.valueOf(c))) {
-			return true;
-		}
+		try {
+		    if(Objects.nonNull(c) && Objects.nonNull(Long.valueOf(c))) {
+			    return true;
+		    }
+		} catch (Exception e) {}
 		return false;
 	}
 	public boolean isByte(String c) {
-		if(Objects.nonNull(Byte.valueOf(c))) {
-			return true;
-		}
+		try {
+		    if(Objects.nonNull(c) && Objects.nonNull(Byte.valueOf(c))) {
+				return true;
+			}
+		} catch (Exception e) {}
 		return false;
 	}
 	public boolean isBoolean(String c) {
-		if(Objects.nonNull(Boolean.valueOf(c))) {
-			return true;
-		}
+		try {
+		    if(Objects.nonNull(c) && Objects.nonNull(Boolean.valueOf(c))) {
+				    return true;
+			}
+		} catch (Exception e) {}
 		return false;
 	}
 

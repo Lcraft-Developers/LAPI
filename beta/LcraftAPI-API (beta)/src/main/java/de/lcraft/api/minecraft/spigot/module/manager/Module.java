@@ -11,6 +11,7 @@ import de.lcraft.api.minecraft.spigot.module.manager.command.CommandManager;
 import de.lcraft.api.minecraft.spigot.module.manager.configs.ModuleBukkitConfig;
 import de.lcraft.api.minecraft.spigot.module.manager.utils.permissions.PermsManager;
 import de.lcraft.api.minecraft.spigot.module.player.LPlayerManager;
+import de.lcraft.api.minecraft.spigot.module.utils.server.ServerTPS;
 import org.bukkit.plugin.java.JavaPlugin;
 import java.io.File;
 import java.util.Objects;
@@ -29,10 +30,12 @@ public abstract class Module {
     private ModuleBukkitConfig config;
     private LPlayerManager lPlayerManager;
     private StandardMessages standardMessages;
+    private ServerTPS serverTPS;
 
     public final void load(ModuleManager manager) {
         this.manager = manager;
         this.lPlayerManager = manager.getPluginMain().getLPlayerManager();
+        this.serverTPS = new ServerTPS(manager.getPluginMain());
 
         moduleDescriptionFileManager = new ModuleDescriptionFileManager(file);
         moduleDescriptionFileManager.load();
@@ -133,6 +136,9 @@ public abstract class Module {
     }
     public final StandardMessages getStandardMessages() {
         return standardMessages;
+    }
+    public ServerTPS getServerTPS() {
+        return serverTPS;
     }
 
     @Override

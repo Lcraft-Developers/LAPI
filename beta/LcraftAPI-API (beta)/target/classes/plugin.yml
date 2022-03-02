@@ -1,0 +1,8 @@
+name: LcraftAPI
+version: '1.0.8'
+main: de.lcraft.api.minecraft.spigot.SpigotClass
+authors:
+  - LPD
+  - Lcraft Developers
+description: '${project.description}'
+website: lcraft.de

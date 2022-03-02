@@ -1,0 +1,25 @@
+translate:
+  '16136':
+    default: §cYou have to be a player to do that!
+    translation: §cYou have to be a player to do that!
+  '14321':
+    default: §cYou have to use %helpmessage%!
+    translation: §cYou have to use %helpmessage%!
+  '33746':
+    default: §7[§6LcraftAPI§7] §8>> §r§aSuccessfully opened the Languages Inventory
+    translation: §7[§6LcraftAPI§7] §8>> §r§aSuccessfully opened the Languages Inventory
+  '14664':
+    default: §cYou have to use /lang  /lang §c!
+    translation: §cYou have to use /lang  /lang §c!
+  '4300':
+    default: §bThanks
+    translation: §bThanks
+  '21170':
+    default: §aThis Plugin was made by §bLcraft Developers
+    translation: §aThis Plugin was made by §bLcraft Developers
+  '20327':
+    default: §aSuccessfully opened the Lcraft Inventory
+    translation: §aSuccessfully opened the Lcraft Inventory
+  '16740':
+    default: §cYou have to use /lcraft  /lcraft §c!
+    translation: §cYou have to use /lcraft  /lcraft §c!

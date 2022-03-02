@@ -11,7 +11,7 @@
 
     <name>Lcraft API (Beta)</name>
     <description></description>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
 
     <groupId>de.lcraft.api</groupId>
     <artifactId>api-beta</artifactId>
