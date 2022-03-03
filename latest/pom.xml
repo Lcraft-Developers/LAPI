@@ -11,7 +11,7 @@
 
     <name>The latest Versions</name>
     <description></description>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
 
     <groupId>de.lcraft.api</groupId>
     <artifactId>latest</artifactId>
