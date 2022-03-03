@@ -40,7 +40,7 @@ public abstract class Module {
         moduleDescriptionFileManager = new ModuleDescriptionFileManager(file);
         moduleDescriptionFileManager.load();
         moduleLogger = new ModuleLogger(moduleDescriptionFileManager.getName());
-        config = new ModuleConfig(getModuleDescriptionFile().getName(), "config.yml");
+        config = new ModuleConfig(this, "config.yml");
         standardMessages = new StandardMessages(this);
 
         permsManager = new PermsManager();

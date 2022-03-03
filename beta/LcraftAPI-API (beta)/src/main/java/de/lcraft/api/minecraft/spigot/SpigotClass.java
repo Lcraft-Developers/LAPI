@@ -40,7 +40,8 @@ public class SpigotClass extends JavaPlugin {
             apiPluginMain = this;
             cfg = new Config("", "config.yml");
             userConfig = new Config("users.yml");
-            standardMessages = new StandardMessages(new Config("standardMessages.yml"));
+            standardMessages = new StandardMessages(new Config("lmodules", "Lcraft", "standardMessages.yml"));
+            standardMessages.load("§6Lcraft §r>> ");
             languagesManager = new LanguagesManager();
             permsManager = new PermsManager("*", "admin");
             commandManager = new CommandManager(getStandardMessages());
@@ -49,6 +50,7 @@ public class SpigotClass extends JavaPlugin {
             listenerManager = new ListenerManager(getAPIPluginMain());
             ModuleClassLoader.classLoaders.add(Bukkit.getServer().getClass().getClassLoader());
             ModuleClassLoader.classLoaders.add(this.getClassLoader());
+
             getCommandManager().addCommand(new LangCommand(getStandardMessages(), getPermsManager(), getLPlayerManager(), getLanguagesManager()), true);
             getCommandManager().addCommand(new LcraftCommand(getStandardMessages(), getPermsManager(), getLPlayerManager(), getLanguagesManager()), false);
             getCommandManager().reloadConfigs(getPermsManager(), getLanguagesManager());

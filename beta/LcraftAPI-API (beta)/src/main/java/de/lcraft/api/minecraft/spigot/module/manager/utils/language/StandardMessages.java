@@ -43,6 +43,7 @@ public class StandardMessages {
 		setNO_PLAYER_FOUND(getConfig().getStringDefault("MESSAGE.NO_PLAYER_FOUND", getNO_PLAYER_FOUND()));
 		setNO_NUMBER(getConfig().getStringDefault("MESSAGE.NO_NUMBER", getNO_NUMBER()));
 		setHELP_MESSAGE(getConfig().getStringDefault("MESSAGE.HELP_MESSAGE", getHELP_MESSAGE()));
+		getConfig().save();
 	}
 
 	public final String getPREFIX() {

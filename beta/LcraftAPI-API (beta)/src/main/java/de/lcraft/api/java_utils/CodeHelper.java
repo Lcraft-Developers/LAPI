@@ -1,10 +1,7 @@
 package de.lcraft.api.java_utils;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class CodeHelper {
 
@@ -70,6 +67,25 @@ public class CodeHelper {
             }
         }
         return amount;
+    }
+    public static boolean isEnding(String str, String word) {
+        return Objects.nonNull(replaceEnd(str, word, ""));
+    }
+    public static String replaceEnd(String str, String replaceWord, String newWord) {
+        String w = "";
+        boolean foundWord = false;
+        for(int i = (str.length() - 1); i > 0; i--) {
+            if(!w.equals(replaceWord)) {
+                w = w + str.split("")[i];
+            } else {
+                foundWord = true;
+                w = w + newWord;
+            }
+        }
+        if(foundWord) {
+            return w;
+        }
+        return null;
     }
 
 }

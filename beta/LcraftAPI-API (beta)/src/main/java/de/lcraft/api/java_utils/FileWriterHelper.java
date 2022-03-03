@@ -7,6 +7,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class FileWriterHelper {
 
@@ -31,7 +32,9 @@ public class FileWriterHelper {
 	}
 	public ArrayList<String> getAllLines() throws IOException {
 		ArrayList<String> allLines = new ArrayList<>();
-		allLines.addAll(Files.readAllLines(getFile().toPath()));
+		if(Objects.nonNull(getFile()) && !getFile().exists() && Files.isReadable(getFile().toPath())) {
+			allLines.addAll(Files.readAllLines(getFile().toPath()));
+		}
 		return allLines;
 	}
 

@@ -1,45 +1,33 @@
-[15:55:15] [ServerMain/INFO]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
-[15:55:16] [ServerMain/INFO]: Reloading ResourceManager: Default, bukkit
-[15:55:16] [Worker-Main-3/INFO]: Loaded 7 recipes
-[15:55:18] [Server thread/INFO]: Starting minecraft server version 1.18
-[15:55:18] [Server thread/INFO]: Loading properties
-[15:55:18] [Server thread/INFO]: This server is running Paper version git-Paper-20 (MC: 1.18) (Implementing API version 1.18-R0.1-SNAPSHOT) (Git: 0cd411e)
-[15:55:18] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[15:55:18] [Server thread/INFO]: Using 4 threads for Netty based IO
-[15:55:18] [Server thread/INFO]: Default game type: SURVIVAL
-[15:55:18] [Server thread/INFO]: Generating keypair
-[15:55:18] [Server thread/INFO]: Starting Minecraft server on *:26577
-[15:55:18] [Server thread/INFO]: Using default channel type
-[15:55:18] [Server thread/INFO]: Paper: Using Java 11 compression from Velocity.
-[15:55:18] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
-[15:55:19] [Server thread/INFO]: [LcraftAPI] Loading LcraftAPI v1.0.8
-[15:55:19] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[15:55:19] [Server thread/INFO]: Preparing level "world"
-[15:55:20] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
-[15:55:20] [Server thread/INFO]: Time elapsed: 310 ms
-[15:55:20] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
-[15:55:20] [Server thread/INFO]: Time elapsed: 140 ms
-[15:55:20] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
-[15:55:20] [Server thread/INFO]: Time elapsed: 129 ms
-[15:55:20] [Server thread/INFO]: [LcraftAPI] Enabling LcraftAPI v1.0.8
-[15:55:22] [Server thread/INFO]: [LcraftAPI] The Plugin has been successfully started.
-[15:55:22] [Server thread/INFO]: Running delayed init tasks
-[15:55:22] [Server thread/INFO]: Done (4.128s)! For help, type "help"
-[15:55:22] [Server thread/INFO]: Timings Reset
-[15:55:23] [Server thread/WARN]: UUID of added entity already exists: EntitySheep['Sheep'/90, uuid='2a531571-5e9c-40db-8ddc-04e54ad6fa67', l='ServerLevel[world]', x=6.45, y=102.00, z=16.09, cpos=[0, 1], tl=179890, v=false]
-[15:55:48] [User Authenticator #1/INFO]: UUID of player Cooler_LK is c72ab8a9-a030-4796-84b3-523ca07792c4
-[15:55:49] [Server thread/INFO]: INFO >> Cooler_LK connected to the game with UUID (c72ab8a9-a030-4796-84b3-523ca07792c4)
-[15:55:49] [Server thread/INFO]: Cooler_LK[/127.0.0.1:4701] logged in with entity id 225 at ([world]6.5, 111.0, 7.5)
-[15:55:51] [Server thread/INFO]: Cooler_LK issued server command: /lang
-[15:55:51] [Server thread/INFO]: de.lcraft.api.minecraft.spigot.utils.inventory.item.InventoryConsumerItem@6a0e9c81
-[15:55:51] [Server thread/INFO]: de.lcraft.api.minecraft.spigot.utils.inventory.item.InventoryConsumerItem@4d8974c8
-[15:55:51] [Server thread/INFO]: de.lcraft.api.minecraft.spigot.utils.inventory.item.InventoryConsumerItem@7c0d6a49
-[15:55:53] [Server thread/INFO]: Cooler_LK issued server command: /lang
-[15:55:53] [Server thread/INFO]: de.lcraft.api.minecraft.spigot.utils.inventory.item.InventoryConsumerItem@5f65c189
-[15:55:53] [Server thread/INFO]: de.lcraft.api.minecraft.spigot.utils.inventory.item.InventoryConsumerItem@7c550ec3
-[15:55:54] [Server thread/INFO]: de.lcraft.api.minecraft.spigot.utils.inventory.item.InventoryConsumerItem@6b9ef783
-[15:55:55] [Server thread/INFO]: Cooler_LK issued server command: /lang
-[15:55:56] [Server thread/INFO]: de.lcraft.api.minecraft.spigot.utils.inventory.item.InventoryConsumerItem@1d796ec4
-[15:55:56] [Server thread/INFO]: de.lcraft.api.minecraft.spigot.utils.inventory.item.InventoryConsumerItem@24c97251
-[15:55:56] [Server thread/INFO]: de.lcraft.api.minecraft.spigot.utils.inventory.item.InventoryConsumerItem@743611fa
-[15:56:01] [Server thread/INFO]: Cooler_LK issued server command: /lcraft
+[19:30:11] [ServerMain/INFO]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[19:30:11] [ServerMain/INFO]: Reloading ResourceManager: Default, bukkit
+[19:30:12] [Worker-Main-4/INFO]: Loaded 7 recipes
+[19:30:13] [Server thread/INFO]: Starting minecraft server version 1.18
+[19:30:13] [Server thread/INFO]: Loading properties
+[19:30:13] [Server thread/INFO]: This server is running Paper version git-Paper-20 (MC: 1.18) (Implementing API version 1.18-R0.1-SNAPSHOT) (Git: 0cd411e)
+[19:30:13] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[19:30:13] [Server thread/INFO]: Using 4 threads for Netty based IO
+[19:30:13] [Server thread/INFO]: Default game type: SURVIVAL
+[19:30:13] [Server thread/INFO]: Generating keypair
+[19:30:13] [Server thread/INFO]: Starting Minecraft server on *:26577
+[19:30:13] [Server thread/INFO]: Using default channel type
+[19:30:13] [Server thread/INFO]: Paper: Using Java 11 compression from Velocity.
+[19:30:13] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
+[19:30:14] [Server thread/ERROR]: [STDERR] [org.bukkit.craftbukkit.v1_18_R1.legacy.CraftLegacy] Initializing Legacy Material Support. Unless you have legacy plugins and/or data this is a bug!
+[19:30:17] [Server thread/WARN]: Legacy plugin LcraftAPI v1.0.8 does not specify an api-version.
+[19:30:17] [Server thread/INFO]: [LcraftAPI] Loading LcraftAPI v1.0.8
+[19:30:17] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[19:30:17] [Server thread/INFO]: Preparing level "world"
+[19:30:18] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[19:30:18] [Server thread/INFO]: Time elapsed: 291 ms
+[19:30:18] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
+[19:30:18] [Server thread/INFO]: Time elapsed: 111 ms
+[19:30:18] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
+[19:30:18] [Server thread/INFO]: Time elapsed: 78 ms
+[19:30:18] [Server thread/INFO]: [LcraftAPI] Enabling LcraftAPI v1.0.8*
+[19:30:19] [Server thread/INFO]: INFO >> The Spigot Module Lcraft Spigot TestPlugin is loaded.
+[19:30:19] [Server thread/INFO]: [LcraftAPI] The Plugin has been successfully started.
+[19:30:19] [Server thread/INFO]: Running delayed init tasks
+[19:30:19] [Server thread/INFO]: Done (5.511s)! For help, type "help"
+[19:30:19] [Server thread/INFO]: Timings Reset
+[19:30:24] [Server thread/INFO]: TPS from last 1m, 5m, 15m: 20.0, 20.0, 20.0
+[19:30:26] [Server thread/INFO]: [LcraftAPI] >> The Server TPS: 20.0

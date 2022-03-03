@@ -1,5 +1,6 @@
 package de.lcraft.api.minecraft.spigot.module.manager.utils.permissions;
 
+import de.lcraft.api.java_utils.configuration.Config;
 import de.lcraft.api.minecraft.spigot.module.manager.configs.ModuleConfig;
 import net.luckperms.api.LuckPerms;
 import org.bukkit.Bukkit;
@@ -9,9 +10,9 @@ import java.util.Objects;
 public class Permission {
 
 	private String permission;
-	private ModuleConfig allPermissionsCfg;
+	private Config allPermissionsCfg;
 
-	public Permission(String permission, ModuleConfig allPermissionsCfg) {
+	public Permission(String permission, Config allPermissionsCfg) {
 		this.permission = permission;
 		this.allPermissionsCfg = allPermissionsCfg;
 	}
@@ -53,7 +54,7 @@ public class Permission {
 	public final String getPermission() {
 		return permission;
 	}
-	public ModuleConfig getAllPermissionsCfg() {
+	public Config getAllPermissionsCfg() {
 		return allPermissionsCfg;
 	}
 	private final String getRoot() {

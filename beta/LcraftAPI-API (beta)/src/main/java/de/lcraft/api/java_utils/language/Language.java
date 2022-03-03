@@ -11,10 +11,13 @@ public abstract class Language {
 	private LanguagesManager languagesManager;
 
 	public Language(LanguagesManager languagesManager) {
-		translations = new Config("Lcraft Languages/" + getShort(), "translations.yml");
-		help = new Config("Lcraft Languages/" + getShort(), "help.yml");
-		cfg = new Config("Lcraft Languages/" + getShort(), "config.yml");
+		translations = new Config("lmodules", "Lcraft Languages//" + getShort(), "translations.yml");
+		help = new Config("lmodules", "Lcraft Languages//" + getShort(), "help.yml");
+		cfg = new Config("lmodules", "Lcraft Languages//" + getShort(), "config.yml");
 		this.languagesManager = languagesManager;
+		getTranslationsFile().load();
+		getHelpFile().load();
+		getConfig().load();
 	}
 
 	public abstract String getName();

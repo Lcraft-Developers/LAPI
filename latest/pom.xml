@@ -9,12 +9,12 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <name>The latest Versions</name>
+    <name>Lcraft API (latest)</name>
     <description></description>
     <packaging>pom</packaging>
 
     <groupId>de.lcraft.api</groupId>
-    <artifactId>latest</artifactId>
+    <artifactId>latest-tab</artifactId>
     <version>1.0.0</version>
 
     <properties>

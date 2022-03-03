@@ -17,10 +17,10 @@ public class ModuleConfig extends Config {
 		super("lmodules//" + m.getModuleDescriptionFile().getName(), filename);
 	}
 	public ModuleConfig(String path, String filename) {
-		super("lmodules//", path, filename);
+		super("lmodules", path, filename);
 	}
 	public ModuleConfig(String filename) {
-		super("lmodules//", "", filename);
+		super("lmodules", "", filename);
 	}
 
 	public void setBlockLocation(String root, Location loc) {

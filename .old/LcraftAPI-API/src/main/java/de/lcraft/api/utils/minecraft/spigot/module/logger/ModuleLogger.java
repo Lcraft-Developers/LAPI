@@ -57,7 +57,6 @@ public class ModuleLogger {
                 Bukkit.broadcastMessage("[" + moduleName + "] " + "INFO >> " + msg);
             } else if(place == ModuleLoggerPlace.SERVER) {
                 Bukkit.getConsoleSender().sendMessage("[" + moduleName + "] " + "INFO >> " + msg);
-                System.out.println(msg);
             }
         } else if(type == ModuleLoggerType.NOTHING) {
             if(place == ModuleLoggerPlace.ALL) {

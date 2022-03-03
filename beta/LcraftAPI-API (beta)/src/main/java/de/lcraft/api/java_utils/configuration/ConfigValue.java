@@ -79,7 +79,7 @@ public class ConfigValue {
 	}
 	public boolean isBoolean(String c) {
 		try {
-		    if(Objects.nonNull(c) && isNumeric(c) && Objects.nonNull(Boolean.valueOf(c))) {
+		    if(Objects.nonNull(c) && Objects.nonNull(Boolean.valueOf(c))) {
 				    return true;
 			}
 		} catch (Exception e) {}

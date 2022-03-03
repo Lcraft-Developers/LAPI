@@ -9,13 +9,13 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <name>The Beta Version</name>
+    <name>Lcraft API (Beta)</name>
     <description></description>
     <packaging>pom</packaging>
 
     <groupId>de.lcraft.api</groupId>
-    <artifactId>beta</artifactId>
-    <version>1.0.7.2</version>
+    <artifactId>beta-tab</artifactId>
+    <version>1.0.0</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>

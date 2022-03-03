@@ -95,8 +95,6 @@ public class LangCommand extends Command {
 			}
 			InventoryConsumerItem item = new InventoryConsumerItem(getListenerManager(), inv.getTitle(title, p.getUUID()), true, true, true, itemBuilder);
 			inv.setItem(item, space);
-
-			System.out.println(item);
 		}
 
 		// Add Placeholder

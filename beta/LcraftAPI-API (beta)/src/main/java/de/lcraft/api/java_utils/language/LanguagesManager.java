@@ -12,8 +12,10 @@ public class LanguagesManager {
 			       userConfig;
 
 	public LanguagesManager() {
-		fileConfig = new Config("Lcraft Languages", "config.yml");
-		userConfig = new Config("Lcraft Languages", "users.yml");
+		fileConfig = new Config("lmodules", "Lcraft Languages", "config.yml");
+		userConfig = new Config("lmodules","Lcraft Languages", "users.yml");
+		getFileConfig().load();
+		getUserConfig().load();
 		addedLanguages = new ArrayList<>();
 		DefaultLanguages.getAllDefaultLanguages(this);
 	}

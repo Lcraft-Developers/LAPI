@@ -24,6 +24,10 @@
         <module name="Lcraft BungeeCord Test Plugin" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="beta" target="17" />
+      <module name="latest" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_STRING" value="-Xmaxerrs 123 -Xmaxwarns 456" />

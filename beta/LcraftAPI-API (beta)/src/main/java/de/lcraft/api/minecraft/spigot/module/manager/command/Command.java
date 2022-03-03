@@ -106,7 +106,6 @@ public abstract class Command extends org.bukkit.command.Command implements List
     public String getHelpMessage(String normalCommand, Language lang, String commandCharacter, String... args) {
         String helpMessage = lang.translate(getHelpMessageStart()).split(" %helpmessage%")[0];
         for(String command : args) {
-            helpMessage = helpMessage + " " + commandCharacter + normalCommand + " " + command;
             if(command.equals(args[args.length - 1])) {
                 helpMessage = helpMessage + " " + commandCharacter + normalCommand + " " + command + "§c!";
             } else {

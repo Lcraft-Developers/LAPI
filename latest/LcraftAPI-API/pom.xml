@@ -4,12 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <groupId>de.lcraft.api</groupId>
-        <artifactId>apis</artifactId>
+        <artifactId>latest-tab</artifactId>
         <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <name>Lcraft API</name>
+    <name>Lcraft API (latest) - API</name>
     <description>Das ist mein Plugin/API für weitere Module/Plugins von meiner Sorte.</description>
     <packaging>jar</packaging>
 
