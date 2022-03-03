@@ -5,6 +5,7 @@ import de.lcraft.api.java_utils.configuration.sections.ConfigSection;
 import de.lcraft.api.java_utils.configuration.sections.ConfigSectionType;
 import de.lcraft.api.java_utils.configuration.writer.ConfigFileWriter;
 import de.lcraft.api.java_utils.configuration.writer.EasyConfigFileWriter;
+import de.lcraft.api.java_utils.configuration.writer.YAMLConfigFileWriter;
 import org.bukkit.configuration.InvalidConfigurationException;
 import java.io.File;
 import java.io.IOException;
@@ -62,7 +63,7 @@ public class Config {
 		load();
 	}
 	public Config(String startPath, String path, String filename) {
-		this(startPath, path, filename, new EasyConfigFileWriter());
+		this(startPath, path, filename, new YAMLConfigFileWriter());
 	}
 	public Config(String path, String filename, ConfigFileWriter configWriter) {
 		this("", path, filename, configWriter);

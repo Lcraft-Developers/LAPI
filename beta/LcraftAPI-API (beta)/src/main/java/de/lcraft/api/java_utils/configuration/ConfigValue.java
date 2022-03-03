@@ -127,7 +127,7 @@ public class ConfigValue {
 		return c.replace("'","");
 	}
 	public String convertToString() {
-		return "'" + savedValue.toString() + "'";
+		return "'" + getSavedValue() + "'";
 	}
 
 	public ConfigSection getConfigSection() {
