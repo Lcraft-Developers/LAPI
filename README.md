@@ -8,21 +8,13 @@ Lcraft APIs are APIs for Minecraft and Java.
 
 
 ## Maven
-### Repository (needs to use Lcraft APIs)
+### Repository
 ```
 <repository>
   <id>central</id>
   <name>Maven Central</name>
   <url>https://repo1.maven.org/maven2/</url>
 </repository>
-```
-### Lcraft API
-```
-<dependency>
-  <groupId>de.lcraft.api</groupId>
-  <artifactId>api</artifactId>
-  <version>(current Version)</version>
-</dependency>
 ```
 ### Lcraft API (beta)
 ```
