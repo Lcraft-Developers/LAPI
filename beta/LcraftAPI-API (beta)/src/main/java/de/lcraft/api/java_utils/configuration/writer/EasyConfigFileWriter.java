@@ -24,6 +24,7 @@ public class EasyConfigFileWriter implements ConfigFileWriter {
 		try {
 			FileWriterHelper writerHelper = new FileWriterHelper(cfg.getFile());
 			for(ConfigSection c : cfg.getAllConfigurationSections()) {
+				c.refreshType();
 				if(c.getConfigSectionType() == ConfigSectionType.OnlyValue || c.getConfigSectionType() == ConfigSectionType.ListAndValue) {
 					writerHelper.addLine(c.getRoot() + ": " + c.getValue().convertToString());
 				}

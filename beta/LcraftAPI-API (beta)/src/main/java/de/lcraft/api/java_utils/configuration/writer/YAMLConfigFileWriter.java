@@ -28,6 +28,7 @@ public class YAMLConfigFileWriter implements ConfigFileWriter {
 			YamlConfiguration yaml = new YamlConfiguration();
 			yaml.load(cfg.getFile());
 			for(ConfigSection c : cfg.getAllConfigurationSections()) {
+				c.refreshType();
 				if(c.getConfigSectionType() == ConfigSectionType.OnlyValue || c.getConfigSectionType() == ConfigSectionType.ListAndValue) {
 					yaml.set(c.getRoot(), c.getValue().getSavedValue().toString());
 				}
@@ -50,8 +51,8 @@ public class YAMLConfigFileWriter implements ConfigFileWriter {
 		try {
 			YamlConfiguration yaml = new YamlConfiguration();
 			yaml.load(cfg.getFile());
-			for(String line : yaml.getKeys(true)) {
-				cfg.set(line, cfg.get(line));
+			for(String root : yaml.getKeys(true)) {
+				cfg.set(root, yaml.get(root));
 			}
 		} catch (IOException exception) {
 			exception.printStackTrace();

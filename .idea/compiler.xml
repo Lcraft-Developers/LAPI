@@ -13,20 +13,21 @@
         <module name="beta-test-spigot" />
         <module name="LcraftAPI-API" />
         <module name="Beta Lcraft Spigot Test" />
-        <module name="bungeecord-testplugin" />
         <module name="Lcraft Spigot Test Plugin" />
-        <module name="spigot-testplugin" />
         <module name="API" />
         <module name="API-beta" />
-        <module name="api" />
         <module name="LcraftAPI.bungeecord.test" />
         <module name="LcraftAPI.spigot.test" />
         <module name="Lcraft BungeeCord Test Plugin" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="api" target="17" />
       <module name="beta" target="17" />
+      <module name="bungeecord-testplugin" target="17" />
       <module name="latest" target="17" />
+      <module name="latest-tab" target="17" />
+      <module name="spigot-testplugin" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

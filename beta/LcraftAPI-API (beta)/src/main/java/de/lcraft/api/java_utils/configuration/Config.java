@@ -95,67 +95,86 @@ public class Config {
 		return false;
 	}
 
-	public boolean set(String root, Object obj) {
-		if(root.contains("\\.")) {
+	public boolean set(String wantedRoot, Object obj) {
+		/*if(!wantedRoot.contains(".")) {
 			// If root is a variable
-			if(existsSection(root)) {
-				ConfigSection section = getSection(root);
-				section.addKey(root, new ConfigValue(obj, section));
+			if(existsSection(wantedRoot)) {
+				ConfigSection section = getSection(wantedRoot);
+				section.setValue(new ConfigValue(obj,section));
 				setSection(section);
 				return true;
-			} else if(exists(root)) {
-				setSection(new ConfigSection("", obj, ConfigSectionType.OnlyValue));
+			} else if(exists(wantedRoot)) {
+				setSection(new ConfigSection("", obj));
 				return true;
 				// If root is a section
 			} else {
-				setSection(new ConfigSection(root,obj,ConfigSectionType.OnlyValue));
+				setSection(new ConfigSection("", obj));
 				return true;
 			}
-		} else {
-			String before = "";
-			for(String c : root.split("\\.")) {
-				String roo;
-				if(before.isEmpty() || before.isBlank()) {
-					roo = c;
+		} else {*/
+			String rootBefore = "";
+			String currentRoot = "";
+			for(String currentPartByRoot : wantedRoot.split("\\.")) {
+				if(rootBefore.isEmpty() || rootBefore.isBlank()) {
+					currentRoot = currentPartByRoot;
 				} else {
-					roo = before + "." + c;
+					currentRoot = rootBefore + "." + currentPartByRoot;
 				}
-				if(exists(roo) && existsSection(before)) {
-					if(roo.equals(root)) {
-						ConfigSection section = getSection(before);
-						section.removeKey(root);
-						section.addKey(root, new ConfigValue(obj, section));
+				System.out.println("");
+				System.out.println(rootBefore);
+				System.out.println(currentRoot);
+				// If currentRoot exsits
+				// If rootBefore is Section
+				// If currentRoot is wantedRoot
+				if(exists(currentRoot) && existsSection(rootBefore) && currentRoot.equals(wantedRoot)) {
+					if(currentRoot.equals(wantedRoot)) {
+						ConfigSection section = getSection(rootBefore);
+						section.removeKey(rootBefore);
+						section.addKey(currentRoot, new ConfigValue(obj.toString(), section));
 						setSection(section);
+						System.out.println(1);
 
 						return true;
 					}
-				} else if(existsSection(roo) && roo.equals(root)) {
-					ConfigSection section = getSection(roo);
-					if(section.getConfigSectionType() == ConfigSectionType.LIST) {
-						section.setConfigSectionType(ConfigSectionType.ListAndValue);
+
+					// If currentRoot is wantedRoot
+					// Not contains .
+				}  else if(wantedRoot.equals(currentRoot) && !currentRoot.contains(".")) {
+					ConfigSection section;
+					if(existsSection("")) {
+						section = getSection("");
+					} else {
+						section = new ConfigSection("");
 					}
-					section.addKey(roo, new ConfigValue(obj, section));
+					section.addKey(currentRoot, new ConfigValue(obj.toString(),section));
 					setSection(section);
+					System.out.println(2);
 
 					return true;
-				} else if(exists(roo) && roo.equals(root)) {
-					ConfigSection section = getSection(before);
-					if(section.getConfigSectionType() == ConfigSectionType.OnlyValue) {
-						section.setConfigSectionType(ConfigSectionType.ListAndValue);
-					}
-					section.addKey(root,new ConfigValue(obj,section));
+					// If rootBefore is Section
+					// If currentRoot is wantedRoot
+					// Contains .
+				} else if(wantedRoot.equals(currentRoot) && existsSection(rootBefore) && currentRoot.contains(".")) {
+					ConfigSection section = getSection(rootBefore);
+					section.addKey(currentRoot, new ConfigValue(obj.toString(),section));
 					setSection(section);
+					System.out.println(3);
 
 					return true;
-				} else if(roo.equals(root)) {
-					setSection(new ConfigSection(root, obj, ConfigSectionType.OnlyValue));
+					// If rootBefore is not a Section
+					// If currentRoot is wantedRoot
+				} else if(wantedRoot.equals(currentRoot) && !existsSection(rootBefore)) {
+					ConfigSection section = new ConfigSection(rootBefore);
+					section.addKey(currentRoot, new ConfigValue(obj.toString(),section));
+					setSection(section);
+					System.out.println(4);
 
 					return true;
 				}
 
-				before = roo;
+				rootBefore = currentRoot;
 			}
-		}
+		//}
 		return false;
 	}
 	public ConfigValue get(String root) {

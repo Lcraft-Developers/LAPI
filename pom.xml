@@ -13,13 +13,9 @@
     <version>1.0.0</version>
 
     <modules>
-        <module>latest/LcraftAPI-API</module>
+        <module>beta</module>
         <module>beta/LcraftAPI-API (beta)</module>
         <module>beta/Beta Lcraft Spigot Test</module>
-        <module>latest/Lcraft Spigot Test Plugin</module>
-        <module>latest/Lcraft BungeeCord Test Plugin</module>
-        <module>beta</module>
-        <module>latest</module>
     </modules>
 
     <properties>

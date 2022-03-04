@@ -2,16 +2,29 @@ package de.lcraft.api.java_utils.configuration;
 
 import de.lcraft.api.java_utils.configuration.sections.ConfigSection;
 import de.lcraft.api.java_utils.configuration.sections.ConfigSectionType;
+import de.lcraft.api.java_utils.configuration.writer.ConfigFileWriter;
+import de.lcraft.api.java_utils.configuration.writer.EasyConfigFileWriter;
+import de.lcraft.api.java_utils.configuration.writer.YAMLConfigFileWriter;
 
 public class ConfigTest {
 
 	public static void main(String[] args) {
-		Config cfg = new Config("yamlConfig.yml");
+		testConfig(new YAMLConfigFileWriter());
+	}
+
+	public static void testConfig(ConfigFileWriter writer) {
+		Config cfg = new Config("testConfig.yml", writer);
 		cfg.load();
 
-		cfg.set("abc","ee");
-		cfg.set("aabc.eee", "gg");
-		cfg.set("aaa", "890");
+		cfg.set("arena_count", 20);
+		cfg.set("game.name","BedWars");
+		cfg.set("game.arena.1.name", "Arena 1");
+		cfg.set("game.arena.1.loc.1x", 50);
+		cfg.set("game.arena.1.loc.1y", 443);
+		cfg.set("game.arena.1.loc.1z", 54);
+		cfg.set("game.arena.1.loc.2x", 99);
+		cfg.set("game.arena.1.loc.2y", 66);
+		cfg.set("game.arena.1.loc.2z", 12);
 
 		cfg.save();
 		cfg.load();

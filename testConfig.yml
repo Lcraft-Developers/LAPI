@@ -1,0 +1,13 @@
+game:
+  arena:
+    '1':
+      loc:
+        1z: '54'
+        1y: '443'
+        2z: '12'
+        1x: '50'
+        2y: '66'
+        2x: '99'
+      name: Arena 1
+  name: BedWars
+arena_count: '20'

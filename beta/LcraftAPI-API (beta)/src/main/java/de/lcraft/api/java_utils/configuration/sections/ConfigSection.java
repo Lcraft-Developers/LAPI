@@ -12,17 +12,17 @@ public class ConfigSection {
 	private ConfigSectionType configSectionType;
 	private ConfigValue value;
 
-	public ConfigSection(String root, Object obj, ConfigSectionType type) {
-		this(root, type, true);
+	public ConfigSection(String root, Object obj) {
+		this(root);
 		this.value = new ConfigValue(obj,this);
+
+		refreshType();
 	}
-	public ConfigSection(String root, ConfigSectionType type, boolean existsValue) {
-		if(existsValue && type == ConfigSectionType.LIST) {
-			type = ConfigSectionType.ListAndValue;
-		}
+	public ConfigSection(String root) {
 		this.root = root;
-		this.configSectionType = type;
 		this.allKeys = new HashMap<>();
+
+		refreshType();
 	}
 
 	public void addKey(String root, ConfigValue value) {
@@ -30,14 +30,34 @@ public class ConfigSection {
 			removeKey(root);
 		}
 		getAllKeys().put(root,value);
+
+		refreshType();
 	}
 	public void removeKey(String root) {
 		if(existsKey(root)) {
 			getAllKeys().remove(root);
 		}
+		refreshType();
 	}
 	public boolean existsKey(String root) {
+		refreshType();
 		return getAllKeys().containsKey(root);
+	}
+	public void setValue(ConfigValue value) {
+		this.value = value;
+		refreshType();
+	}
+	public void refreshType() {
+		if(Objects.nonNull(getValue()) && Objects.nonNull(getValue().convertToString())) {
+			setConfigSectionType(ConfigSectionType.OnlyValue);
+		}
+		if(Objects.nonNull(getAllKeys()) && !getAllKeys().isEmpty()) {
+			if(getConfigSectionType() == ConfigSectionType.OnlyValue) {
+				setConfigSectionType(ConfigSectionType.ListAndValue);
+			} else {
+				setConfigSectionType(ConfigSectionType.LIST);
+			}
+		}
 	}
 
 	public ConfigValue getValue() {
