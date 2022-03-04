@@ -9,9 +9,8 @@
         <option value="$PROJECT_DIR$/.idea" />
         <option value="$PROJECT_DIR$/.old" />
         <option value="$PROJECT_DIR$/_old" />
-        <option value="$PROJECT_DIR$/latest" />
         <option value="$PROJECT_DIR$/docs" />
-        <option value="$PROJECT_DIR$/TestServerManager" />
+        <option value="$PROJECT_DIR$/TestServer" />
       </list>
     </option>
   </component>

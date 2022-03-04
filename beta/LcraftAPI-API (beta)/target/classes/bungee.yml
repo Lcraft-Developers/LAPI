@@ -1,5 +1,5 @@
 name: LcraftAPI
-version: '1.0.8'
+version: '1.0.9'
 main: de.lcraft.api.minecraft.bungee.BungeeClass
 authors:
   - LPD
