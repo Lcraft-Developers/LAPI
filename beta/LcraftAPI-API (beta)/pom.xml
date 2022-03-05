@@ -26,7 +26,7 @@
     <distributionManagement>
         <repository>
             <id>github</id>
-            <name>GitHub Lcraft-Developers Apache Maven Packages</name>
+            <name>GitHub LPDMinecraft Apache Maven Packages</name>
             <url>https://maven.pkg.github.com/Lcraft-Developers/Lcraft-API</url>
         </repository>
     </distributionManagement>
