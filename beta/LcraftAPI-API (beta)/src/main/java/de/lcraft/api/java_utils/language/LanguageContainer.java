@@ -1,8 +1,18 @@
 package de.lcraft.api.java_utils.language;
 
-import javax.annotation.Nonnull;
 import java.util.ArrayList;
 
-public interface LanguageContainer {
-	@Nonnull ArrayList<String> allUsedTranslatedText();
+public abstract class LanguageContainer {
+
+	public static final ArrayList<LanguageContainer> allTranslations = new ArrayList<>();
+
+	public LanguageContainer() {
+		allTranslations.add(this);
+	}
+
+	protected abstract ArrayList<String> allUsedTranslatedText();
+	public ArrayList<String> getAllTranslations() {
+		return allUsedTranslatedText();
+	}
+
 }

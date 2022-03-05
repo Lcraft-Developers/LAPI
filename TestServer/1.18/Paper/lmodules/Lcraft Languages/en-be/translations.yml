@@ -1,2 +1,15 @@
-translate.7950.default: '�aThe Server TPS: '
-translate.7950.translation: '�aThe Server TPS: '
+translate:
+  '7950':
+    default: '§aThe Server TPS: '
+    translation: '§aThe Server TPS: '
+  '28228': MemorySection[path='translate.28228', root='YamlConfiguration']
+  '338930': MemorySection[path='translate.338930', root='YamlConfiguration']
+  '4300': MemorySection[path='translate.4300', root='YamlConfiguration']
+  '339968': MemorySection[path='translate.339968', root='YamlConfiguration']
+  '342966': MemorySection[path='translate.342966', root='YamlConfiguration']
+  '341151': MemorySection[path='translate.341151', root='YamlConfiguration']
+  '20327': MemorySection[path='translate.20327', root='YamlConfiguration']
+  '21170': MemorySection[path='translate.21170', root='YamlConfiguration']
+  '11922':
+    default: §7[§6LcraftAPI§7] §8>> §r
+    translation: §7[§6LcraftAPI§7] §8>> §r

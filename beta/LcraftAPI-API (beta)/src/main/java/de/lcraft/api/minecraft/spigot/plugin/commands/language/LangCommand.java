@@ -103,21 +103,17 @@ public class LangCommand extends Command {
 		return helper.makePlaceholders(inv.getListPageInventory(title, p.getUUID(), 5*9, 1, lastPage, nextPage), getListenerManager(), title);
 	}
 
-	@Nonnull
 	@Override
-	public ArrayList<String> allUsedTranslatedText() {
-		ArrayList<String> allTexts = new ArrayList<>();
-		allTexts.add(getPREFIX() + "§aSuccessfully opened the Languages Inventory");
-		allTexts.add(getStandardTranslatedNO_PLAYER());
-		allTexts.add(getHelpMessage("lang", "/", ""));
-		return allTexts;
+	public ArrayList<String> allUsedTranslations(ArrayList<String> translations) {
+		return translations;
 	}
 
-	@Nonnull
 	@Override
-	public ArrayList<String> allUsedPermissions() {
-		ArrayList<String> allPermissions = new ArrayList<>();
-		return allPermissions;
+	protected ArrayList<String> allUsedPerms(ArrayList<String> perms) {
+		perms.add(getPREFIX() + "§aSuccessfully opened the Languages Inventory");
+		perms.add(getStandardTranslatedNO_PLAYER());
+		perms.add(getHelpMessage("lang", "/", ""));
+		return perms;
 	}
 
 }

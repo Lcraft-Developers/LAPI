@@ -120,9 +120,9 @@ public class Config {
 				} else {
 					currentRoot = rootBefore + "." + currentPartByRoot;
 				}
-				System.out.println("");
+				/*System.out.println("");
 				System.out.println(rootBefore);
-				System.out.println(currentRoot);
+				System.out.println(currentRoot);*/
 				// If currentRoot exsits
 				// If rootBefore is Section
 				// If currentRoot is wantedRoot
@@ -132,7 +132,7 @@ public class Config {
 						section.removeKey(rootBefore);
 						section.addKey(currentRoot, new ConfigValue(obj.toString(), section));
 						setSection(section);
-						System.out.println(1);
+						//System.out.println(1);
 
 						return true;
 					}
@@ -148,7 +148,7 @@ public class Config {
 					}
 					section.addKey(currentRoot, new ConfigValue(obj.toString(),section));
 					setSection(section);
-					System.out.println(2);
+					//System.out.println(2);
 
 					return true;
 					// If rootBefore is Section
@@ -158,7 +158,7 @@ public class Config {
 					ConfigSection section = getSection(rootBefore);
 					section.addKey(currentRoot, new ConfigValue(obj.toString(),section));
 					setSection(section);
-					System.out.println(3);
+					//System.out.println(3);
 
 					return true;
 					// If rootBefore is not a Section
@@ -167,7 +167,7 @@ public class Config {
 					ConfigSection section = new ConfigSection(rootBefore);
 					section.addKey(currentRoot, new ConfigValue(obj.toString(),section));
 					setSection(section);
-					System.out.println(4);
+					//System.out.println(4);
 
 					return true;
 				}

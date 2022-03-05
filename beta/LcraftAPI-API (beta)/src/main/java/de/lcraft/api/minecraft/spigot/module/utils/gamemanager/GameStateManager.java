@@ -33,8 +33,8 @@ public class GameStateManager {
 
 	public void logGameState(GameState gameState) {
 		if(Objects.nonNull(gameState)) {
-			ArrayList<String> allPermissions = gameState.allUsedPermissions();
-			ArrayList<String> allTranslations = gameState.allUsedTranslatedText();
+			ArrayList<String> allPermissions = gameState.allUsedPerms(new ArrayList<>());
+			ArrayList<String> allTranslations = gameState.getAllTranslations();
 			for(String c : allTranslations) {
 				getLanguagesManager().logText(c);
 			}

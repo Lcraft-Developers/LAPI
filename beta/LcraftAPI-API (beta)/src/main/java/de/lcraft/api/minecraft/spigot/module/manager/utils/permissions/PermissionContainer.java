@@ -1,9 +1,18 @@
 package de.lcraft.api.minecraft.spigot.module.manager.utils.permissions;
 
-import javax.annotation.Nonnull;
 import java.util.ArrayList;
 
-public interface PermissionContainer {
-	@Nonnull
-	ArrayList<String> allUsedPermissions();
+public abstract class PermissionContainer {
+
+	public static final ArrayList<PermissionContainer> allPermissions = new ArrayList<>();
+
+	public PermissionContainer() {
+		allPermissions.add(this);
+	}
+
+	protected abstract ArrayList<String> allUsedPermissions();
+	public ArrayList<String> getAllPermissions() {
+		return allUsedPermissions();
+	}
+
 }

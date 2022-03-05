@@ -57,81 +57,77 @@ public class LcraftCommand extends Command {
 		// Create and Set all Hearth Items
 		ItemBuilder OneShowItemBuilder = new ItemBuilder(getListenerManager(), Material.DIAMOND_BLOCK);
 		InventoryItem OneShowItem = new InventoryItem(getListenerManager(), title, true, true, true, OneShowItemBuilder);
-		OneShowItem.getItem().setDisplayName(translate(p.getUUID(),"§bThanks"));
+		OneShowItem.getItem().setDisplayName(translate(p.getUUID(), "§bThanks"));
 		inv.setItem(OneShowItem, InventorySlot.getSlotSpaceByXAndY(InventoryX.SIX, InventoryY.THREE));
 
 		ItemBuilder TwoShowItemBuilder = new ItemBuilder(getListenerManager(), Material.DIAMOND_BLOCK);
 		InventoryItem TwoShowItem = new InventoryItem(getListenerManager(), title, true, true, true, TwoShowItemBuilder);
-		TwoShowItem.getItem().setDisplayName(translate(p.getUUID(),"§bThanks"));
+		TwoShowItem.getItem().setDisplayName(translate(p.getUUID(), "§bThanks"));
 		inv.setItem(TwoShowItem, InventorySlot.getSlotSpaceByXAndY(InventoryX.SEVEN, InventoryY.THREE));
 
 		ItemBuilder ThreeShowItemBuilder = new ItemBuilder(getListenerManager(), Material.DIAMOND_BLOCK);
-		ThreeShowItemBuilder.setDisplayName(translate(p.getUUID(),"§bThanks"));
+		ThreeShowItemBuilder.setDisplayName(translate(p.getUUID(), "§bThanks"));
 		InventoryItem ThreeShowItem = new InventoryItem(getListenerManager(), title, true, true, true, ThreeShowItemBuilder);
 		inv.setItem(ThreeShowItem, InventorySlot.getSlotSpaceByXAndY(InventoryX.FOUR, InventoryY.THREE));
 
 		ItemBuilder FourShowItemBuilder = new ItemBuilder(getListenerManager(), Material.DIAMOND_BLOCK);
 		InventoryItem FourShowItem = new InventoryItem(getListenerManager(), title, true, true, true, FourShowItemBuilder);
-		FourShowItem.getItem().setDisplayName(translate(p.getUUID(),"§bThanks"));
+		FourShowItem.getItem().setDisplayName(translate(p.getUUID(), "§bThanks"));
 		inv.setItem(FourShowItem, InventorySlot.getSlotSpaceByXAndY(InventoryX.THREE, InventoryY.THREE));
 
 		ItemBuilder FiveShowItemBuilder = new ItemBuilder(getListenerManager(), Material.DIAMOND_BLOCK);
 		InventoryItem FiveShowItem = new InventoryItem(getListenerManager(), title, true, true, true, FiveShowItemBuilder);
-		FiveShowItem.getItem().setDisplayName(translate(p.getUUID(),"§bThanks"));
+		FiveShowItem.getItem().setDisplayName(translate(p.getUUID(), "§bThanks"));
 		inv.setItem(FiveShowItem, InventorySlot.getSlotSpaceByXAndY(InventoryX.FOUR, InventoryY.TWO));
 
 		ItemBuilder SixShowItemBuilder = new ItemBuilder(getListenerManager(), Material.DIAMOND_BLOCK);
 		InventoryItem SixShowItem = new InventoryItem(getListenerManager(), title, true, true, true, SixShowItemBuilder);
-		SixShowItem.getItem().setDisplayName(translate(p.getUUID(),"§bThanks"));
+		SixShowItem.getItem().setDisplayName(translate(p.getUUID(), "§bThanks"));
 		inv.setItem(SixShowItem, InventorySlot.getSlotSpaceByXAndY(InventoryX.FIVE, InventoryY.TWO));
 
 		ItemBuilder SevenShowItemBuilder = new ItemBuilder(getListenerManager(), Material.DIAMOND_BLOCK);
 		InventoryItem SevenShowItem = new InventoryItem(getListenerManager(), title, true, true, true, SevenShowItemBuilder);
-		SevenShowItem.getItem().setDisplayName(translate(p.getUUID(),"§bThanks"));
+		SevenShowItem.getItem().setDisplayName(translate(p.getUUID(), "§bThanks"));
 		inv.setItem(SevenShowItem, InventorySlot.getSlotSpaceByXAndY(InventoryX.SIX, InventoryY.TWO));
 
 		ItemBuilder EightShowItemBuilder = new ItemBuilder(getListenerManager(), Material.DIAMOND_BLOCK);
 		InventoryItem EightShowItem = new InventoryItem(getListenerManager(), title, true, true, true, EightShowItemBuilder);
-		EightShowItem.getItem().setDisplayName(translate(p.getUUID(),"§bThanks"));
+		EightShowItem.getItem().setDisplayName(translate(p.getUUID(), "§bThanks"));
 		inv.setItem(EightShowItem, InventorySlot.getSlotSpaceByXAndY(InventoryX.FIVE, InventoryY.FOUR));
 
 		ItemBuilder NineShowItemBuilder = new ItemBuilder(getListenerManager(), Material.DIAMOND_BLOCK);
 		InventoryItem NineShowItem = new InventoryItem(getListenerManager(), title, true, true, true, NineShowItemBuilder);
-		NineShowItem.getItem().setDisplayName(translate(p.getUUID(),"§bThanks"));
+		NineShowItem.getItem().setDisplayName(translate(p.getUUID(), "§bThanks"));
 		inv.setItem(NineShowItem, InventorySlot.getSlotSpaceByXAndY(InventoryX.SIX, InventoryY.FOUR));
 
 		ItemBuilder TenShowItemBuilder = new ItemBuilder(getListenerManager(), Material.DIAMOND_BLOCK);
 		InventoryItem TenShowItem = new InventoryItem(getListenerManager(), title, true, true, true, TenShowItemBuilder);
-		TenShowItem.getItem().setDisplayName(translate(p.getUUID(),"§bThanks"));
+		TenShowItem.getItem().setDisplayName(translate(p.getUUID(), "§bThanks"));
 		inv.setItem(TenShowItem, InventorySlot.getSlotSpaceByXAndY(InventoryX.FOUR, InventoryY.FOUR));
 
 		ItemBuilder ElevenShowItemBuilder = new ItemBuilder(getListenerManager(), Material.DIAMOND_BLOCK);
 		InventoryItem ElevenShowItem = new InventoryItem(getListenerManager(), title, true, true, true, ElevenShowItemBuilder);
-		ElevenShowItem.getItem().setDisplayName(translate(p.getUUID(),"§bThanks"));
+		ElevenShowItem.getItem().setDisplayName(translate(p.getUUID(), "§bThanks"));
 		inv.setItem(ElevenShowItem, InventorySlot.getSlotSpaceByXAndY(InventoryX.FIVE, InventoryY.FIVE));
 
 		// Add Placeholder
 		InventoryHelper helper = new InventoryHelper();
 
-		return helper.makePlaceholders(inv.getInventory(title, p.getUUID()), getListenerManager(),title);
+		return helper.makePlaceholders(inv.getInventory(title, p.getUUID()), getListenerManager(), title);
 	}
 
-	@Nonnull
 	@Override
-	public ArrayList<String> allUsedTranslatedText() {
-		ArrayList<String> allTexts = new ArrayList<>();
-		allTexts.add("§bThanks");
-		allTexts.add("§aThis Plugin was made by §bLcraft Developers");
-		allTexts.add("§aSuccessfully opened the Lcraft Inventory");
-		allTexts.add(getHelpMessage("lcraft", "/",""));
-		return allTexts;
+	public ArrayList<String> allUsedTranslations(ArrayList<String> translations) {
+		return translations;
 	}
 
-	@Nonnull
 	@Override
-	public ArrayList<String> allUsedPermissions() {
-		ArrayList<String> allPermissions = new ArrayList<>();
-		return allPermissions;
+	protected ArrayList<String> allUsedPerms(ArrayList<String> perms) {
+		perms.add("§bThanks");
+		perms.add("§aThis Plugin was made by §bLcraft Developers");
+		perms.add("§aSuccessfully opened the Lcraft Inventory");
+		perms.add(getHelpMessage("lcraft", "/",""));
+		return perms;
 	}
 
 }

@@ -3,11 +3,7 @@ package de.lcraft.api.minecraft.spigot.module.manager.utils.permissions;
 import de.lcraft.api.java_utils.CodeHelper;
 import de.lcraft.api.minecraft.spigot.module.manager.configs.ModuleConfig;
 import de.lcraft.api.minecraft.spigot.module.player.LPlayer;
-import net.luckperms.api.LuckPerms;
-import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
-import org.bukkit.plugin.RegisteredServiceProvider;
-
 import java.util.*;
 
 public class PermsManager {
@@ -388,17 +384,17 @@ public class PermsManager {
         String root = "";
         Permission perms = new Permission(permission, getAllPermissionsCfg());
         perms.register();
-        if(isLuckPermsEnabled()) {
+        /*if(isLuckPermsEnabled()) {
             perms.registerToLuckPerms(isLuckPermsEnabled());
-        }
+        }*/
         for(String perm : permission.split(".")) {
             root = root + perm + ".";
             for(String extraPermissions : extra) {
                 Permission extraPerm = new Permission(perm + "." + extraPermissions, getAllPermissionsCfg());
                 extraPerm.register();
-                if(isLuckPermsEnabled()) {
+                /*if(isLuckPermsEnabled()) {
                     extraPerm.registerToLuckPerms(isLuckPermsEnabled());
-                }
+                }*/
             }
             continue;
         }
@@ -408,13 +404,16 @@ public class PermsManager {
             if(lPlayer.getPlayer().hasPermission(permission)) {
                 return true;
             }
-            RegisteredServiceProvider<LuckPerms> provider = Bukkit.getServicesManager().getRegistration(LuckPerms.class);
-            if (Objects.nonNull(provider) && isLuckPermsEnabled()) {
-                LuckPerms api = provider.getProvider();
-                if(api.getUserManager().getUser(lPlayer.getUUID()).getCachedData().getPermissionData().checkPermission(permission).asBoolean()) {
-                    return true;
+
+            /*if (isLuckPermsEnabled()) {
+                RegisteredServiceProvider<LuckPerms> provider = Bukkit.getServicesManager().getRegistration(LuckPerms.class);
+                if(Objects.nonNull(provider)) {
+                    LuckPerms api = provider.getProvider();
+                    if(api.getUserManager().getUser(lPlayer.getUUID()).getCachedData().getPermissionData().checkPermission(permission).asBoolean()) {
+                        return true;
+                    }
                 }
-            }
+            }*/
             for(String perm : permission.split(".")) {
                 for(String extraPermissions : extra) {
                     Permission extraPerm = new Permission(perm + "." + extraPermissions, getAllPermissionsCfg());
@@ -430,12 +429,15 @@ public class PermsManager {
         return false;
     }
     public boolean isLuckPermsEnabled() {
-        if(getConfig().exists("systems.luckperms.enabled") && getConfig().existsAsBoolean("systems.luckperms.enabled") && getConfig().getBoolean("systems.luckperms.enabled")) {
-            return true;
+        if(getConfig().exists("systems.luckperms.enabled") && getConfig().existsAsBoolean("systems.luckperms.enabled")) {
+            if(getConfig().getBoolean("systems.luckperms.enabled")) {
+                return true;
+            }
+            return false;
         } else {
             getConfig().set("systems.luckperms.enabled", false);
             getConfig().save();
-            return isLuckPermsEnabled();
+            return false;
         }
     }
 

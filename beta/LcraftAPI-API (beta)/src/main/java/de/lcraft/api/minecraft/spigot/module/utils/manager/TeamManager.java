@@ -1,13 +1,8 @@
 package de.lcraft.api.minecraft.spigot.module.utils.manager;
 
-import de.lcraft.api.minecraft.spigot.module.manager.utils.permissions.PermsManager;
-import net.luckperms.api.LuckPerms;
-import net.luckperms.api.model.group.Group;
-import net.luckperms.api.model.user.User;
-import org.bukkit.Bukkit;
-import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.scoreboard.Scoreboard;
 import org.bukkit.scoreboard.Team;
+
 import java.util.Objects;
 
 public class TeamManager {
@@ -21,7 +16,7 @@ public class TeamManager {
 		this(new ScoreBoardManager().build());
 	}
 
-	public void registerLuckPermTeamsAndRegisterPlayer(PermsManager permsManager, TeamManager teamManager) {
+	/*public void registerLuckPermTeamsAndRegisterPlayer(PermsManager permsManager, TeamManager teamManager) {
 		RegisteredServiceProvider<LuckPerms> provider = Bukkit.getServicesManager().getRegistration(LuckPerms.class);
 		if (Objects.nonNull(provider) && permsManager.isLuckPermsEnabled()) {
 			LuckPerms api = provider.getProvider();
@@ -42,7 +37,7 @@ public class TeamManager {
 				}
 			}
 		}
-	}
+	}*/
 	public final Team createTeamWhenDoNotExists(String name) {
 		if(!existsTeam(name)) {
 			return getScoreBoard().registerNewTeam(name);

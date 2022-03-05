@@ -12,11 +12,13 @@ import de.lcraft.api.minecraft.spigot.module.player.LPlayerManager;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
+import org.checkerframework.checker.units.qual.A;
+
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.UUID;
 
-public abstract class Command extends org.bukkit.command.Command implements Listener, LanguageContainer, PermissionContainer {
+public abstract class Command extends org.bukkit.command.Command implements Listener {
 
     private boolean splitting;
     private LanguagesManager languagesManager;
@@ -26,6 +28,8 @@ public abstract class Command extends org.bukkit.command.Command implements List
     private String command;
     private LPlayerManager lPlayerManager;
     private ListenerManager listenerManager;
+    private LanguageContainer langContainer;
+    private PermissionContainer permsContainer;
     protected StandardMessages standardMessages;
 
     public Command(StandardMessages standardMessages, String label, String desc, PermsManager permsManager, LanguagesManager languagesManager, LPlayerManager lPlayerManager, boolean splitting) {
@@ -40,6 +44,18 @@ public abstract class Command extends org.bukkit.command.Command implements List
         this.languagesManager = languagesManager;
         this.lPlayerManager = lPlayerManager;
         this.standardMessages = standardMessages;
+        this.langContainer = new LanguageContainer() {
+            @Override
+            protected ArrayList<String> allUsedTranslatedText() {
+                return allUsedTranslations(new ArrayList<>());
+            }
+        };
+        this.permsContainer = new PermissionContainer() {
+            @Override
+            protected ArrayList<String> allUsedPermissions() {
+                return allUsedPerms(new ArrayList<>());
+            }
+        };
     }
 
     public final String translate(UUID uuid, String text) {
@@ -98,6 +114,9 @@ public abstract class Command extends org.bukkit.command.Command implements List
         }
         onCommandExecute(commandSender, strings);
     }
+
+    public abstract ArrayList<String> allUsedTranslations(ArrayList<String> translations);
+    protected abstract ArrayList<String> allUsedPerms(ArrayList<String> perms);
 
     public boolean onCommandExecute(CommandSender s, String[] args) {return false;}
     public boolean onLPlayerCommand(LPlayer p, String[] args) {return false;}
@@ -210,6 +229,12 @@ public abstract class Command extends org.bukkit.command.Command implements List
     }
     public final void setStandardMessages(StandardMessages standardMessages) {
         this.standardMessages = standardMessages;
+    }
+    public LanguageContainer getLangContainer() {
+        return langContainer;
+    }
+    public PermissionContainer getPermsContainer() {
+        return permsContainer;
     }
 
 }

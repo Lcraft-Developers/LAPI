@@ -4,10 +4,8 @@ import de.lcraft.api.java_utils.FileWriterHelper;
 import de.lcraft.api.java_utils.configuration.Config;
 import de.lcraft.api.java_utils.configuration.sections.ConfigSection;
 import de.lcraft.api.java_utils.configuration.sections.ConfigSectionType;
-import org.simpleyaml.configuration.file.YamlConfiguration;
-import org.simpleyaml.exceptions.InvalidConfigurationException;
-import org.yaml.snakeyaml.Yaml;
-
+import org.bukkit.configuration.InvalidConfigurationException;
+import org.bukkit.configuration.file.YamlConfiguration;
 import java.io.IOException;
 
 public class YAMLConfigFileWriter implements ConfigFileWriter {

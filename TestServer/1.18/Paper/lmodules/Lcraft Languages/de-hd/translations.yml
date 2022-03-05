@@ -1,2 +1,13 @@
-translate.13138.default: '§cYou have to use /lcraft §c!'
-translate.13138.translation: '§cYou have to use /lcraft §c!'
+translate:
+  '21170': MemorySection[path='translate.21170', root='YamlConfiguration']
+  '13138': MemorySection[path='translate.13138', root='YamlConfiguration']
+  '28228': MemorySection[path='translate.28228', root='YamlConfiguration']
+  '338930': MemorySection[path='translate.338930', root='YamlConfiguration']
+  '4300': MemorySection[path='translate.4300', root='YamlConfiguration']
+  '342966': MemorySection[path='translate.342966', root='YamlConfiguration']
+  '20327':
+    default: Â§aSuccessfully opened the Lcraft Inventory
+    translation: Â§aSuccessfully opened the Lcraft Inventory
+  '339968':
+    default: ï¿½cYou have to use /lcraft Â§c!
+    translation: ï¿½cYou have to use /lcraft Â§c!

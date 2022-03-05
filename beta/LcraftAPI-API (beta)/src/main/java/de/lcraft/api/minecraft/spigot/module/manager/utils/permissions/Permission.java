@@ -1,11 +1,6 @@
 package de.lcraft.api.minecraft.spigot.module.manager.utils.permissions;
 
 import de.lcraft.api.java_utils.configuration.Config;
-import de.lcraft.api.minecraft.spigot.module.manager.configs.ModuleConfig;
-import net.luckperms.api.LuckPerms;
-import org.bukkit.Bukkit;
-import org.bukkit.plugin.RegisteredServiceProvider;
-import java.util.Objects;
 
 public class Permission {
 
@@ -22,13 +17,13 @@ public class Permission {
 		}
 		return this;
 	}
-	public final void registerToLuckPerms(boolean isLuckPermsEnabled) {
+	/*public final void registerToLuckPerms(boolean isLuckPermsEnabled) {
 		RegisteredServiceProvider<LuckPerms> provider = Bukkit.getServicesManager().getRegistration(LuckPerms.class);
 		if (Objects.nonNull(provider) && isLuckPermsEnabled) {
 			LuckPerms api = provider.getProvider();
 			api.getContextManager().registerCalculator(new LuckPermsCalculator(getPermission(), "*", "admin"));
 		}
-	}
+	}*/
 	public final void set(boolean isEnabled) {
 		String root = getRoot();
 		getAllPermissionsCfg().set(root + ".name", getPermission());

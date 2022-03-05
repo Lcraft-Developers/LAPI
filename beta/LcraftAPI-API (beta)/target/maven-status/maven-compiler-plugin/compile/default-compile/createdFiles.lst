@@ -19,9 +19,11 @@ de\lcraft\api\minecraft\spigot\module\utils\items\HeadBuilder.class
 de\lcraft\api\java_utils\configuration\sections\ConfigSectionType.class
 de\lcraft\api\minecraft\spigot\module\utils\gamemanager\GameStateManager.class
 de\lcraft\api\minecraft\spigot\module\manager\command\CommandManager.class
+de\lcraft\api\minecraft\spigot\module\utils\gamemanager\state\GameState$1.class
 de\lcraft\api\minecraft\spigot\module\utils\inventory\item\slot\InventorySlot.class
 de\lcraft\api\minecraft\spigot\module\player\LPlayer.class
 de\lcraft\api\java_utils\language\DefaultLanguages$3.class
+de\lcraft\api\minecraft\spigot\module\manager\command\Command$2.class
 de\lcraft\api\java_utils\configuration\sections\ConfigSection.class
 de\lcraft\api\java_utils\exeptions\SpigotMCPluginNotFound.class
 de\lcraft\api\minecraft\spigot\module\manager\ModuleDescriptionFileManager.class
@@ -47,7 +49,6 @@ de\lcraft\api\minecraft\spigot\module\manager\utils\command\ModuleCommand.class
 de\lcraft\api\minecraft\spigot\module\manager\utils\command\ModuleCommandManager.class
 de\lcraft\api\minecraft\spigot\module\manager\logger\Logger.class
 de\lcraft\api\minecraft\spigot\module\manager\utils\language\StandardMessages.class
-de\lcraft\api\minecraft\spigot\module\manager\utils\permissions\LuckPermsCalculator.class
 de\lcraft\api\java_utils\language\LanguageContainer.class
 de\lcraft\api\minecraft\spigot\module\manager\utils\listeners\ModuleListenerManager.class
 de\lcraft\api\minecraft\spigot\module\utils\items\SpawnerBuilder.class
@@ -56,6 +57,7 @@ de\lcraft\api\minecraft\spigot\module\player\LPlayerManager.class
 de\lcraft\api\java_utils\connection\SpigotMc.class
 de\lcraft\api\minecraft\spigot\module\manager\utils\command\ModuleSubCommand.class
 de\lcraft\api\java_utils\connection\Internet.class
+de\lcraft\api\minecraft\spigot\module\manager\command\Command$1.class
 de\lcraft\api\minecraft\spigot\module\utils\inventory\item\slot\InventoryY.class
 de\lcraft\api\minecraft\spigot\plugin\commands\language\LangCommand.class
 de\lcraft\api\minecraft\spigot\SpigotClass.class

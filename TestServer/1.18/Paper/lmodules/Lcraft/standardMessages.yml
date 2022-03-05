@@ -1,8 +1,9 @@
-MESSAGE.ON_START: '§aThe Plugin has been §6successfully §astarted.'
-MESSAGE.ON_STOP: '§aThe Plugin has been §6successfully §astopped.'
-MESSAGE.NO_PERMISSIONS: '§cYou do not have Permissions for that!'
-MESSAGE.NO_PLAYER: '§cYou have to be a player to do that!'
-MESSAGE.NO_PLAYER_EXISTS: '§cThis Player has never existed!'
-MESSAGE.NO_PLAYER_FOUND: '§cThis Player is not online!'
-MESSAGE.NO_NUMBER: '§cYou have to type a number!'
-MESSAGE.HELP_MESSAGE: '§cYou have to use %helpmessage%!'
+MESSAGE:
+  NO_PLAYER_EXISTS: ï¿½cThis Player has never existed!
+  HELP_MESSAGE: ï¿½cYou have to use %helpmessage%!
+  ON_STOP: ï¿½aThe Plugin has been ï¿½6successfully ï¿½astopped.
+  NO_PLAYER: ï¿½cYou have to be a player to do that!
+  NO_PLAYER_FOUND: ï¿½cThis Player is not online!
+  NO_NUMBER: ï¿½cYou have to type a number!
+  ON_START: ï¿½aThe Plugin has been ï¿½6successfully ï¿½astarted.
+  NO_PERMISSIONS: ï¿½cYou do not have Permissions for that!
