@@ -73,6 +73,7 @@
             <groupId>org.firebirdsql.jdbc</groupId>
             <artifactId>jaybird-jdk16</artifactId>
             <version>2.2.15</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>javax.resource</groupId>
@@ -84,6 +85,7 @@
             <groupId>me.carleslc.Simple-YAML</groupId>
             <artifactId>Simple-Yaml</artifactId>
             <version>1.7.3</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 
