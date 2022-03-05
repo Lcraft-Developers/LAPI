@@ -8,11 +8,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Lcraft-Languages-API" />
+        <module name="LcraftAPI-API" />
+        <module name="Beta Lcraft Spigot Test" />
         <module name="api-beta" />
         <module name="Lcraft-Permissions-API" />
         <module name="beta-test-spigot" />
-        <module name="LcraftAPI-API" />
-        <module name="Beta Lcraft Spigot Test" />
         <module name="Lcraft Spigot Test Plugin" />
         <module name="API" />
         <module name="API-beta" />
