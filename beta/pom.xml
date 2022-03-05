@@ -17,6 +17,11 @@
     <artifactId>beta-tab</artifactId>
     <version>1.0.0</version>
 
+    <modules>
+        <module>LcraftAPI-API (beta)</module>
+        <module>Beta Lcraft Spigot Test</module>
+    </modules>
+
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
