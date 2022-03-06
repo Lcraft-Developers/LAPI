@@ -2,7 +2,9 @@ package de.lcraft.api.minecraft.spigot;
 
 import de.lcraft.api.java_utils.configuration.Config;
 import de.lcraft.api.java_utils.language.DefaultLanguages;
+import de.lcraft.api.java_utils.language.LanguageContainer;
 import de.lcraft.api.java_utils.language.LanguagesManager;
+import de.lcraft.api.minecraft.spigot.module.manager.configs.ModuleConfig;
 import de.lcraft.api.minecraft.spigot.module.manager.loaders.ModuleClassLoader;
 import de.lcraft.api.minecraft.spigot.plugin.commands.language.LangCommand;
 import de.lcraft.api.minecraft.spigot.plugin.commands.lcraft.LcraftCommand;
@@ -40,7 +42,7 @@ public class SpigotClass extends JavaPlugin {
             apiPluginMain = this;
             cfg = new Config("", "config.yml");
             userConfig = new Config("users.yml");
-            standardMessages = new StandardMessages(new Config("lmodules", "Lcraft", "standardMessages.yml"));
+            standardMessages = new StandardMessages(new ModuleConfig("Lcraft", "standardMessages.yml"));
             standardMessages.load("§6Lcraft §r>> ");
             languagesManager = new LanguagesManager();
             permsManager = new PermsManager("*", "admin");
@@ -59,6 +61,7 @@ public class SpigotClass extends JavaPlugin {
             moduleManager = new ModuleManager(apiPluginMain);
             moduleManager.loadAllModules();
 
+            getCommandManager().reloadConfigs(getPermsManager(), getLanguagesManager());
             getLogger().log(Level.INFO, getStandardMessages().getON_START());
         } catch (Exception e) {
             e.printStackTrace();

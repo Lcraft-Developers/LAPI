@@ -27,10 +27,22 @@ public class EasyConfigFileWriter implements ConfigFileWriter {
 				c.refreshType();
 				if(c.getConfigSectionType() == ConfigSectionType.OnlyValue || c.getConfigSectionType() == ConfigSectionType.ListAndValue) {
 					writerHelper.addLine(c.getRoot() + ": " + c.getValue().convertToString());
+					if(cfg.isLogging()) {
+						System.out.println("-----------------------");
+						System.out.println("ConfigurationSection value");
+						System.out.println(c.getRoot() + ": " + c.getValue().getSavedValue().toString());
+						System.out.println("-----------------------");
+					}
 				}
 				if(c.getConfigSectionType() == ConfigSectionType.LIST || c.getConfigSectionType() == ConfigSectionType.ListAndValue) {
 					for(String root : c.getAllKeys().keySet()) {
 						writerHelper.addLine(root + ": " + c.getAllKeys().get(root).convertToString());
+						if(cfg.isLogging()) {
+							System.out.println("-----------------------");
+							System.out.println("ConfigurationSection Key");
+							System.out.println(root + ": " + c.getAllKeys().get(root).getSavedValue().toString());
+							System.out.println("-----------------------");
+						}
 					}
 				}
 			}

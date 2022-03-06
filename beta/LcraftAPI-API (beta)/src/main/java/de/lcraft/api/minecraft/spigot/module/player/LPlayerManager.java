@@ -36,7 +36,8 @@ public class LPlayerManager implements Listener {
 
 	public final void reloadPlayers() {
 		if(Objects.nonNull(userConfig.getSection("user"))) {
-			for(String c : userConfig.getSection("user").getAllKeys().keySet()) {
+			for(String c : userConfig.getSection("user").getAllKeysWithoutStartRoot().keySet()) {
+				System.out.println(c);
 				UUID uuid = UUID.fromString(c);
 				LPlayer p = new LPlayer(getSpigotPlugin(), this, uuid, userConfig, getListenerManager(), getLanguagesManager());
 				players.add(p);

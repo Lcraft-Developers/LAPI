@@ -18,6 +18,7 @@ public class Config {
 	private File folder;
 	private ArrayList<ConfigSection> allConfigurationSections;
 	private ConfigFileWriter configWriter;
+	private boolean logging = true;
 
 	public Config(String startPath, String path, String filename, ConfigFileWriter configWriter) {
 		allConfigurationSections = new ArrayList<>();
@@ -63,7 +64,7 @@ public class Config {
 		load();
 	}
 	public Config(String startPath, String path, String filename) {
-		this(startPath, path, filename, new YAMLConfigFileWriter());
+		this(startPath, path, filename, new EasyConfigFileWriter());
 	}
 	public Config(String path, String filename, ConfigFileWriter configWriter) {
 		this("", path, filename, configWriter);
@@ -84,6 +85,8 @@ public class Config {
 	public void save() {
 		getConfigWriter().clearCFGFile(this);
 		getConfigWriter().addIntoCFGFile(this);
+
+		load();
 	}
 	public boolean isEmpty() {
 		if(Objects.nonNull(getAllConfigurationSections()) && getAllConfigurationSections().isEmpty()) {
@@ -96,22 +99,42 @@ public class Config {
 	}
 
 	public boolean set(String wantedRoot, Object obj) {
-		/*if(!wantedRoot.contains(".")) {
-			// If root is a variable
-			if(existsSection(wantedRoot)) {
-				ConfigSection section = getSection(wantedRoot);
-				section.setValue(new ConfigValue(obj,section));
-				setSection(section);
-				return true;
-			} else if(exists(wantedRoot)) {
-				setSection(new ConfigSection("", obj));
-				return true;
-				// If root is a section
-			} else {
-				setSection(new ConfigSection("", obj));
-				return true;
+		if(!wantedRoot.contains(".")) {
+			ConfigSection configSection;
+			if(logging) {
+				System.out.println("--------------------------------");
 			}
-		} else {*/
+			if(existsSection("")) {
+				configSection = getSection("");
+				if(logging) {
+					System.out.println("(null) Section: exsists");
+				}
+			} else {
+				configSection = new ConfigSection("");
+				if(logging) {
+					System.out.println("(null) Section: create");
+				}
+			}
+
+			System.out.println("---");
+
+			if(wantedRoot.isBlank() || wantedRoot.isEmpty()) {
+				configSection.setValue(new ConfigValue(obj,configSection));
+				if(logging) {
+					System.out.println("setValue");
+				}
+			} else {
+				configSection.addKey(wantedRoot,new ConfigValue(obj,configSection));
+				if(logging) {
+					System.out.println("addValue");
+				}
+			}
+			setSection(configSection);
+
+			if(logging) {
+				System.out.println("--------------------------------");
+			}
+		} else {
 			String rootBefore = "";
 			String currentRoot = "";
 			for(String currentPartByRoot : wantedRoot.split("\\.")) {
@@ -120,61 +143,77 @@ public class Config {
 				} else {
 					currentRoot = rootBefore + "." + currentPartByRoot;
 				}
-				/*System.out.println("");
-				System.out.println(rootBefore);
-				System.out.println(currentRoot);*/
-				// If currentRoot exsits
-				// If rootBefore is Section
-				// If currentRoot is wantedRoot
-				if(exists(currentRoot) && existsSection(rootBefore) && currentRoot.equals(wantedRoot)) {
-					if(currentRoot.equals(wantedRoot)) {
+				if(logging) {
+					System.out.println("--------------------------------");
+					System.out.println("Section: " + rootBefore);
+					System.out.println("CurrentRoot: " + currentRoot);
+				}
+				if (exists(currentRoot) && existsSection(rootBefore) && currentRoot.equals(wantedRoot)) {
+					if (currentRoot.equals(wantedRoot)) {
 						ConfigSection section = getSection(rootBefore);
-						section.removeKey(rootBefore);
+						section.removeKey(currentRoot);
 						section.addKey(currentRoot, new ConfigValue(obj.toString(), section));
 						setSection(section);
-						//System.out.println(1);
+						if (logging) {
+							System.out.println("currentroot: exists");
+							System.out.println("rootBefore: existsSection");
+							System.out.println("---");
+							System.out.println("getSection");
+							System.out.println("removeKeyRoot");
+							System.out.println("addKeyRoot");
+							System.out.println("setSection");
+							System.out.println("--------------------------------");
+						}
 
 						return true;
 					}
-
-					// If currentRoot is wantedRoot
-					// Not contains .
-				}  else if(wantedRoot.equals(currentRoot) && !currentRoot.contains(".")) {
-					ConfigSection section;
-					if(existsSection("")) {
-						section = getSection("");
-					} else {
-						section = new ConfigSection("");
-					}
-					section.addKey(currentRoot, new ConfigValue(obj.toString(),section));
-					setSection(section);
-					//System.out.println(2);
-
-					return true;
-					// If rootBefore is Section
-					// If currentRoot is wantedRoot
-					// Contains .
-				} else if(wantedRoot.equals(currentRoot) && existsSection(rootBefore) && currentRoot.contains(".")) {
+				} else if (wantedRoot.equals(currentRoot) && existsSection(rootBefore)) {
 					ConfigSection section = getSection(rootBefore);
-					section.addKey(currentRoot, new ConfigValue(obj.toString(),section));
+					section.addKey(currentRoot, new ConfigValue(obj.toString(), section));
 					setSection(section);
-					//System.out.println(3);
+					if (logging) {
+						System.out.println("rootBefore: existsSection");
+						System.out.println("---");
+						System.out.println("getSection");
+						System.out.println("addKeyRoot");
+						System.out.println("setSection");
+						System.out.println("--------------------------------");
+					}
 
 					return true;
-					// If rootBefore is not a Section
-					// If currentRoot is wantedRoot
-				} else if(wantedRoot.equals(currentRoot) && !existsSection(rootBefore)) {
-					ConfigSection section = new ConfigSection(rootBefore);
-					section.addKey(currentRoot, new ConfigValue(obj.toString(),section));
+				} else if (wantedRoot.equals(currentRoot) && existsSection(currentRoot)) {
+					ConfigSection section = getSection(currentRoot);
+					section.setValue(new ConfigValue(obj.toString(), section));
 					setSection(section);
-					//System.out.println(4);
+					if (logging) {
+						System.out.println("currentRoot: existsSection");
+						System.out.println("---");
+						System.out.println("getSection");
+						System.out.println("createRoot");
+						System.out.println("setRoot");
+						System.out.println("setSection");
+						System.out.println("--------------------------------");
+					}
+
+					return true;
+				} else if(wantedRoot.equals(currentRoot)) {
+					ConfigSection section = new ConfigSection(rootBefore);
+					section.addKey(currentRoot, new ConfigValue(obj.toString(), section));
+					setSection(section);
+					if(logging) {
+						System.out.println("---");
+						System.out.println("createSection");
+						System.out.println("addKeyRoot");
+						System.out.println("setSection");
+						System.out.println("--------------------------------");
+					}
 
 					return true;
 				}
 
 				rootBefore = currentRoot;
 			}
-		//}
+		}
 		return false;
 	}
 	public ConfigValue get(String root) {
@@ -369,6 +408,9 @@ public class Config {
 	}
 	public ConfigFileWriter getConfigWriter() {
 		return configWriter;
+	}
+	public boolean isLogging() {
+		return logging;
 	}
 
 }

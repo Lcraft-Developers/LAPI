@@ -78,11 +78,11 @@ public class LPlayer implements Listener {
 		}, 2l, 2l);
 	}
 
-	@EventHandler(priority = EventPriority.HIGHEST)
+	/*@EventHandler(priority = EventPriority.HIGHEST)
 	public void onSendMessage(AsyncPlayerChatEvent e) {
 		e.setCancelled(true);
 		onSendChatMessage(e.getMessage());
-	}
+	}*/
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void onJoin(PlayerJoinEvent e) {
 		e.setJoinMessage(null);
@@ -122,7 +122,7 @@ public class LPlayer implements Listener {
 		return language.getMessage("quit.message", defaultMessage);
 	}
 
-	public void onSendChatMessage(String msg) {
+	/*public void onSendChatMessage(String msg) {
 		sendDefaultChatMessage(msg);
 	}
 	public String onGetChatMessage(LPlayer from, String msg) {
@@ -137,7 +137,7 @@ public class LPlayer implements Listener {
 	}
 	public final String getDefaultChatMessage(LPlayer from, String msg) {
 		return from.getNickName() + ">>" + msg;
-	}
+	}*/
 
 	public final UUID getUUID() {
 		return uuid;
@@ -235,8 +235,14 @@ public class LPlayer implements Listener {
 	}
 	public final ArrayList<String> getVanishedUUID() {
 		ArrayList<String> array = new ArrayList<>();
-		for(ConfigValue v : getUserCFG().getSection("user." + getUUID().toString() + ".vanished").getAllKeys().values()) {
-			array.add(v.convertToString());
+		if(getUserCFG().existsSection("user." + getUUID().toString() + ".vanished")) {
+			if(Objects.nonNull(getUserCFG().getSection("user." + getUUID().toString() + ".vanished").getAllKeys())) {
+				if(!getUserCFG().getSection("user." + getUUID().toString() + ".vanished").getAllKeys().isEmpty()) {
+					for(ConfigValue v : getUserCFG().getSection("user." + getUUID().toString() + ".vanished").getAllKeys().values()) {
+						array.add(v.convertToString());
+					}
+				}
+			}
 		}
 		return array;
 	}

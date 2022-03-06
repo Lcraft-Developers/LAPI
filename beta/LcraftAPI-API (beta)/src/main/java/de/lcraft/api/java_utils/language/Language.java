@@ -38,8 +38,9 @@ public abstract class Language {
 	}
 
 	public final void setMessage(String root, String[] helpMessage) {
+		String mainRoot = getShort() + "." + root;
 		for(int i = 0; i < helpMessage.length; i++) {
-			getHelpFile().set(root + "." + i, helpMessage[i]);
+			getHelpFile().set(mainRoot + "." + i, helpMessage[i]);
 		}
 		save();
 	}

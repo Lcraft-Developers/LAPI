@@ -28,11 +28,25 @@ public class YAMLConfigFileWriter implements ConfigFileWriter {
 			for(ConfigSection c : cfg.getAllConfigurationSections()) {
 				c.refreshType();
 				if(c.getConfigSectionType() == ConfigSectionType.OnlyValue || c.getConfigSectionType() == ConfigSectionType.ListAndValue) {
-					yaml.set(c.getRoot(), c.getValue().getSavedValue().toString());
+					yaml.set(c.getRoot(), c.getValue().getSavedValue());
+					if(cfg.isLogging()) {
+						System.out.println("-----------------------");
+						System.out.println("ConfigurationSection value");
+						System.out.println(c.getRoot() + ": " + c.getValue().getSavedValue().toString());
+						System.out.println("-----------------------");
+					}
+					yaml.save(cfg.getFile());
 				}
 				if(c.getConfigSectionType() == ConfigSectionType.LIST || c.getConfigSectionType() == ConfigSectionType.ListAndValue) {
 					for(String root : c.getAllKeys().keySet()) {
-						yaml.set(root,c.getAllKeys().get(root).getSavedValue().toString());
+						yaml.set(root, c.getAllKeys().get(root).getSavedValue());
+						if(cfg.isLogging()) {
+							System.out.println("-----------------------");
+							System.out.println("ConfigurationSection Key");
+							System.out.println(root + ": " + c.getAllKeys().get(root).getSavedValue().toString());
+							System.out.println("-----------------------");
+						}
+						yaml.save(cfg.getFile());
 					}
 				}
 			}
@@ -50,7 +64,7 @@ public class YAMLConfigFileWriter implements ConfigFileWriter {
 			YamlConfiguration yaml = new YamlConfiguration();
 			yaml.load(cfg.getFile());
 			for(String root : yaml.getKeys(true)) {
-				cfg.set(root, yaml.get(root));
+				cfg.set(root, yaml.getString(root).replace("'",""));
 			}
 		} catch (IOException exception) {
 			exception.printStackTrace();

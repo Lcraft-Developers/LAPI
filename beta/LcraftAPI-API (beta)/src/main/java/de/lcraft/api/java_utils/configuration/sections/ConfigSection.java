@@ -1,6 +1,8 @@
 package de.lcraft.api.java_utils.configuration.sections;
 
+import de.lcraft.api.java_utils.configuration.Config;
 import de.lcraft.api.java_utils.configuration.ConfigValue;
+import org.bukkit.configuration.MemorySection;
 
 import java.util.HashMap;
 import java.util.Objects;
@@ -48,7 +50,7 @@ public class ConfigSection {
 		refreshType();
 	}
 	public void refreshType() {
-		if(Objects.nonNull(getValue()) && Objects.nonNull(getValue().convertToString())) {
+		if(Objects.nonNull(getValue()) && Objects.nonNull(getValue().convertToString()) && !(getValue().getSavedValue() instanceof MemorySection)) {
 			setConfigSectionType(ConfigSectionType.OnlyValue);
 		}
 		if(Objects.nonNull(getAllKeys()) && !getAllKeys().isEmpty()) {
@@ -65,6 +67,20 @@ public class ConfigSection {
 	}
 	public HashMap<String, ConfigValue> getAllKeys() {
 		return allKeys;
+	}
+	public HashMap<String, ConfigValue> getAllKeysWithoutStartRoot() {
+		HashMap<String, ConfigValue> newKeys = new HashMap<>();
+
+		for(String current : getAllKeys().keySet()) {
+			ConfigValue value = getAllKeys().get(current);
+			if(current.startsWith(getRoot() + ".")) {
+				newKeys.put(current.replaceFirst(getRoot() + ".",""), value);
+			} else {
+				newKeys.put(current.replaceFirst(getRoot(),""), value);
+			}
+		}
+
+		return newKeys;
 	}
 	public ConfigSectionType getConfigSectionType() {
 		return configSectionType;
