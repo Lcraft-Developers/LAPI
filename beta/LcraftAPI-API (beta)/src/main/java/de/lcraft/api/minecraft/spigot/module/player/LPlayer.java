@@ -1,7 +1,7 @@
 package de.lcraft.api.minecraft.spigot.module.player;
 
 import de.lcraft.api.java_utils.configuration.Config;
-import de.lcraft.api.java_utils.configuration.ConfigValue;
+import de.lcraft.api.java_utils.configuration.value.ConfigValue;
 import de.lcraft.api.java_utils.language.Language;
 import de.lcraft.api.java_utils.language.LanguagesManager;
 import de.lcraft.api.minecraft.spigot.SpigotClass;
@@ -15,7 +15,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import java.util.ArrayList;
@@ -239,7 +238,7 @@ public class LPlayer implements Listener {
 			if(Objects.nonNull(getUserCFG().getSection("user." + getUUID().toString() + ".vanished").getAllKeys())) {
 				if(!getUserCFG().getSection("user." + getUUID().toString() + ".vanished").getAllKeys().isEmpty()) {
 					for(ConfigValue v : getUserCFG().getSection("user." + getUUID().toString() + ".vanished").getAllKeys().values()) {
-						array.add(v.convertToString());
+						array.add(v.getSavedValue().toString());
 					}
 				}
 			}

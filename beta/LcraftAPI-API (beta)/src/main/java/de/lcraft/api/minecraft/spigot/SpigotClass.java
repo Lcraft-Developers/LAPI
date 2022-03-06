@@ -41,7 +41,7 @@ public class SpigotClass extends JavaPlugin {
             // Make Variables
             apiPluginMain = this;
             cfg = new Config("", "config.yml");
-            userConfig = new Config("users.yml");
+            userConfig = new ModuleConfig("Lcraft Players", "users.yml");
             standardMessages = new StandardMessages(new ModuleConfig("Lcraft", "standardMessages.yml"));
             standardMessages.load("§6Lcraft §r>> ");
             languagesManager = new LanguagesManager();

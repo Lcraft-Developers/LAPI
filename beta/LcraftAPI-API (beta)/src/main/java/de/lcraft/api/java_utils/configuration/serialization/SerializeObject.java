@@ -1,4 +1,4 @@
-package de.lcraft.api.java_utils.serialize;
+package de.lcraft.api.java_utils.configuration.serialization;
 
 import java.util.Map;
 

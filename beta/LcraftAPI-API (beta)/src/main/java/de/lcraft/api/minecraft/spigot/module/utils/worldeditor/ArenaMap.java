@@ -1,6 +1,6 @@
 package de.lcraft.api.minecraft.spigot.module.utils.worldeditor;
 
-import de.lcraft.api.java_utils.serialize.SerializeObject;
+import de.lcraft.api.java_utils.configuration.serialization.SerializeObject;
 import org.bukkit.block.Block;
 
 import java.util.ArrayList;

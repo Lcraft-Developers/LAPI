@@ -2,7 +2,6 @@ de\lcraft\api\java_utils\probability\Proability.class
 de\lcraft\api\minecraft\spigot\module\player\LPlayer$1.class
 de\lcraft\api\minecraft\spigot\module\utils\crafting\CraftingRecipe.class
 de\lcraft\api\java_utils\language\DefaultLanguages$2.class
-de\lcraft\api\java_utils\serialize\SerializeObject.class
 de\lcraft\api\minecraft\spigot\module\manager\command\SubCommand.class
 de\lcraft\api\minecraft\spigot\plugin\commands\language\LangCommand$1.class
 de\lcraft\api\minecraft\spigot\module\utils\gamemanager\state\GameState.class
@@ -25,6 +24,7 @@ de\lcraft\api\minecraft\spigot\module\player\LPlayer.class
 de\lcraft\api\java_utils\language\DefaultLanguages$3.class
 de\lcraft\api\minecraft\spigot\module\manager\command\Command$2.class
 de\lcraft\api\java_utils\configuration\sections\ConfigSection.class
+de\lcraft\api\java_utils\configuration\value\ConfigValue.class
 de\lcraft\api\java_utils\exeptions\SpigotMCPluginNotFound.class
 de\lcraft\api\minecraft\spigot\module\manager\ModuleDescriptionFileManager.class
 de\lcraft\api\minecraft\spigot\module\manager\loaders\ModuleClassLoader.class
@@ -67,13 +67,13 @@ de\lcraft\api\minecraft\spigot\module\manager\ModuleManager.class
 de\lcraft\api\minecraft\spigot\module\utils\worldeditor\WorldEditor.class
 de\lcraft\api\minecraft\spigot\module\utils\crafting\CraftingPlace.class
 de\lcraft\api\java_utils\CodeHelper.class
-de\lcraft\api\java_utils\configuration\ConfigValue.class
 de\lcraft\api\mysql\MySQLServer.class
 de\lcraft\api\java_utils\language\Language.class
 de\lcraft\api\minecraft\spigot\module\utils\inventory\InventoryHelper.class
 de\lcraft\api\java_utils\language\DefaultLanguages$1.class
 de\lcraft\api\minecraft\spigot\module\utils\inventory\item\InventoryConsumerItem.class
 de\lcraft\api\minecraft\spigot\module\utils\items\ItemBuilder.class
+de\lcraft\api\java_utils\configuration\serialization\SerializeObject.class
 de\lcraft\api\java_utils\exeptions\InternetNotFoundException.class
 de\lcraft\api\minecraft\spigot\module\manager\utils\permissions\PermsManager.class
 de\lcraft\api\java_utils\probability\Proability$Entry.class

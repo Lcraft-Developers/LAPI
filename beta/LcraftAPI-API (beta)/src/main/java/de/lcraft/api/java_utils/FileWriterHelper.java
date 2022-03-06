@@ -2,9 +2,7 @@ package de.lcraft.api.java_utils;
 
 import org.checkerframework.checker.units.qual.A;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Objects;
@@ -16,24 +14,30 @@ public class FileWriterHelper {
 
 	public FileWriterHelper(File file) throws IOException {
 		this.file = file;
-		this.fileWriter = new FileWriter(getFile(), true);
+		resetFileWriter();
 	}
 
+	public void resetFileWriter() throws IOException {
+		this.fileWriter = new FileWriter(getFile(), true);
+	}
 	public void addLine(String line) throws IOException {
 		getFileWriter().write(line + System.lineSeparator());
-		getFileWriter().flush();
 	}
 	public void removeAllLines() throws IOException {
-		fileWriter = new FileWriter(getFile(), false);
+		this.fileWriter = new FileWriter(getFile(), false);
 		getFileWriter().write("");
 		getFileWriter().flush();
-		getFileWriter().close();
-		fileWriter = new FileWriter(getFile(), true);
+		resetFileWriter();
 	}
 	public ArrayList<String> getAllLines() throws IOException {
 		ArrayList<String> allLines = new ArrayList<>();
-		if(Objects.nonNull(getFile()) && !getFile().exists() && Files.isReadable(getFile().toPath())) {
-			allLines.addAll(Files.readAllLines(getFile().toPath()));
+		if(Objects.nonNull(getFile()) && getFile().exists()) {
+			try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+				String line;
+				while ((line = br.readLine()) != null) {
+					allLines.add(line);
+				}
+			}
 		}
 		return allLines;
 	}
@@ -43,6 +47,10 @@ public class FileWriterHelper {
 	}
 	public FileWriter getFileWriter() {
 		return fileWriter;
+	}
+	public void close() throws IOException {
+		getFileWriter().flush();
+		getFileWriter().close();
 	}
 
 }

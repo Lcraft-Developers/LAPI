@@ -10,11 +10,16 @@ import java.io.IOException;
 
 public class YAMLConfigFileWriter implements ConfigFileWriter {
 
+	protected void sendDebuggerText(String str) {
+		if(isLogging) System.out.println(str);
+	}
+
 	@Override
 	public void clearCFGFile(Config cfg) {
 		try {
 			FileWriterHelper helper = new FileWriterHelper(cfg.getFile());
 			helper.removeAllLines();
+			helper.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -29,24 +34,22 @@ public class YAMLConfigFileWriter implements ConfigFileWriter {
 				c.refreshType();
 				if(c.getConfigSectionType() == ConfigSectionType.OnlyValue || c.getConfigSectionType() == ConfigSectionType.ListAndValue) {
 					yaml.set(c.getRoot(), c.getValue().getSavedValue());
-					if(cfg.isLogging()) {
-						System.out.println("-----------------------");
-						System.out.println("ConfigurationSection value");
-						System.out.println(c.getRoot() + ": " + c.getValue().getSavedValue().toString());
-						System.out.println("-----------------------");
-					}
 					yaml.save(cfg.getFile());
+
+					sendDebuggerText("- Saving -");
+					sendDebuggerText("ConfigurationSection value");
+					sendDebuggerText(c.getRoot() + ": " + c.getValue().getSavedValue().toString());
+					sendDebuggerText("-----------------------");
 				}
 				if(c.getConfigSectionType() == ConfigSectionType.LIST || c.getConfigSectionType() == ConfigSectionType.ListAndValue) {
 					for(String root : c.getAllKeys().keySet()) {
 						yaml.set(root, c.getAllKeys().get(root).getSavedValue());
-						if(cfg.isLogging()) {
-							System.out.println("-----------------------");
-							System.out.println("ConfigurationSection Key");
-							System.out.println(root + ": " + c.getAllKeys().get(root).getSavedValue().toString());
-							System.out.println("-----------------------");
-						}
 						yaml.save(cfg.getFile());
+
+						sendDebuggerText("- Saving -");
+						sendDebuggerText("ConfigurationSection Key");
+						sendDebuggerText(root + ": " + c.getAllKeys().get(root).getSavedValue().toString());
+						sendDebuggerText("-----------------------");
 					}
 				}
 			}
@@ -56,21 +59,34 @@ public class YAMLConfigFileWriter implements ConfigFileWriter {
 		} catch (InvalidConfigurationException e) {
 			e.printStackTrace();
 		}
+		sendDebuggerText("");
+		sendDebuggerText("");
+		sendDebuggerText("");
 	}
 
 	@Override
 	public void loadFromCFGFile(Config cfg) {
+		cfg.resetAllConfigurationSections();
 		try {
 			YamlConfiguration yaml = new YamlConfiguration();
 			yaml.load(cfg.getFile());
 			for(String root : yaml.getKeys(true)) {
-				cfg.set(root, yaml.getString(root).replace("'",""));
+				String value = yaml.getString(root).replace("'","");
+				cfg.set(root, value);
+
+				sendDebuggerText("- Loading -");
+				sendDebuggerText("ConfigurationSection value");
+				sendDebuggerText(root + ": " + value);
+				sendDebuggerText("-----------------------");
 			}
 		} catch (IOException exception) {
 			exception.printStackTrace();
 		} catch (InvalidConfigurationException e) {
 			e.printStackTrace();
 		}
+		sendDebuggerText("");
+		sendDebuggerText("");
+		sendDebuggerText("");
 	}
 
 }

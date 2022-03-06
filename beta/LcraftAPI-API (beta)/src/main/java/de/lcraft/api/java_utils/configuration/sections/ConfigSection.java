@@ -1,7 +1,6 @@
 package de.lcraft.api.java_utils.configuration.sections;
 
-import de.lcraft.api.java_utils.configuration.Config;
-import de.lcraft.api.java_utils.configuration.ConfigValue;
+import de.lcraft.api.java_utils.configuration.value.ConfigValue;
 import org.bukkit.configuration.MemorySection;
 
 import java.util.HashMap;
@@ -26,6 +25,18 @@ public class ConfigSection {
 
 		refreshType();
 	}
+	public void refreshType() {
+		if(Objects.nonNull(getValue()) && Objects.nonNull(getValue().toString()) && !(getValue().getSavedValue() instanceof MemorySection)) {
+			setConfigSectionType(ConfigSectionType.OnlyValue);
+		}
+		if(Objects.nonNull(getAllKeys()) && !getAllKeys().isEmpty()) {
+			if(getConfigSectionType() == ConfigSectionType.OnlyValue) {
+				setConfigSectionType(ConfigSectionType.ListAndValue);
+			} else {
+				setConfigSectionType(ConfigSectionType.LIST);
+			}
+		}
+	}
 
 	public void addKey(String root, ConfigValue value) {
 		if(existsKey(root)) {
@@ -45,25 +56,20 @@ public class ConfigSection {
 		refreshType();
 		return getAllKeys().containsKey(root);
 	}
+
 	public void setValue(ConfigValue value) {
 		this.value = value;
 		refreshType();
 	}
-	public void refreshType() {
-		if(Objects.nonNull(getValue()) && Objects.nonNull(getValue().convertToString()) && !(getValue().getSavedValue() instanceof MemorySection)) {
-			setConfigSectionType(ConfigSectionType.OnlyValue);
-		}
-		if(Objects.nonNull(getAllKeys()) && !getAllKeys().isEmpty()) {
-			if(getConfigSectionType() == ConfigSectionType.OnlyValue) {
-				setConfigSectionType(ConfigSectionType.ListAndValue);
-			} else {
-				setConfigSectionType(ConfigSectionType.LIST);
-			}
-		}
-	}
-
 	public ConfigValue getValue() {
 		return value;
+	}
+
+	public void setConfigSectionType(ConfigSectionType newType) {
+		configSectionType = newType;
+	}
+	public ConfigSectionType getConfigSectionType() {
+		return configSectionType;
 	}
 	public HashMap<String, ConfigValue> getAllKeys() {
 		return allKeys;
@@ -82,21 +88,15 @@ public class ConfigSection {
 
 		return newKeys;
 	}
-	public ConfigSectionType getConfigSectionType() {
-		return configSectionType;
-	}
-	public void setConfigSectionType(ConfigSectionType newType) {
-		configSectionType = newType;
-	}
-	public String getRoot() {
-		return root;
-	}
 	public int size() {
 		int size = allKeys.size();
 		if(configSectionType == ConfigSectionType.OnlyValue || configSectionType == ConfigSectionType.ListAndValue) {
 			size++;
 		}
 		return size;
+	}
+	public String getRoot() {
+		return root;
 	}
 
 }

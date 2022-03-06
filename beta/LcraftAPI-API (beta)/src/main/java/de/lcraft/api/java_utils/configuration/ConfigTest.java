@@ -31,11 +31,11 @@ public class ConfigTest {
 
 		for(ConfigSection c : cfg.getAllConfigurationSections()) {
 			if(c.getConfigSectionType() == ConfigSectionType.ListAndValue || c.getConfigSectionType() == ConfigSectionType.OnlyValue) {
-				System.out.println(c.getRoot() + ": " + c.getValue().convertToString());
+				System.out.println(c.getRoot() + ": " + c.getValue().toString());
 			}
 			if(c.getConfigSectionType() == ConfigSectionType.ListAndValue ||c.getConfigSectionType() == ConfigSectionType.LIST) {
 				for(String key : c.getAllKeys().keySet()) {
-					System.out.println(key + ": " + c.getAllKeys().get(key).convertToString());
+					System.out.println(key + ": " + c.getAllKeys().get(key).toString());
 				}
 			}
 		}

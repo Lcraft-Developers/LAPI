@@ -3,10 +3,9 @@ package de.lcraft.api.java_utils.configuration;
 import de.lcraft.api.java_utils.CodeHelper;
 import de.lcraft.api.java_utils.configuration.sections.ConfigSection;
 import de.lcraft.api.java_utils.configuration.sections.ConfigSectionType;
+import de.lcraft.api.java_utils.configuration.value.ConfigValue;
 import de.lcraft.api.java_utils.configuration.writer.ConfigFileWriter;
 import de.lcraft.api.java_utils.configuration.writer.EasyConfigFileWriter;
-import de.lcraft.api.java_utils.configuration.writer.YAMLConfigFileWriter;
-import org.bukkit.configuration.InvalidConfigurationException;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -18,7 +17,6 @@ public class Config {
 	private File folder;
 	private ArrayList<ConfigSection> allConfigurationSections;
 	private ConfigFileWriter configWriter;
-	private boolean logging = true;
 
 	public Config(String startPath, String path, String filename, ConfigFileWriter configWriter) {
 		allConfigurationSections = new ArrayList<>();
@@ -88,52 +86,26 @@ public class Config {
 
 		load();
 	}
-	public boolean isEmpty() {
-		if(Objects.nonNull(getAllConfigurationSections()) && getAllConfigurationSections().isEmpty()) {
-			return true;
-		} else if(Objects.isNull(getAllConfigurationSections())) {
-			allConfigurationSections = new ArrayList<>();
-			return true;
-		}
-		return false;
+	protected void sendDebuggerText(String str) {
+		System.out.println(str);
 	}
 
 	public boolean set(String wantedRoot, Object obj) {
 		if(!wantedRoot.contains(".")) {
-			ConfigSection configSection;
-			if(logging) {
-				System.out.println("--------------------------------");
-			}
-			if(existsSection("")) {
-				configSection = getSection("");
-				if(logging) {
-					System.out.println("(null) Section: exsists");
-				}
-			} else {
-				configSection = new ConfigSection("");
-				if(logging) {
-					System.out.println("(null) Section: create");
-				}
-			}
+			sendDebuggerText("--------------------------------");
+			ConfigSection configSection = createAndGetSection(new ConfigSection(""));
 
-			System.out.println("---");
-
+			sendDebuggerText("---");
 			if(wantedRoot.isBlank() || wantedRoot.isEmpty()) {
 				configSection.setValue(new ConfigValue(obj,configSection));
-				if(logging) {
-					System.out.println("setValue");
-				}
+				sendDebuggerText("setValue");
 			} else {
 				configSection.addKey(wantedRoot,new ConfigValue(obj,configSection));
-				if(logging) {
-					System.out.println("addValue");
-				}
+				sendDebuggerText("addValue");
 			}
 			setSection(configSection);
 
-			if(logging) {
-				System.out.println("--------------------------------");
-			}
+			sendDebuggerText("--------------------------------");
 		} else {
 			String rootBefore = "";
 			String currentRoot = "";
@@ -143,70 +115,48 @@ public class Config {
 				} else {
 					currentRoot = rootBefore + "." + currentPartByRoot;
 				}
-				if(logging) {
-					System.out.println("--------------------------------");
-					System.out.println("Section: " + rootBefore);
-					System.out.println("CurrentRoot: " + currentRoot);
-				}
-				if (exists(currentRoot) && existsSection(rootBefore) && currentRoot.equals(wantedRoot)) {
-					if (currentRoot.equals(wantedRoot)) {
-						ConfigSection section = getSection(rootBefore);
-						section.removeKey(currentRoot);
-						section.addKey(currentRoot, new ConfigValue(obj.toString(), section));
-						setSection(section);
-						if (logging) {
-							System.out.println("currentroot: exists");
-							System.out.println("rootBefore: existsSection");
-							System.out.println("---");
-							System.out.println("getSection");
-							System.out.println("removeKeyRoot");
-							System.out.println("addKeyRoot");
-							System.out.println("setSection");
-							System.out.println("--------------------------------");
-						}
-
-						return true;
-					}
-				} else if (wantedRoot.equals(currentRoot) && existsSection(rootBefore)) {
+				sendDebuggerText("--------------------------------");
+				sendDebuggerText("Section: " + rootBefore);
+				sendDebuggerText("CurrentRoot: " + currentRoot);
+				if (wantedRoot.equals(currentRoot) && existsSection(rootBefore)) {
 					ConfigSection section = getSection(rootBefore);
+					if(exists(currentRoot)) {
+						section.removeKey(currentRoot);
+					}
 					section.addKey(currentRoot, new ConfigValue(obj.toString(), section));
 					setSection(section);
-					if (logging) {
-						System.out.println("rootBefore: existsSection");
-						System.out.println("---");
-						System.out.println("getSection");
-						System.out.println("addKeyRoot");
-						System.out.println("setSection");
-						System.out.println("--------------------------------");
-					}
+
+					sendDebuggerText("rootBefore: existsSection");
+					sendDebuggerText("---");
+					sendDebuggerText("getSection");
+					sendDebuggerText("removeKeyRoot and addKeyRoot");
+					sendDebuggerText("setSection");
+					sendDebuggerText("--------------------------------");
 
 					return true;
 				} else if (wantedRoot.equals(currentRoot) && existsSection(currentRoot)) {
 					ConfigSection section = getSection(currentRoot);
 					section.setValue(new ConfigValue(obj.toString(), section));
 					setSection(section);
-					if (logging) {
-						System.out.println("currentRoot: existsSection");
-						System.out.println("---");
-						System.out.println("getSection");
-						System.out.println("createRoot");
-						System.out.println("setRoot");
-						System.out.println("setSection");
-						System.out.println("--------------------------------");
-					}
+
+					sendDebuggerText("currentRoot: existsSection");
+					sendDebuggerText("---");
+					sendDebuggerText("getSection");
+					sendDebuggerText("createRoot");
+					sendDebuggerText("setRoot");
+					sendDebuggerText("setSection");
 
 					return true;
 				} else if(wantedRoot.equals(currentRoot)) {
-					ConfigSection section = new ConfigSection(rootBefore);
+					ConfigSection section = createAndGetSection(new ConfigSection(rootBefore));
 					section.addKey(currentRoot, new ConfigValue(obj.toString(), section));
 					setSection(section);
-					if(logging) {
-						System.out.println("---");
-						System.out.println("createSection");
-						System.out.println("addKeyRoot");
-						System.out.println("setSection");
-						System.out.println("--------------------------------");
-					}
+
+					sendDebuggerText("---");
+					sendDebuggerText("createSection or getSection");
+					sendDebuggerText("addKeyRoot");
+					sendDebuggerText("setSection");
+					sendDebuggerText("--------------------------------");
 
 					return true;
 				}
@@ -237,141 +187,7 @@ public class Config {
 		return null;
 	}
 	public boolean exists(String root) {
-		if(Objects.nonNull(get(root))) {
-			return true;
-		}
-		return false;
-	}
-
-	public boolean existsAsString(String root) {
-		ConfigValue value = get(root);
-		if(Objects.nonNull(value)) {
-			if(value.isString(value.convertFromString(value.getSavedValue().toString()))) {
-				return true;
-			}
-		}
-		return false;
-	}
-	public boolean existsAsInteger(String root) {
-		ConfigValue value = get(root);
-		if(Objects.nonNull(value)) {
-			if(value.isInteger(value.convertFromString(value.getSavedValue().toString()))) {
-				return true;
-			}
-		}
-		return false;
-	}
-	public boolean existsAsLong(String root) {
-		ConfigValue value = get(root);
-		if(Objects.nonNull(value)) {
-			if(value.isLong(value.convertFromString(value.getSavedValue().toString()))) {
-				return true;
-			}
-		}
-		return false;
-	}
-	public boolean existsAsFloat(String root) {
-		ConfigValue value = get(root);
-		if(Objects.nonNull(value)) {
-			if(value.isFloat(value.convertFromString(value.getSavedValue().toString()))) {
-				return true;
-			}
-		}
-		return false;
-	}
-	public boolean existsAsDouble(String root) {
-		ConfigValue value = get(root);
-		if(Objects.nonNull(value)) {
-			if(value.isDouble(value.convertFromString(value.getSavedValue().toString()))) {
-				return true;
-			}
-		}
-		return false;
-	}
-	public boolean existsAsByte(String root) {
-		ConfigValue value = get(root);
-		if(Objects.nonNull(value)) {
-			if(value.isByte(value.convertFromString(value.getSavedValue().toString()))) {
-				return true;
-			}
-		}
-		return false;
-	}
-	public boolean existsAsBoolean(String root) {
-		ConfigValue value = get(root);
-		if(Objects.nonNull(value)) {
-			if(value.isBoolean(value.convertFromString(value.getSavedValue().toString()))) {
-				return true;
-			}
-		}
-		return false;
-	}
-
-	public final Object getDefault(String path, Object start) {
-		if(exists(path)) {
-			return get(path);
-		} else {
-			set(path, start);
-			return start;
-		}
-	}
-	public final String getStringDefault(String path, String start) {
-		if(exists(path)) {
-			return getString(path);
-		} else {
-			set(path, start);
-			return start;
-		}
-	}
-
-	public String getString(String root) {
-		ConfigValue value = get(root);
-		if(Objects.nonNull(value)) {
-			return value.convertFromString(value.getSavedValue().toString());
-		}
-		return null;
-	}
-	public Integer getInteger(String root) {
-		ConfigValue value = get(root);
-		if(Objects.nonNull(value) && existsAsInteger(root)) {
-			return value.getAsInteger(value.convertFromString(value.getSavedValue().toString()));
-		}
-		return null;
-	}
-	public Long getLong(String root) {
-		ConfigValue value = get(root);
-		if(Objects.nonNull(value) && existsAsLong(root)) {
-			return value.getAsLong(value.convertFromString(value.getSavedValue().toString()));
-		}
-		return null;
-	}
-	public Float getFloat(String root) {
-		ConfigValue value = get(root);
-		if(Objects.nonNull(value) && existsAsFloat(root)) {
-			return value.getAsFloat(value.convertFromString(value.getSavedValue().toString()));
-		}
-		return null;
-	}
-	public Double getDouble(String root) {
-		ConfigValue value = get(root);
-		if(Objects.nonNull(value) && existsAsDouble(root)) {
-			return value.getAsDouble(value.convertFromString(value.getSavedValue().toString()));
-		}
-		return null;
-	}
-	public Byte getByte(String root) {
-		ConfigValue value = get(root);
-		if(Objects.nonNull(value) && existsAsByte(root)) {
-			return value.getAsByte(value.convertFromString(value.getSavedValue().toString()));
-		}
-		return null;
-	}
-	public Boolean getBoolean(String root) {
-		ConfigValue value = get(root);
-		if(Objects.nonNull(value) && existsAsBoolean(root)) {
-			return value.getAsBoolean(value.convertFromString(value.getSavedValue().toString()));
-		}
-		return null;
+		return Objects.nonNull(get(root));
 	}
 
 	public void setSection(ConfigSection section) {
@@ -379,6 +195,15 @@ public class Config {
 			getAllConfigurationSections().remove(section);
 		}
 		getAllConfigurationSections().add(section);
+	}
+	public ConfigSection createAndGetSection(ConfigSection section) {
+		if(!existsSection(section.getRoot())) {
+			setSection(section);
+			sendDebuggerText("(null) Section: create");
+		} else {
+			sendDebuggerText("(null) Section: exsists");
+		}
+		return section;
 	}
 	public ConfigSection getSection(String root) {
 		for(ConfigSection c : getAllConfigurationSections()) {
@@ -396,12 +221,186 @@ public class Config {
 		}
 		return false;
 	}
+	public void resetAllConfigurationSections() {
+		this.allConfigurationSections = new ArrayList<>();
+	}
 
+	public boolean existsAsString(String root) {
+		ConfigValue value = get(root);
+		if(Objects.nonNull(value)) {
+			return value.isString(value.getSavedValue().toString());
+		}
+		return false;
+	}
+	public boolean existsAsInteger(String root) {
+		ConfigValue value = get(root);
+		if(Objects.nonNull(value)) {
+			return value.isInteger(value.getSavedValue().toString());
+		}
+		return false;
+	}
+	public boolean existsAsDouble(String root) {
+		ConfigValue value = get(root);
+		if(Objects.nonNull(value)) {
+			return value.isDouble(value.getSavedValue().toString());
+		}
+		return false;
+	}
+	public boolean existsAsLong(String root) {
+		ConfigValue value = get(root);
+		if(Objects.nonNull(value)) {
+			return value.isLong(value.getSavedValue().toString());
+		}
+		return false;
+	}
+	public boolean existsAsFloat(String root) {
+		ConfigValue value = get(root);
+		if(Objects.nonNull(value)) {
+			return value.isFloat(value.getSavedValue().toString());
+		}
+		return false;
+	}
+	public boolean existsAsByte(String root) {
+		ConfigValue value = get(root);
+		if(Objects.nonNull(value)) {
+			return value.isByte(value.getSavedValue().toString());
+		}
+		return false;
+	}
+	public boolean existsAsBoolean(String root) {
+		ConfigValue value = get(root);
+		if(Objects.nonNull(value)) {
+			return value.isBoolean(value.getSavedValue().toString());
+		}
+		return false;
+	}
+
+	public final Object getDefault(String path, Object start) {
+		if(exists(path)) {
+			return get(path);
+		} else {
+			set(path, start);
+			return start;
+		}
+	}
+	public final String getStringDefault(String path, String start) {
+		if(existsAsString(path)) {
+			return getString(path);
+		} else {
+			set(path, start);
+			return start;
+		}
+	}
+	public final Integer getIntegerDefault(String path, Integer start) {
+		if(existsAsInteger(path)) {
+			return getInteger(path);
+		} else {
+			set(path, start);
+			return start;
+		}
+	}
+	public final Double getDoubleDefault(String path, Double start) {
+		if(existsAsDouble(path)) {
+			return getDouble(path);
+		} else {
+			set(path, start);
+			return start;
+		}
+	}
+	public final Long getLongDefault(String path, Long start) {
+		if(existsAsLong(path)) {
+			return getLong(path);
+		} else {
+			set(path, start);
+			return start;
+		}
+	}
+	public final Float getFloatDefault(String path, Float start) {
+		if(existsAsFloat(path)) {
+			return getFloat(path);
+		} else {
+			set(path, start);
+			return start;
+		}
+	}
+	public final Byte getByteDefault(String path, Byte start) {
+		if(existsAsByte(path)) {
+			return getByte(path);
+		} else {
+			set(path, start);
+			return start;
+		}
+	}
+	public final Boolean getBooleanDefault(String path, Boolean start) {
+		if(existsAsBoolean(path)) {
+			return getBoolean(path);
+		} else {
+			set(path, start);
+			return start;
+		}
+	}
+
+	public String getString(String root) {
+		ConfigValue value = get(root);
+		if(Objects.nonNull(value)) {
+			return value.getSavedValue().toString();
+		}
+		return null;
+	}
+	public Integer getInteger(String root) {
+		ConfigValue value = get(root);
+		if(Objects.nonNull(value) && existsAsInteger(root)) {
+			return value.getAsInteger(value.getSavedValue().toString());
+		}
+		return null;
+	}
+	public Double getDouble(String root) {
+		ConfigValue value = get(root);
+		if(Objects.nonNull(value) && existsAsDouble(root)) {
+			return value.getAsDouble(value.getSavedValue().toString());
+		}
+		return null;
+	}
+	public Long getLong(String root) {
+		ConfigValue value = get(root);
+		if(Objects.nonNull(value) && existsAsLong(root)) {
+			return value.getAsLong(value.getSavedValue().toString());
+		}
+		return null;
+	}
+	public Float getFloat(String root) {
+		ConfigValue value = get(root);
+		if(Objects.nonNull(value) && existsAsFloat(root)) {
+			return value.getAsFloat(value.getSavedValue().toString());
+		}
+		return null;
+	}
+	public Byte getByte(String root) {
+		ConfigValue value = get(root);
+		if(Objects.nonNull(value) && existsAsByte(root)) {
+			return value.getAsByte(value.getSavedValue().toString());
+		}
+		return null;
+	}
+	public Boolean getBoolean(String root) {
+		ConfigValue value = get(root);
+		if(Objects.nonNull(value) && existsAsBoolean(root)) {
+			return value.getAsBoolean(value.getSavedValue().toString());
+		}
+		return null;
+	}
+
+	public boolean isEmpty() {
+		if(Objects.nonNull(getAllConfigurationSections()) && getAllConfigurationSections().isEmpty()) {
+			return true;
+		} else if(Objects.isNull(getAllConfigurationSections())) {
+			allConfigurationSections = new ArrayList<>();
+			return true;
+		}
+		return false;
+	}
 	public File getFile() {
 		return file;
-	}
-	public ArrayList<ConfigSection> getAllConfigurationSections() {
-		return allConfigurationSections;
 	}
 	public File getFolder() {
 		return folder;
@@ -409,8 +408,8 @@ public class Config {
 	public ConfigFileWriter getConfigWriter() {
 		return configWriter;
 	}
-	public boolean isLogging() {
-		return logging;
+	public ArrayList<ConfigSection> getAllConfigurationSections() {
+		return allConfigurationSections;
 	}
 
 }

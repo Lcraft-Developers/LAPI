@@ -1,7 +1,6 @@
-package de.lcraft.api.java_utils.configuration;
+package de.lcraft.api.java_utils.configuration.value;
 
 import de.lcraft.api.java_utils.configuration.sections.ConfigSection;
-
 import java.util.Objects;
 
 public class ConfigValue {
@@ -15,74 +14,76 @@ public class ConfigValue {
 	}
 
 	public boolean isString(String c) {
-		String value = convertFromString(c);
-		if(!isInteger(value) &&
-		   !isByte(value) &&
-		   !isDouble(value) &&
-		   !isFloat(value) &&
-		   !isLong(value) &&
-		   !isBoolean(value)) {
+		if(!isNumeric(c) &&
+		   !isBoolean(c)) {
 			return true;
 		}
 		return false;
 	}
-	public static boolean isNumeric(String strNum) {
-		if (strNum == null) {
-			return false;
-		}
-		try {
-			double d = Double.parseDouble(strNum);
-		} catch (NumberFormatException nfe) {
-			return false;
-		}
-		return true;
-	}
 	public boolean isInteger(String c) {
-		try {
-			if(Objects.nonNull(c) && isNumeric(c) && Objects.nonNull(Integer.valueOf(c))) {
+		if(Objects.nonNull(c)) {
+			try {
+				int integer_ = Integer.parseInt(c);
+
 				return true;
-			}
-		} catch (Exception e) {}
+			} catch (NumberFormatException nfe) {}
+		}
 		return false;
 	}
 	public boolean isDouble(String c) {
-		try {
-		    if(Objects.nonNull(c) && isNumeric(c) && Objects.nonNull(Double.valueOf(c))) {
-			    return true;
-		    }
-		} catch (Exception e) {}
+		if(Objects.nonNull(c)) {
+			try {
+				double double_ = Double.parseDouble(c);
+				return true;
+			} catch (NumberFormatException nfe) {}
+		}
 		return false;
 	}
 	public boolean isFloat(String c) {
-		try {
-		    if(Objects.nonNull(c) && isNumeric(c) && Objects.nonNull(Float.valueOf(c))) {
-			    return true;
-		    }
-		} catch (Exception e) {}
+		if(Objects.nonNull(c)) {
+			try {
+				float float_ = Float.parseFloat(c);
+				return true;
+			} catch (NumberFormatException nfe) {}
+		}
 		return false;
 	}
 	public boolean isLong(String c) {
-		try {
-		    if(Objects.nonNull(c) && isNumeric(c) && Objects.nonNull(Long.valueOf(c))) {
-			    return true;
-		    }
-		} catch (Exception e) {}
+		if(Objects.nonNull(c)) {
+			try {
+				long long_ = Long.parseLong(c);
+				return true;
+			} catch (NumberFormatException nfe) {}
+		}
 		return false;
 	}
 	public boolean isByte(String c) {
-		try {
-		    if(Objects.nonNull(c) && isNumeric(c) && Objects.nonNull(Byte.valueOf(c))) {
+		if(Objects.nonNull(c)) {
+			try {
+				byte byte_ = Byte.parseByte(c);
 				return true;
-			}
-		} catch (Exception e) {}
+			} catch (NumberFormatException nfe) {}
+		}
 		return false;
 	}
+	public boolean isNumeric(String c) {
+		boolean is = false;
+
+		if(isInteger(c)) is = true;
+		if(isDouble(c)) is = true;
+		if(isFloat(c)) is = true;
+		if(isLong(c)) is = true;
+		if(isByte(c)) is = true;
+
+		return is;
+	}
 	public boolean isBoolean(String c) {
-		try {
-		    if(Objects.nonNull(c) && Objects.nonNull(Boolean.valueOf(c))) {
-				    return true;
-			}
-		} catch (Exception e) {}
+		if(Objects.nonNull(c)) {
+			try {
+				boolean boolean_ = Boolean.valueOf(c);
+				return true;
+			} catch (NumberFormatException nfe) {}
+		}
 		return false;
 	}
 
@@ -121,13 +122,6 @@ public class ConfigValue {
 			return Boolean.valueOf(c);
 		}
 		return null;
-	}
-
-	public String convertFromString(String c) {
-		return c.replace("'","");
-	}
-	public String convertToString() {
-		return "'" + getSavedValue().toString() + "'";
 	}
 
 	public ConfigSection getConfigSection() {
