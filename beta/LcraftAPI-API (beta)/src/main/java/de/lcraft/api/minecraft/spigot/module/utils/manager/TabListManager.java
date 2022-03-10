@@ -7,11 +7,11 @@ import java.util.ArrayList;
 
 public class TabListManager {
 
-	private ArrayList<String> header,
-	                          footer;
-	private Scoreboard scoreBoard;
-	private TeamManager teamManager;
-	private PermsManager permsManager;
+	private final ArrayList<String> header;
+	private final ArrayList<String> footer;
+	private final Scoreboard scoreBoard;
+	private final TeamManager teamManager;
+	private final PermsManager permsManager;
 
 	public TabListManager(Scoreboard scoreboard, PermsManager permsManager) {
 		header = new ArrayList<>();

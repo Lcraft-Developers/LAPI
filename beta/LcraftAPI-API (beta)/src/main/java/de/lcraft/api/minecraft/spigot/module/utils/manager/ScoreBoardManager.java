@@ -13,7 +13,7 @@ import java.util.Objects;
 
 public class ScoreBoardManager {
 
-	private HashMap<Integer, Object> allLines;
+	private final HashMap<Integer, Object> allLines;
 	private String displayName;
 	private DisplaySlot displaySlot;
 	private RenderType renderType;
@@ -63,7 +63,7 @@ public class ScoreBoardManager {
 		return last;
 	}
 	public void set(Integer score, Object obj) {
-		if(allLines.containsKey(score)) allLines.remove(score);
+		allLines.remove(score);
 		allLines.put(score, obj);
 	}
 	public void remove(Integer score) {

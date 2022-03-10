@@ -1,14 +1,15 @@
 package de.lcraft.api.java_utils.language;
 
 import de.lcraft.api.java_utils.configuration.Config;
+
 import java.util.Objects;
 
 public abstract class Language {
 
-	private Config translations;
-	private Config help;
-	private Config cfg;
-	private LanguagesManager languagesManager;
+	private final Config translations;
+	private final Config help;
+	private final Config cfg;
+	private final LanguagesManager languagesManager;
 
 	public Language(LanguagesManager languagesManager) {
 		translations = new Config("lmodules", "Lcraft Languages//" + getShort(), "translations.yml");

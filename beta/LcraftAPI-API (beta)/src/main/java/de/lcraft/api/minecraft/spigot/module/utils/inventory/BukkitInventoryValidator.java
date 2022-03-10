@@ -12,10 +12,7 @@ import java.util.Objects;
 public class BukkitInventoryValidator {
 
 	public boolean isPlayer(InventoryClickEvent e) {
-		if(e.getWhoClicked() instanceof Player) {
-			return true;
-		}
-		return false;
+		return e.getWhoClicked() instanceof Player;
 	}
 	public Player getPlayer(InventoryClickEvent e) {
 		if(isPlayer(e)) {
@@ -38,27 +35,17 @@ public class BukkitInventoryValidator {
 	}
 
 	public boolean existsInventory(InventoryClickEvent e) {
-		if(Objects.nonNull(e.getClickedInventory()) && Objects.nonNull(e.getView())) {
-			return true;
-		}
-		return false;
+		return Objects.nonNull(e.getClickedInventory()) && Objects.nonNull(e.getView());
 	}
 	public boolean existsInventoryAndHasInventoryTitle(InventoryClickEvent e) {
-		if(existsInventory(e) && Objects.nonNull(e.getView().getTitle())) {
-			return true;
-		}
-		return false;
+		return existsInventory(e) && Objects.nonNull(e.getView().getTitle());
 	}
 	public boolean isInventoryType(InventoryClickEvent e, InventoryType type) {
 		if(existsInventory(e) && Objects.nonNull(e.getView().getType()) && Objects.nonNull(e.getClickedInventory().getType())) {
 			if(e.getView().getType().equals(e.getClickedInventory().getType())) {
-				if(e.getView().getType().equals(type) && e.getClickedInventory().getType().equals(type)) {
-					return true;
-				}
+				return e.getView().getType().equals(type) && e.getClickedInventory().getType().equals(type);
 			} else {
-				if(e.getView().getType().equals(type) || e.getClickedInventory().getType().equals(type)) {
-					return true;
-				}
+				return e.getView().getType().equals(type) || e.getClickedInventory().getType().equals(type);
 			}
 		}
 		return false;
@@ -83,31 +70,20 @@ public class BukkitInventoryValidator {
 			}
 
 			if(startsWith) {
-				if(title.startsWith(oldTitle) || oldTitle.startsWith(title)) {
-					return true;
-				}
+				return title.startsWith(oldTitle) || oldTitle.startsWith(title);
 			}
 		}
 		return false;
 	}
 
 	public boolean existsItem(ItemStack itemStack) {
-		if(Objects.nonNull(itemStack)) {
-			return true;
-		}
-		return false;
+		return Objects.nonNull(itemStack);
 	}
 	public boolean existsItemWithItemMeta(ItemStack itemStack) {
-		if(existsItem(itemStack) && Objects.nonNull(itemStack.getItemMeta())) {
-			return true;
-		}
-		return false;
+		return existsItem(itemStack) && Objects.nonNull(itemStack.getItemMeta());
 	}
 	public boolean existsItemWithItemMetaAndDisplayName(ItemStack itemStack) {
-		if(existsItemWithItemMeta(itemStack) && Objects.nonNull(itemStack.getItemMeta().getDisplayName()) && !itemStack.getItemMeta().getDisplayName().isEmpty()) {
-			return true;
-		}
-		return false;
+		return existsItemWithItemMeta(itemStack) && Objects.nonNull(itemStack.getItemMeta().getDisplayName()) && !itemStack.getItemMeta().getDisplayName().isEmpty();
 	}
 	public String getItemName(ItemStack item) {
 		if(existsItemWithItemMetaAndDisplayName(item)) {
@@ -129,25 +105,17 @@ public class BukkitInventoryValidator {
 			}
 
 			if(startsWith) {
-				if(newItem.startsWith(oldItem) || oldItem.startsWith(newItem)) {
-					return true;
-				}
+				return newItem.startsWith(oldItem) || oldItem.startsWith(newItem);
 			}
 		}
 		return false;
 	}
 
 	public boolean isLeftClick(InventoryClickEvent e) {
-		if(Objects.nonNull(e.getClick()) && e.getClick().isLeftClick()) {
-			return true;
-		}
-		return false;
+		return Objects.nonNull(e.getClick()) && e.getClick().isLeftClick();
 	}
 	public boolean isRightClick(InventoryClickEvent e) {
-		if(Objects.nonNull(e.getClick()) && e.getClick().isRightClick()) {
-			return true;
-		}
-		return false;
+		return Objects.nonNull(e.getClick()) && e.getClick().isRightClick();
 	}
 
 }

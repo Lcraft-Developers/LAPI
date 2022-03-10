@@ -10,12 +10,12 @@ import org.bukkit.event.inventory.InventoryType;
 
 public class InventoryItem implements Listener {
 
-	private ItemBuilder item;
+	private final ItemBuilder item;
 	private boolean titleStartsWith,
 	                itemNameStartsWith;
 	private String invTitle;
 	private boolean isCanceling;
-	private boolean isEnabled;
+	private final boolean isEnabled;
 
 	public InventoryItem(ListenerManager listenerManager, String invTitle, boolean titleStartsWith, boolean isCanceling, boolean itemNameStartsWith, ItemBuilder item) {
 		this.titleStartsWith = titleStartsWith;

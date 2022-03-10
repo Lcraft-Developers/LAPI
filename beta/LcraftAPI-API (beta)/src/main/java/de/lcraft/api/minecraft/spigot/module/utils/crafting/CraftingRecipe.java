@@ -11,14 +11,14 @@ import java.util.HashMap;
 
 public class CraftingRecipe {
 
-    private String name;
+    private final String name;
 
     private boolean activated;
-    private NamespacedKey namespacedKey;
+    private final NamespacedKey namespacedKey;
 
-    private ItemStack result;
-    private HashMap<Character, Material> recipeItems;
-    private ArrayList<CraftingRecipe> craftingRecipes = new ArrayList<>();
+    private final ItemStack result;
+    private final HashMap<Character, Material> recipeItems;
+    private final ArrayList<CraftingRecipe> craftingRecipes = new ArrayList<>();
 
     public CraftingRecipe(JavaPlugin plugin, String name, ItemStack result) {
         this.name = name;
@@ -41,11 +41,8 @@ public class CraftingRecipe {
         }
     }
     public final boolean hasSlotBeenSet(CraftingPlace slot) {
-        if(recipeItems.containsKey(slot.getKey())) {
-            return true;
-        }
-        return false;
-    }
+		return recipeItems.containsKey(slot.getKey());
+	}
 
     public ShapedRecipe register() {
         if(!activated) {

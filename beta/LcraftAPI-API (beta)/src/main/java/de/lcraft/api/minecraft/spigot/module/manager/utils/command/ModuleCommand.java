@@ -37,10 +37,7 @@ public abstract class ModuleCommand extends Command {
 		return null;
 	}
 	public final boolean existsModuleSubCommand(String name) {
-		if(Objects.nonNull(getSubCommand(name))) {
-			return true;
-		}
-		return false;
+		return Objects.nonNull(getSubCommand(name));
 	}
 
 	public final void setModule(Module module) {

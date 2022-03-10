@@ -4,7 +4,7 @@ import org.bukkit.Bukkit;
 
 public class ModuleLogger extends Logger {
 
-	private String moduleName;
+	private final String moduleName;
 
 	public ModuleLogger(String moduleName) {
 		this.moduleName = moduleName;

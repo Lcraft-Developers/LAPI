@@ -14,9 +14,9 @@ import java.util.Objects;
 
 public class CommandManager {
 
-    private ArrayList<Command> modulesCmds;
+    private final ArrayList<Command> modulesCmds;
     private Config moduleCommands;
-    private StandardMessages standardMessages;
+    private final StandardMessages standardMessages;
 
     public CommandManager(StandardMessages standardMessages) {
         this.modulesCmds = new ArrayList<>();

@@ -20,16 +20,16 @@ import java.util.UUID;
 
 public abstract class Command extends org.bukkit.command.Command implements Listener {
 
-    private boolean splitting;
-    private LanguagesManager languagesManager;
-    private PermsManager permsManager;
-    private String description;
-    private ArrayList<SubCommand> subModuleCommands;
-    private String command;
-    private LPlayerManager lPlayerManager;
-    private ListenerManager listenerManager;
-    private LanguageContainer langContainer;
-    private PermissionContainer permsContainer;
+    private final boolean splitting;
+    private final LanguagesManager languagesManager;
+    private final PermsManager permsManager;
+    private final String description;
+    private final ArrayList<SubCommand> subModuleCommands;
+    private final String command;
+    private final LPlayerManager lPlayerManager;
+    private final ListenerManager listenerManager;
+    private final LanguageContainer langContainer;
+    private final PermissionContainer permsContainer;
     protected StandardMessages standardMessages;
 
     public Command(StandardMessages standardMessages, String label, String desc, PermsManager permsManager, LanguagesManager languagesManager, LPlayerManager lPlayerManager, boolean splitting) {
@@ -81,10 +81,7 @@ public abstract class Command extends org.bukkit.command.Command implements List
         return null;
     }
     public final boolean existsSubCommand(String name) {
-        if(Objects.nonNull(getSubCommand(name))) {
-            return true;
-        }
-        return false;
+        return Objects.nonNull(getSubCommand(name));
     }
 
     @Override

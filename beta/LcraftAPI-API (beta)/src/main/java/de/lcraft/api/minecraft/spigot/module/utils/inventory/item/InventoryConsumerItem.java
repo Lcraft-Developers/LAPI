@@ -11,9 +11,9 @@ import java.util.function.Consumer;
 
 public class InventoryConsumerItem extends InventoryItem implements Listener {
 
-	private boolean areConsumerActivated = false,
-	                itemNameStartsWith;
-	private ItemConsumerBuilder item;
+	private boolean areConsumerActivated = false;
+	private final boolean itemNameStartsWith;
+	private final ItemConsumerBuilder item;
 
 	public InventoryConsumerItem(ListenerManager listenerManager,  String invTitle, boolean titleStartsWith, boolean isCanceling, boolean itemNameStartsWith, ItemConsumerBuilder item) {
 		this(listenerManager, invTitle, titleStartsWith, isCanceling, true, itemNameStartsWith, item);

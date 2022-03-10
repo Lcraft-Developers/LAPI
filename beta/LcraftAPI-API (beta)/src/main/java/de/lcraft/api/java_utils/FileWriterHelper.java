@@ -9,7 +9,7 @@ import java.util.Objects;
 
 public class FileWriterHelper {
 
-	private File file;
+	private final File file;
 	private FileWriter fileWriter;
 
 	public FileWriterHelper(File file) throws IOException {

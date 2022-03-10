@@ -13,8 +13,7 @@ import java.util.Objects;
 public class InventoryHelper {
 
 	public final boolean isAnyFreeSpaceLeft(Inventory inv) {
-		if(Objects.isNull(getNextFreeSlot(inv))) return false;
-		return true;
+		return !Objects.isNull(getNextFreeSlot(inv));
 	}
 
 	public final ArrayList<InventorySlot> getAllFreeSlots(Inventory inv) {

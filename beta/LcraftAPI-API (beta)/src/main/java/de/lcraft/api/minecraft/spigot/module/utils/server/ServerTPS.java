@@ -6,8 +6,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class ServerTPS implements Runnable {
 
 	private int TICK_COUNT = 0;
-	private long[] TICKS = new long[600];
-	private long LAST_TICK = 0L;
+	private final long[] TICKS = new long[600];
+	private final long LAST_TICK = 0L;
 
 	public ServerTPS(JavaPlugin plugin) {
 		Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(plugin, this, 100L, 1L);

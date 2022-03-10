@@ -7,8 +7,8 @@ import java.util.ArrayList;
 
 public class ListenerManager {
 
-    private ArrayList<Listener> registeredListeners;
-    private JavaPlugin plugin;
+    private final ArrayList<Listener> registeredListeners;
+    private final JavaPlugin plugin;
 
     public ListenerManager(JavaPlugin plugin) {
         this.plugin = plugin;

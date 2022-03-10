@@ -7,8 +7,8 @@ import de.lcraft.api.minecraft.spigot.module.manager.command.CommandManager;
 
 public class ModuleCommandManager extends CommandManager {
 
-	private Module module;
-	private ModuleConfig moduleBukkitConfig;
+	private final Module module;
+	private final ModuleConfig moduleBukkitConfig;
 
 	public ModuleCommandManager(StandardMessages standardMessages, Module module) {
 		super(standardMessages);

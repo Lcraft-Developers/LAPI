@@ -68,8 +68,8 @@ public enum InventorySlot {
 	SIX_NINE(InventoryX.NINE, InventoryY.SIX),
 	;
 
-	private InventoryX x;
-	private InventoryY y;
+	private final InventoryX x;
+	private final InventoryY y;
 
 	InventorySlot(InventoryX x, InventoryY y) {
 		this.x = x;

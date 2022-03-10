@@ -7,7 +7,7 @@ import java.util.Objects;
 
 public class TeamManager {
 
-	private Scoreboard scoreBoard;
+	private final Scoreboard scoreBoard;
 
 	public TeamManager(Scoreboard scoreboard) {
 		this.scoreBoard = scoreboard;
@@ -46,10 +46,7 @@ public class TeamManager {
 		}
 	}
 	public final boolean existsTeam(String name) {
-		if(Objects.nonNull(getTeam(name))) {
-			return true;
-		}
-		return false;
+		return Objects.nonNull(getTeam(name));
 	}
 	public final Team getTeam(String name) {
 		return getScoreBoard().getTeam(name);

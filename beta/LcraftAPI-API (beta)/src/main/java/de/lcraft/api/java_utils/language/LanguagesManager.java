@@ -2,14 +2,15 @@ package de.lcraft.api.java_utils.language;
 
 import de.lcraft.api.java_utils.CodeHelper;
 import de.lcraft.api.java_utils.configuration.Config;
+
 import java.util.ArrayList;
 import java.util.UUID;
 
 public class LanguagesManager {
 
-	private ArrayList<Language> addedLanguages;
-	private Config fileConfig,
-			       userConfig;
+	private final ArrayList<Language> addedLanguages;
+	private final Config fileConfig;
+	private final Config userConfig;
 
 	public LanguagesManager() {
 		fileConfig = new Config("lmodules", "Lcraft Languages", "config.yml");

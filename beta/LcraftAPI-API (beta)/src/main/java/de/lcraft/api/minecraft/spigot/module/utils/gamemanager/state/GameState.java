@@ -8,8 +8,8 @@ import java.util.Objects;
 
 public abstract class GameState extends LanguageContainer {
 
-	private GameStateTypes type;
-	private PermissionContainer permissionContainer;
+	private final GameStateTypes type;
+	private final PermissionContainer permissionContainer;
 
 	public GameState(GameStateTypes type) {
 		this.type = type;

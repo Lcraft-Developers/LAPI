@@ -9,8 +9,8 @@ import java.util.Objects;
 public class GameStateManager {
 
 	private GameState currentState;
-	private LanguagesManager languagesManager;
-	private PermsManager permsManager;
+	private final LanguagesManager languagesManager;
+	private final PermsManager permsManager;
 
 	public GameStateManager(PermsManager permsManager, LanguagesManager languagesManager) {
 		this.languagesManager = languagesManager;

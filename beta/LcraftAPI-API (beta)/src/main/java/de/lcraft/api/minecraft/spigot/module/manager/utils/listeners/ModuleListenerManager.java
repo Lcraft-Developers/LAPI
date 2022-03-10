@@ -4,7 +4,7 @@ import de.lcraft.api.minecraft.spigot.module.manager.Module;
 
 public class ModuleListenerManager extends ListenerManager {
 
-	private Module module;
+	private final Module module;
 
 	public ModuleListenerManager(Module module) {
 		super(module.getPlugin());

@@ -6,12 +6,10 @@ de\lcraft\api\minecraft\spigot\module\manager\command\SubCommand.class
 de\lcraft\api\minecraft\spigot\plugin\commands\language\LangCommand$1.class
 de\lcraft\api\minecraft\spigot\module\utils\gamemanager\state\GameState.class
 de\lcraft\api\minecraft\spigot\module\utils\inventory\item\slot\InventoryX.class
-de\lcraft\api\java_utils\configuration\writer\YAMLConfigFileWriter.class
 de\lcraft\api\minecraft\spigot\module\utils\items\ItemConsumerBuilder.class
 de\lcraft\api\minecraft\spigot\module\utils\manager\TeamManager.class
 de\lcraft\api\java_utils\language\DefaultLanguages.class
 de\lcraft\api\java_utils\language\LanguagesManager$1.class
-de\lcraft\api\java_utils\configuration\ConfigTest.class
 de\lcraft\api\minecraft\spigot\module\utils\manager\TabListManager.class
 de\lcraft\api\minecraft\spigot\module\utils\worldeditor\ArenaMap.class
 de\lcraft\api\minecraft\spigot\module\utils\items\HeadBuilder.class
@@ -42,7 +40,6 @@ de\lcraft\api\java_utils\configuration\Config.class
 de\lcraft\api\minecraft\spigot\module\manager\loaders\ModuleFileLoader.class
 de\lcraft\api\java_utils\configuration\writer\ConfigFileWriter.class
 de\lcraft\api\minecraft\spigot\module\manager\utils\permissions\Permission.class
-de\lcraft\api\java_utils\configuration\writer\EasyConfigFileWriter.class
 de\lcraft\api\minecraft\spigot\module\manager\logger\ModuleLoggerType.class
 de\lcraft\api\minecraft\spigot\module\manager\utils\permissions\PermissionContainer.class
 de\lcraft\api\minecraft\spigot\module\manager\utils\command\ModuleCommand.class
@@ -67,8 +64,10 @@ de\lcraft\api\minecraft\spigot\module\manager\ModuleManager.class
 de\lcraft\api\minecraft\spigot\module\utils\worldeditor\WorldEditor.class
 de\lcraft\api\minecraft\spigot\module\utils\crafting\CraftingPlace.class
 de\lcraft\api\java_utils\CodeHelper.class
+de\lcraft\api\java_utils\configuration\writer\ConfigFileWriterProvider.class
 de\lcraft\api\mysql\MySQLServer.class
 de\lcraft\api\java_utils\language\Language.class
+de\lcraft\api\java_utils\configuration\writer\easy\EasyConfigFileWriter.class
 de\lcraft\api\minecraft\spigot\module\utils\inventory\InventoryHelper.class
 de\lcraft\api\java_utils\language\DefaultLanguages$1.class
 de\lcraft\api\minecraft\spigot\module\utils\inventory\item\InventoryConsumerItem.class

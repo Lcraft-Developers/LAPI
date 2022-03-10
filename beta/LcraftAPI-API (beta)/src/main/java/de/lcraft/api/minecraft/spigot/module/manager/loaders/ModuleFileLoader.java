@@ -16,8 +16,8 @@ import java.util.Objects;
 
 public class ModuleFileLoader {
 
-    private ModuleManager moduleManager;
-    private ArrayList<Module> modules;
+    private final ModuleManager moduleManager;
+    private final ArrayList<Module> modules;
 
     public ModuleFileLoader(ModuleManager moduleManager) {
         this.moduleManager = moduleManager;

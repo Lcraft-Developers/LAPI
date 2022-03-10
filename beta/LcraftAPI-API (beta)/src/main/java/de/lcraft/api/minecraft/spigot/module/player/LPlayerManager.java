@@ -19,11 +19,11 @@ import java.util.UUID;
 
 public class LPlayerManager implements Listener {
 
-	private ArrayList<LPlayer> players;
+	private final ArrayList<LPlayer> players;
 	private Config userConfig;
 	private ListenerManager listenerManager;
 	private LanguagesManager languagesManager;
-	private SpigotClass spigotPlugin;
+	private final SpigotClass spigotPlugin;
 
 	public LPlayerManager(SpigotClass spigotPlugin, Config userConfig, JavaPlugin plugin, LanguagesManager languagesManager) {
 		this.userConfig = userConfig;
@@ -85,8 +85,7 @@ public class LPlayerManager implements Listener {
 		return null;
 	}
 	public boolean existsLPlayer(UUID uuid) {
-		if(Objects.nonNull(getLPlayerByUUID(uuid))) return true;
-		return false;
+		return Objects.nonNull(getLPlayerByUUID(uuid));
 	}
 	public ArrayList<LPlayer> getAllLPlayers() {
 		return players;

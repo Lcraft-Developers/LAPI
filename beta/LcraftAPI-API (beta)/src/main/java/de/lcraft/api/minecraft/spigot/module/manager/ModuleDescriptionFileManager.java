@@ -14,7 +14,7 @@ import java.util.zip.ZipFile;
 
 public class ModuleDescriptionFileManager {
 
-    private File file;
+    private final File file;
     private String[] authors;
     private String[] requiredStringModules;
     private String name,

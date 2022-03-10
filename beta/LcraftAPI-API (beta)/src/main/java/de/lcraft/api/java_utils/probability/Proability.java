@@ -11,9 +11,9 @@ public class Proability<T extends Object> {
 		T object;
 	}
 
-	private List<Entry> entries = new ArrayList<>();
+	private final List<Entry> entries = new ArrayList<>();
 	private double accumulatedWeight;
-	private Random rand = new Random();
+	private final Random rand = new Random();
 
 	public void addEntry(T object, double weight) {
 		accumulatedWeight += weight;

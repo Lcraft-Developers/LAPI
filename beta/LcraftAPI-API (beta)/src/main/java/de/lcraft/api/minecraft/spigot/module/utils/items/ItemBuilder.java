@@ -10,9 +10,9 @@ import java.util.ArrayList;
 
 public class ItemBuilder implements Listener {
 
-    private ArrayList<String> lore;
+    private final ArrayList<String> lore;
     private Material material;
-    private int amount;
+    private final int amount;
     private String displayName;
 
     public ItemBuilder(ListenerManager manager, Material material, int amount) {

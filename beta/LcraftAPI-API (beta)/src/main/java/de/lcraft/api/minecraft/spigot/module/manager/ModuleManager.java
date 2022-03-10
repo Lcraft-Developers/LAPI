@@ -7,9 +7,9 @@ import java.util.ArrayList;
 
 public class ModuleManager {
 
-    private volatile ArrayList<Module> modules = new ArrayList<>();
-    private SpigotClass pluginMain;
-    private ModuleFileLoader moduleFileLoader;
+    private final ArrayList<Module> modules = new ArrayList<>();
+    private final SpigotClass pluginMain;
+    private final ModuleFileLoader moduleFileLoader;
 
     public ModuleManager(SpigotClass pluginMain) {
         this.pluginMain = pluginMain;

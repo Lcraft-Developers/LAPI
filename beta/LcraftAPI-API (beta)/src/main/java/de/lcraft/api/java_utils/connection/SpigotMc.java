@@ -9,19 +9,15 @@ import java.util.function.Consumer;
 
 public class SpigotMc {
 
-	private boolean isOutdated = true,
-			isUpdated = false;
+	private final boolean isOutdated = true;
+	private boolean isUpdated = false;
 
 	public final boolean isUpdated(int resourcesID, String currentVersion) {
 		return isUpdated(getUpdateLink(resourcesID), currentVersion);
 	}
 	public boolean isUpdated(String updateLink, String currentVersion) {
 		getLatestVersion(updateLink, updateLink, version -> {
-			if (currentVersion.equals(version)) {
-				isUpdated = true;
-			} else {
-				isUpdated = false;
-			}
+			isUpdated = currentVersion.equals(version);
 		});
 		return isUpdated;
 	}

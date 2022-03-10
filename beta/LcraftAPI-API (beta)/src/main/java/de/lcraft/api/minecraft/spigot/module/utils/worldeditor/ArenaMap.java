@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class ArenaMap implements SerializeObject {
 
-	private ArrayList<Block> allBlocks;
+	private final ArrayList<Block> allBlocks;
 
 	public ArenaMap() {
 		allBlocks = new ArrayList<>();

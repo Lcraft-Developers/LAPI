@@ -8,10 +8,10 @@ import java.util.*;
 
 public class PermsManager {
 
-    private ModuleConfig allPermissionsCfg,
-                         adminsCfg,
-                         cfg;
-    private ArrayList<String> extraPermissionEnding;
+    private final ModuleConfig allPermissionsCfg;
+	private final ModuleConfig adminsCfg;
+	private final ModuleConfig cfg;
+    private final ArrayList<String> extraPermissionEnding;
 
     public PermsManager(String... extraPermissionEnding) {
         this.allPermissionsCfg = new ModuleConfig("Lcraft Permissions", "allPermissions.yml");
@@ -368,12 +368,8 @@ public class PermsManager {
 
         if(isAdmin(id,player.getRealName(),player.getUUID())) {
             return true;
-        } else if(hasPermissionsWithExtra(permission, getExtraPermissionEnding(), player)) {
-            return true;
-        }
-
-        return false;
-    }
+        } else return hasPermissionsWithExtra(permission, getExtraPermissionEnding(), player);
+	}
     public final void logPermission(String permission) {
         logPermissionWithExtra(permission, getExtraPermissionEnding());
     }
@@ -430,11 +426,8 @@ public class PermsManager {
     }
     public boolean isLuckPermsEnabled() {
         if(getConfig().exists("systems.luckperms.enabled") && getConfig().existsAsBoolean("systems.luckperms.enabled")) {
-            if(getConfig().getBoolean("systems.luckperms.enabled")) {
-                return true;
-            }
-            return false;
-        } else {
+			return getConfig().getBoolean("systems.luckperms.enabled");
+		} else {
             getConfig().set("systems.luckperms.enabled", false);
             getConfig().save();
             return false;
@@ -446,11 +439,7 @@ public class PermsManager {
         getAdminsCfg().set(root + "name", realName);
         getAdminsCfg().set(root + "uuid", uuid.toString());
         getAdminsCfg().save();
-        if(!getAdminsCfg().exists(root + "admin")) {
-            return false;
-        } else {
-            return true;
-        }
+		return getAdminsCfg().exists(root + "admin");
     }
     public final boolean isAdmin(long id, String realName, UUID uuid) {
         String root = "users." + id + ".";

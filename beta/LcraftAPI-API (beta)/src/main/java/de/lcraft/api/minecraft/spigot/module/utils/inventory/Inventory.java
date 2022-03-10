@@ -11,11 +11,11 @@ import java.util.UUID;
 
 public class Inventory {
 
-	private LanguagesManager languagesManager;
-	private int width,
-	            height;
-	private HashMap<InventorySlot, InventoryItem> normalItems;
-	private ListenerManager listenerManager;
+	private final LanguagesManager languagesManager;
+	private final int width;
+	private final int height;
+	private final HashMap<InventorySlot, InventoryItem> normalItems;
+	private final ListenerManager listenerManager;
 
 	public Inventory(ListenerManager listenerManager, LanguagesManager languagesManager, int height) {
 		this.languagesManager = languagesManager;
@@ -55,8 +55,7 @@ public class Inventory {
 		return getLanguagesManager().getIDLanguage(getLanguagesManager().getIDFromUUID(player)).translate(title);
 	}
 	public final boolean existsItemAtSlot(InventorySlot slot) {
-		if(Objects.nonNull(getNormalItems().containsKey(slot))) return true;
-		return false;
+		return Objects.nonNull(getNormalItems().containsKey(slot));
 	}
 
 	public final int getWidth() {

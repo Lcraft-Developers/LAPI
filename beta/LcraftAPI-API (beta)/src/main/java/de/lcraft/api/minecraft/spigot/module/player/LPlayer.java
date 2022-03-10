@@ -23,18 +23,18 @@ import java.util.UUID;
 
 public class LPlayer implements Listener {
 
-	private UUID uuid;
+	private final UUID uuid;
 	/*private String nickName;
 	private String realName;
 	private List<UUID> hiddenPlayers;
 	private LanguagesManager.Language lang;*/
 
-	private ListenerManager listenerManager;
-	private LanguagesManager languagesManager;
-	private SpigotClass plugin;
-	private Config userCFG;
-	private LPlayerManager lPlayerManager;
-	private Logger logger;
+	private final ListenerManager listenerManager;
+	private final LanguagesManager languagesManager;
+	private final SpigotClass plugin;
+	private final Config userCFG;
+	private final LPlayerManager lPlayerManager;
+	private final Logger logger;
 
 	public LPlayer(SpigotClass spigotPlugin, LPlayerManager manager, UUID uuid, Config userCFG, ListenerManager listenerManager, LanguagesManager languagesManager) {
 		this.uuid = uuid;
@@ -85,7 +85,7 @@ public class LPlayer implements Listener {
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void onJoin(PlayerJoinEvent e) {
 		e.setJoinMessage(null);
-		getLogger().send(ModuleLoggerType.INFO, e.getPlayer().getName() + " connected to the game with UUID (" + e.getPlayer().getUniqueId().toString() + ")");
+		getLogger().send(ModuleLoggerType.INFO, e.getPlayer().getName() + " connected to the game with UUID (" + e.getPlayer().getUniqueId() + ")");
 		for(Player c : Bukkit.getOnlinePlayers()) {
 			e.getPlayer().hidePlayer(getPlugin(), c);
 		}
@@ -104,7 +104,7 @@ public class LPlayer implements Listener {
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void onQuit(PlayerQuitEvent e) {
 		e.setQuitMessage(null);
-		getLogger().send(ModuleLoggerType.INFO, e.getPlayer().getName() + " left the game with UUID (" + e.getPlayer().getUniqueId().toString() + ")");
+		getLogger().send(ModuleLoggerType.INFO, e.getPlayer().getName() + " left the game with UUID (" + e.getPlayer().getUniqueId() + ")");
 		for(LPlayer c : getLPlayerManager().getAllLPlayers()) {
 			for(String text : getQuitMessage(c.getLanguage(), new String[]{"No Quit message was set!"})) {
 				if(Objects.nonNull(c) && c.isOnline()) {
@@ -142,11 +142,7 @@ public class LPlayer implements Listener {
 		return uuid;
 	}
 	public final boolean isOnline() {
-		if(Objects.nonNull(getPlayer())) {
-			return true;
-		} else {
-			return false;
-		}
+		return Objects.nonNull(getPlayer());
 	}
 	public final Player getPlayer() {
 		if(Objects.nonNull(Bukkit.getPlayer(getUUID()))) {
@@ -173,11 +169,7 @@ public class LPlayer implements Listener {
 		return false;
 	}
 	public final boolean isInEntry(UUID uuid) {
-		if(userCFG.exists("user." + uuid.toString() + ".uuid")) {
-			return true;
-		} else {
-			return false;
-		}
+		return userCFG.exists("user." + uuid.toString() + ".uuid");
 	}
 
 	public final String setNickName(String nickName) {

@@ -6,10 +6,10 @@ import java.util.Objects;
 
 public class MySQLServer {
 
-    private String ip,
-                   port,
-                   username,
-                   password;
+    private final String ip;
+	private final String port;
+	private String username;
+	private String password;
     private Connection connection;
     private boolean isConnected = false;
 

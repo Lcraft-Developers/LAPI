@@ -4,8 +4,8 @@ import de.lcraft.api.java_utils.configuration.Config;
 
 public class Permission {
 
-	private String permission;
-	private Config allPermissionsCfg;
+	private final String permission;
+	private final Config allPermissionsCfg;
 
 	public Permission(String permission, Config allPermissionsCfg) {
 		this.permission = permission;
@@ -40,10 +40,7 @@ public class Permission {
 	}
 	public final boolean isExiting() {
 		String root = getRoot();
-		if(getAllPermissionsCfg().exists(root)) {
-			return true;
-		}
-		return false;
+		return getAllPermissionsCfg().exists(root);
 	}
 
 	public final String getPermission() {

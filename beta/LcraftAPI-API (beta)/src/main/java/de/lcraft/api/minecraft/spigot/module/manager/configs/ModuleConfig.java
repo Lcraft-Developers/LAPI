@@ -43,9 +43,7 @@ public class ModuleConfig extends Config {
 		if(exists(root + ".world") && Objects.nonNull(Bukkit.getWorld(getString(root + ".world")))) {
 			if(exists(root + ".x")) {
 				if(exists(root + ".y")) {
-					if(exists(root + ".z")) {
-						return true;
-					}
+					return exists(root + ".z");
 				}
 			}
 		}
@@ -78,9 +76,7 @@ public class ModuleConfig extends Config {
 				if(exists(root + ".y")) {
 					if(exists(root + ".z")) {
 						if(exists(root + ".yaw")) {
-							if(exists(root + ".pitch")) {
-								return true;
-							}
+							return exists(root + ".pitch");
 						}
 					}
 				}
