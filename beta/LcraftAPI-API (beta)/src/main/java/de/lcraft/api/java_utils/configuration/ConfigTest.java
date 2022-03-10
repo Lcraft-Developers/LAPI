@@ -2,18 +2,18 @@ package de.lcraft.api.java_utils.configuration;
 
 import de.lcraft.api.java_utils.configuration.sections.ConfigSection;
 import de.lcraft.api.java_utils.configuration.sections.ConfigSectionType;
+import de.lcraft.api.java_utils.configuration.value.ConfigValue;
 import de.lcraft.api.java_utils.configuration.writer.ConfigFileWriter;
-import de.lcraft.api.java_utils.configuration.writer.EasyConfigFileWriter;
-import de.lcraft.api.java_utils.configuration.writer.YAMLConfigFileWriter;
+import de.lcraft.api.java_utils.configuration.writer.json.JSONConfigWriter;
 
 public class ConfigTest {
 
 	public static void main(String[] args) {
-		testConfig(new YAMLConfigFileWriter());
+		testConfig(new JSONConfigWriter(), "jsonTest.json");
 	}
 
-	public static void testConfig(ConfigFileWriter writer) {
-		Config cfg = new Config("testConfig.yml", writer);
+	public static void testConfig(ConfigFileWriter writer, String filename) {
+		Config cfg = new Config(filename, writer);
 		cfg.load();
 
 		cfg.set("arena_count", 20);
@@ -34,8 +34,8 @@ public class ConfigTest {
 				System.out.println(c.getRoot() + ": " + c.getValue().toString());
 			}
 			if(c.getConfigSectionType() == ConfigSectionType.ListAndValue ||c.getConfigSectionType() == ConfigSectionType.LIST) {
-				for(String key : c.getAllKeys().keySet()) {
-					System.out.println(key + ": " + c.getAllKeys().get(key).toString());
+				for(ConfigValue value : c.getAllKeysWithValue()) {
+					System.out.println(value.getRoot() + ": " + value.getSavedValue().toString());
 				}
 			}
 		}

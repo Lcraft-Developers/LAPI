@@ -3,25 +3,26 @@ package de.lcraft.api.java_utils.configuration.sections;
 import de.lcraft.api.java_utils.configuration.value.ConfigValue;
 import org.bukkit.configuration.MemorySection;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Objects;
 
 public class ConfigSection {
 
-	private HashMap<String, ConfigValue> allKeys;
-	private String root;
+	private ArrayList<ConfigValue> allKeys;
 	private ConfigSectionType configSectionType;
 	private ConfigValue value;
+	private String root;
 
 	public ConfigSection(String root, Object obj) {
 		this(root);
-		this.value = new ConfigValue(obj,this);
+		this.value = new ConfigValue(root, obj,this);
 
 		refreshType();
 	}
 	public ConfigSection(String root) {
 		this.root = root;
-		this.allKeys = new HashMap<>();
+		this.allKeys = new ArrayList<>();
 
 		refreshType();
 	}
@@ -29,7 +30,7 @@ public class ConfigSection {
 		if(Objects.nonNull(getValue()) && Objects.nonNull(getValue().toString()) && !(getValue().getSavedValue() instanceof MemorySection)) {
 			setConfigSectionType(ConfigSectionType.OnlyValue);
 		}
-		if(Objects.nonNull(getAllKeys()) && !getAllKeys().isEmpty()) {
+		if(Objects.nonNull(getAllKeysWithoutValue()) && !getAllKeysWithoutValue().isEmpty()) {
 			if(getConfigSectionType() == ConfigSectionType.OnlyValue) {
 				setConfigSectionType(ConfigSectionType.ListAndValue);
 			} else {
@@ -42,19 +43,19 @@ public class ConfigSection {
 		if(existsKey(root)) {
 			removeKey(root);
 		}
-		getAllKeys().put(root,value);
+		allKeys.add(value);
 
 		refreshType();
 	}
 	public void removeKey(String root) {
 		if(existsKey(root)) {
-			getAllKeys().remove(root);
+			allKeys.remove(root);
 		}
 		refreshType();
 	}
 	public boolean existsKey(String root) {
 		refreshType();
-		return getAllKeys().containsKey(root);
+		return allKeys.contains(root);
 	}
 
 	public void setValue(ConfigValue value) {
@@ -71,23 +72,16 @@ public class ConfigSection {
 	public ConfigSectionType getConfigSectionType() {
 		return configSectionType;
 	}
-	public HashMap<String, ConfigValue> getAllKeys() {
+
+	public ArrayList<ConfigValue> getAllKeysWithoutValue() {
 		return allKeys;
 	}
-	public HashMap<String, ConfigValue> getAllKeysWithoutStartRoot() {
-		HashMap<String, ConfigValue> newKeys = new HashMap<>();
-
-		for(String current : getAllKeys().keySet()) {
-			ConfigValue value = getAllKeys().get(current);
-			if(current.startsWith(getRoot() + ".")) {
-				newKeys.put(current.replaceFirst(getRoot() + ".",""), value);
-			} else {
-				newKeys.put(current.replaceFirst(getRoot(),""), value);
-			}
-		}
-
-		return newKeys;
+	public ArrayList<ConfigValue> getAllKeysWithValue() {
+		ArrayList<ConfigValue> newHashMap = getAllKeysWithoutValue();
+		newHashMap.add(getValue());
+		return newHashMap;
 	}
+
 	public int size() {
 		int size = allKeys.size();
 		if(configSectionType == ConfigSectionType.OnlyValue || configSectionType == ConfigSectionType.ListAndValue) {

@@ -2,12 +2,19 @@ package de.lcraft.api.java_utils.configuration.writer;
 
 import de.lcraft.api.java_utils.configuration.Config;
 
-public interface ConfigFileWriter {
+public abstract class ConfigFileWriter {
 
-	boolean isLogging = true;
+	private boolean isLogging = true;
 
-	void clearCFGFile(Config cfg);
-	void addIntoCFGFile(Config cfg);
-	void loadFromCFGFile(Config cfg);
+	public abstract void clearCFGFile(Config cfg);
+	public abstract void addIntoCFGFile(Config cfg);
+	public abstract void loadFromCFGFile(Config cfg);
+
+	protected void sendDebuggerText(String str) {
+		if(isLogging()) System.out.println(str);
+	}
+	public boolean isLogging() {
+		return isLogging;
+	}
 
 }

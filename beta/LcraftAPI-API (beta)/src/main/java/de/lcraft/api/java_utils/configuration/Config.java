@@ -3,9 +3,12 @@ package de.lcraft.api.java_utils.configuration;
 import de.lcraft.api.java_utils.CodeHelper;
 import de.lcraft.api.java_utils.configuration.sections.ConfigSection;
 import de.lcraft.api.java_utils.configuration.sections.ConfigSectionType;
+import de.lcraft.api.java_utils.configuration.utils.ConfigValidator;
 import de.lcraft.api.java_utils.configuration.value.ConfigValue;
 import de.lcraft.api.java_utils.configuration.writer.ConfigFileWriter;
 import de.lcraft.api.java_utils.configuration.writer.EasyConfigFileWriter;
+import de.lcraft.api.java_utils.configuration.writer.json.JSONConfigWriter;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -62,7 +65,7 @@ public class Config {
 		load();
 	}
 	public Config(String startPath, String path, String filename) {
-		this(startPath, path, filename, new EasyConfigFileWriter());
+		this(startPath, path, filename, new JSONConfigWriter());
 	}
 	public Config(String path, String filename, ConfigFileWriter configWriter) {
 		this("", path, filename, configWriter);
@@ -97,10 +100,10 @@ public class Config {
 
 			sendDebuggerText("---");
 			if(wantedRoot.isBlank() || wantedRoot.isEmpty()) {
-				configSection.setValue(new ConfigValue(obj,configSection));
+				configSection.setValue(new ConfigValue(wantedRoot, obj, configSection));
 				sendDebuggerText("setValue");
 			} else {
-				configSection.addKey(wantedRoot,new ConfigValue(obj,configSection));
+				configSection.addKey(wantedRoot,new ConfigValue(wantedRoot, obj, configSection));
 				sendDebuggerText("addValue");
 			}
 			setSection(configSection);
@@ -123,7 +126,7 @@ public class Config {
 					if(exists(currentRoot)) {
 						section.removeKey(currentRoot);
 					}
-					section.addKey(currentRoot, new ConfigValue(obj.toString(), section));
+					section.addKey(currentRoot, new ConfigValue(currentRoot, obj.toString(), section));
 					setSection(section);
 
 					sendDebuggerText("rootBefore: existsSection");
@@ -136,7 +139,7 @@ public class Config {
 					return true;
 				} else if (wantedRoot.equals(currentRoot) && existsSection(currentRoot)) {
 					ConfigSection section = getSection(currentRoot);
-					section.setValue(new ConfigValue(obj.toString(), section));
+					section.setValue(new ConfigValue(currentRoot, obj.toString(), section));
 					setSection(section);
 
 					sendDebuggerText("currentRoot: existsSection");
@@ -149,7 +152,7 @@ public class Config {
 					return true;
 				} else if(wantedRoot.equals(currentRoot)) {
 					ConfigSection section = createAndGetSection(new ConfigSection(rootBefore));
-					section.addKey(currentRoot, new ConfigValue(obj.toString(), section));
+					section.addKey(currentRoot, new ConfigValue(currentRoot, obj.toString(), section));
 					setSection(section);
 
 					sendDebuggerText("---");
@@ -174,9 +177,8 @@ public class Config {
 				}
 			}
 			if(c.getConfigSectionType() == ConfigSectionType.LIST || c.getConfigSectionType() == ConfigSectionType.ListAndValue) {
-				for(String roots : c.getAllKeys().keySet()) {
-					ConfigValue value = c.getAllKeys().get(roots);
-					if(roots.equals(root)) {
+				for(ConfigValue value : c.getAllKeysWithValue()) {
+					if(value.getRoot().equals(root)) {
 						if(Objects.nonNull(value)) {
 							return value;
 						}
@@ -228,49 +230,49 @@ public class Config {
 	public boolean existsAsString(String root) {
 		ConfigValue value = get(root);
 		if(Objects.nonNull(value)) {
-			return value.isString(value.getSavedValue().toString());
+			return new ConfigValidator().isString(value.getSavedValue().toString());
 		}
 		return false;
 	}
 	public boolean existsAsInteger(String root) {
 		ConfigValue value = get(root);
 		if(Objects.nonNull(value)) {
-			return value.isInteger(value.getSavedValue().toString());
+			return new ConfigValidator().isInteger(value.getSavedValue().toString());
 		}
 		return false;
 	}
 	public boolean existsAsDouble(String root) {
 		ConfigValue value = get(root);
 		if(Objects.nonNull(value)) {
-			return value.isDouble(value.getSavedValue().toString());
+			return new ConfigValidator().isDouble(value.getSavedValue().toString());
 		}
 		return false;
 	}
 	public boolean existsAsLong(String root) {
 		ConfigValue value = get(root);
 		if(Objects.nonNull(value)) {
-			return value.isLong(value.getSavedValue().toString());
+			return new ConfigValidator().isLong(value.getSavedValue().toString());
 		}
 		return false;
 	}
 	public boolean existsAsFloat(String root) {
 		ConfigValue value = get(root);
 		if(Objects.nonNull(value)) {
-			return value.isFloat(value.getSavedValue().toString());
+			return new ConfigValidator().isFloat(value.getSavedValue().toString());
 		}
 		return false;
 	}
 	public boolean existsAsByte(String root) {
 		ConfigValue value = get(root);
 		if(Objects.nonNull(value)) {
-			return value.isByte(value.getSavedValue().toString());
+			return new ConfigValidator().isByte(value.getSavedValue().toString());
 		}
 		return false;
 	}
 	public boolean existsAsBoolean(String root) {
 		ConfigValue value = get(root);
 		if(Objects.nonNull(value)) {
-			return value.isBoolean(value.getSavedValue().toString());
+			return new ConfigValidator().isBoolean(value.getSavedValue().toString());
 		}
 		return false;
 	}
@@ -350,42 +352,42 @@ public class Config {
 	public Integer getInteger(String root) {
 		ConfigValue value = get(root);
 		if(Objects.nonNull(value) && existsAsInteger(root)) {
-			return value.getAsInteger(value.getSavedValue().toString());
+			return new ConfigValidator().getAsInteger(value.getSavedValue().toString());
 		}
 		return null;
 	}
 	public Double getDouble(String root) {
 		ConfigValue value = get(root);
 		if(Objects.nonNull(value) && existsAsDouble(root)) {
-			return value.getAsDouble(value.getSavedValue().toString());
+			return new ConfigValidator().getAsDouble(value.getSavedValue().toString());
 		}
 		return null;
 	}
 	public Long getLong(String root) {
 		ConfigValue value = get(root);
 		if(Objects.nonNull(value) && existsAsLong(root)) {
-			return value.getAsLong(value.getSavedValue().toString());
+			return new ConfigValidator().getAsLong(value.getSavedValue().toString());
 		}
 		return null;
 	}
 	public Float getFloat(String root) {
 		ConfigValue value = get(root);
 		if(Objects.nonNull(value) && existsAsFloat(root)) {
-			return value.getAsFloat(value.getSavedValue().toString());
+			return new ConfigValidator().getAsFloat(value.getSavedValue().toString());
 		}
 		return null;
 	}
 	public Byte getByte(String root) {
 		ConfigValue value = get(root);
 		if(Objects.nonNull(value) && existsAsByte(root)) {
-			return value.getAsByte(value.getSavedValue().toString());
+			return new ConfigValidator().getAsByte(value.getSavedValue().toString());
 		}
 		return null;
 	}
 	public Boolean getBoolean(String root) {
 		ConfigValue value = get(root);
 		if(Objects.nonNull(value) && existsAsBoolean(root)) {
-			return value.getAsBoolean(value.getSavedValue().toString());
+			return new ConfigValidator().getAsBoolean(value.getSavedValue().toString());
 		}
 		return null;
 	}

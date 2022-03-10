@@ -7,121 +7,19 @@ public class ConfigValue {
 
 	private ConfigSection configSection;
 	private Object savedValue;
+	private String root;
 
-	public ConfigValue(Object value, ConfigSection section) {
+	public ConfigValue(String root, Object value, ConfigSection section) {
 		this.configSection = section;
 		this.savedValue = value;
+		this.root = root;
 	}
 
-	public boolean isString(String c) {
-		if(!isNumeric(c) &&
-		   !isBoolean(c)) {
-			return true;
-		}
-		return false;
+	public void setSavedValue(Object savedValue) {
+		this.savedValue = savedValue;
 	}
-	public boolean isInteger(String c) {
-		if(Objects.nonNull(c)) {
-			try {
-				int integer_ = Integer.parseInt(c);
-
-				return true;
-			} catch (NumberFormatException nfe) {}
-		}
-		return false;
-	}
-	public boolean isDouble(String c) {
-		if(Objects.nonNull(c)) {
-			try {
-				double double_ = Double.parseDouble(c);
-				return true;
-			} catch (NumberFormatException nfe) {}
-		}
-		return false;
-	}
-	public boolean isFloat(String c) {
-		if(Objects.nonNull(c)) {
-			try {
-				float float_ = Float.parseFloat(c);
-				return true;
-			} catch (NumberFormatException nfe) {}
-		}
-		return false;
-	}
-	public boolean isLong(String c) {
-		if(Objects.nonNull(c)) {
-			try {
-				long long_ = Long.parseLong(c);
-				return true;
-			} catch (NumberFormatException nfe) {}
-		}
-		return false;
-	}
-	public boolean isByte(String c) {
-		if(Objects.nonNull(c)) {
-			try {
-				byte byte_ = Byte.parseByte(c);
-				return true;
-			} catch (NumberFormatException nfe) {}
-		}
-		return false;
-	}
-	public boolean isNumeric(String c) {
-		boolean is = false;
-
-		if(isInteger(c)) is = true;
-		if(isDouble(c)) is = true;
-		if(isFloat(c)) is = true;
-		if(isLong(c)) is = true;
-		if(isByte(c)) is = true;
-
-		return is;
-	}
-	public boolean isBoolean(String c) {
-		if(Objects.nonNull(c)) {
-			try {
-				boolean boolean_ = Boolean.valueOf(c);
-				return true;
-			} catch (NumberFormatException nfe) {}
-		}
-		return false;
-	}
-
-	public Integer getAsInteger(String c) {
-		if(isInteger(c)) {
-			return Integer.valueOf(c);
-		}
-		return null;
-	}
-	public Double getAsDouble(String c) {
-		if(isDouble(c)) {
-			return Double.valueOf(c);
-		}
-		return null;
-	}
-	public Float getAsFloat(String c) {
-		if(isFloat(c)) {
-			return Float.valueOf(c);
-		}
-		return null;
-	}
-	public Long getAsLong(String c) {
-		if(isLong(c)) {
-			return Long.valueOf(c);
-		}
-		return null;
-	}
-	public Byte getAsByte(String c) {
-		if(isByte(c)) {
-			return Byte.valueOf(c);
-		}
-		return null;
-	}
-	public Boolean getAsBoolean(String c) {
-		if(isBoolean(c)) {
-			return Boolean.valueOf(c);
-		}
-		return null;
+	public void setRoot(String root) {
+		this.root = root;
 	}
 
 	public ConfigSection getConfigSection() {
@@ -129,6 +27,9 @@ public class ConfigValue {
 	}
 	public Object getSavedValue() {
 		return savedValue;
+	}
+	public String getRoot() {
+		return root;
 	}
 
 }

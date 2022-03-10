@@ -235,9 +235,9 @@ public class LPlayer implements Listener {
 	public final ArrayList<String> getVanishedUUID() {
 		ArrayList<String> array = new ArrayList<>();
 		if(getUserCFG().existsSection("user." + getUUID().toString() + ".vanished")) {
-			if(Objects.nonNull(getUserCFG().getSection("user." + getUUID().toString() + ".vanished").getAllKeys())) {
-				if(!getUserCFG().getSection("user." + getUUID().toString() + ".vanished").getAllKeys().isEmpty()) {
-					for(ConfigValue v : getUserCFG().getSection("user." + getUUID().toString() + ".vanished").getAllKeys().values()) {
+			if(Objects.nonNull(getUserCFG().getSection("user." + getUUID().toString() + ".vanished").getAllKeysWithoutValue())) {
+				if(!getUserCFG().getSection("user." + getUUID().toString() + ".vanished").getAllKeysWithoutValue().isEmpty()) {
+					for(ConfigValue v : getUserCFG().getSection("user." + getUUID().toString() + ".vanished").getAllKeysWithoutValue()) {
 						array.add(v.getSavedValue().toString());
 					}
 				}

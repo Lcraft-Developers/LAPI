@@ -1,28 +1,25 @@
-package de.lcraft.api.java_utils.configuration.writer;
+package de.lcraft.api.java_utils.configuration.writer.json;
 
-import de.lcraft.api.java_utils.FileWriterHelper;
 import de.lcraft.api.java_utils.configuration.Config;
-import de.lcraft.api.java_utils.configuration.sections.ConfigSection;
-import de.lcraft.api.java_utils.configuration.sections.ConfigSectionType;
-import de.lcraft.api.java_utils.configuration.value.ConfigValue;
+import de.lcraft.api.java_utils.configuration.writer.ConfigFileWriter;
 
 import java.io.IOException;
 
-public class EasyConfigFileWriter extends ConfigFileWriter {
+public class JSONConfigWriter extends ConfigFileWriter {
 
 	@Override
 	public void clearCFGFile(Config cfg) {
-		try {
+		/*try {
 			FileWriterHelper helper = new FileWriterHelper(cfg.getFile());
 			helper.removeAllLines();
 			helper.close();
 		} catch (IOException e) {
 			e.printStackTrace();
-		}
+		}*/
 	}
 	@Override
 	public void addIntoCFGFile(Config cfg) {
-		try {
+		/*try {
 			FileWriterHelper writerHelper = new FileWriterHelper(cfg.getFile());
 			for(ConfigSection c : cfg.getAllConfigurationSections()) {
 				c.refreshType();
@@ -48,7 +45,7 @@ public class EasyConfigFileWriter extends ConfigFileWriter {
 			writerHelper.close();
 		} catch (IOException exception) {
 			exception.printStackTrace();
-		}
+		}*/
 		sendDebuggerText("");
 		sendDebuggerText("");
 		sendDebuggerText("");
@@ -56,7 +53,7 @@ public class EasyConfigFileWriter extends ConfigFileWriter {
 	@Override
 	public void loadFromCFGFile(Config cfg) {
 		cfg.resetAllConfigurationSections();
-		try {
+		/*try {
 			FileWriterHelper writerHelper = new FileWriterHelper(cfg.getFile());
 			for(String line : writerHelper.getAllLines()) {
 				if(line.split(": ").length > 1) {
@@ -73,7 +70,7 @@ public class EasyConfigFileWriter extends ConfigFileWriter {
 			writerHelper.close();
 		} catch (IOException exception) {
 			exception.printStackTrace();
-		}
+		}*/
 		sendDebuggerText("");
 		sendDebuggerText("");
 		sendDebuggerText("");
