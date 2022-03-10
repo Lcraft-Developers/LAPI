@@ -9,20 +9,20 @@ import java.util.Objects;
 
 public class ConfigSection {
 
-	private ArrayList<ConfigValue> allKeys;
+	private HashMap<String, ConfigValue> allKeys;
 	private ConfigSectionType configSectionType;
 	private ConfigValue value;
 	private String root;
 
 	public ConfigSection(String root, Object obj) {
 		this(root);
-		this.value = new ConfigValue(root, obj,this);
+		this.value = new ConfigValue(obj, this);
 
 		refreshType();
 	}
 	public ConfigSection(String root) {
 		this.root = root;
-		this.allKeys = new ArrayList<>();
+		this.allKeys = new HashMap<>();
 
 		refreshType();
 	}
@@ -43,7 +43,7 @@ public class ConfigSection {
 		if(existsKey(root)) {
 			removeKey(root);
 		}
-		allKeys.add(value);
+		allKeys.put(root, value);
 
 		refreshType();
 	}
@@ -55,7 +55,7 @@ public class ConfigSection {
 	}
 	public boolean existsKey(String root) {
 		refreshType();
-		return allKeys.contains(root);
+		return allKeys.containsKey(root);
 	}
 
 	public void setValue(ConfigValue value) {
@@ -73,12 +73,12 @@ public class ConfigSection {
 		return configSectionType;
 	}
 
-	public ArrayList<ConfigValue> getAllKeysWithoutValue() {
+	public HashMap<String, ConfigValue> getAllKeysWithoutValue() {
 		return allKeys;
 	}
-	public ArrayList<ConfigValue> getAllKeysWithValue() {
-		ArrayList<ConfigValue> newHashMap = getAllKeysWithoutValue();
-		newHashMap.add(getValue());
+	public HashMap<String, ConfigValue> getAllKeysWithValue() {
+		HashMap<String, ConfigValue> newHashMap = getAllKeysWithoutValue();
+		newHashMap.put(getRoot(), getValue());
 		return newHashMap;
 	}
 

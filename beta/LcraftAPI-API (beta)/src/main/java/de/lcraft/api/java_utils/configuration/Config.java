@@ -100,10 +100,10 @@ public class Config {
 
 			sendDebuggerText("---");
 			if(wantedRoot.isBlank() || wantedRoot.isEmpty()) {
-				configSection.setValue(new ConfigValue(wantedRoot, obj, configSection));
+				configSection.setValue(new ConfigValue(obj, configSection));
 				sendDebuggerText("setValue");
 			} else {
-				configSection.addKey(wantedRoot,new ConfigValue(wantedRoot, obj, configSection));
+				configSection.addKey(wantedRoot, new ConfigValue(obj, configSection));
 				sendDebuggerText("addValue");
 			}
 			setSection(configSection);
@@ -126,7 +126,7 @@ public class Config {
 					if(exists(currentRoot)) {
 						section.removeKey(currentRoot);
 					}
-					section.addKey(currentRoot, new ConfigValue(currentRoot, obj.toString(), section));
+					section.addKey(currentRoot, new ConfigValue(obj.toString(), section));
 					setSection(section);
 
 					sendDebuggerText("rootBefore: existsSection");
@@ -139,7 +139,7 @@ public class Config {
 					return true;
 				} else if (wantedRoot.equals(currentRoot) && existsSection(currentRoot)) {
 					ConfigSection section = getSection(currentRoot);
-					section.setValue(new ConfigValue(currentRoot, obj.toString(), section));
+					section.setValue(new ConfigValue(obj.toString(), section));
 					setSection(section);
 
 					sendDebuggerText("currentRoot: existsSection");
@@ -152,7 +152,7 @@ public class Config {
 					return true;
 				} else if(wantedRoot.equals(currentRoot)) {
 					ConfigSection section = createAndGetSection(new ConfigSection(rootBefore));
-					section.addKey(currentRoot, new ConfigValue(currentRoot, obj.toString(), section));
+					section.addKey(currentRoot, new ConfigValue(obj.toString(), section));
 					setSection(section);
 
 					sendDebuggerText("---");
@@ -177,8 +177,9 @@ public class Config {
 				}
 			}
 			if(c.getConfigSectionType() == ConfigSectionType.LIST || c.getConfigSectionType() == ConfigSectionType.ListAndValue) {
-				for(ConfigValue value : c.getAllKeysWithValue()) {
-					if(value.getRoot().equals(root)) {
+				for(String currentRoot : c.getAllKeysWithValue().keySet()) {
+					if(currentRoot.equals(root)) {
+						ConfigValue value = c.getAllKeysWithValue().get(root);
 						if(Objects.nonNull(value)) {
 							return value;
 						}

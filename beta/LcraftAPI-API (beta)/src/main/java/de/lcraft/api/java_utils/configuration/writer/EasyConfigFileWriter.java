@@ -35,12 +35,13 @@ public class EasyConfigFileWriter extends ConfigFileWriter {
 					sendDebuggerText("-----------------------");
 				}
 				if(c.getConfigSectionType() == ConfigSectionType.LIST || c.getConfigSectionType() == ConfigSectionType.ListAndValue) {
-					for(ConfigValue value : c.getAllKeysWithoutValue()) {
-						writerHelper.addLine(value.getRoot() + ": " + value.getSavedValue().toString());
+					for(String currentRoot : c.getAllKeysWithValue().keySet()) {
+						ConfigValue value = c.getAllKeysWithValue().get(currentRoot);
+						writerHelper.addLine(currentRoot + ": " + value.getSavedValue().toString());
 
 						sendDebuggerText("- Saving -");
 						sendDebuggerText("ConfigurationSection Key");
-						sendDebuggerText(value.getRoot() + ": " + value.getSavedValue().toString());
+						sendDebuggerText(currentRoot + ": " + value.getSavedValue().toString());
 						sendDebuggerText("-----------------------");
 					}
 				}

@@ -4,12 +4,13 @@ import de.lcraft.api.java_utils.configuration.sections.ConfigSection;
 import de.lcraft.api.java_utils.configuration.sections.ConfigSectionType;
 import de.lcraft.api.java_utils.configuration.value.ConfigValue;
 import de.lcraft.api.java_utils.configuration.writer.ConfigFileWriter;
+import de.lcraft.api.java_utils.configuration.writer.EasyConfigFileWriter;
 import de.lcraft.api.java_utils.configuration.writer.json.JSONConfigWriter;
 
 public class ConfigTest {
 
 	public static void main(String[] args) {
-		testConfig(new JSONConfigWriter(), "jsonTest.json");
+		testConfig(new EasyConfigFileWriter(), "jsonTest.json");
 	}
 
 	public static void testConfig(ConfigFileWriter writer, String filename) {
@@ -34,8 +35,9 @@ public class ConfigTest {
 				System.out.println(c.getRoot() + ": " + c.getValue().toString());
 			}
 			if(c.getConfigSectionType() == ConfigSectionType.ListAndValue ||c.getConfigSectionType() == ConfigSectionType.LIST) {
-				for(ConfigValue value : c.getAllKeysWithValue()) {
-					System.out.println(value.getRoot() + ": " + value.getSavedValue().toString());
+				for(String root : c.getAllKeysWithValue().keySet()) {
+					ConfigValue value = c.getAllKeysWithValue().get(root);
+					System.out.println(root + ": " + value.getSavedValue().toString());
 				}
 			}
 		}

@@ -237,7 +237,7 @@ public class LPlayer implements Listener {
 		if(getUserCFG().existsSection("user." + getUUID().toString() + ".vanished")) {
 			if(Objects.nonNull(getUserCFG().getSection("user." + getUUID().toString() + ".vanished").getAllKeysWithoutValue())) {
 				if(!getUserCFG().getSection("user." + getUUID().toString() + ".vanished").getAllKeysWithoutValue().isEmpty()) {
-					for(ConfigValue v : getUserCFG().getSection("user." + getUUID().toString() + ".vanished").getAllKeysWithoutValue()) {
+					for(ConfigValue v : getUserCFG().getSection("user." + getUUID().toString() + ".vanished").getAllKeysWithoutValue().values()) {
 						array.add(v.getSavedValue().toString());
 					}
 				}

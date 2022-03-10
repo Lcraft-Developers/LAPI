@@ -7,19 +7,17 @@ public class ConfigValue {
 
 	private ConfigSection configSection;
 	private Object savedValue;
-	private String root;
 
-	public ConfigValue(String root, Object value, ConfigSection section) {
+	public ConfigValue(Object value, ConfigSection section) {
 		this.configSection = section;
 		this.savedValue = value;
-		this.root = root;
 	}
 
 	public void setSavedValue(Object savedValue) {
 		this.savedValue = savedValue;
 	}
-	public void setRoot(String root) {
-		this.root = root;
+	public void setConfigSection(ConfigSection configSection) {
+		this.configSection = configSection;
 	}
 
 	public ConfigSection getConfigSection() {
@@ -28,8 +26,17 @@ public class ConfigValue {
 	public Object getSavedValue() {
 		return savedValue;
 	}
-	public String getRoot() {
-		return root;
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+
+		ConfigValue value = (ConfigValue) o;
+
+		if (!Objects.equals(configSection, value.configSection))
+			return false;
+		return Objects.equals(savedValue, value.savedValue);
 	}
 
 }
