@@ -4,8 +4,7 @@ import de.lcraft.api.java_utils.configuration.sections.ConfigSection;
 import de.lcraft.api.java_utils.configuration.sections.ConfigSectionType;
 import de.lcraft.api.java_utils.configuration.value.ConfigValue;
 import de.lcraft.api.java_utils.configuration.writer.ConfigFileWriter;
-import de.lcraft.api.java_utils.configuration.writer.EasyConfigFileWriter;
-import de.lcraft.api.java_utils.configuration.writer.json.JSONConfigWriter;
+import de.lcraft.api.java_utils.configuration.writer.easy.EasyConfigFileWriter;
 
 public class ConfigTest {
 

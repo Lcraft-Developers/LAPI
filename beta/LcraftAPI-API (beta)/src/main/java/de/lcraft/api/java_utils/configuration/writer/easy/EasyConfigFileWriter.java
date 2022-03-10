@@ -1,10 +1,11 @@
-package de.lcraft.api.java_utils.configuration.writer;
+package de.lcraft.api.java_utils.configuration.writer.easy;
 
 import de.lcraft.api.java_utils.FileWriterHelper;
 import de.lcraft.api.java_utils.configuration.Config;
 import de.lcraft.api.java_utils.configuration.sections.ConfigSection;
 import de.lcraft.api.java_utils.configuration.sections.ConfigSectionType;
 import de.lcraft.api.java_utils.configuration.value.ConfigValue;
+import de.lcraft.api.java_utils.configuration.writer.ConfigFileWriter;
 
 import java.io.IOException;
 
