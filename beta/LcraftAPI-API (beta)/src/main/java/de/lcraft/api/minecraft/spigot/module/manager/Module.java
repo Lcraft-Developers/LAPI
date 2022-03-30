@@ -8,10 +8,10 @@ import de.lcraft.api.minecraft.spigot.module.manager.utils.language.StandardMess
 import de.lcraft.api.minecraft.spigot.module.manager.utils.listeners.ModuleListenerManager;
 import de.lcraft.api.minecraft.spigot.module.manager.logger.ModuleLogger;
 import de.lcraft.api.minecraft.spigot.module.manager.logger.ModuleLoggerType;
-import de.lcraft.api.minecraft.spigot.module.manager.command.CommandManager;
+import de.lcraft.api.minecraft.spigot.utils.command.CommandManager;
 import de.lcraft.api.minecraft.spigot.module.manager.utils.permissions.PermsManager;
 import de.lcraft.api.minecraft.spigot.module.player.LPlayerManager;
-import de.lcraft.api.minecraft.spigot.module.utils.server.ServerTPS;
+import de.lcraft.api.minecraft.spigot.utils.server.ServerTPS;
 import org.bukkit.plugin.java.JavaPlugin;
 import java.io.File;
 import java.util.Objects;

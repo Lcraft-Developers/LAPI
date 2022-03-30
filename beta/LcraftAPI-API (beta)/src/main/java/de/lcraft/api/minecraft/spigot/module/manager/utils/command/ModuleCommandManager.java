@@ -3,7 +3,7 @@ package de.lcraft.api.minecraft.spigot.module.manager.utils.command;
 import de.lcraft.api.minecraft.spigot.module.manager.Module;
 import de.lcraft.api.minecraft.spigot.module.manager.configs.ModuleConfig;
 import de.lcraft.api.minecraft.spigot.module.manager.utils.language.StandardMessages;
-import de.lcraft.api.minecraft.spigot.module.manager.command.CommandManager;
+import de.lcraft.api.minecraft.spigot.utils.command.CommandManager;
 
 public class ModuleCommandManager extends CommandManager {
 

@@ -4,7 +4,7 @@ import de.lcraft.api.minecraft.spigot.module.manager.Module;
 import de.lcraft.api.minecraft.spigot.module.manager.logger.ModuleLogger;
 import de.lcraft.api.minecraft.spigot.module.manager.logger.ModuleLoggerType;
 import de.lcraft.api.minecraft.spigot.module.manager.utils.language.StandardMessages;
-import de.lcraft.api.minecraft.spigot.module.manager.command.Command;
+import de.lcraft.api.minecraft.spigot.utils.command.Command;
 
 import java.util.ArrayList;
 import java.util.Objects;

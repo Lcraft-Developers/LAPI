@@ -1,8 +1,9 @@
-package de.lcraft.api.minecraft.spigot.module.utils.gamemanager;
+package de.lcraft.api.minecraft.spigot.utils.gamemanager;
 
 import de.lcraft.api.java_utils.language.LanguagesManager;
 import de.lcraft.api.minecraft.spigot.module.manager.utils.permissions.PermsManager;
-import de.lcraft.api.minecraft.spigot.module.utils.gamemanager.state.GameState;
+import de.lcraft.api.minecraft.spigot.utils.gamemanager.state.GameState;
+
 import java.util.ArrayList;
 import java.util.Objects;
 

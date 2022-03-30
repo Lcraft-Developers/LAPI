@@ -10,7 +10,7 @@ import de.lcraft.api.minecraft.spigot.plugin.commands.lcraft.LcraftCommand;
 import de.lcraft.api.minecraft.spigot.module.manager.ModuleManager;
 import de.lcraft.api.minecraft.spigot.module.manager.utils.language.StandardMessages;
 import de.lcraft.api.minecraft.spigot.module.manager.utils.permissions.PermsManager;
-import de.lcraft.api.minecraft.spigot.module.manager.command.CommandManager;
+import de.lcraft.api.minecraft.spigot.utils.command.CommandManager;
 import de.lcraft.api.minecraft.spigot.module.manager.utils.listeners.ListenerManager;
 import de.lcraft.api.minecraft.spigot.module.player.LPlayerManager;
 import org.bukkit.Bukkit;

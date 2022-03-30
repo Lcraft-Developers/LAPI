@@ -5,7 +5,7 @@ import de.lcraft.api.minecraft.spigot.module.player.LPlayerManager;
 import de.lcraft.api.minecraft.spigot.module.player.LPlayer;
 import de.lcraft.api.minecraft.spigot.module.manager.utils.language.StandardMessages;
 import de.lcraft.api.minecraft.spigot.module.manager.utils.permissions.PermsManager;
-import de.lcraft.api.minecraft.spigot.module.manager.command.Command;
+import de.lcraft.api.minecraft.spigot.utils.command.Command;
 import de.lcraft.api.minecraft.spigot.module.utils.inventory.InventoryHelper;
 import de.lcraft.api.minecraft.spigot.module.utils.inventory.item.InventoryItem;
 import de.lcraft.api.minecraft.spigot.module.utils.inventory.item.slot.InventorySlot;
@@ -16,7 +16,6 @@ import org.bukkit.Material;
 import org.bukkit.command.CommandSender;
 import org.bukkit.inventory.Inventory;
 
-import javax.annotation.Nonnull;
 import java.util.ArrayList;
 
 public class LcraftCommand extends Command {

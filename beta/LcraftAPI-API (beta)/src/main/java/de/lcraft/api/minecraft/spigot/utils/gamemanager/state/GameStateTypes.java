@@ -1,4 +1,4 @@
-package de.lcraft.api.minecraft.spigot.module.utils.gamemanager.state;
+package de.lcraft.api.minecraft.spigot.utils.gamemanager.state;
 
 public enum GameStateTypes {
 

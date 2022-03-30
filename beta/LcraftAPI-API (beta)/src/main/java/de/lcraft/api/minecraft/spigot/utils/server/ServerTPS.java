@@ -1,4 +1,4 @@
-package de.lcraft.api.minecraft.spigot.module.utils.server;
+package de.lcraft.api.minecraft.spigot.utils.server;
 
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;

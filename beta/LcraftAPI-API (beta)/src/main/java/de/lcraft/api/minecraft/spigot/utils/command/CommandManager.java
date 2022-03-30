@@ -1,4 +1,4 @@
-package de.lcraft.api.minecraft.spigot.module.manager.command;
+package de.lcraft.api.minecraft.spigot.utils.command;
 
 import de.lcraft.api.java_utils.configuration.Config;
 import de.lcraft.api.java_utils.language.LanguageContainer;

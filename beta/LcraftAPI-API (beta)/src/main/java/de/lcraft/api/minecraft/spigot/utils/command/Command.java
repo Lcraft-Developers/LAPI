@@ -1,4 +1,4 @@
-package de.lcraft.api.minecraft.spigot.module.manager.command;
+package de.lcraft.api.minecraft.spigot.utils.command;
 
 import de.lcraft.api.java_utils.language.Language;
 import de.lcraft.api.java_utils.language.LanguageContainer;
@@ -12,7 +12,6 @@ import de.lcraft.api.minecraft.spigot.module.player.LPlayerManager;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
-import org.checkerframework.checker.units.qual.A;
 
 import java.util.ArrayList;
 import java.util.Objects;

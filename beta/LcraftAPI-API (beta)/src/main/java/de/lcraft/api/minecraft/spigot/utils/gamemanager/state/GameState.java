@@ -1,4 +1,4 @@
-package de.lcraft.api.minecraft.spigot.module.utils.gamemanager.state;
+package de.lcraft.api.minecraft.spigot.utils.gamemanager.state;
 
 import de.lcraft.api.java_utils.language.LanguageContainer;
 import de.lcraft.api.minecraft.spigot.module.manager.utils.permissions.PermissionContainer;
