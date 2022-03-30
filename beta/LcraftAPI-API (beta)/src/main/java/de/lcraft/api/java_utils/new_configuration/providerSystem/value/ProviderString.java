@@ -1,4 +1,13 @@
 package de.lcraft.api.java_utils.new_configuration.providerSystem.value;
 
-public class ProviderString extends ProviderObject {
+public abstract class ProviderString extends ProviderObject {
+
+	public ProviderString(String string) {
+		super(string);
+	}
+
+	public String toString() {
+		return object.toString();
+	}
+
 }

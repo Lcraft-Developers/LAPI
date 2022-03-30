@@ -2,5 +2,5 @@ package de.lcraft.api.java_utils.new_configuration.providerSystem.value.lists;
 
 import de.lcraft.api.java_utils.new_configuration.providerSystem.value.ProviderObject;
 
-public class ProviderList extends ProviderObject {
+public abstract class ProviderList extends ProviderObject {
 }
