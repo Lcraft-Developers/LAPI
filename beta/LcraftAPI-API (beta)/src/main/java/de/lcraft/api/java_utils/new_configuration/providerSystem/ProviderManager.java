@@ -8,10 +8,13 @@ import de.lcraft.api.java_utils.new_configuration.providerSystem.value.lists.lis
 import de.lcraft.api.java_utils.new_configuration.providerSystem.value.lists.map.*;
 import de.lcraft.api.java_utils.new_configuration.providerSystem.value.lists.set.*;
 
+import java.io.File;
+
 public abstract class ProviderManager {
 
 	private Class<? extends ProviderConverter> providerConvertor;
 	private Class<? extends ProviderValidator> providerValidator;
+	private ProviderWriter providerWriter;
 
 	private Class<? extends ProviderObject> providerObject;
 	private Class<? extends ProviderString> providerString;
@@ -42,6 +45,7 @@ public abstract class ProviderManager {
 
 	public ProviderManager(Class<? extends ProviderConverter> providerConvertor,
 						   Class<? extends ProviderValidator> providerValidator,
+						   ProviderWriter providerWriter,
 						   Class<? extends ProviderObject> providerObject,
 						   Class<? extends ProviderString> providerString,
 						   Class<? extends ProviderBoolean> providerBoolean,
@@ -64,6 +68,7 @@ public abstract class ProviderManager {
 						   Class<? extends ProviderTreeSet> providerTreeSet) {
 		this.providerConvertor = providerConvertor;
 		this.providerValidator = providerValidator;
+		this.providerWriter = providerWriter;
 		this.providerObject = providerObject;
 		this.providerString = providerString;
 		this.providerBoolean = providerBoolean;
@@ -86,13 +91,20 @@ public abstract class ProviderManager {
 		this.providerTreeSet = providerTreeSet;
 	}
 
-
+	public void save() {
+		getProviderWriter().createFileWhenNotExists();
+		getProviderWriter().clearFile();
+		getProviderWriter().setAllIntoFile();
+	}
 
 	public Class<? extends ProviderConverter> getProviderConvertor() {
 		return providerConvertor;
 	}
 	public Class<? extends ProviderValidator> getProviderValidator() {
 		return providerValidator;
+	}
+	public ProviderWriter getProviderWriter() {
+		return providerWriter;
 	}
 	public Class<? extends ProviderObject> getProviderObject() {
 		return providerObject;
