@@ -5,12 +5,16 @@
     <option name="activateWhenOpenProject" value="true" />
     <option name="excludedDirectories">
       <list>
-        <option value="$PROJECT_DIR$/.github" />
-        <option value="$PROJECT_DIR$/.idea" />
-        <option value="$PROJECT_DIR$/.old" />
-        <option value="$PROJECT_DIR$/_old" />
-        <option value="$PROJECT_DIR$/docs" />
         <option value="$PROJECT_DIR$/TestServer" />
+        <option value="$PROJECT_DIR$/_old" />
+        <option value="$PROJECT_DIR$/beta/Beta Lcraft Spigot Test" />
+        <option value="$PROJECT_DIR$/docs" />
+        <option value="$PROJECT_DIR$/beta/target" />
+        <option value="$PROJECT_DIR$/.github" />
+        <option value="$PROJECT_DIR$/beta/_oldConfigSystem" />
+        <option value="$PROJECT_DIR$/beta/new_configuration" />
+        <option value="$PROJECT_DIR$/.old" />
+        <option value="$PROJECT_DIR$/.idea" />
       </list>
     </option>
   </component>

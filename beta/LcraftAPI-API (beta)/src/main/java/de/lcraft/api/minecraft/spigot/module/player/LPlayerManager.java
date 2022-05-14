@@ -4,7 +4,7 @@ import de.lcraft.api.java_utils.configuration.Config;
 import de.lcraft.api.java_utils.configuration.value.ConfigValue;
 import de.lcraft.api.java_utils.language.LanguagesManager;
 import de.lcraft.api.minecraft.spigot.SpigotClass;
-import de.lcraft.api.minecraft.spigot.module.manager.utils.listeners.ListenerManager;
+import de.lcraft.api.minecraft.spigot.utils.listeners.ListenerManager;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;

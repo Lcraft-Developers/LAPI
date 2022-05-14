@@ -1,6 +1,7 @@
 package de.lcraft.api.minecraft.spigot.module.manager.utils.listeners;
 
 import de.lcraft.api.minecraft.spigot.module.manager.Module;
+import de.lcraft.api.minecraft.spigot.utils.listeners.ListenerManager;
 
 public class ModuleListenerManager extends ListenerManager {
 

@@ -8,12 +8,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Lcraft-Languages-API" />
-        <module name="LcraftAPI-API" />
-        <module name="Beta Lcraft Spigot Test" />
         <module name="api-beta" />
         <module name="Lcraft-Permissions-API" />
         <module name="beta-test-spigot" />
+        <module name="LcraftAPI-API" />
+        <module name="Beta Lcraft Spigot Test" />
         <module name="Lcraft Spigot Test Plugin" />
+        <module name="test-spigot-beta" />
         <module name="API" />
         <module name="API-beta" />
         <module name="LcraftAPI.bungeecord.test" />
@@ -45,6 +46,7 @@
       <module name="bungeecord-testplugin" options="" />
       <module name="latest" options="" />
       <module name="spigot-testplugin" options="" />
+      <module name="test-spigot-beta" options="" />
     </option>
   </component>
 </project>

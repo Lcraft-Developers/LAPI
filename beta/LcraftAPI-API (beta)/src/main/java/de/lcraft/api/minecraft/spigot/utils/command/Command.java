@@ -4,7 +4,7 @@ import de.lcraft.api.java_utils.language.Language;
 import de.lcraft.api.java_utils.language.LanguageContainer;
 import de.lcraft.api.java_utils.language.LanguagesManager;
 import de.lcraft.api.minecraft.spigot.module.manager.utils.language.StandardMessages;
-import de.lcraft.api.minecraft.spigot.module.manager.utils.listeners.ListenerManager;
+import de.lcraft.api.minecraft.spigot.utils.listeners.ListenerManager;
 import de.lcraft.api.minecraft.spigot.module.manager.utils.permissions.PermissionContainer;
 import de.lcraft.api.minecraft.spigot.module.manager.utils.permissions.PermsManager;
 import de.lcraft.api.minecraft.spigot.module.player.LPlayer;

@@ -1,6 +1,6 @@
 package de.lcraft.api.minecraft.spigot.module.utils.items;
 
-import de.lcraft.api.minecraft.spigot.module.manager.utils.listeners.ListenerManager;
+import de.lcraft.api.minecraft.spigot.utils.listeners.ListenerManager;
 import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.ItemStack;

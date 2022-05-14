@@ -1,6 +1,6 @@
 package de.lcraft.api.minecraft.spigot.module.utils.inventory.item;
 
-import de.lcraft.api.minecraft.spigot.module.manager.utils.listeners.ListenerManager;
+import de.lcraft.api.minecraft.spigot.utils.listeners.ListenerManager;
 import de.lcraft.api.minecraft.spigot.module.utils.inventory.BukkitInventoryValidator;
 import de.lcraft.api.minecraft.spigot.module.utils.items.ItemConsumerBuilder;
 import org.bukkit.event.EventHandler;

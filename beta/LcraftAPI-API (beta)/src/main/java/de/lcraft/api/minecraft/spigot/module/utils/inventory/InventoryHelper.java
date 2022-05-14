@@ -1,6 +1,6 @@
 package de.lcraft.api.minecraft.spigot.module.utils.inventory;
 
-import de.lcraft.api.minecraft.spigot.module.manager.utils.listeners.ListenerManager;
+import de.lcraft.api.minecraft.spigot.utils.listeners.ListenerManager;
 import de.lcraft.api.minecraft.spigot.module.utils.inventory.item.InventoryItem;
 import de.lcraft.api.minecraft.spigot.module.utils.inventory.item.slot.InventorySlot;
 import de.lcraft.api.minecraft.spigot.module.utils.items.ItemBuilder;

@@ -8,7 +8,7 @@ import de.lcraft.api.minecraft.spigot.SpigotClass;
 import de.lcraft.api.minecraft.spigot.module.manager.logger.Logger;
 import de.lcraft.api.minecraft.spigot.module.manager.logger.ModuleLogger;
 import de.lcraft.api.minecraft.spigot.module.manager.logger.ModuleLoggerType;
-import de.lcraft.api.minecraft.spigot.module.manager.utils.listeners.ListenerManager;
+import de.lcraft.api.minecraft.spigot.utils.listeners.ListenerManager;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
