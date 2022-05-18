@@ -1,7 +1,6 @@
 package de.lcraft.api.minecraft.spigot.module.player;
 
 import de.lcraft.api.java_utils.configuration.Config;
-import de.lcraft.api.java_utils.configuration.value.ConfigValue;
 import de.lcraft.api.java_utils.language.Language;
 import de.lcraft.api.java_utils.language.LanguagesManager;
 import de.lcraft.api.minecraft.spigot.SpigotClass;
@@ -46,7 +45,7 @@ public class LPlayer implements Listener {
 		this.listenerManager.registerListener(this);
 		this.logger = new ModuleLogger("Lcraft Player Handler");
 
-		getNickName(); getRealName(); getVanishedUUID();
+		getRealName(); getNickName();  getVanishedUUID();
 		onEveryTick();
 	}
 	public void onEveryTick() {
@@ -202,11 +201,21 @@ public class LPlayer implements Listener {
 	}
 
 	public final String getRealName() {
-		if(isOnline()) {
-			return getPlayer().getName();
+		if(getUserCFG().exists("user." + getUUID().toString() + ".name")) {
+			if(isOnline()) {
+				return getPlayer().getName();
+			} else {
+				return getOfflinePlayer().getName();
+			}
 		} else {
-			return getOfflinePlayer().getName();
+			if(isOnline()) {
+				getUserCFG().set("user." + getUUID() + ".name", getPlayer().getName());
+			} else {
+				getUserCFG().set("user." + getUUID() + ".name", getOfflinePlayer().getName());
+			}
 		}
+		getUserCFG().save();
+		return getRealName();
 	}
 	public final String getNickName() {
 		if(getUserCFG().exists("user." + getUUID().toString() + ".nickname")) {
@@ -227,11 +236,10 @@ public class LPlayer implements Listener {
 	public final ArrayList<String> getVanishedUUID() {
 		ArrayList<String> array = new ArrayList<>();
 		if(getUserCFG().existsSection("user." + getUUID().toString() + ".vanished")) {
-			if(Objects.nonNull(getUserCFG().getSection("user." + getUUID().toString() + ".vanished").getAllKeysWithoutValue())) {
-				if(!getUserCFG().getSection("user." + getUUID().toString() + ".vanished").getAllKeysWithoutValue().isEmpty()) {
-					for(ConfigValue v : getUserCFG().getSection("user." + getUUID().toString() + ".vanished").getAllKeysWithoutValue().values()) {
-						array.add(v.getSavedValue().toString());
-					}
+			getUserCFG().getSection("user." + getUUID() + ".vanished").getKeys(false);
+			if(!getUserCFG().getSection("user." + getUUID() + ".vanished").getKeys(false).isEmpty()) {
+				for(String v : getUserCFG().getSection("user." + getUUID() + ".vanished").getKeys(false)) {
+					array.add(getUserCFG().getString(v));
 				}
 			}
 		}

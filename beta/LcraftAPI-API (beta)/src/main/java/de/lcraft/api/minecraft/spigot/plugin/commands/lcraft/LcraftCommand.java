@@ -21,7 +21,7 @@ import java.util.ArrayList;
 public class LcraftCommand extends Command {
 
 	public LcraftCommand(StandardMessages standardMessages, PermsManager permsManager, LPlayerManager lPlayerManager, LanguagesManager languagesManager) {
-		super(standardMessages, "lcraft", "Opens you an inventory, wich shows information about Lcraft.", permsManager, languagesManager, lPlayerManager, true);
+		super(standardMessages, null, "lcraft", "Opens you an inventory, wich shows information about Lcraft.", permsManager, languagesManager, lPlayerManager, true);
 	}
 
 	@Override

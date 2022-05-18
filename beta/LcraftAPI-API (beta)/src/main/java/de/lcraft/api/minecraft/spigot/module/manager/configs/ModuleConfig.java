@@ -1,7 +1,6 @@
 package de.lcraft.api.minecraft.spigot.module.manager.configs;
 
 import de.lcraft.api.java_utils.configuration.Config;
-import de.lcraft.api.java_utils.configuration.sections.ConfigSection;
 import de.lcraft.api.minecraft.spigot.module.manager.Module;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;

@@ -1,38 +1,48 @@
-[20:33:05] [ServerMain/INFO]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
-[20:33:06] [ServerMain/INFO]: Reloading ResourceManager: Default, bukkit
-[20:33:06] [Worker-Main-4/INFO]: Loaded 7 recipes
-[20:33:07] [Server thread/INFO]: Starting minecraft server version 1.18
-[20:33:07] [Server thread/INFO]: Loading properties
-[20:33:07] [Server thread/INFO]: This server is running Paper version git-Paper-20 (MC: 1.18) (Implementing API version 1.18-R0.1-SNAPSHOT) (Git: 0cd411e)
-[20:33:07] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[20:33:07] [Server thread/INFO]: Using 4 threads for Netty based IO
-[20:33:07] [Server thread/INFO]: Default game type: SURVIVAL
-[20:33:07] [Server thread/INFO]: Generating keypair
-[20:33:08] [Server thread/INFO]: Starting Minecraft server on *:26577
-[20:33:08] [Server thread/INFO]: Using default channel type
-[20:33:08] [Server thread/INFO]: Paper: Using Java 11 compression from Velocity.
-[20:33:08] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
-[20:33:08] [Server thread/ERROR]: [STDERR] [org.bukkit.craftbukkit.v1_18_R1.legacy.CraftLegacy] Initializing Legacy Material Support. Unless you have legacy plugins and/or data this is a bug!
-[20:33:11] [Server thread/WARN]: Legacy plugin LcraftAPI v1.0.9 does not specify an api-version.
-[20:33:11] [Server thread/INFO]: [LcraftAPI] Loading LcraftAPI v1.0.9
-[20:33:11] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[20:33:11] [Server thread/INFO]: Preparing level "world"
-[20:33:12] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
-[20:33:12] [Server thread/INFO]: Time elapsed: 248 ms
-[20:33:12] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
-[20:33:12] [Server thread/INFO]: Time elapsed: 82 ms
-[20:33:12] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
-[20:33:12] [Server thread/INFO]: Time elapsed: 78 ms
-[20:33:12] [Server thread/INFO]: [LcraftAPI] Enabling LcraftAPI v1.0.9*
-[20:33:13] [Server thread/INFO]: INFO >> The Spigot Module Lcraft Spigot TestPlugin is loaded.
-[20:33:13] [Server thread/INFO]: [LcraftAPI] ?aThe Plugin has been ?6successfully ?astarted.
-[20:33:13] [Server thread/INFO]: Running delayed init tasks
-[20:33:13] [Server thread/INFO]: Done (5.402s)! For help, type "help"
-[20:33:13] [Server thread/INFO]: Timings Reset
-[20:33:21] [Server thread/INFO]: Unknown command. Type "/help" for help.
-[20:33:22] [Server thread/INFO]: Plugins (1): LcraftAPI*
-[20:33:33] [Server thread/INFO]: [LcraftAPI] >> The Server TPS: 19.932230416583614
-[20:33:39] [Server thread/INFO]: [LcraftAPI] >> The Server TPS: 19.87281399046105
-[20:33:39] [Server thread/INFO]: [LcraftAPI] >> The Server TPS: 19.940179461615156
-[20:33:40] [Server thread/INFO]: [LcraftAPI] >> The Server TPS: 19.952114924181966
-[20:33:40] [Server thread/INFO]: [LcraftAPI] >> The Server TPS: 19.940179461615156
+[18:41:19] [ServerMain/INFO]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[18:41:19] [ServerMain/INFO]: Reloading ResourceManager: Default, bukkit
+[18:41:20] [Worker-Main-4/INFO]: Loaded 7 recipes
+[18:41:21] [Server thread/INFO]: Starting minecraft server version 1.18
+[18:41:21] [Server thread/INFO]: Loading properties
+[18:41:22] [Server thread/INFO]: This server is running Paper version git-Paper-20 (MC: 1.18) (Implementing API version 1.18-R0.1-SNAPSHOT) (Git: 0cd411e)
+[18:41:22] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[18:41:22] [Server thread/INFO]: Using 4 threads for Netty based IO
+[18:41:22] [Server thread/INFO]: Default game type: SURVIVAL
+[18:41:22] [Server thread/INFO]: Generating keypair
+[18:41:22] [Server thread/INFO]: Starting Minecraft server on *:26577
+[18:41:22] [Server thread/INFO]: Using default channel type
+[18:41:22] [Server thread/INFO]: Paper: Using Java 11 compression from Velocity.
+[18:41:22] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
+[18:41:22] [Server thread/INFO]: [LcraftAPI] Loading LcraftAPI v1.0.9.1
+[18:41:22] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[18:41:22] [Server thread/INFO]: Preparing level "world"
+[18:41:23] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[18:41:24] [Server thread/INFO]: Time elapsed: 332 ms
+[18:41:24] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
+[18:41:24] [Server thread/INFO]: Time elapsed: 154 ms
+[18:41:24] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
+[18:41:24] [Server thread/INFO]: Time elapsed: 160 ms
+[18:41:24] [Server thread/INFO]: [LcraftAPI] Enabling LcraftAPI v1.0.9.1
+[18:41:27] [Server thread/INFO]: [LcraftAPI] The Plugin has been successfully started.
+[18:41:27] [Server thread/INFO]: Running delayed init tasks
+[18:41:27] [Server thread/INFO]: Done (5.242s)! For help, type "help"
+[18:41:27] [Server thread/INFO]: Timings Reset
+[18:41:27] [Server thread/WARN]: UUID of added entity already exists: EntityChicken['Chicken'/43, uuid='98691905-13e3-4fc9-aa1b-9b03c2703c3f', l='ServerLevel[world]', x=-40.04, y=113.00, z=45.11, cpos=[-3, 2], tl=155894, v=false]
+[18:41:27] [Server thread/WARN]: UUID of added entity already exists: EntityCow['Cow'/60, uuid='3bc48fbb-465e-4e0c-91f5-ebd1d61ecb9d', l='ServerLevel[world]', x=-24.19, y=110.00, z=45.47, cpos=[-2, 2], tl=129225, v=false]
+[18:41:28] [Server thread/WARN]: UUID of added entity already exists: EntityChicken['Chicken'/109, uuid='33a43346-3958-4de4-b5e1-a8f257d75dce', l='ServerLevel[world]', x=29.80, y=88.00, z=-31.21, cpos=[1, -2], tl=173696, v=false]
+[18:41:30] [User Authenticator #1/INFO]: UUID of player Cooler_LK is c72ab8a9-a030-4796-84b3-523ca07792c4
+[18:41:30] [Server thread/INFO]: INFO >> Cooler_LK connected to the game with UUID (c72ab8a9-a030-4796-84b3-523ca07792c4)
+[18:41:31] [Server thread/INFO]: Cooler_LK[/127.0.0.1:1466] logged in with entity id 173 at ([world]-1.1384561397577795, 113.0, 15.969361451611361)
+[18:42:05] [Server thread/INFO]: Cooler_LK lost connection: Disconnected
+[18:42:05] [Server thread/INFO]: INFO >> Cooler_LK left the game with UUID (c72ab8a9-a030-4796-84b3-523ca07792c4)
+[18:42:05] [Server thread/INFO]: INFO >> Cooler_LK left the game with UUID (c72ab8a9-a030-4796-84b3-523ca07792c4)
+[18:42:12] [User Authenticator #1/INFO]: UUID of player Cooler_LK is c72ab8a9-a030-4796-84b3-523ca07792c4
+[18:42:13] [Server thread/INFO]: INFO >> Cooler_LK connected to the game with UUID (c72ab8a9-a030-4796-84b3-523ca07792c4)
+[18:42:13] [Server thread/INFO]: INFO >> Cooler_LK connected to the game with UUID (c72ab8a9-a030-4796-84b3-523ca07792c4)
+[18:42:13] [Server thread/INFO]: Cooler_LK[/127.0.0.1:1486] logged in with entity id 243 at ([world]-1.5419977936967264, 113.0, 15.870291888203077)
+[18:43:30] [Server thread/INFO]: Cooler_LK issued server command: /lcraft
+[18:43:39] [Server thread/INFO]: Cooler_LK issued server command: /lang
+[18:43:55] [Server thread/WARN]: Can't keep up! Is the server overloaded? Running 9934ms or 198 ticks behind
+[18:44:00] [Server thread/INFO]: Cooler_LK issued server command: /lang a
+[18:44:05] [Server thread/INFO]: Cooler_LK issued server command: /lang en-us
+[18:44:09] [Server thread/INFO]: Cooler_LK issued server command: /lang en-be
+[18:44:13] [Server thread/INFO]: Cooler_LK issued server command: /lang de-hd

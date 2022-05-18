@@ -1,0 +1,7 @@
+en-be:
+  join:
+    message:
+      '0': No Join message was set!
+  quit:
+    message:
+      '0': No Quit message was set!

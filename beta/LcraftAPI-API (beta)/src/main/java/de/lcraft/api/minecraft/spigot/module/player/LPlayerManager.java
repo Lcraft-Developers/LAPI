@@ -1,7 +1,6 @@
 package de.lcraft.api.minecraft.spigot.module.player;
 
 import de.lcraft.api.java_utils.configuration.Config;
-import de.lcraft.api.java_utils.configuration.value.ConfigValue;
 import de.lcraft.api.java_utils.language.LanguagesManager;
 import de.lcraft.api.minecraft.spigot.SpigotClass;
 import de.lcraft.api.minecraft.spigot.utils.listeners.ListenerManager;
@@ -12,7 +11,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.plugin.java.JavaPlugin;
-
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.UUID;
@@ -37,8 +35,8 @@ public class LPlayerManager implements Listener {
 
 	public final void reloadPlayers() {
 		if(Objects.nonNull(userConfig.getSection("user"))) {
-			for(ConfigValue value : userConfig.getSection("user").getAllKeysWithoutValue().values()) {
-				UUID uuid = UUID.fromString(value.getSavedValue().toString());
+			for(String root : userConfig.getSection("user").getKeys(true)) {
+				UUID uuid = UUID.fromString(userConfig.getString(root));
 				LPlayer p = new LPlayer(getSpigotPlugin(), this, uuid, userConfig, getListenerManager(), getLanguagesManager());
 				players.add(p);
 			}

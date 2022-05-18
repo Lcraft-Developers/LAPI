@@ -48,8 +48,8 @@ public abstract class Language {
 	public final String[] getMessage(String root, String[] defaultMessage) {
 		String mainRoot = getShort() + "." + root;
 		if(Objects.nonNull(getHelpFile().getSection(mainRoot))) {
-			defaultMessage = new String[getHelpFile().getSection(mainRoot).size()];
-			for(int i = 0; i < getHelpFile().getSection(mainRoot).size(); i++) {
+			defaultMessage = new String[getHelpFile().getSection(mainRoot).getKeys(false).size()];
+			for(int i = 0; i < getHelpFile().getSection(mainRoot).getKeys(false).size(); i++) {
 				defaultMessage[i] = getHelpFile().getString(mainRoot + "." + i);
 			}
 		} else {

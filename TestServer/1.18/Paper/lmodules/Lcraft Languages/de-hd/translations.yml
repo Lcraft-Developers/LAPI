@@ -1,13 +1,39 @@
 translate:
-  '21170': MemorySection[path='translate.21170', root='YamlConfiguration']
-  '13138': MemorySection[path='translate.13138', root='YamlConfiguration']
-  '28228': MemorySection[path='translate.28228', root='YamlConfiguration']
-  '338930': MemorySection[path='translate.338930', root='YamlConfiguration']
-  '4300': MemorySection[path='translate.4300', root='YamlConfiguration']
-  '342966': MemorySection[path='translate.342966', root='YamlConfiguration']
-  '20327':
-    default: §aSuccessfully opened the Lcraft Inventory
-    translation: §aSuccessfully opened the Lcraft Inventory
-  '339968':
-    default: �cYou have to use /lcraft §c!
-    translation: �cYou have to use /lcraft §c!
+  '21824':
+    default: §aSuccessfully opened the Languages Inventory
+    translation: §aSuccessfully opened the Languages Inventory
+  '16136':
+    default: §cYou have to be a player to do that!
+    translation: §cYou have to be a player to do that!
+  '19559':
+    default: §aSuccessfully chose the language §6%Name%
+    translation: §aSuccessfully chose the language §6%Name%
+  '34122':
+    default: §cYou have to use /lang  §cor /lang en-us §cor /lang en-be §cor /lang
+      de-hd§c!
+    translation: §cYou have to use /lang  §cor /lang en-us §cor /lang en-be §cor /lang
+      de-hd§c!
+  '6404':
+    default: '§6Lcraft §r>> '
+    translation: '§6Lcraft §r>> '
+  '8454':
+    default: §6Back to last Page
+    translation: §6Back to last Page
+  '5189':
+    default: §6Next Page
+    translation: §6Next Page
+  '7105':
+    default: §6All Languages
+    translation: §6All Languages
+  '17588':
+    default: §6All Languages §6%cpage%§7/§6%maxpage%
+    translation: §6All Languages §6%cpage%§7/§6%maxpage%
+  '14321':
+    default: §cYou have to use %helpmessage%!
+    translation: §cYou have to use %helpmessage%!
+  '2552':
+    default: ' §cor'
+    translation: ' §cor'
+  '19090':
+    default: §aSucessfully chose the language §6%Name%
+    translation: §aSucessfully chose the language §6%Name%

@@ -1,8 +1,9 @@
 package de.lcraft.api.minecraft.spigot.module.utils.inventory.item;
 
+import de.lcraft.api.minecraft.spigot.module.utils.items.ItemBuilder;
 import de.lcraft.api.minecraft.spigot.utils.listeners.ListenerManager;
 import de.lcraft.api.minecraft.spigot.module.utils.inventory.BukkitInventoryValidator;
-import de.lcraft.api.minecraft.spigot.module.utils.items.ItemConsumerBuilder;
+import de.lcraft.api.minecraft.spigot.module.utils.items.consumer.ItemConsumerBuilder;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
@@ -11,19 +12,8 @@ import java.util.function.Consumer;
 
 public class InventoryConsumerItem extends InventoryItem implements Listener {
 
-	private boolean areConsumerActivated = false;
-	private final boolean itemNameStartsWith;
-	private final ItemConsumerBuilder item;
-
-	public InventoryConsumerItem(ListenerManager listenerManager,  String invTitle, boolean titleStartsWith, boolean isCanceling, boolean itemNameStartsWith, ItemConsumerBuilder item) {
-		this(listenerManager, invTitle, titleStartsWith, isCanceling, true, itemNameStartsWith, item);
-	}
-	public InventoryConsumerItem(ListenerManager listenerManager, String invTitle, boolean isCanceling, boolean titleStartsWith, boolean areConsumerActivated, boolean itemNameStartsWith, ItemConsumerBuilder item) {
+	public InventoryConsumerItem(ListenerManager listenerManager, String invTitle, boolean titleStartsWith, boolean isCanceling, boolean itemNameStartsWith, ItemConsumerBuilder item) {
 		super(listenerManager, invTitle, titleStartsWith, isCanceling, itemNameStartsWith, item);
-		this.itemNameStartsWith = itemNameStartsWith;
-		this.areConsumerActivated = areConsumerActivated;
-		this.item = item;
-		this.item.setAreConsumersActivated(false);
 	}
 
 	@Override
@@ -37,11 +27,19 @@ public class InventoryConsumerItem extends InventoryItem implements Listener {
 						if(inventoryValidator.isInventoryTitle(e,getInvTitle(),true,true)) {
 							if(inventoryValidator.existsItemWithItemMetaAndDisplayName(e.getCurrentItem())) {
 								if(inventoryValidator.isItemName(e.getCurrentItem(),getItem().getDisplayName(), true, true)) {
+									// Cancel Event
 									e.setCancelled(isCanceling());
-									if(areConsumerActivated()) {
+
+									// Right Consumer
+									if(isRightConsumerActivated()) {
 										if(inventoryValidator.isRightClick(e)) {
 											getRightClickConsumer().accept(e);
-										} else if(inventoryValidator.isLeftClick(e)) {
+										}
+									}
+
+									// Left Consumer
+									if(isLeftConsumerActivated()) {
+										if(inventoryValidator.isLeftClick(e)) {
 											getLeftClickConsumer().accept(e);
 										}
 									}
@@ -60,7 +58,7 @@ public class InventoryConsumerItem extends InventoryItem implements Listener {
 	}
 	@Override
 	public ItemConsumerBuilder getItem() {
-		return item;
+		return (ItemConsumerBuilder) super.getItem();
 	}
 	public final Consumer<InventoryClickEvent> getRightClickConsumer() {
 		return getItem().getRightClickConsumer();
@@ -68,8 +66,11 @@ public class InventoryConsumerItem extends InventoryItem implements Listener {
 	public final Consumer<InventoryClickEvent> getLeftClickConsumer() {
 		return getItem().getLeftClickConsumer();
 	}
-	public final boolean areConsumerActivated() {
-		return areConsumerActivated;
+	public final boolean isRightConsumerActivated() {
+		return getItem().isRightConsumerActivated();
+	}
+	public final boolean isLeftConsumerActivated() {
+		return getItem().isLeftConsumerActivated();
 	}
 
 }

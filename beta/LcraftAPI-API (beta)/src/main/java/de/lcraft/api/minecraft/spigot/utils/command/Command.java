@@ -12,7 +12,6 @@ import de.lcraft.api.minecraft.spigot.module.player.LPlayerManager;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
-
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.UUID;
@@ -23,7 +22,8 @@ public abstract class Command extends org.bukkit.command.Command implements List
     private final LanguagesManager languagesManager;
     private final PermsManager permsManager;
     private final String description;
-    private final ArrayList<SubCommand> subModuleCommands;
+    private final Command parentCommand;
+    private final ArrayList<Command> childComamands;
     private final String command;
     private final LPlayerManager lPlayerManager;
     private final ListenerManager listenerManager;
@@ -31,9 +31,10 @@ public abstract class Command extends org.bukkit.command.Command implements List
     private final PermissionContainer permsContainer;
     protected StandardMessages standardMessages;
 
-    public Command(StandardMessages standardMessages, String label, String desc, PermsManager permsManager, LanguagesManager languagesManager, LPlayerManager lPlayerManager, boolean splitting) {
+    public Command(StandardMessages standardMessages, Command parent, String label, String desc, PermsManager permsManager, LanguagesManager languagesManager, LPlayerManager lPlayerManager, boolean splitting) {
         super(label, desc, "", new ArrayList<>());
-        subModuleCommands = new ArrayList<>();
+        this.childComamands = new ArrayList<>();
+        this.parentCommand = parent;
         this.description = desc;
         this.splitting = splitting;
         this.command = label;
@@ -55,6 +56,10 @@ public abstract class Command extends org.bukkit.command.Command implements List
                 return allUsedPerms(new ArrayList<>());
             }
         };
+
+        if(hasParent()) {
+            getParentCommand().addChildCommand(this);
+        }
     }
 
     public final String translate(UUID uuid, String text) {
@@ -67,31 +72,30 @@ public abstract class Command extends org.bukkit.command.Command implements List
         return getPermsManager().hasPermissions(p, perm);
     }
 
-    public final void addSubCommand(SubCommand subModuleCommand) {
-        subModuleCommands.add(subModuleCommand);
+    public final void addChildCommand(Command subModuleCommand) {
+        getChildComamands().add(subModuleCommand);
     }
-    public final SubCommand getSubCommand(String name) {
-        for(SubCommand m : subModuleCommands) {
-            if(m.getName().equalsIgnoreCase(name)) {
+    public final Command getChildCommand(String name) {
+        for(Command m : getChildComamands()) {
+            if(m.getName().toUpperCase().startsWith(name.toUpperCase()) || m.getLabel().toUpperCase().startsWith(name.toUpperCase())) {
                 return m;
             }
-            continue;
         }
         return null;
     }
-    public final boolean existsSubCommand(String name) {
-        return Objects.nonNull(getSubCommand(name));
+    public final boolean existsChildCommand(String name) {
+        return Objects.nonNull(getChildCommand(name));
     }
 
     @Override
     public final boolean execute(CommandSender commandSender, String var3, String[] strings) {
         if(Objects.nonNull(strings) && strings.length > 0) {
-            if(existsSubCommand(strings[0])) {
+            if(existsChildCommand(strings[0])) {
                 String[] new_args = new String[strings.length - 1];
                 for(int i = 1; i < strings.length; i++) {
                     new_args[i - 1] = strings[i];
                 }
-                getSubCommand(strings[0]).execute(commandSender, var3, new_args);
+                getChildCommand(strings[0]).execute(commandSender, var3, new_args);
             } else {
                 split(commandSender, strings);
             }
@@ -101,15 +105,46 @@ public abstract class Command extends org.bukkit.command.Command implements List
         return false;
     }
     public final void split(CommandSender commandSender, String[] strings) {
-        if(splitting) {
-            if(Objects.nonNull(commandSender) && commandSender instanceof Player) {
-                onLPlayerCommand(getLPlayerManager().getLPlayerByUUID(((Player) commandSender).getUniqueId()), strings);
+        if(strings.length > 0 && existsChildCommand(strings[0])) {
+            Command childCommand = getChildCommand(strings[0]);
+            String[] newArgs = strings;
+            for(int i = 1; i < strings.length; i++) {
+                newArgs[i] = strings[i - 1];
+            }
+            childCommand.split(commandSender, newArgs);
+        } else {
+            if(splitting) {
+                if(Objects.nonNull(commandSender) && commandSender instanceof Player) {
+                    onLPlayerCommand(getLPlayerManager().getLPlayerByUUID(((Player) commandSender).getUniqueId()), strings);
+                } else {
+                    onConsoleCommand(commandSender, strings);
+                }
+            }
+            onCommandExecute(commandSender, strings);
+        }
+    }
+
+    /*@Override
+    public List<String> onTabComplete(CommandSender commandSender, org.bukkit.command.Command command, String s, String[] strings) {
+        if(command.getName().equals(getName())) {
+            if(strings.length != 0) {
+                SubCommand subCommand = getSubCommand(strings[0]);
+                String[] new_args = new String[strings.length - 1];
+                for(int i = 1; i < strings.length; i++) {
+                    new_args[i - 1] = strings[i];
+                }
+                return subCommand.onTabComplete(commandSender, subCommand, null, new_args);
             } else {
-                onConsoleCommand(commandSender, strings);
+                ArrayList<String> allArguments = new ArrayList<>();
+                for(SubCommand subCommand : getSubModuleCommands()) {
+                    int length = subCommand.getName().split(" ").length;
+                    allArguments.add(subCommand.getName().split(" ")[length - 1]);
+                }
+                return allArguments;
             }
         }
-        onCommandExecute(commandSender, strings);
-    }
+        return null;
+    }*/
 
     public abstract ArrayList<String> allUsedTranslations(ArrayList<String> translations);
     protected abstract ArrayList<String> allUsedPerms(ArrayList<String> perms);
@@ -231,6 +266,15 @@ public abstract class Command extends org.bukkit.command.Command implements List
     }
     public PermissionContainer getPermsContainer() {
         return permsContainer;
+    }
+    public Command getParentCommand() {
+        return parentCommand;
+    }
+    public boolean hasParent() {
+        return Objects.nonNull(getParentCommand());
+    }
+    public ArrayList<Command> getChildComamands() {
+        return childComamands;
     }
 
 }

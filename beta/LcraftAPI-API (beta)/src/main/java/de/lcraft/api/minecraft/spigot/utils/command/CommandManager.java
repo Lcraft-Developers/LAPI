@@ -7,9 +7,14 @@ import de.lcraft.api.minecraft.spigot.module.manager.utils.language.StandardMess
 import de.lcraft.api.minecraft.spigot.module.manager.utils.permissions.PermissionContainer;
 import de.lcraft.api.minecraft.spigot.module.manager.utils.permissions.PermsManager;
 import org.bukkit.Bukkit;
+import org.bukkit.Server;
 import org.bukkit.command.CommandMap;
+import org.bukkit.command.PluginCommand;
+import org.bukkit.command.SimpleCommandMap;
+
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.Objects;
 
 public class CommandManager {
@@ -39,7 +44,7 @@ public class CommandManager {
                 final Field commandMapField = Bukkit.getServer().getClass().getDeclaredField("commandMap");
                 commandMapField.setAccessible(true);
 
-                final CommandMap commandMap = ((CommandMap) commandMapField.get(Bukkit.getServer()));
+                final SimpleCommandMap commandMap = ((SimpleCommandMap) commandMapField.get(Bukkit.getServer()));
                 commandMap.register(executor.getName(), executor);
             } catch (final IllegalAccessException | NoSuchFieldException ex) {
                 ex.printStackTrace();

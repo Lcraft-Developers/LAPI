@@ -3,14 +3,18 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>de.lcraft.api</groupId>
+        <artifactId>beta-tab</artifactId>
+        <version>1.0.0</version>
+    </parent>
 
     <name>Lcraft API (Beta) - API</name>
-    <description></description>
+    <description>This is the Beta API</description>
     <packaging>jar</packaging>
 
-    <groupId>de.lcraft.api</groupId>
     <artifactId>api-beta</artifactId>
-    <version>1.0.9.1</version>
+    <version>1.0.9.8</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>

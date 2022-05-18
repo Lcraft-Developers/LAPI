@@ -1,7 +1,6 @@
 package de.lcraft.api.minecraft.spigot.utils.worldeditor;
 
-import de.lcraft.api.java_utils.configuration.serialization.SerializeObject;
-import org.bukkit.block.Block;
+/*import org.bukkit.block.Block;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -28,4 +27,4 @@ public class ArenaMap implements SerializeObject {
 		return allBlocks;
 	}
 
-}
+}*/

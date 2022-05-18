@@ -9,13 +9,11 @@
     <packaging>pom</packaging>
 
     <name>Lcraft API</name>
-    <description></description>
+    <description/>
     <version>1.0.0</version>
 
     <modules>
         <module>beta</module>
-        <module>beta/LcraftAPI-API (beta)</module>
-        <module>beta/Beta Lcraft Spigot Test</module>
     </modules>
 
     <properties>

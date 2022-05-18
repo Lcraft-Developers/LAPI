@@ -52,7 +52,9 @@ public class SpigotClass extends JavaPlugin {
             ModuleClassLoader.classLoaders.add(Bukkit.getServer().getClass().getClassLoader());
             ModuleClassLoader.classLoaders.add(this.getClassLoader());
 
-            getCommandManager().addCommand(new LangCommand(getStandardMessages(), getPermsManager(), getLPlayerManager(), getLanguagesManager()), true);
+            LangCommand langCommand = new LangCommand(getStandardMessages(), getPermsManager(), getLPlayerManager(), getLanguagesManager());
+            //EN_UK_Command en_uk_command = new EN_UK_Command(getStandardMessages(), langCommand, getPermsManager(), getLanguagesManager(), getLPlayerManager());
+            getCommandManager().addCommand(langCommand, true);
             getCommandManager().addCommand(new LcraftCommand(getStandardMessages(), getPermsManager(), getLPlayerManager(), getLanguagesManager()), false);
             getCommandManager().reloadConfigs(getPermsManager(), getLanguagesManager());
 

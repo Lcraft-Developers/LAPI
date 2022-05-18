@@ -12,32 +12,14 @@ import java.util.Objects;
 public abstract class ModuleCommand extends Command {
 
 	private Module module;
-	private ArrayList<ModuleSubCommand> subModuleCommands;
 
-	public ModuleCommand(StandardMessages standardMessages, String label, String desc, Module m, boolean splitting) {
-		super(standardMessages, label, desc, m.getPermsManager(), m.getLanguagesManager(), m.getModuleManager().getPluginMain().getLPlayerManager(), splitting);
-		this.module = m;
-		subModuleCommands = new ArrayList<>();
-	}
-	public ModuleCommand(String label, String desc, Module m, boolean splitting) {
-		super(new StandardMessages(m), label, desc, m.getPermsManager(), m.getLanguagesManager(), m.getModuleManager().getPluginMain().getLPlayerManager(), splitting);
+	public ModuleCommand(StandardMessages standardMessages, ModuleCommand parent, String label, String desc, Module m, boolean splitting) {
+		super(standardMessages, parent, label, desc, m.getPermsManager(), m.getLanguagesManager(), m.getModuleManager().getPluginMain().getLPlayerManager(), splitting);
 		this.module = m;
 	}
-
-	public final void addModuleSubCommand(ModuleSubCommand subModuleCommand) {
-		subModuleCommands.add(subModuleCommand);
-	}
-	public final ModuleSubCommand getModuleSubCommand(String name) {
-		for(ModuleSubCommand m : subModuleCommands) {
-			if(m.getName().equalsIgnoreCase(name)) {
-				return m;
-			}
-			continue;
-		}
-		return null;
-	}
-	public final boolean existsModuleSubCommand(String name) {
-		return Objects.nonNull(getSubCommand(name));
+	public ModuleCommand( ModuleCommand parent, String label, String desc, Module m, boolean splitting) {
+		super(new StandardMessages(m), parent, label, desc, m.getPermsManager(), m.getLanguagesManager(), m.getModuleManager().getPluginMain().getLPlayerManager(), splitting);
+		this.module = m;
 	}
 
 	public final void setModule(Module module) {

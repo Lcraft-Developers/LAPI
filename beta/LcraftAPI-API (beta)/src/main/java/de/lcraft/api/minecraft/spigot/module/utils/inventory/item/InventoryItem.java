@@ -27,10 +27,6 @@ public class InventoryItem implements Listener {
 
 		listenerManager.registerListener(this);
 	}
-	public InventoryItem(ItemBuilder itemBuilder) {
-		this.item = itemBuilder;
-		this.isEnabled = false;
-	}
 
 	@EventHandler
 	public void onClick(InventoryClickEvent e) {
