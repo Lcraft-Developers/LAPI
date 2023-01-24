@@ -7,9 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="API" />
+        <module name="configurationSystem" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="configuration" target="17" />
       <module name="ConfigurationSystem" target="1.5" />
       <module name="configurationSystem (1)" target="17" />
       <module name="configurationSystem (2)" target="17" />
