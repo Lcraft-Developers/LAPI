@@ -1,9 +1,0 @@
-name: 'Lcraft Languages API'
-description: This is the Permissions API
-version: '1.0'
-spigot-main: de.lcraft.apis.languages.main.spigot.ModuleMain
-bungee-main: de.lcraft.apis.languages.main.bungeecord.ModuleMain
-authors:
-  - LPD
-  - Lcraft
-required-modules: 'Lcraft-API'

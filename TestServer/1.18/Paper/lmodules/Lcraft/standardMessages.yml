@@ -1,9 +1,0 @@
-MESSAGE:
-  ON_START: §aThe Plugin has been §6successfully §astarted.
-  ON_STOP: §aThe Plugin has been §6successfully §astopped.
-  NO_PERMISSIONS: §cYou do not have Permissions for that!
-  NO_PLAYER: §cYou have to be a player to do that!
-  NO_PLAYER_EXISTS: §cThis Player has never existed!
-  NO_PLAYER_FOUND: §cThis Player is not online!
-  NO_NUMBER: §cYou have to type a number!
-  HELP_MESSAGE: §cYou have to use %helpmessage%!
