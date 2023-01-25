@@ -1,3 +1,6 @@
+install.packages("remotes")
+remotes::install_github("gadenbuie/countdown")
+
 # LAPI
 
 [![Join us on Discord](https://img.shields.io/discord/856084949827321876.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/j2KwBaHZgD)
