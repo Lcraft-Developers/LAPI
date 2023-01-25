@@ -10,10 +10,10 @@
     <module>ConfigurationSystem</module>
   </modules>
 
-  <name>Lcraft APIs</name>
+  <name>Lcraft API</name>
   <groupId>de.lcraft.api</groupId>
   <artifactId>project</artifactId>
-  <version>1.0.0 b9</version>
+  <version>1.0.0 b10</version>
   <packaging>pom</packaging>
 
   <properties>
