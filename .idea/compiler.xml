@@ -7,8 +7,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="JavaUtils" />
+        <module name="config" />
         <module name="API" />
-        <module name="configurationSystem" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

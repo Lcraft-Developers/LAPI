@@ -11,7 +11,7 @@
   <name>Lcraft APIs</name>
   <groupId>de.lcraft.api</groupId>
   <artifactId>project</artifactId>
-  <version>1.0.0 b6</version>
+  <version>1.0.0 b7</version>
   <packaging>pom</packaging>
 
   <properties>
