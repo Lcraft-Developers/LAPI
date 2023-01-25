@@ -7,7 +7,7 @@
     <name>Lcraft API</name>
     <groupId>de.lcraft.api</groupId>
     <artifactId>project</artifactId>
-    <version>1.0.0 b11</version>
+    <version>1.0.0 b12</version>
     <packaging>pom</packaging>
 
     <modules>
@@ -47,16 +47,6 @@
             <artifactId>junit-jupiter</artifactId>
             <version>5.9.2</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
-            <version>2.11.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>3.12.0</version>
         </dependency>
         <dependency>
             <groupId>org.reflections</groupId>

@@ -56,7 +56,7 @@ public class createTable implements SQLCommand {
             sql = sql + id + " " + type + ",";
         }
 
-        return new String[]{StringUtils.replaceEnd(sql, ",", "") + ")"};
+        return new String[]{StringUtils.replaceLast(sql, ",", "") + ")"};
     }
 
     public String getTableName() {

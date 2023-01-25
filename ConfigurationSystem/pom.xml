@@ -45,7 +45,8 @@
         <dependency>
             <groupId>de.lcraft.api</groupId>
             <artifactId>javaUtils</artifactId>
-            <version>LATEST</version>
+            <version>1.0.0 b3</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 
