@@ -5,6 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <name>API</name>
+    <groupId>de.lcraft.api</groupId>
     <artifactId>API</artifactId>
     <version>2.0.0 b2</version>
     <packaging>jar</packaging>
@@ -36,7 +37,12 @@
 
     <dependencies>
         <dependency>
-            <groupId>de.lcraft</groupId>
+            <groupId>de.lcraft.api</groupId>
+            <artifactId>javaUtils</artifactId>
+            <version>LATEST</version>
+        </dependency>
+        <dependency>
+            <groupId>de.lcraft.api</groupId>
             <artifactId>configurationSystem</artifactId>
             <version>LATEST</version>
         </dependency>

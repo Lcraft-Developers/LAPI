@@ -5,6 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <name>Java Utils</name>
+    <groupId>de.lcraft.api</groupId>
     <artifactId>javaUtils</artifactId>
     <version>1.0.0 b1</version>
     <packaging>jar</packaging>
