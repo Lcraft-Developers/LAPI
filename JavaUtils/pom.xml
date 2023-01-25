@@ -7,7 +7,7 @@
     <name>Java Utils</name>
     <groupId>de.lcraft.api</groupId>
     <artifactId>javaUtils</artifactId>
-    <version>1.0.0 b1</version>
+    <version>1.0.0 b2</version>
     <packaging>jar</packaging>
 
     <properties>

@@ -10,6 +10,14 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -38,7 +46,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "jdk.selected.JAVA_MODULE": "corretto-17",
-    "last_opened_file_path": "C:/Users/Lukas/Desktop/Development/workspace/Lcraft-API/ConfigurationSystem",
+    "last_opened_file_path": "C:/Users/Lukas/Desktop/Development/workspace/Lcraft-API/ConfigurationSystem/src/main/java/de/lcraft/configurationSystem/sql/commands",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -47,7 +55,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Lukas\Desktop\Development\workspace\Lcraft-API\ConfigurationSystem\src\main\java\de\lcraft\configurationSystem\sql\commands" />
       <recent name="C:\Users\Lukas\Desktop\Development\workspace\Lcraft-API\ConfigurationSystem\src\main\java" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="de.lcraft.configurationSystem.mysql.api" />
     </key>
   </component>
   <component name="RunManager">

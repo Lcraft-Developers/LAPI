@@ -7,7 +7,7 @@
     <name>ConfigurationSystem</name>
     <groupId>de.lcraft.api</groupId>
     <artifactId>configurationSystem</artifactId>
-    <version>1.2.1 b2</version>
+    <version>1.2.1 b3</version>
     <packaging>jar</packaging>
 
     <properties>
@@ -41,6 +41,11 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.16</version>
             <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>de.lcraft.api</groupId>
+            <artifactId>javaUtils</artifactId>
+            <version>LATEST</version>
         </dependency>
     </dependencies>
 
