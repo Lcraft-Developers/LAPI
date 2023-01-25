@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <name>Lcraft API</name>
-    <groupId>de.lcraft.api</groupId>
-    <artifactId>project</artifactId>
-    <version>1.0.0 b12</version>
+    <groupId>de.lcraft.lapi</groupId>
+    <artifactId>LAPI</artifactId>
+    <version>1.0.0 b13</version>
     <packaging>pom</packaging>
 
     <modules>

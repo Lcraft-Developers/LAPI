@@ -11,5 +11,8 @@
         <module name="configurationSystem" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="project" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>
