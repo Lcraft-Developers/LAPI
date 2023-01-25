@@ -11,6 +11,7 @@ Now recreating to the newest 1.1 Version.
 We are currently programming on:
 - <b>LAPI API</b> <br> (The main core of the API and also the plugin you will use late)
 - <b>LAPI Bridge</b> <br>(Used to use the API for any other Minecraft-Server-System)
+- <b>LAPI Languages</b> <br>(A own coded LanguagesSystem)
 - <b>LAPI Configuration</b> <br>(A own coded Configuration System for SQL- and Filesystems)
 - <b>LAPI Essentials</b> <br>(Replaces most of the in-game commands)
 - <b>LAPI JavaUtils</b> <br>(Multiple useful Utils for Java coding)
