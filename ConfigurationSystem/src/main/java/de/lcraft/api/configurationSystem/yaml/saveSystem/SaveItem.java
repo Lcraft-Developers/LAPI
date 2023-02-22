@@ -1,8 +1,8 @@
-package de.lcraft.configurationSystem.yaml.saveSystem;
+package de.lcraft.api.configurationSystem.yaml.saveSystem;
 
-import de.lcraft.configurationSystem.yaml.AvailableTypes;
-import de.lcraft.configurationSystem.yaml.Config;
-import de.lcraft.configurationSystem.yaml.Item;
+import de.lcraft.api.configurationSystem.yaml.Config;
+import de.lcraft.api.configurationSystem.yaml.AvailableTypes;
+import de.lcraft.api.configurationSystem.yaml.Item;
 
 class SaveItem extends Item {
 

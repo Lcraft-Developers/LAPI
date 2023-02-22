@@ -1,8 +1,8 @@
-package de.lcraft.configurationSystem.sql.mysql;
+package de.lcraft.api.configurationSystem.sql.mysql;
 
 import com.mysql.cj.jdbc.MysqlDataSource;
-import de.lcraft.configurationSystem.sql.api.SQLCommand;
-import de.lcraft.configurationSystem.sql.api.SQLDataBase;
+import de.lcraft.api.configurationSystem.api.sql.SQLCommand;
+import de.lcraft.api.configurationSystem.api.sql.SQLDataBase;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;

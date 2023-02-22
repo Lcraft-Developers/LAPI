@@ -1,4 +1,4 @@
-package de.lcraft.configurationSystem.yaml;
+package de.lcraft.api.configurationSystem.yaml;
 
 public abstract class Item {
 

@@ -1,6 +1,6 @@
-package de.lcraft.configurationSystem.yaml.loadSystem;
+package de.lcraft.api.configurationSystem.yaml.loadSystem;
 
-import de.lcraft.configurationSystem.yaml.Item;
+import de.lcraft.api.configurationSystem.yaml.Item;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;

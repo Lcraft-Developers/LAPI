@@ -1,4 +1,4 @@
-package de.lcraft.configurationSystem.sql.api;
+package de.lcraft.api.configurationSystem.api.sql;
 
 public interface SQLServer extends SQLCommandSender {
 

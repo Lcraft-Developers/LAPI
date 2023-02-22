@@ -1,10 +1,11 @@
-package de.lcraft.configurationSystem.sql.commands;
+package de.lcraft.api.configurationSystem.sql.commands;
 
+import de.lcraft.api.configurationSystem.api.sql.SQLCommand;
+import de.lcraft.api.configurationSystem.api.sql.SQLCommandSender;
+import de.lcraft.api.configurationSystem.api.sql.SQLServer;
 import de.lcraft.api.javaUtils.StringUtils;
-import de.lcraft.configurationSystem.sql.api.SQLCommand;
-import de.lcraft.configurationSystem.sql.api.SQLCommandSender;
-import de.lcraft.configurationSystem.sql.api.SQLDataBase;
-import de.lcraft.configurationSystem.sql.api.SQLServer;
+import de.lcraft.api.configurationSystem.api.sql.SQLDataBase;
+
 import java.util.ArrayList;
 import java.util.List;
 

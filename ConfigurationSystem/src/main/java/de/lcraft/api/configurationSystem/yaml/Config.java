@@ -1,7 +1,7 @@
-package de.lcraft.configurationSystem.yaml;
+package de.lcraft.api.configurationSystem.yaml;
 
-import de.lcraft.configurationSystem.yaml.loadSystem.LoadManager;
-import de.lcraft.configurationSystem.yaml.saveSystem.SaveManager;
+import de.lcraft.api.configurationSystem.yaml.loadSystem.LoadManager;
+import de.lcraft.api.configurationSystem.yaml.saveSystem.SaveManager;
 import java.io.File;
 
 public class Config {

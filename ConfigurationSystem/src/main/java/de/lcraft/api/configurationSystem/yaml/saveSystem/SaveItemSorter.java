@@ -1,4 +1,4 @@
-package de.lcraft.configurationSystem.yaml.saveSystem;
+package de.lcraft.api.configurationSystem.yaml.saveSystem;
 
 import java.util.ArrayList;
 import java.util.HashMap;
