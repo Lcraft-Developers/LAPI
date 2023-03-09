@@ -1,0 +1,4 @@
+package de.lcraft.lapi.mainAPI.api_spigot.utils.crafting;
+
+public interface CraftingRecipe {
+}
