@@ -6,12 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="languagesAPI" />
         <module name="API" />
         <module name="javaUtils" />
         <module name="configurationSystem" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="LanguagesAPI" target="17" />
       <module name="project" target="17" />
     </bytecodeTargetLevel>
   </component>

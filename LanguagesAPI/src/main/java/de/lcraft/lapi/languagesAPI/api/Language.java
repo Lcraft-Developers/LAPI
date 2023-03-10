@@ -1,4 +1,4 @@
-package de.lcraft.lapi.mainAPI.api_language;
+package de.lcraft.lapi.languagesAPI.api;
 
 public interface Language {
 

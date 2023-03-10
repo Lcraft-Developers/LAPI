@@ -4,18 +4,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <name>Lcraft API</name>
+    <name>LanguagesAPI</name>
     <groupId>de.lcraft.lapi</groupId>
-    <artifactId>LAPI</artifactId>
-    <version>1.0.0 b14</version>
-    <packaging>pom</packaging>
-
-    <modules>
-        <module>JavaUtils</module>
-        <module>ConfigurationSystem</module>
-        <module>LanguagesAPI</module>
-        <module>API</module>
-    </modules>
+    <artifactId>languagesAPI</artifactId>
+    <version>1.0.0 b1</version>
+    <packaging>jar</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -42,17 +35,4 @@
         </plugins>
     </build>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>5.9.2</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.reflections</groupId>
-            <artifactId>reflections</artifactId>
-            <version>0.10.2</version>
-        </dependency>
-    </dependencies>
 </project>
