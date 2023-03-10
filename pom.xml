@@ -7,7 +7,7 @@
     <name>Lcraft API</name>
     <groupId>de.lcraft.lapi</groupId>
     <artifactId>LAPI</artifactId>
-    <version>1.0.0 b14</version>
+    <version>1.0.0 b15</version>
     <packaging>pom</packaging>
 
     <modules>
