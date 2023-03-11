@@ -10,7 +10,7 @@ Now recreating to the newest v1.1
 ## Our Projects
 :red_circle: Not started programming <br>
 :yellow_circle: Started, but not functioning <br>
-:orange_circle: Started, but not releases <br>
+:orange_circle: Started and functioning, but no releases <br>
 :green_circle: Started, functional and released <br>
 :black_circle: Discontinued
 
