@@ -66,6 +66,7 @@ When the specific project get released, the wiki for it will be included.
 
 02.04.2023(Easter holidays) - **LAPI JavaUtils 1.0.0** <br>
 16.04.2023(Easter holidays) - **LAPI LanguagesAPI 1.0.0** <br>
+06.05.2023 - **LAPI McReflection 1.0.0** <br>
 14.05.2023 - **LAPI ConfigurationSystem 1.2.1** <br>
 24.06.2023(Summer holidays) - **LAPI API 2.0.0** and **LAPI Bukkit 2.0.0**
 
@@ -73,18 +74,18 @@ When the specific project get released, the wiki for it will be included.
 
 #### McReflection
 
-- Code LAPI McReflection
+- Code **LAPI McReflection**
 - Add to the MainAPI the Reflection organisation
 
-### Languages
+### LanguagesAPI
 
-- Code LAPI LanguagesAPI
+- Code **LAPI LanguagesAPI**
 
 ### ConfigurationSystem
 
-- Add yaml comments to the ConfigurationSystem
-- Add new sql commands to the ConfigurationSystem
-- Add local sql storage to the ConfigurationSystem
+- Add yaml comments to the **LAPI ConfigurationSystem**
+- Add new sql commands to the **LAPI ConfigurationSystem**
+- Add local sql storage to the **LAPI ConfigurationSystem**
 
 ### Latest releases
 
