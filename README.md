@@ -1,3 +1,6 @@
+<script src="/dist/js/timeline.min.js"></script>
+<link href="/dist/css/timeline.min.css" rel="stylesheet" />
+
 # LAPI
 
 [![Join us on Discord](https://img.shields.io/discord/856084949827321876.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/j2KwBaHZgD)
@@ -5,7 +8,7 @@
 
 This is LAPI (Lcrafts Application Programming Interface). <br>
 With the goal of creating a centered and more customizable API System for Minecraft Plugins and Java Processes. <br>
-Now recreating to the newest v1.1
+Now recreating to the newest v1.1 with a faster and more customizable structure, more features and own coded official modules.
 
 ## Our Projects
 :red_circle: Not started programming <br>
@@ -31,7 +34,7 @@ Now recreating to the newest v1.1
 - **LAPI Sponge** :red_circle:
 <br>(Use the main core for Sponges API and other forks)
 
-#### Own Modules
+### Own LAPI Modules
 
 - **LAPI Essentials Module** :red_circle:
 <br>(Replaces most of the in-game commands) 
@@ -45,16 +48,50 @@ Now recreating to the newest v1.1
 - **LAPI JavaUtils** :orange_circle:
 <br>(Multiple useful Utils for Java coding)
 
-## Maven
-In the dev Branch, there are no early Maven releases. <br>
-You could build it yourself, but I do not recommend it and I will not guide you.
+## Release Timeline
 
-## Wiki
-We have a old wiki: <br>
-https://github.com/Lcraft-Developers/Lcraft-APIs/wiki <br>
+<div class="timeline">
+    <div class="timeline__wrap">
+        <div class="timeline__items">
+            <div class="timeline__item">
+                <div class="timeline__content">
+                    Content / markup here
+                </div>
+            </div>
+            <div class="timeline__item">
+                <div class="timeline__content">
+                    Content / markup here
+                </div>
+            </div>
+            <div class="timeline__item">
+                <div class="timeline__content">
+                    Content / markup here
+                </div>
+            </div>
+            <div class="timeline__item">
+                <div class="timeline__content">
+                    Content / markup here
+                </div>
+            </div>
+            <div class="timeline__item">
+                <div class="timeline__content">
+                    Content / markup here
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-The new wiki will be released, when the v1.1 is out
+<script>
+timeline(document.querySelectorAll('.timeline'));
+</script>
 
-## Social Media
+## FAQ
 
-We also have a [Discord](https://discord.gg/j2KwBaHZgD) <br>
+### How can I use it?
+If the specific project has the :green_circle: green circle, it means, that it has been released over Maven and a .jar file. <br>
+When we are uploading all of ours project to Maven, you can use it by click on the right side at the category "Packages". <br>
+Else you could build it yourself, but I do not recommend it and I will not guide you.
+
+### When do you have a wiki?
+When the specific project get released.
