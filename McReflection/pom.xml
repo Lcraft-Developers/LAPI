@@ -36,6 +36,7 @@
     </build>
 
     <dependencies>
+        <!-- Dependencies (also own coded) with will be included if you package/compile -->
         <dependency>
             <groupId>de.lcraft.lapi</groupId>
             <artifactId>javaUtils</artifactId>
