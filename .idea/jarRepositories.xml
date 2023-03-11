@@ -17,6 +17,11 @@
       <option name="url" value="https://hub.spigotmc.org/nexus/content/repositories/snapshots/" />
     </remote-repository>
     <remote-repository>
+      <option name="id" value="sponge-repo" />
+      <option name="name" value="Sponge Maven Repository" />
+      <option name="url" value="https://repo.spongepowered.org/repository/maven-public/" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="bukkit-repo" />
       <option name="name" value="bukkit-repo" />
       <option name="url" value="http://repo.bukkit.org/content/groups/public/" />

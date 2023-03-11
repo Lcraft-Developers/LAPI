@@ -45,7 +45,7 @@
         <dependency>
             <groupId>de.lcraft.lapi</groupId>
             <artifactId>javaUtils</artifactId>
-            <version>1.0.0 b3</version>
+            <version>1.0.0 b4</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
