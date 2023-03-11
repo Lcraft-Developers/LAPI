@@ -47,7 +47,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "jdk.selected.JAVA_MODULE": "16",
-    "last_opened_file_path": "C:/Users/LPD/Desktop/Dev/workspace/Lcraft-API",
+    "last_opened_file_path": "C:/Users/LPD/Desktop/Dev/workspace/Lcraft-API/API/src/main/java/de/lcraft/lapi/mainAPI/api_sponge",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -56,11 +56,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\LPD\Desktop\Dev\workspace\Lcraft-API\API\src\main\java\de\lcraft\lapi\mainAPI\api_sponge" />
+      <recent name="C:\Users\LPD\Desktop\Dev\workspace\Lcraft-API\API\src\main\java\de\lcraft\lapi\mainAPI" />
       <recent name="H:\Desktop\Meine Github Gruppe\LAPI\API\src\main\java\de\lcraft\lapi\mainAPI\api_velocity" />
       <recent name="H:\Desktop\Meine Github Gruppe\LAPI\API\src\main\java\de\lcraft\lapi\mainAPI\api_spigot" />
       <recent name="H:\Desktop\Meine Github Gruppe\LAPI\API\src\main\java\de\lcraft\lapi\mainAPI\api_bungee" />
-      <recent name="C:\Users\Lukas\Desktop\Development\workspace\Lcraft-API\ConfigurationSystem\src\main\java\de\lcraft\configurationSystem\sql\commands" />
-      <recent name="C:\Users\Lukas\Desktop\Development\workspace\Lcraft-API\ConfigurationSystem\src\main\java" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="de.lcraft.configurationSystem.mysql.api" />
