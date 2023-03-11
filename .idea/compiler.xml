@@ -10,10 +10,12 @@
         <module name="API" />
         <module name="javaUtils" />
         <module name="configurationSystem" />
+        <module name="mcReflection" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="LanguagesAPI" target="17" />
+      <module name="McReflection" target="17" />
       <module name="project" target="17" />
     </bytecodeTargetLevel>
   </component>

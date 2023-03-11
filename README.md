@@ -19,7 +19,7 @@ Now recreating to the newest v1.1 with a faster and more customizable structure,
 - **LAPI API** :yellow_circle:
 <br>(The API for the main core of the API)
 
-- **LAPI McReflection** :red_circle:
+- **LAPI McReflection** :yellow_circle:
 <br>(Used for the version controlling of all of ours Minecraft APIs/Plugins)
 
 - **LAPI Bukkit** :red_circle:
