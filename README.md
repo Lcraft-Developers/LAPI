@@ -77,11 +77,11 @@ When the specific project get released, the wiki for it will be included.
 - Code **LAPI McReflection**
 - Add to the MainAPI the Reflection organisation
 
-### LanguagesAPI
+#### LanguagesAPI
 
 - Code **LAPI LanguagesAPI**
 
-### ConfigurationSystem
+#### ConfigurationSystem
 
 - Add yaml comments to the **LAPI ConfigurationSystem**
 - Add new sql commands to the **LAPI ConfigurationSystem**
