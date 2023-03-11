@@ -1,6 +1,3 @@
-<script src="/dist/js/timeline.min.js"></script>
-<link href="/dist/css/timeline.min.css" rel="stylesheet" />
-
 # LAPI
 
 [![Join us on Discord](https://img.shields.io/discord/856084949827321876.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/j2KwBaHZgD)
@@ -48,44 +45,6 @@ Now recreating to the newest v1.1 with a faster and more customizable structure,
 - **LAPI JavaUtils** :orange_circle:
 <br>(Multiple useful Utils for Java coding)
 
-## Release Timeline
-
-<div class="timeline">
-    <div class="timeline__wrap">
-        <div class="timeline__items">
-            <div class="timeline__item">
-                <div class="timeline__content">
-                    Content / markup here
-                </div>
-            </div>
-            <div class="timeline__item">
-                <div class="timeline__content">
-                    Content / markup here
-                </div>
-            </div>
-            <div class="timeline__item">
-                <div class="timeline__content">
-                    Content / markup here
-                </div>
-            </div>
-            <div class="timeline__item">
-                <div class="timeline__content">
-                    Content / markup here
-                </div>
-            </div>
-            <div class="timeline__item">
-                <div class="timeline__content">
-                    Content / markup here
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script>
-timeline(document.querySelectorAll('.timeline'));
-</script>
-
 ## FAQ
 
 ### How can I use it?
@@ -95,3 +54,25 @@ Else you could build it yourself, but I do not recommend it and I will not guide
 
 ### When do you have a wiki?
 When the specific project get released.
+
+## Releases
+
+### Upcoming releases
+
+02.04.2023(Easter holidays) - **LAPI JavaUtils 1.0.0** <br>
+16.04.2023(Easter holidays) - **LAPI LanguagesAPI 1.0.0** <br>
+14.05.2023 - **LAPI ConfigurationSystem 1.2.1** <br>
+24.06.2023(Summer holidays) - **LAPI API 2.0.0** and **LAPI Bukkit 2.0.0**
+
+### Latest releases
+
+18.03.2022 - **Lcraft API 1.0.9.8** <br>
+05.03.2022 - **Lcraft API 1.0.9.1** <br>
+04.03.2022 - **Lcraft API 1.0.9** <br>
+29.12.2021 - **Lcraft API 1.0.7** <br>
+17.12.2021 - **Lcraft API 1.0.6** <br>
+17.12.2021 - **Lcraft API 1.0.5** <br>
+07.12.2021 - **Lcraft API 1.0.3** <br>
+14.11.2021 - **Lcraft API 1.0.2** <br>
+13.11.2021 - **Lcraft API 1.0.1** <br>
+13.11.2021 - **Lcraft API 1.0.0**
