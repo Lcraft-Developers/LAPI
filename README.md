@@ -52,8 +52,8 @@ If the specific project has the :green_circle: green circle, it means, that it h
 When we are uploading all of ours project to Maven, you can use it by click on the right side at the category "Packages". <br>
 Else you could build it yourself, but I do not recommend it and I will not guide you.
 
-### When do you have a wiki?
-When the specific project get released.
+### Where do I find the wiki?
+When the specific project get released, the wiki for it will be included.
 
 ## Releases
 
