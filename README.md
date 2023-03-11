@@ -19,6 +19,9 @@ Now recreating to the newest v1.1 with a faster and more customizable structure,
 - **LAPI API** :yellow_circle:
 <br>(The API for the main core of the API)
 
+- **LAPI McReflection** :red_circle:
+<br>(Used for the version controlling of all of ours Minecraft APIs/Plugins)
+
 - **LAPI Bukkit** :red_circle:
 <br>(Use the main core for Bukkit, Spigot, Paper and other forks)
 
@@ -38,12 +41,14 @@ Now recreating to the newest v1.1 with a faster and more customizable structure,
 
 ### Java
 
-- **LAPI LanguagesAPI** :yellow_circle:
-<br>(A own coded LanguagesSystem)
-- **LAPI ConfigurationSystem** :orange_circle:
-<br>(A own coded Configuration System for SQL- and Filesystems)
 - **LAPI JavaUtils** :orange_circle:
 <br>(Multiple useful Utils for Java coding)
+
+- **LAPI ConfigurationSystem** :orange_circle:
+<br>(A own coded Configuration System for SQL- and Filesystems)
+
+- **LAPI LanguagesAPI** :yellow_circle:
+<br>(A own coded LanguagesSystem)
 
 ## FAQ
 
@@ -63,6 +68,23 @@ When the specific project get released, the wiki for it will be included.
 16.04.2023(Easter holidays) - **LAPI LanguagesAPI 1.0.0** <br>
 14.05.2023 - **LAPI ConfigurationSystem 1.2.1** <br>
 24.06.2023(Summer holidays) - **LAPI API 2.0.0** and **LAPI Bukkit 2.0.0**
+
+### Next steps
+
+#### McReflection
+
+- Code LAPI McReflection
+- Add to the MainAPI the Reflection organisation
+
+### Languages
+
+- Code LAPI LanguagesAPI
+
+### ConfigurationSystem
+
+- Add yaml comments to the ConfigurationSystem
+- Add new sql commands to the ConfigurationSystem
+- Add local sql storage to the ConfigurationSystem
 
 ### Latest releases
 
