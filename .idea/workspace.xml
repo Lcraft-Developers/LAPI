@@ -14,8 +14,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -47,7 +47,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "jdk.selected.JAVA_MODULE": "16",
-    "last_opened_file_path": "H:/Desktop/Meine Github Gruppe/LAPI/API/src/main/java/de/lcraft/lapi/mainAPI/api_velocity",
+    "last_opened_file_path": "C:/Users/LPD/Desktop/Dev/workspace/Lcraft-API",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
