@@ -101,5 +101,11 @@ When the specific project get released, the wiki for it will be included.
 13.11.2021 - **Lcraft API 1.0.0**
 
 ## Discontinued projects
+- **Lcraft API v1.0.9 (Renew)** :black_circle:
+<br>(It was the main plugin for everthing. It supported Spigot)
+
+- **Lcraft API v1.0.5 (Renew)** :black_circle:
+<br>(It was the main plugin for everthing. It supported Spigot)
+
 - **Lcraft API v1.0** :black_circle:
 <br>(It was the main plugin for everthing. It supported Spigot)
