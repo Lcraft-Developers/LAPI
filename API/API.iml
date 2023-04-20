@@ -6,6 +6,9 @@
         <autoDetectTypes>
           <platformType>SPIGOT</platformType>
           <platformType>BUNGEECORD</platformType>
+          <platformType>VELOCITY</platformType>
+          <platformType>ADVENTURE</platformType>
+          <platformType>SPONGE</platformType>
         </autoDetectTypes>
       </configuration>
     </facet>
