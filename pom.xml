@@ -7,7 +7,7 @@
     <name>Lcraft API</name>
     <groupId>de.lcraft.lapi</groupId>
     <artifactId>LAPI</artifactId>
-    <version>1.0.0 b16</version>
+    <version>1.0.0 b17</version>
     <packaging>pom</packaging>
 
     <modules>
@@ -39,6 +39,23 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.2</version>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>2.3</version>
+                <configuration>
+                    <rulesUri>file:///${project.basedir}/rules.xml</rulesUri>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>display-dependency-updates</goal>
+                            <goal>display-plugin-updates</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
