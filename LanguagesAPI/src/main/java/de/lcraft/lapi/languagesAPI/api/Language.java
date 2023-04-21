@@ -2,6 +2,9 @@ package de.lcraft.lapi.languagesAPI.api;
 
 public interface Language {
 
-    // TODO: Create own API
+    String getName();
+	String getNameEnglish();
+	String getShort();
+	String getShortType();
 
 }

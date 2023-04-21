@@ -3,7 +3,7 @@
 [![Join us on Discord](https://img.shields.io/discord/856084949827321876.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/j2KwBaHZgD)
 ![Downloads](https://img.shields.io/github/downloads/Lcraft-Developers/Lcraft-APIs/total?event=push&label=Downloads&logo=github)
 
-This is LAPI (Lcrafts Application Programming Interface). <br>
+This is LAPI (Lcraft Application Programming Interface). <br>
 With the goal of creating a centered and more customizable API System for Minecraft Plugins and Java Processes. <br>
 Now recreating to the newest v1.1 with a faster and more customizable structure, more features and own coded official modules.
 
@@ -64,11 +64,13 @@ When the specific project get released, the wiki for it will be included.
 
 ### Upcoming releases
 
-02.04.2023(Easter holidays) - **LAPI JavaUtils 1.0.0** <br>
-16.04.2023(Easter holidays) - **LAPI LanguagesAPI 1.0.0** <br>
-06.05.2023 - **LAPI McReflection 1.0.0** <br>
-14.05.2023 - **LAPI ConfigurationSystem 1.2.1** <br>
-24.06.2023(Summer holidays) - **LAPI API 2.0.0** and **LAPI Bukkit 2.0.0**
+14.05.2023 - **LAPI JavaUtils 1.0.0** <br>
+28.05.2023 - **LAPI LanguagesAPI 1.0.0** <br>
+18.06.2023 - **LAPI McReflection 1.0.0** <br>
+02.07.2023 - **LAPI ConfigurationSystem 1.2.1** <br>
+01.12.2023 - **LAPI API 2.0.0** <br>
+24.12.2023 - **LAPI Bukkit 2.0.0** <br>
+24.12.2023 - **LAPI BungeeCord 2.0.0**
 
 ### Next steps
 
@@ -102,4 +104,4 @@ When the specific project get released, the wiki for it will be included.
 
 ## Discontinued projects
 - **Lcraft API v1.0** :black_circle:
-<br>(It was the main plugin for everthing. It supported Spigot)
+<br>(It was the main plugin for everything. It supported Spigot)

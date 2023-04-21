@@ -6,6 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="f92642bd-d77a-4485-892c-0e7535962958" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanguagesAPI/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/LanguagesAPI/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanguagesAPI/src/main/java/de/lcraft/lapi/languagesAPI/api/Language.java" beforeDir="false" afterPath="$PROJECT_DIR$/LanguagesAPI/src/main/java/de/lcraft/lapi/languagesAPI/api/Language.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanguagesAPI/src/main/java/de/lcraft/lapi/languagesAPI/api/LanguageContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/LanguagesAPI/src/main/java/de/lcraft/lapi/languagesAPI/api/LanguageContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LanguagesAPI/src/main/java/de/lcraft/lapi/languagesAPI/api/LanguageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/LanguagesAPI/src/main/java/de/lcraft/lapi/languagesAPI/api/LanguageManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,9 +21,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -36,7 +41,9 @@
     </option>
   </component>
   <component name="ProjectId" id="2Km5NDB3FPv0Cc9nVD4hFwkOIWw" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -52,7 +59,7 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+    "settings.editor.selected.configurable": "project.propVCSSupport.Confirmation"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -63,7 +70,11 @@
       <recent name="H:\Desktop\Meine Github Gruppe\LAPI\API\src\main\java\de\lcraft\lapi\mainAPI\api_spigot" />
       <recent name="H:\Desktop\Meine Github Gruppe\LAPI\API\src\main\java\de\lcraft\lapi\mainAPI\api_bungee" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="de.lcraft.lapi.languagesAPI" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="de.lcraft.lapi.languagesAPI.langs" />
       <recent name="de.lcraft.configurationSystem.mysql.api" />
     </key>
   </component>
