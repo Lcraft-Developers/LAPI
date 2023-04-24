@@ -7,7 +7,7 @@
     <name>LanguagesAPI</name>
     <groupId>de.lcraft.lapi</groupId>
     <artifactId>languagesAPI</artifactId>
-    <version>1.0.0 b3</version>
+    <version>1.0.0 b4</version>
     <packaging>jar</packaging>
 
     <properties>
@@ -40,7 +40,13 @@
         <dependency>
             <groupId>de.lcraft.lapi</groupId>
             <artifactId>javaUtils</artifactId>
-            <version>1.0.0 b5</version>
+            <version>1.0.0 b6</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>de.lcraft.lapi</groupId>
+            <artifactId>configurationSystem</artifactId>
+            <version>1.2.1 b5</version>
             <scope>compile</scope>
         </dependency>
         <dependency>

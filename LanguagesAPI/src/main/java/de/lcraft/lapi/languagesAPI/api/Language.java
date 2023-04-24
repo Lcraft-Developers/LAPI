@@ -1,10 +1,12 @@
 package de.lcraft.lapi.languagesAPI.api;
 
+import de.lcraft.lapi.configurationSystem.yaml.Config;
+
 public interface Language {
 
+	String getShortForm();
     String getName();
-	String getNameEnglish();
-	String getShort();
-	String getShortType();
+	String getNameInternational();
+	Config getConfiguration();
 
 }

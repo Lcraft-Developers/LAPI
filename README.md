@@ -47,7 +47,7 @@ Now recreating to the newest v1.1 with a faster and more customizable structure,
 - **LAPI ConfigurationSystem** :orange_circle:
 <br>(A own coded Configuration System for SQL- and Filesystems)
 
-- **LAPI LanguagesAPI** :yellow_circle:
+- **LAPI LanguagesAPI** :orange_circle:
 <br>(A own coded LanguagesSystem)
 
 ## FAQ
