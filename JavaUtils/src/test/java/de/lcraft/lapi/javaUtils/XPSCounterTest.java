@@ -7,7 +7,7 @@ public class XPSCounterTest {
 
 	@Test
 	public void test() {
-		int repeats = 3;
+		int repeats = 5;
 
 		int[] framerates = {
 				30, 60, 90,
@@ -52,7 +52,7 @@ public class XPSCounterTest {
 		}
 		Long avgFPS = xpsCounter.getAverageFPS();
 
-		System.out.println("Results: " + avgFPS + "FPS");
+		System.out.println("Result: " + avgFPS + "FPS");
 		return avgFPS;
 	}
 

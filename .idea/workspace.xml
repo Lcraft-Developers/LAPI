@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f92642bd-d77a-4485-892c-0e7535962958" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/API/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConfigurationSystem/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ConfigurationSystem/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JavaUtils/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/JavaUtils/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LanguagesAPI/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/LanguagesAPI/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/McReflection/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/McReflection/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaUtils/src/main/java/de/lcraft/lapi/javaUtils/XPSCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaUtils/src/main/java/de/lcraft/lapi/javaUtils/XPSCounter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaUtils/src/test/java/de/lcraft/lapi/javaUtils/XPSCounterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaUtils/src/test/java/de/lcraft/lapi/javaUtils/XPSCounterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaUtils/target/test-classes/de/lcraft/lapi/javaUtils/xpsCounter/XPSCounterTest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +69,7 @@
       <recent name="H:\Desktop\Meine Github Gruppe\LAPI\API\src\main\java\de\lcraft\lapi\mainAPI\api_bungee" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="de.lcraft.lapi.javaUtils" />
       <recent name="de.lcraft.lapi.languagesAPI" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -80,7 +78,7 @@
       <recent name="de.lcraft.configurationSystem.mysql.api" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.XPSCounterTest.test (1)">
+  <component name="RunManager" selected="Application.XPSCounterTest">
     <configuration name="XPSCounterTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="de.lcraft.lapi.javaUtils.XPSCounterTest" />
       <module name="javaUtils" />
@@ -130,10 +128,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.XPSCounterTest" />
+        <item itemvalue="JUnit.XPSCounterTest.test" />
         <item itemvalue="JUnit.XPSCounterTest.test (1)" />
         <item itemvalue="Application.de.lcraft.lapi.javaUtils.xpsCounter.XPSCounterTest" />
-        <item itemvalue="JUnit.XPSCounterTest.test" />
-        <item itemvalue="Application.XPSCounterTest" />
       </list>
     </recent_temporary>
   </component>

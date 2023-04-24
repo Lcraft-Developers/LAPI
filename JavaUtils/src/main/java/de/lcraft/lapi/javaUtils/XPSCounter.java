@@ -32,7 +32,7 @@ public class XPSCounter {
 		long averageFrameTime = 0L;
 
 		for(Long frameTime : getFrameTimes()) {
-			averageFrameTime = averageFrameTime + ((frameTime) / getFrameTimes().size());
+			averageFrameTime = averageFrameTime + (frameTime / getFrameTimes().size());
 		}
 
 		return averageFrameTime;
@@ -46,15 +46,13 @@ public class XPSCounter {
 	public Long getAverageFPS() {
 		long fps = 1000 / getAverageFrameTime_ms();
 		if(fps < 0) fps = 0L;
+
 		return fps;
 	}
 
 	private void addFrameTime(Long frameSystemNanoTime) {
 		refreshFrameTimes();
-		long frameTime;
-
-		if(getLastFrameTime() == 0) frameTime = 0L;
-		else frameTime = frameSystemNanoTime - getLastFrameTime();
+		long frameTime = frameSystemNanoTime - getLastFrameTime();
 
 		getFrameTimes().add(frameTime);
 		setLastFrameTime(frameSystemNanoTime);
