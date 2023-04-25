@@ -12,6 +12,8 @@ public class Config {
     private LoadManager loadManager;
     private SaveManager saveManager;
 
+    // TODO: Add an constructor to give config-file for load and save
+
     public Config() {
         setLoadManager(new LoadManager());
         setSaveManager(new SaveManager());

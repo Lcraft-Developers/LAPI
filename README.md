@@ -74,20 +74,23 @@ When the specific project get released, the wiki for it will be included.
 
 ### Next steps
 
-#### McReflection
+#### ConfigurationSystem
 
-- Code **LAPI McReflection**
-- Add to the MainAPI the Reflection organisation
+- Add yaml comments
+- Make interface for all Config types
+- Add new sql commands
+- Add local sql storage
 
 #### LanguagesAPI
 
-- Code **LAPI LanguagesAPI**
+- Code LanguagesManager
+- Add multiple languages: de, en_us, en_uk
 
-#### ConfigurationSystem
+#### McReflection
 
-- Add yaml comments to the **LAPI ConfigurationSystem**
-- Add new sql commands to the **LAPI ConfigurationSystem**
-- Add local sql storage to the **LAPI ConfigurationSystem**
+- Recherche how Minecraft/Bukkit control Versions
+- Code McReflection
+- Add to the MainAPI the Reflection organisation
 
 ### Latest releases
 

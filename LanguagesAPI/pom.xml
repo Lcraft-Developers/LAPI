@@ -7,7 +7,7 @@
     <name>LanguagesAPI</name>
     <groupId>de.lcraft.lapi</groupId>
     <artifactId>languagesAPI</artifactId>
-    <version>1.0.0 b4</version>
+    <version>1.0.0 b5</version>
     <packaging>jar</packaging>
 
     <properties>
