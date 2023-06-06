@@ -22,6 +22,9 @@ Now recreating to the newest v1.1 with a faster and more customizable structure,
 - **LAPI McReflection** :yellow_circle:
 <br>(Used for the version controlling of all of ours Minecraft APIs/Plugins)
 
+- **LAPI Queueworker** :red_circle:
+<br>(A Queueworker API to work actions in a queue)
+
 - **LAPI Bukkit** :red_circle:
 <br>(Use the main core for Bukkit, Spigot, Paper and other forks)
 
@@ -64,13 +67,13 @@ When the specific project get released, the wiki for it will be included.
 
 ### Upcoming releases
 
-14.05.2023 - **LAPI JavaUtils 1.0.0** <br>
-28.05.2023 - **LAPI LanguagesAPI 1.0.0** <br>
-18.06.2023 - **LAPI McReflection 1.0.0** <br>
-02.07.2023 - **LAPI ConfigurationSystem 1.2.1** <br>
-01.12.2023 - **LAPI API 2.0.0** <br>
-24.12.2023 - **LAPI Bukkit 2.0.0** <br>
-24.12.2023 - **LAPI BungeeCord 2.0.0**
+14.07.2023 - **LAPI JavaUtils 1.0.0** <br>
+28.07.2023 - **LAPI LanguagesAPI 1.0.0** <br>
+18.08.2023 - **LAPI McReflection 1.0.0** <br>
+02.09.2023 - **LAPI ConfigurationSystem 1.2.1** <br>
+01.02.2024 - **LAPI API 2.0.0** <br>
+24.02.2024 - **LAPI Bukkit 2.0.0** <br>
+24.02.2024 - **LAPI BungeeCord 2.0.0**
 
 ### Next steps
 
