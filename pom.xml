@@ -16,6 +16,7 @@
         <module>LanguagesAPI</module>
         <module>McReflection</module>
         <module>API</module>
+        <module>QueueWorker</module>
     </modules>
 
     <properties>

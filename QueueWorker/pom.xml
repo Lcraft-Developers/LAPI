@@ -4,16 +4,16 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <name>ConfigurationSystem</name>
+    <name>QueueWorker</name>
     <groupId>de.lcraft.lapi</groupId>
-    <artifactId>configurationSystem</artifactId>
-    <version>1.2.1 b5</version>
+    <artifactId>queueWorker</artifactId>
+    <version>1.0.0 b1</version>
     <packaging>jar</packaging>
 
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.target>17</maven.compiler.target>
         <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <build>
@@ -38,12 +38,6 @@
     <dependencies>
         <!-- Dependencies (also own coded) with will be included if you package/compile -->
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.32</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
             <groupId>de.lcraft.lapi</groupId>
             <artifactId>javaUtils</artifactId>
             <version>1.0.0 b6</version>
@@ -52,9 +46,9 @@
 
         <!-- Dependencies that will test if you package/compile -->
         <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>5.9.2</version>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-commons</artifactId>
+            <version>1.9.2</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

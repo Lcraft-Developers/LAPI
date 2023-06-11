@@ -60,7 +60,7 @@
         <dependency>
             <groupId>de.lcraft.lapi</groupId>
             <artifactId>javaUtils</artifactId>
-            <version>1.0.0 b5</version>
+            <version>1.0.0 b6</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
@@ -72,7 +72,7 @@
         <dependency>
             <groupId>de.lcraft.lapi</groupId>
             <artifactId>languagesAPI</artifactId>
-            <version>1.0.0 b3</version>
+            <version>1.0.0 b5</version>
             <scope>compile</scope>
         </dependency>
 

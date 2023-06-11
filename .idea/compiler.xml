@@ -9,6 +9,7 @@
         <module name="languagesAPI" />
         <module name="API" />
         <module name="javaUtils" />
+        <module name="queueWorker" />
         <module name="configurationSystem" />
         <module name="mcReflection" />
       </profile>
