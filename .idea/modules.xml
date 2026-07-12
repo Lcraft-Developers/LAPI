@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/beta/LcraftAPI-API (beta)/api-beta.iml" filepath="$PROJECT_DIR$/beta/LcraftAPI-API (beta)/api-beta.iml" />
+      <module fileurl="file://$PROJECT_DIR$/beta/Beta Lcraft Spigot Test/test-spigot-beta.iml" filepath="$PROJECT_DIR$/beta/Beta Lcraft Spigot Test/test-spigot-beta.iml" />
+    </modules>
+  </component>
+</project>
